@@ -1,6 +1,5 @@
-import { client, reduced, idle, script, css } from './helpers';
-const config = client(),
-  labels = config.labels;
+import { client } from './helpers';
+const config = client();
 (() => {
   try {
     if (

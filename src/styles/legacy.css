@@ -148,7 +148,6 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
 body {
@@ -275,7 +274,6 @@ img {
   border-radius: 9px;
   color: var(--muted);
   font-size: 13px;
-  transition: background .18s;
 }
 .site-nav a:hover,
 .site-nav [aria-current] {
@@ -1041,14 +1039,13 @@ dialog::backdrop {
   position: fixed;
   bottom: 28px;
   left: 50%;
-  transform: translate(-50%,15px);
+  transform: translate(-50%,6px);
   background: var(--text);
   color: var(--paper);
   border-radius: 8px;
   padding: 9px 20px;
   font-size: 12px;
   opacity: 0;
-  transition: .2s;
   pointer-events: none;
   z-index: 100;
 }
@@ -1083,11 +1080,6 @@ dialog::backdrop {
 @media(max-width:760px) {
   :root {
     --sidebar-width: 272px;
-  }
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform .25s;
-    z-index: 50;
   }
   .main-shell {
     margin: 0;
@@ -1206,17 +1198,6 @@ dialog::backdrop {
   }
   .article-header h1 {
     font-size: 26px;
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    transition: none!important;
-    animation: none!important;
   }
 }
 @media print {
@@ -1556,49 +1537,8 @@ body:has(.site-background) {
   display: inline-block;
   margin-top: 14px;
 }
-/* Avatar entrance and swing. Content motion is enhanced in animations.js. */
-.avatar-home img {
-  transition: box-shadow .2s;
-}
 .avatar-home:hover img {
   box-shadow: 0 0 0 3px var(--green-soft);
-}
-.avatar-enter {
-  animation: autuswing-avatar-in .4s ease .3s backwards;
-}
-@keyframes autuswing-avatar-in {
-  from {
-    opacity: 0;
-    transform: scale3d(.3,.3,.3);
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.avatar-shake img {
-  animation: autuswing-avatar .46s ease-in-out both;
-}
-@keyframes autuswing-avatar {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20% {
-    transform: rotate(-12deg);
-  }
-  40% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(-7deg);
-  }
-  80% {
-    transform: rotate(4deg);
-  }
 }
 @media(max-width:1200px) and (min-width:761px) {
   :root {
@@ -1732,7 +1672,6 @@ body:has(.site-background) {
 .post-card.mica-card {
   padding: 26px 24px;
   margin: 0;
-  transition: transform .2s ease,box-shadow .2s ease,border-color .2s ease;
 }
 .post-card.mica-card .card-date {
   width: 48px;
@@ -1754,13 +1693,6 @@ body:has(.site-background) {
 .mica-article>.surface-wallpaper {
   position: fixed;
   max-height: 100vh;
-}
-@media(hover:hover) and (pointer:fine) {
-  .post-card.mica-card.card-lift:hover {
-    transform: translateY(-4px);
-    border-color: var(--green);
-    box-shadow: var(--mica-hover-shadow),inset 0 1px 0 var(--mica-edge);
-  }
 }
 @media(max-width:1200px) {
   .mica-article {
@@ -1818,11 +1750,6 @@ body:has(.site-background) {
   }
   .surface-wallpaper {
     display: none;
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  .post-card.mica-card.card-lift:hover {
-    transform: none;
   }
 }
 @media print {

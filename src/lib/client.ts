@@ -11,10 +11,6 @@ export function clientConfig(post?: Post) {
     searchLimit: theme.search.limit,
     searchOptions: theme.search,
     article: theme.article,
-    animations: {
-      ...theme.animations,
-      enable: theme.animations.enable && theme.appearance.animate,
-    },
     instantNav: theme.performance.instant_nav,
     pwa: theme.pwa.enable,
     analytics: preview ? {} : theme.analytics,

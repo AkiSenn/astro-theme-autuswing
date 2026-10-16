@@ -1,4 +1,4 @@
-export {};
+import { scrollBehavior } from './helpers';
 (() => {
   'use strict';
   const section = document.querySelector('[data-comments-config]');
@@ -245,7 +245,7 @@ export {};
     } else load();
     if (scroll)
       section.scrollIntoView({
-        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+        behavior: scrollBehavior(),
         block: 'start',
       });
   }

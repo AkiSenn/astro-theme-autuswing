@@ -5,6 +5,7 @@ import '../styles/legacy.css';
 import '../styles/astro.css';
 import '../styles/responsive.css';
 import '../styles/visual.css';
+import '../styles/motion.css';
 import { theme, preview, site } from '../site.config';
 import type { Post } from '../lib/content';
 import { clientConfig } from '../lib/client';
@@ -48,12 +49,19 @@ const background = theme.backgrounds.length
 <html
   lang={post?.lang || site.language}
   data-mode={theme.color_mode}
-  data-animate={String(theme.appearance.animate && theme.animations.enable)}
+  data-motion={String(theme.motion.enable)}
   style={variables}
 >
   <head>
     <SeoHead path={path} title={title} post={post} noindex={noindex} math={math} />
     <script is:inline set:html={appearance} />
+    {theme.motion.enable && theme.motion.page && <style id="autuswing-page-motion" is:inline>
+      @media (prefers-reduced-motion: no-preference) {
+        @view-transition {
+          navigation: auto;
+        }
+      }
+    </style>}
     <noscript>
       <style is:inline>
         .js-control {

@@ -40,13 +40,10 @@
     "code_font": "",
     "background_image": false,
     "background_overlay": 0.72,
-    "theme_switch": true,
-    "animate": true
+    "theme_switch": true
   },
-  "animations": {
+  "motion": {
     "enable": true,
-    "avatar": true,
-    "articles": true,
     "page": true
   },
   "search": {

@@ -1,5 +1,5 @@
 import { client, copy, toast } from './helpers';
-import { openDialog, restoreDialogFocus } from './dialogs';
+import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
 export function initMedia() {
   const config = client();
   document.querySelectorAll<HTMLElement>('.prose pre').forEach((block) => {
@@ -84,9 +84,9 @@ export function initMedia() {
       }
     });
   });
-  dialog.querySelector('.image-close')?.addEventListener('click', () => dialog.close());
+  dialog.querySelector('.image-close')?.addEventListener('click', () => closeDialog(dialog));
   dialog.addEventListener('click', (e) => {
-    if (e.target === dialog) dialog.close();
+    if (e.target === dialog) closeDialog(dialog);
   });
   dialog.addEventListener('close', () => restoreDialogFocus(trigger));
 }

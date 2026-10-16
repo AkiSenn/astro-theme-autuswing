@@ -12,7 +12,10 @@ const Content = post.rendered.Content;
 ---
 
 <article
-  class:list={['post-card', { 'mica-card': theme.cards.enable, 'card-lift': theme.cards.hover }]}
+  class:list={[
+    'post-card',
+    { 'mica-card': theme.cards.enable, 'card-interactive': theme.cards.hover },
+  ]}
 >
   <SurfaceWallpaper wallpaper={post.data.wallpaper} />
   <div class="card-date">

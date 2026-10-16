@@ -1,4 +1,4 @@
-import { client, reduced, idle, script, css } from './helpers';
+import { client, script } from './helpers';
 const config = client(),
   labels = config.labels;
 (() => {

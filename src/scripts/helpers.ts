@@ -1,6 +1,9 @@
 export const client = () =>
   JSON.parse(document.querySelector('#autuswing-config')?.textContent || '{}');
 export const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+export const motionEnabled = () =>
+  !reduced.matches && document.documentElement.dataset.motion !== 'false';
+export const scrollBehavior = (): ScrollBehavior => (motionEnabled() ? 'smooth' : 'instant');
 export function isLiveSite() {
   const canonical = document.querySelector<HTMLLinkElement>('link[rel=canonical]');
   return (

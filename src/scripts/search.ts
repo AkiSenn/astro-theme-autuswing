@@ -1,6 +1,6 @@
 import { search, normalize, type SearchItem } from '../lib/search';
 import { client } from './helpers';
-import { openDialog, restoreDialogFocus } from './dialogs';
+import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
 export function initSearch() {
   const dialog = document.querySelector<HTMLDialogElement>('.search-dialog');
   if (!dialog) return;
@@ -115,9 +115,9 @@ export function initSearch() {
   document
     .querySelectorAll<HTMLElement>('.search-open')
     .forEach((button) => button.addEventListener('click', () => open(button)));
-  dialog.querySelector('.search-close')?.addEventListener('click', () => dialog.close());
+  dialog.querySelector('.search-close')?.addEventListener('click', () => closeDialog(dialog));
   dialog.addEventListener('click', (e) => {
-    if (e.target === dialog) dialog.close();
+    if (e.target === dialog) closeDialog(dialog);
   });
   dialog.addEventListener('close', () => restoreDialogFocus(trigger));
   input.addEventListener('input', () => {
@@ -127,7 +127,7 @@ export function initSearch() {
   dialog.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       e.preventDefault();
-      dialog.close();
+      closeDialog(dialog);
       return;
     }
     const links = [...list.querySelectorAll<HTMLAnchorElement>('a')];

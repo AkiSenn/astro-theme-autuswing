@@ -1,4 +1,4 @@
-import { client, reduced } from './helpers';
+import { scrollBehavior } from './helpers';
 export function initReading() {
   const progress = document.querySelector<HTMLElement>('.reading-progress'),
     article = document.querySelector<HTMLElement>('.article .prose'),
@@ -29,7 +29,7 @@ export function initReading() {
   addEventListener('resize', update);
   update();
   back?.addEventListener('click', () =>
-    scrollTo({ top: 0, behavior: reduced.matches ? 'instant' : 'smooth' }),
+    scrollTo({ top: 0, behavior: scrollBehavior() }),
   );
   const headings = [
       ...document.querySelectorAll<HTMLElement>('.prose h2[id],.prose h3[id],.prose h4[id]'),
@@ -70,5 +70,4 @@ export function initReading() {
     );
     headings.forEach((h) => observer.observe(h));
   }
-  if (!client().article.lightbox) return;
 }

@@ -185,13 +185,6 @@ button {
   font-size: 13px;
   margin-block: 4px 12px;
 }
-.desktop-sidebar .site-nav a,
-.rail-nav a,
-.mobile-navigation a {
-  transition:
-    color 160ms,
-    background-color 160ms;
-}
 .article-header,
 .mica-article .article-header {
   padding-bottom: 24px;
@@ -633,12 +626,6 @@ dialog::backdrop {
   font-size: 13px;
   text-align: center;
 }
-@media (hover: hover) and (pointer: fine) {
-  .post-card.mica-card.card-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--mica-hover-shadow);
-  }
-}
 @media (720px <= width < 1000px) {
   @container (min-width: 660px) {
     .journal-home .post-card {
@@ -741,21 +728,6 @@ dialog::backdrop {
   .desktop-sidebar .profile p {
     font-size: 12px;
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .post-card.mica-card.card-lift:hover {
-    transform: none;
-  }
-}
-html[data-animate='false'] .post-card,
-html[data-animate='false'] .avatar-home img {
-  animation: none;
-  transition: none;
-  transform: none;
-}
-html[data-animate='false'] .post-card.mica-card.card-lift:hover {
-  transform: none;
-  transition: none;
 }
 @media (prefers-reduced-transparency: reduce) {
   body:has(.site-background) .mica-card {

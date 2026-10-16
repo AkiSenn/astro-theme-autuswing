@@ -39,7 +39,6 @@ html:has(dialog[open]) {
   height: 100dvh;
   padding: 24px;
   overflow-y: auto;
-  transform: none;
   scrollbar-width: thin;
 }
 .desktop-sidebar .profile,

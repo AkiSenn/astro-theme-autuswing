@@ -20,10 +20,7 @@ const t = translate();
   <section class="profile">
     <a href="/" class="avatar-link avatar-home" data-focus-key="brand" aria-label={t('home')}>
       <img
-        class:list={[
-          'avatar',
-          { 'avatar-enter': theme.animations.avatar && theme.animations.enable },
-        ]}
+        class="avatar"
         src={avatar}
         alt={theme.profile.author}
         width="62"

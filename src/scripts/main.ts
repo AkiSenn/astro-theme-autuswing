@@ -4,16 +4,25 @@ import { initSearch } from './search';
 import { initReading } from './reading';
 import { initMedia } from './media';
 import { initPwa } from './pwa';
+import { initDialogs } from './dialogs';
+import { initBrand } from './brand';
 import { isLiveSite } from './helpers';
-for (const init of [initAppearance, initResponsive, initSearch, initReading, initMedia, initPwa]) {
+for (const init of [
+  initAppearance,
+  initDialogs,
+  initResponsive,
+  initSearch,
+  initReading,
+  initMedia,
+  initBrand,
+  initPwa,
+]) {
   try {
     init();
   } catch (error) {
     console.error('AutuSwing enhancement failed', error);
   }
 }
-import './avatar.js';
-import './animations.js';
 import './runtime.js';
 import './statistics.js';
 import './analytics.js';

@@ -1,4 +1,4 @@
-import { openDialog, restoreDialogFocus } from './dialogs';
+import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
 
 export function initResponsive() {
   const wide = matchMedia('(min-width: 1000px)'),
@@ -84,7 +84,7 @@ export function initResponsive() {
         syncContents();
       });
     });
-    dialog.querySelector('.contents-close')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.contents-close')?.addEventListener('click', () => closeDialog(dialog));
     dialog.addEventListener('keydown', (event) => {
       if (event.key !== 'Tab') return;
       const targets = [...dialog.querySelectorAll<HTMLElement>('button,a[href]')].filter(
@@ -109,13 +109,13 @@ export function initResponsive() {
         event.clientY < box.top ||
         event.clientY > box.bottom
       )
-        dialog.close();
+        closeDialog(dialog);
     });
     let destination: HTMLElement | null = null;
     dialog.querySelectorAll<HTMLAnchorElement>('.toc-link').forEach((link) =>
       link.addEventListener('click', () => {
         destination = document.getElementById(decodeURIComponent(link.hash.slice(1)));
-        dialog.close();
+        closeDialog(dialog);
       }),
     );
     dialog.addEventListener('close', () => {
@@ -139,7 +139,7 @@ export function initResponsive() {
 
   function settleLayout() {
     const active = document.activeElement as HTMLElement | null;
-    if (dialog?.open) dialog.close();
+    if (dialog?.open) closeDialog(dialog, true);
     syncContents();
     if (active && active !== document.body && !active.getClientRects().length) {
       const key = active.dataset.focusKey;

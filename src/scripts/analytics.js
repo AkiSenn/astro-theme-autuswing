@@ -1,6 +1,5 @@
-import { client, reduced, idle, script, css, isLiveSite } from './helpers';
-const config = client(),
-  labels = config.labels;
+import { client, idle, script, isLiveSite } from './helpers';
+const config = client();
 (() => {
   try {
     const analytics = config.analytics || {};
