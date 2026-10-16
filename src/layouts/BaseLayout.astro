@@ -59,9 +59,12 @@ const background = theme.backgrounds.length
         .js-control {
           display: none !important;
         }
-        @media screen and (1000px <= width < 1280px) {
-          .article-page .contents-access {
+        @media screen and (width < 1280px) {
+          body .contents-access {
             display: block;
+          }
+          .main-shell:has(.contents-access) #main {
+            padding-top: 0;
           }
         }
         @media screen and (1280px <= width < 1440px) {
@@ -111,6 +114,10 @@ const background = theme.backgrounds.length
           data-focus-key="contents"
           type="button"
           aria-label={t('toc')}
+          title={t('toc')}
+          aria-haspopup="dialog"
+          aria-controls="reading-contents"
+          aria-expanded="false"
           hidden
         >
           <Glyph name="book" />

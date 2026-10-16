@@ -192,17 +192,6 @@ html:has(dialog[open]) {
   margin-inline: auto;
   padding-block: 20px 12px;
 }
-.contents-access > button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  font-size: 13px;
-  background: var(--surface);
-}
 .contents-count {
   font-size: 11px;
   color: var(--muted);
@@ -497,12 +486,6 @@ html:has(dialog[open]) {
   }
 }
 @media (width < 1000px) {
-  .contents-access {
-    display: block;
-  }
-  .main-shell:has(.contents-access) #main {
-    padding-top: 0;
-  }
   .compact-social {
     display: block;
   }

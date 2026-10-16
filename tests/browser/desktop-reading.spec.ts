@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import AxeBuilder from '@axe-core/playwright';
 
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/reading-layout/edge';
-const baseline = JSON.parse(fs.readFileSync('docs/evidence/reading-layout/before.json', 'utf8'));
+const baseline = JSON.parse(fs.readFileSync('docs/evidence/contents-controls/before.json', 'utf8'));
 fs.mkdirSync(dir, { recursive: true });
 const views = [
   { width: 1366, height: 768 },
@@ -59,7 +59,7 @@ for (const viewport of views) {
   });
 }
 
-test('compact page geometry and reading typography remain equal to the captured baseline', async ({
+test('compact body widths and typography remain equal after removing the redundant top control', async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -91,7 +91,20 @@ test('compact page geometry and reading typography remain equal to the captured 
           display: c.display,
         };
       });
-      expect(actual, `${item.width} ${item.path} ${selector}`).toEqual(item.boxes[selector]);
+      const expected = item.boxes[selector];
+      if (item.path.startsWith('/post/') && actual && expected) {
+        // Removing the top TOC control intentionally changes vertical placement,
+        // not the article's width, fonts, line wrapping or navigation geometry.
+        const { y: _y, height: _height, ...stableActual } = actual;
+        const { y: _beforeY, height: _beforeHeight, ...stableExpected } = expected;
+        expect(stableActual, `${item.width} ${selector}`).toEqual(stableExpected);
+        if (
+          selector === '.article .prose' ||
+          selector === '.mobile-header' ||
+          selector === '.tablet-sidebar'
+        )
+          expect(actual.height).toEqual(expected.height);
+      } else expect(actual, `${item.width} ${item.path} ${selector}`).toEqual(expected);
     }
   }
 });

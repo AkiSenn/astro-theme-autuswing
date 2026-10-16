@@ -1,0 +1,571 @@
+{
+  "checkedAt": "2026-10-16T17:10:35.454Z",
+  "clientDate": "2026-10-17",
+  "timezone": "Asia/Singapore",
+  "scope": "Unify article contents actions; no production deployment",
+  "browser": {
+    "edge-results.json": {
+      "startTime": "2026-10-16T17:03:56.045Z",
+      "duration": 112437.422,
+      "expected": 53,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit-results.json": {
+      "startTime": "2026-10-16T17:03:56.039Z",
+      "duration": 386041.20399999997,
+      "expected": 45,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scroll-edge-results.json": {
+      "startTime": "2026-10-16T17:06:23.431Z",
+      "duration": 8628.071999999998,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scroll-webkit-results.json": {
+      "startTime": "2026-10-16T17:07:56.392Z",
+      "duration": 17528.499,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "nginx-results.json": {
+      "startTime": "2026-10-16T17:06:34.296Z",
+      "duration": 7003.615,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "totalBrowserTests": 104,
+  "unitTests": 16,
+  "httpChecks": 77,
+  "typeCheck": {
+    "files": 70,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "contentsViewportCasesPerEngine": 21,
+  "scrolledViewportCasesPerEngine": 11,
+  "reopenFollowChecks": 4,
+  "matrices": {
+    "edge": {
+      "checkedAt": "2026-10-16T17:04:29.942Z",
+      "checks": [
+        {
+          "width": 320,
+          "height": 740,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 305,
+            "height": 25291.9375
+          }
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 375,
+            "height": 22753.9375
+          }
+        },
+        {
+          "width": 430,
+          "height": 932,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 415,
+            "height": 21885.03125
+          }
+        },
+        {
+          "width": 719,
+          "height": 900,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 704,
+            "height": 18346.546875
+          }
+        },
+        {
+          "width": 720,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 585,
+            "height": 20903.484375
+          }
+        },
+        {
+          "width": 721,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 586,
+            "height": 20904.078125
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 633,
+            "height": 20427.328125
+          }
+        },
+        {
+          "width": 820,
+          "height": 1180,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 685,
+            "height": 19876.328125
+          }
+        },
+        {
+          "width": 999,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 152,
+            "y": 36,
+            "width": 752,
+            "height": 19400.359375
+          }
+        },
+        {
+          "width": 1000,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 102,
+            "y": 36,
+            "width": 853,
+            "height": 19222.59375
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 110.5,
+            "y": 36,
+            "width": 860,
+            "height": 19202.875
+          }
+        },
+        {
+          "width": 1180,
+          "height": 820,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 188.5,
+            "y": 36,
+            "width": 860,
+            "height": 19252.875
+          }
+        },
+        {
+          "width": 1279,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 238,
+            "y": 36,
+            "width": 860,
+            "height": 19260.375
+          }
+        },
+        {
+          "width": 1280,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 370.390625,
+            "y": 36,
+            "width": 856.21875,
+            "height": 19282.03125
+          }
+        },
+        {
+          "width": 1281,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 370.421875,
+            "y": 36,
+            "width": 857.15625,
+            "height": 19282.671875
+          }
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 411.5,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        },
+        {
+          "width": 1439,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 448,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 448.5,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        },
+        {
+          "width": 1441,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 449,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 688.5,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 1008.5,
+            "y": 36,
+            "width": 860,
+            "height": 19264.46875
+          }
+        }
+      ]
+    },
+    "webkit": {
+      "checkedAt": "2026-10-16T17:05:41.793Z",
+      "checks": [
+        {
+          "width": 320,
+          "height": 740,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 320,
+            "height": 24420.796875
+          }
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 390,
+            "height": 22399.5
+          }
+        },
+        {
+          "width": 430,
+          "height": 932,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 430,
+            "height": 21425.421875
+          }
+        },
+        {
+          "width": 719,
+          "height": 900,
+          "action": "goto-toc icon-button js-control",
+          "article": {
+            "x": 0,
+            "y": 135,
+            "width": 719,
+            "height": 18185
+          }
+        },
+        {
+          "width": 720,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 600,
+            "height": 20666.3125
+          }
+        },
+        {
+          "width": 721,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 601,
+            "height": 20666.90625
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 648,
+            "height": 20306.75
+          }
+        },
+        {
+          "width": 820,
+          "height": 1180,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 96,
+            "y": 36,
+            "width": 700,
+            "height": 19764.25
+          }
+        },
+        {
+          "width": 999,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 159.5,
+            "y": 36,
+            "width": 752,
+            "height": 19424.015625
+          }
+        },
+        {
+          "width": 1000,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 106,
+            "y": 36,
+            "width": 860,
+            "height": 19170.859375
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 118,
+            "y": 36,
+            "width": 860,
+            "height": 19170.859375
+          }
+        },
+        {
+          "width": 1180,
+          "height": 820,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 196,
+            "y": 36,
+            "width": 860,
+            "height": 19220.859375
+          }
+        },
+        {
+          "width": 1279,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 245.5,
+            "y": 36,
+            "width": 860,
+            "height": 19228.359375
+          }
+        },
+        {
+          "width": 1280,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 376,
+            "y": 36,
+            "width": 860,
+            "height": 19228.390625
+          }
+        },
+        {
+          "width": 1281,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 376.5,
+            "y": 36,
+            "width": 860,
+            "height": 19228.484375
+          }
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 419,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        },
+        {
+          "width": 1439,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 455.5,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 456,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        },
+        {
+          "width": 1441,
+          "height": 900,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 456.5,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 696,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        },
+        {
+          "width": 2560,
+          "height": 1440,
+          "action": "contents-open icon-button js-control",
+          "article": {
+            "x": 1016,
+            "y": 36,
+            "width": 860,
+            "height": 19232.453125
+          }
+        }
+      ]
+    }
+  },
+  "originals": {
+    "checkedAt": "2026-10-16T17:03:28.424Z",
+    "originalFilesVerified": 652,
+    "originalGitStatusesUnchanged": [
+      "E:/hexo-akisenn",
+      "E:/yelee-next"
+    ],
+    "unchanged": true
+  },
+  "output": {
+    "checkedAt": "2026-10-16T17:03:28.055Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "reproducibleBuild": {
+    "checkedAt": "2026-10-16T17:03:26.180Z",
+    "files": 355,
+    "identical": true
+  },
+  "initialDiagnostic": {
+    "passed": 19,
+    "failed": 2,
+    "reason": "No-JavaScript fallback display lost to the generic hidden style. Fixed selector specificity; final complete suites pass the native fallback checks."
+  },
+  "limitations": [
+    "No Firefox run: previously established Windows launch dependency issue",
+    "No physical device or actual Safari verification",
+    "Real comments remain disabled as requested; only existing adapter mocks exercised",
+    "No new Lighthouse measurement"
+  ],
+  "preview": "http://127.0.0.1:8788/post/55b0541c/",
+  "deploymentPerformed": false
+}

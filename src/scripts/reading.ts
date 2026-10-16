@@ -14,7 +14,7 @@ export function initReading() {
     const amount = length <= 0 ? 1 : Math.min(1, Math.max(0, (scrollY - top) / length));
     if (progress) progress.style.transform = `scaleX(${amount})`;
     if (back) back.hidden = scrollY < 250;
-    if (tools) tools.hidden = scrollY < 250;
+    if (tools) tools.hidden = scrollY < 250 && !tools.querySelector('.goto-toc:not([hidden])');
   }
   addEventListener(
     'scroll',
@@ -45,7 +45,10 @@ export function initReading() {
         pane.scrollTop += row.top - area.top - pane.clientHeight / 3;
     }
   }
-  document.addEventListener('reading-contents-open', followCurrentChapter);
+  document.addEventListener('reading-contents-change', () => {
+    update();
+    followCurrentChapter();
+  });
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {

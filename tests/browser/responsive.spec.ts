@@ -141,7 +141,7 @@ test('compact contents is independent, modal, dismissible and navigates to unobs
     await page.setViewportSize({ width, height: 900 });
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/post/4e395565/');
-    const trigger = page.locator('.contents-access .contents-open');
+    const trigger = page.locator('.contents-open:visible,.goto-toc:visible');
     const dialog = page.locator('#reading-contents');
     await trigger.click();
     await expect(dialog).toBeVisible();
@@ -192,7 +192,7 @@ test('rotation closes contents, releases native inertness and restores focus acr
   ]) {
     await page.setViewportSize({ width: from, height: fromHeight });
     await page.goto('/post/4e395565/');
-    await page.locator('.contents-access .contents-open').click();
+    await page.locator('.contents-open:visible,.goto-toc:visible').click();
     await page.setViewportSize({ width: to, height: toHeight });
     await expect(page.locator('#reading-contents')).not.toBeVisible();
     await expect(page.locator(activeShell(to))).toBeVisible();
@@ -211,7 +211,7 @@ test('rotation closes contents, releases native inertness and restores focus acr
 test('contents, search and image preview never stack modal surfaces', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/post/55b0541c/');
-  await page.locator('.contents-access .contents-open').click();
+  await page.locator('.contents-open:visible,.goto-toc:visible').click();
   await page.keyboard.press('Control+k');
   await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('#reading-contents')).not.toBeVisible();
@@ -272,7 +272,7 @@ test('light/dark layouts pass basic axe and long titles, menus and contents rema
       expect(failures.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) }))).toEqual([]);
       let modalCriticalOrSerious: number | null = null;
       if (width < 1000) {
-        await page.locator('.contents-access .contents-open').click();
+        await page.locator('.contents-open:visible,.goto-toc:visible').click();
         const modalResult = await new AxeBuilder({ page }).analyze();
         const modalFailures = modalResult.violations.filter(
           (v) => v.impact === 'critical' || v.impact === 'serious',
@@ -305,7 +305,7 @@ test('light/dark layouts pass basic axe and long titles, menus and contents rema
       () => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1,
     ),
   ).toBe(true);
-  await page.locator('.contents-access .contents-open').click();
+  await page.locator('.contents-open:visible,.goto-toc:visible').click();
   const last = page.locator('.contents-dialog .toc-link').last();
   await last.scrollIntoViewIfNeeded();
   await expect(last).toBeVisible();
@@ -369,7 +369,7 @@ test('touch navigation and contents work in phone/tablet browser contexts', asyn
     await page.locator(`${activeShell(width)} nav a[href="/archives/"]`).tap();
     await expect(page).toHaveURL(/\/archives\/$/);
     await page.goto('http://127.0.0.1:4322/post/4e395565/');
-    await page.locator('.contents-access .contents-open').tap();
+    await page.locator('.contents-open:visible,.goto-toc:visible').tap();
     await expect(page.locator('#reading-contents')).toBeVisible();
     await page.locator('#reading-contents .toc-link').last().tap();
     await expect(page.locator('#reading-contents')).not.toBeVisible();
@@ -400,7 +400,7 @@ test('direct historical heading URLs and doubled reading/navigation font sizes s
     content:
       '.prose{font-size:32px!important}.mobile-navigation a{font-size:26px!important}.mobile-brand-row .mobile-brand{font-size:28px!important}',
   });
-  await page.locator('.contents-access .contents-open').click();
+  await page.locator('.contents-open:visible,.goto-toc:visible').click();
   await page.locator('#reading-contents .toc-link').last().click();
   const size = await page.evaluate(() => ({
     scroll: document.documentElement.scrollWidth,

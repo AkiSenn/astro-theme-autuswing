@@ -11,6 +11,7 @@ export function initResponsive() {
       '#reading-sidebar-title,#desktop-contents-title',
     ),
     panel = document.querySelector<HTMLElement>('.reading-sidebar'),
+    rail = document.querySelector<HTMLElement>('.tablet-sidebar'),
     panelClose = document.querySelector<HTMLButtonElement>('.reading-contents-close'),
     buttons = [...document.querySelectorAll<HTMLButtonElement>('.contents-open,.goto-toc')];
   let trigger: HTMLElement | null = null;
@@ -19,36 +20,42 @@ export function initResponsive() {
   const setExpanded = (value: boolean) =>
     buttons.forEach((button) => button.setAttribute('aria-expanded', String(value)));
   const panelOpen = () => !!panel && docked.matches && (panelPreference ?? expandedDefault.matches);
-  function syncPanel() {
-    if (!panel) return;
+  function syncContents() {
     if (panelPreference === null) delete document.body.dataset.readingContents;
     else document.body.dataset.readingContents = panelPreference ? 'open' : 'closed';
     buttons.forEach((button) => {
-      button.setAttribute('aria-controls', docked.matches ? panel!.id : 'reading-contents');
-      if (docked.matches) button.removeAttribute('aria-haspopup');
+      const inDock = !!panel && docked.matches;
+      button.setAttribute('aria-controls', inDock ? panel.id : 'reading-contents');
+      if (inDock) button.removeAttribute('aria-haspopup');
       else button.setAttribute('aria-haspopup', 'dialog');
       const label = panelOpen() ? button.dataset.closeLabel : button.dataset.openLabel;
       if (label) {
         button.title = label;
         button.setAttribute('aria-label', label);
       }
+      // The visible navigation shell chooses the opener. An open contents
+      // surface owns its close action; background openers have no role then.
+      const hasRail = !!rail?.getClientRects().length;
+      const selected = hasRail ? rail!.contains(button) : button.matches('.goto-toc');
+      const hasDesktopContents = !panel && wide.matches;
+      button.hidden = !selected || panelOpen() || !!dialog?.open || hasDesktopContents;
     });
     setExpanded(panelOpen() || !!dialog?.open);
-    if (panelOpen()) document.dispatchEvent(new Event('reading-contents-open'));
+    if (panelClose) panelClose.hidden = !panelOpen();
+    document.dispatchEvent(new Event('reading-contents-change'));
   }
   panelClose?.addEventListener('click', () => {
     panelPreference = false;
-    syncPanel();
+    syncContents();
     visibleButton()?.focus({ preventScroll: true });
   });
-  if (panelClose) panelClose.hidden = false;
   panel?.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       panelClose?.click();
       event.preventDefault();
     }
   });
-  syncPanel();
+  syncContents();
   const updateHeader = () => {
     document.documentElement.style.setProperty(
       '--mobile-header-height',
@@ -61,11 +68,10 @@ export function initResponsive() {
 
   if (dialog) {
     buttons.forEach((button) => {
-      button.hidden = false;
       button.addEventListener('click', () => {
         if (panel && docked.matches) {
           panelPreference = !panelOpen();
-          syncPanel();
+          syncContents();
           if (panelOpen()) desktopHeading?.focus({ preventScroll: true });
           return;
         }
@@ -74,8 +80,8 @@ export function initResponsive() {
           return;
         }
         trigger = button;
-        setExpanded(true);
         openDialog(dialog);
+        syncContents();
       });
     });
     dialog.querySelector('.contents-close')?.addEventListener('click', () => dialog.close());
@@ -113,8 +119,7 @@ export function initResponsive() {
       }),
     );
     dialog.addEventListener('close', () => {
-      setExpanded(false);
-      syncPanel();
+      syncContents();
       if (destination && !document.querySelector('dialog[open]')) {
         destination.tabIndex = -1;
         destination.focus({ preventScroll: true });
@@ -135,7 +140,7 @@ export function initResponsive() {
   function settleLayout() {
     const active = document.activeElement as HTMLElement | null;
     if (dialog?.open) dialog.close();
-    syncPanel();
+    syncContents();
     if (active && active !== document.body && !active.getClientRects().length) {
       const key = active.dataset.focusKey;
       const equivalent =

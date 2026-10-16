@@ -1,0 +1,548 @@
+{
+  "checkedAt": "2026-10-16T17:03:29.570Z",
+  "origin": "http://127.0.0.1:8788/",
+  "policy": "preview",
+  "canonicalPages": 26,
+  "redirectRules": 21,
+  "checks": [
+    {
+      "uri": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/archives/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/archives/2022/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/archives/2022/01/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/archives/2020/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/archives/2020/10/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/数学公式/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/网站/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/写作/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/AutuSwing/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/Cloudflare/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/GitHub/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/Hexo/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/HexoThemes/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/MathJax/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/Pages/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/tags/Workers/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/categories/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/categories/功能演示/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/categories/网站建设/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/post/55b0541c/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/post/4c6caf67/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/post/4e395565/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/about/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/links/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/post/4c6caf67.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4c6caf67/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4c6caf67/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4c6caf67?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/18/网站笔记/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/18/网站笔记/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/18/网站笔记?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1"
+    },
+    {
+      "uri": "/post/4e395565.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4e395565/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4e395565/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/4e395565?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2020/10/01/math-notebook/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2020/10/01/math-notebook/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2020/10/01/math-notebook?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1"
+    },
+    {
+      "uri": "/post/55b0541c.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/55b0541c/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/55b0541c/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/p/55b0541c?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1"
+    },
+    {
+      "uri": "/post/55b0541c?from=phase5",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5"
+    },
+    {
+      "uri": "/missing-check/",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/img/missing-check.png",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/_astro/missing-check.js",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/_headers",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/_redirects",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/redirects.json",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null
+    },
+    {
+      "uri": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.Chh9yvh3.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.Chh9yvh3.js",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "status": 200,
+      "type": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/katex.min.css",
+      "status": 200,
+      "type": "text/css",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/katex.min.css",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null
+    },
+    {
+      "uri": "/img/avatar.png",
+      "status": 200,
+      "type": "image/png",
+      "cache": "public, max-age=86400",
+      "location": null
+    },
+    {
+      "uri": "/img/avatar.png",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=86400",
+      "location": null
+    },
+    {
+      "uri": "/rss.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/rss.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/atom.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/atom.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/sitemap.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/sitemap.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/search.json",
+      "status": 200,
+      "type": "application/json",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/search.json",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 200,
+      "type": "application/manifest+json",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/sw.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "cache": "no-cache",
+      "location": null
+    },
+    {
+      "uri": "/post/55b0541c/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    },
+    {
+      "uri": "/robots.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null
+    }
+  ]
+}

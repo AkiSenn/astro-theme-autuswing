@@ -11,21 +11,6 @@ const t = translate();
 ---
 
 <div class="contents-access">
-  <button
-    class="contents-open js-control"
-    data-focus-key="contents"
-    type="button"
-    aria-haspopup="dialog"
-    aria-controls="reading-contents"
-    aria-expanded="false"
-    hidden
-  >
-    <Glyph name="book" />
-    <span>{t('toc')}</span>
-    <span class="contents-count" aria-hidden="true">
-      {headings.length}
-    </span>
-  </button>
   <noscript>
     <details class="contents-fallback">
       <summary>{t('toc')}</summary>
@@ -35,7 +20,9 @@ const t = translate();
 </div>
 <dialog class="contents-dialog" id="reading-contents" aria-labelledby="reading-contents-title">
   <header class="contents-dialog-header">
-    <h2 id="reading-contents-title">{t('toc')}</h2>
+    <h2 id="reading-contents-title">
+      {t('toc')} <span class="contents-count">{headings.length}</span>
+    </h2>
     <button class="contents-close icon-button" type="button" aria-label={t('close')} autofocus>
       <Glyph name="close" />
     </button>

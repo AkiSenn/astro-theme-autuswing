@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-16T17:07:13.505Z",
+  "checks": [
+    {
+      "engine": "edge",
+      "width": 1366,
+      "articleScrollBefore": 3905,
+      "scrollY": 3905,
+      "activeVisible": true
+    },
+    {
+      "engine": "edge",
+      "width": 1920,
+      "articleScrollBefore": 3905,
+      "scrollY": 3905,
+      "activeVisible": true
+    },
+    {
+      "engine": "webkit",
+      "width": 1366,
+      "articleScrollBefore": 3900,
+      "scrollY": 3900,
+      "activeVisible": true
+    },
+    {
+      "engine": "webkit",
+      "width": 1920,
+      "articleScrollBefore": 4372,
+      "scrollY": 4372,
+      "activeVisible": true
+    }
+  ]
+}
