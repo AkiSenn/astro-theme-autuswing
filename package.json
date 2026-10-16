@@ -1,9 +1,14 @@
 {
-  "name": "autuswing-astro",
+  "name": "astro-theme-autuswing",
   "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "MIT",
+  "description": "Autuswing for Astro — a responsive static blog theme inspired by Yelee.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkiSenn/astro-theme-autuswing.git"
+  },
   "engines": {
     "node": ">=22.22.0"
   },
