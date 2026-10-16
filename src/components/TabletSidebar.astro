@@ -8,12 +8,13 @@ const avatar = await avatarSource();
 interface Props {
   path: string;
   hasContents: boolean;
+  reading?: boolean;
 }
-const { path, hasContents } = Astro.props;
+const { path, hasContents, reading = false } = Astro.props;
 const t = translate();
 ---
 
-<aside class="tablet-sidebar" aria-label={t('navigation')}>
+<aside class:list={['tablet-sidebar', { 'reading-rail': reading }]} aria-label={t('navigation')}>
   <a
     class="rail-brand avatar-home"
     data-focus-key="brand"
@@ -43,6 +44,8 @@ const t = translate();
       <button
         class="contents-open icon-button js-control"
         data-focus-key="contents"
+        data-open-label={reading ? t('expand_toc') : undefined}
+        data-close-label={reading ? t('collapse_toc') : undefined}
         type="button"
         aria-label={t('toc')}
         title={t('toc')}

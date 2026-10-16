@@ -15,6 +15,7 @@ import DesktopSidebar from '../components/DesktopSidebar.astro';
 import MobileHeader from '../components/MobileHeader.astro';
 import TabletSidebar from '../components/TabletSidebar.astro';
 import ArticleContents from '../components/ArticleContents.astro';
+import ReadingSidebar from '../components/ReadingSidebar.astro';
 import Footer from '../components/Footer.astro';
 import Search from '../components/Search.astro';
 import Glyph from '../components/Glyph.astro';
@@ -27,6 +28,7 @@ interface Props {
   math?: boolean;
 }
 const { path, title, post, noindex, math = post?.math || false } = Astro.props;
+const isArticle = post?.entry.collection === 'posts';
 const headings =
   post &&
   theme.reading.toc &&
@@ -57,11 +59,27 @@ const background = theme.backgrounds.length
         .js-control {
           display: none !important;
         }
+        @media screen and (1000px <= width < 1280px) {
+          .article-page .contents-access {
+            display: block;
+          }
+        }
+        @media screen and (1280px <= width < 1440px) {
+          .article-page .reading-sidebar {
+            display: flex !important;
+          }
+        }
       </style>
     </noscript>
   </head>
   <body
-    class:list={[{ 'article-page': post?.entry.collection === 'posts' }]}
+    class:list={[
+      {
+        'article-page': isArticle,
+        'home-page': path === '/',
+        'has-reading-contents': isArticle && headings.length > 0,
+      },
+    ]}
     data-preview={String(preview)}
   >
     <Icons />
@@ -75,8 +93,9 @@ const background = theme.backgrounds.length
       {t('skip')}
     </a>
     {theme.reading.progress && <div class="reading-progress" aria-hidden="true"></div>}
-    <DesktopSidebar path={path} title={post?.title} headings={headings} />
-    <TabletSidebar path={path} hasContents={headings.length > 0} />
+    {!isArticle && <DesktopSidebar path={path} title={post?.title} headings={headings} />}
+    <TabletSidebar path={path} hasContents={headings.length > 0} reading={isArticle} />
+    {isArticle && headings.length > 0 && <ReadingSidebar title={post!.title} headings={headings} />}
     <MobileHeader path={path} />
     <div class="main-shell">
       {headings.length > 0 && <ArticleContents title={post!.title} headings={headings} />}

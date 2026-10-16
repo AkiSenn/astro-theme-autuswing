@@ -17,6 +17,9 @@ html:has(dialog[open]) {
 .compact-social {
   display: none;
 }
+.reading-sidebar {
+  display: none;
+}
 .main-shell {
   margin-left: var(--layout-sidebar);
   max-width: none;
@@ -237,8 +240,7 @@ html:has(dialog[open]) {
     flex-basis: 180px;
   }
 }
-/* Compact desktop profile. Article pages keep their centered column and give
-   the TOC the space left after the profile, navigation and tools. */
+/* Full desktop branding remains on home and ordinary pages. */
 @media screen and (min-width: 1000px) {
   .desktop-sidebar .profile {
     padding-bottom: 12px;
@@ -266,71 +268,15 @@ html:has(dialog[open]) {
   .article-page .article-layout:has(> .mica-article) {
     max-width: var(--reading-width);
   }
-  .article-page .desktop-sidebar.sidebar {
-    padding: 16px 24px;
-    overflow-y: hidden;
+  .home-page .desktop-sidebar .profile {
+    padding-bottom: 20px;
   }
-  .article-page .desktop-sidebar .profile {
-    padding-bottom: 10px;
-  }
-  .article-page .desktop-sidebar .profile h2 {
-    margin: 8px 0 2px;
-  }
-  .article-page .desktop-sidebar .profile p {
-    line-height: 1.6;
-  }
-  .article-page .desktop-sidebar .site-nav {
-    gap: 0;
-  }
-  .article-page .desktop-sidebar .site-nav a {
-    min-height: 40px;
-    padding-block: 6px;
-  }
-  .article-page .desktop-sidebar .desktop-contents {
-    flex: 1 1 0;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-    margin-top: 12px;
-  }
-  .article-page .desktop-sidebar .sidebar-bottom {
-    margin-top: 10px;
-    padding-top: 8px;
-  }
-  .article-page .desktop-sidebar:not(:has(.desktop-contents)) .sidebar-bottom {
-    margin-top: auto;
-  }
-  .article-page .desktop-sidebar .profile-description {
-    display: block;
-    margin-bottom: 4px;
-    line-height: 1.6;
-  }
-  .article-page .desktop-sidebar .social-links {
-    gap: 0 10px;
-    margin-block: 0;
-  }
-  .article-page .desktop-sidebar .social-links a {
-    min-height: 32px;
+  .home-page .desktop-sidebar .site-nav {
+    gap: 4px;
   }
 }
-/* Very short desktop windows use one sidebar scroll area, so controls remain
-   reachable even when the fixed profile/navigation leave no usable TOC space. */
-@media screen and (min-width: 1000px) and (max-height: 650px) {
-  .article-page .desktop-sidebar.sidebar {
-    overflow-y: auto;
-  }
-  .article-page .desktop-sidebar .desktop-contents {
-    flex: 0 0 auto;
-    overflow-y: visible;
-  }
-}
-@media (720px <= width < 1000px) {
-  :root {
-    --layout-sidebar: 72px;
-  }
-  .desktop-sidebar.sidebar {
-    display: none;
-  }
+/* One rail implementation serves tablets and desktop reading pages. */
+@media (min-width: 720px) {
   .tablet-sidebar {
     display: flex;
     flex-direction: column;
@@ -390,6 +336,14 @@ html:has(dialog[open]) {
     flex-direction: column;
     gap: 8px;
   }
+}
+@media (720px <= width < 1000px) {
+  :root {
+    --layout-sidebar: 72px;
+  }
+  .desktop-sidebar.sidebar {
+    display: none;
+  }
   .main-shell {
     padding-inline: 24px;
   }
@@ -446,6 +400,100 @@ html:has(dialog[open]) {
       font-size: 12px;
       letter-spacing: 0;
     }
+  }
+}
+@media screen and (min-width: 1000px) {
+  body:not(.article-page) > .tablet-sidebar {
+    display: none;
+  }
+  .article-page {
+    --layout-sidebar: 72px;
+    --reading-contents-width: 260px;
+  }
+  .article-page .compact-social {
+    display: block;
+  }
+  .article-page .compact-social .social-links {
+    margin: 0 0 20px;
+    gap: 8px 16px;
+  }
+  .article-page .compact-social a {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .reading-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .reading-sidebar-header h2 {
+    margin: 0;
+    font-size: 14px;
+  }
+  .reading-contents-close {
+    width: 36px;
+    height: 36px;
+    flex: none;
+  }
+  .reading-sidebar-post {
+    margin: 12px 0 16px;
+    font-size: 13px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  .reading-sidebar-scroll {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scroll-padding-block: 12px;
+  }
+  .reading-sidebar-scroll .toc {
+    margin: 0;
+  }
+  .reading-sidebar .toc a {
+    display: block;
+    padding: 9px 6px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .reading-sidebar .toc a.active,
+  .reading-rail .contents-open[aria-expanded='true'] {
+    color: var(--text);
+    background: var(--green-soft);
+    box-shadow: inset 3px 0 var(--green);
+  }
+}
+@media screen and (min-width: 1280px) {
+  /* Keep the reading column fixed when the dock is collapsed. The reserved
+     gutter belongs only to article pages with a TOC, never to the home page. */
+  .article-page.has-reading-contents .main-shell {
+    margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
+  }
+  .article-page .reading-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 var(--layout-sidebar);
+    width: var(--reading-contents-width);
+    height: 100dvh;
+    padding: 16px 16px 20px;
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+    z-index: 20;
+    overflow: hidden;
+  }
+  .article-page[data-reading-contents='closed'] .reading-sidebar {
+    display: none;
+  }
+}
+@media screen and (1280px <= width < 1440px) {
+  .article-page:not([data-reading-contents='open']) .reading-sidebar {
+    display: none;
   }
 }
 @media (width < 1000px) {
@@ -647,6 +695,7 @@ html:has(dialog[open]) {
   }
 }
 @media print {
+  .reading-sidebar,
   .desktop-sidebar.sidebar,
   .tablet-sidebar,
   .mobile-header,

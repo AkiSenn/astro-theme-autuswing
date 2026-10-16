@@ -16,13 +16,7 @@ test('Nginx delivers small avatars, math and comments-disabled pages without fai
     await page.goto('/post/4e395565/');
     await expect(page.locator('.katex')).toHaveCount(4);
     await page.evaluate(() => document.fonts.ready);
-    const avatar = page.locator(
-      width < 720
-        ? '.mobile-brand img'
-        : width < 1000
-          ? '.rail-brand img'
-          : '.desktop-sidebar .avatar',
-    );
+    const avatar = page.locator(width < 720 ? '.mobile-brand img' : '.rail-brand img');
     expect(await avatar.getAttribute('src')).toMatch(/\/_astro\/.*\.webp$/);
     expect(
       await avatar.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth === 144),

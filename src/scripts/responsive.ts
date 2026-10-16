@@ -2,15 +2,53 @@ import { openDialog, restoreDialogFocus } from './dialogs';
 
 export function initResponsive() {
   const wide = matchMedia('(min-width: 1000px)'),
+    docked = matchMedia('(min-width: 1280px)'),
+    expandedDefault = matchMedia('(min-width: 1440px)'),
     compact = matchMedia('(min-width: 720px)'),
     header = document.querySelector<HTMLElement>('.mobile-header'),
     dialog = document.querySelector<HTMLDialogElement>('.contents-dialog'),
-    desktopHeading = document.querySelector<HTMLElement>('#desktop-contents-title'),
+    desktopHeading = document.querySelector<HTMLElement>(
+      '#reading-sidebar-title,#desktop-contents-title',
+    ),
+    panel = document.querySelector<HTMLElement>('.reading-sidebar'),
+    panelClose = document.querySelector<HTMLButtonElement>('.reading-contents-close'),
     buttons = [...document.querySelectorAll<HTMLButtonElement>('.contents-open,.goto-toc')];
   let trigger: HTMLElement | null = null;
+  let panelPreference: boolean | null = null;
   const visibleButton = () => buttons.find((button) => button.getClientRects().length) || null;
   const setExpanded = (value: boolean) =>
     buttons.forEach((button) => button.setAttribute('aria-expanded', String(value)));
+  const panelOpen = () => !!panel && docked.matches && (panelPreference ?? expandedDefault.matches);
+  function syncPanel() {
+    if (!panel) return;
+    if (panelPreference === null) delete document.body.dataset.readingContents;
+    else document.body.dataset.readingContents = panelPreference ? 'open' : 'closed';
+    buttons.forEach((button) => {
+      button.setAttribute('aria-controls', docked.matches ? panel!.id : 'reading-contents');
+      if (docked.matches) button.removeAttribute('aria-haspopup');
+      else button.setAttribute('aria-haspopup', 'dialog');
+      const label = panelOpen() ? button.dataset.closeLabel : button.dataset.openLabel;
+      if (label) {
+        button.title = label;
+        button.setAttribute('aria-label', label);
+      }
+    });
+    setExpanded(panelOpen() || !!dialog?.open);
+    if (panelOpen()) document.dispatchEvent(new Event('reading-contents-open'));
+  }
+  panelClose?.addEventListener('click', () => {
+    panelPreference = false;
+    syncPanel();
+    visibleButton()?.focus({ preventScroll: true });
+  });
+  if (panelClose) panelClose.hidden = false;
+  panel?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      panelClose?.click();
+      event.preventDefault();
+    }
+  });
+  syncPanel();
   const updateHeader = () => {
     document.documentElement.style.setProperty(
       '--mobile-header-height',
@@ -25,7 +63,13 @@ export function initResponsive() {
     buttons.forEach((button) => {
       button.hidden = false;
       button.addEventListener('click', () => {
-        if (wide.matches) {
+        if (panel && docked.matches) {
+          panelPreference = !panelOpen();
+          syncPanel();
+          if (panelOpen()) desktopHeading?.focus({ preventScroll: true });
+          return;
+        }
+        if (wide.matches && !panel) {
           desktopHeading?.focus();
           return;
         }
@@ -70,6 +114,7 @@ export function initResponsive() {
     );
     dialog.addEventListener('close', () => {
       setExpanded(false);
+      syncPanel();
       if (destination && !document.querySelector('dialog[open]')) {
         destination.tabIndex = -1;
         destination.focus({ preventScroll: true });
@@ -79,7 +124,7 @@ export function initResponsive() {
         restoreDialogFocus(
           trigger?.getClientRects().length
             ? trigger
-            : wide.matches
+            : wide.matches && desktopHeading?.getClientRects().length
               ? desktopHeading
               : visibleButton(),
         );
@@ -90,6 +135,7 @@ export function initResponsive() {
   function settleLayout() {
     const active = document.activeElement as HTMLElement | null;
     if (dialog?.open) dialog.close();
+    syncPanel();
     if (active && active !== document.body && !active.getClientRects().length) {
       const key = active.dataset.focusKey;
       const equivalent =
@@ -97,7 +143,10 @@ export function initResponsive() {
         [...document.querySelectorAll<HTMLElement>('[data-focus-key]')].find(
           (node) => node.dataset.focusKey === key && node.getClientRects().length,
         );
-      (equivalent || (wide.matches ? desktopHeading : visibleButton()))?.focus({
+      (
+        equivalent ||
+        (wide.matches && desktopHeading?.getClientRects().length ? desktopHeading : visibleButton())
+      )?.focus({
         preventScroll: true,
       });
     }
@@ -105,4 +154,6 @@ export function initResponsive() {
   }
   wide.addEventListener('change', settleLayout);
   compact.addEventListener('change', settleLayout);
+  docked.addEventListener('change', settleLayout);
+  expandedDefault.addEventListener('change', settleLayout);
 }

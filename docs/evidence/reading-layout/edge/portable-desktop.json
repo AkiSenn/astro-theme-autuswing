@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-16T16:07:30.309Z",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.4px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 72,
+      "panelWidth": 260,
+      "panelHeight": 768,
+      "centerDifference": 0,
+      "sidebarHeight": 768,
+      "sidebarScrollHeight": 768,
+      "tocHeight": 624,
+      "tocScrollHeight": 1187,
+      "bottom": 752,
+      "rootOverflow": -15
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.4px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 72,
+      "panelWidth": 260,
+      "panelHeight": 900,
+      "centerDifference": 0,
+      "sidebarHeight": 900,
+      "sidebarScrollHeight": 900,
+      "tocHeight": 756,
+      "tocScrollHeight": 1187,
+      "bottom": 884,
+      "rootOverflow": -15
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.4px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 72,
+      "panelWidth": 260,
+      "panelHeight": 1080,
+      "centerDifference": 0,
+      "sidebarHeight": 1080,
+      "sidebarScrollHeight": 1080,
+      "tocHeight": 936,
+      "tocScrollHeight": 1187,
+      "bottom": 1064,
+      "rootOverflow": -15
+    },
+    {
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.4px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 72,
+      "panelWidth": 260,
+      "panelHeight": 1440,
+      "centerDifference": 0,
+      "sidebarHeight": 1440,
+      "sidebarScrollHeight": 1440,
+      "tocHeight": 1296,
+      "tocScrollHeight": 1296,
+      "bottom": 1424,
+      "rootOverflow": -15
+    }
+  ]
+}

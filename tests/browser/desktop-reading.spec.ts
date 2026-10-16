@@ -1,274 +1,193 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
+import AxeBuilder from '@axe-core/playwright';
 
-const baselineDir = 'docs/evidence/desktop-reading';
-const dir = process.env.DESKTOP_READING_EVIDENCE_DIR || baselineDir;
+const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/reading-layout/edge';
+const baseline = JSON.parse(fs.readFileSync('docs/evidence/reading-layout/before.json', 'utf8'));
 fs.mkdirSync(dir, { recursive: true });
-const baseline = JSON.parse(fs.readFileSync(`${baselineDir}/before.json`, 'utf8'));
-const viewports = [
+const views = [
   { width: 1366, height: 768 },
   { width: 1440, height: 900 },
   { width: 1920, height: 1080 },
+  { width: 2560, height: 1440 },
 ];
-const selectors = [
-  '.main-shell',
-  '#main',
-  '.article-layout',
-  '.article .prose',
-  '.desktop-sidebar',
-  '.desktop-sidebar .profile',
-  '.desktop-sidebar .site-nav',
-  '.desktop-contents',
-  '.sidebar-bottom',
-  '.post-card',
-  '.tablet-sidebar',
-  '.mobile-header',
-];
-async function metrics(page: Page) {
-  return page.evaluate(
-    (selectors) =>
-      Object.fromEntries(
-        selectors.map((selector) => {
-          const el = document.querySelector<HTMLElement>(selector);
-          if (!el) return [selector, null];
-          const b = el.getBoundingClientRect(),
-            s = getComputedStyle(el);
-          return [
-            selector,
-            {
-              x: b.x,
-              y: b.y,
-              width: b.width,
-              height: b.height,
-              fontSize: s.fontSize,
-              lineHeight: s.lineHeight,
-              color: s.color,
-              background: s.backgroundColor,
-              display: s.display,
-              overflowY: s.overflowY,
-              scrollHeight: el.scrollHeight,
-              clientHeight: el.clientHeight,
-            },
-          ];
-        }),
-      ),
-    selectors,
-  );
-}
-async function prepare(page: Page, viewport: { width: number; height: number }, path: string) {
-  await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
-  await page.setViewportSize(viewport);
-  await page.goto(path);
-  await page.evaluate(() => document.fonts.ready);
-}
-async function visibleControls(page: Page, height: number) {
-  for (const selector of ['.site-nav a', '.search-open', '.mode-toggle', '.social-links a']) {
-    for (const control of await page.locator(`.desktop-sidebar ${selector}`).all()) {
-      await expect(control).toBeVisible();
-      const b = (await control.boundingBox())!;
-      expect(b.y).toBeGreaterThanOrEqual(0);
-      expect(b.y + b.height).toBeLessThanOrEqual(height);
-      expect(
-        await control.evaluate((el) => {
-          const b = el.getBoundingClientRect();
-          const target = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2);
-          return target === el || (!!target && el.contains(target));
-        }),
-      ).toBe(true);
-    }
-  }
-}
-for (const viewport of viewports) {
-  test(`desktop reading remains centered with an independent TOC at ${viewport.width}x${viewport.height}`, async ({
+
+for (const viewport of views) {
+  test(`home retains the full Yelee sidebar without a contents gutter at ${viewport.width}`, async ({
     page,
   }) => {
-    await prepare(page, viewport, '/post/55b0541c/');
-    const before = baseline.measurements.find(
-      (c: any) => c.changed && c.viewport.width === viewport.width,
-    ).metrics;
-    const after = await metrics(page);
-    const prose = after['.article .prose'],
-      old = before['.article .prose'];
-    expect(prose.width - old.width).toBeCloseTo(108);
-    expect(prose.width).toBe(810);
-    expect(after['.article-layout'].width).toBe(860);
-    expect(prose.fontSize).toBe('18px');
-    expect(parseFloat(prose.lineHeight) / 18).toBeCloseTo(1.8);
-    expect(prose.x + prose.width / 2).toBeCloseTo(old.x + old.width / 2);
-    expect(prose.color).toBe(old.color);
-    const sidebar = after['.desktop-sidebar'],
-      toc = after['.desktop-contents'];
-    expect(sidebar.height).toBe(viewport.height);
-    expect(sidebar.overflowY).toBe('hidden');
-    expect(sidebar.scrollHeight).toBeLessThanOrEqual(sidebar.clientHeight + 1);
-    expect(toc.height).toBeGreaterThan(before['.desktop-contents'].height + 50);
-    expect(toc.overflowY).toBe('auto');
-    expect(toc.scrollHeight).toBeGreaterThan(toc.clientHeight);
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
-      ),
-    ).toBe(true);
-    await expect(page.locator('.desktop-sidebar .site-nav a')).toHaveCount(5);
-    await expect(page.locator('.desktop-sidebar .profile-description')).toHaveCount(0);
-    await visibleControls(page, viewport.height);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize(viewport);
+    await page.goto('/');
+    await expect(page.locator('.desktop-sidebar')).toBeVisible();
+    await expect(page.locator('.tablet-sidebar')).not.toBeVisible();
+    await expect(page.locator('.profile h2')).toHaveText('AkiSenn');
+    await expect(page.locator('.profile p')).toHaveText('记录技术与生活');
+    await expect(page.locator('.profile-site-name,.reading-sidebar,.desktop-contents')).toHaveCount(
+      0,
+    );
+    await expect(page.locator('.site-nav a[aria-current=page]')).toHaveAttribute('href', '/');
+    const sizes = await page.evaluate(() => {
+      const b = document.querySelector('.desktop-sidebar')!.getBoundingClientRect();
+      const main = document.querySelector('.main-shell')!.getBoundingClientRect();
+      const list = document.querySelector('#main')!.getBoundingClientRect();
+      return {
+        sidebar: b.width,
+        mainLeft: main.left,
+        mainWidth: list.width,
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+    expect(sizes.sidebar).toBe(272);
+    expect(sizes.mainLeft).toBe(272);
+    expect(sizes.mainWidth).toBeGreaterThan(900);
+    expect(sizes.mainWidth).toBeLessThanOrEqual(1120);
+    expect(sizes.overflow).toBeLessThanOrEqual(1);
+    for (const control of await page
+      .locator(
+        '.desktop-sidebar .site-nav a,.desktop-sidebar .site-tools button,.desktop-sidebar .social-links a',
+      )
+      .all()) {
+      const b = (await control.boundingBox())!;
+      expect(b.y).toBeGreaterThanOrEqual(0);
+      expect(b.y + b.height).toBeLessThanOrEqual(viewport.height);
+    }
     await page.screenshot({
-      path: `${dir}/after-${viewport.width}x${viewport.height}.png`,
+      path: `${dir}/home-${viewport.width}x${viewport.height}.png`,
       animations: 'disabled',
     });
-    fs.writeFileSync(
-      `${dir}/after-${viewport.width}.json`,
-      JSON.stringify({ checkedAt: new Date().toISOString(), viewport, before, after }, null, 2) +
-        '\n',
-    );
-    const bottomBefore = await page.locator('.desktop-sidebar .sidebar-bottom').boundingBox();
-    await page.locator('.desktop-contents').evaluate((el) => {
-      el.scrollTop = el.scrollHeight;
-    });
-    await expect(page.locator('.desktop-contents .toc-link').last()).toBeInViewport();
-    expect(await page.evaluate(() => scrollY)).toBe(0);
-    expect(await page.locator('.desktop-sidebar .sidebar-bottom').boundingBox()).toEqual(
-      bottomBefore,
-    );
-    const target = page.locator('.article .prose h2[id]').nth(3);
-    const id = await target.getAttribute('id');
-    await target.evaluate((el) =>
-      window.scrollTo({
-        top: el.getBoundingClientRect().top + scrollY - innerHeight * 0.25,
-        behavior: 'instant',
-      }),
-    );
-    await expect(page.locator('.desktop-contents .toc-link.active')).toHaveAttribute(
-      'href',
-      `#${id}`,
-    );
-    if (viewport.width === 1366) {
-      await page.evaluate(() => {
-        scrollTo({ top: 0, behavior: 'instant' });
-        document.querySelector('.desktop-contents')!.scrollTop = 0;
-      });
-      await page.locator('.desktop-sidebar .mode-toggle').click();
-      await page.locator('.desktop-sidebar .mode-toggle').click();
-      await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-      await page.screenshot({ path: `${dir}/after-dark-1366x768.png`, animations: 'disabled' });
-    }
   });
 }
-test('desktop home content and phone/tablet geometry and typography are unchanged', async ({
+
+test('compact page geometry and reading typography remain equal to the captured baseline', async ({
   page,
 }) => {
-  for (const c of baseline.measurements.filter((c: any) => !c.changed)) {
-    await prepare(page, c.viewport, c.path);
-    const actual = await metrics(page);
-    const expected = { ...c.metrics };
-    // The desktop profile is intentionally shorter; its navigation moves up.
-    // Main content and all compact-layout measurements remain protected.
-    if (c.viewport.width >= 1000) {
-      for (const selector of [
-        '.desktop-sidebar .profile',
-        '.desktop-sidebar .site-nav',
-        '.sidebar-bottom',
-      ]) {
-        delete actual[selector];
-        delete expected[selector];
-      }
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const item of baseline.cases.filter((c: any) => c.width < 1000)) {
+    await page.setViewportSize({ width: item.width, height: item.height });
+    await page.goto(item.path);
+    await page.evaluate(() => document.fonts.ready);
+    for (const selector of [
+      '.main-shell',
+      '#main',
+      '.article-layout',
+      '.article .prose',
+      '.post-card',
+      '.mobile-header',
+      '.tablet-sidebar',
+    ]) {
+      const actual = await page.locator(selector).evaluateAll((nodes) => {
+        const el = nodes[0];
+        if (!el) return null;
+        const b = el.getBoundingClientRect(),
+          c = getComputedStyle(el);
+        return {
+          x: b.x,
+          y: b.y,
+          width: b.width,
+          height: b.height,
+          fontSize: c.fontSize,
+          lineHeight: c.lineHeight,
+          display: c.display,
+        };
+      });
+      expect(actual, `${item.width} ${item.path} ${selector}`).toEqual(item.boxes[selector]);
     }
-    expect(actual, `${c.viewport.width} ${c.path}`).toEqual(expected);
   }
 });
 
-test('desktop profile is concise, retains SEO names and gives saved height to the TOC', async ({
+test('long docked contents scroll independently, follow active chapters and retain H2/H3 hierarchy', async ({
   page,
 }) => {
-  test.setTimeout(60000);
-  const site = JSON.parse(fs.readFileSync('src/config/site.json', 'utf8'));
-  const checks = [];
-  for (const viewport of viewports) {
-    for (const path of ['/', '/post/55b0541c/']) {
-      await prepare(page, viewport, path);
-      const profile = page.locator('.desktop-sidebar .profile');
-      await expect(profile.locator('h2')).toHaveText('AkiSenn');
-      await expect(profile.locator('p')).toHaveText('记录技术与生活');
-      await expect(profile.locator('.profile-site-name')).toHaveCount(0);
-      const style = await profile.locator('p').evaluate((el) => ({
-        fontSize: getComputedStyle(el).fontSize,
-        color: getComputedStyle(el).color,
-        brandColor: getComputedStyle(el.parentElement!.querySelector('h2')!).color,
-      }));
-      expect(style.fontSize).toBe('12px');
-      expect(style.color).not.toBe(style.brandColor);
-      expect((await profile.locator('.avatar-link').boundingBox())!.width).toBe(72);
-      await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute(
-        'content',
-        site.title,
-      );
-      expect(await page.title()).toContain(site.title);
-      await expect(
-        page.locator('link[rel="alternate"][type="application/rss+xml"]'),
-      ).toHaveAttribute('title', `${site.title} RSS`);
-      if (path.startsWith('/post/')) {
-        const previous = JSON.parse(
-          fs.readFileSync(`${baselineDir}/after-${viewport.width}.json`, 'utf8'),
-        ).after;
-        const current = await metrics(page);
-        for (const selector of ['.article .prose', '.article-layout']) {
-          expect(current[selector].fontSize).toBe(previous[selector].fontSize);
-          expect(current[selector].lineHeight).toBe(previous[selector].lineHeight);
-          expect(current[selector].color).toBe(previous[selector].color);
-          expect(current[selector].x + current[selector].width / 2).toBeCloseTo(
-            previous[selector].x + previous[selector].width / 2,
-          );
-        }
-        const saved =
-          previous['.desktop-sidebar .profile'].height -
-          current['.desktop-sidebar .profile'].height;
-        const bottomSaved = previous['.sidebar-bottom'].height - current['.sidebar-bottom'].height;
-        const gained = current['.desktop-contents'].height - previous['.desktop-contents'].height;
-        expect(saved).toBeGreaterThan(0);
-        expect(gained).toBeCloseTo(saved + bottomSaved);
-        await visibleControls(page, viewport.height);
-        checks.push({
-          viewport,
-          profileHeightBefore: previous['.desktop-sidebar .profile'].height,
-          profileHeightAfter: current['.desktop-sidebar .profile'].height,
-          tocHeight: current['.desktop-contents'].height,
-          saved,
-          bottomSaved,
-          gained,
-        });
-        await page.screenshot({
-          path: `${dir}/profile-${viewport.width}x${viewport.height}.png`,
-          animations: 'disabled',
-        });
-      } else if (viewport.width === 1440) {
-        await page.screenshot({ path: `${dir}/profile-home-1440x900.png`, animations: 'disabled' });
-      }
-    }
-  }
-  fs.writeFileSync(
-    `${dir}/profile-check.json`,
-    JSON.stringify({ checkedAt: new Date().toISOString(), checks }, null, 2) + '\n',
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.goto('/post/55b0541c/');
+  const pane = page.locator('.reading-sidebar-scroll');
+  await expect(pane.locator('.toc-level-2')).not.toHaveCount(0);
+  await expect(pane.locator('.toc-level-3')).not.toHaveCount(0);
+  const mainY = await page.evaluate(() => scrollY);
+  await pane.hover();
+  await page.mouse.wheel(0, 1000);
+  await expect.poll(() => pane.evaluate((el) => el.scrollTop)).toBeGreaterThan(100);
+  expect(await page.evaluate(() => scrollY)).toBe(mainY);
+  await pane.locator('.toc-link').last().click();
+  await expect.poll(() => page.evaluate(() => decodeURIComponent(location.hash))).not.toBe('');
+  const heading = page.locator('.article .prose h2[id]').nth(3);
+  const id = await heading.getAttribute('id');
+  await heading.evaluate((el) =>
+    scrollTo({
+      top: el.getBoundingClientRect().top + scrollY - innerHeight * 0.25,
+      behavior: 'instant',
+    }),
   );
+  await expect(pane.locator('.toc-link.active')).toHaveAttribute('href', `#${id}`);
+  await expect(pane.locator('.toc-link.active')).toBeInViewport();
+  await pane.locator('.toc').evaluate((el) => {
+    for (let i = 0; i < 120; i++) el.append(el.firstElementChild!.cloneNode(true));
+  });
+  expect(await pane.evaluate((el) => el.scrollHeight > el.clientHeight)).toBe(true);
+  expect(
+    await page.locator('.reading-sidebar').evaluate((el) => el.scrollHeight <= el.clientHeight),
+  ).toBe(true);
 });
-test('TOC height responds to remaining space rather than chapter count', async ({ page }) => {
-  const heights: number[] = [];
-  for (const height of [900, 1080]) {
-    await prepare(page, { width: 1440, height }, '/post/55b0541c/');
-    const toc = page.locator('.desktop-contents');
-    const initial = (await toc.boundingBox())!;
-    heights.push(initial.height);
-    await toc
-      .locator('.toc')
-      .evaluate((el) => el.replaceChildren(el.firstElementChild!.cloneNode(true)));
-    expect((await toc.boundingBox())!.height).toBeCloseTo(initial.height);
-    await toc.locator('.toc').evaluate((el) => {
-      const first = el.firstElementChild!;
-      for (let i = 0; i < 120; i++) el.append(first.cloneNode(true));
-    });
-    expect((await toc.boundingBox())!.height).toBeCloseTo(initial.height);
-    const sidebar = await metrics(page);
-    expect(sidebar['.desktop-sidebar'].scrollHeight).toBeLessThanOrEqual(height);
-    await visibleControls(page, height);
+
+test('narrow desktop uses a dedicated contents dialog without moving or shrinking the article', async ({
+  page,
+}) => {
+  for (const width of [1000, 1024, 1180, 1279]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/post/55b0541c/');
+    const before = await page.locator('.article-layout').boundingBox();
+    expect(before!.width).toBeGreaterThan(800);
+    await page.locator('.reading-rail .contents-open').click();
+    await expect(page.locator('#reading-contents')).toBeVisible();
+    await expect(page.locator('.reading-sidebar')).not.toBeVisible();
+    expect(await page.locator('.article-layout').boundingBox()).toEqual(before);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.reading-rail .contents-open')).toBeFocused();
+    expect(await page.locator('.article-layout').boundingBox()).toEqual(before);
   }
-  expect(heights[1] - heights[0]).toBeCloseTo(180);
+});
+
+test('navigation, panel keyboard controls, dark mode, native fallback and page-type switching remain accessible', async ({
+  page,
+  browser,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  await page.locator('.post-card-title a').first().click();
+  await expect(page.locator('.reading-rail')).toBeVisible();
+  for (const link of await page.locator('.reading-rail nav a').all()) {
+    await expect(link).toHaveAccessibleName(/.+/);
+    await expect(link).toHaveAttribute('title', /.+/);
+    await link.focus();
+    expect(await link.evaluate((el) => getComputedStyle(el).outlineStyle)).not.toBe('none');
+  }
+  await page.locator('#reading-sidebar-title').focus();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.reading-rail .contents-open')).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#reading-sidebar-title')).toBeFocused();
+  await page.locator('.reading-rail .mode-toggle').click();
+  const result = await new AxeBuilder({ page }).analyze();
+  expect(
+    result.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious'),
+  ).toEqual([]);
+  await page.screenshot({ path: `${dir}/reading-dark-1440.png`, animations: 'disabled' });
+  await page.locator('.reading-rail nav a[href="/"]').click();
+  await expect(page.locator('.desktop-sidebar')).toBeVisible();
+  await expect(page.locator('.reading-sidebar')).toHaveCount(0);
+  for (const width of [1024, 1366, 1920]) {
+    const context = await browser.newContext({
+      javaScriptEnabled: false,
+      viewport: { width, height: 900 },
+    });
+    const native = await context.newPage();
+    await native.goto('http://127.0.0.1:4322/post/55b0541c/');
+    if (width < 1280) {
+      await native.locator('.contents-fallback summary').click();
+      await expect(native.locator('.contents-fallback .toc-link').first()).toBeVisible();
+    } else await expect(native.locator('.reading-sidebar .toc-link').first()).toBeVisible();
+    await context.close();
+  }
 });

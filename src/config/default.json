@@ -82,6 +82,8 @@
   "redirect_title": "Post moved",
   "redirect_description": "This post has moved to its permanent link.",
   "redirect_continue": "Continue reading the post",
+  "collapse_toc": "Collapse article contents",
+  "expand_toc": "Expand article contents",
   "offline_title": "You're offline",
   "offline_description": "Reconnect and refresh the page to continue reading."
 }

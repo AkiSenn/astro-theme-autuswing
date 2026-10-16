@@ -14,8 +14,12 @@ const pages = [
   '/links/',
   '/about/',
 ];
-const activeShell = (width: number) =>
-  width < 720 ? '.mobile-header' : width < 1000 ? '.tablet-sidebar' : '.desktop-sidebar';
+const activeShell = (width: number, path = '/post/') =>
+  width < 720
+    ? '.mobile-header'
+    : width < 1000 || path.startsWith('/post/')
+      ? '.tablet-sidebar'
+      : '.desktop-sidebar';
 
 test('page matrix preserves one visible shell, direct navigation and comfortable single-column text', async ({
   page,
@@ -29,7 +33,7 @@ test('page matrix preserves one visible shell, direct navigation and comfortable
     await page.setViewportSize({ width, height: 900 });
     for (const path of pages) {
       await page.goto(path);
-      const shell = page.locator(activeShell(width));
+      const shell = page.locator(activeShell(width, path));
       await expect(shell).toBeVisible();
       await expect(
         page.locator('.desktop-sidebar:visible,.tablet-sidebar:visible,.mobile-header:visible'),
@@ -241,7 +245,7 @@ test('all three layouts retain navigation and native contents without JavaScript
       await page.locator('.contents-fallback .toc-link').last().click();
       expect(new URL(page.url()).hash).not.toBe('');
     } else {
-      await expect(page.locator('.desktop-contents .toc-link').first()).toBeVisible();
+      await expect(page.locator('.reading-sidebar .toc-link').first()).toBeVisible();
     }
     await context.close();
   }

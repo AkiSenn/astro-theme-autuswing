@@ -65,7 +65,8 @@ test('formulas are prerendered and ordinary posts do not load math resources', a
 test('code, TOC and lightbox keyboard interaction', async ({ page }) => {
   await page.goto('/post/55b0541c/');
   await expect(page.locator('.copy-code').first()).toBeVisible();
-  await expect(page.locator('.toc-link').first()).toBeVisible();
+  await page.locator('.reading-rail .contents-open').click();
+  await expect(page.locator('.reading-sidebar .toc-link').first()).toBeVisible();
   const image = page.locator('.prose img').first();
   await image.scrollIntoViewIfNeeded();
   await image.focus();

@@ -82,6 +82,8 @@
   "redirect_title": "文章已迁移",
   "redirect_description": "文章已迁移到新的永久链接。",
   "redirect_continue": "继续阅读原文章",
+  "collapse_toc": "收起文章目录",
+  "expand_toc": "展开文章目录",
   "offline_title": "暂时离线",
   "offline_description": "重新连接后刷新页面，即可继续阅读。"
 }

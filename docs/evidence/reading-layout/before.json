@@ -1,0 +1,1077 @@
+{
+  "checkedAt": "2026-10-16T15:57:37.031Z",
+  "cases": [
+    {
+      "width": 320,
+      "height": 900,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 0,
+          "y": 111,
+          "width": 305,
+          "height": 1351.375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 16,
+          "y": 111,
+          "width": 273,
+          "height": 1017.78125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 16,
+          "y": 196,
+          "width": 273,
+          "height": 350.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "grid"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 305,
+          "height": 111,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 0,
+          "y": 111,
+          "width": 305,
+          "height": 25693.53125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 0,
+          "y": 179,
+          "width": 305,
+          "height": 25291.9375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 0,
+          "y": 179,
+          "width": 305,
+          "height": 25291.9375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 16,
+          "y": 573.75,
+          "width": 273,
+          "height": 24265.546875,
+          "fontSize": "16px",
+          "lineHeight": "30.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 305,
+          "height": 111,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 0,
+          "y": 111,
+          "width": 375,
+          "height": 1258.578125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 16,
+          "y": 111,
+          "width": 343,
+          "height": 954.78125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 16,
+          "y": 196,
+          "width": 343,
+          "height": 287.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "grid"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 111,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 0,
+          "y": 111,
+          "width": 375,
+          "height": 23125.734375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 0,
+          "y": 179,
+          "width": 375,
+          "height": 22753.9375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 0,
+          "y": 179,
+          "width": 375,
+          "height": 22753.9375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 16,
+          "y": 534.609375,
+          "width": 343,
+          "height": 21840.28125,
+          "fontSize": "16px",
+          "lineHeight": "30.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 111,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 72,
+          "y": 0,
+          "width": 681,
+          "height": 1168.078125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 96,
+          "y": 0,
+          "width": 633,
+          "height": 864.28125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 96,
+          "y": 101,
+          "width": 633,
+          "height": 263.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 72,
+          "y": 0,
+          "width": 681,
+          "height": 20807.125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 96,
+          "y": 76,
+          "width": 633,
+          "height": 20427.328125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 96,
+          "y": 76,
+          "width": 633,
+          "height": 20427.328125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 121,
+          "y": 334.96875,
+          "width": 583,
+          "height": 19665.125,
+          "fontSize": "17px",
+          "lineHeight": "32.3px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 820,
+      "height": 900,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 72,
+          "y": 0,
+          "width": 733,
+          "height": 1010.984375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 96,
+          "y": 0,
+          "width": 685,
+          "height": 707.1875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 96,
+          "y": 101,
+          "width": 332.5,
+          "height": 293.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "grid"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 820,
+      "height": 900,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 72,
+          "y": 0,
+          "width": 733,
+          "height": 20256.125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 96,
+          "y": 76,
+          "width": 685,
+          "height": 19876.328125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 96,
+          "y": 76,
+          "width": 685,
+          "height": 19876.328125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 121,
+          "y": 334.96875,
+          "width": 635,
+          "height": 19114.125,
+          "fontSize": "17px",
+          "lineHeight": "32.3px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        }
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1079,
+          "height": 1002.5625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 312.96875,
+          "y": 0,
+          "width": 997.0625,
+          "height": 806.765625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 312.96875,
+          "y": 104.234375,
+          "width": 997.0625,
+          "height": 230.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 768,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1079,
+          "height": 19496.265625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 312.96875,
+          "y": 0,
+          "width": 997.0625,
+          "height": 19300.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 381.5,
+          "y": 36,
+          "width": 860,
+          "height": 19264.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 406.5,
+          "y": 317.375,
+          "width": 810,
+          "height": 18479.859375,
+          "fontSize": "18px",
+          "lineHeight": "32.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 768,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1153,
+          "height": 1004.640625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 315.1875,
+          "y": 0,
+          "width": 1066.625,
+          "height": 808.84375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 315.1875,
+          "y": 106.3125,
+          "width": 1066.625,
+          "height": 230.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1153,
+          "height": 19496.265625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 315.1875,
+          "y": 0,
+          "width": 1066.625,
+          "height": 19300.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 418.5,
+          "y": 36,
+          "width": 860,
+          "height": 19264.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 443.5,
+          "y": 317.375,
+          "width": 810,
+          "height": 18479.859375,
+          "fontSize": "18px",
+          "lineHeight": "32.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 900,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1633,
+          "height": 1006.328125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 528.5,
+          "y": 0,
+          "width": 1120,
+          "height": 810.53125,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 528.5,
+          "y": 108,
+          "width": 1120,
+          "height": 230.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 1080,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 1633,
+          "height": 19496.265625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 528.5,
+          "y": 0,
+          "width": 1120,
+          "height": 19300.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 658.5,
+          "y": 36,
+          "width": 860,
+          "height": 19264.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 683.5,
+          "y": 317.375,
+          "width": 810,
+          "height": 18479.859375,
+          "fontSize": "18px",
+          "lineHeight": "32.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 1080,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "path": "/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 2273,
+          "height": 1203.796875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 848.5,
+          "y": 0,
+          "width": 1120,
+          "height": 1008,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": null,
+        ".article .prose": null,
+        ".post-card": {
+          "x": 848.5,
+          "y": 108,
+          "width": 1120,
+          "height": 230.09375,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        },
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 1440,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "path": "/post/55b0541c/",
+      "boxes": {
+        ".main-shell": {
+          "x": 272,
+          "y": 0,
+          "width": 2273,
+          "height": 19496.265625,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        "#main": {
+          "x": 848.5,
+          "y": 0,
+          "width": 1120,
+          "height": 19300.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article-layout": {
+          "x": 978.5,
+          "y": 36,
+          "width": 860,
+          "height": 19264.46875,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "block"
+        },
+        ".article .prose": {
+          "x": 1003.5,
+          "y": 317.375,
+          "width": 810,
+          "height": 18479.859375,
+          "fontSize": "18px",
+          "lineHeight": "32.4px",
+          "display": "block"
+        },
+        ".post-card": null,
+        ".mobile-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".tablet-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "none"
+        },
+        ".desktop-sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 272,
+          "height": 1440,
+          "fontSize": "15px",
+          "lineHeight": "25.5px",
+          "display": "flex"
+        }
+      }
+    }
+  ]
+}
