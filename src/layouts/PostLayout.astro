@@ -49,8 +49,8 @@ const related = theme.reading.related
     >
       <SurfaceWallpaper wallpaper={post.data.wallpaper} />
       <header class="article-header">
-        <a class="back-link" href="/archives/">
-          ← {t('all_posts')}
+        <a class="back-link" data-article-back href="/archives/" aria-label={t('back')}>
+          <span aria-hidden="true">←</span> {t('back')}
         </a>
         <h1>{post.title}</h1>
         <div class="post-meta">

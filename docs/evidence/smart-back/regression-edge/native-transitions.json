@@ -1,0 +1,162 @@
+[
+  {
+    "path": "/",
+    "transition": false
+  },
+  {
+    "path": "/post/55b0541c/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "translateY(14px)",
+            "opacity": "0",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "none",
+            "opacity": "1",
+            "computedOffset": 1
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "replace",
+            "opacity": "1",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "opacity": "0",
+            "computedOffset": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/post/4c6caf67/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "translateY(14px)",
+            "opacity": "0",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "none",
+            "opacity": "1",
+            "computedOffset": 1
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "replace",
+            "opacity": "1",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "opacity": "0",
+            "computedOffset": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/about/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "translateY(14px)",
+            "opacity": "0",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "transform": "none",
+            "opacity": "1",
+            "computedOffset": 1
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "offset": 0,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "replace",
+            "opacity": "1",
+            "computedOffset": 0
+          },
+          {
+            "offset": 1,
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "composite": "auto",
+            "opacity": "0",
+            "computedOffset": 1
+          }
+        ]
+      }
+    ]
+  }
+]

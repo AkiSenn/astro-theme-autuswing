@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-16T19:22:28.202Z",
+  "scope": "Article smart return; local acceptance only",
+  "browser": {
+    "edge": {
+      "startTime": "2026-10-16T19:16:00.525Z",
+      "duration": 15888.937000000002,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "startTime": "2026-10-16T19:16:54.675Z",
+      "duration": 134069.321,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "edge-regression": {
+      "startTime": "2026-10-16T19:18:49.616Z",
+      "duration": 78321.365,
+      "expected": 32,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "browserChecks": 50,
+  "unitTests": 20,
+  "newUnitTests": 4,
+  "httpChecks": 77,
+  "viewportsPerEngine": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 820,
+      "height": 1180
+    },
+    {
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "scroll": {
+    "edge": {
+      "before": 308,
+      "restored": 308
+    },
+    "webkit": {
+      "before": 69,
+      "restored": 69
+    }
+  },
+  "source": {
+    "checkedAt": "2026-10-16T19:16:56.560Z",
+    "originalFilesVerified": 652,
+    "originalGitStatusesUnchanged": [
+      "E:/hexo-akisenn",
+      "E:/yelee-next"
+    ],
+    "unchanged": true
+  },
+  "output": {
+    "checkedAt": "2026-10-16T19:16:56.140Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "typeCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "limitations": [
+    "Targeted regression suites; not the full site suite",
+    "No Firefox or physical-device run this round"
+  ],
+  "productionDeployment": false
+}

@@ -1,0 +1,216 @@
+
+> astro-theme-autuswing@0.2.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: back resolves home, archive, taxonomy and an earlier article by browser-owned entry key
+ok 1 - back resolves home, archive, taxonomy and an earlier article by browser-owned entry key
+  ---
+  duration_ms: 1.822
+  type: 'test'
+  ...
+# Subtest: back skips article fragments and repeated visits to the same article after reload
+ok 2 - back skips article fragments and repeated visits to the same article after reload
+  ---
+  duration_ms: 0.2358
+  type: 'test'
+  ...
+# Subtest: direct entries, same-document-only history and forward entries do not invent a destination
+ok 3 - direct entries, same-document-only history and forward entries do not invent a destination
+  ---
+  duration_ms: 0.1881
+  type: 'test'
+  ...
+# Subtest: back refuses foreign origins, missing URLs, missing entry keys and gaps
+ok 4 - back refuses foreign origins, missing URLs, missing entry keys and gaps
+  ---
+  duration_ms: 0.2064
+  type: 'test'
+  ...
+# [1:1-1:24: Failed to parse Markdown file "undefined":
+# Unsupported Hexo tag syntax; migrate it explicitly before building] {
+#   ancestors: [
+#     {
+#       type: 'text',
+#       value: '{% unsupported value %}',
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 24, offset: 23 }
+#   },
+#   reason: 'Unsupported Hexo tag syntax; migrate it explicitly before building',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# Subtest: public IDs are persistent; explicit URLs and leading zeros are retained
+ok 5 - public IDs are persistent; explicit URLs and leading zeros are retained
+  ---
+  duration_ms: 1.65
+  type: 'test'
+  ...
+# Subtest: new posts use root IDs while legacy links retain /post/
+ok 6 - new posts use root IDs while legacy links retain /post/
+  ---
+  duration_ms: 0.2812
+  type: 'test'
+  ...
+# Subtest: route collisions include case, percent encoding and index.html
+ok 7 - route collisions include case, percent encoding and index.html
+  ---
+  duration_ms: 0.4937
+  type: 'test'
+  ...
+# Subtest: YAML keeps dates and numeric-looking identifiers in their original semantics
+ok 8 - YAML keeps dates and numeric-looking identifiers in their original semantics
+  ---
+  duration_ms: 2.9189
+  type: 'test'
+  ...
+# Subtest: dates use Shanghai offsets independent of the process TZ
+ok 9 - dates use Shanghai offsets independent of the process TZ
+  ---
+  duration_ms: 17.3995
+  type: 'test'
+  ...
+# Subtest: search is NFKC, multi-term AND and weighted title/tags/content
+ok 10 - search is NFKC, multi-term AND and weighted title/tags/content
+  ---
+  duration_ms: 1.0541
+  type: 'test'
+  ...
+# Subtest: all four TeX delimiters survive Markdown; code stays opaque
+ok 11 - all four TeX delimiters survive Markdown; code stays opaque
+  ---
+  duration_ms: 41.1899
+  type: 'test'
+  ...
+# Subtest: headings stay unique, h1 becomes h2 and autospace leaves code intact
+ok 12 - headings stay unique, h1 becomes h2 and autospace leaves code intact
+  ---
+  duration_ms: 4.3401
+  type: 'test'
+  ...
+# Subtest: unsupported Hexo tags fail explicitly, fenced examples are accepted
+ok 13 - unsupported Hexo tags fail explicitly, fenced examples are accepted
+  ---
+  duration_ms: 4.7301
+  type: 'test'
+  ...
+# Subtest: redirect manifest has one rule per path, stable 301 targets
+ok 14 - redirect manifest has one rule per path, stable 301 targets
+  ---
+  duration_ms: 1.4268
+  type: 'test'
+  ...
+# [1:1-1:221: Failed to parse Markdown file "undefined":
+# KaTeX failed in "Compatibility fixture" for "\\\\UnknownHistoricalCommand{x}": KaTeX parse error: Undefined control sequence: \\UnknownHistoricalCommand at position 1: \\̲U̲n̲k̲n̲o̲w̲n̲H̲i̲s̲t̲o̲r̲i̲c̲a̲l̲C̲o̲m̲m̲a̲n̲d̲{x}. Review the command before considering MathJax; no automatic fallback was applied.] {
+#   ancestors: [
+#     {
+#       type: 'element',
+#       tagName: 'span',
+#       properties: [Object],
+#       children: [Array],
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 221, offset: 220 }
+#   },
+#   reason: 'KaTeX failed in "Compatibility fixture" for "\\\\\\\\UnknownHistoricalCommand{x}": KaTeX parse error: Undefined control sequence: \\\\UnknownHistoricalCommand at position 1: \\\\̲U̲n̲k̲n̲o̲w̲n̲H̲i̲s̲t̲o̲r̲i̲c̲a̲l̲C̲o̲m̲m̲a̲n̲d̲{x}. Review the command before considering MathJax; no automatic fallback was applied.',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# [1:1-1:132: Failed to parse Markdown file "undefined":
+# KaTeX failed in "untitled article" for "\\\\PrivateMacro": KaTeX parse error: Undefined control sequence: \\PrivateMacro at position 1: \\̲P̲r̲i̲v̲a̲t̲e̲M̲a̲c̲r̲o̲. Review the command before considering MathJax; no automatic fallback was applied.] {
+#   ancestors: [
+#     {
+#       type: 'element',
+#       tagName: 'span',
+#       properties: [Object],
+#       children: [Array],
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 132, offset: 131 }
+#   },
+#   reason: 'KaTeX failed in "untitled article" for "\\\\\\\\PrivateMacro": KaTeX parse error: Undefined control sequence: \\\\PrivateMacro at position 1: \\\\̲P̲r̲i̲v̲a̲t̲e̲M̲a̲c̲r̲o̲. Review the command before considering MathJax; no automatic fallback was applied.',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# Subtest: scanner recognizes four delimiters and ignores code, HTML attributes and currency examples
+ok 15 - scanner recognizes four delimiters and ignores code, HTML attributes and currency examples
+  ---
+  duration_ms: 2.8883
+  type: 'test'
+  ...
+# Subtest: legacy flags enable KaTeX while explicit opt-out and global disable are honored
+ok 16 - legacy flags enable KaTeX while explicit opt-out and global disable are honored
+  ---
+  duration_ms: 0.2418
+  type: 'test'
+  ...
+# Subtest: unmarked and legacy-marked posts render HTML and accessible MathML at build time
+ok 17 - unmarked and legacy-marked posts render HTML and accessible MathML at build time
+  ---
+  duration_ms: 41.5093
+  type: 'test'
+  ...
+# Subtest: unsupported commands fail explicitly and identify the article and expression
+ok 18 - unsupported commands fail explicitly and identify the article and expression
+  ---
+  duration_ms: 3.6591
+  type: 'test'
+  ...
+# Subtest: macro state is shared within an article and isolated between articles
+ok 19 - macro state is shared within an article and isolated between articles
+  ---
+  duration_ms: 5.52
+  type: 'test'
+  ...
+# Subtest: search text retains the original expression once, without visual/MathML duplication
+ok 20 - search text retains the original expression once, without visual/MathML duplication
+  ---
+  duration_ms: 3.9118
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1153.6119

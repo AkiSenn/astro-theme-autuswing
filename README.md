@@ -8,6 +8,8 @@ AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，
 
 动效已更新为 [Autuswing Motion 1.0](docs/motion-system.md)：主内容使用原生跨文档转场（320ms / 14px，旧内容淡出120ms），保持静态多页面导航；侧栏不做位移动画。旧头像摇晃、缩放入场和卡片上移已移除，按钮反馈为150ms。配置入口为 `theme.motion.enable/page`，减少动画模式关闭装饰性动效。
 
+文章顶部现为[智能「← 返回」](docs/smart-back.md)：校验站内历史后返回来源并沿用浏览器滚动恢复，没有可靠目标时进入归档。冷返回搜索结果时恢复查询与界面状态。
+
 Node.js ≥22.22.0。依赖版本与锁文件已固定。
 
 ```powershell

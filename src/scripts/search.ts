@@ -14,6 +14,34 @@ export function initSearch() {
     timer: ReturnType<typeof setTimeout>,
     generation = 0,
     trigger: HTMLElement | null = null;
+  // Search is an overlay, so its query is not encoded in the page URL. Keep
+  // only this small UI snapshot on the source history entry, for a cold back
+  // navigation where the browser cannot restore the document from BFCache.
+  const navigation = window.navigation;
+  type SearchSnapshot = { query: string; scrollTop: number; selected: number };
+  function snapshot(): SearchSnapshot | undefined {
+    try {
+      const value = navigation?.currentEntry?.getState()?.autuswingSearch;
+      if (
+        typeof value?.query === 'string' &&
+        Number.isFinite(value.scrollTop) &&
+        Number.isInteger(value.selected)
+      )
+        return value;
+    } catch {}
+  }
+  function remember(value?: SearchSnapshot) {
+    try {
+      if (!navigation?.currentEntry) return;
+      const previous = navigation.currentEntry.getState();
+      if (previous != null && (typeof previous !== 'object' || Array.isArray(previous))) return;
+      if (!value && !previous?.autuswingSearch) return;
+      const state = { ...previous };
+      if (value) state.autuswingSearch = value;
+      else delete state.autuswingSearch;
+      navigation.updateCurrentEntry({ state });
+    } catch {} // A restricted history API must not prevent normal navigation.
+  }
   function load() {
     return data
       ? Promise.resolve(data)
@@ -119,7 +147,26 @@ export function initSearch() {
   dialog.addEventListener('click', (e) => {
     if (e.target === dialog) closeDialog(dialog);
   });
-  dialog.addEventListener('close', () => restoreDialogFocus(trigger));
+  dialog.addEventListener('close', () => {
+    remember();
+    restoreDialogFocus(trigger);
+  });
+  list.addEventListener('click', (event) => {
+    const link =
+      event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href]') : null;
+    if (
+      event.defaultPrevented ||
+      event.button ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      !link ||
+      link.origin !== location.origin
+    )
+      return;
+    remember({ query: input.value, scrollTop: list.scrollTop, selected });
+  });
   input.addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(run, 120);
@@ -154,5 +201,19 @@ export function initSearch() {
       e.preventDefault();
       open(document.activeElement as HTMLElement);
     }
+  });
+  addEventListener('pageshow', (event) => {
+    if (event.persisted || navigation?.activation?.navigationType !== 'traverse') return;
+    const saved = snapshot();
+    if (!saved?.query.trim() || dialog.open) return;
+    input.value = saved.query;
+    open(document.querySelector<HTMLElement>('.search-open:not([hidden])'));
+    void run().then(() => {
+      if (!dialog.open || input.value !== saved.query) return;
+      list.scrollTop = saved.scrollTop;
+      const links = [...list.querySelectorAll<HTMLAnchorElement>('a')];
+      selected = Math.min(links.length - 1, Math.max(-1, saved.selected));
+      links.forEach((link, index) => link.classList.toggle('selected', index === selected));
+    });
   });
 }
