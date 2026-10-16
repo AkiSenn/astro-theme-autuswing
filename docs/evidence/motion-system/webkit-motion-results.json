@@ -1,0 +1,653 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/motion.spec.ts",
+      "--config=playwright.cross.config.ts",
+      "--project=webkit",
+      "--reporter=list,json",
+      "--output=.local-tools/motion-webkit-targeted"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.cross.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/motion-webkit-targeted",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/motion-webkit-targeted",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "E:\\autuswing-astro\\tests\\browser",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "motion.spec.ts",
+      "file": "motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21010,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:20:03.599Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-356be6c2ec57d60dc92c",
+          "file": "motion.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "search and image dialogs use actual shared fades and a live preference change cancels an exit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:20:24.727Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-cc868bef1da99b6263ca",
+          "file": "motion.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 29272,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:147:70",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 70,
+                      "line": 147
+                    },
+                    "snippet": "  145 |   await settled(page);\n  146 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();\n> 147 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);\n      |                                                                      ^\n  148 |   for (const event of events.filter((e) => e.transition)) {\n  149 |     expect(event.skipped).toBeUndefined();\n  150 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual(["
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 70,
+                        "line": 147
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  145 |   await settled(page);\n  146 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();\n> 147 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);\n      |                                                                      ^\n  148 |   for (const event of events.filter((e) => e.transition)) {\n  149 |     expect(event.skipped).toBeUndefined();\n  150 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual([\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:147:70"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:20:28.764Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 70,
+                    "line": 147
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-9600a82fef27ddc60675",
+          "file": "motion.spec.ts",
+          "line": 126,
+          "column": 1
+        },
+        {
+          "title": "back and forward restore long-page scroll and current navigation without reinitializing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 19057,
+                  "error": {
+                    "message": "Error: Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: Timeout 5000ms exceeded while waiting on the predicate\n    at settled (E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:45:82)\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:180:9",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 82,
+                      "line": 45
+                    },
+                    "snippet": "  43 | }\n  44 | async function settled(page: Page) {\n> 45 |   await expect.poll(() => page.evaluate(() => (window as any).__pageTransition)).toBe(false);\n     |                                                                                  ^\n  46 | }\n  47 | async function freshContents(page: Page) {\n  48 |   const expected = await page"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 82,
+                        "line": 45
+                      },
+                      "message": "Error: Timeout 5000ms exceeded while waiting on the predicate\n\n  43 | }\n  44 | async function settled(page: Page) {\n> 45 |   await expect.poll(() => page.evaluate(() => (window as any).__pageTransition)).toBe(false);\n     |                                                                                  ^\n  46 | }\n  47 | async function freshContents(page: Page) {\n  48 |   const expected = await page\n    at settled (E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:45:82)\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:180:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:20:58.943Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-back-and-forward-re-17edc-tion-without-reinitializing-webkit\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-back-and-forward-re-17edc-tion-without-reinitializing-webkit\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 82,
+                    "line": 45
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-93bfcc10e892abcea499",
+          "file": "motion.spec.ts",
+          "line": 168,
+          "column": 1
+        },
+        {
+          "title": "fragment links do not navigate a document or run a page transition",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:21:18.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-37a7b6088a1fa5c30c61",
+          "file": "motion.spec.ts",
+          "line": 218,
+          "column": 1
+        },
+        {
+          "title": "functional dialog exits keep a single TOC action and handle reopening and replacements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6890,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:21:29.682Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-ea6a0e1f1b2748e38cfd",
+          "file": "motion.spec.ts",
+          "line": 230,
+          "column": 1
+        },
+        {
+          "title": "reduced motion disables page and decorative motion while keeping controls functional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:21:36.585Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-fa82e8cda4f32657867c",
+          "file": "motion.spec.ts",
+          "line": 274,
+          "column": 1
+        },
+        {
+          "title": "without the native opt-in normal MPA links and interactions work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8673,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:21:46.256Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-6e1ea2a8cb07efac602b",
+          "file": "motion.spec.ts",
+          "line": 298,
+          "column": 1
+        },
+        {
+          "title": "rapid native navigation and back interruptions settle without stale controls",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14057,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reading-rail')\nExpected: visible\nReceived: undefined\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.reading-rail') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-rail')\u001b[22m\n\u001b[2m    - waiting for navigation to finish...\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reading-rail')\nExpected: visible\nReceived: undefined\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.reading-rail') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-rail')\u001b[22m\n\u001b[2m    - waiting for navigation to finish...\u001b[22m\n\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:330:49",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 49,
+                      "line": 330
+                    },
+                    "snippet": "  328 |     // Do not wait for animation completion before issuing the next navigation.\n  329 |     await page.locator('.post-card-title a').first().click({ noWaitAfter: true });\n> 330 |     await expect(page.locator('.reading-rail')).toBeVisible();\n      |                                                 ^\n  331 |     await page.locator('.reading-rail .rail-nav a[href=\"/\"]').click({ noWaitAfter: true });\n  332 |     await expect(page.locator('.desktop-sidebar')).toBeVisible();\n  333 |   }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 49,
+                        "line": 330
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.reading-rail')\nExpected: visible\nReceived: undefined\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.reading-rail') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-rail')\u001b[22m\n\u001b[2m    - waiting for navigation to finish...\u001b[22m\n\n\n  328 |     // Do not wait for animation completion before issuing the next navigation.\n  329 |     await page.locator('.post-card-title a').first().click({ noWaitAfter: true });\n> 330 |     await expect(page.locator('.reading-rail')).toBeVisible();\n      |                                                 ^\n  331 |     await page.locator('.reading-rail .rail-nav a[href=\"/\"]').click({ noWaitAfter: true });\n  332 |     await expect(page.locator('.desktop-sidebar')).toBeVisible();\n  333 |   }\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:330:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:21:54.939Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-rapid-native-naviga-dbdf3-ttle-without-stale-controls-webkit\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-rapid-native-naviga-dbdf3-ttle-without-stale-controls-webkit\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 49,
+                    "line": 330
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-79c0ea5ac47f9502cda4",
+          "file": "motion.spec.ts",
+          "line": 320,
+          "column": 1
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17962,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:377:86",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 86,
+                      "line": 377
+                    },
+                    "snippet": "  375 |     await page.goto('/');\n  376 |     await page.locator('.post-card-title a').first().click();\n> 377 |     await expect.poll(() => page.evaluate(() => (window as any).__frozenTransition)).toBe(true);\n      |                                                                                      ^\n  378 |     expect(await page.evaluate(() => (window as any).__revealTheme)).toBe(mode);\n  379 |     const frame = await page.evaluate(() => {\n  380 |       const navigation = document.querySelector('.reading-rail')!,"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 86,
+                        "line": 377
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  375 |     await page.goto('/');\n  376 |     await page.locator('.post-card-title a').first().click();\n> 377 |     await expect.poll(() => page.evaluate(() => (window as any).__frozenTransition)).toBe(true);\n      |                                                                                      ^\n  378 |     expect(await page.evaluate(() => (window as any).__revealTheme)).toBe(mode);\n  379 |     const frame = await page.evaluate(() => {\n  380 |       const navigation = document.querySelector('.reading-rail')!,\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:377:86"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:22:13.592Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-actual-transition-f-9cea6-ell-and-selected-appearance-webkit\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\motion-webkit-targeted\\motion-actual-transition-f-9cea6-ell-and-selected-appearance-webkit\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 86,
+                    "line": 377
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-027613103b2a093e0394",
+          "file": "motion.spec.ts",
+          "line": 346,
+          "column": 1
+        },
+        {
+          "title": "responsive layout geometry is unchanged after motion cleanup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15987,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:22:32.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-133e435d916f760924d0",
+          "file": "motion.spec.ts",
+          "line": 423,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T18:20:02.447Z",
+    "duration": 166308.643,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

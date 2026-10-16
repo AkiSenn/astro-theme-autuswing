@@ -189,12 +189,8 @@ test('article content is immediately visible and motion respects user preference
   });
   await page.goto('/post/55b0541c/');
   const motion = await page.evaluate(() => (window as any).__motion);
-  expect(motion.length).toBeGreaterThan(0);
-  expect(
-    motion.every(
-      (m: any) => m.options.duration <= 200 && !JSON.stringify(m.frames).includes('opacity'),
-    ),
-  ).toBe(true);
+  // No per-card, title or avatar entrance animations on a document load.
+  expect(motion).toEqual([]);
   expect(
     await page
       .locator('.prose > p')
@@ -217,10 +213,8 @@ test('theme-disabled motion and plain article/card surfaces remain usable', asyn
   await page.route('http://127.0.0.1:4322/', async (route) => {
     const response = await route.fetch(),
       $ = load(await response.text());
-    $('html').attr('data-animate', 'false');
-    const config = JSON.parse($('#autuswing-config').text());
-    config.animations.enable = false;
-    $('#autuswing-config').text(JSON.stringify(config));
+    $('html').attr('data-motion', 'false');
+    $('#autuswing-page-motion').remove();
     $('.post-card').removeClass('mica-card');
     await route.fulfill({ response, body: $.html() });
   });

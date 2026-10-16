@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "motion": {
+        "enable": false,
+        "page": true
+      },
+      "path": "index.html",
+      "passed": true
+    },
+    {
+      "motion": {
+        "enable": false,
+        "page": true
+      },
+      "path": "post/55b0541c/index.html",
+      "passed": true
+    },
+    {
+      "motion": {
+        "enable": true,
+        "page": false
+      },
+      "path": "index.html",
+      "passed": true
+    },
+    {
+      "motion": {
+        "enable": true,
+        "page": false
+      },
+      "path": "post/55b0541c/index.html",
+      "passed": true
+    }
+  ],
+  "originalRestored": true
+}

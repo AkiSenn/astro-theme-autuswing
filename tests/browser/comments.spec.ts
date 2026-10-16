@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
-const source = fs.readFileSync('src/scripts/comments.js', 'utf8');
+// Load the real bundled adapter with its shared motion dependency. Injecting
+// raw module text bypasses Vite's import resolution and cannot test this path.
+const entry = fs.readdirSync('dist/_astro').find((name) => /^comments\..+\.js$/.test(name));
+if (!entry) throw new Error('Build the site before running comment adapter checks');
+const source = `/_astro/${entry}`;
 const labels = {
   comments_loading: '加载中',
   comments_failed: '加载失败',
@@ -69,7 +73,7 @@ for (const [provider, config] of Object.entries(configs))
         (el, settings) => el.setAttribute('data-comments-config', JSON.stringify(settings)),
         settings,
       );
-    await page.addScriptTag({ type: 'module', content: source });
+    await page.addScriptTag({ type: 'module', url: source });
     await page.locator('.comment-bar').click();
     await expect(page.locator('#comments')).toHaveAttribute('data-state', 'ready');
     const options = await page.evaluate(() => (window as any).__commentOptions);
@@ -120,7 +124,7 @@ test('comment SDK failure exposes retry and recovers using a controlled SDK', as
       }),
     ),
   );
-  await page.addScriptTag({ type: 'module', content: source });
+  await page.addScriptTag({ type: 'module', url: source });
   await page.locator('.comment-bar').click();
   await expect(page.locator('#comments')).toHaveAttribute('data-state', 'error');
   await expect(page.locator('.comment-retry')).toBeVisible();

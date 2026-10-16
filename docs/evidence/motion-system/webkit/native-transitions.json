@@ -1,0 +1,162 @@
+[
+  {
+    "path": "/",
+    "transition": false
+  },
+  {
+    "path": "/post/55b0541c/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "composite": "replace",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "opacity": "1"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "opacity": "0"
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "transform": "translateY(14px)",
+            "opacity": "0"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/post/4c6caf67/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "composite": "replace",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "opacity": "1"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "opacity": "0"
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "transform": "translateY(14px)",
+            "opacity": "0"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/about/",
+    "transition": true,
+    "contentName": "main-content",
+    "rootName": "none",
+    "animations": [
+      {
+        "name": "autuswing-page-out",
+        "pseudo": "::view-transition-old(main-content)",
+        "duration": 120,
+        "frames": [
+          {
+            "composite": "replace",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "opacity": "1"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "opacity": "0"
+          }
+        ]
+      },
+      {
+        "name": "autuswing-page-in",
+        "pseudo": "::view-transition-new(main-content)",
+        "duration": 320,
+        "frames": [
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 0,
+            "computedOffset": 0,
+            "transform": "translateY(14px)",
+            "opacity": "0"
+          },
+          {
+            "composite": "auto",
+            "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+            "offset": 1,
+            "computedOffset": 1,
+            "transform": "none",
+            "opacity": "1"
+          }
+        ]
+      }
+    ]
+  }
+]

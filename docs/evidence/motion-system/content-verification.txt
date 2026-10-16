@@ -1,0 +1,15 @@
+
+> astro-theme-autuswing@0.2.0 verify
+> node scripts/verify-content.mjs && tsx scripts/verify-output.ts
+
+{"importedFilesVerified":307,"optionalAssetsVerified":6,"posts":3,"pages":1,"originalSourceFiles":365}
+{
+  checkedAt: '2026-10-16T18:26:20.996Z',
+  canonicalPages: 26,
+  posts: 3,
+  localReferences: 879,
+  mathWrappers: 4,
+  feedEntries: 3,
+  sitemapUrls: 26,
+  redirectRules: 21
+}

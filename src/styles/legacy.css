@@ -1039,7 +1039,6 @@ dialog::backdrop {
   position: fixed;
   bottom: 28px;
   left: 50%;
-  transform: translate(-50%,6px);
   background: var(--text);
   color: var(--paper);
   border-radius: 8px;
@@ -1051,7 +1050,6 @@ dialog::backdrop {
 }
 .toast.visible {
   opacity: 1;
-  transform: translate(-50%,0);
 }
 @media(min-width:1500px) {
   .main-shell {

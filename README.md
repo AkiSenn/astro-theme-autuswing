@@ -6,6 +6,8 @@ AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，
 
 ## 本地运行
 
+动效已更新为 [Autuswing Motion 1.0](docs/motion-system.md)：主内容使用原生跨文档转场（320ms / 14px，旧内容淡出120ms），保持静态多页面导航；侧栏不做位移动画。旧头像摇晃、缩放入场和卡片上移已移除，按钮反馈为150ms。配置入口为 `theme.motion.enable/page`，减少动画模式关闭装饰性动效。
+
 Node.js ≥22.22.0。依赖版本与锁文件已固定。
 
 ```powershell
@@ -42,9 +44,12 @@ npm run test:browser
 node scripts/verify-fixtures.mjs
 node scripts/verify-reproducible.mjs
 node scripts/verify-configurations.mjs
+node scripts/verify-motion.mjs
 ```
 
 浏览器测试默认使用本机 Edge；没有 Edge 时在 `playwright.config.ts` 调整 channel，并安装对应 Playwright 浏览器。fixture 脚本只临时写入新工程并在 finally 中恢复，不能在他人正在编辑相同配置时并行执行。
+
+`verify-motion.mjs` 会重建 dist，需在浏览器测试之前单独运行。动效专项为 `tests/browser/motion.spec.ts`；设置 `PLAYWRIGHT_BASE_URL=http://127.0.0.1:8788` 可用本地 Nginx 验证该专项。普通完整套件默认使用4322端口，其中部分旧测试固定了该来源。
 
 ## 备份与范围
 

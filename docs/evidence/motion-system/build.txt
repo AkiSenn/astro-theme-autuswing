@@ -1,0 +1,62 @@
+
+> astro-theme-autuswing@0.2.0 build
+> astro build
+
+02:23:34 [content] Syncing content
+02:23:34 [content] Synced content
+02:23:34 [types] Generated 602ms
+02:23:34 [build] output: "static"
+02:23:34 [build] mode: "static"
+02:23:34 [build] directory: E:\autuswing-astro\dist\
+02:23:34 [build] Collecting build info...
+02:23:34 [build] ✓ Completed in 648ms.
+02:23:34 [build] Building static entrypoints...
+02:23:34 [vite] ✓ built in 237ms
+02:23:35 [vite] ✓ built in 261ms
+02:23:35 [build] Rearranging server assets...
+
+ generating static routes 
+02:23:35   ├─ /404.html (+23ms) 
+02:23:35   ├─ /atom.xml (+8ms) 
+02:23:35   ├─ /manifest.webmanifest (+3ms) 
+02:23:35   ├─ /offline.html (+3ms) 
+02:23:35   ├─ /robots.txt (+3ms) 
+02:23:35   ├─ /rss.xml (+63ms) 
+02:23:35   ├─ /search.json (+12ms) 
+02:23:35   ├─ /sw.js (+3ms) 
+02:23:35   ├─ /index.html (+7ms) 
+02:23:35   ├─ /archives/index.html (+4ms) 
+02:23:35   ├─ /archives/2022/index.html (+3ms) 
+02:23:35   ├─ /archives/2022/01/index.html (+3ms) 
+02:23:35   ├─ /archives/2020/index.html (+3ms) 
+02:23:35   ├─ /archives/2020/10/index.html (+4ms) 
+02:23:35   ├─ /tags/index.html (+3ms) 
+02:23:35   ├─ /tags/数学公式/index.html (+7ms) 
+02:23:35   ├─ /tags/网站/index.html (+7ms) 
+02:23:35   ├─ /tags/写作/index.html (+6ms) 
+02:23:35   ├─ /tags/AutuSwing/index.html (+5ms) 
+02:23:35   ├─ /tags/Cloudflare/index.html (+3ms) 
+02:23:35   ├─ /tags/GitHub/index.html (+4ms) 
+02:23:35   ├─ /tags/Hexo/index.html (+4ms) 
+02:23:35   ├─ /tags/HexoThemes/index.html (+4ms) 
+02:23:35   ├─ /tags/MathJax/index.html (+3ms) 
+02:23:35   ├─ /tags/Pages/index.html (+3ms) 
+02:23:35   ├─ /tags/Workers/index.html (+2ms) 
+02:23:35   ├─ /categories/index.html (+2ms) 
+02:23:35   ├─ /categories/功能演示/index.html (+2ms) 
+02:23:35   ├─ /categories/网站建设/index.html (+2ms) 
+02:23:35   ├─ /post/55b0541c/index.html (+8ms) 
+02:23:35   ├─ /post/4c6caf67/index.html (+3ms) 
+02:23:35   ├─ /post/4e395565/index.html (+3ms) 
+02:23:35   ├─ /about/index.html (+3ms) 
+02:23:35   ├─ /links/index.html (+3ms) 
+02:23:35 ✓ Completed in 329ms.
+
+ generating optimized images 
+02:23:35   ▶ /_astro/avatar.DADbckWz_Z23dhab.webp (reused cache entry) (+1ms) (1/1)
+02:23:35 ✓ Completed in 2ms.
+
+02:23:35 [build] ✓ Completed in 896ms.
+02:23:35 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+02:23:35 [build] 27 page(s) built in 1.77s
+02:23:35 [build] Complete!

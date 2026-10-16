@@ -65,18 +65,6 @@ export function script(src: string, attrs: Record<string, string> = {}) {
   scripts.set(src, promise);
   return promise;
 }
-export function css(src: string) {
-  if (
-    [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')].some(
-      (x) => x.href === new URL(src, location.href).href,
-    )
-  )
-    return;
-  const el = document.createElement('link');
-  el.rel = 'stylesheet';
-  el.href = src;
-  document.head.append(el);
-}
 export const idle = (callback: () => void) =>
   'requestIdleCallback' in window
     ? window.requestIdleCallback(callback, { timeout: 2000 })
