@@ -1,0 +1,25 @@
+---
+import { theme, safeLink } from '../site.config';
+import Glyph from './Glyph.astro';
+---
+
+<div class="social-links">
+  {theme.social_items.map((item) => (
+    <a
+      href={safeLink(item.url)}
+      aria-label={item.name}
+      title={item.name}
+      target={item.url.startsWith('http') ? '_blank' : undefined}
+      rel="noopener noreferrer"
+    >
+      <Glyph name={item.icon} />
+      <span>{item.name}</span>
+    </a>
+  ))}
+  {theme.feed.enable && (
+    <a href="/rss.xml" title="RSS" aria-label="RSS">
+      <Glyph name="rss" />
+      <span>RSS</span>
+    </a>
+  )}
+</div>

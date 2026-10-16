@@ -52,10 +52,29 @@ export const theme = {
 export const preview = process.env.SITE_ENV !== 'production';
 export const navigation = theme.menu_items.map((item) => ({
   ...item,
+  icon:
+    item.icon ||
+    (
+      {
+        Home: 'home',
+        Archives: 'list',
+        Tags: 'tag',
+        Categories: 'folder',
+        Links: 'link',
+        About: 'user',
+      } as Record<string, string>
+    )[item.name] ||
+    'globe',
   label: ['Home', 'Archives', 'Tags', 'Categories', 'Links', 'About'].includes(item.name)
     ? translate()(item.name.toLowerCase())
     : item.name,
 }));
+export function isCurrentPath(path: string, href: string) {
+  return href === '/'
+    ? path === '/'
+    : href.startsWith('/') &&
+        (path === href || path.startsWith(href.endsWith('/') ? href : href + '/'));
+}
 export function safeLink(value: string) {
   return /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(value) && !/^\/\//.test(value) ? value : '#';
 }

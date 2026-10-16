@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-16T02:16:23.888Z",
+  "browser": "Microsoft Edge / Chromium",
+  "expected": 33,
+  "unexpected": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "durationMs": 54752.908,
+  "scope": "Phase three; touch emulation is not physical device verification"
+}

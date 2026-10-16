@@ -1,28 +1,22 @@
 ---
 import { translate } from '../lib/i18n';
-const t = translate();
-import { theme, navigation, safeLink } from '../site.config';
-import type { Post } from '../lib/content';
+import { theme, site, navigation, safeLink, isCurrentPath } from '../site.config';
 import Glyph from './Glyph.astro';
 import TableOfContents from './TableOfContents.astro';
+import SiteTools from './SiteTools.astro';
+import SocialLinks from './SocialLinks.astro';
 interface Props {
   path: string;
-  post?: Post;
+  title?: string;
+  headings: { depth: number; slug: string; text: string }[];
 }
-const { path, post } = Astro.props;
-const toc =
-  post?.entry.collection === 'posts' &&
-  theme.reading.toc &&
-  post.data.toc !== false &&
-  post.rendered.headings.length;
+const { path, title, headings } = Astro.props;
+const t = translate();
 ---
 
-<aside class="sidebar" id="sidebar" aria-label={t('navigation')}>
-  <button class="drawer-close icon-button" type="button" aria-label={t('close')}>
-    ×
-  </button>
+<aside class="sidebar desktop-sidebar" aria-label={t('navigation')}>
   <section class="profile">
-    <a href="/" class="avatar-link avatar-home" aria-label={t('home')}>
+    <a href="/" class="avatar-link avatar-home" data-focus-key="brand" aria-label={t('home')}>
       <img
         class:list={[
           'avatar',
@@ -36,92 +30,45 @@ const toc =
       />
     </a>
     <h2>{theme.profile.author}</h2>
+    <a class="profile-site-name" href="/">
+      {site.title}
+    </a>
     <p>{theme.profile.subtitle}</p>
   </section>
-  <div class="sidebar-content">
-    {toc && (
-      <div class="sidebar-tabs" role="tablist" aria-label="导航与文章目录">
-        <button
-          type="button"
-          role="tab"
-          id="side-tab-menu"
-          aria-controls="side-panel-menu"
-          aria-selected="false"
-          tabindex="-1"
-        >
-          {t('menu')}
-        </button>
-        <button
-          type="button"
-          role="tab"
-          id="side-tab-contents"
-          aria-controls="side-panel-contents"
-          aria-selected="true"
-          tabindex="0"
-        >
-          {t('toc')}
-        </button>
-      </div>
-    )}
-    <div
-      id="side-panel-menu"
-      role={toc ? 'tabpanel' : undefined}
-      aria-labelledby={toc ? 'side-tab-menu' : undefined}
-      hidden={!!toc}
-    >
-      <nav class="site-nav" aria-label={t('navigation')}>
-        {navigation.map((item) => (
-          <a
-            href={safeLink(item.path)}
-            aria-current={
-              (item.path === '/' ? path === '/' : path.startsWith(item.path)) ? 'page' : undefined
-            }
-            target={item.new_tab ? '_blank' : undefined}
-            rel={item.new_tab ? 'noopener noreferrer' : undefined}
-          >
-            {item.icon && (
-              <span class="nav-icon">
-                <Glyph name={item.icon} />
-              </span>
-            )}
-            {item.label}
-            <span class="nav-arrow">↗</span>
-          </a>
-        ))}
-      </nav>
-    </div>
-    {toc && (
-      <section
-        class:list={['sidebar-panel sidebar-contents', { 'toc-nowrap': theme.article.toc.nowrap }]}
-        id="side-panel-contents"
-        role="tabpanel"
-        aria-labelledby="side-tab-contents"
+  <nav class="site-nav" aria-label={t('navigation')}>
+    {navigation.map((item) => (
+      <a
+        href={safeLink(item.path)}
+        data-focus-key={`nav:${item.name}`}
+        aria-current={isCurrentPath(path, item.path) ? 'page' : undefined}
+        target={item.new_tab ? '_blank' : undefined}
+        rel={item.new_tab ? 'noopener noreferrer' : undefined}
       >
-        <h2 class="sidebar-article-title">{post.title}</h2>
-        <TableOfContents headings={post.rendered.headings} />
-      </section>
-    )}
-  </div>
-  <div class="sidebar-bottom">
-    <div class="social-links">
-      {theme.social_items.map((item) => (
-        <a
-          href={safeLink(item.url)}
-          aria-label={item.name}
-          title={item.name}
-          target={item.url.startsWith('http') ? '_blank' : undefined}
-          rel="noopener noreferrer"
-        >
+        <span class="nav-icon">
           <Glyph name={item.icon} />
-          <span>{item.name}</span>
-        </a>
-      ))}
-      {theme.feed.enable && (
-        <a href="/rss.xml" title="RSS" aria-label="RSS">
-          <Glyph name="rss" />
-          <span>RSS</span>
-        </a>
-      )}
-    </div>
+        </span>
+        <span>{item.label}</span>
+        <span class="nav-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    ))}
+  </nav>
+  {headings.length > 0 && (
+    <section
+      class:list={['desktop-contents', { 'toc-nowrap': theme.article.toc.nowrap }]}
+      aria-labelledby="desktop-contents-title"
+    >
+      <h2 id="desktop-contents-title" tabindex="-1">
+        {t('toc')}
+      </h2>
+      <p class="sidebar-article-title">{title}</p>
+      <TableOfContents headings={headings} />
+    </section>
+  )}
+  <div class="sidebar-bottom">
+    {theme.profile.aboutme && <p class="profile-description">{theme.profile.aboutme}</p>}
+    <SiteTools />
+    <SocialLinks />
   </div>
 </aside>

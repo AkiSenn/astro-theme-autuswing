@@ -1,36 +1,25 @@
 ---
-import { translate } from '../lib/i18n';
-const t = translate();
 import { theme, site } from '../site.config';
-import AppearanceToggle from './AppearanceToggle.astro';
-import Glyph from './Glyph.astro';
+import MobileNavigation from './MobileNavigation.astro';
+import SiteTools from './SiteTools.astro';
+interface Props {
+  path: string;
+}
 ---
 
-<header class="topbar">
-  <a class="mobile-brand avatar-home" href="/">
-    <img src={theme.avatar} alt="" width="32" height="32" />
-    <span>{site.title}</span>
-  </a>
-  <div class="toolbar">
-    {theme.search.enable && (
-      <button
-        class="search-open icon-button"
-        type="button"
-        aria-label={t('search')}
-        aria-haspopup="dialog"
-      >
-        <Glyph name="search" />
-      </button>
-    )}
-    {theme.appearance.theme_switch && <AppearanceToggle />}
-    <button
-      class="menu-toggle icon-button"
-      type="button"
-      aria-label={t('navigation')}
-      aria-expanded="false"
-      aria-controls="sidebar"
+<header class="mobile-header">
+  <div class="mobile-brand-row">
+    <a
+      class="mobile-brand avatar-home"
+      data-focus-key="brand"
+      href="/"
+      aria-label={site.title}
+      title={site.title}
     >
-      <Glyph name="menu" />
-    </button>
+      <img src={theme.avatar} alt="" width="30" height="30" />
+      <span>{site.title}</span>
+    </a>
+    <SiteTools />
   </div>
+  <MobileNavigation path={Astro.props.path} />
 </header>

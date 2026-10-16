@@ -4,7 +4,7 @@ const t = translate();
 import Glyph from './Glyph.astro';
 ---
 
-<dialog class="search-dialog" aria-labelledby="search-title">
+<dialog class="search-dialog" id="site-search" aria-labelledby="search-title">
   <div class="search-header">
     <h2 id="search-title">{t('search')}</h2>
     <button class="search-close icon-button" type="button" aria-label={t('close')}>

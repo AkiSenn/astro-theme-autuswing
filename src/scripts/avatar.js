@@ -25,7 +25,6 @@ const config = client(),
         if (home) {
           event.preventDefault();
           shake();
-          document.querySelector('.drawer-close')?.click();
           scrollTo({ top: 0, behavior: reduced.matches ? 'instant' : 'smooth' });
         } else if (config.animations.enable && config.animations.avatar && !reduced.matches) {
           shake();

@@ -1,5 +1,6 @@
 import { search, normalize, type SearchItem } from '../lib/search';
 import { client } from './helpers';
+import { openDialog, restoreDialogFocus } from './dialogs';
 export function initSearch() {
   const dialog = document.querySelector<HTMLDialogElement>('.search-dialog');
   if (!dialog) return;
@@ -102,8 +103,12 @@ export function initSearch() {
     }
   }
   const open = (el: HTMLElement | null) => {
-    trigger = el;
-    if (!dialog.open) dialog.showModal();
+    trigger = el?.closest('dialog')
+      ? [...document.querySelectorAll<HTMLElement>('.search-open')].find(
+          (node) => node.getClientRects().length,
+        ) || null
+      : el;
+    openDialog(dialog);
     input.focus();
     if (config.searchOptions.preload) load().catch(() => {});
   };
@@ -114,7 +119,7 @@ export function initSearch() {
   dialog.addEventListener('click', (e) => {
     if (e.target === dialog) dialog.close();
   });
-  dialog.addEventListener('close', () => trigger?.focus());
+  dialog.addEventListener('close', () => restoreDialogFocus(trigger));
   input.addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(run, 120);

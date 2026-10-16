@@ -1,0 +1,11 @@
+{
+  "customFilePermalink": true,
+  "pagination": true,
+  "nestedCategories": true,
+  "visibility": true,
+  "assetCollisionRejected": true,
+  "newPostPersistence": true,
+  "rootIdRouting": true,
+  "protectedAliasCollisionRejected": true,
+  "duplicateIdRejected": true
+}

@@ -12,7 +12,7 @@ test('legacy appearance, system changes and cross-tab preference sync', async ({
   expect(await page.evaluate(() => localStorage.getItem('autuswing-appearance'))).toBe('dark');
   const second = await context.newPage();
   await second.goto('/');
-  await page.locator('.mode-toggle').click();
+  await page.locator('.mode-toggle:visible').click();
   await expect(second.locator('html')).toHaveAttribute('data-mode', 'auto');
   await page.emulateMedia({ colorScheme: 'dark' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
@@ -40,7 +40,7 @@ test('search can retry a failed index and renders injected markup as text', asyn
     });
   });
   await page.goto('/');
-  await page.locator('.search-open').click();
+  await page.locator('.search-open:visible').click();
   await page.locator('#search-input').fill('test');
   await expect(page.locator('.search-status')).toContainText('失败');
   await page.locator('#search-input').fill('tes');
@@ -56,7 +56,7 @@ test('site content and navigation stay accessible without JS', async ({ browser 
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/');
   await expect(page.locator('.post-card')).toHaveCount(3);
-  await expect(page.locator('.noscript-nav a[href="/archives/"]')).toBeVisible();
+  await expect(page.locator('.mobile-navigation a[href="/archives/"]')).toBeVisible();
   await context.close();
 });
 test('PWA installs its own shell cache and returns the offline page', async ({ browser }) => {

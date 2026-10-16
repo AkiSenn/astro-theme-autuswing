@@ -24,13 +24,13 @@ test('pages, metadata, search and appearance work without console failures', asy
   await page.goto('/');
   await expect(page.locator('.post-card')).toHaveCount(3);
   await expect(page.locator('.profile .avatar')).toBeVisible();
-  await page.locator('.search-open').click();
+  await page.locator('.search-open:visible').click();
   await page.locator('#search-input').fill('欧拉');
   await expect(page.locator('.search-results a')).toHaveCount(1);
   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');
   await page.keyboard.press('Escape');
   await expect(page.locator('.search-dialog')).not.toBeVisible();
-  await page.locator('.mode-toggle').click();
+  await page.locator('.mode-toggle:visible').click();
   await expect(page.locator('html')).toHaveAttribute('data-mode', 'light');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-mode', 'light');
@@ -89,7 +89,7 @@ test('redirects keep query strings and unknown routes return 404', async ({ requ
   }
   expect((await request.get('/this-page-does-not-exist/')).status()).toBe(404);
 });
-test('old visual baseline at the nine widths has no root overflow', async ({ page }) => {
+test('three-layout shell at the nine widths has no root overflow', async ({ page }) => {
   for (const width of [320, 375, 390, 430, 768, 820, 1024, 1280, 1600]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/post/55b0541c/');
@@ -102,12 +102,11 @@ test('old visual baseline at the nine widths has no root overflow', async ({ pag
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
-  await page.locator('.menu-toggle').click();
-  await expect(page.locator('.sidebar')).toHaveAttribute('aria-modal', 'true');
-  await page.keyboard.press('Escape');
-  await expect(page.locator('.menu-toggle')).toBeFocused();
+  await expect(page.locator('.mobile-navigation a')).toHaveCount(5);
+  await expect(page.locator('.mobile-navigation a[href="/archives/"]')).toBeVisible();
+  await expect(page.locator('.menu-toggle,.sidebar-tabs,.sidebar-overlay')).toHaveCount(0);
 });
-test('basic accessibility and screenshots for stage-two comparison', async ({ page }) => {
+test('basic accessibility and screenshots for stage-three comparison', async ({ page }) => {
   // Full-page captures must include offscreen content before scroll-reveal runs.
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.setViewportSize({ width: 1280, height: 900 });
@@ -118,21 +117,21 @@ test('basic accessibility and screenshots for stage-two comparison', async ({ pa
     result.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious'),
   ).toEqual([]);
   await page.screenshot({
-    path: 'docs/evidence/phase2-home-1280.png',
+    path: 'docs/evidence/phase3/home-1280.png',
     fullPage: true,
     animations: 'disabled',
   });
   await page.goto('/post/4e395565/');
   await expect(page.locator('mjx-container')).toHaveCount(4);
   await page.screenshot({
-    path: 'docs/evidence/phase2-math-1280.png',
+    path: 'docs/evidence/phase3/math-1280.png',
     fullPage: true,
     animations: 'disabled',
   });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await page.screenshot({
-    path: 'docs/evidence/phase2-home-390.png',
+    path: 'docs/evidence/phase3/home-390.png',
     fullPage: true,
     animations: 'disabled',
   });

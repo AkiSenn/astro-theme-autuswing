@@ -1,0 +1,47 @@
+---
+import { translate } from '../lib/i18n';
+import TableOfContents from './TableOfContents.astro';
+import Glyph from './Glyph.astro';
+interface Props {
+  title: string;
+  headings: { depth: number; slug: string; text: string }[];
+}
+const { title, headings } = Astro.props;
+const t = translate();
+---
+
+<div class="contents-access">
+  <button
+    class="contents-open js-control"
+    data-focus-key="contents"
+    type="button"
+    aria-haspopup="dialog"
+    aria-controls="reading-contents"
+    aria-expanded="false"
+    hidden
+  >
+    <Glyph name="book" />
+    <span>{t('toc')}</span>
+    <span class="contents-count" aria-hidden="true">
+      {headings.length}
+    </span>
+  </button>
+  <noscript>
+    <details class="contents-fallback">
+      <summary>{t('toc')}</summary>
+      <TableOfContents headings={headings} />
+    </details>
+  </noscript>
+</div>
+<dialog class="contents-dialog" id="reading-contents" aria-labelledby="reading-contents-title">
+  <header class="contents-dialog-header">
+    <h2 id="reading-contents-title">{t('toc')}</h2>
+    <button class="contents-close icon-button" type="button" aria-label={t('close')} autofocus>
+      <Glyph name="close" />
+    </button>
+  </header>
+  <p class="contents-post-title">{title}</p>
+  <nav aria-label={t('toc')}>
+    <TableOfContents headings={headings} />
+  </nav>
+</dialog>

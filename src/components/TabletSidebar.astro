@@ -1,0 +1,57 @@
+---
+import { translate } from '../lib/i18n';
+import { theme, site, navigation, safeLink, isCurrentPath } from '../site.config';
+import Glyph from './Glyph.astro';
+import SiteTools from './SiteTools.astro';
+interface Props {
+  path: string;
+  hasContents: boolean;
+}
+const { path, hasContents } = Astro.props;
+const t = translate();
+---
+
+<aside class="tablet-sidebar" aria-label={t('navigation')}>
+  <a
+    class="rail-brand avatar-home"
+    data-focus-key="brand"
+    href="/"
+    aria-label={site.title}
+    title={site.title}
+  >
+    <img src={theme.avatar} alt="" width="40" height="40" />
+  </a>
+  <nav class="rail-nav" aria-label={t('navigation')}>
+    {navigation.map((item) => (
+      <a
+        href={safeLink(item.path)}
+        data-focus-key={`nav:${item.name}`}
+        aria-label={item.label}
+        title={item.label}
+        aria-current={isCurrentPath(path, item.path) ? 'page' : undefined}
+        target={item.new_tab ? '_blank' : undefined}
+        rel={item.new_tab ? 'noopener noreferrer' : undefined}
+      >
+        <Glyph name={item.icon} />
+      </a>
+    ))}
+  </nav>
+  <div class="rail-tools">
+    {hasContents && (
+      <button
+        class="contents-open icon-button js-control"
+        data-focus-key="contents"
+        type="button"
+        aria-label={t('toc')}
+        title={t('toc')}
+        aria-haspopup="dialog"
+        aria-controls="reading-contents"
+        aria-expanded="false"
+        hidden
+      >
+        <Glyph name="book" />
+      </button>
+    )}
+    <SiteTools />
+  </div>
+</aside>

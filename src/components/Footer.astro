@@ -1,12 +1,16 @@
 ---
 import { theme, safeLink, preview } from '../site.config';
 import { translate } from '../lib/i18n';
+import SocialLinks from './SocialLinks.astro';
 const t = translate();
 const f = theme.footer,
   counter = f.visit_counter;
 ---
 
 <footer class="site-footer">
+  <div class="compact-social">
+    <SocialLinks />
+  </div>
   <div class="footer-row">
     {f.copyright && (
       <span>

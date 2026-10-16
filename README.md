@@ -1,6 +1,6 @@
 # AutuSwing Astro
 
-AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前为第二阶段：静态内容与功能迁移，保留旧版森林绿、日期卡片、完整侧栏和移动抽屉，便于比较。第三阶段才重构为桌面完整侧栏、平板迷你侧栏和手机顶部导航。
+AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进入第三阶段：保留森林绿、日期卡片与个人侧栏，按可用宽度分别使用桌面完整侧栏（≥1000px）、平板 72px 迷你侧栏（720–999px）和手机顶部品牌栏与横向导航（<720px）。文章目录独立于网站导航，正文最大 704px。
 
 ## 本地运行
 
@@ -24,7 +24,7 @@ npm run preview
 - `src/config/site.json` / `theme.json`：站点数据与单主题设置，不保存发布凭据。
 - `src/lib/`：内容、路由、日期、SEO、搜索、评论身份、Markdown 兼容；不依赖侧栏或卡片 DOM。
 - `src/components/` / `layouts/`：原生 Astro 视图；没有 React、Vue、Svelte 或 Hexo 运行时。
-- `src/scripts/`：独立的原生交互模块。`drawer` 与 `navigation-tabs` 是第二阶段保留旧布局的临时适配器，第三阶段替换。
+- `src/scripts/`：独立的原生交互模块。`responsive` 管理目录与断点焦点恢复；`dialogs` 保持搜索、目录、灯箱互斥。已移除抽屉与导航页签脚本。
 - `migration/`：来源哈希、冻结的历史时间和锚点、旧配置映射；构建缓存和结果只写 `.astro/`、`dist/`。
 
 ## 验证
@@ -46,6 +46,6 @@ node scripts/verify-configurations.mjs
 
 原站 `E:/hexo-akisenn`、Yelee-Next、生产域名和 516700.xyz 均不由本工程写入。第一阶段审计保存在 `E:/autuswing-astro-audit-20261016`。
 
-详细说明：[阶段二交付](docs/phase-2.md)、[配置迁移](docs/configuration.md)、[写作与 URL](docs/writing.md)、[静态部署边界](deployment/README.md)。
+详细说明：[阶段三交付](docs/phase-3.md)、[阶段二记录](docs/phase-2.md)、[配置迁移](docs/configuration.md)、[写作与 URL](docs/writing.md)、[静态部署边界](deployment/README.md)。
 
 原主题、图标、样式及适配脚本沿用 MIT 许可；原稿保留作者原有内容许可。数学 vendor 的版本、许可证与校验清单见 `public/assets/vendor/`。本项目没有迁移 Yelee-Next，也没有双主题运行系统。

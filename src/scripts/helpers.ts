@@ -80,7 +80,7 @@ export const idle = (callback: () => void) =>
     : setTimeout(callback, 150);
 declare global {
   interface Window {
-    Autuswing: { copy: typeof copy; toast: typeof toast; openMenu?: () => void };
+    Autuswing: { copy: typeof copy; toast: typeof toast };
   }
 }
 window.Autuswing = { copy, toast };

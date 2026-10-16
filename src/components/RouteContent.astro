@@ -6,7 +6,6 @@ import { posts, taxonomy } from '../lib/content';
 import { theme, safeLink } from '../site.config';
 import PostCard from './PostCard.astro';
 import Pagination from './Pagination.astro';
-import TableOfContents from './TableOfContents.astro';
 import Comments from './Comments.astro';
 interface Props {
   route: Route;
@@ -104,12 +103,6 @@ let year = '';
           </a>
         ))}
       </div>
-    )}
-    {route.post?.data.toc === true && (
-      <details class="page-toc">
-        <summary>{t('toc')}</summary>
-        <TableOfContents headings={route.post.rendered.headings} />
-      </details>
     )}
     {Content ? (
       <div class="prose">

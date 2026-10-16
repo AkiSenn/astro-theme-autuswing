@@ -1,4 +1,5 @@
 import { client, copy, toast } from './helpers';
+import { openDialog, restoreDialogFocus } from './dialogs';
 export function initMedia() {
   const config = client();
   document.querySelectorAll<HTMLElement>('.prose pre').forEach((block) => {
@@ -16,7 +17,7 @@ export function initMedia() {
     button.type = 'button';
     button.className = 'copy-code';
     button.textContent = config.labels.copy;
-    button.setAttribute('aria-label', `复制 ${language} 代码`);
+    button.setAttribute('aria-label', `${config.labels.copy} (${language})`);
     button.addEventListener('click', async () => {
       try {
         await copy(code.textContent || '');
@@ -67,7 +68,7 @@ export function initMedia() {
       trigger = img;
       preview.src = img.currentSrc || img.src;
       preview.alt = img.alt;
-      dialog.showModal();
+      openDialog(dialog);
     };
     img.addEventListener('click', open);
     img.addEventListener('keydown', (e) => {
@@ -81,5 +82,5 @@ export function initMedia() {
   dialog.addEventListener('click', (e) => {
     if (e.target === dialog) dialog.close();
   });
-  dialog.addEventListener('close', () => trigger?.focus());
+  dialog.addEventListener('close', () => restoreDialogFocus(trigger));
 }
