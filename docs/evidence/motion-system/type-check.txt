@@ -11,8 +11,7 @@
 [7m35[0m   const ok = document.execCommand('copy');
 [7m  [0m [93m                      ~~~~~~~~~~~[0m
 
-Result (69 files): 
+Result (69 files):
 - 0 errors
 - 0 warnings
 - 1 hint
-
