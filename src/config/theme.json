@@ -1,0 +1,253 @@
+{
+  "avatar": "/img/avatar.png",
+  "favicon": "/img/favicon.png",
+  "apple_touch_icon": "/img/apple-touch-icon.png",
+  "since": 2020,
+  "menu": {
+    "Home": "/",
+    "Archives": "/archives/",
+    "Tags": "/tags/",
+    "Links": "/links/",
+    "About": "/about/"
+  },
+  "social": {
+    "Email": "mailto:akisenn@outlook.com",
+    "GitHub": "https://www.github.com/AkiSenn",
+    "bilibili": "https://space.bilibili.com/524514243"
+  },
+  "color_mode": "auto",
+  "profile": {
+    "author": "AkiSenn",
+    "subtitle": "科技技术生活",
+    "email": "akisenn@outlook.com",
+    "aboutme": "欢迎来到我的网站喵"
+  },
+  "cards": {
+    "enable": true,
+    "article": true,
+    "hover": true,
+    "blur": 24,
+    "wallpaper": "",
+    "wallpaper_overlay": 0.88
+  },
+  "appearance": {
+    "base_font_size": 16,
+    "sidebar_width": 272,
+    "width": 1680,
+    "radius": 18,
+    "accent": "",
+    "font_family": "",
+    "code_font": "",
+    "background_image": false,
+    "background_overlay": 0.72,
+    "theme_switch": true,
+    "animate": true
+  },
+  "animations": {
+    "enable": true,
+    "avatar": true,
+    "articles": true,
+    "page": true
+  },
+  "search": {
+    "enable": true,
+    "content": true,
+    "max_content_length": 12000,
+    "limit": 30,
+    "preload": false,
+    "shortcut": true,
+    "excerpt_length": 140
+  },
+  "feed": {
+    "enable": true,
+    "limit": 30,
+    "full_content": false
+  },
+  "urls": {
+    "length": 6
+  },
+  "seo": {
+    "sitemap": true,
+    "robots": true,
+    "json_ld": true,
+    "social_image": "/img/avatar.png",
+    "twitter": "",
+    "google_verification": "",
+    "bing_verification": "",
+    "baidu_verification": "",
+    "sogou_verification": "",
+    "so360_verification": "",
+    "shenma_verification": "",
+    "yandex_verification": ""
+  },
+  "reading": {
+    "toc": true,
+    "progress": true,
+    "words_per_minute": 250,
+    "related": false
+  },
+  "article": {
+    "excerpt": "auto",
+    "excerpt_length": 200,
+    "excerpt_paragraphs": 2,
+    "autospace": true,
+    "more_link": "",
+    "lightbox": true,
+    "lazyload": true,
+    "updated": true,
+    "word_count": true,
+    "reading_time": true,
+    "post_nav": true,
+    "share": ["native", "copy", "weibo", "twitter", "telegram", "qq"],
+    "toc": {
+      "min_depth": 2,
+      "max_depth": 4,
+      "list_number": false,
+      "nowrap": false
+    }
+  },
+  "copyright": {
+    "enable": true,
+    "license": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "comments": {
+    "enable": false,
+    "provider": "giscus",
+    "lazyload": true,
+    "preload": false,
+    "collapsible": true,
+    "hint": "",
+    "timeout": 20000,
+    "pages": false,
+    "giscus": {
+      "repo": "",
+      "repo_id": "",
+      "category": "General",
+      "category_id": "",
+      "mapping": "pathname",
+      "strict": false,
+      "reactions_enabled": 1,
+      "input_position": "top",
+      "theme": "auto",
+      "lang": "auto",
+      "src": "https://giscus.app/client.js"
+    },
+    "utterances": {
+      "repo": "",
+      "issue_term": "pathname",
+      "label": "",
+      "theme": "auto",
+      "src": "https://utteranc.es/client.js"
+    },
+    "disqus": {
+      "shortname": ""
+    },
+    "waline": {
+      "serverURL": "",
+      "lang": "zh-CN",
+      "cdn": "https://cdn.jsdelivr.net/npm/@waline/client@3.16.0/dist/waline.js",
+      "css": "https://cdn.jsdelivr.net/npm/@waline/client@3.16.0/dist/waline.css"
+    },
+    "twikoo": {
+      "envId": "",
+      "region": "",
+      "cdn": "https://cdn.jsdelivr.net/npm/twikoo@1.6.45/dist/twikoo.min.js"
+    },
+    "valine": {
+      "appid": "",
+      "appkey": "",
+      "serverURLs": "",
+      "cdn": "https://cdn.jsdelivr.net/npm/valine@1.5.3/dist/Valine.min.js"
+    }
+  },
+  "footer": {
+    "copyright": true,
+    "powered_by": true,
+    "custom": "",
+    "icp": "粤ICP备2026144331号-1",
+    "icp_link": "https://beian.miit.gov.cn/",
+    "police_icp": "",
+    "police_icp_code": "",
+    "police_icp_link": "https://beian.mps.gov.cn/",
+    "police_icp_icon": "",
+    "runtime": {
+      "enable": true,
+      "since": "2020-08-25T00:00:00+08:00",
+      "text": "本站已悄咪咪运行"
+    },
+    "visit_counter": {
+      "enable": false,
+      "provider": "vercount",
+      "today_pv": false,
+      "site_pv": true,
+      "today_uv": false,
+      "site_uv": true,
+      "page_pv": true,
+      "page_uv": false,
+      "src": "https://cn.vercount.one/js",
+      "allow_local": false
+    }
+  },
+  "math": {
+    "enable": true,
+    "per_page": true,
+    "source": "local",
+    "engine": "mathjax",
+    "mathjax": {
+      "cdn": "https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js",
+      "config": {}
+    },
+    "katex": {
+      "cdn": "https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js",
+      "auto_render": "https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js",
+      "css": "https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css"
+    }
+  },
+  "analytics": {
+    "google_analytics": "",
+    "baidu_tongji": ""
+  },
+  "assets": {
+    "cdn": "",
+    "image_fingerprint": true,
+    "preconnect": []
+  },
+  "open_in_new": true,
+  "open_in_new_exclude": [],
+  "friends": [
+    {
+      "name": "Hexo",
+      "url": "https://hexo.io",
+      "description": ""
+    },
+    {
+      "name": "AkiSenn",
+      "url": "https://www.github.com/AkiSenn",
+      "description": ""
+    },
+    {
+      "name": "MOxFIVE",
+      "url": "https://moxfive.xyz/",
+      "description": ""
+    },
+    {
+      "name": "AutuSwing",
+      "url": "https://github.com/AkiSenn/hexo-theme-autuswing",
+      "description": ""
+    }
+  ],
+  "performance": {
+    "generate_headers": true,
+    "minify": true,
+    "precompress": false,
+    "compression_min_bytes": 1024,
+    "precompress_quality": 11,
+    "instant_nav": true
+  },
+  "pwa": {
+    "enable": true,
+    "icon": "/img/avatar.png",
+    "short_name": "AkiSenn"
+  }
+}

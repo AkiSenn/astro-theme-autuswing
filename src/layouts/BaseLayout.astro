@@ -1,0 +1,96 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import '../styles/legacy.css';
+import '../styles/astro.css';
+import { theme, navigation, preview, site } from '../site.config';
+import type { Post } from '../lib/content';
+import { clientConfig } from '../lib/client';
+import { json } from '../lib/seo';
+import Icons from '../components/Icons.astro';
+import SeoHead from '../components/SeoHead.astro';
+import DesktopSidebar from '../components/DesktopSidebar.astro';
+import MobileHeader from '../components/MobileHeader.astro';
+import Footer from '../components/Footer.astro';
+import Search from '../components/Search.astro';
+import Glyph from '../components/Glyph.astro';
+import appearance from '../scripts/appearance-init.js?raw';
+interface Props {
+  path: string;
+  title?: string;
+  post?: Post;
+  noindex?: boolean;
+}
+const { path, title, post, noindex } = Astro.props;
+const variables = `--autuswing-base-font:${theme.appearance.base_font_size}px;--autuswing-sidebar:${theme.appearance.sidebar_width}px;--autuswing-width:${theme.appearance.width}px;--autuswing-radius:${theme.appearance.radius}px;--mica-blur:${theme.cards.blur}px;--wallpaper-opacity:${1 - theme.cards.wallpaper_overlay};${theme.appearance.accent ? '--accent:' + theme.appearance.accent + ';' : ''}${theme.appearance.font_family ? '--autuswing-font:' + theme.appearance.font_family + ';' : ''}${theme.appearance.code_font ? '--autuswing-code-font:' + theme.appearance.code_font + ';' : ''}`;
+const background = theme.backgrounds.length
+  ? theme.backgrounds[[...path].reduce((n, c) => n + c.charCodeAt(0), 0) % theme.backgrounds.length]
+  : '';
+---
+
+<!doctype html>
+<html lang={post?.lang || site.language} data-mode={theme.color_mode} style={variables}>
+  <head>
+    <SeoHead path={path} title={title} post={post} noindex={noindex} />
+    <script is:inline set:html={appearance} />
+  </head>
+  <body
+    class:list={[{ 'article-page': post?.entry.collection === 'posts' }]}
+    data-preview={String(preview)}
+  >
+    <Icons />
+    {background && (
+      <div class="site-background" aria-hidden="true">
+        <img src={background} alt="" decoding="async" />
+        <span style={`opacity:${theme.appearance.background_overlay}`}></span>
+      </div>
+    )}
+    <a class="skip-link" href="#main">
+      {t('skip')}
+    </a>
+    {theme.reading.progress && <div class="reading-progress" aria-hidden="true"></div>}
+    <DesktopSidebar path={path} post={post} />
+    <div class="main-shell">
+      <MobileHeader />
+      <noscript>
+        <nav class="noscript-nav" aria-label={t('navigation')}>
+          {navigation.map((n) => (
+            <a href={n.path}>{n.label}</a>
+          ))}
+        </nav>
+      </noscript>
+      <main id="main" tabindex="-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <button class="sidebar-overlay" aria-label={t('close')} type="button" hidden></button>
+    <div class="floating-tools" hidden>
+      {post?.entry.collection === 'posts' && theme.reading.toc && post.data.toc !== false && (
+        <button class="goto-toc icon-button" type="button" aria-label={t('toc')}>
+          <Glyph name="book" />
+        </button>
+      )}
+      {post && (
+        <button class="copy-link icon-button" type="button" aria-label="复制文章链接">
+          <Glyph name="link" />
+        </button>
+      )}
+      <button class="back-top icon-button" type="button" aria-label={t('top')} hidden>
+        ↑
+      </button>
+    </div>
+    {theme.search.enable && <Search />}
+    <dialog class="image-dialog" aria-label={t('image')}>
+      <button class="image-close icon-button" type="button" aria-label={t('close')}>
+        ×
+      </button>
+      <img alt="" />
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script id="autuswing-config" type="application/json" set:html={json(clientConfig(post))} />
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>

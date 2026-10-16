@@ -1,0 +1,23 @@
+---
+import { theme } from '../site.config';
+interface Props {
+  wallpaper?: string | boolean;
+}
+const wallpaper =
+  Astro.props.wallpaper === false
+    ? ''
+    : typeof Astro.props.wallpaper === 'string'
+      ? Astro.props.wallpaper
+      : theme.cards.wallpaper;
+---
+
+{wallpaper && (
+  <img
+    class="surface-wallpaper"
+    src={wallpaper}
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+  />
+)}

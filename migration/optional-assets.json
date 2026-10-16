@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/AkiSenn/hexo-theme-autuswing",
+  "commit": "21568915354372509ea64748badb5fc3832a1e27",
+  "defaultEnabled": false,
+  "files": [
+    {
+      "source": "bg-1.webp",
+      "target": "public/background/bg-1.webp",
+      "sha256": "0964ac73ee8d7e57616e61b576821089ff8ac0af8a8936a9884d6d7727415fce"
+    },
+    {
+      "source": "bg-2.webp",
+      "target": "public/background/bg-2.webp",
+      "sha256": "1ef41ac8b1b3f1e786496275dd5d10fff5419e20e416ee468c53000cd37fb182"
+    },
+    {
+      "source": "bg-3.webp",
+      "target": "public/background/bg-3.webp",
+      "sha256": "7d583bf251646d08897bb2e3e6abcd23f9e9c05745984c370446f8ccdc2d3572"
+    },
+    {
+      "source": "bg-4.webp",
+      "target": "public/background/bg-4.webp",
+      "sha256": "3e62e694f10a379d66ad904785eb5e4b5cc1767d19aa4ad9efc6da2ac2a4b8b6"
+    },
+    {
+      "source": "bg-5.webp",
+      "target": "public/background/bg-5.webp",
+      "sha256": "3366fd38846a5f508c8e23a69ca4bb4b7274f645543aadb771b1954e6deab773"
+    },
+    {
+      "source": "bg-6.webp",
+      "target": "public/background/bg-6.webp",
+      "sha256": "6e0063fbd41a93980fef422748ff6dad754d990e13a946a32f8cbe1dd1a8e880"
+    }
+  ]
+}

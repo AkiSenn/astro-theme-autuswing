@@ -1,0 +1,40 @@
+{
+  "name": "autuswing-astro",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4322",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "node scripts/preview.mjs",
+    "test": "tsx --test tests/*.test.ts",
+    "verify": "node scripts/verify-content.mjs && tsx scripts/verify-output.ts",
+    "test:browser": "playwright test",
+    "new-post": "node scripts/new-post.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "7.3.3",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.4.0",
+    "entities": "8.1.0",
+    "js-yaml": "5.5.0",
+    "rehype-raw": "7.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/js-yaml": "4.0.9",
+    "cheerio": "1.2.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,10 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import Glyph from './Glyph.astro';
+---
+
+<button class="mode-toggle icon-button" type="button" aria-label={t('mode')} title={t('mode')}>
+  <Glyph name="sun" />
+  <span class="mode-label">{t('mode')}</span>
+</button>

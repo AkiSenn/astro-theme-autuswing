@@ -1,0 +1,1827 @@
+[
+  {
+    "path": ".github/workflows/deploy.yml",
+    "bytes": 932,
+    "sha256": "4c0338f23cca09f9b2f4ad78ffa89a64540e659cbe14e0ce60a9f54d9a85c321"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 95,
+    "sha256": "0c6e844946787a3e5f7602e5354d77fdf751a01105a471f58665d70335215188"
+  },
+  {
+    "path": ".npmrc",
+    "bytes": 37,
+    "sha256": "3a951f66e7e0f3e2dd1832473a871357c4a507b51100636b73bcf6ff0dd78b6c"
+  },
+  {
+    "path": "docs/主题迁移清理记录.md",
+    "bytes": 4471,
+    "sha256": "331dab42b4ac9fbac23ba6f93c26008a51707d93952e6058b62b34838a67d8ec"
+  },
+  {
+    "path": "docs/大陆服务器迁移与备案指南.md",
+    "bytes": 10055,
+    "sha256": "9f34ff2ffb183d426e34eceb2922c57ce551807551581344bc642c45d69f77c9"
+  },
+  {
+    "path": "docs/宝塔一键发布.md",
+    "bytes": 1522,
+    "sha256": "44fbd58279e6a2f5034c0014c80997599277357ab76802e6a545750607c64248"
+  },
+  {
+    "path": "package-lock.json",
+    "bytes": 120292,
+    "sha256": "1e17980fb43dac7603a4798cfa3e7c94e434de1718c91974405d71a375c50654"
+  },
+  {
+    "path": "package.json",
+    "bytes": 739,
+    "sha256": "eaaaf74ca65ec532ab19efebeaf674d6260bf649e8789142f73736797ad2d3f0"
+  },
+  {
+    "path": "scaffolds/draft.md",
+    "bytes": 37,
+    "sha256": "242d020cfcfdf47baa73fee77d4ce7d73d2973d98aadc4376e0d98f1d518a01f"
+  },
+  {
+    "path": "scaffolds/page.md",
+    "bytes": 48,
+    "sha256": "14b669b148906d4cfaf2f03759a391e732615dc69ebf9151fb0b06114c6861af"
+  },
+  {
+    "path": "scaffolds/post.md",
+    "bytes": 68,
+    "sha256": "8d6c537a96b2f6a1b7a2872ad22c0a5d4ba9576ea8ea1d6dff1f3fab87ff94d8"
+  },
+  {
+    "path": "scripts/deploy-baota.js",
+    "bytes": 3856,
+    "sha256": "3a751118a942ab594967bd9db1cc203e32f9da11b0f06d48983be02b55315f5c"
+  },
+  {
+    "path": "source/about/index.md",
+    "bytes": 668,
+    "sha256": "ac150c5ee49c48f7302b08cef8f4aefe1c1297ffc6d2c2103ade0155302fdf78"
+  },
+  {
+    "path": "source/img/apple-touch-icon.png",
+    "bytes": 45769,
+    "sha256": "d30f47bbca2cdf66824c1018267400cf5846ed59aa8d0fd9e30522375afcedef"
+  },
+  {
+    "path": "source/img/avatar.png",
+    "bytes": 317783,
+    "sha256": "3685b16d19afa0fc4fd8c7f386b644b32d8993ce82f16e5b1e50f04880eff0f3"
+  },
+  {
+    "path": "source/img/favicon.png",
+    "bytes": 8398,
+    "sha256": "24060feb2203f75867e8e4a7bb8f4227a48601057895aabc949fecc2f227f86f"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/01-workflow.png",
+    "bytes": 131370,
+    "sha256": "82d4271fdd9cdfabac740669471c5de42ec387b024482c5456665010d93bd5a1"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/02-config-map.png",
+    "bytes": 139643,
+    "sha256": "f73bf6781807a673de88ba4c77acf31ad597a38a6384d2741097e36d0d4150bd"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/03-ssh-keys.png",
+    "bytes": 93635,
+    "sha256": "3e1b51b25603114ac178e4885392fdc24854ad95f39c34108787f46d0f195dbe"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/04-pages-settings.png",
+    "bytes": 130458,
+    "sha256": "7296ebf087db5a29d52fa0f4f4b2cadeda731ff076b8628503934bc1d9eef9d2"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/05-domain.png",
+    "bytes": 137437,
+    "sha256": "552d3d093b412533df6047f3ddc9adf21d2846154a829f839c67e0543340aa49"
+  },
+  {
+    "path": "source/img/posts/hexo-yelee/06-cloudflare.png",
+    "bytes": 119921,
+    "sha256": "15f84d0aae50e83fe2fa9aac8c9e089cef52facc4927293ab64f0b053dfd1157"
+  },
+  {
+    "path": "source/_posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md",
+    "bytes": 23238,
+    "sha256": "7d16aa7d26d3a9575e6a105dc3df60ce6e9a07c824f655485cdcfb0dec6ba4be"
+  },
+  {
+    "path": "source/_posts/math-notebook.md",
+    "bytes": 1618,
+    "sha256": "e8d4a0cb0e8a773721c33ace18973cdce1b60eb82d5c4aedb4cddc90e2b874c1"
+  },
+  {
+    "path": "source/_posts/网站笔记.md",
+    "bytes": 284,
+    "sha256": "d65b1b633debc762081929769ce21ea119cd8a58e5a625312d76b86776d283ea"
+  },
+  {
+    "path": "themes/autuswing/assets/appearance.js",
+    "bytes": 662,
+    "sha256": "2db23fd4821eeef9570b18dba8aad3296dc05e30ad03aa0509d64c82088be186"
+  },
+  {
+    "path": "themes/autuswing/assets/autuswing.css",
+    "bytes": 42742,
+    "sha256": "6711c5d9fe1a2a8deed9d9e5c707a78acb4d30b53c88d2ac8cc9b82b47872d4d"
+  },
+  {
+    "path": "themes/autuswing/assets/autuswing.js",
+    "bytes": 12298,
+    "sha256": "7ba8f127ee1aebe168b23ff5482dc3018a249b215ea71dcc5c9d9729e8dcf581"
+  },
+  {
+    "path": "themes/autuswing/assets/comments.js",
+    "bytes": 8330,
+    "sha256": "9797fd02e6b9d2966be7292234ec64b1e45c65853f269e1bae5cc7eb78899629"
+  },
+  {
+    "path": "themes/autuswing/assets/critical.css",
+    "bytes": 464,
+    "sha256": "6790b87165e4cd57a45a2b4958bfc2cfbd042daea8a903cff260643e848b1b36"
+  },
+  {
+    "path": "themes/autuswing/assets/extras.js",
+    "bytes": 10529,
+    "sha256": "b4eba0aab409c3c0916b7a8223e65110fc8de5651f44c6e1601b49406ad54a5a"
+  },
+  {
+    "path": "themes/autuswing/languages/default.yml",
+    "bytes": 2614,
+    "sha256": "2f563588a122ed6dc9c8b6388e1d287848379bf8d1a2f7093baebc4600baec32"
+  },
+  {
+    "path": "themes/autuswing/languages/zh-CN.yml",
+    "bytes": 2607,
+    "sha256": "43e6eccb17b453a6f4a61090e786351f2c6ab40102e9fbb860e4be9af641abc6"
+  },
+  {
+    "path": "themes/autuswing/layout/archive.ejs",
+    "bytes": 760,
+    "sha256": "65f6e781e7632dd92293f9980c14d0f80902993c4acee29bf997b448aa09a98b"
+  },
+  {
+    "path": "themes/autuswing/layout/category.ejs",
+    "bytes": 26,
+    "sha256": "b73576d96568745ecb17063fd60630a53bfb6d7d27b032b79c56ba10cb45054e"
+  },
+  {
+    "path": "themes/autuswing/layout/index.ejs",
+    "bytes": 403,
+    "sha256": "0f5098063c736f2530ef5df21150c4eb23690f88990018e8ac21c5eebda3f4bb"
+  },
+  {
+    "path": "themes/autuswing/layout/layout.ejs",
+    "bytes": 8116,
+    "sha256": "1f446e70808d8914a753f2ec36ac85cd96c79490920e0737e34b5c729c82f925"
+  },
+  {
+    "path": "themes/autuswing/layout/page.ejs",
+    "bytes": 2617,
+    "sha256": "6ab13def961827a5e3cff641939d40102ea1f69e4682eb37bc7430a4c5d35f78"
+  },
+  {
+    "path": "themes/autuswing/layout/post.ejs",
+    "bytes": 2439,
+    "sha256": "1a668250b618e2423a0167898f06607e7e85b3b373f698dd9af928ccffef8e01"
+  },
+  {
+    "path": "themes/autuswing/layout/tag.ejs",
+    "bytes": 26,
+    "sha256": "b73576d96568745ecb17063fd60630a53bfb6d7d27b032b79c56ba10cb45054e"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/card.ejs",
+    "bytes": 1308,
+    "sha256": "d4eb9a3c78aee31a33ea52cfdfc2a164c6f5c992081a8384746342b95c5e5fd3"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/comments.ejs",
+    "bytes": 1368,
+    "sha256": "451b5ab9471cdbc7b11fd06163bb3623cf1b23a53eae31cdf83fdf2d10bfa776"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/copyright.ejs",
+    "bytes": 1213,
+    "sha256": "1ab0d86199cb8e16f5b5afca60740dd599366809d752ce021c158217cdd2b34e"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/footer.ejs",
+    "bytes": 1795,
+    "sha256": "c1453bc6049f9a9e0b90a57dd4f449d7814ddc22718eff65c53053568f98b12e"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/glyph.ejs",
+    "bytes": 971,
+    "sha256": "b84c169252bce9fb4308530cb1f2656b9ab642d40a6efe91acc0dce91bf74c11"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/icons-sprite.ejs",
+    "bytes": 14802,
+    "sha256": "3306b00318c7443b56a7f03726d2747ede451181be4e94b055c6f5bbf1805ef4"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/pagination.ejs",
+    "bytes": 226,
+    "sha256": "af55d2d041025166ee2b8c8c8c96c5beef5d70debf03e08682c9e97415599b04"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/search.ejs",
+    "bytes": 709,
+    "sha256": "4bf9348fa8b45f3a1e1c9585c2accd290e269c1e7ee77b610857417a18a2bc3d"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/share.ejs",
+    "bytes": 839,
+    "sha256": "8199d6fde40e90c1a0cf402e2c2351eeceaa45ae8c84ced2886546f334f88a59"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/sidebar.ejs",
+    "bytes": 2762,
+    "sha256": "a8f393a68189e7bbde2e8e5d6212bccb8d6ae129005c3a162d1bb9cccaf03d05"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/social.ejs",
+    "bytes": 534,
+    "sha256": "093205744d0f6c1ce07869b32124deb06c35a4a5d9f4f367fdad71389db0808f"
+  },
+  {
+    "path": "themes/autuswing/layout/_partial/surface-wallpaper.ejs",
+    "bytes": 203,
+    "sha256": "8f9abf4a688dd2f8c3ecfe7707d772f0313ed0b658184043889a105bc0c5cc33"
+  },
+  {
+    "path": "themes/autuswing/lib/config.cjs",
+    "bytes": 8362,
+    "sha256": "d06d41e7d816cafbc65f6ee3bce61890619249336c4de69e5200b8930d9539df"
+  },
+  {
+    "path": "themes/autuswing/lib/content.cjs",
+    "bytes": 5133,
+    "sha256": "97b95839b544ef538093b35f534a42dcfece8ee14f91ff719a32a6a645832ae4"
+  },
+  {
+    "path": "themes/autuswing/lib/core.cjs",
+    "bytes": 6058,
+    "sha256": "a7413f397659df5949662b1d34fd5e93af89c074b332a504f9c2cac9ebf5f535"
+  },
+  {
+    "path": "themes/autuswing/lib/delivery.cjs",
+    "bytes": 7081,
+    "sha256": "6907e0bbc716d46800d19b6c075bb9beebcd3d41d66ca706f2622bb56692fa18"
+  },
+  {
+    "path": "themes/autuswing/lib/i18n.cjs",
+    "bytes": 1017,
+    "sha256": "289b66cbfcefa484b03d2f5e3884ae45aa4f7592d3d23477ba7d6b91537af410"
+  },
+  {
+    "path": "themes/autuswing/lib/math.cjs",
+    "bytes": 1838,
+    "sha256": "9dec6d8608f9e2e80efc361362c83db8bd329e04a3fe3bb13f53986b3afb7f7c"
+  },
+  {
+    "path": "themes/autuswing/lib/shell.cjs",
+    "bytes": 1383,
+    "sha256": "b9a24ba0a27039799d8262aa9aa30936f34ec206b4c1e47b8ffb4517907fdaca"
+  },
+  {
+    "path": "themes/autuswing/lib/sitemap.cjs",
+    "bytes": 1463,
+    "sha256": "23374d2e7c40959c25150edc90468b7f52cb80e081f238bbf545789945b49424"
+  },
+  {
+    "path": "themes/autuswing/lib/urls.cjs",
+    "bytes": 2840,
+    "sha256": "2d2122b2c1538f38de3950596041c8e77c7f2a3c572af2769ac64396418b256b"
+  },
+  {
+    "path": "themes/autuswing/LICENSE",
+    "bytes": 1221,
+    "sha256": "20931c0dbc1084553db0649222857db475c98f73a5c7c0c364f80a3c07191e89"
+  },
+  {
+    "path": "themes/autuswing/package-lock.json",
+    "bytes": 89219,
+    "sha256": "6a6c568ce7ccf0758dc49eb429187b0d0b7172e324f140f2a7a767498e133bc1"
+  },
+  {
+    "path": "themes/autuswing/package.json",
+    "bytes": 569,
+    "sha256": "3f87e287e6fbe60de7ad507699b4b1a465ef056ac6cc275fefda74ce192c2a71"
+  },
+  {
+    "path": "themes/autuswing/scripts/autuswing.js",
+    "bytes": 18335,
+    "sha256": "731797206ab196040b741620a338649b93a762489654913afa932d111fe0962c"
+  },
+  {
+    "path": "themes/autuswing/source/img/apple-touch-icon.png",
+    "bytes": 45769,
+    "sha256": "d30f47bbca2cdf66824c1018267400cf5846ed59aa8d0fd9e30522375afcedef"
+  },
+  {
+    "path": "themes/autuswing/source/img/avatar.png",
+    "bytes": 317783,
+    "sha256": "3685b16d19afa0fc4fd8c7f386b644b32d8993ce82f16e5b1e50f04880eff0f3"
+  },
+  {
+    "path": "themes/autuswing/source/img/favicon.png",
+    "bytes": 8398,
+    "sha256": "24060feb2203f75867e8e4a7bb8f4227a48601057895aabc949fecc2f227f86f"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/contrib/auto-render.min.js",
+    "bytes": 3486,
+    "sha256": "e5372d199bcdae8b4de71d0f7ceba72a4ba12774a27c60a6f1f77d03b3228ee4"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.ttf",
+    "bytes": 63632,
+    "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff",
+    "bytes": 33516,
+    "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff2",
+    "bytes": 28076,
+    "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.ttf",
+    "bytes": 12368,
+    "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff",
+    "bytes": 7716,
+    "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff2",
+    "bytes": 6912,
+    "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.ttf",
+    "bytes": 12344,
+    "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff",
+    "bytes": 7656,
+    "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2",
+    "bytes": 6908,
+    "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.ttf",
+    "bytes": 19584,
+    "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff",
+    "bytes": 13296,
+    "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff2",
+    "bytes": 11348,
+    "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.ttf",
+    "bytes": 19572,
+    "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff",
+    "bytes": 13208,
+    "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff2",
+    "bytes": 11316,
+    "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.ttf",
+    "bytes": 51336,
+    "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff",
+    "bytes": 29912,
+    "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff2",
+    "bytes": 25324,
+    "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.ttf",
+    "bytes": 32968,
+    "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff",
+    "bytes": 19412,
+    "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff2",
+    "bytes": 16780,
+    "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.ttf",
+    "bytes": 33580,
+    "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff",
+    "bytes": 19676,
+    "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff2",
+    "bytes": 16988,
+    "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.ttf",
+    "bytes": 53580,
+    "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff",
+    "bytes": 30772,
+    "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2",
+    "bytes": 26272,
+    "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.ttf",
+    "bytes": 31196,
+    "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff",
+    "bytes": 18668,
+    "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff2",
+    "bytes": 16400,
+    "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.ttf",
+    "bytes": 31308,
+    "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff",
+    "bytes": 18748,
+    "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff2",
+    "bytes": 16440,
+    "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.ttf",
+    "bytes": 24504,
+    "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff",
+    "bytes": 14408,
+    "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff2",
+    "bytes": 12216,
+    "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.ttf",
+    "bytes": 22364,
+    "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff",
+    "bytes": 14112,
+    "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff2",
+    "bytes": 12028,
+    "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.ttf",
+    "bytes": 19436,
+    "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff",
+    "bytes": 12316,
+    "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff2",
+    "bytes": 10344,
+    "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.ttf",
+    "bytes": 16648,
+    "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff",
+    "bytes": 10588,
+    "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff2",
+    "bytes": 9644,
+    "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.ttf",
+    "bytes": 12228,
+    "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff",
+    "bytes": 6496,
+    "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff2",
+    "bytes": 5468,
+    "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.ttf",
+    "bytes": 11508,
+    "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff",
+    "bytes": 6188,
+    "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff2",
+    "bytes": 5208,
+    "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.ttf",
+    "bytes": 7588,
+    "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff",
+    "bytes": 4420,
+    "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff2",
+    "bytes": 3624,
+    "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size4-Regular.ttf",
+    "bytes": 10364,
+    "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size4-Regular.woff",
+    "bytes": 5980,
+    "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Size4-Regular.woff2",
+    "bytes": 4928,
+    "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Typewriter-Regular.ttf",
+    "bytes": 27556,
+    "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Typewriter-Regular.woff",
+    "bytes": 16028,
+    "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/fonts/KaTeX_Typewriter-Regular.woff2",
+    "bytes": 13568,
+    "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/katex.min.css",
+    "bytes": 24793,
+    "sha256": "d4ab5b8ee16989b070cdb0ea24bd6ad48fc8df1b787f280f29d3ae4f959f2c00"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/dist/katex.min.js",
+    "bytes": 272868,
+    "sha256": "103a53763cc033bba8d175bf3f0ba597c3505c9b6747dd3f2c7bc2a6bfcc8ae7"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/LICENSE",
+    "bytes": 1107,
+    "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+  },
+  {
+    "path": "themes/autuswing/vendor/katex/0.19.0/package.json",
+    "bytes": 7282,
+    "sha256": "279db0fd6fcecf3fe3da1c1244dc9387e527b877d23638be6cf0c5e2a03817ea"
+  },
+  {
+    "path": "themes/autuswing/vendor/manifest.json",
+    "bytes": 45780,
+    "sha256": "baeaf7d7702240ac7b67b366f91b797dae100e27e72e41a39eb34cb6a81b24a7"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/assistive-mml.js",
+    "bytes": 3639,
+    "sha256": "9c1166c7c2ca2e57d5d25cc3bf71dc5369d32b9a4260151f998c0bed77d55dc3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/complexity.js",
+    "bytes": 12664,
+    "sha256": "681f7ed89d7c4d172477fd8512b808e885e30de4949060d89dc79040af476666"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/explorer.js",
+    "bytes": 57864,
+    "sha256": "e06b7be48f906855881339a5696d2e59f1e56b7d7c81ab4295581f34722710aa"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/semantic-enrich.js",
+    "bytes": 4782,
+    "sha256": "b169e77fbec9323a202478ed3f476c9da3af02336a8844749d901dbd762a8c8e"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/speech.js",
+    "bytes": 20451,
+    "sha256": "8c3e3048546e66067d47e3d929e2152e6a80aefc77b8de18879e81dac7a0cae7"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/a11y/sre.js",
+    "bytes": 261018,
+    "sha256": "6781c695ce2e7bf98b5e54f468b9c37ae1b4dbc9065afc18078b43bfbcbd8178"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/asciimath.js",
+    "bytes": 103833,
+    "sha256": "ba4f20f2f1b2e7ebfb45afc3b9e195d84a749e5492555812be805f6a11ad7066"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/mml/entities.js",
+    "bytes": 29055,
+    "sha256": "0027a9c7bef1a742868b00440d10d0be3648c3d570d722bb30206847b081d868"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/mml/extensions/mml3.js",
+    "bytes": 27784,
+    "sha256": "ed792479b3343529a2a9a1a813ebf3cea9fe5d381e9d135a07e155c81d036031"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/mml/extensions/mml3.sef.json",
+    "bytes": 192556,
+    "sha256": "0f0eef793f3b97df3b10c386e23528938eb82f7d180affe694397e7346f03a87"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/mml.js",
+    "bytes": 8673,
+    "sha256": "ccb777a3698f3d2619876d7fdfc8d307a54896c3e1812f37aac24252687251ea"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/action.js",
+    "bytes": 1843,
+    "sha256": "7c46fc1ef8118723bf2f386d704ab289e5dd683471e0ad4e1e717244959b565b"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/ams.js",
+    "bytes": 21194,
+    "sha256": "6ff85ab489da04ec533a22b9b93d5d5d51f9f51ef02c723439734e65d9257d14"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/amscd.js",
+    "bytes": 4310,
+    "sha256": "81d6115aa4358a98da5e6d477ac4198cbc11c2c2752745b3529a8b6e2761202f"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/autoload.js",
+    "bytes": 3331,
+    "sha256": "8da941fdea660944fc6a4434823dce9cf369b88cb6c0ab50b00700b7a92dbf0c"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/bbm.js",
+    "bytes": 2143,
+    "sha256": "fb780f6e8ca565439b3c6dc78f3e42b525905fd43c5e15471994a2a1da914ca8"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/bboldx.js",
+    "bytes": 7397,
+    "sha256": "772503b34ac5b7c56e56c7698403bad6ff3ea3fd1882c22b4e1ef518e6ef86c5"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/bbox.js",
+    "bytes": 2323,
+    "sha256": "9d9ff6d1c592d2a4fe728412d2d5ec29379f4721bfa3b8356ad2045eb939b848"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/begingroup.js",
+    "bytes": 4266,
+    "sha256": "0f606d5a71301992e92d8697ccbf8318736110691d8a94303f3f254cd589421a"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/boldsymbol.js",
+    "bytes": 2460,
+    "sha256": "baaabd9fb430fe4fdbfa9db74aa60b118dd650a68239280368abfd1bc30a0e10"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/braket.js",
+    "bytes": 4653,
+    "sha256": "d401832d91ca89fc8f76cf1ea67ce25b21c4a2b1d9da0db605204f262c8d69ee"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/bussproofs.js",
+    "bytes": 12204,
+    "sha256": "87451074cc17e2c8064d630b91cc56171182cc5a46c1313006014f56c498d8d4"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/cancel.js",
+    "bytes": 2255,
+    "sha256": "9ff91ff84d9776606cdb66da62ffe9bb39cfdfabcf070f214d35e553689ffece"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/cases.js",
+    "bytes": 4277,
+    "sha256": "6805d481aaee3f78d82bb9f0b6b9ac47b0804c30f10253394724459d95d41a8c"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/centernot.js",
+    "bytes": 2148,
+    "sha256": "e3c08e96d11f020027a9b325e7b8661f08940babba218b786ac29d50d822dfba"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/color.js",
+    "bytes": 6818,
+    "sha256": "f569ebbf53726afeb3f7a7803500ac2088aada400a2000394879d0b503311b17"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/colortbl.js",
+    "bytes": 3185,
+    "sha256": "dff289abcff30d0e109eb51a6f6be2d09e46b7e1db5bc881719f9f1bf483ab8f"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/colorv2.js",
+    "bytes": 1524,
+    "sha256": "434397a8b307ee5e824b065ecf3145ce8ffae58f465e054b3d9b853f5f904baf"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/configmacros.js",
+    "bytes": 2588,
+    "sha256": "5a7b6e7b7980f8d3425ddbcbbe21299da5b1254d5702e91bdbb9d04f487f4664"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/dsfont.js",
+    "bytes": 1898,
+    "sha256": "74a9961b43c43644c28c582fc14031b7f42bac0b771140a5d80af383415ea978"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/empheq.js",
+    "bytes": 5946,
+    "sha256": "028e775eca9919375d3397a947d6086383ec99a501a5080b2833ffda5d578a14"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/enclose.js",
+    "bytes": 1731,
+    "sha256": "5301d91e2e7d6f86a29c13c1b9726b7476b9de9b1745011886c914372fab4cf3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/extpfeil.js",
+    "bytes": 2445,
+    "sha256": "2d1f82bf22acefe6c358e3a3dca293cc2fda338f2db4fd147befc75122c41841"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/fontsizev3.js",
+    "bytes": 1637,
+    "sha256": "0e8fe554424a274d5809efc11f3a48602713bb7d2b2280ae4fcac04181f128f2"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/gensymb.js",
+    "bytes": 1588,
+    "sha256": "cd5cb8a68719acc0c215f4377e4d37eb35d4f49bab26c7e46efff5e4dbc7f6d3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/html.js",
+    "bytes": 2813,
+    "sha256": "a647d13d009d5ecee4239cfe681ef831f2bd0f2a91033b922ae6bf3481d156e0"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/mathtools.js",
+    "bytes": 22389,
+    "sha256": "0a403d24ff0fbb698cb0efd1cfe8569bfb47e492165204170481e7e6619a1dcc"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/mhchem.js",
+    "bytes": 38920,
+    "sha256": "7447710d9804aea68b4491e8fde752d69a905e0d27a8a39705c535f64cfa7fdc"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/newcommand.js",
+    "bytes": 8833,
+    "sha256": "27bc6df0fc8567eaff5153e679e5de53e9cf0918aae714d8dd72fd3a40ca2293"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/noerrors.js",
+    "bytes": 1243,
+    "sha256": "479c00d274f7f38e25d44a13e407bf8adeb83b02dd05639a302ca7c0db3d4cc2"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/noundefined.js",
+    "bytes": 1384,
+    "sha256": "d29d871d8d38802cc1581f6e4f5d673c357a8bf9802114ea57f51a53d0a0fef3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/physics.js",
+    "bytes": 19564,
+    "sha256": "3a1d1b0ab203b446a2c04d9f5a0bf59e6225c83a27aea0b2403f28293aadb79a"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/require.js",
+    "bytes": 4007,
+    "sha256": "6ccbfb7f9a6e627fabdc39ce034f99355172b9778891cce33243844501098130"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/setoptions.js",
+    "bytes": 3729,
+    "sha256": "756100054a264bcfd47c1b5c03b7e4dcdd7cca679b78b693a6926e887ab59c39"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/tagformat.js",
+    "bytes": 1975,
+    "sha256": "9da0f12949eb209f8cfa06fd88ddce12bf6b8880d29c067a7ad08f42164a3a57"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/texhtml.js",
+    "bytes": 2504,
+    "sha256": "6269dda09c28b4291cd4d95e880c9dc053cc95b41c644ce057bab5640cb83113"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/textcomp.js",
+    "bytes": 5135,
+    "sha256": "d085215c2d77df0c8dbf460b991c59efa9e69cbd7e1f6e94bf5cbb363aa1c69c"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/textmacros.js",
+    "bytes": 10279,
+    "sha256": "12a52659988472d8f160a96a774e970f89153a0f2e329d2a1d0e318d4ab9bdab"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/unicode.js",
+    "bytes": 3586,
+    "sha256": "bf1ddc9fe506f782c0e9271c0c52c4b258f9e4eac3d2905274d0c5d239e2a2b3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/units.js",
+    "bytes": 2118,
+    "sha256": "25278814cbc050fcd4e8849c014c238cf6801e00405e0acaf5d98924fd1e26a7"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/upgreek.js",
+    "bytes": 2157,
+    "sha256": "0f4c96104699aeada37446dfb3d50438efec4e11c58982abaa2ff781d42d3667"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex/extensions/verb.js",
+    "bytes": 1779,
+    "sha256": "b2290ff1be4d33c57dd476d87d1753d4cde0a5991612b4a24db881a15c85a250"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex-base.js",
+    "bytes": 108684,
+    "sha256": "3333576887732af3f4d43ff259f5e5bb412efb4717c454f49182a462c80a5da8"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/input/tex.js",
+    "bytes": 149555,
+    "sha256": "0375844c0c9698b3c26bde0c78b5bc62dbfbe15e3794433dcf7e0b4b3ea2b69a"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/output/chtml.js",
+    "bytes": 173814,
+    "sha256": "9037308c64af4028845b36cde08019e311618cba40605483a4f0606a22f4ac69"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/output/svg.js",
+    "bytes": 159356,
+    "sha256": "6151d21b8205858c103642484f1ca272e3c9cbbde37d53235ac0572966ce613d"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/package.json",
+    "bytes": 2435,
+    "sha256": "440cfcbfb317456a774bc7186e857a1f135954105e32a4312d6cdd555f3a4257"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/af.json",
+    "bytes": 267392,
+    "sha256": "b906ca6e91517ac8d6f87c304223839c9998daf2d29ac8d79ce5fa967c23dc77"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/base.json",
+    "bytes": 217157,
+    "sha256": "72558700556d997a95e9281044e330eba9a472dda43642a9b5cc0483294d875f"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/ca.json",
+    "bytes": 247328,
+    "sha256": "750a034984f3b5966a2a391eb5ad0c7b50bfa02eb576a82656a0bf43ebe34ee7"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/da.json",
+    "bytes": 247368,
+    "sha256": "92b82e15916673ebdcbdd6927aa491a18cf4780432733e534e1071b98b176dae"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/de.json",
+    "bytes": 284080,
+    "sha256": "2e56ac4f5a4ce6f831a69c34a81b66d4e260bba4a019499518f356888c146fa5"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/en.json",
+    "bytes": 364204,
+    "sha256": "5e60d1843351966a159cc409eb73e9abc7c7e375a3311c40d35843d70fee79fb"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/es.json",
+    "bytes": 250921,
+    "sha256": "3f273798257eac1bb39082724ac819a0940588aefd21275c2c43a1178badb61b"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/euro.json",
+    "bytes": 12781,
+    "sha256": "564c10b1ecae3d161a50fbf13965b9d326d24d8c5e172152a16253f6334375ac"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/fr.json",
+    "bytes": 276403,
+    "sha256": "caf60a882b654ac18f5a168960aeeac014c27708c56195dd6d765aff728839df"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/hi.json",
+    "bytes": 394568,
+    "sha256": "debdb8fc8b1c56a7f1ac4f96bc566af9456632b58df556b3331debdf0c2c723d"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/it.json",
+    "bytes": 282065,
+    "sha256": "b476cbfb4a1e8f6112f69c51e6ebacf86ed4114a9c0b1fbfb419ac2944aa6cfa"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/ko.json",
+    "bytes": 392014,
+    "sha256": "af7fd90bcf06736f5363b752d505d4cc7782bd725c6db4184edccdf56b24a87e"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/nb.json",
+    "bytes": 260745,
+    "sha256": "8d1ad78f81be49b569ce0011056f70501584843b5a5da8b21b4c2d8d38cb3ae3"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/nemeth.json",
+    "bytes": 227472,
+    "sha256": "16f30ad5bc7db02bbcce4623b108626f1a73d65660799891f23efd76dcaa333e"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/nn.json",
+    "bytes": 262158,
+    "sha256": "8481c038bfbf609f53053cb26f86c1de4c6eafebe1a80f909004b3a201b07166"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/mathmaps/sv.json",
+    "bytes": 271954,
+    "sha256": "7436531c326be9449bdbb41c74fcae4235fc58ff7c6816999e571ee636fd15f1"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/sre/speech-worker.js",
+    "bytes": 425256,
+    "sha256": "80bd663f2d48505291dcc256728a4fe3be1be4b73d3675b905bd51b1c431745b"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/tex-mml-chtml.js",
+    "bytes": 997558,
+    "sha256": "8a13ed0c39bba5399217d56212c22d96fb2b053b0d933d0c39731c8733b0090c"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/ui/lazy.js",
+    "bytes": 6599,
+    "sha256": "15636e17735eef5b3293618d65965919a8ec282fe79524c3e691fe20a3cccd22"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/ui/menu.js",
+    "bytes": 75112,
+    "sha256": "c45e40ae4d7fa3b9e92206d2f1e69b9b56fbce671f23a48170616810c0e2142b"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/ui/no-dark-mode.js",
+    "bytes": 2254,
+    "sha256": "556f0c805342cb79d5f1334f952635eb2100fd57d8ab96d555f0268294a56226"
+  },
+  {
+    "path": "themes/autuswing/vendor/mathjax/4.1.3/ui/safe.js",
+    "bytes": 6375,
+    "sha256": "ddd5b5eb3076bdf71c9b0508c58fae095b441a22b7bf2ff2e1ad5ace389f49b2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/accents-b-i.js",
+    "bytes": 13491,
+    "sha256": "cda272c18d7806464c9a508c10d869960fab3b132d1221d00b74c7433c5fae2d"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/accents.js",
+    "bytes": 7489,
+    "sha256": "9131bba1629aac079fd6d1a8d70ea3a2b571cd6071aa1d0a847fe088989d2601"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/arabic.js",
+    "bytes": 4325,
+    "sha256": "e10243625580cdd03fb90c34c57bb7bd4378fe18ab1ea203dbb6d008167d9b57"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/arrows.js",
+    "bytes": 13332,
+    "sha256": "bbff073fd064cc44fa904842bf36fe43d838a3a93e94494c1e8c3bddf3b7e0b2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/braille-d.js",
+    "bytes": 6081,
+    "sha256": "b949c5bf5404204d64469e89e8d29b430acc053c8ec5ce78a6f91b0fef1c5ee1"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/braille.js",
+    "bytes": 6084,
+    "sha256": "9c05fb6cd274a1af8a804dd7816e19d73baebb904629b0106e8c00f0c54bf5d8"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/calligraphic.js",
+    "bytes": 1903,
+    "sha256": "045e1edbc327c5414e2f63f69bd3de5cce7a1ddeb380fde9dcbedc10db7cb52a"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/cherokee.js",
+    "bytes": 9878,
+    "sha256": "7d6ff5468b183f2a02bc08e12a30febaee3a41145365db7585f2ce052cf8735c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/cyrillic-ss.js",
+    "bytes": 25968,
+    "sha256": "3c51c50c5028cc39c5f3e031c3e54307cd35dc321853c2710ae6cf7eaf2bd25b"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/cyrillic.js",
+    "bytes": 26519,
+    "sha256": "bb470dbf945e9d6357e635b3c58b7474da58b8355ddedc86e3d198103df291ce"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/devanagari.js",
+    "bytes": 3487,
+    "sha256": "50db62e3e6232bd5e16b6412f171b114a7ec1107564dc084437d02e4237e93b2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/double-struck.js",
+    "bytes": 2448,
+    "sha256": "0d9c13974f646edcd4c2c75e64b55320278e546808c884d63a51e26a532da4ca"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/fraktur.js",
+    "bytes": 3932,
+    "sha256": "8f732681502b2d6f07bb8b122b89b17ce34ca16f287c6ac4da2f07c4655698b2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/greek-ss.js",
+    "bytes": 31582,
+    "sha256": "d4255226e3a6a3a4eb9871962382558e7530436f84ea6c240445642d7694a688"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/greek.js",
+    "bytes": 43018,
+    "sha256": "dd734f7eee924710279fbc80cfbbea7c483bd00190de565ba73c31629fe3a500"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/hebrew.js",
+    "bytes": 15999,
+    "sha256": "1e69d9b70369bda9eb6827035a74a861a0be2295fa79346f841f536a7ad3783e"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/latin-b.js",
+    "bytes": 13059,
+    "sha256": "bf0a3a7640d0c191c90294d37ccc379e9fd102ae1b154d43be07e692fad04d63"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/latin-bi.js",
+    "bytes": 18357,
+    "sha256": "df6e07cde04945ebf89104057a82f45f7624a5c5106561c1523d42a3a9655197"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/latin-i.js",
+    "bytes": 18390,
+    "sha256": "f0733361757d55a07606978dc6d251784f21f5915bc827cc192ed3aa87c198c1"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/latin.js",
+    "bytes": 13614,
+    "sha256": "bf9e6e4fd7488f9257178c32094a8b2006bb6ee88d13445b84ebd71576f0d276"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/marrows.js",
+    "bytes": 3803,
+    "sha256": "0aa42334fc95d4eac98e0ef2c9278ff7463bf43e381b7f8359008d940c7c7da2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/math.js",
+    "bytes": 9487,
+    "sha256": "23ceb5473e37c45f982e445769c8ea66d5f4e04a5bb73afb2e848191af97ec4c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/monospace-ex.js",
+    "bytes": 26417,
+    "sha256": "fcb206ad0f707d4eb11d2b692bdc88e48c9b969b0ec51aa74afdb9f49aeea30b"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/monospace-l.js",
+    "bytes": 13021,
+    "sha256": "2cea9eac28e774280a7cac170416f71644523e7cd8768553f50137615faa9878"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/monospace.js",
+    "bytes": 5187,
+    "sha256": "ec8aaa83ab072db9a743376d23c1a81503e24bbe0703efdef7d6758f3508dcf3"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/mshapes.js",
+    "bytes": 2832,
+    "sha256": "ecaff621f1026d4146bf4e6e2faddf6ae15534a9f8a1addda46cf7f5a2acffec"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/phonetics-ss.js",
+    "bytes": 14216,
+    "sha256": "1f829c5900097f8ac5b98d92d525a979a8ee2b1d91e9a14ee537d07b813e5af2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/phonetics.js",
+    "bytes": 11523,
+    "sha256": "f6d93f881c5210c643b2b7c12fae833ce7e8d8ec872d54e48c287a0c378bdf4f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/PUA.js",
+    "bytes": 21136,
+    "sha256": "c7d94d0b5eab7f79db19fbf92277454c7e1b0abbdcebde853c2c997ad71bc775"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif-b.js",
+    "bytes": 13508,
+    "sha256": "b1cd67b18a82e99befc53f49d5068afeed51d202cd812247e1b5a9fd26c14d0a"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif-bi.js",
+    "bytes": 18577,
+    "sha256": "576d11df93c96fd523cabdea169135fc75d54eb959e9201089c2f16e0b9b0dba"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif-ex.js",
+    "bytes": 48127,
+    "sha256": "cacdc06e2d5bb5606f21a883787fc98a82693beec8353275396d5b16888bf492"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif-i.js",
+    "bytes": 18010,
+    "sha256": "f2e58fe81d461bb130b801e76b33cf553c3693cdfc8dec3d99eaadbaac321ded"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif-r.js",
+    "bytes": 13288,
+    "sha256": "b358edcc980f7e7f82e17af92b8ecfa8fa28e5b34b9e5511435bc7339c7b3600"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/sans-serif.js",
+    "bytes": 24123,
+    "sha256": "da80cc921fec1a99a83ac8564bedb96060120576111a64e156fd2dff7c924234"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/script.js",
+    "bytes": 3890,
+    "sha256": "af9efad5224711768329a2942c1896a165b671a67a9dd287df4816a59264b37c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/shapes.js",
+    "bytes": 9273,
+    "sha256": "289163865dce57b0044d0e4783020782d21eabc1dfa5ac96d6aada78f2c471ca"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/symbols-b-i.js",
+    "bytes": 5737,
+    "sha256": "30f0873ceb7ad70e90f23bd29d216cafa15bd2bdaa2ced2697897949d3a047a3"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/symbols.js",
+    "bytes": 8244,
+    "sha256": "a34a8771d0fdd52e0cb4c9e90c752d51b7afd3a735b8b43276d6a59ce61c1949"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/dynamic/variants.js",
+    "bytes": 1322,
+    "sha256": "5780fd7b3d7752e0f51438a0856d26de7abdaf5446ca83f80a50e9d08471e7af"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ab.woff2",
+    "bytes": 9600,
+    "sha256": "9813052b6bca662c7d7242e35e6b754de3edb6c469dc4c3af747a6b1d7de9962"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-abi.woff2",
+    "bytes": 10688,
+    "sha256": "544e713025065edf43e9b34b671bc47203d0879c73cccbaa000093ff07ae09da"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ai.woff2",
+    "bytes": 11580,
+    "sha256": "ba7e5230b13bc7744e8b51f3cff12d43c4590b18122b4acd6b9bd03b9588d9b0"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ar.woff2",
+    "bytes": 25492,
+    "sha256": "9e942b15ecbf57c84324aa27fdfbea5679de4bee0e1a578eb209153c60d8ad79"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-arl.woff2",
+    "bytes": 7160,
+    "sha256": "ac5a25c0ab7082074f811aecf807cb16dc087879e3d58b5e2893eae0d6f1c449"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-b-a.woff2",
+    "bytes": 9480,
+    "sha256": "036467b277fb41f43d7a37b1190bb8c9069ff9896ffad8a3ea373fc3d4dba88a"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-b.woff2",
+    "bytes": 8636,
+    "sha256": "ea04057759e00963656c9cb63070acdfa20a6ebf441b63a004032fba63c01aef"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-bi.woff2",
+    "bytes": 9504,
+    "sha256": "925f5064cbe2c9236c59821cb3ec9a411ee46ec32eaaee0fc1c5fd855fe9d098"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-br.woff2",
+    "bytes": 3292,
+    "sha256": "5276058e417131564b8e122e79564a5357bcfbe52ec99f381323f510bdab3e6c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-brd.woff2",
+    "bytes": 3640,
+    "sha256": "dd74ff0393fc3662d30626a464c2a49e244b8c4407304fa048be097525882bfa"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-brk.woff2",
+    "bytes": 864,
+    "sha256": "4ba8ef6cf75997b0f62b21fac1633612469d6864026dc431a2f98565f4f86666"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-c.woff2",
+    "bytes": 5948,
+    "sha256": "bfe4cd45950bd79704ad58fa97edb3d716c7d14a8a493e41ae3f537c43ada90d"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cb.woff2",
+    "bytes": 6216,
+    "sha256": "68ebec1310a6cbb92b4a968ea63e89353b06e3d06423e6073fd7e7aa0d528605"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ch.woff2",
+    "bytes": 10096,
+    "sha256": "22cf130d6ce128ec6b97e66c256b36a29e1732c85fa8c972e6b9829b88e881f1"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-chb.woff2",
+    "bytes": 10216,
+    "sha256": "5cf157d3e5ac9147a5a965d8faa6b887e11a1e9cc6138b850b722a18cb4d90e5"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-chbi.woff2",
+    "bytes": 11472,
+    "sha256": "f8495cf659299b1d7478b0b23f6e28b829ea6e690e2b511e2f83b7fbcb316cb7"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-chi.woff2",
+    "bytes": 14132,
+    "sha256": "e10555212099fcfa9185103b7ac220e772ed6648ec1bb0cd22b5f2c40f8278aa"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cy.woff2",
+    "bytes": 21724,
+    "sha256": "de6ce6188dfd327a493068d627914e3b32ddcec311e70b34f50b010da9980b14"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyb.woff2",
+    "bytes": 21212,
+    "sha256": "eea8c28d0f92014ee12419acaaf419b054eaedbf487b42aa95433c06c2fd2670"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cybi.woff2",
+    "bytes": 28984,
+    "sha256": "d2c8c1b3858fcd6987615b7fc49a2e17c999d7b91467ec9399d6cf83370282cf"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyi.woff2",
+    "bytes": 37528,
+    "sha256": "3eccf65ab880d43cceb8c2c877d2606d8a60ca2164c7459246a4f4c7677db2cc"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyss.woff2",
+    "bytes": 16864,
+    "sha256": "deafc77bf727a846a89923c3353378a66d8e2b331a0943f9e5da8d175976e2ad"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyssb.woff2",
+    "bytes": 14720,
+    "sha256": "5cfeaebdbf462af0cf7e468140148c8f3665d8f1e88ca7496a6a4ce776a095b1"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyssbi.woff2",
+    "bytes": 15352,
+    "sha256": "75ff63948be2b93f01f9ce92b7c01ceab3b165a98ec130b6f68e21e2a4a4243f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-cyssi.woff2",
+    "bytes": 17836,
+    "sha256": "630b634836e36fbad04d9589eba321a686a5bc7a8552d031dfa51fa36f7e5aac"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ds.woff2",
+    "bytes": 9900,
+    "sha256": "55fa7c9ee61db7ea6d5cd498016ac5c559bf4c48c8ade952c46196ba82384064"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-dv.woff2",
+    "bytes": 10280,
+    "sha256": "7a4b89bd20aa94003f6a88fcac7b37823503c894337dc3767e8602b934385c0f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-em.woff2",
+    "bytes": 2176,
+    "sha256": "e438743a1e217e6dd12adc0e3dd7ad99f06b6bd61836561aa07de48cc960dfcb"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-f.woff2",
+    "bytes": 9920,
+    "sha256": "807ba2d061385e9429ffdc99436374dd30bb818b7fb2a93e37a73f0cc6cfc46c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-fb.woff2",
+    "bytes": 10344,
+    "sha256": "9e27ed005c6303eecaae27e775b11b8eac3d2c85be5b62653ae1f93df124fc51"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gk.woff2",
+    "bytes": 25136,
+    "sha256": "5086fdd28a4ae938452a4b177736d040f5b4495f1907da4dd9a5cb24cf0cdba4"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkb.woff2",
+    "bytes": 23016,
+    "sha256": "6174a6b8ace7fbbedd4e4517689d9ef7acc6e260328791f906aa8a8f57ddd378"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkbi.woff2",
+    "bytes": 25944,
+    "sha256": "81463eeb14b85e7a63979c773050fda8d59a6c36dd9a682f38635b8cce85260f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gki.woff2",
+    "bytes": 35948,
+    "sha256": "0185126699ae80e0c27dbdfa136d4aeb66cf7b1640b8b7965ea74e7987c2c29a"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkss.woff2",
+    "bytes": 13704,
+    "sha256": "eb9a2b7cbde5ace2303b6e5cc1938c22fcc4941ce4203ae338f04e5cd84fbbd3"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkssb.woff2",
+    "bytes": 10652,
+    "sha256": "60c43c0b2ac2f7dae55875707a989c353aeba12ab1865f753f23ed165d132c72"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkssbi.woff2",
+    "bytes": 11292,
+    "sha256": "d2f5f0fa60dd3ceed92b6e58d04114001b965ef5668b1a307036cd8e07f30fdc"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-gkssi.woff2",
+    "bytes": 14288,
+    "sha256": "aaa7ddddaecf4f318edb90602f0281d35b8c9f8cd055d037bf3171be3f0c2966"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-he.woff2",
+    "bytes": 6576,
+    "sha256": "6a735a8f6216f182a0cb1e2b0878f2ce4b24ec30e633fc21322ce22fa8607696"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-heb.woff2",
+    "bytes": 7720,
+    "sha256": "935d2cc9e8ec70822d0b45eff866645f2fa9399bc0a8ddc5b14802c1c21dcd19"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-hebi.woff2",
+    "bytes": 7904,
+    "sha256": "1a801f9c0de1b2ccf5221492c5a0d4c39c5d9233330bc458e9126034df18f3c3"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-hei.woff2",
+    "bytes": 8940,
+    "sha256": "0c94513a5b8724e94ab07839334ca325e1093c62ac7b4141294fdc6efbb892ae"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-i.woff2",
+    "bytes": 10116,
+    "sha256": "ff33843d3b60c451b8fb4680e8a5d086cb16c3a1e86c7f16d71b25262f826d68"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-lb.woff2",
+    "bytes": 25224,
+    "sha256": "0e6f9f50a9013c6ce6a8b9ee138be2b6414f16cc1349281ccfa590389ab7a88f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-li.woff2",
+    "bytes": 36500,
+    "sha256": "8e613a25ee3a5dda011fb268d5e744a073f454ce0e8cfbe8f0d5735a8c9a2efe"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-lib.woff2",
+    "bytes": 34112,
+    "sha256": "83b129be6b3d81c9a7087aabdfcfa4324793fc1d6634a1f96420db8377cef9bf"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-lo.woff2",
+    "bytes": 10124,
+    "sha256": "648bf3b073453537e31856d160ddd02198da3469843f4110a97ed50ace3e48cd"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-lr.woff2",
+    "bytes": 35936,
+    "sha256": "e8e1f9f71f4ea8daf6655c131ec273d86bf79d951abe1c09ea43b6ec53b4e522"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-lt.woff2",
+    "bytes": 4208,
+    "sha256": "ff9f74c262c17bd28903104f77f5d6fd666fd6a8a83af2d208eb465c8da8e553"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-m.woff2",
+    "bytes": 17608,
+    "sha256": "e75f56e5a38356f27803f37a902e2a0ab6bfa35bbbd05eed57cf843a910eae75"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-mar.woff2",
+    "bytes": 8000,
+    "sha256": "7400843ff7a58f742971eda9c74aaf272d2808ec4192981806593598fe415907"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-mi.woff2",
+    "bytes": 7556,
+    "sha256": "a033afc1ea52f834cb8077c200893a6f88681b81c88f34a03e03fb2492412429"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ml.woff2",
+    "bytes": 36064,
+    "sha256": "93a1d4a6312141f24fabfa0386f5f59ea0ed16c96732f91ab3d633cfedce4957"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-mm.woff2",
+    "bytes": 27484,
+    "sha256": "9090ab9f0d7c5b0ab458df758158710f0e5038cbe318bc3e8d5a42a1419411d1"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-msh.woff2",
+    "bytes": 9020,
+    "sha256": "c65b2db9fcb2b1d63739a3a735227bb022f6386f93e732e81c81ab4e80f95e57"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-mx.woff2",
+    "bytes": 78760,
+    "sha256": "0d8c5969f55c143b226282e54033f9f32b330a5abb626e73d9eef6da4ab13cde"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-n.woff2",
+    "bytes": 93764,
+    "sha256": "6dcaf2ebcd1d1490fb6e85c3647ae0ed0d0a47ac43efe136c5328519f1da117b"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ob.woff2",
+    "bytes": 2124,
+    "sha256": "26dd14f86b65322d3fcf7b9a39f6cb04919dc85ec3ccea133dd10ea53cd2eceb"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-os.woff2",
+    "bytes": 2172,
+    "sha256": "d1d2a5396eafcd455f298e87eae9a4f2d7c7a7030d6c58fce16442ced46de4d7"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ph.woff2",
+    "bytes": 14640,
+    "sha256": "201c3759edf766eba7a3553e9fe8168fb61090d472cda6d26ae8bf79ebdd42ba"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phb.woff2",
+    "bytes": 14388,
+    "sha256": "a486b7c8495328fd659badb068d9801c39ffa946c3d8fe1287d14fa8409f3dca"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phbi.woff2",
+    "bytes": 11628,
+    "sha256": "f00610244688789ce72faedfeff6895c8e3d348352fd0792845e2caa152dc375"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phi.woff2",
+    "bytes": 14924,
+    "sha256": "7ec5eca55aefa6f9522db9a7eb0ba4b62ecca3aea4d4d9e957b0f951ad953b40"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phss.woff2",
+    "bytes": 12024,
+    "sha256": "fa635aa8f3e4f105e44b5435812fda4293796d0cbaa7b2cd98a7d0b7914a62d2"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phssb.woff2",
+    "bytes": 9776,
+    "sha256": "6feaef68a860c32379bcddbc5c6fc46a53e25942e9c8a52b0db1c262dca5db86"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phssbi.woff2",
+    "bytes": 10488,
+    "sha256": "3f449b868e8832fe82a1981ef3b0a334c889a42809ad1678f567210d188775d0"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-phssi.woff2",
+    "bytes": 13368,
+    "sha256": "bf8909c78f81450aeb4c0aaaa6556fc269c8ff873718834bc594d57a8cfc88d9"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-pu.woff2",
+    "bytes": 27524,
+    "sha256": "495d1c4a40b57e0cfbaa7ad1b3281eff8dbd3562959dbde1fad58198739d4bd5"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-pub.woff2",
+    "bytes": 17468,
+    "sha256": "746416d14d183491ee99b897a4fe38849420585fefc22c3de34b28a25d0a137c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-pubi.woff2",
+    "bytes": 15668,
+    "sha256": "6a143f2d149c4f996a83949566f7403392505cefa4e3585e194be368b28c746f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-pui.woff2",
+    "bytes": 18328,
+    "sha256": "98356729e9585e164b3cf488225fcfc62e74f2fea327522e864bbb53c05a0a99"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-rb.woff2",
+    "bytes": 4232,
+    "sha256": "5c8c39f391adc2cef60afc74c4463e79541272e6c188f7efd336846a974e7cf7"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s.woff2",
+    "bytes": 10068,
+    "sha256": "d35959160704891ed2e2bbe40e8bf35cfbbfa06ba3edfce35ffc957604eea628"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s3.woff2",
+    "bytes": 4488,
+    "sha256": "e2e89eedebb6fcbdcdbd004a50851c295a26bb8247ea96827e88898b3262e825"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s4.woff2",
+    "bytes": 4548,
+    "sha256": "8358f1daeccf586e443217fc8235b17e6e84d75c63c5c3b4896b70500943de23"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s5.woff2",
+    "bytes": 4500,
+    "sha256": "4c1abef2f5676a4578d24eaefb4f07335fe9cf1b682d0a604391058eaf69d275"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s6.woff2",
+    "bytes": 4488,
+    "sha256": "3c6b241ce6cd8624cf7d52fa643482139d6836394909cfcb9d288dafa6cb001c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-s7.woff2",
+    "bytes": 4512,
+    "sha256": "30b429054c4daf2ff2679d1c644bc91ff093f9925c93c25bccfe4b1ef9d81f0f"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sb.woff2",
+    "bytes": 8288,
+    "sha256": "49368a11a3abdb38d61e5eb23263bc2cca85473d6bd59ee4d9790ca1d981a6bb"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sh.woff2",
+    "bytes": 15964,
+    "sha256": "3481446acd6b8387ed1d0b91af9873200d1f378aaf931c1e4f728d13babb336b"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-shb.woff2",
+    "bytes": 2072,
+    "sha256": "2d3821e87f3123e98a83d65f73076c26eef6dc84c90049ed958101142680cd0c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-shbi.woff2",
+    "bytes": 1804,
+    "sha256": "30b30e946801450e0ba23ef4d476a48dd571bc6613badf9108703650bd0a5511"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-shi.woff2",
+    "bytes": 1900,
+    "sha256": "14567da5867f27f942eebb08008c158eb6e39bf171a723e8464de7882a79e275"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-so.woff2",
+    "bytes": 5184,
+    "sha256": "6e63343722538572b8fbf86dfac75aa90d94180236ccb756101904887ff2fe3e"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ss.woff2",
+    "bytes": 15560,
+    "sha256": "d0374dd78c46443eb5d24cb7b9bfb70223dad02f402c7e067328db0f0fa4c874"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssb.woff2",
+    "bytes": 13620,
+    "sha256": "858e5774c936065a4b40e670004028b54c56fe91ff57771879fee7ace28e285d"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssbi.woff2",
+    "bytes": 14920,
+    "sha256": "799257bff4a868754ebbd80a25e3fcb15bded66005b0b90c358797ec9535fdde"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssbix.woff2",
+    "bytes": 29944,
+    "sha256": "dd390467fef0337857f471a4eaefe9271f2c4fd9c3234e685427c8db9d911e87"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssbx.woff2",
+    "bytes": 28404,
+    "sha256": "5ca3f6d99f2f1d3d7e7f32cb20b637c5c2a1a9ff8349ed45c72afc5ab71829d7"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssi.woff2",
+    "bytes": 16640,
+    "sha256": "a8f84256a414918cd01fc594c4dd8cb29d7c908e3536200e50357725de8f9883"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssix.woff2",
+    "bytes": 30100,
+    "sha256": "827a7494e70293b96e6b95fddc3a01f329661d9d85e944af9b7a4be6cdb1ffd0"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sslb.woff2",
+    "bytes": 21132,
+    "sha256": "e4b3ee31bc2630ecb97de5de0551b154655a9c8c3218227bfbb524f6e65ab21b"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssli.woff2",
+    "bytes": 33432,
+    "sha256": "8dacfee89ded1e1185edef2bda318c9cb9f3df55a880e36c8759edddbe4d0e50"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sslib.woff2",
+    "bytes": 21884,
+    "sha256": "e5add180f95f2d8894abe251aa544ca569611f0e23eac01f184e810d98595b20"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sslr.woff2",
+    "bytes": 29760,
+    "sha256": "e62aecfb96f85cae8d8128b63c9fb50dc313a2d928d4108d521915a59ac4eae8"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-ssx.woff2",
+    "bytes": 27400,
+    "sha256": "e9d6cef669ccc864f193c1ff7e778fa2897cdf9d82e3198004ca65a613e7df81"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sy.woff2",
+    "bytes": 34180,
+    "sha256": "eba20ca513d5e11ac19282f6b51d59b162cee0d8fcae4ef1078fe39ebba41af6"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-syb.woff2",
+    "bytes": 7912,
+    "sha256": "b0cc12efaa291e46bb5e381f684bca9d08cc5eb67746154b353889a0c7b667dc"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-sybi.woff2",
+    "bytes": 11416,
+    "sha256": "411b7361ee0dcf4f9c4be8a20244149692f1a56d80795f25cc98f998a2d9f967"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-syi.woff2",
+    "bytes": 12032,
+    "sha256": "1d2e4e8030c2add700e641d6401d2b9d5374e228507acef16abefb7b8bb90652"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-u-a.woff2",
+    "bytes": 4464,
+    "sha256": "0a90315e8de88d568186257c9424bd4afc29b213104c8f9eb8ea67f2ffb774d9"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-u.woff2",
+    "bytes": 4108,
+    "sha256": "a2ee7f53173e685c3e04490f9a1531169ba0e669b8e3a5bfd07717b43326f02c"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-v.woff2",
+    "bytes": 4528,
+    "sha256": "5d8a55d28ac23f71a6966ca1ae7d7b34f534f23f59806f8abae8ac1b6853b565"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-vx.woff2",
+    "bytes": 3744,
+    "sha256": "8da9e1d5139531597fc248dbbb0bd28250a26fdd017dbef1cd6847525e933d6d"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/chtml/woff2/mjx-ncm-zero.woff2",
+    "bytes": 840,
+    "sha256": "5871b40a61aec9c13826851150208b19e06a15419bebac653e638437daafbcfc"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "path": "themes/autuswing/vendor/newcm/4.1.3/package.json",
+    "bytes": 5005,
+    "sha256": "b6fd3b04fb134b062950f1af6eb9f0fffc08e48c044f109f25775afa8ffc87ed"
+  },
+  {
+    "path": "themes/autuswing/vendor/THIRD-PARTY.md",
+    "bytes": 1193,
+    "sha256": "73e7956814a50b03ea7bc877e23b57b0e0847fd759f59c8080695a181c7e11f5"
+  },
+  {
+    "path": "themes/autuswing/_config.yml",
+    "bytes": 6473,
+    "sha256": "a094b70418a43ee74894bcaef555c5c757956e2727f73b8d3e05fcfc3de9ff50"
+  },
+  {
+    "path": "_config.autuswing.yml",
+    "bytes": 6809,
+    "sha256": "6b8e6e35e8a953cc2f217993f90954677e3aad6134c894f98360754caaba2876"
+  },
+  {
+    "path": "_config.yml",
+    "bytes": 1529,
+    "sha256": "f8a837fefa8a857df239177a4c7eac42c97423a84e8629f52ee35d333efd3e59"
+  }
+]

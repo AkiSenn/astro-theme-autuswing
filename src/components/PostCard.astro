@@ -1,0 +1,68 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import type { Post } from '../lib/content';
+import { theme } from '../site.config';
+import SurfaceWallpaper from './SurfaceWallpaper.astro';
+import { clientConfig } from '../lib/client';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const Content = post.rendered.Content;
+---
+
+<article
+  class:list={['post-card', { 'mica-card': theme.cards.enable, 'card-lift': theme.cards.hover }]}
+>
+  <SurfaceWallpaper wallpaper={post.data.wallpaper} />
+  <div class="card-date">
+    <time datetime={post.date}>
+      <span>{post.dateLabel.slice(8, 10)}</span>
+      <small>{post.dateLabel.slice(0, 7)}</small>
+    </time>
+  </div>
+  <div class="card-body">
+    <div class="post-meta">
+      {post.categoryItems[0] && (
+        <>
+          <a class="category-label" href={post.categoryItems[0].path}>
+            {post.categoryItems[0].name}
+          </a>
+          <span> / </span>
+        </>
+      )}
+      {theme.article.reading_time && (
+        <span>
+          {post.minutes} {t('minutes')}
+        </span>
+      )}
+    </div>
+    <h3>
+      <a href={post.path}>{post.title}</a>
+    </h3>
+    {theme.article.excerpt === false ? (
+      <div
+        class="prose"
+        data-math-config={post.math ? JSON.stringify(clientConfig(post).math) : undefined}
+      >
+        <Content />
+      </div>
+    ) : (
+      <p>{post.excerpt}</p>
+    )}
+    {theme.article.more_link && (
+      <a class="more-link" href={post.path}>
+        {theme.article.more_link} →
+      </a>
+    )}
+    <div class="card-tags">
+      {post.tags.slice(0, 3).map((tag) => (
+        <a href={`/tags/${tag}/`}>#{tag}</a>
+      ))}
+    </div>
+  </div>
+  <a class="card-arrow" href={post.path} aria-label={`${t('read')}: ${post.title}`}>
+    ↗
+  </a>
+</article>

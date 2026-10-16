@@ -1,0 +1,94 @@
+/* Stage two compatibility only. Three-width navigation and typography follow in
+   stages three/four; keep the existing visual proportions for comparison. */
+:root {
+  --muted: #606b62;
+}
+.toc {
+  list-style: none;
+  padding-left: 0;
+}
+.toc-item {
+  padding-left: calc(var(--depth, 0) * 12px);
+}
+.toc-numbered {
+  list-style: decimal;
+}
+.toc-numbered .toc-item {
+  display: list-item;
+}
+.prose .astro-code {
+  position: relative;
+  color: var(--shiki-light);
+  background: var(--shiki-light-bg);
+}
+.prose .astro-code span {
+  color: var(--shiki-light);
+}
+html[data-theme='dark'] .prose .astro-code {
+  color: var(--shiki-dark);
+  background: var(--shiki-dark-bg);
+}
+html[data-theme='dark'] .prose .astro-code span {
+  color: var(--shiki-dark);
+}
+.prose pre code {
+  counter-reset: line;
+  display: block;
+  min-width: max-content;
+}
+.prose pre .line {
+  display: inline-block;
+  min-width: 100%;
+}
+.prose pre .line:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  min-width: 2ch;
+  margin-right: 1.3em;
+  text-align: right;
+  opacity: 0.45;
+  user-select: none;
+}
+.prose pre {
+  padding-top: 36px;
+}
+.code-language {
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  font-size: 11px;
+  opacity: 0.65;
+}
+.copy-code {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  font-size: 12px;
+}
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block: 24px;
+}
+.share button,
+.share a {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prose .math-display {
+  overflow-x: auto;
+}
+.prose mjx-container[display='true'] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+@media print {
+  .share,
+  .copy-code,
+  .code-language {
+    display: none;
+  }
+}

@@ -1,0 +1,159 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import BaseLayout from './BaseLayout.astro';
+import { posts, type Post, isIndexable } from '../lib/content';
+import { absolute } from '../lib/urls';
+import { formatDate } from '../lib/dates';
+import { theme } from '../site.config';
+import Comments from '../components/Comments.astro';
+import SurfaceWallpaper from '../components/SurfaceWallpaper.astro';
+import CopyrightNotice from '../components/CopyrightNotice.astro';
+import Glyph from '../components/Glyph.astro';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props,
+  all = await posts(),
+  index = all.findIndex((p) => p.path === post.path),
+  previous = all[index - 1],
+  next = all[index + 1];
+const Content = post.rendered.Content;
+const networks: Record<string, string> = {
+  weibo: `https://service.weibo.com/share/share.php?url=${encodeURIComponent(absolute(post.path))}&title=${encodeURIComponent(post.title)}`,
+  twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(absolute(post.path))}&text=${encodeURIComponent(post.title)}`,
+  telegram: `https://t.me/share/url?url=${encodeURIComponent(absolute(post.path))}&text=${encodeURIComponent(post.title)}`,
+  qq: `https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(absolute(post.path))}&title=${encodeURIComponent(post.title)}`,
+};
+const related = theme.reading.related
+  ? all
+      .filter(
+        (p) =>
+          p !== post &&
+          isIndexable(p) &&
+          (!theme.article.post_nav || ![previous?.path, next?.path].includes(p.path)),
+      )
+      .map((p) => ({ p, score: p.tags.filter((t) => post.tags.includes(t)).length }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+  : [];
+---
+
+<BaseLayout path={post.path} title={post.title} post={post}>
+  <div class="article-layout">
+    <article
+      class:list={[
+        'article',
+        { 'mica-card mica-article': theme.cards.enable && theme.cards.article },
+      ]}
+    >
+      <SurfaceWallpaper wallpaper={post.data.wallpaper} />
+      <header class="article-header">
+        <a class="back-link" href="/archives/">
+          ← {t('all_posts')}
+        </a>
+        <div class="post-meta">
+          <time datetime={post.date}>{post.dateLabel}</time>
+          {theme.article.reading_time && (
+            <span>
+              {' '}
+              / {post.minutes} {t('minutes')}
+            </span>
+          )}
+          {theme.article.word_count && (
+            <span>
+              {' '}
+              / {post.words} {t('words')}
+            </span>
+          )}
+          {theme.article.updated && post.updated !== post.date && (
+            <span>
+              {' '}
+              / {t('updated')} {formatDate(post.updated)}
+            </span>
+          )}
+        </div>
+        <h1>{post.title}</h1>
+        <div class="card-tags">
+          {post.categoryItems.map((c) => (
+            <a class="category-label" href={c.path}>
+              {c.name}
+            </a>
+          ))}
+          {post.tags.map((t) => (
+            <a href={`/tags/${t}/`}>#{t}</a>
+          ))}
+        </div>
+      </header>
+      {post.data.cover && (
+        <img
+          class="post-cover"
+          src={post.data.cover}
+          alt={post.title}
+          decoding="async"
+          fetchpriority="high"
+        />
+      )}
+      <div class="prose">
+        <Content />
+      </div>
+      <CopyrightNotice post={post} />
+      {theme.article.share.length > 0 && (
+        <div class="article-actions" aria-label="分享文章">
+          {theme.article.share.map((n) =>
+            n === 'copy' ? (
+              <button class="share-copy" type="button">
+                <Glyph name="link" />
+                <span>{t('copy_link')}</span>
+              </button>
+            ) : n === 'native' ? (
+              <button class="share-native share-button" type="button">
+                <Glyph name="share" />
+                <span>{t('share')}</span>
+              </button>
+            ) : (
+              <a href={networks[n]} target="_blank" rel="noopener noreferrer nofollow">
+                <Glyph name={n} />
+                <span>
+                  {
+                    (
+                      { weibo: '微博', twitter: 'X', telegram: 'Telegram', qq: 'QQ' } as Record<
+                        string,
+                        string
+                      >
+                    )[n]
+                  }
+                </span>
+              </a>
+            ),
+          )}
+        </div>
+      )}
+      {theme.article.post_nav && (
+        <nav class="post-navigation" aria-label="相邻文章">
+          {previous && (
+            <a href={previous.path}>
+              <small>← {t('previous')}</small>
+              <strong>{previous.title}</strong>
+            </a>
+          )}
+          {next && (
+            <a href={next.path}>
+              <small>{t('next')} →</small>
+              <strong>{next.title}</strong>
+            </a>
+          )}
+        </nav>
+      )}
+      {related.length > 0 && (
+        <section class="related">
+          <h2>{t('related')}</h2>
+          {related.map(({ p }) => (
+            <a href={p.path}>{p.title} ↗</a>
+          ))}
+        </section>
+      )}
+      <Comments post={post} />
+    </article>
+  </div>
+</BaseLayout>

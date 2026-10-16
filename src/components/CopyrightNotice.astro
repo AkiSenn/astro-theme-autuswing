@@ -1,0 +1,54 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import type { Post } from '../lib/content';
+import { theme } from '../site.config';
+import { absolute } from '../lib/urls';
+import Glyph from './Glyph.astro';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const date = (value: string) =>
+  new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Asia/Shanghai',
+    dateStyle: 'short',
+    timeStyle: 'short',
+  }).format(new Date(value));
+---
+
+{theme.copyright.enable && (
+  <aside
+    class:list={['copyright-box', { 'mica-card': theme.cards.enable }]}
+    aria-labelledby="copyright-notice"
+  >
+    <h2 class="copyright-heading" id="copyright-notice">
+      <Glyph name="alert" />
+      {t('copyright')}
+    </h2>
+    <dl class="copyright-details">
+      <dt>{t('copyright_title')}</dt>
+      <dd>{post.title}</dd>
+      <dt>{t('copyright_author')}</dt>
+      <dd>{post.data.author || theme.profile.author}</dd>
+      <dt>{t('copyright_published')}</dt>
+      <dd>
+        <time datetime={post.date}>{date(post.date)}</time>
+      </dd>
+      <dt>{t('copyright_updated')}</dt>
+      <dd>
+        <time datetime={post.updated}>{date(post.updated)}</time>
+      </dd>
+      <dt>{t('copyright_link')}</dt>
+      <dd>
+        <a href={post.path}>{absolute(post.path)}</a>
+      </dd>
+      <dt>{t('license')}</dt>
+      <dd>
+        <a href={theme.copyright.url} rel="license noopener">
+          {theme.copyright.license}
+        </a>
+      </dd>
+    </dl>
+  </aside>
+)}

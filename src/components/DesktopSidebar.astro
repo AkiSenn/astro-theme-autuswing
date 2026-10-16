@@ -1,0 +1,127 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import { theme, navigation, safeLink } from '../site.config';
+import type { Post } from '../lib/content';
+import Glyph from './Glyph.astro';
+import TableOfContents from './TableOfContents.astro';
+interface Props {
+  path: string;
+  post?: Post;
+}
+const { path, post } = Astro.props;
+const toc =
+  post?.entry.collection === 'posts' &&
+  theme.reading.toc &&
+  post.data.toc !== false &&
+  post.rendered.headings.length;
+---
+
+<aside class="sidebar" id="sidebar" aria-label={t('navigation')}>
+  <button class="drawer-close icon-button" type="button" aria-label={t('close')}>
+    ×
+  </button>
+  <section class="profile">
+    <a href="/" class="avatar-link avatar-home" aria-label={t('home')}>
+      <img
+        class:list={[
+          'avatar',
+          { 'avatar-enter': theme.animations.avatar && theme.animations.enable },
+        ]}
+        src={theme.avatar}
+        alt={theme.profile.author}
+        width="96"
+        height="96"
+        fetchpriority="high"
+      />
+    </a>
+    <h2>{theme.profile.author}</h2>
+    <p>{theme.profile.subtitle}</p>
+  </section>
+  <div class="sidebar-content">
+    {toc && (
+      <div class="sidebar-tabs" role="tablist" aria-label="导航与文章目录">
+        <button
+          type="button"
+          role="tab"
+          id="side-tab-menu"
+          aria-controls="side-panel-menu"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          {t('menu')}
+        </button>
+        <button
+          type="button"
+          role="tab"
+          id="side-tab-contents"
+          aria-controls="side-panel-contents"
+          aria-selected="true"
+          tabindex="0"
+        >
+          {t('toc')}
+        </button>
+      </div>
+    )}
+    <div
+      id="side-panel-menu"
+      role={toc ? 'tabpanel' : undefined}
+      aria-labelledby={toc ? 'side-tab-menu' : undefined}
+      hidden={!!toc}
+    >
+      <nav class="site-nav" aria-label={t('navigation')}>
+        {navigation.map((item) => (
+          <a
+            href={safeLink(item.path)}
+            aria-current={
+              (item.path === '/' ? path === '/' : path.startsWith(item.path)) ? 'page' : undefined
+            }
+            target={item.new_tab ? '_blank' : undefined}
+            rel={item.new_tab ? 'noopener noreferrer' : undefined}
+          >
+            {item.icon && (
+              <span class="nav-icon">
+                <Glyph name={item.icon} />
+              </span>
+            )}
+            {item.label}
+            <span class="nav-arrow">↗</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+    {toc && (
+      <section
+        class:list={['sidebar-panel sidebar-contents', { 'toc-nowrap': theme.article.toc.nowrap }]}
+        id="side-panel-contents"
+        role="tabpanel"
+        aria-labelledby="side-tab-contents"
+      >
+        <h2 class="sidebar-article-title">{post.title}</h2>
+        <TableOfContents headings={post.rendered.headings} />
+      </section>
+    )}
+  </div>
+  <div class="sidebar-bottom">
+    <div class="social-links">
+      {theme.social_items.map((item) => (
+        <a
+          href={safeLink(item.url)}
+          aria-label={item.name}
+          title={item.name}
+          target={item.url.startsWith('http') ? '_blank' : undefined}
+          rel="noopener noreferrer"
+        >
+          <Glyph name={item.icon} />
+          <span>{item.name}</span>
+        </a>
+      ))}
+      {theme.feed.enable && (
+        <a href="/rss.xml" title="RSS" aria-label="RSS">
+          <Glyph name="rss" />
+          <span>RSS</span>
+        </a>
+      )}
+    </div>
+  </div>
+</aside>

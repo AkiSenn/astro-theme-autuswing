@@ -1,0 +1,882 @@
+[
+  {
+    "key": "version",
+    "status": "来源元数据",
+    "consumer": "package.json"
+  },
+  {
+    "key": "avatar",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "favicon",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "apple_touch_icon",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "since",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "menu.Home",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "menu.Archives",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "menu.Tags",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "menu.Links",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "menu.About",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "social.Email",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "social.GitHub",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "social.bilibili",
+    "status": "迁移保留",
+    "consumer": "src/site.config.ts"
+  },
+  {
+    "key": "color_mode",
+    "status": "迁移保留",
+    "consumer": "src/scripts/appearance.ts"
+  },
+  {
+    "key": "profile.author",
+    "status": "迁移保留",
+    "consumer": "src/components/DesktopSidebar.astro"
+  },
+  {
+    "key": "profile.subtitle",
+    "status": "迁移保留",
+    "consumer": "src/components/DesktopSidebar.astro"
+  },
+  {
+    "key": "profile.email",
+    "status": "迁移保留",
+    "consumer": "src/components/DesktopSidebar.astro"
+  },
+  {
+    "key": "profile.aboutme",
+    "status": "迁移保留",
+    "consumer": "src/components/DesktopSidebar.astro"
+  },
+  {
+    "key": "cards.enable",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "cards.article",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "cards.hover",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "cards.blur",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "cards.wallpaper",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "cards.wallpaper_overlay",
+    "status": "迁移保留",
+    "consumer": "src/components/SurfaceWallpaper.astro"
+  },
+  {
+    "key": "appearance.base_font_size",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.sidebar_width",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.width",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.radius",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.accent",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.font_family",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.code_font",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.background_image",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.background_overlay",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.theme_switch",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "appearance.animate",
+    "status": "迁移保留",
+    "consumer": "src/layouts/BaseLayout.astro"
+  },
+  {
+    "key": "animations.enable",
+    "status": "迁移保留",
+    "consumer": "src/scripts/animations.js"
+  },
+  {
+    "key": "animations.avatar",
+    "status": "迁移保留",
+    "consumer": "src/scripts/animations.js"
+  },
+  {
+    "key": "animations.articles",
+    "status": "迁移保留",
+    "consumer": "src/scripts/animations.js"
+  },
+  {
+    "key": "animations.page",
+    "status": "迁移保留",
+    "consumer": "src/scripts/animations.js"
+  },
+  {
+    "key": "search.enable",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.content",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.max_content_length",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.limit",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.path",
+    "status": "固定端点",
+    "consumer": "src/pages/search.json.ts"
+  },
+  {
+    "key": "search.preload",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.shortcut",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "search.excerpt_length",
+    "status": "迁移保留",
+    "consumer": "src/lib/search.ts"
+  },
+  {
+    "key": "feed.enable",
+    "status": "迁移保留",
+    "consumer": "src/lib/feeds.ts"
+  },
+  {
+    "key": "feed.limit",
+    "status": "迁移保留",
+    "consumer": "src/lib/feeds.ts"
+  },
+  {
+    "key": "feed.full_content",
+    "status": "迁移保留",
+    "consumer": "src/lib/feeds.ts"
+  },
+  {
+    "key": "urls.short",
+    "status": "固定路由契约",
+    "consumer": "src/lib/urls.ts"
+  },
+  {
+    "key": "urls.prefix",
+    "status": "固定路由契约",
+    "consumer": "src/lib/urls.ts"
+  },
+  {
+    "key": "urls.length",
+    "status": "迁移保留",
+    "consumer": "scripts/new-post.mjs"
+  },
+  {
+    "key": "urls.legacy_redirects",
+    "status": "历史别名清单",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "seo.sitemap",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.robots",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.json_ld",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.social_image",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.twitter",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.google_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.bing_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.baidu_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.sogou_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.so360_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.shenma_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "seo.yandex_verification",
+    "status": "迁移保留",
+    "consumer": "src/components/SeoHead.astro"
+  },
+  {
+    "key": "reading.toc",
+    "status": "迁移保留",
+    "consumer": "src/lib/content.ts"
+  },
+  {
+    "key": "reading.progress",
+    "status": "迁移保留",
+    "consumer": "src/lib/content.ts"
+  },
+  {
+    "key": "reading.words_per_minute",
+    "status": "迁移保留",
+    "consumer": "src/lib/content.ts"
+  },
+  {
+    "key": "reading.related",
+    "status": "迁移保留",
+    "consumer": "src/lib/content.ts"
+  },
+  {
+    "key": "article.excerpt",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.excerpt_length",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.excerpt_paragraphs",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.autospace",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.more_link",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.lightbox",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.lazyload",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.updated",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.word_count",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.reading_time",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.post_nav",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.share",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.toc.min_depth",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.toc.max_depth",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.toc.list_number",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "article.toc.nowrap",
+    "status": "迁移保留",
+    "consumer": "src/layouts/PostLayout.astro"
+  },
+  {
+    "key": "copyright.enable",
+    "status": "迁移保留",
+    "consumer": "src/components/CopyrightNotice.astro"
+  },
+  {
+    "key": "copyright.license",
+    "status": "迁移保留",
+    "consumer": "src/components/CopyrightNotice.astro"
+  },
+  {
+    "key": "copyright.url",
+    "status": "迁移保留",
+    "consumer": "src/components/CopyrightNotice.astro"
+  },
+  {
+    "key": "comments.enable",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.provider",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.lazyload",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.preload",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.collapsible",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.hint",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.timeout",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.pages",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.repo",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.repo_id",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.category",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.category_id",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.mapping",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.strict",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.reactions_enabled",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.input_position",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.theme",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.lang",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.giscus.src",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.utterances.repo",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.utterances.issue_term",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.utterances.label",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.utterances.theme",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.utterances.src",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.disqus.shortname",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.waline.serverURL",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.waline.lang",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.waline.cdn",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.waline.css",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.twikoo.envId",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.twikoo.region",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.twikoo.cdn",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.valine.appid",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.valine.appkey",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.valine.serverURLs",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "comments.valine.cdn",
+    "status": "迁移保留",
+    "consumer": "src/lib/comments.ts"
+  },
+  {
+    "key": "footer.copyright",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.powered_by",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.custom",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.icp",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.icp_link",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.police_icp",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.police_icp_code",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.police_icp_link",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.police_icp_icon",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.runtime.enable",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.runtime.since",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.runtime.text",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.enable",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.provider",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.today_pv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.site_pv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.today_uv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.site_uv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.page_pv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.page_uv",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.src",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "footer.visit_counter.allow_local",
+    "status": "迁移保留",
+    "consumer": "src/components/Footer.astro"
+  },
+  {
+    "key": "math.enable",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.per_page",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.source",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.engine",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.mathjax.cdn",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.katex.cdn",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.katex.auto_render",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "math.katex.css",
+    "status": "迁移保留",
+    "consumer": "src/scripts/math-renderer.js"
+  },
+  {
+    "key": "analytics.google_analytics",
+    "status": "迁移保留",
+    "consumer": "src/scripts/analytics.js"
+  },
+  {
+    "key": "analytics.baidu_tongji",
+    "status": "迁移保留",
+    "consumer": "src/scripts/analytics.js"
+  },
+  {
+    "key": "assets.cdn",
+    "status": "迁移保留",
+    "consumer": "astro.config.mjs"
+  },
+  {
+    "key": "assets.image_fingerprint",
+    "status": "迁移保留",
+    "consumer": "astro.config.mjs"
+  },
+  {
+    "key": "assets.critical_css",
+    "status": "Astro/Vite替代",
+    "consumer": "astro.config.mjs"
+  },
+  {
+    "key": "assets.preconnect",
+    "status": "迁移保留",
+    "consumer": "astro.config.mjs"
+  },
+  {
+    "key": "edge.provider",
+    "status": "独立交付配置",
+    "consumer": "deployment/"
+  },
+  {
+    "key": "edge.asset_url",
+    "status": "合并到assets.cdn",
+    "consumer": "astro.config.mjs"
+  },
+  {
+    "key": "edge.project_name",
+    "status": "独立交付配置",
+    "consumer": "deployment/"
+  },
+  {
+    "key": "open_in_new",
+    "status": "迁移保留",
+    "consumer": "src/lib/markdown.mjs"
+  },
+  {
+    "key": "open_in_new_exclude",
+    "status": "迁移保留",
+    "consumer": "src/lib/markdown.mjs"
+  },
+  {
+    "key": "friends",
+    "status": "迁移保留",
+    "consumer": "src/components/RouteContent.astro"
+  },
+  {
+    "key": "performance.generate_headers",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "performance.minify",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "performance.precompress",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "performance.compression_min_bytes",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "performance.precompress_quality",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "performance.instant_nav",
+    "status": "迁移保留",
+    "consumer": "scripts/static-artifacts.mjs"
+  },
+  {
+    "key": "pwa.enable",
+    "status": "迁移保留",
+    "consumer": "src/pages/sw.js.ts"
+  },
+  {
+    "key": "pwa.icon",
+    "status": "迁移保留",
+    "consumer": "src/pages/sw.js.ts"
+  },
+  {
+    "key": "pwa.short_name",
+    "status": "迁移保留",
+    "consumer": "src/pages/sw.js.ts"
+  }
+]

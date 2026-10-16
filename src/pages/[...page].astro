@@ -1,0 +1,27 @@
+---
+import { routes, type Route } from '../lib/routes';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostLayout from '../layouts/PostLayout.astro';
+import RouteContent from '../components/RouteContent.astro';
+import type { GetStaticPaths } from 'astro';
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  return (await routes(paginate))
+    .filter((r) => r.path !== '/')
+    .map((route) => ({
+      params: { page: route.path.slice(1).replace(/\/$/, '') },
+      props: { route },
+    }));
+};
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+---
+
+{route.kind === 'post' && route.post ? (
+  <PostLayout post={route.post} />
+) : (
+  <BaseLayout path={route.path} title={route.title} post={route.post}>
+    <RouteContent route={route} />
+  </BaseLayout>
+)}

@@ -1,0 +1,11 @@
+{
+  "title": "秋千AkiSenn生活笔记",
+  "subtitle": "科技技术生活",
+  "description": "akisenn.com - 秋千AkiSenn的个人生活笔记，分享技术与生活",
+  "author": "AkiSenn",
+  "language": "zh-CN",
+  "timezone": "Asia/Shanghai",
+  "url": "https://akisenn.com",
+  "root": "/",
+  "per_page": 10
+}

@@ -1,0 +1,21 @@
+---
+import type { Route } from '../lib/routes';
+import { posts } from '../lib/content';
+import { site } from '../site.config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RouteContent from '../components/RouteContent.astro';
+const all = await posts();
+const route: Route = {
+  path: '/',
+  title: '最新文章',
+  kind: 'home',
+  posts: site.per_page > 0 ? all.slice(0, site.per_page) : all,
+  page: 1,
+  totalPages: site.per_page > 0 ? Math.max(1, Math.ceil(all.length / site.per_page)) : 1,
+  base: '/',
+};
+---
+
+<BaseLayout path="/">
+  <RouteContent route={route} />
+</BaseLayout>
