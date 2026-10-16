@@ -238,6 +238,12 @@ button {
 .prose > :last-child {
   margin-bottom: 0;
 }
+@media screen and (min-width: 1000px) {
+  .article-page .article-layout .prose {
+    font-size: calc(var(--autuswing-base-font, 16px) + 2px);
+    line-height: 1.8;
+  }
+}
 .prose h2,
 .mica-article .prose h2 {
   font-size: 25px;

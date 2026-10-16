@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-16T10:02:29.9260581Z",
+  "browser": "Microsoft Edge / Chromium",
+  "stats": {
+    "startTime": "2026-10-16T09:58:54.38Z",
+    "duration": 142403.698,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "desktopViewports": [
+    "1366x768",
+    "1440x900",
+    "1920x1080"
+  ],
+  "isolatedUnchangedCases": 7,
+  "unitTestsPassed": 16,
+  "astroCheck": {
+    "warnings": 0,
+    "hints": 1,
+    "errors": 0,
+    "hint": "Existing document.execCommand clipboard fallback is deprecated."
+  },
+  "screenshotsInspected": [
+    "after-1366x768.png",
+    "after-1440x900.png",
+    "after-1920x1080.png",
+    "after-dark-1366x768.png"
+  ],
+  "scope": "Desktop article CSS only. Preview remains local; no original content or production changes."
+}

@@ -67,7 +67,7 @@ test('page matrix preserves one visible shell, direct navigation and comfortable
       expect(metrics.duplicateIds).toEqual([]);
       expect(metrics.wrappedDates, `${width} ${path}: dates must not wrap`).toBe(0);
       if (metrics.prose) {
-        expect(metrics.prose).toBeLessThanOrEqual(705);
+        expect(metrics.prose).toBeLessThanOrEqual(width >= 1000 ? 755 : 705);
         if (width < 720) expect(metrics.usable - metrics.prose).toBeLessThanOrEqual(33);
         if (width >= 1000) expect(metrics.prose).toBeGreaterThan(580);
       }
@@ -342,12 +342,10 @@ test('short tablet/desktop heights keep navigation and tools reachable and full-
     .locator('.post-card')
     .evaluateAll((cards) => cards.slice(0, 2).map((c) => c.getBoundingClientRect().top));
   expect(tops[1]).toBeGreaterThan(tops[0] + 40);
-  const fonts = await page
-    .locator('.post-card .prose')
-    .evaluate((node) => ({
-      parent: getComputedStyle(node).fontSize,
-      paragraph: getComputedStyle(node.querySelector('p')!).fontSize,
-    }));
+  const fonts = await page.locator('.post-card .prose').evaluate((node) => ({
+    parent: getComputedStyle(node).fontSize,
+    paragraph: getComputedStyle(node.querySelector('p')!).fontSize,
+  }));
   expect(fonts.paragraph).toBe(fonts.parent);
 });
 

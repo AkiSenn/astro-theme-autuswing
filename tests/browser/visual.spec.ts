@@ -66,7 +66,7 @@ test('typography hierarchy is legible and native theme/font options still apply'
   await page.goto('/post/4e395565/');
   expect(
     await page.locator('.prose').evaluate((node) => parseFloat(getComputedStyle(node).fontSize)),
-  ).toBe(17);
+  ).toBe(18);
   await page.evaluate(() => {
     document.documentElement.style.setProperty('--autuswing-base-font', '18px');
     document.documentElement.style.setProperty('--autuswing-code-font', 'monospace');
@@ -74,7 +74,7 @@ test('typography hierarchy is legible and native theme/font options still apply'
   });
   expect(
     await page.locator('.prose').evaluate((node) => parseFloat(getComputedStyle(node).fontSize)),
-  ).toBe(19);
+  ).toBe(20);
   expect(
     await page
       .locator('.prose code')
