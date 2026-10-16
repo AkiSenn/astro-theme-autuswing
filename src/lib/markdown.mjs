@@ -3,6 +3,7 @@ import legacy from '../../migration/effective-metadata.json' with { type: 'json'
 import theme from '../config/theme.json' with { type: 'json' };
 import { imageUrl } from './image-url.mjs';
 import rehypeRaw from 'rehype-raw';
+import { mathEnabled, renderMath } from './math.mjs';
 
 const escaped = (s, i) => {
   let n = 0;
@@ -12,7 +13,7 @@ const escaped = (s, i) => {
 const entities = (s) => Array.from(s, (c) => `&#${c.codePointAt(0)};`).join('');
 // Only protect TeX delimiters. Parsing/rendering remains Astro's Markdown pipeline.
 // Code fences, indented code, code spans and HTML tags are opaque to this pass.
-export function protectMath(source) {
+export function protectMath(source, collect) {
   let out = '',
     i = 0;
   while (i < source.length) {
@@ -61,15 +62,30 @@ export function protectMath(source) {
       (d) => source.startsWith(d, i) && !escaped(source, i),
     );
     if (opening) {
+      if (opening === '$' && /\s/.test(source[i + 1] || ' ')) {
+        out += source[i++];
+        continue;
+      }
       const closing = { $$: '$$', '\\[': '\\]', '\\(': '\\)', $: '$' }[opening],
         display = ['$$', '\\['].includes(opening);
       let end = source.indexOf(closing, i + opening.length);
-      while (end >= 0 && escaped(source, end)) end = source.indexOf(closing, end + closing.length);
+      while (
+        end >= 0 &&
+        (escaped(source, end) ||
+          (opening === '$' && (/\s/.test(source[end - 1]) || /\d/.test(source[end + 1] || ''))))
+      )
+        end = source.indexOf(closing, end + closing.length);
       if (end >= 0 && (display || !source.slice(i, end).includes('\n'))) {
         const tex = source.slice(i, end + closing.length);
+        collect?.({
+          raw: tex,
+          tex: source.slice(i + opening.length, end),
+          display,
+          line: source.slice(0, i).split('\n').length,
+        });
         out += display
-          ? `\n<div class="math-display">${entities(tex)}</div>\n`
-          : `<span class="math-inline">${entities(tex)}</span>`;
+          ? `\n<div class="math-display" data-math="tex">${entities(tex)}</div>\n`
+          : `<span class="math-inline" data-math="tex">${entities(tex)}</span>`;
         i = end + closing.length;
         continue;
       }
@@ -77,6 +93,11 @@ export function protectMath(source) {
     out += source[i++];
   }
   return out;
+}
+export function scanMath(source) {
+  const formulas = [];
+  protectMath(source, (formula) => formulas.push(formula));
+  return formulas;
 }
 const text = (node) =>
   node.type === 'text' ? node.value : (node.children || []).map(text).join('');
@@ -173,7 +194,7 @@ export function markdownProcessor() {
   const processor = unified({
     smartypants: false,
     remarkPlugins: [rejectHexoTags],
-    rehypePlugins: [rehypeRaw, compatibleHtml],
+    rehypePlugins: [rehypeRaw, compatibleHtml, renderMath],
   });
   const create = processor.createRenderer.bind(processor);
   processor.createRenderer = async (shared) => {
@@ -181,9 +202,7 @@ export function markdownProcessor() {
     return {
       render: async (content, options) => {
         const data = options?.frontmatter || {};
-        const enabled =
-          theme.math.enable &&
-          (!theme.math.per_page || !!(data.math || data.mathjax || data.katex));
+        const enabled = mathEnabled(data);
         return renderer.render(enabled ? protectMath(content) : content, options);
       },
     };

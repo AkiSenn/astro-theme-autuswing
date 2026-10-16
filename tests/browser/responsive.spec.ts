@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
+const evidenceDir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase3';
 
 const widths = [320, 375, 390, 430, 719, 720, 768, 820, 999, 1000, 1024, 1280, 1600];
 const pages = [
@@ -75,15 +76,15 @@ test('page matrix preserves one visible shell, direct navigation and comfortable
       measurements.push({ width, path, ...metrics });
       if (path === '/' && ![719, 720, 999, 1000].includes(width)) {
         await page.screenshot({
-          path: `docs/evidence/phase3/home-${width}.png`,
+          path: `${evidenceDir}/home-${width}.png`,
           fullPage: true,
           animations: 'disabled',
         });
       }
       if (path === '/post/4e395565/' && [390, 768, 820, 1280].includes(width)) {
-        await expect(page.locator('mjx-container')).toHaveCount(4);
+        await expect(page.locator('.katex')).toHaveCount(4);
         await page.screenshot({
-          path: `docs/evidence/phase3/math-${width}.png`,
+          path: `${evidenceDir}/math-${width}.png`,
           fullPage: true,
           animations: 'disabled',
         });
@@ -92,7 +93,7 @@ test('page matrix preserves one visible shell, direct navigation and comfortable
   }
   expect(errors).toEqual([]);
   fs.writeFileSync(
-    'docs/evidence/phase3/layout-check.json',
+    `${evidenceDir}/layout-check.json`,
     JSON.stringify(
       { checkedAt: new Date().toISOString(), cases: measurements.length, measurements },
       null,
@@ -276,7 +277,7 @@ test('light/dark layouts pass basic axe and long titles, menus and contents rema
         expect(modalFailures).toEqual([]);
       }
       await page.screenshot({
-        path: `docs/evidence/phase3/${mode}-${width}.png`,
+        path: `${evidenceDir}/${mode}-${width}.png`,
         fullPage: true,
         animations: 'disabled',
       });
@@ -284,7 +285,7 @@ test('light/dark layouts pass basic axe and long titles, menus and contents rema
     }
   }
   fs.writeFileSync(
-    'docs/evidence/phase3/accessibility-check.json',
+    `${evidenceDir}/accessibility-check.json`,
     JSON.stringify({ checkedAt: new Date().toISOString(), checks }, null, 2) + '\n',
   );
   await page.setViewportSize({ width: 320, height: 640 });
@@ -369,7 +370,7 @@ test('direct historical heading URLs and doubled reading/navigation font sizes s
   for (const width of [320, 390, 768, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/post/4e395565/#公式配置');
-    await expect(page.locator('mjx-container')).toHaveCount(4);
+    await expect(page.locator('.katex')).toHaveCount(4);
     const position = await page.locator('.prose #公式配置').evaluate((node) => ({
       top: node.getBoundingClientRect().top,
       header: document.querySelector('.mobile-header')!.getBoundingClientRect().bottom,

@@ -736,43 +736,43 @@
   },
   {
     "key": "math.enable",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "迁移保留，构建时渲染",
+    "consumer": "src/lib/math.mjs"
   },
   {
     "key": "math.per_page",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.source",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.engine",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.mathjax.cdn",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.katex.cdn",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.katex.auto_render",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "math.katex.css",
-    "status": "迁移保留",
-    "consumer": "src/scripts/math-renderer.js"
+    "status": "构建时KaTeX替代，已移除旧运行时选项",
+    "consumer": "docs/math-rendering.md"
   },
   {
     "key": "analytics.google_analytics",

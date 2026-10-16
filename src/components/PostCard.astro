@@ -4,7 +4,6 @@ const t = translate();
 import type { Post } from '../lib/content';
 import { theme } from '../site.config';
 import SurfaceWallpaper from './SurfaceWallpaper.astro';
-import { clientConfig } from '../lib/client';
 interface Props {
   post: Post;
 }
@@ -42,10 +41,7 @@ const Content = post.rendered.Content;
       <a href={post.path}>{post.title}</a>
     </h3>
     {theme.article.excerpt === false ? (
-      <div
-        class="prose"
-        data-math-config={post.math ? JSON.stringify(clientConfig(post).math) : undefined}
-      >
+      <div class="prose">
         <Content />
       </div>
     ) : (

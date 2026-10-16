@@ -58,8 +58,13 @@ for (const p of legacy) {
 }
 const math = load(read('post/4e395565/index.html'));
 assert.equal(math('.math-inline,.math-display').length, 4);
+assert.equal(math('.katex').length, 4);
+assert.equal(math('.katex math annotation[encoding="application/x-tex"]').length, 4);
+assert.equal(math('link[data-math-styles="katex"]').length, 1);
 const plain = load(read('post/4c6caf67/index.html'));
-assert.equal(JSON.parse(plain('#autuswing-config').text()).math, null);
+assert.equal(plain('link[data-math-styles]').length, 0);
+assert.equal('math' in JSON.parse(plain('#autuswing-config').text()), false);
+assert.equal(load(read('index.html'))('link[data-math-styles]').length, 0);
 const rss = load(read('rss.xml'), { xml: true }),
   atom = load(read('atom.xml'), { xml: true });
 assert.equal(rss('item').length, 3);

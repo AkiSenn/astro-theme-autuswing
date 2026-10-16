@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-16T02:38:19.569Z",
+  "browser": "Microsoft Edge / Chromium",
+  "passed": 34,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "durationMs": 54775.652,
+  "includes": "SSR HTML, conditional CSS/fonts, JavaScript-disabled formulas, legacy flags, responsive UI"
+}

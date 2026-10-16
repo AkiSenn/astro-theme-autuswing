@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-16T02:38:13.505Z",
+  "source": "E:\\hexo-akisenn\\source",
+  "katex": "0.19.0",
+  "markdownFiles": 4,
+  "posts": 3,
+  "postsWithMath": 1,
+  "formulas": 4,
+  "unsupported": [],
+  "documents": [
+    {
+      "file": "_posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md",
+      "title": "GitHub + Hexo + AutuSwing + Workers：搭建个性化博客",
+      "sha256": "7d16aa7d26d3a9575e6a105dc3df60ce6e9a07c824f655485cdcfb0dec6ba4be",
+      "flags": {},
+      "formulas": []
+    },
+    {
+      "file": "_posts/math-notebook.md",
+      "title": "数学公式实验室：按需加载与公式排版",
+      "sha256": "e8d4a0cb0e8a773721c33ace18973cdce1b60eb82d5c4aedb4cddc90e2b874c1",
+      "flags": {
+        "mathjax": true
+      },
+      "formulas": [
+        {
+          "tex": "A = \\pi r^2",
+          "display": false,
+          "line": 20,
+          "commands": [
+            "\\pi"
+          ],
+          "supported": true
+        },
+        {
+          "tex": "e^{i\\pi} + 1 = 0",
+          "display": false,
+          "line": 20,
+          "commands": [
+            "\\pi"
+          ],
+          "supported": true
+        },
+        {
+          "tex": "\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n",
+          "display": true,
+          "line": 26,
+          "commands": [
+            "\\int",
+            "\\infty",
+            "\\sqrt",
+            "\\pi"
+          ],
+          "supported": true
+        },
+        {
+          "tex": "\n\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}\n",
+          "display": true,
+          "line": 32,
+          "commands": [
+            "\\sum",
+            "\\frac"
+          ],
+          "supported": true
+        }
+      ]
+    },
+    {
+      "file": "_posts/网站笔记.md",
+      "title": "网站笔记",
+      "sha256": "d65b1b633debc762081929769ce21ea119cd8a58e5a625312d76b86776d283ea",
+      "flags": {},
+      "formulas": []
+    },
+    {
+      "file": "about/index.md",
+      "title": "关于我",
+      "sha256": "ac150c5ee49c48f7302b08cef8f4aefe1c1297ffc6d2c2103ade0155302fdf78",
+      "flags": {},
+      "formulas": []
+    }
+  ]
+}

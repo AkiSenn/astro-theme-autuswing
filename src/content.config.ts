@@ -7,6 +7,7 @@ import crypto from 'node:crypto';
 import { frontmatter } from './lib/frontmatter.mjs';
 import theme from './config/theme.json';
 import legacyMetadata from '../migration/effective-metadata.json';
+import { katexVersion } from './lib/math.mjs';
 
 // Delegate discovery, watching, Markdown and caching to Astro. Re-read only the
 // YAML data before validation, preserving original date/ID scalar semantics.
@@ -17,8 +18,15 @@ function contentLoader(pattern: string[], base: string): Loader {
     async load(context) {
       // Astro owns the cache. Extend its digest with inputs used by the thin
       // compatibility renderer so configuration changes cannot reuse stale HTML.
-      const hash = crypto.createHash('sha256').update(JSON.stringify({ theme, legacyMetadata }));
-      for (const file of ['lib/markdown.mjs', 'lib/frontmatter.mjs', 'lib/image-url.mjs'])
+      const hash = crypto
+        .createHash('sha256')
+        .update(JSON.stringify({ theme, legacyMetadata, katexVersion }));
+      for (const file of [
+        'lib/markdown.mjs',
+        'lib/math.mjs',
+        'lib/frontmatter.mjs',
+        'lib/image-url.mjs',
+      ])
         hash.update(await fs.readFile(new URL(file, import.meta.url)));
       async function images(directory: URL) {
         for (const item of (await fs.readdir(directory, { withFileTypes: true })).sort((a, b) =>

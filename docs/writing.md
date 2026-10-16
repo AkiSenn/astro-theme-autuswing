@@ -10,6 +10,8 @@
 
 推荐新稿 date/updated 使用带明确时区的 ISO 字符串。迁移稿允许原来的无时区时间和仅日期格式，统一解释为 UTC+8。缺少 updated 的新稿以 date 为准，后续修改时显式填写 updated，不自动使用构建时间。
 
+数学公式自动检测并在构建时由 KaTeX 渲染，支持 `$…$`、`$$…$$`、`\(…\)`、`\[…\]`；新稿不必添加启用标记。旧 `mathjax: true`、`katex: true`、`math: true` 仍可保留，均使用 KaTeX。`math: false` 明确关闭；没有 `math` 主开关时，旧引擎的显式 false 表示关闭，任一 true 可启用。含不支持命令时构建会报出文章标题和表达式，先核查语法与宏，再评估是否需要 MathJax，不自动切换。详见[扫描结果与配置](math-rendering.md)。
+
 preview 默认 noindex，分享、RSS/Atom 标识与评论身份始终使用正式 canonical。`comment_id` 可覆盖默认路径标识；预览不初始化真实评论，生产配置当前也保持关闭。密码字段只按原主题排除索引，不代表实现了内容加密。
 
-复制副本校验：`npm run verify`。从另一份相同基线恢复缺失的内容/资源：`node scripts/import-legacy.mjs <基线目录>`，只接受清单哈希一致的输入，不覆盖不同内容的目标文件。
+复制副本校验：`npm run verify`。一次性导入工具已归档在迁移前备份的 `import-tools`，不属于新工程的日常构建命令；恢复内容时先核对迁移清单哈希，不覆盖不同内容的目标文件。

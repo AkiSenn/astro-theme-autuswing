@@ -23,8 +23,9 @@ interface Props {
   title?: string;
   post?: Post;
   noindex?: boolean;
+  math?: boolean;
 }
-const { path, title, post, noindex } = Astro.props;
+const { path, title, post, noindex, math = post?.math || false } = Astro.props;
 const headings =
   post &&
   theme.reading.toc &&
@@ -43,7 +44,7 @@ const background = theme.backgrounds.length
 <!doctype html>
 <html lang={post?.lang || site.language} data-mode={theme.color_mode} style={variables}>
   <head>
-    <SeoHead path={path} title={title} post={post} noindex={noindex} />
+    <SeoHead path={path} title={title} post={post} noindex={noindex} math={math} />
     <script is:inline set:html={appearance} />
     <noscript>
       <style is:inline>

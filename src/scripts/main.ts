@@ -16,7 +16,6 @@ import './avatar.js';
 import './animations.js';
 import './runtime.js';
 import './statistics.js';
-import './math-renderer.js';
 import './analytics.js';
 import './prefetch.js';
 if (isLiveSite() && document.querySelector('#comments')) import('./comments.js');

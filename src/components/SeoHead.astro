@@ -2,11 +2,13 @@
 import { site, theme, preview } from '../site.config';
 import { seo, json } from '../lib/seo';
 import type { Post } from '../lib/content';
+import vendor from '../../public/assets/vendor/manifest.json';
 interface Props {
   path: string;
   title?: string;
   post?: Post;
   noindex?: boolean;
+  math?: boolean;
 }
 const { path, title, post, noindex } = Astro.props,
   meta = seo(path, title, post);
@@ -22,6 +24,18 @@ const verification = [
 ---
 
 <meta charset="utf-8" />
+{Astro.props.math && (
+  <link
+    rel="stylesheet"
+    data-math-styles="katex"
+    href={
+      (theme.assets.cdn || '').replace(/\/$/, '') +
+      '/assets/vendor/' +
+      vendor.packages.katex.directory +
+      '/dist/katex.min.css'
+    }
+  />
+)}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{meta.title}</title>
 <meta name="description" content={meta.description} />

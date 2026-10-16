@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-16T02:39:08.930Z",
+  "checks": [
+    {
+      "width": 390,
+      "mode": "light",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": 0
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": 0
+    },
+    {
+      "width": 820,
+      "mode": "light",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": 0
+    },
+    {
+      "width": 820,
+      "mode": "dark",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": 0
+    },
+    {
+      "width": 1280,
+      "mode": "light",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": null
+    },
+    {
+      "width": 1280,
+      "mode": "dark",
+      "criticalOrSerious": 0,
+      "modalCriticalOrSerious": null
+    }
+  ]
+}

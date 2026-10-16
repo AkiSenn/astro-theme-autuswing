@@ -56,7 +56,8 @@ try {
   write(themeFile, full);
   build();
   const page = load(fs.readFileSync('dist/index.html', 'utf8'));
-  assert.equal(page('.post-card .prose[data-math-config]').length, 1);
+  assert.equal(page('.post-card .prose .katex').length, 4);
+  assert.equal(page('link[data-math-styles="katex"]').length, 1);
   assert.equal(page('.post-card .math-inline,.post-card .math-display').length, 4);
   report.fullContentMath = true;
   const off = theme();
@@ -73,6 +74,10 @@ try {
   assert.equal(
     load(fs.readFileSync('dist/post/4e395565/index.html', 'utf8'))('.math-inline,.math-display')
       .length,
+    0,
+  );
+  assert.equal(
+    load(fs.readFileSync('dist/post/4e395565/index.html', 'utf8'))('link[data-math-styles]').length,
     0,
   );
   report.optionalSwitches = true;

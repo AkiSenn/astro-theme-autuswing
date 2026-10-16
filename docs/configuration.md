@@ -13,7 +13,7 @@
 | feed                                                                   | 官方 RSS + 独立 Atom，共用筛选；limit=0 表示全部，full_content 可选                                                      |
 | seo                                                                    | SeoHead、官方 sitemap 与旧入口别名、robots；已公开日期稳定；预览强制 noindex                                             |
 | comments 与六种 provider                                               | 稳定标识解析 + 原适配器；按页开关、延迟、收起、重试和主题同步；真实服务未开启                                            |
-| math                                                                   | Markdown 保护层 + 独立 renderer；本地 MathJax/KaTeX 与按页开关，普通文不请求数学库                                       |
+| math                                                                   | KaTeX 构建时渲染，自动检测公式；旧 mathjax/katex 字段兼容启用标记，仅含公式页面引用配套 CSS，详见 math-rendering.md      |
 | footer.runtime / visit_counter、analytics                              | 关于页计时、可选计数/分析模块；预览禁止外部计数/分析；原站关闭状态保留                                                   |
 | assets.image_fingerprint / cdn / preconnect                            | 图片 query 哈希、Vite assetsPrefix 与数学资源前缀、head preconnect                                                       |
 | open_in_new / exclude                                                  | Markdown HTML 树上的站外链接增强，不修改原稿                                                                             |

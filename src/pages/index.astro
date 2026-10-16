@@ -1,7 +1,7 @@
 ---
 import type { Route } from '../lib/routes';
 import { posts } from '../lib/content';
-import { site } from '../site.config';
+import { site, theme } from '../site.config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RouteContent from '../components/RouteContent.astro';
 const all = await posts();
@@ -16,6 +16,9 @@ const route: Route = {
 };
 ---
 
-<BaseLayout path="/">
+<BaseLayout
+  path="/"
+  math={theme.article.excerpt === false && route.posts?.some((post) => post.math)}
+>
   <RouteContent route={route} />
 </BaseLayout>

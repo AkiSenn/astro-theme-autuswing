@@ -23,6 +23,7 @@ npm run preview
 - URL：旧文保持 `/post/原编号/`，新文采用 `https://akisenn.com/编号/`；新稿的完整 permalink 创建时一并保存。
 - `src/config/site.json` / `theme.json`：站点数据与单主题设置，不保存发布凭据。
 - `src/lib/`：内容、路由、日期、SEO、搜索、评论身份、Markdown 兼容；不依赖侧栏或卡片 DOM。
+- 数学公式默认由 KaTeX 在构建时渲染，含公式页面才加载配套样式；保留旧文章的 `mathjax` 等标记。详见[数学扫描与实现](docs/math-rendering.md)。
 - `src/components/` / `layouts/`：原生 Astro 视图；没有 React、Vue、Svelte 或 Hexo 运行时。
 - `src/scripts/`：独立的原生交互模块。`responsive` 管理目录与断点焦点恢复；`dialogs` 保持搜索、目录、灯箱互斥。已移除抽屉与导航页签脚本。
 - `migration/`：来源哈希、冻结的历史时间和锚点、旧配置映射；构建缓存和结果只写 `.astro/`、`dist/`。

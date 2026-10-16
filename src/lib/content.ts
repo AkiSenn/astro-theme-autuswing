@@ -5,6 +5,7 @@ import legacyPages from '../../migration/page-metadata.json';
 import { publicPath, newPostPath, persistentId, assertUniquePaths } from './urls';
 import { parseDate, formatDate } from './dates';
 import { decodeHTML } from 'entities';
+import { mathPlainText } from './math.mjs';
 export type Entry = CollectionEntry<'posts'> | CollectionEntry<'pages'>;
 export type Post = Awaited<ReturnType<typeof prepare>>;
 export function list(value: unknown): string[] {
@@ -30,8 +31,11 @@ export function categoryLinks(value: unknown) {
   return [...result.values()];
 }
 export function plain(value = '') {
-  return decodeHTML(
-    value.replace(/<(script|style|pre)\b[^>]*>[\s\S]*?<\/\1>/gi, '').replace(/<[^>]*>/g, ' '),
+  return (
+    mathPlainText(value) ??
+    decodeHTML(
+      value.replace(/<(script|style|pre)\b[^>]*>[\s\S]*?<\/\1>/gi, '').replace(/<[^>]*>/g, ' '),
+    )
   )
     .replace(/\s+/g, ' ')
     .trim();
@@ -116,8 +120,7 @@ async function prepare(entry: Entry) {
     categoryItems,
     html,
     rendered,
-    math:
-      theme.math.enable && (!theme.math.per_page || !!(data.math || data.mathjax || data.katex)),
+    math: html.includes('data-math-rendered="katex"'),
     lang: data.lang || data.language || site.language,
   };
 }

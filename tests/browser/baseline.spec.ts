@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { redirects } from '../../scripts/static-artifacts.mjs';
 const ids = ['55b0541c', '4c6caf67', '4e395565'];
+const evidenceDir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase3';
 test('copy buttons preserve raw code without line numbers or UI text', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(navigator, 'clipboard', {
@@ -48,17 +49,17 @@ test('pages, metadata, search and appearance work without console failures', asy
   }
   expect(errors).toEqual([]);
 });
-test('local formulas load, ordinary posts do not load MathJax', async ({ page }) => {
+test('formulas are prerendered and ordinary posts do not load math resources', async ({ page }) => {
   const external: string[] = [];
   page.on('request', (req) => {
     if (/^https?:/.test(req.url()) && !req.url().startsWith('http://127.0.0.1:4322'))
       external.push(req.url());
   });
   await page.goto('/post/4e395565/');
-  await expect(page.locator('mjx-container')).toHaveCount(4);
+  await expect(page.locator('.katex')).toHaveCount(4);
   expect(external).toEqual([]);
   await page.goto('/post/4c6caf67/');
-  await expect(page.locator('script[src*=tex-mml]')).toHaveCount(0);
+  await expect(page.locator('link[data-math-styles],script[src*=tex-mml]')).toHaveCount(0);
   await expect(page.locator('.prose h1')).toHaveCount(0);
 });
 test('code, TOC and lightbox keyboard interaction', async ({ page }) => {
@@ -117,21 +118,21 @@ test('basic accessibility and screenshots for stage-three comparison', async ({ 
     result.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious'),
   ).toEqual([]);
   await page.screenshot({
-    path: 'docs/evidence/phase3/home-1280.png',
+    path: `${evidenceDir}/home-1280.png`,
     fullPage: true,
     animations: 'disabled',
   });
   await page.goto('/post/4e395565/');
-  await expect(page.locator('mjx-container')).toHaveCount(4);
+  await expect(page.locator('.katex')).toHaveCount(4);
   await page.screenshot({
-    path: 'docs/evidence/phase3/math-1280.png',
+    path: `${evidenceDir}/math-1280.png`,
     fullPage: true,
     animations: 'disabled',
   });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await page.screenshot({
-    path: 'docs/evidence/phase3/home-390.png',
+    path: `${evidenceDir}/home-390.png`,
     fullPage: true,
     animations: 'disabled',
   });
