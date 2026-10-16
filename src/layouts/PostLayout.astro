@@ -52,28 +52,28 @@ const related = theme.reading.related
         <a class="back-link" href="/archives/">
           ← {t('all_posts')}
         </a>
+        <h1>{post.title}</h1>
         <div class="post-meta">
           <time datetime={post.date}>{post.dateLabel}</time>
           {theme.article.reading_time && (
             <span>
               {' '}
-              / {post.minutes} {t('minutes')}
+              {post.minutes} {t('minutes')}
             </span>
           )}
           {theme.article.word_count && (
             <span>
               {' '}
-              / {post.words} {t('words')}
+              {post.words} {t('words')}
             </span>
           )}
           {theme.article.updated && post.updated !== post.date && (
             <span>
               {' '}
-              / {t('updated')} {formatDate(post.updated)}
+              {t('updated')} <time datetime={post.updated}>{formatDate(post.updated)}</time>
             </span>
           )}
         </div>
-        <h1>{post.title}</h1>
         <div class="card-tags">
           {post.categoryItems.map((c) => (
             <a class="category-label" href={c.path}>

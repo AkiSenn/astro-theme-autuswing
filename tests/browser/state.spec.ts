@@ -9,6 +9,17 @@ test('legacy appearance, system changes and cross-tab preference sync', async ({
   });
   await page.goto('/');
   await expect(page.locator('html')).toHaveAttribute('data-mode', 'dark');
+  expect(
+    await page
+      .locator('meta[name="theme-color"]')
+      .evaluateAll((nodes) =>
+        nodes.every(
+          (node) =>
+            (node as HTMLMetaElement).content ===
+            getComputedStyle(document.documentElement).getPropertyValue('--paper').trim(),
+        ),
+      ),
+  ).toBe(true);
   expect(await page.evaluate(() => localStorage.getItem('autuswing-appearance'))).toBe('dark');
   const second = await context.newPage();
   await second.goto('/');
@@ -18,6 +29,17 @@ test('legacy appearance, system changes and cross-tab preference sync', async ({
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.emulateMedia({ colorScheme: 'light' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  expect(
+    await page
+      .locator('meta[name="theme-color"]')
+      .evaluateAll((nodes) =>
+        nodes.every(
+          (node) =>
+            (node as HTMLMetaElement).content ===
+            getComputedStyle(document.documentElement).getPropertyValue('--paper').trim(),
+        ),
+      ),
+  ).toBe(true);
 });
 test('search can retry a failed index and renders injected markup as text', async ({ page }) => {
   let first = true;

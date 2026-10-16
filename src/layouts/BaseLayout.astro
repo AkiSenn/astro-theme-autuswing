@@ -4,6 +4,7 @@ const t = translate();
 import '../styles/legacy.css';
 import '../styles/astro.css';
 import '../styles/responsive.css';
+import '../styles/visual.css';
 import { theme, preview, site } from '../site.config';
 import type { Post } from '../lib/content';
 import { clientConfig } from '../lib/client';
@@ -42,7 +43,12 @@ const background = theme.backgrounds.length
 ---
 
 <!doctype html>
-<html lang={post?.lang || site.language} data-mode={theme.color_mode} style={variables}>
+<html
+  lang={post?.lang || site.language}
+  data-mode={theme.color_mode}
+  data-animate={String(theme.appearance.animate && theme.animations.enable)}
+  style={variables}
+>
   <head>
     <SeoHead path={path} title={title} post={post} noindex={noindex} math={math} />
     <script is:inline set:html={appearance} />

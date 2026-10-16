@@ -12,7 +12,13 @@ export function initMedia() {
     const badge = document.createElement('span');
     badge.className = 'code-language';
     badge.textContent = language;
-    block.append(badge);
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-block';
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+    block.before(wrapper);
+    toolbar.append(badge);
+    wrapper.append(toolbar, block);
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'copy-code';
@@ -26,7 +32,7 @@ export function initMedia() {
         toast(config.labels.shareError);
       }
     });
-    block.append(button);
+    toolbar.append(button);
   });
   const canonical = () => document.querySelector<HTMLLinkElement>('link[rel=canonical]')!.href;
   document.querySelectorAll('.copy-link,.share-copy').forEach((button) =>

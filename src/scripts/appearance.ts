@@ -8,6 +8,11 @@ export function initAppearance() {
     root.dataset.mode = modes.includes(mode) ? mode : config.mode;
     root.dataset.theme =
       root.dataset.mode === 'auto' ? (scheme.matches ? 'dark' : 'light') : root.dataset.mode;
+    const paper = getComputedStyle(root).getPropertyValue('--paper').trim();
+    if (paper)
+      document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]').forEach((meta) => {
+        meta.content = paper;
+      });
     document.querySelectorAll<HTMLButtonElement>('.mode-toggle').forEach((button) => {
       button.dataset.mode = root.dataset.mode;
       button.title = `${config.labels.mode}: ${root.dataset.mode}`;

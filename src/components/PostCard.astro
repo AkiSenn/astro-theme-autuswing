@@ -28,7 +28,6 @@ const Content = post.rendered.Content;
           <a class="category-label" href={post.categoryItems[0].path}>
             {post.categoryItems[0].name}
           </a>
-          <span> / </span>
         </>
       )}
       {theme.article.reading_time && (
@@ -37,9 +36,9 @@ const Content = post.rendered.Content;
         </span>
       )}
     </div>
-    <h3>
+    <h2 class="post-card-title">
       <a href={post.path}>{post.title}</a>
-    </h3>
+    </h2>
     {theme.article.excerpt === false ? (
       <div class="prose">
         <Content />

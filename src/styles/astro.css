@@ -1,8 +1,4 @@
-/* Stage two compatibility only. Three-width navigation and typography follow in
-   stages three/four; keep the existing visual proportions for comparison. */
-:root {
-  --muted: #606b62;
-}
+/* Astro renderer adapters. Responsive layout and visual tokens live separately. */
 .toc {
   list-style: none;
   padding-left: 0;
@@ -50,43 +46,10 @@ html[data-theme='dark'] .prose .astro-code span {
   opacity: 0.45;
   user-select: none;
 }
-.prose pre {
-  padding-top: 36px;
-}
-.code-language {
-  position: absolute;
-  top: 8px;
-  left: 14px;
-  font-size: 11px;
-  opacity: 0.65;
-}
-.copy-code {
-  position: absolute;
-  right: 10px;
-  top: 6px;
-  font-size: 12px;
-}
-.share {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-block: 24px;
-}
-.share button,
-.share a {
-  padding: 6px 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
 .prose .math-display {
   overflow-x: auto;
 }
-.prose mjx-container[display='true'] {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
 @media print {
-  .share,
   .copy-code,
   .code-language {
     display: none;

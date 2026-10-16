@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-16T09:44:15.6831338Z",
+  "startTime": "2026-10-16T09:41:38.07Z",
+  "browser": "Microsoft Edge / Chromium",
+  "passed": 40,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "durationMs": 142526.65800000002,
+  "scope": "Phase four: responsive regression, reading samples, code toolbar, appearance sync, motion and accessibility preferences; no physical-device certification"
+}

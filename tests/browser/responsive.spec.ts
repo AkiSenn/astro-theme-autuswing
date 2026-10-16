@@ -333,13 +333,22 @@ test('short tablet/desktop heights keep navigation and tools reachable and full-
     .evaluate((node) => {
       const prose = document.createElement('div');
       prose.className = 'prose';
-      prose.textContent = 'Full content mode uses one column.';
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'Full content mode uses the reading font in one column.';
+      prose.append(paragraph);
       node.append(prose);
     });
   const tops = await page
     .locator('.post-card')
     .evaluateAll((cards) => cards.slice(0, 2).map((c) => c.getBoundingClientRect().top));
   expect(tops[1]).toBeGreaterThan(tops[0] + 40);
+  const fonts = await page
+    .locator('.post-card .prose')
+    .evaluate((node) => ({
+      parent: getComputedStyle(node).fontSize,
+      paragraph: getComputedStyle(node.querySelector('p')!).fontSize,
+    }));
+  expect(fonts.paragraph).toBe(fonts.parent);
 });
 
 test('touch navigation and contents work in phone/tablet browser contexts', async ({ browser }) => {
