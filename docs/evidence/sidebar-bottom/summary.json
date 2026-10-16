@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-16T17:51:52.724Z",
+  "clientDate": "2026-10-17",
+  "timezone": "Asia/Singapore",
+  "scope": "PC full sidebar bottom only; targeted browser regressions",
+  "browsers": {
+    "edge": {
+      "startTime": "2026-10-16T17:47:50.813Z",
+      "duration": 50798.276,
+      "expected": 14,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "startTime": "2026-10-16T17:48:54.843Z",
+      "duration": 123536.149,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "totalTargetedBrowserTests": 21,
+  "sidebarStatesPerEngine": 10,
+  "baselineCasesPerEngine": 16,
+  "socialPageViewportCasesPerEngine": 46,
+  "typeCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "unitTests": 16,
+  "httpChecks": 77,
+  "source": {
+    "checkedAt": "2026-10-16T17:49:50.492Z",
+    "originalFilesVerified": 652,
+    "originalGitStatusesUnchanged": [
+      "E:/hexo-akisenn",
+      "E:/yelee-next"
+    ],
+    "unchanged": true
+  },
+  "output": {
+    "checkedAt": "2026-10-16T17:49:50.073Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "limitations": [
+    "Targeted suites executed; previous complete browser suite was not rerun",
+    "No Firefox or physical device verification; WebKit is not actual Safari hardware"
+  ],
+  "deploymentPerformed": false,
+  "preview": "http://127.0.0.1:8788/"
+}
