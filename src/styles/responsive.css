@@ -110,10 +110,48 @@ html:has(dialog[open]) {
   min-width: 44px;
   min-height: 44px;
 }
-.social-links a {
+.social-links,
+.sidebar-bottom .social-links,
+.compact-social .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+.sidebar-bottom .social-links {
+  margin-top: 8px;
+}
+.social-links a,
+.sidebar-bottom .social-links a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 8px;
+}
+.social-links .icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.social-links a:hover {
+  background: var(--green-soft);
+}
+.site-footer {
+  text-align: center;
+}
+.site-footer .footer-row {
+  justify-content: center;
+}
+.site-footer .compact-social {
+  margin-bottom: 12px;
 }
 .article-layout {
   max-width: var(--reading-width);
@@ -402,14 +440,6 @@ html:has(dialog[open]) {
   .article-page .compact-social {
     display: block;
   }
-  .article-page .compact-social .social-links {
-    margin: 0 0 20px;
-    gap: 8px 16px;
-  }
-  .article-page .compact-social a {
-    min-height: 44px;
-    font-size: 12px;
-  }
   .reading-sidebar-header {
     display: flex;
     align-items: center;
@@ -488,14 +518,6 @@ html:has(dialog[open]) {
 @media (width < 1000px) {
   .compact-social {
     display: block;
-  }
-  .compact-social .social-links {
-    margin: 0 0 20px;
-    gap: 8px 16px;
-  }
-  .compact-social a {
-    min-height: 44px;
-    font-size: 12px;
   }
   .floating-tools {
     flex-direction: row;

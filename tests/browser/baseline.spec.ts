@@ -25,8 +25,14 @@ test('pages, metadata, search and appearance work without console failures', asy
   await page.goto('/');
   await expect(page.locator('.post-card')).toHaveCount(3);
   await expect(page.locator('.profile .avatar')).toBeVisible();
+  const indexReady = page.waitForResponse((response) => response.url().endsWith('/search.json'));
   await page.locator('.search-open:visible').click();
   await page.locator('#search-input').fill('欧拉');
+  // Wait for the actual asynchronous dependency before checking its UI result.
+  // Windows WebKit can deliver the response body after its headers are visible.
+  const index = await indexReady;
+  expect(index.ok()).toBe(true);
+  await index.finished();
   await expect(page.locator('.search-results a')).toHaveCount(1);
   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');
   await page.keyboard.press('Escape');

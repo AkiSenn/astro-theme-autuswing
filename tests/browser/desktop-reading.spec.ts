@@ -104,6 +104,12 @@ test('compact body widths and typography remain equal after removing the redunda
           selector === '.tablet-sidebar'
         )
           expect(actual.height).toEqual(expected.height);
+      } else if (selector === '.main-shell' && actual && expected) {
+        // Footer social icons intentionally change total page height. Preserve
+        // its position, width and typography; content geometry stays exact.
+        const { height: _height, ...stableActual } = actual;
+        const { height: _beforeHeight, ...stableExpected } = expected;
+        expect(stableActual, `${item.width} ${selector}`).toEqual(stableExpected);
       } else expect(actual, `${item.width} ${item.path} ${selector}`).toEqual(expected);
     }
   }
@@ -202,5 +208,36 @@ test('navigation, panel keyboard controls, dark mode, native fallback and page-t
       await expect(native.locator('.contents-fallback .toc-link').first()).toBeVisible();
     } else await expect(native.locator('.reading-sidebar .toc-link').first()).toBeVisible();
     await context.close();
+  }
+});
+
+test('social-only changes preserve article, card, navigation and content typography geometry', async ({
+  page,
+}) => {
+  const baseline = JSON.parse(fs.readFileSync('docs/evidence/social-links/before.json', 'utf8'));
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const item of baseline.cases) {
+    await page.setViewportSize({ width: item.width, height: item.height });
+    await page.goto(item.path);
+    await page.evaluate(() => document.fonts.ready);
+    for (const [selector, expected] of Object.entries(item.boxes)) {
+      if (selector === '.main-shell') continue; // Footer height intentionally changes.
+      const actual = await page.locator(selector).evaluateAll((nodes) => {
+        const el = nodes[0];
+        if (!el) return null;
+        const b = el.getBoundingClientRect(),
+          c = getComputedStyle(el);
+        return {
+          x: b.x,
+          y: b.y,
+          width: b.width,
+          height: b.height,
+          fontSize: c.fontSize,
+          lineHeight: c.lineHeight,
+          display: c.display,
+        };
+      });
+      expect(actual, `${item.width} ${item.path} ${selector}`).toEqual(expected);
+    }
   }
 });

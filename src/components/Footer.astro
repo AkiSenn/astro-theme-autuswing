@@ -27,6 +27,21 @@ const f = theme.footer,
       </span>
     )}
   </div>
+  {(f.icp || f.police_icp) && (
+    <div class="footer-row registration">
+      {f.icp && (
+        <a href={safeLink(f.icp_link)} target="_blank" rel="noopener noreferrer">
+          {f.icp}
+        </a>
+      )}
+      {f.police_icp && (
+        <a href={safeLink(f.police_icp_link)} target="_blank" rel="noopener noreferrer">
+          {f.police_icp_icon && <img src={f.police_icp_icon} width="18" height="18" alt="" />}
+          {f.police_icp}
+        </a>
+      )}
+    </div>
+  )}
   {!preview && counter.enable && (
     <div class="footer-row footer-details">
       <div
@@ -47,21 +62,6 @@ const f = theme.footer,
           ))}
         <span class="statistics-status" role="status"></span>
       </div>
-    </div>
-  )}
-  {(f.icp || f.police_icp) && (
-    <div class="footer-row registration">
-      {f.icp && (
-        <a href={safeLink(f.icp_link)} target="_blank" rel="noopener noreferrer">
-          {f.icp}
-        </a>
-      )}
-      {f.police_icp && (
-        <a href={safeLink(f.police_icp_link)} target="_blank" rel="noopener noreferrer">
-          {f.police_icp_icon && <img src={f.police_icp_icon} width="18" height="18" alt="" />}
-          {f.police_icp}
-        </a>
-      )}
     </div>
   )}
   {f.custom && <div class="footer-custom" set:html={f.custom} />}

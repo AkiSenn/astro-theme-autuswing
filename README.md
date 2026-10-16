@@ -2,7 +2,7 @@
 
 GitHub：[`AkiSenn/astro-theme-autuswing`](https://github.com/AkiSenn/astro-theme-autuswing)（私有仓库）。这是 Autuswing 的独立 Astro 版本，当前保留 AkiSenn 博客的迁移内容与配置，尚未整理为使用示例内容的通用发行包。
 
-AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，保留预览 noindex 和关闭的真实评论。保留森林绿、日期卡片与个人侧栏：PC首页及普通页面使用272px完整侧栏；PC文章页复用72px迷你导航，并提供260px独立目录。平板仍为72px迷你栏，手机仍为顶部品牌与横向导航。文章外层上限860px、默认正文实际810px，较窄窗口弹性缩小。目录入口按实际布局保持唯一：手机悬浮按钮、迷你栏按钮、已展开面板的收起按钮。最新修复见[目录入口统一](docs/contents-controls.md)，布局方案见[首页与文章布局分离](docs/reading-layout.md)，前序宽度调整记录见[宽屏补充](docs/desktop-reading-wide.md)。
+AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，保留预览 noindex 和关闭的真实评论。保留森林绿、日期卡片与个人侧栏：PC首页及普通页面使用272px完整侧栏；PC文章页复用72px迷你导航，并提供260px独立目录。平板仍为72px迷你栏，手机仍为顶部品牌与横向导航。文章外层上限860px、默认正文实际810px，较窄窗口弹性缩小。目录入口按实际布局保持唯一：手机悬浮按钮、迷你栏按钮、已展开面板的收起按钮。社交区说明见[纯图标布局](docs/social-links.md)，目录行为见[目录入口统一](docs/contents-controls.md)，布局方案见[首页与文章布局分离](docs/reading-layout.md)，前序宽度调整记录见[宽屏补充](docs/desktop-reading-wide.md)。
 
 ## 本地运行
 

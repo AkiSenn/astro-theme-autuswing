@@ -1,0 +1,315 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/baseline.spec.ts",
+      "--config",
+      "playwright.cross.config.ts",
+      "--project=webkit",
+      "--grep",
+      "pages, metadata",
+      "--repeat-each=3",
+      "--reporter=list,json",
+      "--output=test-results/social-search-repeat"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.cross.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/test-results/social-search-repeat",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/test-results/social-search-repeat",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\social-search-repeat",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "E:\\autuswing-astro\\tests\\browser",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "baseline.spec.ts",
+      "file": "baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "pages, metadata, search and appearance work without console failures",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15664,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    2 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    2 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n    at E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts:30:51",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                      "column": 51,
+                      "line": 30
+                    },
+                    "snippet": "  28 |   await page.locator('.search-open:visible').click();\n  29 |   await page.locator('#search-input').fill('欧拉');\n> 30 |   await expect(page.locator('.search-results a')).toHaveCount(1);\n     |                                                   ^\n  31 |   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');\n  32 |   await page.keyboard.press('Escape');\n  33 |   await expect(page.locator('.search-dialog')).not.toBeVisible();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                        "column": 51,
+                        "line": 30
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    2 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n\n  28 |   await page.locator('.search-open:visible').click();\n  29 |   await page.locator('#search-input').fill('欧拉');\n> 30 |   await expect(page.locator('.search-results a')).toHaveCount(1);\n     |                                                   ^\n  31 |   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');\n  32 |   await page.keyboard.press('Escape');\n  33 |   await expect(page.locator('.search-dialog')).not.toBeVisible();\n    at E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts:30:51"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T17:24:18.557Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\test-results\\social-search-repeat\\baseline-pages-metadata-se-a0d71-rk-without-console-failures-webkit\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\test-results\\social-search-repeat\\baseline-pages-metadata-se-a0d71-rk-without-console-failures-webkit\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                    "column": 51,
+                    "line": 30
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-caf922c17e7fcebdeb41",
+          "file": "baseline.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "pages, metadata, search and appearance work without console failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T17:24:37.641Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-8a7e6d4767b57ec66357",
+          "file": "baseline.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "pages, metadata, search and appearance work without console failures",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12662,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    3 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    3 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n    at E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts:30:51",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                      "column": 51,
+                      "line": 30
+                    },
+                    "snippet": "  28 |   await page.locator('.search-open:visible').click();\n  29 |   await page.locator('#search-input').fill('欧拉');\n> 30 |   await expect(page.locator('.search-results a')).toHaveCount(1);\n     |                                                   ^\n  31 |   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');\n  32 |   await page.keyboard.press('Escape');\n  33 |   await expect(page.locator('.search-dialog')).not.toBeVisible();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                        "column": 51,
+                        "line": 30
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.search-results a')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.search-results a') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.search-results a')\u001b[22m\n\u001b[2m    3 × locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n\n  28 |   await page.locator('.search-open:visible').click();\n  29 |   await page.locator('#search-input').fill('欧拉');\n> 30 |   await expect(page.locator('.search-results a')).toHaveCount(1);\n     |                                                   ^\n  31 |   await expect(page.locator('.search-results a')).toHaveAttribute('href', '/post/4e395565/');\n  32 |   await page.keyboard.press('Escape');\n  33 |   await expect(page.locator('.search-dialog')).not.toBeVisible();\n    at E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts:30:51"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T17:24:49.890Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\test-results\\social-search-repeat\\baseline-pages-metadata-se-a0d71-rk-without-console-failures-webkit-repeat2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\test-results\\social-search-repeat\\baseline-pages-metadata-se-a0d71-rk-without-console-failures-webkit-repeat2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\baseline.spec.ts",
+                    "column": 51,
+                    "line": 30
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-8bca4db3c57bd2c3cd29",
+          "file": "baseline.spec.ts",
+          "line": 22,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T17:24:17.722Z",
+    "duration": 45026.051999999996,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

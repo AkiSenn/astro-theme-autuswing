@@ -1,0 +1,17 @@
+
+> astro-theme-autuswing@0.2.0 check
+> astro check
+
+01:28:17 [content] Syncing content
+01:28:17 [content] Synced content
+01:28:17 [types] Generated 980ms
+01:28:17 [check] Getting diagnostics for Astro files in E:\autuswing-astro...
+[96msrc/scripts/helpers.ts[0m:[93m32[0m:[93m23[0m - [93mwarning[0m[90m ts(6387): [0mThe signature '(commandId: string, showUI?: boolean | undefined, value?: string | undefined): boolean' of 'document.execCommand' is deprecated.
+
+[7m32[0m   const ok = document.execCommand('copy');
+[7m  [0m [93m                      ~~~~~~~~~~~[0m
+
+Result (70 files):
+- 0 errors
+- 0 warnings
+- 1 hint

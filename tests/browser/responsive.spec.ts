@@ -366,7 +366,10 @@ test('touch navigation and contents work in phone/tablet browser contexts', asyn
     });
     const page = await context.newPage();
     await page.goto('http://127.0.0.1:4322/');
-    await page.locator(`${activeShell(width)} nav a[href="/archives/"]`).tap();
+    await Promise.all([
+      page.waitForURL('**/archives/'),
+      page.locator(`${activeShell(width)} nav a[href="/archives/"]`).tap(),
+    ]);
     await expect(page).toHaveURL(/\/archives\/$/);
     await page.goto('http://127.0.0.1:4322/post/4e395565/');
     await page.locator('.contents-open:visible,.goto-toc:visible').tap();

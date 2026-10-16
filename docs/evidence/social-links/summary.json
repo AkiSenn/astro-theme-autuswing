@@ -1,0 +1,155 @@
+{
+  "checkedAt": "2026-10-16T17:40:14.958Z",
+  "clientDate": "2026-10-17",
+  "timezone": "Asia/Singapore",
+  "scope": "Shared social icon layout and footer ordering; no deployment",
+  "browser": {
+    "edge-final-results.json": {
+      "startTime": "2026-10-16T17:29:25.529Z",
+      "duration": 177156.26200000002,
+      "expected": 57,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit-results.json": {
+      "startTime": "2026-10-16T17:32:25.674Z",
+      "duration": 455430.364,
+      "expected": 48,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "nginx-results.json": {
+      "startTime": "2026-10-16T17:40:02.969Z",
+      "duration": 5616.75,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "totalFinalBrowserTests": 109,
+  "social": {
+    "edge": {
+      "checkedAt": "2026-10-16T17:32:03.202Z",
+      "cases": 46,
+      "viewportWidths": [
+        320,
+        375,
+        390,
+        430,
+        719,
+        720,
+        768,
+        820,
+        999,
+        1000,
+        1024,
+        1180,
+        1280,
+        1366,
+        1440,
+        1920,
+        2560
+      ],
+      "maximumCenterDifference": 0
+    },
+    "webkit": {
+      "checkedAt": "2026-10-16T17:38:58.708Z",
+      "cases": 46,
+      "viewportWidths": [
+        320,
+        375,
+        390,
+        430,
+        719,
+        720,
+        768,
+        820,
+        999,
+        1000,
+        1024,
+        1180,
+        1280,
+        1366,
+        1440,
+        1920,
+        2560
+      ],
+      "maximumCenterDifference": 0
+    }
+  },
+  "geometryBaselineCases": 16,
+  "typeCheck": {
+    "files": 70,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1
+  },
+  "unitTests": 16,
+  "httpChecks": 77,
+  "originals": {
+    "checkedAt": "2026-10-16T17:31:12.894Z",
+    "originalFilesVerified": 652,
+    "originalGitStatusesUnchanged": [
+      "E:/hexo-akisenn",
+      "E:/yelee-next"
+    ],
+    "unchanged": true
+  },
+  "output": {
+    "checkedAt": "2026-10-16T17:28:39.029Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "build": {
+    "checkedAt": "2026-10-16T17:28:37.007Z",
+    "files": 355,
+    "identical": true
+  },
+  "initialWebKit": {
+    "stats": {
+      "startTime": "2026-10-16T17:18:53.966Z",
+      "duration": 453454.427,
+      "expected": 45,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "reasons": [
+      "Default WebKit Tab traversal skipped unmarked anchors; shared links now explicitly use tabindex=0",
+      "Search assertion ran before index response body finished; test now waits for that response without changing the search implementation",
+      "Touch URL assertion raced navigation; test now registers a navigation wait alongside tap"
+    ]
+  },
+  "searchRepeatBeforeCoordinationFix": {
+    "startTime": "2026-10-16T17:24:17.722Z",
+    "duration": 45026.051999999996,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "additionalSearchDiagnostics": {
+    "origins": [
+      4322,
+      8788
+    ],
+    "uiChecks": 6,
+    "passed": 6
+  },
+  "limitations": [
+    "Firefox not run: existing Windows launch dependency issue",
+    "No physical phone/tablet or actual Safari verification",
+    "No new Lighthouse measurements",
+    "Real comments remain disabled as requested; existing mocks only"
+  ],
+  "preview": "http://127.0.0.1:8788/",
+  "deploymentPerformed": false
+}

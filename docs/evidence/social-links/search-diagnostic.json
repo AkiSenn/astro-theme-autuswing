@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-10-16T17:27:22.567Z",
+  "checks": [
+    {
+      "port": 4322,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 1,
+      "wallMs": 9,
+      "headersMs": 3,
+      "bodyMs": 0,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 4322,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 2,
+      "wallMs": 16,
+      "headersMs": 13,
+      "bodyMs": 0,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 4322,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 3,
+      "wallMs": 18,
+      "headersMs": 11,
+      "bodyMs": 1,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 4322,
+      "kind": "search-ui",
+      "attempt": 1,
+      "wallMs": 3954,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 0,
+          "items": 3
+        }
+      ]
+    },
+    {
+      "port": 4322,
+      "kind": "search-ui",
+      "attempt": 2,
+      "wallMs": 3857,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 0,
+          "items": 3
+        }
+      ]
+    },
+    {
+      "port": 4322,
+      "kind": "search-ui",
+      "attempt": 3,
+      "wallMs": 3855,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 0,
+          "items": 3
+        }
+      ]
+    },
+    {
+      "port": 8788,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 1,
+      "wallMs": 24,
+      "headersMs": 3,
+      "bodyMs": 13,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 8788,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 2,
+      "wallMs": 14,
+      "headersMs": 11,
+      "bodyMs": 0,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 8788,
+      "kind": "raw-fetch-no-theme",
+      "attempt": 3,
+      "wallMs": 22,
+      "headersMs": 19,
+      "bodyMs": 1,
+      "status": 200,
+      "items": 3
+    },
+    {
+      "port": 8788,
+      "kind": "search-ui",
+      "attempt": 1,
+      "wallMs": 4011,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 0,
+          "items": 3
+        }
+      ]
+    },
+    {
+      "port": 8788,
+      "kind": "search-ui",
+      "attempt": 2,
+      "wallMs": 3830,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 1,
+          "items": 3
+        }
+      ]
+    },
+    {
+      "port": 8788,
+      "kind": "search-ui",
+      "attempt": 3,
+      "wallMs": 3900,
+      "passed": true,
+      "error": null,
+      "results": 1,
+      "status": "1 条结果",
+      "fetch": [
+        {
+          "jsonMs": 0,
+          "items": 3
+        }
+      ]
+    }
+  ]
+}

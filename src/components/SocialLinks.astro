@@ -9,17 +9,16 @@ import Glyph from './Glyph.astro';
       href={safeLink(item.url)}
       aria-label={item.name}
       title={item.name}
+      tabindex="0"
       target={item.url.startsWith('http') ? '_blank' : undefined}
       rel="noopener noreferrer"
     >
       <Glyph name={item.icon} />
-      <span>{item.name}</span>
     </a>
   ))}
   {theme.feed.enable && (
-    <a href="/rss.xml" title="RSS" aria-label="RSS">
+    <a href="/rss.xml" title="RSS" aria-label="RSS" tabindex="0">
       <Glyph name="rss" />
-      <span>RSS</span>
     </a>
   )}
 </div>
