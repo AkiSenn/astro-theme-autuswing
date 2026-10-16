@@ -1,0 +1,17 @@
+[
+  {
+    "TimeCreated": "2026-10-16T19:50:06.086072+08:00",
+    "Id": 33,
+    "Message": "“C:\\Users\\AutumnThousand\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe”的激活上下文生成失败。 找不到从属程序集 mozglue,language=\"&#x2a;\",type=\"win32\",version=\"1.0.0.0\"。 请使用 sxstrace.exe 进行详细诊断。"
+  },
+  {
+    "TimeCreated": "2026-10-16T19:45:25.4328283+08:00",
+    "Id": 33,
+    "Message": "“C:\\Users\\AutumnThousand\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe”的激活上下文生成失败。 找不到从属程序集 mozglue,language=\"&#x2a;\",type=\"win32\",version=\"1.0.0.0\"。 请使用 sxstrace.exe 进行详细诊断。"
+  },
+  {
+    "TimeCreated": "2026-10-16T19:45:25.3120154+08:00",
+    "Id": 33,
+    "Message": "“C:\\Users\\AUTUMN~1\\AppData\\Local\\MS-PLA~1\\FIREFO~1\\firefox\\firefox.exe”的激活上下文生成失败。 找不到从属程序集 mozglue,language=\"&#x2a;\",type=\"win32\",version=\"1.0.0.0\"。 请使用 sxstrace.exe 进行详细诊断。"
+  }
+]

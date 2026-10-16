@@ -1,0 +1,155 @@
+{
+  "checkedAt": "2026-10-16T12:41:45.631Z",
+  "scope": "Local acceptance only; no remote preview, upload, production change or deployment",
+  "preview": "http://127.0.0.1:8788/",
+  "toolchain": {
+    "node": "v22.23.2",
+    "platform": "win32",
+    "arch": "x64",
+    "astro": "7.4.0",
+    "playwright": "1.64.1",
+    "edge": "155.0.4283.45",
+    "webkit": {
+      "name": "webkit",
+      "revision": "2370",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "27.2",
+      "title": "WebKit"
+    },
+    "firefox": {
+      "name": "firefox",
+      "revision": "1555",
+      "installByDefault": true,
+      "browserVersion": "157.0",
+      "title": "Firefox"
+    },
+    "nginx": "1.30.6 Windows official package",
+    "nginxPackageSha256": "c6ee35edb0a861063323f709192ae50d1eefaf2ea7d00678bd2b22d8542dc61e",
+    "lighthouse": "13.5.0"
+  },
+  "typeCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 1,
+    "evidence": "type-check.txt"
+  },
+  "unitTests": {
+    "passed": 16,
+    "failed": 0,
+    "evidence": "unit-tests.txt"
+  },
+  "browser": {
+    "edge": {
+      "startTime": "2026-10-16T12:25:00.788Z",
+      "duration": 171389.183,
+      "expected": 48,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "evidence": "edge-results.json"
+    },
+    "webkit": {
+      "startTime": "2026-10-16T12:27:52.872Z",
+      "duration": 444806.273,
+      "expected": 42,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "evidence": "webkit-results.json"
+    },
+    "nginx-browser": {
+      "startTime": "2026-10-16T12:35:18.350Z",
+      "duration": 88913.527,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "evidence": "nginx-browser-results.json"
+    }
+  },
+  "httpChecks": 77,
+  "permalinkFixtureChecks": 3,
+  "migrationFixtures": 9,
+  "mathBuildChecks": 7,
+  "configurationChecks": 7,
+  "originalSource": {
+    "checkedAt": "2026-10-16T12:41:45.097Z",
+    "originalFilesVerified": 652,
+    "originalGitStatusesUnchanged": [
+      "E:/hexo-akisenn",
+      "E:/yelee-next"
+    ],
+    "unchanged": true
+  },
+  "output": {
+    "checkedAt": "2026-10-16T12:24:30.784Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 903,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "reproducibleBuild": {
+    "checkedAt": "2026-10-16T12:24:28.725Z",
+    "files": 355,
+    "identical": true
+  },
+  "avatar": {
+    "originalBytes": 317783,
+    "generatedBytes": 4156,
+    "path": "/_astro/avatar.DADbckWz_Z23dhab.webp"
+  },
+  "screenshotsReviewed": [
+    "edge/desktop-1366x768.png",
+    "edge/desktop-1440x900.png",
+    "edge/desktop-1920x1080.png",
+    "webkit/desktop-1440x900.png",
+    "webkit/home-820.png",
+    "edge/math-390.png",
+    "edge/about-1440.png"
+  ],
+  "firefox": {
+    "status": "unavailable; Windows SideBySide mozglue dependency prevents browser launch",
+    "attemptedSuiteBeforeAboutTestAdded": {
+      "startTime": "2026-10-16T11:42:06.545Z",
+      "duration": 75506.183,
+      "expected": 0,
+      "skipped": 38,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "currentSuiteTests": 42,
+    "evidence": [
+      "firefox-results.json",
+      "firefox-windows-error.json"
+    ]
+  },
+  "realComments": {
+    "enabled": false,
+    "status": "Deferred at user request; adapter mocks only"
+  },
+  "pending": [
+    "Firefox browser execution",
+    "Physical devices and native browser zoom",
+    "Real comment service if enabled later",
+    "Linux Baota Nginx/TLS/CDN and production-policy HTTP validation"
+  ],
+  "productionPolicy": {
+    "artifactOnly": true,
+    "servedOrDeployed": false,
+    "evidence": "production-policy-files.json"
+  },
+  "deploymentPerformed": false,
+  "performance": {
+    "checkedAt": "2026-10-16T12:41:05.965Z",
+    "runs": 12,
+    "crawlPolicy": "preview-noindex",
+    "evidence": "performance/summary.json"
+  }
+}

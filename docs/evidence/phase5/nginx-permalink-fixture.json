@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-16T11:55:03.170Z",
+  "fixtureOnly": true,
+  "checks": [
+    {
+      "uri": "/explicit-permalink.html?check=1",
+      "status": 200,
+      "location": null
+    },
+    {
+      "uri": "/a1b2c3/?check=1",
+      "status": 200,
+      "location": null
+    },
+    {
+      "uri": "/a1b2c3?check=1",
+      "status": 301,
+      "location": "/a1b2c3/?check=1"
+    }
+  ]
+}

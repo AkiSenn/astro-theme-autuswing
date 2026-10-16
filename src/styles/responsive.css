@@ -261,7 +261,10 @@ html:has(dialog[open]) {
     color: var(--muted);
   }
   .article-page {
-    --reading-width: 754px;
+    --reading-width: 860px;
+  }
+  .article-page .article-layout:has(> .mica-article) {
+    max-width: var(--reading-width);
   }
   .article-page .desktop-sidebar.sidebar {
     padding: 16px 24px;

@@ -1,0 +1,9 @@
+{
+  "automaticDetection": true,
+  "legacyFlags": true,
+  "noFormulaNoStyles": true,
+  "explicitOptOut": true,
+  "fullContentPagination": true,
+  "unsupportedBuildRejected": true,
+  "previewRestored": true
+}

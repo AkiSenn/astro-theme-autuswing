@@ -1,0 +1,9 @@
+{
+  "perPageZero": true,
+  "fullContentMath": true,
+  "optionalSwitches": true,
+  "precompression": true,
+  "englishLabels": true,
+  "productionCrawlPolicy": true,
+  "previewRestored": true
+}

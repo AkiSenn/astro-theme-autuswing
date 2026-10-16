@@ -1,0 +1,2 @@
+nginx: the configuration file E:/autuswing-astro/.local-tools/nginx-config/nginx.conf syntax is ok
+nginx: configuration file E:/autuswing-astro/.local-tools/nginx-config/nginx.conf test is successful

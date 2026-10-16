@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-16T12:26:46.399Z",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "profileHeightBefore": 159.28125,
+      "profileHeightAfter": 141.78125,
+      "tocHeight": 287.21875,
+      "saved": 17.5,
+      "bottomSaved": 24.796875,
+      "gained": 42.296875
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "profileHeightBefore": 165.796875,
+      "profileHeightAfter": 145.1875,
+      "tocHeight": 415.8125,
+      "saved": 20.609375,
+      "bottomSaved": 24.796875,
+      "gained": 45.40625
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "profileHeightBefore": 165.796875,
+      "profileHeightAfter": 145.1875,
+      "tocHeight": 595.8125,
+      "saved": 20.609375,
+      "bottomSaved": 24.796875,
+      "gained": 45.40625
+    }
+  ]
+}

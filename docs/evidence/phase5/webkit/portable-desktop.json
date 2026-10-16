@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-16T12:31:17.948Z",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.399998px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 272,
+      "centerDifference": 0,
+      "sidebarHeight": 768,
+      "sidebarScrollHeight": 768,
+      "tocHeight": 286,
+      "tocScrollHeight": 1221,
+      "bottom": 752,
+      "rootOverflow": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.399998px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 272,
+      "centerDifference": 0,
+      "sidebarHeight": 900,
+      "sidebarScrollHeight": 900,
+      "tocHeight": 415,
+      "tocScrollHeight": 1221,
+      "bottom": 884,
+      "rootOverflow": 0
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fontSize": "18px",
+      "lineHeight": "32.399998px",
+      "proseWidth": 810,
+      "articleWidth": 860,
+      "sidebarWidth": 272,
+      "centerDifference": 0,
+      "sidebarHeight": 1080,
+      "sidebarScrollHeight": 1080,
+      "tocHeight": 595,
+      "tocScrollHeight": 1221,
+      "bottom": 1064,
+      "rootOverflow": 0
+    }
+  ]
+}

@@ -15,6 +15,11 @@
     "test": "tsx --test tests/*.test.ts",
     "verify": "node scripts/verify-content.mjs && tsx scripts/verify-output.ts",
     "test:browser": "playwright test",
+    "test:browser:cross": "playwright test --config playwright.cross.config.ts",
+    "test:nginx": "playwright test --config playwright.nginx.config.ts",
+    "prepare:nginx": "node scripts/prepare-nginx.mjs",
+    "verify:http": "node scripts/verify-http.mjs",
+    "audit:performance": "node scripts/audit-performance.mjs",
     "new-post": "node scripts/new-post.mjs"
   },
   "dependencies": {

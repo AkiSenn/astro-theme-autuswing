@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-16T12:41:44.730Z",
+  "localArtifactOnly": true,
+  "servedOrDeployed": false,
+  "canonicalPages": 26,
+  "noindexAbsent": true,
+  "canonicalAndJsonLdPresent": true,
+  "robotsAllow": true,
+  "servedPreviewBuildUnchanged": true,
+  "httpPolicyNotTested": "An additional local production-policy Nginx instance was rejected by automatic approval review (blocked by policy). Preview Nginx HTTP tested separately."
+}

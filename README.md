@@ -1,6 +1,6 @@
 # AutuSwing Astro
 
-AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前为第四阶段：三端布局已完成，并打磨中文排版、卡片、深浅色与阅读细节。保留森林绿、日期卡片与个人侧栏，按可用宽度分别使用桌面完整侧栏（≥1000px）、平板 72px 迷你侧栏（720–999px）和手机顶部品牌栏与横向导航（<720px）。文章目录独立于网站导航；PC文章页阅读宽度上限754px，其他阅读布局仍为704px。桌面文章排版微调见[阅读页记录](docs/desktop-reading.md)。
+AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进入第五阶段本地验收：使用独立 Nginx 验证宝塔静态交付规则，保留预览 noindex 和关闭的真实评论；没有线上部署。保留森林绿、日期卡片与个人侧栏，按可用宽度分别使用桌面完整侧栏（≥1000px）、平板 72px 迷你侧栏（720–999px）和手机顶部品牌栏与横向导航（<720px）。文章目录独立于网站导航；PC文章外层上限860px，默认卡片正文实际810px，其他阅读布局仍为704px。桌面文章排版微调见[阅读页记录](docs/desktop-reading.md)与[宽屏补充](docs/desktop-reading-wide.md)。
 
 ## 本地运行
 
@@ -15,6 +15,8 @@ npm run preview
 ```
 
 预览地址：**http://127.0.0.1:4322/**。开发模式用 `npm run dev`，同端口，请先结束占用该端口的预览进程。构建默认输出预览策略（noindex、关闭真实评论和统计），不会部署。
+
+本轮已经启动的 Nginx 验收地址：**http://127.0.0.1:8788/**。复现命令见[宝塔 Nginx 静态交付](deployment/README.md)，验收结果、截图和未完成项见[第五阶段报告](docs/phase-5.md)。
 
 ## 内容与职责
 
@@ -48,6 +50,6 @@ node scripts/verify-configurations.mjs
 
 原站 `E:/hexo-akisenn`、Yelee-Next、生产域名和 516700.xyz 均不由本工程写入。第一阶段审计保存在 `E:/autuswing-astro-audit-20261016`。
 
-详细说明：[阶段四交付](docs/phase-4.md)、[阶段三记录](docs/phase-3.md)、[阶段二记录](docs/phase-2.md)、[配置迁移](docs/configuration.md)、[写作与 URL](docs/writing.md)、[静态部署边界](deployment/README.md)。
+详细说明：[阶段五本地验收](docs/phase-5.md)、[阶段四交付](docs/phase-4.md)、[阶段三记录](docs/phase-3.md)、[阶段二记录](docs/phase-2.md)、[配置迁移](docs/configuration.md)、[写作与 URL](docs/writing.md)、[宝塔 Nginx 静态交付](deployment/README.md)。
 
 原主题、图标、样式及适配脚本沿用 MIT 许可；原稿保留作者原有内容许可。数学 vendor 的版本、许可证与校验清单见 `public/assets/vendor/`。本项目没有迁移 Yelee-Next，也没有双主题运行系统。

@@ -107,6 +107,13 @@ for (const p of legacy) {
   assert.ok(redirects.includes(`/p/${p.abbrlink}/ ${p.path} 301`));
 }
 const search = JSON.parse(read('search.json'));
+if (fs.existsSync(path.join(root, '_headers'))) {
+  const globalHeaders = read('_headers').split(/\n\s*\n/)[0];
+  assert.ok(
+    !globalHeaders.includes('Cache-Control:'),
+    'Global and specific static-asset cache rules must not overlap',
+  );
+}
 assert.equal(search.length, 3);
 assert.ok(search.every((p: { url: string }) => legacy.some((old) => old.path === p.url)));
 const report = {

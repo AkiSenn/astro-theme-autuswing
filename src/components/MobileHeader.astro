@@ -1,7 +1,9 @@
 ---
-import { theme, site } from '../site.config';
+import { site } from '../site.config';
 import MobileNavigation from './MobileNavigation.astro';
 import SiteTools from './SiteTools.astro';
+import { avatarSource } from '../lib/avatar';
+const avatar = await avatarSource();
 interface Props {
   path: string;
 }
@@ -16,7 +18,7 @@ interface Props {
       aria-label={site.title}
       title={site.title}
     >
-      <img src={theme.avatar} alt="" width="30" height="30" />
+      <img src={avatar} alt="" width="30" height="30" />
       <span>{site.title}</span>
     </a>
     <SiteTools />

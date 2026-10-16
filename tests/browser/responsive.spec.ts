@@ -67,7 +67,7 @@ test('page matrix preserves one visible shell, direct navigation and comfortable
       expect(metrics.duplicateIds).toEqual([]);
       expect(metrics.wrappedDates, `${width} ${path}: dates must not wrap`).toBe(0);
       if (metrics.prose) {
-        expect(metrics.prose).toBeLessThanOrEqual(width >= 1000 ? 755 : 705);
+        expect(metrics.prose).toBeLessThanOrEqual(width >= 1000 ? 860 : 705);
         if (width < 720) expect(metrics.usable - metrics.prose).toBeLessThanOrEqual(33);
         if (width >= 1000) expect(metrics.prose).toBeGreaterThan(580);
       }
@@ -349,11 +349,15 @@ test('short tablet/desktop heights keep navigation and tools reachable and full-
   expect(fonts.paragraph).toBe(fonts.parent);
 });
 
-test('touch navigation and contents work in phone/tablet browser contexts', async ({ browser }) => {
+test('touch navigation and contents work in phone/tablet browser contexts', async ({
+  browser,
+  browserName,
+}) => {
   for (const width of [390, 820]) {
     const context = await browser.newContext({
       hasTouch: true,
-      isMobile: true,
+      // Firefox supports touch events but has no Playwright mobile emulation.
+      isMobile: browserName !== 'firefox',
       viewport: { width, height: 1180 },
     });
     const page = await context.newPage();

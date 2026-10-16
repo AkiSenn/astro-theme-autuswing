@@ -104,15 +104,14 @@ let year = '';
         ))}
       </div>
     )}
-    {Content ? (
+    {(Content || (route.path === '/about/' && theme.profile.aboutme)) && (
       <div class="prose">
-        <Content />
+        {route.path === '/about/' && theme.profile.aboutme && (
+          <p class="about-intro">{theme.profile.aboutme}</p>
+        )}
+        {Content && <Content />}
       </div>
-    ) : route.path === '/about/' ? (
-      <div class="prose">
-        <p>{theme.profile.aboutme}</p>
-      </div>
-    ) : null}
+    )}
     {route.path === '/about/' && theme.footer.runtime.enable && (
       <div class="about-runtime">
         <span

@@ -1,8 +1,10 @@
 ---
 import { translate } from '../lib/i18n';
-import { theme, site, navigation, safeLink, isCurrentPath } from '../site.config';
+import { site, navigation, safeLink, isCurrentPath } from '../site.config';
 import Glyph from './Glyph.astro';
 import SiteTools from './SiteTools.astro';
+import { avatarSource } from '../lib/avatar';
+const avatar = await avatarSource();
 interface Props {
   path: string;
   hasContents: boolean;
@@ -19,7 +21,7 @@ const t = translate();
     aria-label={site.title}
     title={site.title}
   >
-    <img src={theme.avatar} alt="" width="40" height="40" />
+    <img src={avatar} alt="" width="40" height="40" />
   </a>
   <nav class="rail-nav" aria-label={t('navigation')}>
     {navigation.map((item) => (

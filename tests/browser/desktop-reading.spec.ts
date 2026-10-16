@@ -89,8 +89,9 @@ for (const viewport of viewports) {
     const after = await metrics(page);
     const prose = after['.article .prose'],
       old = before['.article .prose'];
-    expect(prose.width - old.width).toBeCloseTo(50);
-    expect(prose.width).toBeLessThanOrEqual(754);
+    expect(prose.width - old.width).toBeCloseTo(108);
+    expect(prose.width).toBe(810);
+    expect(after['.article-layout'].width).toBe(860);
     expect(prose.fontSize).toBe('18px');
     expect(parseFloat(prose.lineHeight) / 18).toBeCloseTo(1.8);
     expect(prose.x + prose.width / 2).toBeCloseTo(old.x + old.width / 2);
@@ -109,7 +110,7 @@ for (const viewport of viewports) {
       ),
     ).toBe(true);
     await expect(page.locator('.desktop-sidebar .site-nav a')).toHaveCount(5);
-    await expect(page.locator('.desktop-sidebar .profile-description')).toBeVisible();
+    await expect(page.locator('.desktop-sidebar .profile-description')).toHaveCount(0);
     await visibleControls(page, viewport.height);
     await page.screenshot({
       path: `${dir}/after-${viewport.width}x${viewport.height}.png`,
@@ -163,7 +164,11 @@ test('desktop home content and phone/tablet geometry and typography are unchange
     // The desktop profile is intentionally shorter; its navigation moves up.
     // Main content and all compact-layout measurements remain protected.
     if (c.viewport.width >= 1000) {
-      for (const selector of ['.desktop-sidebar .profile', '.desktop-sidebar .site-nav']) {
+      for (const selector of [
+        '.desktop-sidebar .profile',
+        '.desktop-sidebar .site-nav',
+        '.sidebar-bottom',
+      ]) {
         delete actual[selector];
         delete expected[selector];
       }
@@ -206,14 +211,21 @@ test('desktop profile is concise, retains SEO names and gives saved height to th
           fs.readFileSync(`${baselineDir}/after-${viewport.width}.json`, 'utf8'),
         ).after;
         const current = await metrics(page);
-        expect(current['.article .prose']).toEqual(previous['.article .prose']);
-        expect(current['.article-layout']).toEqual(previous['.article-layout']);
+        for (const selector of ['.article .prose', '.article-layout']) {
+          expect(current[selector].fontSize).toBe(previous[selector].fontSize);
+          expect(current[selector].lineHeight).toBe(previous[selector].lineHeight);
+          expect(current[selector].color).toBe(previous[selector].color);
+          expect(current[selector].x + current[selector].width / 2).toBeCloseTo(
+            previous[selector].x + previous[selector].width / 2,
+          );
+        }
         const saved =
           previous['.desktop-sidebar .profile'].height -
           current['.desktop-sidebar .profile'].height;
+        const bottomSaved = previous['.sidebar-bottom'].height - current['.sidebar-bottom'].height;
         const gained = current['.desktop-contents'].height - previous['.desktop-contents'].height;
         expect(saved).toBeGreaterThan(0);
-        expect(gained).toBeCloseTo(saved);
+        expect(gained).toBeCloseTo(saved + bottomSaved);
         await visibleControls(page, viewport.height);
         checks.push({
           viewport,
@@ -221,6 +233,7 @@ test('desktop profile is concise, retains SEO names and gives saved height to th
           profileHeightAfter: current['.desktop-sidebar .profile'].height,
           tocHeight: current['.desktop-contents'].height,
           saved,
+          bottomSaved,
           gained,
         });
         await page.screenshot({

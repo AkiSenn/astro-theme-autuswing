@@ -5,6 +5,8 @@ import Glyph from './Glyph.astro';
 import TableOfContents from './TableOfContents.astro';
 import SiteTools from './SiteTools.astro';
 import SocialLinks from './SocialLinks.astro';
+import { avatarSource } from '../lib/avatar';
+const avatar = await avatarSource();
 interface Props {
   path: string;
   title?: string;
@@ -22,7 +24,7 @@ const t = translate();
           'avatar',
           { 'avatar-enter': theme.animations.avatar && theme.animations.enable },
         ]}
-        src={theme.avatar}
+        src={avatar}
         alt={theme.profile.author}
         width="62"
         height="62"
@@ -64,7 +66,6 @@ const t = translate();
     </section>
   )}
   <div class="sidebar-bottom">
-    {theme.profile.aboutme && <p class="profile-description">{theme.profile.aboutme}</p>}
     <SiteTools />
     <SocialLinks />
   </div>

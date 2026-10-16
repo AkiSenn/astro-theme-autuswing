@@ -38,7 +38,7 @@ export function staticArtifacts() {
         if (theme.performance.generate_headers)
           await write(
             '_headers',
-            `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Cache-Control: public, max-age=0, must-revalidate\n${process.env.SITE_ENV !== 'production' ? '  X-Robots-Tag: noindex, nofollow\n' : ''}\n/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/assets/vendor/*\n  Cache-Control: public, max-age=31536000, immutable\n  Access-Control-Allow-Origin: *\n\n/img/*\n  Cache-Control: public, max-age=86400\n\n/sw.js\n  Cache-Control: no-cache\n`,
+            `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n${process.env.SITE_ENV !== 'production' ? '  X-Robots-Tag: noindex, nofollow\n' : ''}\n/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/assets/vendor/*\n  Cache-Control: public, max-age=31536000, immutable\n  Access-Control-Allow-Origin: *\n\n/img/*\n  Cache-Control: public, max-age=86400\n\n/sw.js\n  Cache-Control: no-cache\n`,
           );
         // Retain the original sitemap URL while the official integration owns XML
         // serialization and splitting. No redirect or duplicate sitemap algorithm.
