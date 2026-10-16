@@ -1,6 +1,6 @@
 ---
 import { translate } from '../lib/i18n';
-import { theme, site, navigation, safeLink, isCurrentPath } from '../site.config';
+import { theme, navigation, safeLink, isCurrentPath } from '../site.config';
 import Glyph from './Glyph.astro';
 import TableOfContents from './TableOfContents.astro';
 import SiteTools from './SiteTools.astro';
@@ -24,15 +24,12 @@ const t = translate();
         ]}
         src={theme.avatar}
         alt={theme.profile.author}
-        width="96"
-        height="96"
+        width="62"
+        height="62"
         fetchpriority="high"
       />
     </a>
     <h2>{theme.profile.author}</h2>
-    <a class="profile-site-name" href="/">
-      {site.title}
-    </a>
     <p>{theme.profile.subtitle}</p>
   </section>
   <nav class="site-nav" aria-label={t('navigation')}>

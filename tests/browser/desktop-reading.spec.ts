@@ -1,8 +1,10 @@
 import { test, expect, type Page } from '@playwright/test';
 import fs from 'node:fs';
 
-const dir = 'docs/evidence/desktop-reading';
-const baseline = JSON.parse(fs.readFileSync(`${dir}/before.json`, 'utf8'));
+const baselineDir = 'docs/evidence/desktop-reading';
+const dir = process.env.DESKTOP_READING_EVIDENCE_DIR || baselineDir;
+fs.mkdirSync(dir, { recursive: true });
+const baseline = JSON.parse(fs.readFileSync(`${baselineDir}/before.json`, 'utf8'));
 const viewports = [
   { width: 1366, height: 768 },
   { width: 1440, height: 900 },
@@ -151,11 +153,89 @@ for (const viewport of viewports) {
     }
   });
 }
-test('desktop home and phone/tablet geometry and typography are unchanged', async ({ page }) => {
+test('desktop home content and phone/tablet geometry and typography are unchanged', async ({
+  page,
+}) => {
   for (const c of baseline.measurements.filter((c: any) => !c.changed)) {
     await prepare(page, c.viewport, c.path);
-    expect(await metrics(page), `${c.viewport.width} ${c.path}`).toEqual(c.metrics);
+    const actual = await metrics(page);
+    const expected = { ...c.metrics };
+    // The desktop profile is intentionally shorter; its navigation moves up.
+    // Main content and all compact-layout measurements remain protected.
+    if (c.viewport.width >= 1000) {
+      for (const selector of ['.desktop-sidebar .profile', '.desktop-sidebar .site-nav']) {
+        delete actual[selector];
+        delete expected[selector];
+      }
+    }
+    expect(actual, `${c.viewport.width} ${c.path}`).toEqual(expected);
   }
+});
+
+test('desktop profile is concise, retains SEO names and gives saved height to the TOC', async ({
+  page,
+}) => {
+  test.setTimeout(60000);
+  const site = JSON.parse(fs.readFileSync('src/config/site.json', 'utf8'));
+  const checks = [];
+  for (const viewport of viewports) {
+    for (const path of ['/', '/post/55b0541c/']) {
+      await prepare(page, viewport, path);
+      const profile = page.locator('.desktop-sidebar .profile');
+      await expect(profile.locator('h2')).toHaveText('AkiSenn');
+      await expect(profile.locator('p')).toHaveText('记录技术与生活');
+      await expect(profile.locator('.profile-site-name')).toHaveCount(0);
+      const style = await profile.locator('p').evaluate((el) => ({
+        fontSize: getComputedStyle(el).fontSize,
+        color: getComputedStyle(el).color,
+        brandColor: getComputedStyle(el.parentElement!.querySelector('h2')!).color,
+      }));
+      expect(style.fontSize).toBe('12px');
+      expect(style.color).not.toBe(style.brandColor);
+      expect((await profile.locator('.avatar-link').boundingBox())!.width).toBe(72);
+      await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute(
+        'content',
+        site.title,
+      );
+      expect(await page.title()).toContain(site.title);
+      await expect(
+        page.locator('link[rel="alternate"][type="application/rss+xml"]'),
+      ).toHaveAttribute('title', `${site.title} RSS`);
+      if (path.startsWith('/post/')) {
+        const previous = JSON.parse(
+          fs.readFileSync(`${baselineDir}/after-${viewport.width}.json`, 'utf8'),
+        ).after;
+        const current = await metrics(page);
+        expect(current['.article .prose']).toEqual(previous['.article .prose']);
+        expect(current['.article-layout']).toEqual(previous['.article-layout']);
+        const saved =
+          previous['.desktop-sidebar .profile'].height -
+          current['.desktop-sidebar .profile'].height;
+        const gained = current['.desktop-contents'].height - previous['.desktop-contents'].height;
+        expect(saved).toBeGreaterThan(0);
+        expect(gained).toBeCloseTo(saved);
+        await visibleControls(page, viewport.height);
+        checks.push({
+          viewport,
+          profileHeightBefore: previous['.desktop-sidebar .profile'].height,
+          profileHeightAfter: current['.desktop-sidebar .profile'].height,
+          tocHeight: current['.desktop-contents'].height,
+          saved,
+          gained,
+        });
+        await page.screenshot({
+          path: `${dir}/profile-${viewport.width}x${viewport.height}.png`,
+          animations: 'disabled',
+        });
+      } else if (viewport.width === 1440) {
+        await page.screenshot({ path: `${dir}/profile-home-1440x900.png`, animations: 'disabled' });
+      }
+    }
+  }
+  fs.writeFileSync(
+    `${dir}/profile-check.json`,
+    JSON.stringify({ checkedAt: new Date().toISOString(), checks }, null, 2) + '\n',
+  );
 });
 test('TOC height responds to remaining space rather than chapter count', async ({ page }) => {
   const heights: number[] = [];

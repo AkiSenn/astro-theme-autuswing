@@ -167,10 +167,6 @@ button {
   font-size: 14px;
   min-height: 36px;
 }
-.profile-site-name {
-  font-size: 14px;
-  line-height: 1.7;
-}
 .desktop-sidebar .profile p,
 .profile-description {
   font-size: 13px;
@@ -748,9 +744,6 @@ dialog::backdrop {
 @media (max-height: 800px) and (min-width: 1000px) {
   .desktop-sidebar .profile p {
     font-size: 12px;
-  }
-  .profile-site-name {
-    font-size: 13px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

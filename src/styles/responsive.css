@@ -44,13 +44,6 @@ html:has(dialog[open]) {
 .desktop-sidebar .sidebar-bottom {
   flex-shrink: 0;
 }
-.profile-site-name {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  margin-block: 6px;
-  overflow-wrap: anywhere;
-}
 .desktop-sidebar .profile p {
   font-size: 12px;
 }
@@ -230,15 +223,6 @@ html:has(dialog[open]) {
 } /* Copy/share remain in the article actions. */
 
 @media (max-height: 800px) and (min-width: 1000px) {
-  .desktop-sidebar .avatar-link {
-    width: 64px;
-    height: 64px;
-    padding: 4px;
-  }
-  .desktop-sidebar .avatar {
-    width: 54px;
-    height: 54px;
-  }
   .desktop-sidebar .profile {
     padding-bottom: 10px;
   }
@@ -253,9 +237,29 @@ html:has(dialog[open]) {
     flex-basis: 180px;
   }
 }
-/* Desktop reading only: preserve the centered column and give the TOC the
-   space left after the profile, navigation and tools have been laid out. */
+/* Compact desktop profile. Article pages keep their centered column and give
+   the TOC the space left after the profile, navigation and tools. */
 @media screen and (min-width: 1000px) {
+  .desktop-sidebar .profile {
+    padding-bottom: 12px;
+  }
+  .desktop-sidebar .avatar-link {
+    width: 72px;
+    height: 72px;
+    padding: 4px;
+  }
+  .desktop-sidebar .avatar {
+    width: 62px;
+    height: 62px;
+  }
+  .desktop-sidebar .profile h2 {
+    margin: 8px 0 4px;
+  }
+  .desktop-sidebar.sidebar .profile > p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
   .article-page {
     --reading-width: 754px;
   }
@@ -266,21 +270,8 @@ html:has(dialog[open]) {
   .article-page .desktop-sidebar .profile {
     padding-bottom: 10px;
   }
-  .article-page .desktop-sidebar .avatar-link {
-    width: 64px;
-    height: 64px;
-    padding: 4px;
-  }
-  .article-page .desktop-sidebar .avatar {
-    width: 54px;
-    height: 54px;
-  }
   .article-page .desktop-sidebar .profile h2 {
     margin: 8px 0 2px;
-  }
-  .article-page .desktop-sidebar .profile-site-name {
-    margin-block: 4px;
-    line-height: 1.5;
   }
   .article-page .desktop-sidebar .profile p {
     line-height: 1.6;

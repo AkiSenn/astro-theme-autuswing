@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-16T10:11:52.2711467Z",
+  "browser": "Microsoft Edge / Chromium",
+  "stats": {
+    "startTime": "2026-10-16T10:08:48.371Z",
+    "duration": 146556.81699999998,
+    "expected": 46,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "unitTestsPassed": 16,
+  "astroCheck": {
+    "warnings": 0,
+    "errors": 0,
+    "hints": 1
+  },
+  "seoFullNameRetained": true,
+  "tabletAndMobileGeometryUnchanged": true,
+  "scope": "Desktop sidebar profile only. Avatar frame 72px; muted 12px biography; site.title configuration unchanged."
+}
