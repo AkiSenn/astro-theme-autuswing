@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
+import { contentSchema as schema } from './lib/content-schema';
 import { glob } from 'astro/loaders';
 import type { Loader, LoaderContext } from 'astro/loaders';
 import fs from 'node:fs/promises';
@@ -68,36 +68,6 @@ function contentLoader(pattern: string[], base: string): Loader {
     },
   };
 }
-const schema = z.looseObject({
-  title: z.string().min(1),
-  date: z.string(),
-  updated: z.string().optional(),
-  id: z.union([z.string(), z.number()]).optional(),
-  abbrlink: z.union([z.string(), z.number()]).optional(),
-  permalink: z.string().optional(),
-  description: z.string().optional(),
-  excerpt: z.string().optional(),
-  author: z.string().optional(),
-  tags: z.union([z.string(), z.array(z.string())]).optional(),
-  categories: z.union([z.string(), z.array(z.union([z.string(), z.array(z.string())]))]).optional(),
-  draft: z.boolean().optional(),
-  published: z.boolean().optional(),
-  noindex: z.boolean().optional(),
-  search: z.boolean().optional(),
-  feed: z.boolean().optional(),
-  password: z.string().optional(),
-  comments: z.boolean().optional(),
-  comment_id: z.union([z.string(), z.number()]).optional(),
-  toc: z.boolean().optional(),
-  math: z.union([z.boolean(), z.string()]).optional(),
-  mathjax: z.boolean().optional(),
-  katex: z.boolean().optional(),
-  cover: z.string().optional(),
-  wallpaper: z.union([z.string(), z.boolean()]).optional(),
-  type: z.string().optional(),
-  lang: z.string().optional(),
-  language: z.string().optional(),
-});
 export const collections = {
   posts: defineCollection({
     loader: contentLoader(['legacy/posts/**/*.md', 'posts/**/*.md'], './content'),

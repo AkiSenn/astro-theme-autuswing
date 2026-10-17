@@ -6,6 +6,7 @@ import { publicPath, newPostPath, persistentId, assertUniquePaths } from './urls
 import { parseDate, formatDate } from './dates';
 import { decodeHTML } from 'entities';
 import { mathPlainText } from './math.mjs';
+import { isPublished } from './content-schema';
 export type Entry = CollectionEntry<'posts'> | CollectionEntry<'pages'>;
 export type Post = Awaited<ReturnType<typeof prepare>>;
 export function list(value: unknown): string[] {
@@ -133,16 +134,14 @@ export function posts() {
       if (ids.has(id)) throw new Error(`Duplicate persistent post ID: ${id}`);
       ids.add(id);
     }
-    const result = await Promise.all(
-      entries.filter((e) => e.data.published !== false && !e.data.draft).map(prepare),
-    );
+    const result = await Promise.all(entries.filter((e) => isPublished(e.data)).map(prepare));
     assertUniquePaths(result);
     return result.sort((a, b) => b.date.localeCompare(a.date) || a.path.localeCompare(b.path));
   }));
 }
 export function pages() {
   return (pagePromise ??= getCollection('pages').then((entries) =>
-    Promise.all(entries.filter((e) => e.data.published !== false && !e.data.draft).map(prepare)),
+    Promise.all(entries.filter((e) => isPublished(e.data)).map(prepare)),
   ));
 }
 export function taxonomy(all: Post[], kind: 'tags' | 'categories') {

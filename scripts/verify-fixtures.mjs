@@ -109,6 +109,12 @@ try {
   build();
   assert.equal(fs.readFileSync(createdPost, 'utf8'), raw);
   const id = raw.match(/^id: '([^']+)'/m)[1];
+  assert.ok(
+    !fs.existsSync(path.join('dist', id, 'index.html')),
+    'New articles start as private drafts',
+  );
+  fs.writeFileSync(createdPost, raw.replace('draft: true', 'draft: false'));
+  build();
   assert.ok(fs.existsSync(path.join('dist', id, 'index.html')));
   assert.ok(raw.includes(`permalink: '/${id}/'`));
   report.newPostPersistence = true;
