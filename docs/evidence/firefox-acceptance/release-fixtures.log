@@ -1,0 +1,1655 @@
+fourth-article-full-release passed
+file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/release.mjs:24
+  throw new Error('Refusing to overwrite an existing release directory');
+        ^
+
+Error: Refusing to overwrite an existing release directory
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/release.mjs:24:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+existing-candidate-not-overwritten correctly blocked
+file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/prepare-nginx.mjs:23
+    throw new Error('Production Nginx requires --release <verified-candidate-directory>');
+          ^
+
+Error: Production Nginx requires --release <verified-candidate-directory>
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/prepare-nginx.mjs:23:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+nginx-production-without-seal-blocked correctly blocked
+nginx-verified-production-candidate passed
+delete-fourth-rebuild passed
+delete-fourth-verify passed
+file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/release.mjs:56
+    throw new Error(`${name} failed; see ${path.join(audit, name + '.log')}`);
+          ^
+
+Error: content failed; see E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\.local-tools\releases\duplicate\audit\content.log
+    at run (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/release.mjs:56:11)
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/release.mjs:67:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+duplicate-id-release correctly blocked
+Unsafe local path: /../invalid/
+  Location:
+    E:\autuswing-astro\node_modules\astro\dist\core\render\route-cache.js:64:16
+  Stack trace:
+    at normalizePath (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/dist/.prerender/chunks/manifest_C-JQXoMT.mjs:95:136)
+    at newPostPath (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/dist/.prerender/chunks/manifest_C-JQXoMT.mjs:116:29)
+    at Array.map (<anonymous>)
+    at async routes (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/dist/.prerender/chunks/_.._BilQiOlS.mjs:50:14)
+    at async computeStaticPaths (file:///E:/autuswing-astro/node_modules/astro/dist/core/render/route-cache.js:64:16)
+invalid-route-build correctly blocked
+preview-build passed
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Production gate rejects preview/development artifacts
++ actual - expected
+
++ 'preview'
+- 'production'
+     ^
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:102:12)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'preview',
+  expected: 'production',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+preview-cannot-pass-production correctly blocked
+production-build passed
+production-verify passed
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Production public page blocks indexing: /
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:182:14)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+global-meta-noindex-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: /
++ actual - expected
+
++ 'https://preview.invalid/'
+- 'https://akisenn.com/'
+           ^
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:174:12)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'https://preview.invalid/',
+  expected: 'https://akisenn.com/',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+wrong-canonical-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: robots.txt does not match build policy
++ actual - expected
+
++ 'User-agent: *\nDisallow: /\n'
+- 'User-agent: *\n' +
+-   'Allow: /\n' +
+-   'Sitemap: https://akisenn.com/sitemap.xml\n' +
+-   'Sitemap: https://akisenn.com/baidusitemap.xml\n'
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:254:10)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'User-agent: *\nDisallow: /\n',
+  expected: 'User-agent: *\n' +
+    'Allow: /\n' +
+    'Sitemap: https://akisenn.com/sitemap.xml\n' +
+    'Sitemap: https://akisenn.com/baidusitemap.xml\n',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+robots-disallow-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: X-Robots-Tag blocks public page: /
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:186:14)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+x-robots-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Incorrect Sitemap routes
++ actual - expected
+
+  [
+-   'https://akisenn.com/',
+    'https://akisenn.com/about/',
+    'https://akisenn.com/archives/',
+    'https://akisenn.com/archives/2020/',
+    'https://akisenn.com/archives/2020/10/',
+    'https://akisenn.com/archives/2022/',
+
+    at sameUrls (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:76:10)
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:332:5)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'https://akisenn.com/about/',
+    'https://akisenn.com/archives/',
+    'https://akisenn.com/archives/2020/',
+    'https://akisenn.com/archives/2020/10/',
+    'https://akisenn.com/archives/2022/',
+    'https://akisenn.com/archives/2022/01/',
+    'https://akisenn.com/categories/',
+    'https://akisenn.com/categories/功能演示/',
+    'https://akisenn.com/categories/网站建设/',
+    'https://akisenn.com/links/',
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/',
+    'https://akisenn.com/post/55b0541c/',
+    'https://akisenn.com/tags/',
+    'https://akisenn.com/tags/AutuSwing/',
+    'https://akisenn.com/tags/Cloudflare/',
+    'https://akisenn.com/tags/GitHub/',
+    'https://akisenn.com/tags/Hexo/',
+    'https://akisenn.com/tags/HexoThemes/',
+    'https://akisenn.com/tags/MathJax/',
+    'https://akisenn.com/tags/Pages/',
+    'https://akisenn.com/tags/Workers/',
+    'https://akisenn.com/tags/写作/',
+    'https://akisenn.com/tags/数学公式/',
+    'https://akisenn.com/tags/网站/'
+  ],
+  expected: [
+    'https://akisenn.com/',
+    'https://akisenn.com/about/',
+    'https://akisenn.com/archives/',
+    'https://akisenn.com/archives/2020/',
+    'https://akisenn.com/archives/2020/10/',
+    'https://akisenn.com/archives/2022/',
+    'https://akisenn.com/archives/2022/01/',
+    'https://akisenn.com/categories/',
+    'https://akisenn.com/categories/功能演示/',
+    'https://akisenn.com/categories/网站建设/',
+    'https://akisenn.com/links/',
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/',
+    'https://akisenn.com/post/55b0541c/',
+    'https://akisenn.com/tags/',
+    'https://akisenn.com/tags/AutuSwing/',
+    'https://akisenn.com/tags/Cloudflare/',
+    'https://akisenn.com/tags/GitHub/',
+    'https://akisenn.com/tags/Hexo/',
+    'https://akisenn.com/tags/HexoThemes/',
+    'https://akisenn.com/tags/MathJax/',
+    'https://akisenn.com/tags/Pages/',
+    'https://akisenn.com/tags/Workers/',
+    'https://akisenn.com/tags/写作/',
+    'https://akisenn.com/tags/数学公式/',
+    'https://akisenn.com/tags/网站/'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+missing-sitemap-entry-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Incorrect search membership
++ actual - expected
+
++ []
+- [
+-   'https://akisenn.com/post/4c6caf67/',
+-   'https://akisenn.com/post/4e395565/',
+-   'https://akisenn.com/post/55b0541c/'
+- ]
+
+    at sameUrls (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:76:10)
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:256:3)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [],
+  expected: [
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/',
+    'https://akisenn.com/post/55b0541c/'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+wrong-search-membership-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Incorrect Sitemap lastmod: /about/
+    at sitemap (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:318:16)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:308:18)
+    at Array.flatMap (<anonymous>)
+    at sitemap (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:304:10)
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:328:17)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+wrong-sitemap-lastmod-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: rss.xml entry count
+
+4 !== 3
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:270:12)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 4,
+  expected: 3,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+rss-unidentified-extra-item-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Historical formulas were lost
+
+0 !== 4
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:376:14)
+    at async <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:18) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 4,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+lost-historical-formulas-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: /404.html
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:243:12)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'index,follow',
+  expected: /noindex/i,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+404-noindex-exception-required correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Unexpected/missing HTML (possibly stale or draft content)
++ actual - expected
+... Skipped lines
+
+  [
+    '404.html',
+    'about/index.html',
+    'archives/2020/10/index.html',
+    'archives/2020/index.html',
+...
+    'post/55b0541c/index.html',
++   'private-draft.html',
+    'tags/AutuSwing/index.html',
+    'tags/Cloudflare/index.html',
+    'tags/GitHub/index.html',
+    'tags/Hexo/index.html',
+    'tags/HexoThemes/index.html',
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:137:10)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '404.html',
+    'about/index.html',
+    'archives/2020/10/index.html',
+    'archives/2020/index.html',
+    'archives/2022/01/index.html',
+    'archives/2022/index.html',
+    'archives/index.html',
+    'categories/index.html',
+    'categories/功能演示/index.html',
+    'categories/网站建设/index.html',
+    'index.html',
+    'links/index.html',
+    'offline.html',
+    'post/4c6caf67/index.html',
+    'post/4e395565/index.html',
+    'post/55b0541c/index.html',
+    'private-draft.html',
+    'tags/AutuSwing/index.html',
+    'tags/Cloudflare/index.html',
+    'tags/GitHub/index.html',
+    'tags/Hexo/index.html',
+    'tags/HexoThemes/index.html',
+    'tags/MathJax/index.html',
+    'tags/Pages/index.html',
+    'tags/Workers/index.html',
+    'tags/index.html',
+    'tags/写作/index.html',
+    'tags/数学公式/index.html',
+    'tags/网站/index.html'
+  ],
+  expected: [
+    '404.html',
+    'about/index.html',
+    'archives/2020/10/index.html',
+    'archives/2020/index.html',
+    'archives/2022/01/index.html',
+    'archives/2022/index.html',
+    'archives/index.html',
+    'categories/index.html',
+    'categories/功能演示/index.html',
+    'categories/网站建设/index.html',
+    'index.html',
+    'links/index.html',
+    'offline.html',
+    'post/4c6caf67/index.html',
+    'post/4e395565/index.html',
+    'post/55b0541c/index.html',
+    'tags/AutuSwing/index.html',
+    'tags/Cloudflare/index.html',
+    'tags/GitHub/index.html',
+    'tags/Hexo/index.html',
+    'tags/HexoThemes/index.html',
+    'tags/MathJax/index.html',
+    'tags/Pages/index.html',
+    'tags/Workers/index.html',
+    'tags/index.html',
+    'tags/写作/index.html',
+    'tags/数学公式/index.html',
+    'tags/网站/index.html'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+stale-draft-html-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Collections/source inventory differs
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      collection: 'pages',
+      date: '2020-08-25T15:03:20.000Z',
+      feed: true,
+...
+      collection: 'posts',
+-     date: '2022-01-20T05:23:24.000Z',
+-     feed: true,
+-     id: '55b0541c',
+-     indexable: true,
+-     path: '/post/55b0541c/',
+-     published: true,
+-     search: true,
+-     source: 'content/legacy/posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md',
+-     title: 'GitHub + Hexo + AutuSwing + Workers：搭建个性化博客',
+-     updated: '2026-10-04T16:00:00.000Z'
+-   },
+-   {
+-     collection: 'posts',
+      date: '2022-01-18T11:08:43.000Z',
+      feed: true,
+      id: '4c6caf67',
+      indexable: true,
+      path: '/post/4c6caf67/',
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:108:10)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      source: 'content/legacy/pages/about/index.md',
+      collection: 'pages',
+      id: undefined,
+      path: '/about/',
+      title: '关于我',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2020-08-25T15:03:20.000Z',
+      updated: '2026-10-10T05:53:41.403Z'
+    },
+    {
+      source: 'content/legacy/posts/网站笔记.md',
+      collection: 'posts',
+      id: '4c6caf67',
+      path: '/post/4c6caf67/',
+      title: '网站笔记',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2022-01-18T11:08:43.000Z',
+      updated: '2026-10-05T08:34:23.065Z'
+    },
+    {
+      source: 'content/legacy/posts/math-notebook.md',
+      collection: 'posts',
+      id: '4e395565',
+      path: '/post/4e395565/',
+      title: '数学公式实验室：按需加载与公式排版',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2020-10-01T04:00:00.000Z',
+      updated: '2026-10-03T05:22:28.682Z'
+    },
+    {
+      source: 'content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md',
+      collection: 'posts',
+      id: 'hdkzyv',
+      path: '/hdkzyv/',
+      title: '演示随笔｜把普通的一天写下来',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md',
+      collection: 'posts',
+      id: 'oznmzt',
+      path: '/oznmzt/',
+      title: '演示教程｜写一个可读的 TypeScript 小工具',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md',
+      collection: 'posts',
+      id: 'qzvc5r',
+      path: '/qzvc5r/',
+      title: '演示系列｜从草稿到发布的写作流程（一）',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/release-private.md',
+      collection: 'posts',
+      id: 'releaseprivate',
+      path: '/releaseprivate/',
+      title: 'PRIVATE_RELEASE_MARKER',
+      published: false,
+      indexable: false,
+      search: true,
+      feed: true,
+      date: undefined,
+      updated: undefined
+    }
+  ],
+  expected: [
+    {
+      source: 'content/legacy/pages/about/index.md',
+      collection: 'pages',
+      id: undefined,
+      path: '/about/',
+      title: '关于我',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2020-08-25T15:03:20.000Z',
+      updated: '2026-10-10T05:53:41.403Z'
+    },
+    {
+      source: 'content/legacy/posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md',
+      collection: 'posts',
+      id: '55b0541c',
+      path: '/post/55b0541c/',
+      title: 'GitHub + Hexo + AutuSwing + Workers：搭建个性化博客',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2022-01-20T05:23:24.000Z',
+      updated: '2026-10-04T16:00:00.000Z'
+    },
+    {
+      source: 'content/legacy/posts/网站笔记.md',
+      collection: 'posts',
+      id: '4c6caf67',
+      path: '/post/4c6caf67/',
+      title: '网站笔记',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2022-01-18T11:08:43.000Z',
+      updated: '2026-10-05T08:34:23.065Z'
+    },
+    {
+      source: 'content/legacy/posts/math-notebook.md',
+      collection: 'posts',
+      id: '4e395565',
+      path: '/post/4e395565/',
+      title: '数学公式实验室：按需加载与公式排版',
+      published: true,
+      indexable: true,
+      search: true,
+      feed: true,
+      date: '2020-10-01T04:00:00.000Z',
+      updated: '2026-10-03T05:22:28.682Z'
+    },
+    {
+      source: 'content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md',
+      collection: 'posts',
+      id: 'hdkzyv',
+      path: '/hdkzyv/',
+      title: '演示随笔｜把普通的一天写下来',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md',
+      collection: 'posts',
+      id: 'oznmzt',
+      path: '/oznmzt/',
+      title: '演示教程｜写一个可读的 TypeScript 小工具',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md',
+      collection: 'posts',
+      id: 'qzvc5r',
+      path: '/qzvc5r/',
+      title: '演示系列｜从草稿到发布的写作流程（一）',
+      published: false,
+      indexable: false,
+      search: false,
+      feed: false,
+      date: undefined,
+      updated: undefined
+    },
+    {
+      source: 'content/posts/release-private.md',
+      collection: 'posts',
+      id: 'releaseprivate',
+      path: '/releaseprivate/',
+      title: 'PRIVATE_RELEASE_MARKER',
+      published: false,
+      indexable: false,
+      search: true,
+      feed: true,
+      date: undefined,
+      updated: undefined
+    }
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+missing-collection-entry-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Incorrect content routes
++ actual - expected
+
+  [
+    'https://akisenn.com/about/',
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/',
+-   'https://akisenn.com/post/55b0541c/'
+  ]
+
+    at sameUrls (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:76:10)
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:119:3)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'https://akisenn.com/about/',
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/'
+  ],
+  expected: [
+    'https://akisenn.com/about/',
+    'https://akisenn.com/post/4c6caf67/',
+    'https://akisenn.com/post/4e395565/',
+    'https://akisenn.com/post/55b0541c/'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+missing-content-route-blocked correctly blocked
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Source inputs changed after build
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      file: 'astro.config.mjs',
+      sha256: '74e9fa96a0e097d2eeb8aa6093b528c1d8b603c7739b8fed22fda75d8d52f7e2'
+    },
+...
+      file: 'content/posts/release-private.md',
++     sha256: '13edc8cd1e277e8ee05004b6770158fb141dd3f120640ca7495c795789f0cacd'
+-     sha256: '6280c8ca6fefc728b12266d049bbce826e463725e4e65ed773c57e9a40c04de4'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+
+    at verifyOutput (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:99:10)
+    at <anonymous> (E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\scripts\verify-output.ts:423:24)
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    {
+      file: 'astro.config.mjs',
+      sha256: '74e9fa96a0e097d2eeb8aa6093b528c1d8b603c7739b8fed22fda75d8d52f7e2'
+    },
+    {
+      file: 'content/legacy/pages/about/index.md',
+      sha256: 'ac150c5ee49c48f7302b08cef8f4aefe1c1297ffc6d2c2103ade0155302fdf78'
+    },
+    {
+      file: 'content/legacy/posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md',
+      sha256: '7d16aa7d26d3a9575e6a105dc3df60ce6e9a07c824f655485cdcfb0dec6ba4be'
+    },
+    {
+      file: 'content/legacy/posts/math-notebook.md',
+      sha256: 'e8d4a0cb0e8a773721c33ace18973cdce1b60eb82d5c4aedb4cddc90e2b874c1'
+    },
+    {
+      file: 'content/legacy/posts/网站笔记.md',
+      sha256: 'd65b1b633debc762081929769ce21ea119cd8a58e5a625312d76b86776d283ea'
+    },
+    {
+      file: 'content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md',
+      sha256: 'b853c88181f9dc1cef155e5ccefa081d959577ca4b90c77e0d6bcafb26241de9'
+    },
+    {
+      file: 'content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md',
+      sha256: 'b074ac2934a63eb77f701f1fe8e2dcb1fce576854e7aee83250a0f3206bf5da9'
+    },
+    {
+      file: 'content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md',
+      sha256: '08357ec686490012600d2d3d121f7bad11602109d095b9b1b6cadb6c7bdffe75'
+    },
+    {
+      file: 'content/posts/release-private.md',
+      sha256: '13edc8cd1e277e8ee05004b6770158fb141dd3f120640ca7495c795789f0cacd'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite-shm',
+      sha256: 'ed0a37426246aff84b836ba3f4a7da36bea867131f7f2e4559d0117f4b1b2c4f'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite-wal',
+      sha256: '164632a0c900f15df0d7a842600bcf07643486540fa30ccbacc93a64dccba4f4'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite-shm',
+      sha256: 'bafadcd76d3c3bd70c70f99fbeb5a4cc4323e01fed590fe07138f37b2d15305b'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite-wal',
+      sha256: '825f3fd73e3182149eedf101452c2003da47bf32d40b9c0ecf3caa980430f7cb'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite-shm',
+      sha256: 'fada6f56ade8ac612f4bbdc400e088f5a6f6bd958cf5f7ea811f60fe461247c5'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite-wal',
+      sha256: '9f786aa345f02aaacca638fa81243bc33b183c6442a7f12ba576a2a2e387c6b6'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite-shm',
+      sha256: 'b5eea7aa212822ddfc9f1b6e905bccefb0785c9160367c796cc14ea748836ea7'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite-wal',
+      sha256: 'fdc3489b3828760dd302e61c310bd314b724b72ce966d369aa2239f5c2803d19'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite-shm',
+      sha256: '32813f9ccfeccbb1126f7714286fc8b166311f559b232ff24bb650a6da8fbf22'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite-wal',
+      sha256: '30dab3a13d142b1cf2491e30712100b1745045e7aa8457e022a98a966043eca2'
+    },
+    {
+      file: 'deployment/nginx/site.conf.template',
+      sha256: 'bd5f12d1ec29017b1635fbfe5d908e465a451204c4acafb9d7740abb329190a4'
+    },
+    {
+      file: 'deployment/README.md',
+      sha256: '364a0f5fdc7a030d6c2425775a25eb6f810db0b057d6863f0eb5685403cfbc6b'
+    },
+    {
+      file: 'deployment/release-policy.json',
+      sha256: '656e0a48a96dff66f4b07b0d746556cc978f6328bf20bcdc2e62b148497b26eb'
+    },
+    {
+      file: 'deployment/release-runbook.md',
+      sha256: '0a1fb51d974896377eb22f28eb0ec39950240b5400094dfe23de14390ba794d1'
+    },
+    {
+      file: 'deployment/wrangler.preview.jsonc',
+      sha256: '3bce7d6923ac6cdd673644cc1d06fb7c8e5821a91d23b0dd42571dceca681112'
+    },
+    {
+      file: 'migration/config-consumption.json',
+      sha256: 'c59c6419e6944ee8addc9b806cf056936db89aa8fadba00eaffe4f4cb9074c58'
+    },
+    {
+      file: 'migration/effective-metadata.json',
+      sha256: '47dabc37f0aca5718de7bed76aea19f65084508fa49b86194cb1986572a70392'
+    },
+    {
+      file: 'migration/existing-output-routes.json',
+      sha256: 'e91f16733ac51551b7c17e1139b239dbfaabc8bc3bdaf3379f67490c945dc261'
+    },
+    {
+      file: 'migration/git-status-baseline.json',
+      sha256: 'aa937654f74c75cd7f3469c38dace8f254893e0ac6abd4833f49206d2b2daa04'
+    },
+    {
+      file: 'migration/legacy-options.json',
+      sha256: '72b062fbd2128b80e6db8f2507d4f2877484cf8256f53c22e6c4d0773481453c'
+    },
+    {
+      file: 'migration/optional-assets.json',
+      sha256: '3863d41a64c0d2d012d75a6ad0349d2b9d5d9bbe6428655a84a0f0726e6a6cb3'
+    },
+    {
+      file: 'migration/page-metadata.json',
+      sha256: '11dc8220e6cb6400ef152876f60407b5134d0f69da6d730fb908eda026e986e3'
+    },
+    {
+      file: 'migration/source-baseline.json',
+      sha256: '7a751f1d7c61b00f286171774bc5d2edb6f99cef7231a23126738e7eaaf1f29b'
+    },
+    {
+      file: 'migration/source-manifest.json',
+      sha256: '6cc1d3d57f857c021a5a94477ac6fdb98e7d05d8e44a2dd6865a253afe1148d7'
+    },
+    {
+      file: 'package-lock.json',
+      sha256: '83d4f43335dde5173917bfa686077047e34fb5679b95cbf2d0d495e54f4a2461'
+    },
+    {
+      file: 'package.json',
+      sha256: 'cb446f55a955e6ad87659141d495769e9d910a3cf43c87953cb032dbd7ee2178'
+    },
+    {
+      file: 'playwright.config.ts',
+      sha256: 'c3bf460a88b53388dce8a2cbb026bf054a5bfc5452bb4d00c57918bc18226e4e'
+    },
+    {
+      file: 'playwright.cross.config.ts',
+      sha256: '021489347585429c4f004ecb2e9e24682c268bcf0ac3eacfb5ebe55cca714ff5'
+    },
+    {
+      file: 'playwright.nginx.config.ts',
+      sha256: '7c6554c78c6f97da4f391b6a0c3c5b38a57be8af7edd9de7c9c422947afa4c79'
+    },
+    {
+      file: 'playwright.pwa.config.ts',
+      sha256: '3c25e13beb927c0918cd616c01f17b4a435f8ca1b94531483ebf3bd2dae74edf'
+    },
+    {
+      file: 'playwright.styles.config.ts',
+      sha256: '9fe133c23dd87906b8c5805547c8556a6af2ef30b148001619c7a0c5e629255c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/contrib/auto-render.min.js',
+      sha256: 'e5372d199bcdae8b4de71d0f7ceba72a4ba12774a27c60a6f1f77d03b3228ee4'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.ttf',
+      sha256: '68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff',
+      sha256: '30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff2',
+      sha256: '0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.ttf',
+      sha256: '07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff',
+      sha256: '1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff2',
+      sha256: 'de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.ttf',
+      sha256: 'ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff',
+      sha256: '3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2',
+      sha256: '5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.ttf',
+      sha256: '9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff',
+      sha256: '9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff2',
+      sha256: '74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.ttf',
+      sha256: '1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff',
+      sha256: '5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff2',
+      sha256: '51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.ttf',
+      sha256: '138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff',
+      sha256: 'c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff2',
+      sha256: '0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.ttf',
+      sha256: '70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff',
+      sha256: 'a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff2',
+      sha256: '99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.ttf',
+      sha256: '0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff',
+      sha256: 'f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff2',
+      sha256: '97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.ttf',
+      sha256: 'd0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff',
+      sha256: 'c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2',
+      sha256: 'c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.ttf',
+      sha256: 'f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff',
+      sha256: '850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff2',
+      sha256: 'dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.ttf',
+      sha256: '08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff',
+      sha256: '8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff2',
+      sha256: '7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.ttf',
+      sha256: '1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff',
+      sha256: 'ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff2',
+      sha256: 'e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.ttf',
+      sha256: '3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff',
+      sha256: '91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff2',
+      sha256: '00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.ttf',
+      sha256: 'f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff',
+      sha256: '11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff2',
+      sha256: '68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.ttf',
+      sha256: '1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff',
+      sha256: 'd96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff2',
+      sha256: '036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.ttf',
+      sha256: '95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff',
+      sha256: 'c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff2',
+      sha256: '6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.ttf',
+      sha256: 'a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff',
+      sha256: '2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff2',
+      sha256: 'd04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.ttf',
+      sha256: '500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff',
+      sha256: '6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff2',
+      sha256: '73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995'
+    },
+    ... 963 more items
+  ],
+  expected: [
+    {
+      file: 'astro.config.mjs',
+      sha256: '74e9fa96a0e097d2eeb8aa6093b528c1d8b603c7739b8fed22fda75d8d52f7e2'
+    },
+    {
+      file: 'content/legacy/pages/about/index.md',
+      sha256: 'ac150c5ee49c48f7302b08cef8f4aefe1c1297ffc6d2c2103ade0155302fdf78'
+    },
+    {
+      file: 'content/legacy/posts/2022-01-20.Github-Hexo-yelee搭建个性化博客.md',
+      sha256: '7d16aa7d26d3a9575e6a105dc3df60ce6e9a07c824f655485cdcfb0dec6ba4be'
+    },
+    {
+      file: 'content/legacy/posts/math-notebook.md',
+      sha256: 'e8d4a0cb0e8a773721c33ace18973cdce1b60eb82d5c4aedb4cddc90e2b874c1'
+    },
+    {
+      file: 'content/legacy/posts/网站笔记.md',
+      sha256: 'd65b1b633debc762081929769ce21ea119cd8a58e5a625312d76b86776d283ea'
+    },
+    {
+      file: 'content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md',
+      sha256: 'b853c88181f9dc1cef155e5ccefa081d959577ca4b90c77e0d6bcafb26241de9'
+    },
+    {
+      file: 'content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md',
+      sha256: 'b074ac2934a63eb77f701f1fe8e2dcb1fce576854e7aee83250a0f3206bf5da9'
+    },
+    {
+      file: 'content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md',
+      sha256: '08357ec686490012600d2d3d121f7bad11602109d095b9b1b6cadb6c7bdffe75'
+    },
+    {
+      file: 'content/posts/release-private.md',
+      sha256: '6280c8ca6fefc728b12266d049bbce826e463725e4e65ed773c57e9a40c04de4'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite-shm',
+      sha256: 'ed0a37426246aff84b836ba3f4a7da36bea867131f7f2e4559d0117f4b1b2c4f'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/cache/miniflare-CacheObject/metadata.sqlite-wal',
+      sha256: '164632a0c900f15df0d7a842600bcf07643486540fa30ccbacc93a64dccba4f4'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite-shm',
+      sha256: 'bafadcd76d3c3bd70c70f99fbeb5a4cc4323e01fed590fe07138f37b2d15305b'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/metadata.sqlite-wal',
+      sha256: '825f3fd73e3182149eedf101452c2003da47bf32d40b9c0ecf3caa980430f7cb'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite-shm',
+      sha256: 'fada6f56ade8ac612f4bbdc400e088f5a6f6bd958cf5f7ea811f60fe461247c5'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/kv/miniflare-KVNamespaceObject/metadata.sqlite-wal',
+      sha256: '9f786aa345f02aaacca638fa81243bc33b183c6442a7f12ba576a2a2e387c6b6'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite-shm',
+      sha256: 'b5eea7aa212822ddfc9f1b6e905bccefb0785c9160367c796cc14ea748836ea7'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/observability/miniflare-wobs-trace-store/metadata.sqlite-wal',
+      sha256: 'fdc3489b3828760dd302e61c310bd314b724b72ce966d369aa2239f5c2803d19'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite',
+      sha256: '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite-shm',
+      sha256: '32813f9ccfeccbb1126f7714286fc8b166311f559b232ff24bb650a6da8fbf22'
+    },
+    {
+      file: 'deployment/.wrangler/state/v3/r2/miniflare-R2BucketObject/metadata.sqlite-wal',
+      sha256: '30dab3a13d142b1cf2491e30712100b1745045e7aa8457e022a98a966043eca2'
+    },
+    {
+      file: 'deployment/nginx/site.conf.template',
+      sha256: 'bd5f12d1ec29017b1635fbfe5d908e465a451204c4acafb9d7740abb329190a4'
+    },
+    {
+      file: 'deployment/README.md',
+      sha256: '364a0f5fdc7a030d6c2425775a25eb6f810db0b057d6863f0eb5685403cfbc6b'
+    },
+    {
+      file: 'deployment/release-policy.json',
+      sha256: '656e0a48a96dff66f4b07b0d746556cc978f6328bf20bcdc2e62b148497b26eb'
+    },
+    {
+      file: 'deployment/release-runbook.md',
+      sha256: '0a1fb51d974896377eb22f28eb0ec39950240b5400094dfe23de14390ba794d1'
+    },
+    {
+      file: 'deployment/wrangler.preview.jsonc',
+      sha256: '3bce7d6923ac6cdd673644cc1d06fb7c8e5821a91d23b0dd42571dceca681112'
+    },
+    {
+      file: 'migration/config-consumption.json',
+      sha256: 'c59c6419e6944ee8addc9b806cf056936db89aa8fadba00eaffe4f4cb9074c58'
+    },
+    {
+      file: 'migration/effective-metadata.json',
+      sha256: '47dabc37f0aca5718de7bed76aea19f65084508fa49b86194cb1986572a70392'
+    },
+    {
+      file: 'migration/existing-output-routes.json',
+      sha256: 'e91f16733ac51551b7c17e1139b239dbfaabc8bc3bdaf3379f67490c945dc261'
+    },
+    {
+      file: 'migration/git-status-baseline.json',
+      sha256: 'aa937654f74c75cd7f3469c38dace8f254893e0ac6abd4833f49206d2b2daa04'
+    },
+    {
+      file: 'migration/legacy-options.json',
+      sha256: '72b062fbd2128b80e6db8f2507d4f2877484cf8256f53c22e6c4d0773481453c'
+    },
+    {
+      file: 'migration/optional-assets.json',
+      sha256: '3863d41a64c0d2d012d75a6ad0349d2b9d5d9bbe6428655a84a0f0726e6a6cb3'
+    },
+    {
+      file: 'migration/page-metadata.json',
+      sha256: '11dc8220e6cb6400ef152876f60407b5134d0f69da6d730fb908eda026e986e3'
+    },
+    {
+      file: 'migration/source-baseline.json',
+      sha256: '7a751f1d7c61b00f286171774bc5d2edb6f99cef7231a23126738e7eaaf1f29b'
+    },
+    {
+      file: 'migration/source-manifest.json',
+      sha256: '6cc1d3d57f857c021a5a94477ac6fdb98e7d05d8e44a2dd6865a253afe1148d7'
+    },
+    {
+      file: 'package-lock.json',
+      sha256: '83d4f43335dde5173917bfa686077047e34fb5679b95cbf2d0d495e54f4a2461'
+    },
+    {
+      file: 'package.json',
+      sha256: 'cb446f55a955e6ad87659141d495769e9d910a3cf43c87953cb032dbd7ee2178'
+    },
+    {
+      file: 'playwright.config.ts',
+      sha256: 'c3bf460a88b53388dce8a2cbb026bf054a5bfc5452bb4d00c57918bc18226e4e'
+    },
+    {
+      file: 'playwright.cross.config.ts',
+      sha256: '021489347585429c4f004ecb2e9e24682c268bcf0ac3eacfb5ebe55cca714ff5'
+    },
+    {
+      file: 'playwright.nginx.config.ts',
+      sha256: '7c6554c78c6f97da4f391b6a0c3c5b38a57be8af7edd9de7c9c422947afa4c79'
+    },
+    {
+      file: 'playwright.pwa.config.ts',
+      sha256: '3c25e13beb927c0918cd616c01f17b4a435f8ca1b94531483ebf3bd2dae74edf'
+    },
+    {
+      file: 'playwright.styles.config.ts',
+      sha256: '9fe133c23dd87906b8c5805547c8556a6af2ef30b148001619c7a0c5e629255c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/contrib/auto-render.min.js',
+      sha256: 'e5372d199bcdae8b4de71d0f7ceba72a4ba12774a27c60a6f1f77d03b3228ee4'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.ttf',
+      sha256: '68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff',
+      sha256: '30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_AMS-Regular.woff2',
+      sha256: '0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.ttf',
+      sha256: '07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff',
+      sha256: '1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Bold.woff2',
+      sha256: 'de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.ttf',
+      sha256: 'ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff',
+      sha256: '3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2',
+      sha256: '5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.ttf',
+      sha256: '9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff',
+      sha256: '9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Bold.woff2',
+      sha256: '74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.ttf',
+      sha256: '1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff',
+      sha256: '5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Fraktur-Regular.woff2',
+      sha256: '51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.ttf',
+      sha256: '138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff',
+      sha256: 'c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Bold.woff2',
+      sha256: '0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.ttf',
+      sha256: '70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff',
+      sha256: 'a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-BoldItalic.woff2',
+      sha256: '99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.ttf',
+      sha256: '0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff',
+      sha256: 'f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Italic.woff2',
+      sha256: '97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.ttf',
+      sha256: 'd0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff',
+      sha256: 'c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2',
+      sha256: 'c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.ttf',
+      sha256: 'f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff',
+      sha256: '850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-BoldItalic.woff2',
+      sha256: 'dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.ttf',
+      sha256: '08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff',
+      sha256: '8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Math-Italic.woff2',
+      sha256: '7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.ttf',
+      sha256: '1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff',
+      sha256: 'ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Bold.woff2',
+      sha256: 'e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.ttf',
+      sha256: '3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff',
+      sha256: '91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Italic.woff2',
+      sha256: '00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.ttf',
+      sha256: 'f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff',
+      sha256: '11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_SansSerif-Regular.woff2',
+      sha256: '68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.ttf',
+      sha256: '1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff',
+      sha256: 'd96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Script-Regular.woff2',
+      sha256: '036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.ttf',
+      sha256: '95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff',
+      sha256: 'c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size1-Regular.woff2',
+      sha256: '6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.ttf',
+      sha256: 'a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff',
+      sha256: '2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size2-Regular.woff2',
+      sha256: 'd04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.ttf',
+      sha256: '500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff',
+      sha256: '6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949'
+    },
+    {
+      file: 'public/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Size3-Regular.woff2',
+      sha256: '73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995'
+    },
+    ... 963 more items
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2
+changed-inputs-blocked correctly blocked
+03:32:05 [ERROR] [autuswing-static-artifacts] An unhandled error occurred while running the "astro:config:setup" hook
+Production site URL must be https://akisenn.com; received https://preview.invalid
+  Location:
+    E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\src\lib\build-mode.mjs:19:11
+  Stack trace:
+    at assertProductionUrl (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/src/lib/build-mode.mjs:19:11)
+    at hookFn (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:39:18)
+    at time.hook (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:53)
+    at runHookInternal (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:9)
+    at async AstroBuilder.setup (file:///E:/autuswing-astro/node_modules/astro/dist/core/build/index.js:88:19)
+wrong-production-origin-build correctly blocked
+03:32:08 [ERROR] [autuswing-static-artifacts] An unhandled error occurred while running the "astro:config:setup" hook
+Development mode cannot produce static release artifacts
+  Location:
+    E:\autuswing-astro\node_modules\astro\dist\integrations\hooks.js:39:18
+  Stack trace:
+    at astro:config:setup (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/scripts/static-artifacts.mjs:22:17)
+    at withTakingALongTimeMsg (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:23:16)
+    at time (file:///E:/autuswing-astro/node_modules/@astrojs/internal-helpers/dist/timings.js:31:24)
+    at runHookConfigSetup (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:140:39)
+    at async AstroBuilder.run (file:///E:/autuswing-astro/node_modules/astro/dist/core/build/index.js:215:21)
+development-static-build correctly blocked
+03:32:10 [ERROR] [autuswing-static-artifacts] An unhandled error occurred while running the "astro:config:setup" hook
+Production site URL must be https://akisenn.com; received https://preview.invalid
+  Location:
+    E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\src\lib\build-mode.mjs:19:11
+  Stack trace:
+    at assertProductionUrl (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/src/lib/build-mode.mjs:19:11)
+    at hookFn (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:39:18)
+    at time.hook (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:53)
+    at runHookInternal (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:9)
+    at async AstroBuilder.setup (file:///E:/autuswing-astro/node_modules/astro/dist/core/build/index.js:88:19)
+cli-site-override-blocked correctly blocked
+03:32:13 [ERROR] [autuswing-static-artifacts] An unhandled error occurred while running the "astro:config:setup" hook
+Unknown SITE_ENV: prod
+  Location:
+    E:\autuswing-astro\.local-tools\release-fixtures-vcbVHE\src\lib\build-mode.mjs:4:11
+  Stack trace:
+    at buildMode (file:///E:/autuswing-astro/.local-tools/release-fixtures-vcbVHE/src/lib/build-mode.mjs:4:11)
+    at hookFn (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:39:18)
+    at time.hook (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:53)
+    at runHookInternal (file:///E:/autuswing-astro/node_modules/astro/dist/integrations/hooks.js:36:9)
+    at async AstroBuilder.setup (file:///E:/autuswing-astro/node_modules/astro/dist/core/build/index.js:88:19)
+unknown-mode-build correctly blocked
+restored-production-output passed
+{
+  workspace: 'E:\\autuswing-astro\\.local-tools\\release-fixtures-vcbVHE',
+  passed: 33,
+  evidence: '.local-tools/firefox-contracts-20261018/release-fixtures.json'
+}

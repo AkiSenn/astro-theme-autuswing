@@ -1,0 +1,627 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.cross.config.ts",
+      "--project",
+      "firefox",
+      "--grep",
+      "native transitions keep|native MPA transitions|actual transition frames|responsive layout geometry|own browser baseline|smart return runs|PWA installs|independent MPA",
+      "--output",
+      ".local-tools/firefox-contracts-20261018/targeted-results"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.cross.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/targeted-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/targeted-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\targeted-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "E:\\autuswing-astro\\tests\\browser",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "firefox",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "launchOptions": {
+            "executablePath": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\browsers\\firefox-1555\\firefox\\firefox.exe"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local-tools/firefox-contracts-20261018/targeted.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "back.spec.ts",
+      "file": "back.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "smart return runs the existing native content transition",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2095,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:01:54.038Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "039cd3c1d3574a6b7cb6-484d269dc4804cac0bfa",
+          "file": "back.spec.ts",
+          "line": 195,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "capabilities.spec.ts",
+      "file": "capabilities.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "independent MPA probe verifies the declared native or fallback capability",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 557,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:01:56.697Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "independent-capability",
+                      "contentType": "application/json",
+                      "body": "ewogICJtb2RlIjogImZhbGxiYWNrIiwKICAidmVyc2lvbiI6ICIxNTcuMCIsCiAgInJlcXVlc3RzIjogWwogICAgIi9hIiwKICAgICIvZmF2aWNvbi5pY28iLAogICAgIi9iIiwKICAgICIvYSIKICBdLAogICJyZXZlYWxzIjogW10KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6bcb5a9b4e27408c434c-43338364113024be483b",
+          "file": "capabilities.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "motion.spec.ts",
+      "file": "motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:01:57.569Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-709c16d4981ac82399a0",
+          "file": "motion.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1357,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:02:02.325Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-8c5db00bfad74bce6701",
+          "file": "motion.spec.ts",
+          "line": 148,
+          "column": 1
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:02:03.694Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"fallback\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":false,\"pageSwap\":false,\"cssRule\":false,\"navigationAuto\":false}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-d477e9e03f31462848a6",
+          "file": "motion.spec.ts",
+          "line": 380,
+          "column": 1
+        },
+        {
+          "title": "responsive layout geometry is unchanged after motion cleanup",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1018,
+                  "error": {
+                    "message": "Error: /post/55b0541c/ 320x640 .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24685.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24669.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m",
+                    "stack": "Error: /post/55b0541c/ 320x640 .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24685.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24669.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:513:9",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 9,
+                      "line": 513
+                    },
+                    "snippet": "  511 |         activeLayoutMetrics(regions[selector]),\n  512 |         `${sample.path} ${sample.width}x${sample.height} ${selector}`,\n> 513 |       ).toEqual(activeLayoutMetrics(sample.regions[selector]));\n      |         ^\n  514 |     }\n  515 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(\n  516 |       true,"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 9,
+                        "line": 513
+                      },
+                      "message": "Error: /post/55b0541c/ 320x640 .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24685.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24669.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m\n\n  511 |         activeLayoutMetrics(regions[selector]),\n  512 |         `${sample.path} ${sample.width}x${sample.height} ${selector}`,\n> 513 |       ).toEqual(activeLayoutMetrics(sample.regions[selector]));\n      |         ^\n  514 |     }\n  515 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(\n  516 |       true,\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:513:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:02:05.629Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\targeted-results\\motion-responsive-layout-g-ddcbc-hanged-after-motion-cleanup-firefox\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\targeted-results\\motion-responsive-layout-g-ddcbc-hanged-after-motion-cleanup-firefox\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 9,
+                    "line": 513
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-415b7c0ca5079743b4cf",
+          "file": "motion.spec.ts",
+          "line": 470,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sidebar-bottom.spec.ts",
+      "file": "sidebar-bottom.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2630,
+                  "error": {
+                    "message": "Error: firefox 320 /post/55b0541c/ .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24669.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24685.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m",
+                    "stack": "Error: firefox 320 /post/55b0541c/ .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24669.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24685.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m\n    at E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts:207:9",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts",
+                      "column": 9,
+                      "line": 207
+                    },
+                    "snippet": "  205 |         activeLayoutMetrics(actual),\n  206 |         `${engine} ${item.width} ${item.path} ${selector}`,\n> 207 |       ).toEqual(activeLayoutMetrics(expected as typeof actual));\n      |         ^\n  208 |     }\n  209 |   }\n  210 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts",
+                        "column": 9,
+                        "line": 207
+                      },
+                      "message": "Error: firefox 320 /post/55b0541c/ .article-layout\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -4,11 +4,11 @@\u001b[39m\n\u001b[2m      \"border\": \"0px rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(225, 233, 223)\",\u001b[22m\n\u001b[2m      \"display\": \"block\",\u001b[22m\n\u001b[2m      \"fontSize\": \"15px\",\u001b[22m\n\u001b[2m      \"gap\": \"(inactive)\",\u001b[22m\n\u001b[32m-     \"height\": 24669.982421875,\u001b[39m\n\u001b[31m+     \"height\": 24685.982421875,\u001b[39m\n\u001b[2m      \"lineHeight\": \"25.5px\",\u001b[22m\n\u001b[2m      \"padding\": \"0px\",\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m      \"x\": 0,\u001b[22m\n\u001b[2m      \"y\": 135,\u001b[22m\n\n  205 |         activeLayoutMetrics(actual),\n  206 |         `${engine} ${item.width} ${item.path} ${selector}`,\n> 207 |       ).toEqual(activeLayoutMetrics(expected as typeof actual));\n      |         ^\n  208 |     }\n  209 |   }\n  210 | });\n    at E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts:207:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:02:07.704Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\targeted-results\\sidebar-bottom-footer-mini-451ea--their-own-browser-baseline-firefox\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\targeted-results\\sidebar-bottom-footer-mini-451ea--their-own-browser-baseline-firefox\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts",
+                    "column": 9,
+                    "line": 207
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "44dd3ac8c00d68d80a37-56021f39671282a0c7d0",
+          "file": "sidebar-bottom.spec.ts",
+          "line": 173,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "state.spec.ts",
+      "file": "state.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PWA installs its own shell cache and returns the offline page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1629,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:02:12.086Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a6e30a38a18b2ee3fb04-2a3c1533606116f111d7",
+          "file": "state.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T19:01:51.631Z",
+    "duration": 23604.758,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

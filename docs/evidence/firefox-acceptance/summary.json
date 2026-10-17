@@ -1,0 +1,618 @@
+{
+  "completedAt": "2026-10-17T19:33:01.205Z",
+  "sourceCommit": "f34a8e300df74c630fd77e637e9af462cf31b344",
+  "acceptance": "BLOCKED: Firefox geometry reference is not repeatable; do not treat passing fallbacks as full acceptance",
+  "suites": {
+    "firefox": {
+      "startTime": "2026-10-17T19:11:56.839Z",
+      "duration": 239076.757,
+      "expected": 84,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0,
+      "failures": [
+        {
+          "file": "motion.spec.ts",
+          "line": 474,
+          "title": "responsive layout geometry is unchanged after motion cleanup",
+          "project": "firefox",
+          "errors": [
+            "AssertionError: Firefox geometry reference is not repeatable; release remains blocked. See docs/firefox-acceptance.md\nactual expected\n\n'provisional-renidated-rer-mpeatrics-unstable'\n\n\n   at ..\\support\\layout-reference.ts:7\n\n   5 | export function assertFirefoxReference(reference: any, bytes: Buffer, file: string) {\n   6 |   assert.equal(reference.engine, 'firefox');\n>  7 |   assert.equal(\n     |          ^\n   8 |     reference.status,\n   9 |     'validated-repeatable',\n  10 |     'Firefox geometry reference is not repeatable; release remains blocked. See docs/firefox-acceptance.md',\n    at assertFirefoxReference (E:\\autuswing-astro\\tests\\support\\layout-reference.ts:7:10)\n    at layoutReference (E:\\autuswing-astro\\tests\\support\\layout-reference.ts:35:20)\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:481:32"
+          ]
+        },
+        {
+          "file": "sidebar-bottom.spec.ts",
+          "line": 174,
+          "title": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+          "project": "firefox",
+          "errors": [
+            "AssertionError: Firefox geometry reference is not repeatable; release remains blocked. See docs/firefox-acceptance.md\nactual expected\n\n'provisional-renidated-rer-mpeatrics-unstable'\n\n\n   at ..\\support\\layout-reference.ts:7\n\n   5 | export function assertFirefoxReference(reference: any, bytes: Buffer, file: string) {\n   6 |   assert.equal(reference.engine, 'firefox');\n>  7 |   assert.equal(\n     |          ^\n   8 |     reference.status,\n   9 |     'validated-repeatable',\n  10 |     'Firefox geometry reference is not repeatable; release remains blocked. See docs/firefox-acceptance.md',\n    at assertFirefoxReference (E:\\autuswing-astro\\tests\\support\\layout-reference.ts:7:10)\n    at layoutReference (E:\\autuswing-astro\\tests\\support\\layout-reference.ts:35:20)\n    at E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts:179:32"
+          ]
+        }
+      ],
+      "contracts": [
+        {
+          "title": "smart return runs the existing native content transition",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "independent MPA probe verifies the declared native or fallback capability",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "project": "firefox",
+          "mode": "fallback",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": false,
+            "pageSwap": false,
+            "cssRule": false,
+            "navigationAuto": false
+          }
+        }
+      ]
+    },
+    "edge": {
+      "startTime": "2026-10-17T19:15:56.582Z",
+      "duration": 27529.333,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "failures": [],
+      "contracts": [
+        {
+          "title": "smart return runs the existing native content transition",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "independent MPA probe verifies the declared native or fallback capability",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "project": "",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        }
+      ]
+    },
+    "webkit": {
+      "startTime": "2026-10-17T19:16:24.773Z",
+      "duration": 98437.984,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "failures": [],
+      "contracts": [
+        {
+          "title": "smart return runs the existing native content transition",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "independent MPA probe verifies the declared native or fallback capability",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "project": "webkit",
+          "mode": "native",
+          "capabilities": {
+            "sameDocument": true,
+            "pageReveal": true,
+            "pageSwap": true,
+            "cssRule": true,
+            "navigationAuto": true
+          }
+        }
+      ]
+    },
+    "visual": {
+      "startTime": "2026-10-17T19:18:03.895Z",
+      "duration": 623353.3119999999,
+      "expected": 106,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "failures": [],
+      "contracts": []
+    },
+    "pwa": {
+      "startTime": "2026-10-17T19:10:36.672Z",
+      "duration": 41265.263,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "failures": [],
+      "contracts": []
+    }
+  },
+  "unit": 38,
+  "releaseFixtures": 33,
+  "types": "0 errors, 0 warnings, 1 existing deprecated execCommand hint",
+  "previewBuild": "passed",
+  "output": {
+    "checkedAt": "2026-10-17T19:32:36.756Z",
+    "mode": "preview",
+    "canonicalPages": 26,
+    "posts": 3,
+    "draftsExcluded": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "assertionProtection": {
+    "originalTests": 85,
+    "currentTests": 86,
+    "removedTests": 0,
+    "increasedTimeouts": 0,
+    "retries": 0,
+    "skips": 0,
+    "failedBefore": [
+      {
+        "name": "smart return runs the existing native content transition",
+        "before": {
+          "name": "smart return runs the existing native content transition",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "smart return runs the existing native content transition",
+          "timeout": 30000,
+          "status": "expected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "native transitions keep the correct navigation shell across responsive layouts",
+        "before": {
+          "name": "native transitions keep the correct navigation shell across responsive layouts",
+          "timeout": 60000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "native transitions keep the correct navigation shell across responsive layouts",
+          "timeout": 60000,
+          "status": "expected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "native MPA transitions use only the content group and refresh article state",
+        "before": {
+          "name": "native MPA transitions use only the content group and refresh article state",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "native MPA transitions use only the content group and refresh article state",
+          "timeout": 30000,
+          "status": "expected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "actual transition frames preserve the live shell and selected appearance",
+        "before": {
+          "name": "actual transition frames preserve the live shell and selected appearance",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "actual transition frames preserve the live shell and selected appearance",
+          "timeout": 30000,
+          "status": "expected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "responsive layout geometry is unchanged after motion cleanup",
+        "before": {
+          "name": "responsive layout geometry is unchanged after motion cleanup",
+          "timeout": 90000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "responsive layout geometry is unchanged after motion cleanup",
+          "timeout": 90000,
+          "status": "unexpected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+        "before": {
+          "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        }
+      },
+      {
+        "name": "PWA installs its own shell cache and returns the offline page",
+        "before": {
+          "name": "PWA installs its own shell cache and returns the offline page",
+          "timeout": 30000,
+          "status": "unexpected",
+          "attempts": 1
+        },
+        "after": {
+          "name": "PWA installs its own shell cache and returns the offline page",
+          "timeout": 30000,
+          "status": "expected",
+          "attempts": 1
+        }
+      }
+    ]
+  },
+  "protection": {
+    "frozenPng": 274,
+    "frozenMetrics": 274,
+    "unchanged": true,
+    "productSourceUnchanged": true,
+    "originalReferenceFilesUnchanged": true,
+    "oldCandidateFiles": 359
+  },
+  "referenceStatus": "provisional-renderer-metrics-unstable",
+  "productionChanges": false,
+  "browserTestsCommit": "5c3c97a64bfd648f45c4221d6510db4fccf1accb",
+  "unitIsolationFixCommit": "f34a8e300df74c630fd77e637e9af462cf31b344"
+}

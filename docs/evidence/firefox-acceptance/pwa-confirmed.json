@@ -1,0 +1,760 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.pwa.config.ts"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.pwa.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/deployment",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "E:/autuswing-astro/tests/deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge",
+        "testDir": "E:\\autuswing-astro\\tests\\deployment",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000,
+        "use": {
+          "trace": "retain-on-failure",
+          "browserName": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "E:\\autuswing-astro\\tests\\deployment",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000,
+        "use": {
+          "trace": "retain-on-failure",
+          "browserName": "firefox",
+          "launchOptions": {
+            "executablePath": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\browsers\\firefox-1555\\firefox\\firefox.exe"
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\pwa-confirmed-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "E:\\autuswing-astro\\tests\\deployment",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts",
+          "pwa-network.spec.ts"
+        ],
+        "timeout": 60000,
+        "use": {
+          "trace": "retain-on-failure",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local-tools/firefox-contracts-20261018/pwa-confirmed.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "pwa-network.spec.ts",
+      "file": "pwa-network.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "offline emulation is characterized separately from actual Worker connection failure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 854,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:37.341Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-timing-and-cache",
+                      "contentType": "application/json",
+                      "body": "ewogICJpbml0aWFsIjogewogICAgInNoZWxscyI6IFsKICAgICAgewogICAgICAgICJrZXkiOiAiYXV0dXN3aW5nLWFzdHJvLXNoZWxsLWMwYzM2ZmQwNGQ1OGM1MTEiLAogICAgICAgICJodG1sIjogIjwhZG9jdHlwZSBodG1sPjxodG1sIGxhbmc9XCJ6aC1DTlwiPjxtZXRhIGNoYXJzZXQ9XCJ1dGYtOFwiPjxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGhcIj48bWV0YSBuYW1lPVwicm9ib3RzXCIgY29udGVudD1cIm5vaW5kZXhcIj48dGl0bGU+5pqC5pe256a757q/IMK3IEFraVNlbm48L3RpdGxlPjxzdHlsZT5ib2R5e2ZvbnQ6MThweC8xLjggc3lzdGVtLXVpO21heC13aWR0aDo0MGVtO21hcmdpbjoxNXZoIGF1dG87cGFkZGluZzoyNHB4O2JhY2tncm91bmQ6I2Y1ZjRmMDtjb2xvcjojMjQ0NjM4fWF7Y29sb3I6aW5oZXJpdH08L3N0eWxlPjxoMT7mmoLml7bnprvnur88L2gxPjxwPumHjeaWsOi/nuaOpeWQjuWIt+aWsOmhtemdou+8jOWNs+WPr+e7p+e7remYheivu+OAgjwvcD48YSBocmVmPVwiL1wiPui/lOWbnummlumhtTwvYT48L2h0bWw+IgogICAgICB9CiAgICBdLAogICAgImFjdGl2ZSI6ICJhY3RpdmF0ZWQiCiAgfSwKICAicmVhY2hlZFNlcnZlciI6IGZhbHNlLAogICJkaXJlY3RGZXRjaCI6ICJuZXR3b3JrLWVycm9yIiwKICAicmVxdWVzdHMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5EX00tRFpoWC5jc3MiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vYXZhdGFyLkRBRGJja1d6X1oyM2RoYWIud2VicCIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3N3LmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA0CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvb2ZmbGluZS5odG1sIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW1nL2Zhdmljb24ucG5nIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA4CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxMAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDExCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LkRfTS1EWmhYLmNzcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vYXZhdGFyLkRBRGJja1d6X1oyM2RoYWIud2VicCIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTQKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5hc3Ryb19hc3Ryb190eXBlX3NjcmlwdF9pbmRleF8wX2xhbmcuQ1ZUMkdjSEguanMiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDE1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW1nL2Zhdmljb24ucG5nIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxNgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-106430e063740241616c",
+          "file": "pwa-network.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 818,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:38.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "cold-start-cache-miss",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiB7CiAgICAic2hlbGxzIjogWwogICAgICB7CiAgICAgICAgImtleSI6ICJhdXR1c3dpbmctYXN0cm8tc2hlbGwtYzBjMzZmZDA0ZDU4YzUxMSIsCiAgICAgICAgImh0bWwiOiAiPCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz1cInpoLUNOXCI+PG1ldGEgY2hhcnNldD1cInV0Zi04XCI+PG1ldGEgbmFtZT1cInZpZXdwb3J0XCIgY29udGVudD1cIndpZHRoPWRldmljZS13aWR0aFwiPjxtZXRhIG5hbWU9XCJyb2JvdHNcIiBjb250ZW50PVwibm9pbmRleFwiPjx0aXRsZT7mmoLml7bnprvnur8gwrcgQWtpU2VubjwvdGl0bGU+PHN0eWxlPmJvZHl7Zm9udDoxOHB4LzEuOCBzeXN0ZW0tdWk7bWF4LXdpZHRoOjQwZW07bWFyZ2luOjE1dmggYXV0bztwYWRkaW5nOjI0cHg7YmFja2dyb3VuZDojZjVmNGYwO2NvbG9yOiMyNDQ2Mzh9YXtjb2xvcjppbmhlcml0fTwvc3R5bGU+PGgxPuaaguaXtuemu+e6vzwvaDE+PHA+6YeN5paw6L+e5o6l5ZCO5Yi35paw6aG16Z2i77yM5Y2z5Y+v57un57ut6ZiF6K+744CCPC9wPjxhIGhyZWY9XCIvXCI+6L+U5Zue6aaW6aG1PC9hPjwvaHRtbD4iCiAgICAgIH0KICAgIF0sCiAgICAiYWN0aXZlIjogImFjdGl2YXRlZCIKICB9LAogICJyZXF1ZXN0cyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvdW5pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5EX00tRFpoWC5jc3MiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vYXZhdGFyLkRBRGJja1d6X1oyM2RoYWIud2VicCIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogNQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3N3LmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvb2ZmbGluZS5odG1sIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW1nL2Zhdmljb24ucG5nIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA4CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxMAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2luc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTEKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDEyCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9taXNzaW5nLWNhY2hlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL21pc3NpbmctY2FjaGUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDE1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDE3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuRF9NLURaaFguY3NzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxOAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxOQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMjAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbWcvZmF2aWNvbi5wbmciLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDIxCiAgICB9CiAgXQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-13a58aec2c4b5aad545b",
+          "file": "pwa-network.spec.ts",
+          "line": 88,
+          "column": 1
+        },
+        {
+          "title": "offline emulation is characterized separately from actual Worker connection failure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1772,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:44.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-timing-and-cache",
+                      "contentType": "application/json",
+                      "body": "ewogICJpbml0aWFsIjogewogICAgInNoZWxscyI6IFsKICAgICAgewogICAgICAgICJrZXkiOiAiYXV0dXN3aW5nLWFzdHJvLXNoZWxsLWMwYzM2ZmQwNGQ1OGM1MTEiLAogICAgICAgICJodG1sIjogIjwhZG9jdHlwZSBodG1sPjxodG1sIGxhbmc9XCJ6aC1DTlwiPjxtZXRhIGNoYXJzZXQ9XCJ1dGYtOFwiPjxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGhcIj48bWV0YSBuYW1lPVwicm9ib3RzXCIgY29udGVudD1cIm5vaW5kZXhcIj48dGl0bGU+5pqC5pe256a757q/IMK3IEFraVNlbm48L3RpdGxlPjxzdHlsZT5ib2R5e2ZvbnQ6MThweC8xLjggc3lzdGVtLXVpO21heC13aWR0aDo0MGVtO21hcmdpbjoxNXZoIGF1dG87cGFkZGluZzoyNHB4O2JhY2tncm91bmQ6I2Y1ZjRmMDtjb2xvcjojMjQ0NjM4fWF7Y29sb3I6aW5oZXJpdH08L3N0eWxlPjxoMT7mmoLml7bnprvnur88L2gxPjxwPumHjeaWsOi/nuaOpeWQjuWIt+aWsOmhtemdou+8jOWNs+WPr+e7p+e7remYheivu+OAgjwvcD48YSBocmVmPVwiL1wiPui/lOWbnummlumhtTwvYT48L2h0bWw+IgogICAgICB9CiAgICBdLAogICAgImFjdGl2ZSI6ICJhY3RpdmF0ZWQiCiAgfSwKICAicmVhY2hlZFNlcnZlciI6IHRydWUsCiAgImRpcmVjdEZldGNoIjogIm5ldHdvcmstZXJyb3IiLAogICJyZXF1ZXN0cyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuRF9NLURaaFguY3NzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAyCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuYXN0cm9fYXN0cm9fdHlwZV9zY3JpcHRfaW5kZXhfMF9sYW5nLkNWVDJHY0hILmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvc3cuanMiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDQKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbWcvYXBwbGUtdG91Y2gtaWNvbi5wbmciLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDUKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbWcvZmF2aWNvbi5wbmciLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9vZmZsaW5lLmh0bWwiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDcKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9lbXVsYXRlZC1uYXZpZ2F0aW9uLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogOAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Nvbm5lY3Rpb24tZmFpbHVyZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogOQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Nvbm5lY3Rpb24tZmFpbHVyZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDExCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Nvbm5lY3Rpb24tZmFpbHVyZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDE0CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxNQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Nvbm5lY3Rpb24tZmFpbHVyZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDE3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvY29ubmVjdGlvbi1mYWlsdXJlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxOAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDE5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyMQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDIyCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDI1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyNwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDI4CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAyOQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LkRfTS1EWmhYLmNzcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMzAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5hc3Ryb19hc3Ryb190eXBlX3NjcmlwdF9pbmRleF8wX2xhbmcuQ1ZUMkdjSEguanMiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDMxCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL2F2YXRhci5EQURiY2tXel9aMjNkaGFiLndlYnAiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDMyCiAgICB9CiAgXQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-bf994e905dd9c55b09fd",
+          "file": "pwa-network.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1141,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:47.355Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "cold-start-cache-miss",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiB7CiAgICAic2hlbGxzIjogWwogICAgICB7CiAgICAgICAgImtleSI6ICJhdXR1c3dpbmctYXN0cm8tc2hlbGwtYzBjMzZmZDA0ZDU4YzUxMSIsCiAgICAgICAgImh0bWwiOiAiPCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz1cInpoLUNOXCI+PG1ldGEgY2hhcnNldD1cInV0Zi04XCI+PG1ldGEgbmFtZT1cInZpZXdwb3J0XCIgY29udGVudD1cIndpZHRoPWRldmljZS13aWR0aFwiPjxtZXRhIG5hbWU9XCJyb2JvdHNcIiBjb250ZW50PVwibm9pbmRleFwiPjx0aXRsZT7mmoLml7bnprvnur8gwrcgQWtpU2VubjwvdGl0bGU+PHN0eWxlPmJvZHl7Zm9udDoxOHB4LzEuOCBzeXN0ZW0tdWk7bWF4LXdpZHRoOjQwZW07bWFyZ2luOjE1dmggYXV0bztwYWRkaW5nOjI0cHg7YmFja2dyb3VuZDojZjVmNGYwO2NvbG9yOiMyNDQ2Mzh9YXtjb2xvcjppbmhlcml0fTwvc3R5bGU+PGgxPuaaguaXtuemu+e6vzwvaDE+PHA+6YeN5paw6L+e5o6l5ZCO5Yi35paw6aG16Z2i77yM5Y2z5Y+v57un57ut6ZiF6K+744CCPC9wPjxhIGhyZWY9XCIvXCI+6L+U5Zue6aaW6aG1PC9hPjwvaHRtbD4iCiAgICAgIH0KICAgIF0sCiAgICAiYWN0aXZlIjogImFjdGl2YXRlZCIKICB9LAogICJyZXF1ZXN0cyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvdW5pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDEKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi91bmluc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvdW5pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDQKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi91bmluc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvdW5pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDcKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi91bmluc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogOAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LkRfTS1EWmhYLmNzcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5hc3Ryb19hc3Ryb190eXBlX3NjcmlwdF9pbmRleF8wX2xhbmcuQ1ZUMkdjSEguanMiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDEzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW1nL2FwcGxlLXRvdWNoLWljb24ucG5nIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2ltZy9mYXZpY29uLnBuZyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTUKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9zdy5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9vZmZsaW5lLmh0bWwiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDE3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAxOAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2luc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTkKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDIwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyMQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2luc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDIzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2luc3RhbGxlZC8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjUKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9pbnN0YWxsZWQvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDI2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAyNwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDI4CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMjkKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAzMAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDMxCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMzIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAzMwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDM0CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMzUKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAzNgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDM3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWlzc2luZy1jYWNoZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMzgKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9taXNzaW5nLWNhY2hlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAzOQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL21pc3NpbmctY2FjaGUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDQwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWlzc2luZy1jYWNoZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNDEKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9taXNzaW5nLWNhY2hlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA0MgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL21pc3NpbmctY2FjaGUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDQzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWlzc2luZy1jYWNoZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNDQKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9taXNzaW5nLWNhY2hlLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA0NQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL21pc3NpbmctY2FjaGUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDQ2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWlzc2luZy1jYWNoZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNDcKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA0OAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDQ5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNTAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA1MQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDUyCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNTMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA1NAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2Zhdmljb24uaWNvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDU1CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvZmF2aWNvbi5pY28iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogNTYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9mYXZpY29uLmljbyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA1NwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogNTgKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5EX00tRFpoWC5jc3MiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDU5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuYXN0cm9fYXN0cm9fdHlwZV9zY3JpcHRfaW5kZXhfMF9sYW5nLkNWVDJHY0hILmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA2MAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA2MQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-0e2cf9e668ad3d6c501c",
+          "file": "pwa-network.spec.ts",
+          "line": 88,
+          "column": 1
+        },
+        {
+          "title": "offline emulation is characterized separately from actual Worker connection failure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 961,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:55.037Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "offline-timing-and-cache",
+                      "contentType": "application/json",
+                      "body": "ewogICJpbml0aWFsIjogewogICAgInNoZWxscyI6IFsKICAgICAgewogICAgICAgICJrZXkiOiAiYXV0dXN3aW5nLWFzdHJvLXNoZWxsLWMwYzM2ZmQwNGQ1OGM1MTEiLAogICAgICAgICJodG1sIjogIjwhZG9jdHlwZSBodG1sPjxodG1sIGxhbmc9XCJ6aC1DTlwiPjxtZXRhIGNoYXJzZXQ9XCJ1dGYtOFwiPjxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGhcIj48bWV0YSBuYW1lPVwicm9ib3RzXCIgY29udGVudD1cIm5vaW5kZXhcIj48dGl0bGU+5pqC5pe256a757q/IMK3IEFraVNlbm48L3RpdGxlPjxzdHlsZT5ib2R5e2ZvbnQ6MThweC8xLjggc3lzdGVtLXVpO21heC13aWR0aDo0MGVtO21hcmdpbjoxNXZoIGF1dG87cGFkZGluZzoyNHB4O2JhY2tncm91bmQ6I2Y1ZjRmMDtjb2xvcjojMjQ0NjM4fWF7Y29sb3I6aW5oZXJpdH08L3N0eWxlPjxoMT7mmoLml7bnprvnur88L2gxPjxwPumHjeaWsOi/nuaOpeWQjuWIt+aWsOmhtemdou+8jOWNs+WPr+e7p+e7remYheivu+OAgjwvcD48YSBocmVmPVwiL1wiPui/lOWbnummlumhtTwvYT48L2h0bWw+IgogICAgICB9CiAgICBdLAogICAgImFjdGl2ZSI6ICJhY3RpdmF0ZWQiCiAgfSwKICAicmVhY2hlZFNlcnZlciI6IGZhbHNlLAogICJkaXJlY3RGZXRjaCI6ICJuZXR3b3JrLWVycm9yIiwKICAicmVxdWVzdHMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9tYW5pZmVzdC53ZWJtYW5pZmVzdCIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LkRfTS1EWmhYLmNzcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAzCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuYXN0cm9fYXN0cm9fdHlwZV9zY3JpcHRfaW5kZXhfMF9sYW5nLkNWVDJHY0hILmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA0CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvc3cuanMiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDUKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9vZmZsaW5lLmh0bWwiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDYKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDcKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDgKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9jb25uZWN0aW9uLWZhaWx1cmUvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IHRydWUsCiAgICAgICJzZXF1ZW5jZSI6IDkKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDEwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWFuaWZlc3Qud2VibWFuaWZlc3QiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDExCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuRF9NLURaaFguY3NzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTQKICAgIH0KICBdCn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-4cee900368e6f6e038c5",
+          "file": "pwa-network.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6178,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:56.140Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "cold-start-cache-miss",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiB7CiAgICAic2hlbGxzIjogWwogICAgICB7CiAgICAgICAgImtleSI6ICJhdXR1c3dpbmctYXN0cm8tc2hlbGwtYzBjMzZmZDA0ZDU4YzUxMSIsCiAgICAgICAgImh0bWwiOiAiPCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz1cInpoLUNOXCI+PG1ldGEgY2hhcnNldD1cInV0Zi04XCI+PG1ldGEgbmFtZT1cInZpZXdwb3J0XCIgY29udGVudD1cIndpZHRoPWRldmljZS13aWR0aFwiPjxtZXRhIG5hbWU9XCJyb2JvdHNcIiBjb250ZW50PVwibm9pbmRleFwiPjx0aXRsZT7mmoLml7bnprvnur8gwrcgQWtpU2VubjwvdGl0bGU+PHN0eWxlPmJvZHl7Zm9udDoxOHB4LzEuOCBzeXN0ZW0tdWk7bWF4LXdpZHRoOjQwZW07bWFyZ2luOjE1dmggYXV0bztwYWRkaW5nOjI0cHg7YmFja2dyb3VuZDojZjVmNGYwO2NvbG9yOiMyNDQ2Mzh9YXtjb2xvcjppbmhlcml0fTwvc3R5bGU+PGgxPuaaguaXtuemu+e6vzwvaDE+PHA+6YeN5paw6L+e5o6l5ZCO5Yi35paw6aG16Z2i77yM5Y2z5Y+v57un57ut6ZiF6K+744CCPC9wPjxhIGhyZWY9XCIvXCI+6L+U5Zue6aaW6aG1PC9hPjwvaHRtbD4iCiAgICAgIH0KICAgIF0sCiAgICAiYWN0aXZlIjogImFjdGl2YXRlZCIKICB9LAogICJyZXF1ZXN0cyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiL3VuaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiAwCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWFuaWZlc3Qud2VibWFuaWZlc3QiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vQmFzZUxheW91dC5EX00tRFpoWC5jc3MiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDMKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi9fYXN0cm8vYXZhdGFyLkRBRGJja1d6X1oyM2RoYWIud2VicCIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogNQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL3N3LmpzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA2CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvb2ZmbGluZS5odG1sIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiA3CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA4CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvaW5zdGFsbGVkLyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiB0cnVlLAogICAgICAic2VxdWVuY2UiOiA5CiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWlzc2luZy1jYWNoZS8iLAogICAgICAiZGlzY29ubmVjdGVkIjogdHJ1ZSwKICAgICAgInNlcXVlbmNlIjogMTAKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi8iLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDExCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvbWFuaWZlc3Qud2VibWFuaWZlc3QiLAogICAgICAiZGlzY29ubmVjdGVkIjogZmFsc2UsCiAgICAgICJzZXF1ZW5jZSI6IDEyCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvX2FzdHJvL0Jhc2VMYXlvdXQuRF9NLURaaFguY3NzIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxMwogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9hdmF0YXIuREFEYmNrV3pfWjIzZGhhYi53ZWJwIiwKICAgICAgImRpc2Nvbm5lY3RlZCI6IGZhbHNlLAogICAgICAic2VxdWVuY2UiOiAxNAogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL19hc3Ryby9CYXNlTGF5b3V0LmFzdHJvX2FzdHJvX3R5cGVfc2NyaXB0X2luZGV4XzBfbGFuZy5DVlQyR2NISC5qcyIsCiAgICAgICJkaXNjb25uZWN0ZWQiOiBmYWxzZSwKICAgICAgInNlcXVlbmNlIjogMTUKICAgIH0KICBdCn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a027945a927227424ac4-52664deb1b2dff4aad69",
+          "file": "pwa-network.spec.ts",
+          "line": 88,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pwa-updates.spec.ts",
+      "file": "pwa-updates.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1924,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:39.414Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-3de44955192d2833303d",
+          "file": "pwa-updates.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "PWA keeps the active version when worker and CDN offline bytes differ, then recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:41.350Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-943327d1af004069ee82",
+          "file": "pwa-updates.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:42.939Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-eccafde6a008ff470ecf",
+          "file": "pwa-updates.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:48.525Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-4b25e820fe5774b64e0c",
+          "file": "pwa-updates.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "PWA keeps the active version when worker and CDN offline bytes differ, then recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:50.929Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-31a6345ff5480e9890b1",
+          "file": "pwa-updates.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 432,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:10:53.703Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-25326ad01244185a8842",
+          "file": "pwa-updates.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:11:02.355Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-aac0ee70e4fc0bf338a9",
+          "file": "pwa-updates.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "PWA keeps the active version when worker and CDN offline bytes differ, then recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:11:16.488Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-d13b6dc944fb22ef51b6",
+          "file": "pwa-updates.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 578,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:11:17.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-68dd2dc8993bee02d93f",
+          "file": "pwa-updates.spec.ts",
+          "line": 115,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T19:10:36.672Z",
+    "duration": 41265.263,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

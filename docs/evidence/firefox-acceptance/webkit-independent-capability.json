@@ -1,0 +1,23 @@
+{
+  "mode": "native",
+  "version": "27.2",
+  "requests": [
+    "/a",
+    "/b",
+    "/a"
+  ],
+  "reveals": [
+    {
+      "path": "/a",
+      "transition": false
+    },
+    {
+      "path": "/b",
+      "transition": true
+    },
+    {
+      "path": "/a",
+      "transition": true
+    }
+  ]
+}

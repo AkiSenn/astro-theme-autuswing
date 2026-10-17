@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-10-17T18:59:17.843Z",
+  "engine": "firefox",
+  "browserVersion": "157.0",
+  "sourceCommit": "83b88e089e0bf312d20c74e5b5fb7f93be352e02",
+  "candidateReady": "b32687de169a2d2edf54c6d4ebe290dbb4ba54810e817b26c279d067baf29011",
+  "sourceArtifactDigest": "b57abdf0f0fd1318f0bf6c16602ce7bd92cafb249da694d7fd5c83982d4fb651",
+  "purpose": "Engine-specific layout metrics from sealed unchanged UI; not a new approved pixel baseline",
+  "records": [
+    {
+      "file": "motion.json",
+      "cases": 18,
+      "sha256": "47bb0f61b6554742aa617ebdfec749914cfb20c24236b10bd8504eb5e402ef26"
+    },
+    {
+      "file": "sidebar.json",
+      "cases": 16,
+      "sha256": "15feaff411dda3307e3b020e80926cdf1dd4c285fa631e93d1f4020b220fc347"
+    }
+  ]
+}

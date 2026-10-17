@@ -1,0 +1,180 @@
+{
+  "initial": {
+    "shells": [
+      {
+        "key": "autuswing-astro-shell-c0c36fd04d58c511",
+        "html": "<!doctype html><html lang=\"zh-CN\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><meta name=\"robots\" content=\"noindex\"><title>暂时离线 · AkiSenn</title><style>body{font:18px/1.8 system-ui;max-width:40em;margin:15vh auto;padding:24px;background:#f5f4f0;color:#244638}a{color:inherit}</style><h1>暂时离线</h1><p>重新连接后刷新页面，即可继续阅读。</p><a href=\"/\">返回首页</a></html>"
+      }
+    ],
+    "active": "activated"
+  },
+  "reachedServer": true,
+  "directFetch": "network-error",
+  "requests": [
+    {
+      "path": "/",
+      "disconnected": false,
+      "sequence": 0
+    },
+    {
+      "path": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "disconnected": false,
+      "sequence": 1
+    },
+    {
+      "path": "/_astro/BaseLayout.D_M-DZhX.css",
+      "disconnected": false,
+      "sequence": 2
+    },
+    {
+      "path": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CVT2GcHH.js",
+      "disconnected": false,
+      "sequence": 3
+    },
+    {
+      "path": "/sw.js",
+      "disconnected": false,
+      "sequence": 4
+    },
+    {
+      "path": "/img/apple-touch-icon.png",
+      "disconnected": false,
+      "sequence": 5
+    },
+    {
+      "path": "/img/favicon.png",
+      "disconnected": false,
+      "sequence": 6
+    },
+    {
+      "path": "/offline.html",
+      "disconnected": false,
+      "sequence": 7
+    },
+    {
+      "path": "/emulated-navigation/",
+      "disconnected": false,
+      "sequence": 8
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 9
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 10
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 11
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 12
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 13
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 14
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 15
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 16
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 17
+    },
+    {
+      "path": "/connection-failure/",
+      "disconnected": true,
+      "sequence": 18
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 19
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 20
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 21
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 22
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 23
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 24
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 25
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 26
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 27
+    },
+    {
+      "path": "/favicon.ico",
+      "disconnected": true,
+      "sequence": 28
+    },
+    {
+      "path": "/",
+      "disconnected": false,
+      "sequence": 29
+    },
+    {
+      "path": "/_astro/BaseLayout.D_M-DZhX.css",
+      "disconnected": false,
+      "sequence": 30
+    },
+    {
+      "path": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CVT2GcHH.js",
+      "disconnected": false,
+      "sequence": 31
+    },
+    {
+      "path": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "disconnected": false,
+      "sequence": 32
+    }
+  ]
+}

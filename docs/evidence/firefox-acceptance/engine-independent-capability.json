@@ -1,0 +1,30 @@
+{
+  "mode": "native",
+  "version": "155.0.4283.45",
+  "requests": [
+    "/a",
+    "/favicon.ico",
+    "/b",
+    "/favicon.ico",
+    "/a",
+    "/favicon.ico"
+  ],
+  "reveals": [
+    {
+      "path": "blank",
+      "transition": false
+    },
+    {
+      "path": "/a",
+      "transition": false
+    },
+    {
+      "path": "/b",
+      "transition": true
+    },
+    {
+      "path": "/a",
+      "transition": true
+    }
+  ]
+}

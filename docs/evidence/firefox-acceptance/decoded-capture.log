@@ -1,0 +1,16 @@
+{
+  output: '.local-tools/firefox-contracts-20261018/decoded-reference',
+  browserVersion: '157.0',
+  records: [
+    {
+      file: 'motion.json',
+      cases: 18,
+      sha256: 'cadb13e32f4e466655a63e259b0de5eb082b101acb0cfd77b52fd32becca8951'
+    },
+    {
+      file: 'sidebar.json',
+      cases: 16,
+      sha256: '22ae778b1212a1a1ba8c89ca97d5bf90ab194376649ad2b19b4af46f2ffc1528'
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 日期：2026-10-18。补验前次因浏览器启动失败而未执行的 Firefox 检查。未修改站点代码、测试断言、Markdown、部署配置或冻结视觉基准。
 
+后续处理见[Firefox 验收分类与测试修正](firefox-acceptance.md)：本页保留第一次补验记录；后续已建立能力降级和真实连接故障测试，并明确保留两项不可重复的几何参考阻断。
+
 ## 浏览器已能运行
 
 原默认缓存 `C:/Users/AutumnThousand/AppData/Local/ms-playwright/firefox-1555` 仍报 `spawn UNKNOWN`，Windows 日志记录 mozglue 从属程序集激活失败。重新从 Playwright 官方 CDN 下载同版本到项目的独立测试目录后，Firefox 157.0 成功启动。

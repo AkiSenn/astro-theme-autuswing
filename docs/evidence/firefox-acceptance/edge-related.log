@@ -1,0 +1,17 @@
+[WebServer] (node:14832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:15852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\back.spec.ts:195:1 › smart return runs the existing native content transition (1.8s)
+  ok 2 tests\browser\capabilities.spec.ts:5:1 › independent MPA probe verifies the declared native or fallback capability (749ms)
+  ok 3 tests\browser\motion.spec.ts:78:1 › native transitions keep the correct navigation shell across responsive layouts (8.0s)
+  ok 4 tests\browser\motion.spec.ts:150:1 › native MPA transitions use only the content group and refresh article state (1.9s)
+  ok 5 tests\browser\motion.spec.ts:382:1 › actual transition frames preserve the live shell and selected appearance (2.0s)
+  ok 6 tests\browser\motion.spec.ts:474:1 › responsive layout geometry is unchanged after motion cleanup (4.2s)
+  ok 7 tests\browser\sidebar-bottom.spec.ts:174:1 › footer, mini rail, profile, navigation and content remain equal to their own browser baseline (4.4s)
+  ok 8 tests\browser\state.spec.ts:85:1 › PWA installs its own shell cache and returns the offline page (518ms)
+
+  8 passed (27.5s)

@@ -1,0 +1,554 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.cross.config.ts",
+      "--project",
+      "webkit",
+      "--grep",
+      "native transitions keep|native MPA transitions|actual transition frames|responsive layout geometry|own browser baseline|smart return runs|PWA installs|independent MPA",
+      "--output",
+      ".local-tools/firefox-contracts-20261018/webkit-related-results"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.cross.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/webkit-related-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-contracts-20261018/webkit-related-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-contracts-20261018\\webkit-related-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "E:\\autuswing-astro\\tests\\browser",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local-tools/firefox-contracts-20261018/webkit-related.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "back.spec.ts",
+      "file": "back.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "smart return runs the existing native content transition",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:16:27.000Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "039cd3c1d3574a6b7cb6-4862e300cf63d6e770ad",
+          "file": "back.spec.ts",
+          "line": 195,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "capabilities.spec.ts",
+      "file": "capabilities.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "independent MPA probe verifies the declared native or fallback capability",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:16:44.311Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "independent-capability",
+                      "contentType": "application/json",
+                      "body": "ewogICJtb2RlIjogIm5hdGl2ZSIsCiAgInZlcnNpb24iOiAiMjcuMiIsCiAgInJlcXVlc3RzIjogWwogICAgIi9hIiwKICAgICIvYiIsCiAgICAiL2EiCiAgXSwKICAicmV2ZWFscyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiL2EiLAogICAgICAidHJhbnNpdGlvbiI6IGZhbHNlCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICIvYiIsCiAgICAgICJ0cmFuc2l0aW9uIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAiL2EiLAogICAgICAidHJhbnNpdGlvbiI6IHRydWUKICAgIH0KICBdCn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6bcb5a9b4e27408c434c-447171d567201f436a67",
+          "file": "capabilities.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "motion.spec.ts",
+      "file": "motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native transitions keep the correct navigation shell across responsive layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                },
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:16:56.796Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    },
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-356be6c2ec57d60dc92c",
+          "file": "motion.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:17:17.497Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-9600a82fef27ddc60675",
+          "file": "motion.spec.ts",
+          "line": 150,
+          "column": 1
+        },
+        {
+          "title": "actual transition frames preserve the live shell and selected appearance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "transition-contract",
+                  "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:17:30.746Z",
+                  "annotations": [
+                    {
+                      "type": "transition-contract",
+                      "description": "{\"mode\":\"native\",\"capabilities\":{\"sameDocument\":true,\"pageReveal\":true,\"pageSwap\":true,\"cssRule\":true,\"navigationAuto\":true}}"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-027613103b2a093e0394",
+          "file": "motion.spec.ts",
+          "line": 382,
+          "column": 1
+        },
+        {
+          "title": "responsive layout geometry is unchanged after motion cleanup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:17:40.611Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-133e435d916f760924d0",
+          "file": "motion.spec.ts",
+          "line": 474,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sidebar-bottom.spec.ts",
+      "file": "sidebar-bottom.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5231,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:17:56.838Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44dd3ac8c00d68d80a37-0c808f4a1b635e9c7831",
+          "file": "sidebar-bottom.spec.ts",
+          "line": 174,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "state.spec.ts",
+      "file": "state.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PWA installs its own shell cache and returns the offline page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 646,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T19:18:02.096Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a6e30a38a18b2ee3fb04-a0ec12a075d2df5ecd8d",
+          "file": "state.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T19:16:24.773Z",
+    "duration": 98437.984,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

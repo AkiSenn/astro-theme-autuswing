@@ -1,0 +1,69 @@
+[
+  {
+    "name": "PageRevealEvent",
+    "url": "https://raw.githubusercontent.com/mdn/browser-compat-data/main/api/PageRevealEvent.json",
+    "checkedAt": "2026-10-17T19:21:29.495Z",
+    "sourceSha256": "ab5a8e4a355ad148838bdb24689e4f0ebfcf3c1b364f911fbc5031618aba8ecf",
+    "support": {
+      "chrome": {
+        "version_added": "123"
+      },
+      "chrome_android": "mirror",
+      "edge": "mirror",
+      "firefox": {
+        "version_added": false,
+        "impl_url": "https://bugzil.la/1860854"
+      },
+      "firefox_android": "mirror",
+      "oculus": "mirror",
+      "opera": "mirror",
+      "opera_android": "mirror",
+      "safari": {
+        "version_added": "18.2"
+      },
+      "safari_ios": "mirror",
+      "samsunginternet_android": "mirror",
+      "webview_android": "mirror",
+      "webview_ios": "mirror"
+    },
+    "status": {
+      "experimental": false,
+      "standard_track": true,
+      "deprecated": false
+    }
+  },
+  {
+    "name": "view-transition",
+    "url": "https://raw.githubusercontent.com/mdn/browser-compat-data/main/css/at-rules/view-transition.json",
+    "checkedAt": "2026-10-17T19:21:29.827Z",
+    "sourceSha256": "aea17d18fe2482970807d44d29e8d63805098876fcde2b54deadb6f9ef1bc635",
+    "support": {
+      "chrome": {
+        "version_added": "126"
+      },
+      "chrome_android": "mirror",
+      "edge": "mirror",
+      "firefox": {
+        "version_added": false,
+        "impl_url": "https://bugzil.la/1860854"
+      },
+      "firefox_android": "mirror",
+      "oculus": "mirror",
+      "opera": "mirror",
+      "opera_android": "mirror",
+      "safari": {
+        "version_added": "18.2",
+        "impl_url": "https://webkit.org/b/278247"
+      },
+      "safari_ios": "mirror",
+      "samsunginternet_android": "mirror",
+      "webview_android": "mirror",
+      "webview_ios": "mirror"
+    },
+    "status": {
+      "experimental": false,
+      "standard_track": true,
+      "deprecated": false
+    }
+  }
+]

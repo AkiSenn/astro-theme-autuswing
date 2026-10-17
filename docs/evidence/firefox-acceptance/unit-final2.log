@@ -1,0 +1,324 @@
+
+> astro-theme-autuswing@0.2.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: back resolves home, archive, taxonomy and an earlier article by browser-owned entry key
+ok 1 - back resolves home, archive, taxonomy and an earlier article by browser-owned entry key
+  ---
+  duration_ms: 2.8534
+  type: 'test'
+  ...
+# Subtest: back skips article fragments and repeated visits to the same article after reload
+ok 2 - back skips article fragments and repeated visits to the same article after reload
+  ---
+  duration_ms: 0.5975
+  type: 'test'
+  ...
+# Subtest: direct entries, same-document-only history and forward entries do not invent a destination
+ok 3 - direct entries, same-document-only history and forward entries do not invent a destination
+  ---
+  duration_ms: 0.6055
+  type: 'test'
+  ...
+# Subtest: back refuses foreign origins, missing URLs, missing entry keys and gaps
+ok 4 - back refuses foreign origins, missing URLs, missing entry keys and gaps
+  ---
+  duration_ms: 0.445
+  type: 'test'
+  ...
+# Subtest: same-document support alone cannot select the native cross-document contract
+ok 5 - same-document support alone cannot select the native cross-document contract
+  ---
+  duration_ms: 1.7053
+  type: 'test'
+  ...
+# Subtest: Firefox layout references are independent of Edge and have immutable capture provenance
+ok 6 - Firefox layout references are independent of Edge and have immutable capture provenance
+  ---
+  duration_ms: 3.1194
+  type: 'test'
+  ...
+# Subtest: reference validation rejects engine substitution, byte edits and provisional captures
+ok 7 - reference validation rejects engine substitution, byte edits and provisional captures
+  ---
+  duration_ms: 0.6966
+  type: 'test'
+  ...
+# [1:1-1:24: Failed to parse Markdown file "undefined":
+# Unsupported Hexo tag syntax; migrate it explicitly before building] {
+#   ancestors: [
+#     {
+#       type: 'text',
+#       value: '{% unsupported value %}',
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 24, offset: 23 }
+#   },
+#   reason: 'Unsupported Hexo tag syntax; migrate it explicitly before building',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# Subtest: public IDs are persistent; explicit URLs and leading zeros are retained
+ok 8 - public IDs are persistent; explicit URLs and leading zeros are retained
+  ---
+  duration_ms: 1.6364
+  type: 'test'
+  ...
+# Subtest: new posts use root IDs while legacy links retain /post/
+ok 9 - new posts use root IDs while legacy links retain /post/
+  ---
+  duration_ms: 0.2815
+  type: 'test'
+  ...
+# Subtest: route collisions include case, percent encoding and index.html
+ok 10 - route collisions include case, percent encoding and index.html
+  ---
+  duration_ms: 0.5248
+  type: 'test'
+  ...
+# Subtest: YAML keeps dates and numeric-looking identifiers in their original semantics
+ok 11 - YAML keeps dates and numeric-looking identifiers in their original semantics
+  ---
+  duration_ms: 4.136
+  type: 'test'
+  ...
+# Subtest: dates use Shanghai offsets independent of the process TZ
+ok 12 - dates use Shanghai offsets independent of the process TZ
+  ---
+  duration_ms: 30.2141
+  type: 'test'
+  ...
+# Subtest: search is NFKC, multi-term AND and weighted title/tags/content
+ok 13 - search is NFKC, multi-term AND and weighted title/tags/content
+  ---
+  duration_ms: 2.1642
+  type: 'test'
+  ...
+# Subtest: all four TeX delimiters survive Markdown; code stays opaque
+ok 14 - all four TeX delimiters survive Markdown; code stays opaque
+  ---
+  duration_ms: 76.7497
+  type: 'test'
+  ...
+# Subtest: headings stay unique, h1 becomes h2 and autospace leaves code intact
+ok 15 - headings stay unique, h1 becomes h2 and autospace leaves code intact
+  ---
+  duration_ms: 5.6778
+  type: 'test'
+  ...
+# Subtest: unsupported Hexo tags fail explicitly, fenced examples are accepted
+ok 16 - unsupported Hexo tags fail explicitly, fenced examples are accepted
+  ---
+  duration_ms: 6.3596
+  type: 'test'
+  ...
+# Subtest: redirect manifest has one rule per path, stable 301 targets
+ok 17 - redirect manifest has one rule per path, stable 301 targets
+  ---
+  duration_ms: 1.3473
+  type: 'test'
+  ...
+# Subtest: the non-public Markdown sample covers the real renderer without losing code or anchors
+ok 18 - the non-public Markdown sample covers the real renderer without losing code or anchors
+  ---
+  duration_ms: 329.1652
+  type: 'test'
+  ...
+# Subtest: code metadata cannot inject markup or contaminate copied source
+ok 19 - code metadata cannot inject markup or contaminate copied source
+  ---
+  duration_ms: 43.2694
+  type: 'test'
+  ...
+# [1:1-1:221: Failed to parse Markdown file "undefined":
+# KaTeX failed in "Compatibility fixture" for "\\\\UnknownHistoricalCommand{x}": KaTeX parse error: Undefined control sequence: \\UnknownHistoricalCommand at position 1: \\̲U̲n̲k̲n̲o̲w̲n̲H̲i̲s̲t̲o̲r̲i̲c̲a̲l̲C̲o̲m̲m̲a̲n̲d̲{x}. Review the command before considering MathJax; no automatic fallback was applied.] {
+#   ancestors: [
+#     {
+#       type: 'element',
+#       tagName: 'span',
+#       properties: [Object],
+#       children: [Array],
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 221, offset: 220 }
+#   },
+#   reason: 'KaTeX failed in "Compatibility fixture" for "\\\\\\\\UnknownHistoricalCommand{x}": KaTeX parse error: Undefined control sequence: \\\\UnknownHistoricalCommand at position 1: \\\\̲U̲n̲k̲n̲o̲w̲n̲H̲i̲s̲t̲o̲r̲i̲c̲a̲l̲C̲o̲m̲m̲a̲n̲d̲{x}. Review the command before considering MathJax; no automatic fallback was applied.',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# [1:1-1:132: Failed to parse Markdown file "undefined":
+# KaTeX failed in "untitled article" for "\\\\PrivateMacro": KaTeX parse error: Undefined control sequence: \\PrivateMacro at position 1: \\̲P̲r̲i̲v̲a̲t̲e̲M̲a̲c̲r̲o̲. Review the command before considering MathJax; no automatic fallback was applied.] {
+#   ancestors: [
+#     {
+#       type: 'element',
+#       tagName: 'span',
+#       properties: [Object],
+#       children: [Array],
+#       position: [Object]
+#     }
+#   ],
+#   cause: undefined,
+#   column: 1,
+#   fatal: true,
+#   file: '',
+#   line: 1,
+#   place: {
+#     start: { line: 1, column: 1, offset: 0 },
+#     end: { line: 1, column: 132, offset: 131 }
+#   },
+#   reason: 'KaTeX failed in "untitled article" for "\\\\\\\\PrivateMacro": KaTeX parse error: Undefined control sequence: \\\\PrivateMacro at position 1: \\\\̲P̲r̲i̲v̲a̲t̲e̲M̲a̲c̲r̲o̲. Review the command before considering MathJax; no automatic fallback was applied.',
+#   ruleId: undefined,
+#   source: undefined,
+#   actual: undefined,
+#   expected: undefined,
+#   note: undefined,
+#   url: undefined
+# }
+# Subtest: scanner recognizes four delimiters and ignores code, HTML attributes and currency examples
+ok 20 - scanner recognizes four delimiters and ignores code, HTML attributes and currency examples
+  ---
+  duration_ms: 4.8546
+  type: 'test'
+  ...
+# Subtest: legacy flags enable KaTeX while explicit opt-out and global disable are honored
+ok 21 - legacy flags enable KaTeX while explicit opt-out and global disable are honored
+  ---
+  duration_ms: 5.6964
+  type: 'test'
+  ...
+# Subtest: unmarked and legacy-marked posts render HTML and accessible MathML at build time
+ok 22 - unmarked and legacy-marked posts render HTML and accessible MathML at build time
+  ---
+  duration_ms: 63.9425
+  type: 'test'
+  ...
+# Subtest: unsupported commands fail explicitly and identify the article and expression
+ok 23 - unsupported commands fail explicitly and identify the article and expression
+  ---
+  duration_ms: 5.7285
+  type: 'test'
+  ...
+# Subtest: macro state is shared within an article and isolated between articles
+ok 24 - macro state is shared within an article and isolated between articles
+  ---
+  duration_ms: 8.5403
+  type: 'test'
+  ...
+# Subtest: search text retains the original expression once, without visual/MathML duplication
+ok 25 - search text retains the original expression once, without visual/MathML duplication
+  ---
+  duration_ms: 7.819
+  type: 'test'
+  ...
+# Subtest: worker changes exactly when offline shell content/enabled state changes
+ok 26 - worker changes exactly when offline shell content/enabled state changes
+  ---
+  duration_ms: 1.8508
+  type: 'test'
+  ...
+# Subtest: offline shell updates and removes only owned historical caches
+ok 27 - offline shell updates and removes only owned historical caches
+  ---
+  duration_ms: 72.8177
+  type: 'test'
+  ...
+# Subtest: mismatched CDN offline bytes reject installation and preserve the working cache
+ok 28 - mismatched CDN offline bytes reject installation and preserve the working cache
+  ---
+  duration_ms: 7.7816
+  type: 'test'
+  ...
+# Subtest: disabling PWA cleans only its own shell and does not intercept fetch
+ok 29 - disabling PWA cleans only its own shell and does not intercept fetch
+  ---
+  duration_ms: 3.2968
+  type: 'test'
+  ...
+# Subtest: manifest icons reuse the original artwork at exact sizes with a compact safe maskable asset
+ok 30 - manifest icons reuse the original artwork at exact sizes with a compact safe maskable asset
+  ---
+  duration_ms: 319.3768
+  type: 'test'
+  ...
+# Subtest: build modes are explicit; production requires the approved HTTPS origin
+ok 31 - build modes are explicit; production requires the approved HTTPS origin
+  ---
+  duration_ms: 1.758
+  type: 'test'
+  ...
+# Subtest: HTTP verification rejects stale CDN bytes even when the URL and metadata still match
+ok 32 - HTTP verification rejects stale CDN bytes even when the URL and metadata still match
+  ---
+  duration_ms: 2.055
+  type: 'test'
+  ...
+# Subtest: release seal detects missing, changed, extra files and metadata; older packages remain verifiable
+ok 33 - release seal detects missing, changed, extra files and metadata; older packages remain verifiable
+  ---
+  duration_ms: 235.7997
+  type: 'test'
+  ...
+# Subtest: calendar validation rejects normalization for both legacy and zoned dates
+ok 34 - calendar validation rejects normalization for both legacy and zoned dates
+  ---
+  duration_ms: 22.0187
+  type: 'test'
+  ...
+# Subtest: schema is strict about mistakes, permissive about optional writing metadata
+ok 35 - schema is strict about mistakes, permissive about optional writing metadata
+  ---
+  duration_ms: 6.6207
+  type: 'test'
+  ...
+# Subtest: all templates persist unique root IDs and default to draft without overwriting
+ok 36 - all templates persist unique root IDs and default to draft without overwriting
+  ---
+  duration_ms: 51.0754
+  type: 'test'
+  ...
+# Subtest: publication checks detect missing resources, anchors, IDs and warn about alt without rewriting
+ok 37 - publication checks detect missing resources, anchors, IDs and warn about alt without rewriting
+  ---
+  duration_ms: 90.7215
+  type: 'test'
+  ...
+# Subtest: external HTTP audit is opt-in and treats restrictions differently from missing pages
+ok 38 - external HTTP audit is opt-in and treats restrictions differently from missing pages
+  ---
+  duration_ms: 37.1142
+  type: 'test'
+  ...
+1..38
+# tests 38
+# suites 0
+# pass 38
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2497.3955

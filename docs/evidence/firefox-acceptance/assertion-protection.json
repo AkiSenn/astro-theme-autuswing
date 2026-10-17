@@ -1,0 +1,115 @@
+{
+  "originalTests": 85,
+  "currentTests": 86,
+  "removedTests": 0,
+  "increasedTimeouts": 0,
+  "retries": 0,
+  "skips": 0,
+  "failedBefore": [
+    {
+      "name": "smart return runs the existing native content transition",
+      "before": {
+        "name": "smart return runs the existing native content transition",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "smart return runs the existing native content transition",
+        "timeout": 30000,
+        "status": "expected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "native transitions keep the correct navigation shell across responsive layouts",
+      "before": {
+        "name": "native transitions keep the correct navigation shell across responsive layouts",
+        "timeout": 60000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "native transitions keep the correct navigation shell across responsive layouts",
+        "timeout": 60000,
+        "status": "expected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "native MPA transitions use only the content group and refresh article state",
+      "before": {
+        "name": "native MPA transitions use only the content group and refresh article state",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "native MPA transitions use only the content group and refresh article state",
+        "timeout": 30000,
+        "status": "expected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "actual transition frames preserve the live shell and selected appearance",
+      "before": {
+        "name": "actual transition frames preserve the live shell and selected appearance",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "actual transition frames preserve the live shell and selected appearance",
+        "timeout": 30000,
+        "status": "expected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "responsive layout geometry is unchanged after motion cleanup",
+      "before": {
+        "name": "responsive layout geometry is unchanged after motion cleanup",
+        "timeout": 90000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "responsive layout geometry is unchanged after motion cleanup",
+        "timeout": 90000,
+        "status": "unexpected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+      "before": {
+        "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      }
+    },
+    {
+      "name": "PWA installs its own shell cache and returns the offline page",
+      "before": {
+        "name": "PWA installs its own shell cache and returns the offline page",
+        "timeout": 30000,
+        "status": "unexpected",
+        "attempts": 1
+      },
+      "after": {
+        "name": "PWA installs its own shell cache and returns the offline page",
+        "timeout": 30000,
+        "status": "expected",
+        "attempts": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  output: 'tests/fixtures/firefox-layout',
+  browserVersion: '157.0',
+  records: [
+    {
+      file: 'motion.json',
+      cases: 18,
+      sha256: '47bb0f61b6554742aa617ebdfec749914cfb20c24236b10bd8504eb5e402ef26'
+    },
+    {
+      file: 'sidebar.json',
+      cases: 16,
+      sha256: '15feaff411dda3307e3b020e80926cdf1dd4c285fa631e93d1f4020b220fc347'
+    }
+  ]
+}

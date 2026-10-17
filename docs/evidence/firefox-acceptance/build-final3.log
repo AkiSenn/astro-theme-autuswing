@@ -1,0 +1,67 @@
+
+> astro-theme-autuswing@0.2.0 build:preview
+> node scripts/build-preview.mjs
+
+03:32:31 [vite] Re-optimizing dependencies because vite config has changed
+03:32:31 [content] Syncing content
+03:32:32 [content] Synced content
+03:32:32 [types] Generated 1.35s
+03:32:32 [build] output: "static"
+03:32:32 [build] mode: "static"
+03:32:32 [build] directory: E:\autuswing-astro\dist\
+03:32:32 [build] Collecting build info...
+03:32:32 [build] ✓ Completed in 1.69s.
+03:32:32 [build] Building static entrypoints...
+03:32:32 [vite] ✓ built in 306ms
+03:32:33 [vite] ✓ built in 334ms
+03:32:33 [build] Rearranging server assets...
+
+ generating static routes 
+03:32:33   ├─ /404.html (+28ms) 
+03:32:33   ├─ /atom.xml (+8ms) 
+03:32:33   ├─ /manifest.webmanifest (+4ms) 
+03:32:33   ├─ /offline.html (+4ms) 
+03:32:33   ├─ /pwa/icon-192.563589a49d6a5dac.webp/ (+4ms) 
+03:32:33   ├─ /pwa/icon-512.56b4186141900e87.webp/ (+2ms) 
+03:32:33   ├─ /pwa/maskable-512.d66440e0c40f797c.webp/ (+3ms) 
+03:32:33   ├─ /robots.txt (+3ms) 
+03:32:33   ├─ /rss.xml (+71ms) 
+03:32:33   ├─ /search.json (+10ms) 
+03:32:33   ├─ /sw.js (+5ms) 
+03:32:33   ├─ /index.html (+12ms) 
+03:32:33   ├─ /archives/index.html (+6ms) 
+03:32:33   ├─ /archives/2022/index.html (+4ms) 
+03:32:33   ├─ /archives/2022/01/index.html (+4ms) 
+03:32:33   ├─ /archives/2020/index.html (+3ms) 
+03:32:33   ├─ /archives/2020/10/index.html (+4ms) 
+03:32:33   ├─ /tags/index.html (+4ms) 
+03:32:33   ├─ /tags/数学公式/index.html (+5ms) 
+03:32:33   ├─ /tags/网站/index.html (+3ms) 
+03:32:33   ├─ /tags/写作/index.html (+4ms) 
+03:32:33   ├─ /tags/AutuSwing/index.html (+3ms) 
+03:32:33   ├─ /tags/Cloudflare/index.html (+2ms) 
+03:32:33   ├─ /tags/GitHub/index.html (+4ms) 
+03:32:33   ├─ /tags/Hexo/index.html (+3ms) 
+03:32:33   ├─ /tags/HexoThemes/index.html (+3ms) 
+03:32:33   ├─ /tags/MathJax/index.html (+3ms) 
+03:32:33   ├─ /tags/Pages/index.html (+2ms) 
+03:32:33   ├─ /tags/Workers/index.html (+6ms) 
+03:32:33   ├─ /categories/index.html (+3ms) 
+03:32:33   ├─ /categories/功能演示/index.html (+4ms) 
+03:32:33   ├─ /categories/网站建设/index.html (+3ms) 
+03:32:33   ├─ /post/55b0541c/index.html (+8ms) 
+03:32:33   ├─ /post/4c6caf67/index.html (+4ms) 
+03:32:33   ├─ /post/4e395565/index.html (+3ms) 
+03:32:33   ├─ /about/index.html (+7ms) 
+03:32:33   ├─ /links/index.html (+4ms) 
+03:32:33 ✓ Completed in 564ms.
+
+ generating optimized images 
+03:32:33   ▶ /_astro/avatar.DADbckWz_Z23dhab.webp (reused cache entry) (+2ms) (1/2)
+03:32:33   ▶ /_astro/avatar.DADbckWz_Z2bfHLu.webp (reused cache entry) (+1ms) (2/2)
+03:32:33 ✓ Completed in 4ms.
+
+03:32:33 [build] ✓ Completed in 1.28s.
+03:32:33 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+03:32:34 [build] 27 page(s) built in 3.51s
+03:32:34 [build] Complete!

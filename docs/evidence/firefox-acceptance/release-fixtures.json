@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-10-17T19:32:14.904Z",
+  "workspace": "E:\\autuswing-astro\\.local-tools\\release-fixtures-vcbVHE",
+  "cases": [
+    {
+      "name": "fourth-article-full-release",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "existing-candidate-not-overwritten",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "nginx-production-without-seal-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "nginx-verified-production-candidate",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "sealed-artifact-missing-and-mixed-files",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "delete-fourth-rebuild",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "delete-fourth-verify",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "old-release-verifies-after-source-deletion-for-rollback",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "duplicate-id-release",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "invalid-route-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "preview-build",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "preview-cannot-pass-production",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "production-build",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "production-verify",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "global-meta-noindex-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-canonical-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "robots-disallow-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "x-robots-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-sitemap-entry-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-search-membership-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-sitemap-lastmod-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "rss-unidentified-extra-item-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "lost-historical-formulas-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "404-noindex-exception-required",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "stale-draft-html-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-collection-entry-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-content-route-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "changed-inputs-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-production-origin-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "development-static-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "cli-site-override-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "unknown-mode-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "restored-production-output",
+      "expected": "success",
+      "passed": true
+    }
+  ]
+}

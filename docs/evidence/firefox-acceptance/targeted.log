@@ -1,0 +1,109 @@
+[WebServer] (node:21804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:8492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [firefox] › tests\browser\back.spec.ts:195:1 › smart return runs the existing native content transition (2.1s)
+  ok 2 [firefox] › tests\browser\capabilities.spec.ts:5:1 › independent MPA probe verifies the declared native or fallback capability (557ms)
+  ok 3 [firefox] › tests\browser\motion.spec.ts:77:1 › native transitions keep the correct navigation shell across responsive layouts (4.7s)
+  ok 4 [firefox] › tests\browser\motion.spec.ts:148:1 › native MPA transitions use only the content group and refresh article state (1.4s)
+  ok 5 [firefox] › tests\browser\motion.spec.ts:380:1 › actual transition frames preserve the live shell and selected appearance (1.9s)
+  x  6 [firefox] › tests\browser\motion.spec.ts:470:1 › responsive layout geometry is unchanged after motion cleanup (1.0s)
+(node:38028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  7 [firefox] › tests\browser\sidebar-bottom.spec.ts:173:1 › footer, mini rail, profile, navigation and content remain equal to their own browser baseline (2.6s)
+(node:13156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 8 [firefox] › tests\browser\state.spec.ts:85:1 › PWA installs its own shell cache and returns the offline page (1.6s)
+
+
+  1) [firefox] › tests\browser\motion.spec.ts:470:1 › responsive layout geometry is unchanged after motion cleanup 
+
+    Error: /post/55b0541c/ 320x640 .article-layout
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,11 +4,11 @@
+          "border": "0px rgb(225, 233, 223)",
+          "color": "rgb(225, 233, 223)",
+          "display": "block",
+          "fontSize": "15px",
+          "gap": "(inactive)",
+    -     "height": 24685.982421875,
+    +     "height": 24669.982421875,
+          "lineHeight": "25.5px",
+          "padding": "0px",
+          "width": 320,
+          "x": 0,
+          "y": 135,
+
+      511 |         activeLayoutMetrics(regions[selector]),
+      512 |         `${sample.path} ${sample.width}x${sample.height} ${selector}`,
+    > 513 |       ).toEqual(activeLayoutMetrics(sample.regions[selector]));
+          |         ^
+      514 |     }
+      515 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      516 |       true,
+        at E:\autuswing-astro\tests\browser\motion.spec.ts:513:9
+
+    Error Context: .local-tools\firefox-contracts-20261018\targeted-results\motion-responsive-layout-g-ddcbc-hanged-after-motion-cleanup-firefox\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\firefox-contracts-20261018\targeted-results\motion-responsive-layout-g-ddcbc-hanged-after-motion-cleanup-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\firefox-contracts-20261018\targeted-results\motion-responsive-layout-g-ddcbc-hanged-after-motion-cleanup-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › tests\browser\sidebar-bottom.spec.ts:173:1 › footer, mini rail, profile, navigation and content remain equal to their own browser baseline 
+
+    Error: firefox 320 /post/55b0541c/ .article-layout
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,11 +4,11 @@
+          "border": "0px rgb(225, 233, 223)",
+          "color": "rgb(225, 233, 223)",
+          "display": "block",
+          "fontSize": "15px",
+          "gap": "(inactive)",
+    -     "height": 24669.982421875,
+    +     "height": 24685.982421875,
+          "lineHeight": "25.5px",
+          "padding": "0px",
+          "width": 320,
+          "x": 0,
+          "y": 135,
+
+      205 |         activeLayoutMetrics(actual),
+      206 |         `${engine} ${item.width} ${item.path} ${selector}`,
+    > 207 |       ).toEqual(activeLayoutMetrics(expected as typeof actual));
+          |         ^
+      208 |     }
+      209 |   }
+      210 | });
+        at E:\autuswing-astro\tests\browser\sidebar-bottom.spec.ts:207:9
+
+    Error Context: .local-tools\firefox-contracts-20261018\targeted-results\sidebar-bottom-footer-mini-451ea--their-own-browser-baseline-firefox\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\firefox-contracts-20261018\targeted-results\sidebar-bottom-footer-mini-451ea--their-own-browser-baseline-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\firefox-contracts-20261018\targeted-results\sidebar-bottom-footer-mini-451ea--their-own-browser-baseline-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [firefox] › tests\browser\motion.spec.ts:470:1 › responsive layout geometry is unchanged after motion cleanup 
+    [firefox] › tests\browser\sidebar-bottom.spec.ts:173:1 › footer, mini rail, profile, navigation and content remain equal to their own browser baseline 
+  6 passed (23.6s)

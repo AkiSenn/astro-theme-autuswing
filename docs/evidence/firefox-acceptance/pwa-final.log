@@ -1,0 +1,58 @@
+
+Running 15 tests using 1 worker
+
+(node:37916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [edge] › tests\deployment\pwa-network.spec.ts:35:1 › offline emulation is characterized separately from actual Worker connection failure (938ms)
+  x   2 [edge] › tests\deployment\pwa-network.spec.ts:90:1 › cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503 (273ms)
+(node:19520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  3 [edge] › tests\deployment\pwa-updates.spec.ts:6:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work (3.0s)
+  ok  4 [edge] › tests\deployment\pwa-updates.spec.ts:70:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers (1.6s)
+  ok  5 [edge] › tests\deployment\pwa-updates.spec.ts:115:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available (1.3s)
+(node:9880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [firefox] › tests\deployment\pwa-network.spec.ts:35:1 › offline emulation is characterized separately from actual Worker connection failure (1.7s)
+  ok  7 [firefox] › tests\deployment\pwa-network.spec.ts:90:1 › cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503 (1.1s)
+  ok  8 [firefox] › tests\deployment\pwa-updates.spec.ts:6:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work (2.5s)
+  ok  9 [firefox] › tests\deployment\pwa-updates.spec.ts:70:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers (2.8s)
+  ok 10 [firefox] › tests\deployment\pwa-updates.spec.ts:115:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available (453ms)
+(node:40464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 11 [webkit] › tests\deployment\pwa-network.spec.ts:35:1 › offline emulation is characterized separately from actual Worker connection failure (5.1s)
+  ok 12 [webkit] › tests\deployment\pwa-network.spec.ts:90:1 › cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503 (16.4s)
+  ok 13 [webkit] › tests\deployment\pwa-updates.spec.ts:6:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work (6.5s)
+  ok 14 [webkit] › tests\deployment\pwa-updates.spec.ts:70:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers (706ms)
+  ok 15 [webkit] › tests\deployment\pwa-updates.spec.ts:115:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available (573ms)
+
+
+  1) [edge] › tests\deployment\pwa-network.spec.ts:90:1 › cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503 
+
+    Error: page.goto: Navigation to "http://127.0.0.1:50372/" is interrupted by another navigation to "chrome-error://chromewebdata/"
+    Call log:
+      - navigating to "http://127.0.0.1:50372/", waiting until "load"
+
+
+      3 |
+      4 | async function controlled(page: Page, origin: string) {
+    > 5 |   await page.goto(origin);
+        |              ^
+      6 |   await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
+      7 |   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+      8 |   expect(
+        at controlled (E:\autuswing-astro\tests\deployment\pwa-network.spec.ts:5:14)
+        at E:\autuswing-astro\tests\deployment\pwa-network.spec.ts:100:11
+
+    Error Context: .local-tools\firefox-contracts-20261018\pwa-results\pwa-network-cold-start-req-829ca--cache-returns-explicit-503-edge\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\firefox-contracts-20261018\pwa-results\pwa-network-cold-start-req-829ca--cache-returns-explicit-503-edge\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\firefox-contracts-20261018\pwa-results\pwa-network-cold-start-req-829ca--cache-returns-explicit-503-edge\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [edge] › tests\deployment\pwa-network.spec.ts:90:1 › cold start requires installation; cached navigation survives failure and an empty cache returns explicit 503 
+  14 passed (49.8s)

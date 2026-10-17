@@ -1,0 +1,30 @@
+{
+  "sameNodeCount": true,
+  "nodeCount": 1693,
+  "viewportWidth": 320,
+  "article": {
+    "before": 25520.150390625,
+    "after": 25504.150390625,
+    "difference": 16
+  },
+  "codeLineCount": 160,
+  "lineHeightDifference": 16.000015258789062,
+  "firstLines": [
+    {
+      "before": 23.5,
+      "after": 23.400009155273438
+    },
+    {
+      "before": 23.5,
+      "after": 23.399993896484375
+    },
+    {
+      "before": 23.5,
+      "after": 23.400009155273438
+    },
+    {
+      "before": 23.5,
+      "after": 23.399993896484375
+    }
+  ]
+}
