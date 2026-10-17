@@ -1,0 +1,1125 @@
+{
+  "capturedBeforeCssChanges": true,
+  "sourceCommit": "f111e47",
+  "platform": "win32",
+  "osRelease": "10.0.26300",
+  "node": "v22.23.2",
+  "playwright": "1.64.1",
+  "edge": "155.0.4283.45",
+  "css": [
+    {
+      "file": "legacy.css",
+      "sha256": "5054a290f5faf600c63755d3b6f5d6f29841b611ce24dfc7891c09607b4a5b88"
+    },
+    {
+      "file": "astro.css",
+      "sha256": "704f685b6a0742923e13221241d438f6d41b965407372fa8b3e064794c9dcae2"
+    },
+    {
+      "file": "responsive.css",
+      "sha256": "170e2768d2788c3c17f477f46ae2073726b39edbced187129bd61038aaf3b2c7"
+    },
+    {
+      "file": "visual.css",
+      "sha256": "442a8cd335ad03b22b069aefd317203ce924983cf56cb63bde72049f75beaf0e"
+    },
+    {
+      "file": "motion.css",
+      "sha256": "398dba5cf59fc350d4275e81d85e1feb06535ad01a191b97dee76b417d346644"
+    }
+  ],
+  "initialCapture": {
+    "cases": 90,
+    "passed": 86,
+    "screenshotTimeouts": 4
+  },
+  "supplementalCapture": {
+    "cases": 20,
+    "passed": 20,
+    "report": "baseline-supplement.json"
+  },
+  "note": "Initial 5s WebKit screenshot timeouts were resolved with a 20s assertion timeout before any CSS change. Capture runs now execute serially to avoid output-directory collisions. Fixture-only initial run: 5 passed, 1 timeout; all fixtures passed in supplement.",
+  "uniqueCases": 102,
+  "images": [
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-1920.png",
+      "sha256": "ec773c0067aa9550571991c211f62403450e3b41320acc71fe390957d1d56f6b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-390.png",
+      "sha256": "49279d85cdc689d458f7980e4c08ce6168a318d90c96dbd4a27b649e47292b4c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-820.png",
+      "sha256": "8b066703e9594fc184e53a19a43418673b412ea4e12ff93ddf00dbd65832480f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-1920.png",
+      "sha256": "fa944baba72b8e9583abeeb7e5bdd295e8a2eacaeb7b15d17ff56e36f543cf69"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-390.png",
+      "sha256": "9842d44365e23a49f9be1e28e131d4d783d2f8057459def6ddfef7d5d4c057c7"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-820.png",
+      "sha256": "f77d8aa509af4ac2e3294ab392c37877173b53f76f7ecead77844faf804535f5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1024x768-dark.png",
+      "sha256": "e2688c3e4c22561ccbf0898928638744627d18f9b6b54058fd88f5edb6d5ea46"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1024x768-light.png",
+      "sha256": "9655e755a429124075f99bfefa6b76624fede4942faf90f4dda01f950ebc41d7"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1180x820-dark.png",
+      "sha256": "8872b92e61f5014e214641f4d7d8b8dfb7b586bb0cfda493df60799b0eaadda5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1180x820-light.png",
+      "sha256": "b1e94cb511c5baa16665f0430ad4e4388a8710fa6ddb64cdecee984863a85ee3"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1366x768-dark.png",
+      "sha256": "78a0f49832a7b5b348c22e94e5dbfec20f9987bc11363121410d446d31390c15"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1366x768-light.png",
+      "sha256": "a3f9758653b578ae613a69485391e87dce872232e69f15aacc222bc3ed2dc267"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1440x900-dark.png",
+      "sha256": "84b80eb66b390081ec1e7a75616a69e5531f41c26df947af3f4c4060afa93431"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1440x900-light.png",
+      "sha256": "302531ab75b62a806a095448fef36ae312eb9f4a61b9712511a7e04edf0bc335"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1920x1080-dark.png",
+      "sha256": "6085e2a5492ffdf5bb151503a64d55a095d82382b3c11e12b856fad0fe00a68b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1920x1080-light.png",
+      "sha256": "3c56a287342808743cdb6c4e1d462bc05187270b0f25172a1180167a172f07c5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-2560x1440-dark.png",
+      "sha256": "892e96724dca95e60fedcc352ae299eebee12e12805c7207da65e01e573a15f4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-2560x1440-light.png",
+      "sha256": "3d7970f9758afd12d943c99ea018b34ae43a50cf6e97f369c83d412a007979cf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-320x640-dark.png",
+      "sha256": "43a7a619b1000a8e4e21288f9bab7ee247cf18b1dd534c4cbcf85bb7afd7661e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-320x640-light.png",
+      "sha256": "4abc694e2a28a7c10f211815407ce40361906acdeeb0ab6dca7740a7e535fab8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-375x812-dark.png",
+      "sha256": "d08125f65fa89dad1bf9a8e675cda468f582bee277f267495d12f48a1deca994"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-375x812-light.png",
+      "sha256": "5d8a735391f1329e4292235356d8a53b9ed54c35d92c58dfaf2c74710c6cc95d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-390x844-dark.png",
+      "sha256": "e781016f9b5b95bce5a7fee40c3722bc740cce777afb79c934aeb9ce997d175a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-390x844-light.png",
+      "sha256": "d0d86eb5f5d177bd67954ff2fa52181ca65b8062acf65df677c8c9de242de555"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-430x932-dark.png",
+      "sha256": "856f4ae79f101ba07cea149c66e8d9cc7282ed2ece2ee478fd96f799fdb77af0"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-430x932-light.png",
+      "sha256": "69d6f479b18b23c483121046a6e4f678fd84ee8d642ce2fde5da275783f89b9d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-768x1024-dark.png",
+      "sha256": "7dd6a28764ec72bc2b2a1595c67f416406bedc08548ab98cb4713bfa3e7fc8f6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-768x1024-light.png",
+      "sha256": "5df8e73deb2d294f1f2e05447ccbb0b52d09189116b3f3624e17da5f57a724fa"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-820x1180-dark.png",
+      "sha256": "2a35eff1fb48843eb34986dc97b14249018ecb1b221c4deaccd20b1055daf095"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-820x1180-light.png",
+      "sha256": "5d53c9293cf16102fe0ab929bf78e03bf16580041e93611411b897400a72cd4e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1000.png",
+      "sha256": "c6a2b27dd39a2dc01b48eee26771ae82141733101f4daeb45a9f277b39dc0024"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1279.png",
+      "sha256": "50fa3d42f4e1fd3eca4abda51d072ca8796743d59e09aa90357d9ea27e7ec289"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1280.png",
+      "sha256": "3763053df6c4ae765f510a5866bd7967f1eddd0d75298cfcb6d7804ea21568fd"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1439.png",
+      "sha256": "594239c088fb0c9e169f8416b9e540bdf4c4b0511d09315f9690a5a6e4bce357"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-719.png",
+      "sha256": "fceceb9e4bb491d2340f4e40875fb76d7b9e747838a31bf74b6574aa7a8e0399"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-720.png",
+      "sha256": "8334a1e3cd101c8693051c25a318c1ce7971aeb8e0a0b8988994e6e44c4c2bf8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-999.png",
+      "sha256": "454a9c8eb0d60c41bd0b9426de89d49cc0650c10bda8dad3ece4bea09a8b6fe0"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-custom-config-plain.png",
+      "sha256": "b8a9d36619e9781599e305d3ef7b1cda292ac25a949ad45676426368120b58c2"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-forced-colors.png",
+      "sha256": "24926de4a4927f0d132e2e0abd66f45192b96da57affa8c36bc59546926aab8e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-1920-dark.png",
+      "sha256": "dfe30896d8a094801e79e0a6fbc4958b373b5887faed98da786a2134002cf168"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-1920-light.png",
+      "sha256": "c2faeb6950aab06ba51cdbb6ba59352d36bb1f4590d43e2a5f509da3182874bf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-390-dark.png",
+      "sha256": "bcd5bf1f7f63531a7a969c1b486a95f412892f8982f5c2e26fe2d49f5957a1c9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-390-light.png",
+      "sha256": "733637d2f43370ee8ca850ff5377c39bbb49fbd4c923210a68e6589602456e89"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-820-dark.png",
+      "sha256": "08ccdfe25ac85fc8ee0c5fdceb860ee7c61ada737921794e2842080654859309"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-820-light.png",
+      "sha256": "3e4fa9089b4c300e0a5943c0b9e98b48e319692b9393dfd9d50b97c2986f00ab"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-print.png",
+      "sha256": "028ffb45510f193df6ba3f79ca0c3d840fecc5ca4d3de83a99f17b30218fcc62"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1024-dark.png",
+      "sha256": "e2688c3e4c22561ccbf0898928638744627d18f9b6b54058fd88f5edb6d5ea46"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1024-light.png",
+      "sha256": "9655e755a429124075f99bfefa6b76624fede4942faf90f4dda01f950ebc41d7"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1366-dark.png",
+      "sha256": "78a0f49832a7b5b348c22e94e5dbfec20f9987bc11363121410d446d31390c15"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1366-light.png",
+      "sha256": "a3f9758653b578ae613a69485391e87dce872232e69f15aacc222bc3ed2dc267"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1440-dark.png",
+      "sha256": "36698b2588a472a9b40516b832a8cb7c8d8cc591ab45bf9d7fbdb5e7b514b2b6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1440-light.png",
+      "sha256": "63a8a189b0b89142e462970b7b7736c682ebefdff2f22f43eda5ae867b61b63a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1920-dark.png",
+      "sha256": "9f8d15c73e689648f43c17b7b370f8d54d8d2ddd89d113c861a887a11e977739"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1920-light.png",
+      "sha256": "39becb062f4dd24ad99d84bc3b31528f0a8088d62e907593a8aaf5ac1221c10d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-390-dark.png",
+      "sha256": "e781016f9b5b95bce5a7fee40c3722bc740cce777afb79c934aeb9ce997d175a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-390-light.png",
+      "sha256": "d0d86eb5f5d177bd67954ff2fa52181ca65b8062acf65df677c8c9de242de555"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-820-dark.png",
+      "sha256": "2a35eff1fb48843eb34986dc97b14249018ecb1b221c4deaccd20b1055daf095"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-820-light.png",
+      "sha256": "5d53c9293cf16102fe0ab929bf78e03bf16580041e93611411b897400a72cd4e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1024-dark.png",
+      "sha256": "0990d50499039cd5624fabb38d124b9c7eb557058abec2f3a7e662fcae74b87f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1024-light.png",
+      "sha256": "d7db68de6d97b117147a24fcae326aa9bbfa9c8c44c2c59e234e83455a074e1d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1366-dark.png",
+      "sha256": "90d52440c42124d0a7491f04130f4c03aaf9d57d91c57f6a3c1185e2aadb523d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1366-light.png",
+      "sha256": "6850d0de739fd1b86e911e25acba9563b67636bc21f51f5083a6772feaf9d1d8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1440-dark.png",
+      "sha256": "84b80eb66b390081ec1e7a75616a69e5531f41c26df947af3f4c4060afa93431"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1440-light.png",
+      "sha256": "302531ab75b62a806a095448fef36ae312eb9f4a61b9712511a7e04edf0bc335"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1920-dark.png",
+      "sha256": "6085e2a5492ffdf5bb151503a64d55a095d82382b3c11e12b856fad0fe00a68b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1920-light.png",
+      "sha256": "3c56a287342808743cdb6c4e1d462bc05187270b0f25172a1180167a172f07c5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-390-dark.png",
+      "sha256": "b939ff239d5733e95037a51f2c645dc2dc65a7b8f52479176c93e2730bdb166f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-390-light.png",
+      "sha256": "bf5566ae71b9d958f496a88887c4c34c53a27bfb47140ee310c6112dc6b8d352"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-820-dark.png",
+      "sha256": "e49d15babb33153a4ea4e481b1989ec482eaca53bffc85a218acf943549fcfab"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-820-light.png",
+      "sha256": "4c9e0e36ab7ea84479d0ab6ec0db0e5e30ef5041fe1bcee3c95a83093c4a873b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-1920-dark.png",
+      "sha256": "3f4a083aaa0fb019ca093f387566d5b125c510a65fe0a83bfa8fb0dfa5d3d7dc"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-1920-light.png",
+      "sha256": "1611f95d73248fdf611dac1e2b21beb1517cd7850f5a8d50e42258e20dd99983"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-390-dark.png",
+      "sha256": "0c4f3b172d3bcbcde89811aff99a7e69ff07bfe7aedce7c3d1eb55878477322e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-390-light.png",
+      "sha256": "03b0622e2c4d7c1c9257750636242ef8980e10addd47ea5f1695cb0e8272f18a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-820-dark.png",
+      "sha256": "3ed0d74354bc37a4034b9ed66de871e1dccab0925cdb7a17728ecb621bc9b8ba"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-820-light.png",
+      "sha256": "ecb1a27389acb6d9354bafb4711290535fab462f34aed95af973bb5428bea1f4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1024x768-dark.png",
+      "sha256": "191966591cde1eab59b7bd50196033f53523ee2fd02abb5451173b2d5af65d4f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1024x768-light.png",
+      "sha256": "72ad6ad9c94046dac7438d5d5d70a2185bab467bfd5649e07d00bd3fbcec4c4b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1180x820-dark.png",
+      "sha256": "7207f6a2286a24ce86d94647428b3c4b6d9bd05539311334bbebd41cc251c387"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1180x820-light.png",
+      "sha256": "99565b074f1c4c1d070f38a187dc8538fac9840dcf196bc6e000b3a2cd809d64"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1366x768-dark.png",
+      "sha256": "e8a63618aa7975cf5061e5ae88c35dce14196d4aa12f128309ae59efec72ee4b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1366x768-light.png",
+      "sha256": "7e00e69a53ff24d1a907ec7025a721e3b22a8d123c291c1d6f5140d2a0ab304b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1440x900-dark.png",
+      "sha256": "0ce90293b200e354c1a1594ad2963fadc7745fc3913e075054925743bc55af1f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1440x900-light.png",
+      "sha256": "b751735a53baba8989868e49a72f527ff20c1f7c26da5ab42d263e05fd3c6140"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1920x1080-dark.png",
+      "sha256": "4329c4b50c7120d614c2cae89312f9de2aca70998c05a02c4b7ddb3e3a716462"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1920x1080-light.png",
+      "sha256": "1caadc690bfc0e125623d99fd0f68929445a0f6f94c6e583568c6954e0d21bea"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-2560x1440-dark.png",
+      "sha256": "d58242df14312493a9eb577c66421cb9cdd6829e4a90f7f962370a5730e31079"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-2560x1440-light.png",
+      "sha256": "3f17ecf288d57847f5dbc4952fa7863159396ff08b41baddbde06b900456e584"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-320x640-dark.png",
+      "sha256": "bc587a350b6f3acf4c39b2f3cdda22132ae8f3d98742eee02a0a563fdccf18ee"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-320x640-light.png",
+      "sha256": "d1e0739685ea439a5bfc04b354a5b402a8c25232ef79bd07155e40bb032b8472"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-375x812-dark.png",
+      "sha256": "a8de31a411506702481858bdcf5444193dec5830da86e5adbef072d1bbad830b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-375x812-light.png",
+      "sha256": "509f1262c96acfd3d88310ccc334f6c4946c4a7ce6f26c428d0253391e4e30b4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-390x844-dark.png",
+      "sha256": "b630d9709054969a26204187fbcda56f5391254c8c0f2a6161278ed03899d828"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-390x844-light.png",
+      "sha256": "2ef3d8c71366460a1fe73519c6377476c86dc2f02b478d7bd4c944ae71dcf299"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-430x932-dark.png",
+      "sha256": "d84acbc0f4673063920c1532945ab546eab549860852dab13810d5d62bd3a9f5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-430x932-light.png",
+      "sha256": "9eeb3a2e169e7515e504727e24dab48aae1ac2c38adf1ab9fafa74074b7a0144"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-768x1024-dark.png",
+      "sha256": "ec6ee5867d0457e89c6cbcac1a998273ca689d11c8113c690afe202c6d146617"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-768x1024-light.png",
+      "sha256": "f5c7c79bed1e1a909df6b05f4be48772da4d0329f029aebf316a7e00c9942429"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-820x1180-dark.png",
+      "sha256": "19f01a9f48399088f9427583547daa7626b61bb3fc24231a5169b5c19867fb59"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-820x1180-light.png",
+      "sha256": "a489b7a84079f331e773ea752056e8577288df06a799f99f83e9ec4b47cbf97b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1000.png",
+      "sha256": "a0f4d600e8a9b7d6bbe2ab9100404946723dff2a0e83ee4572db095ded46304e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1279.png",
+      "sha256": "f1bedcd7e7394a579836eda3b7c2eab02806667c168009321ab1eb13592d80f6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1280.png",
+      "sha256": "110729364d4259bfd9cceee2ff36bbf710062b5aa822c2e473774d9211f4acec"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1439.png",
+      "sha256": "0a299e5675fbca8752ce839953e57326f588fcfedeaf482ca4819ad4d695f2ff"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-719.png",
+      "sha256": "86e8924b8a95034fbe975aa12e514e5472bd97c3455240387e1fa4651d8a2932"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-720.png",
+      "sha256": "56a8b3aea94556a0f71b0b500bfc4f9742ba6df39d224e3c90f8b8819a0734d0"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-999.png",
+      "sha256": "d1a553791beee0bfd1228aa10b18734ecfb5786eb27f5ca2fdac2446b7097dc1"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-1920.png",
+      "sha256": "5d5938a427bafb45694e9d8358a6c0eff5aa6e71b666f24776c359644cec96d6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-390.png",
+      "sha256": "dec00d9006c885e090bc1f86c282f93c2edbe95051e504eb5e29525ed21ed79a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-820.png",
+      "sha256": "e1747b69b46a7e56751aef84f074cfd5739d8525845baa8a6282c32628826f4b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-1920.png",
+      "sha256": "f1a384c8df6f5467c50707799a3a59aa76a4858339a426e3ea39c6454812670c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-390.png",
+      "sha256": "722169ae43e8477fa6330b94f1855d8105e83891f9c9bdff4703215a83558935"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-820.png",
+      "sha256": "a6f6a8a522bc501400f3a9c8f783aa0a1c9906e45cc065c0b67c66a7137c89c7"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-1920.png",
+      "sha256": "8113c753e3f34009760ed80d6b8cb219bf21205c7e9f0cbb715b5fe82d19f45c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-390.png",
+      "sha256": "9f6abb30697805677fa8f50af8575cf6ade4adc38568f5af5a07ec838ecc1ada"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-820.png",
+      "sha256": "4bbd7ef1f8afb46ed0361d74a76494d0bf45858427304172f1d26b34e42a4ac1"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/no-js-1920.png",
+      "sha256": "fe39e2119f935e26bfc785af6f5869a0f091e77ce9ba3bebbdca2b939d173764"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/no-js-390.png",
+      "sha256": "4f4708fe9aa61acb4fccd82b1f0e83a25e60a56b4fbba1ec4b598b4bf80f663b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-1920-dark.png",
+      "sha256": "51b8e81210a01e46966f0d8bc32afc3df407a6ab7e4589d17ce807f0ba243c6e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-1920-light.png",
+      "sha256": "45ffc9425fc6da164e89e27210975d721dfcb345febf36a962af0b605ae8bab9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-390-dark.png",
+      "sha256": "46e8caacbdfb344e607cef5e7de2cea48fac3de5ff3be62a520f32ef5a76d87a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-390-light.png",
+      "sha256": "f5bb63436c3ebff71681c4d1e2c6dce37ce46292385f0822b3a8c6200ee0b4c5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-820-dark.png",
+      "sha256": "5ec39c8642346491dad36fb312205321c0f69cc78e34d4a1c1a6633583b5073c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-820-light.png",
+      "sha256": "172a818e666ad643512ccfc469a65dbe9518695926a9cf8e20787843749f27e4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-1920-dark.png",
+      "sha256": "c9ab1801ffea85e4fcecb5b593064f6dc9c4fcdfa4d1dbba9e80199288dbe336"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-1920-light.png",
+      "sha256": "1628d68da72d806009e6d0031aa83df7e9cf1ae8888317c2c2621f3d1b363a05"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-390-dark.png",
+      "sha256": "5824ca74373768bb166913c992b65049010191b29ebfcde868adb2d82713d732"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-390-light.png",
+      "sha256": "7a9a4b55e2ef81a51d14b91e93e7ad05678ad83bc94a103adc4e03a7a5f8c888"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-820-dark.png",
+      "sha256": "dc9c4a8e7a6bc366447815e98ff11e22ed07b7beafa4584ffadc9d9175e10efb"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-820-light.png",
+      "sha256": "0e8294706d4d0d9d957245a6b1fed4387a5cdcfac94a27d3b1ba3301cddbe5a8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-1920.png",
+      "sha256": "7ab5934d671412372e803f8c3d39e835b160c0a4c189cf07ba1769d149949086"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-390.png",
+      "sha256": "0e1ec4b2cc7e77586d41324a1bd688ea25c811d12a03ee1d11b90aabdb5f934a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-820.png",
+      "sha256": "6a50dd517153bb890d3c0832033469ef55292f5938b42a65fe9fc2abeb7781f9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/wallpaper-dark.png",
+      "sha256": "9ba15250a0b22af789a9e190d9bf7fe9eaa0408fc92f07f21cae7b3b3f6aa575"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/wallpaper-light.png",
+      "sha256": "83df9d38f9eb4219aace8a232c61fb9d9c6089d0c28d6581b2937c87c61a3c61"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-1920.png",
+      "sha256": "5eff2d0072c65986836b8d5594fe97e2191e91ea934694c87ce9d86b2877f1db"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-390.png",
+      "sha256": "cc749074625849515205e8c891c2199834cebd66d03bc03618d8b9badf46d315"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-820.png",
+      "sha256": "63df42d6be21e8fa6fdad7dacf06fe8424f06f8fdd75036019cf6fbf6f40e512"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-1920.png",
+      "sha256": "ae322cfd14136ea97043ba1c1ffca578faee2a6d0be9ee10fe724a8670e7f4a6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-390.png",
+      "sha256": "e5d7089bfae614c6d9582f3043f3b1d597d968b68dfac19d3c32482ee534e0d5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-820.png",
+      "sha256": "e6bf20160e2790c4ab9c2f615ddf148226864e49d44a16afedfc99e5c531c949"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1024x768-dark.png",
+      "sha256": "83911988a247139c80847ab1e8c6d5289f9d7b573dbfaa4e8202efd5e5c55ccd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1024x768-light.png",
+      "sha256": "53138490bfa9822a8605f69ce7ab379ad46b0c19bf5fc137ec46fa88bb49bc8b"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1180x820-dark.png",
+      "sha256": "6c79ad0ee326d810a3c2759caab265004571f527010fe919498e72119c4b9073"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1180x820-light.png",
+      "sha256": "ddaead3fcb1021d7636e6ec0851fa6f198d41a694fa56d2506321fdd8b0e89e3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1366x768-dark.png",
+      "sha256": "356eabd2d07776a839eeea34cdd9e6b9271a4d678abbadbd097bc0641a180d70"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1366x768-light.png",
+      "sha256": "0467a4b5b86c07fbd4ad5dd048b119c5d1b51eaf77d7956c541ca039fef54a87"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1440x900-dark.png",
+      "sha256": "98b9fd6de0e807f9c924b94f0f4e5fe76dc4a8a4b1b2279f3f2d99b47d91dca6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1440x900-light.png",
+      "sha256": "0265d6442911abad56778175f330e83b3d39e7c4c54187031e5c965af8afe756"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1920x1080-dark.png",
+      "sha256": "d2f7edea0841f96a205a73beb228d753b08bca6a5ca989915b4c2eaaadb445e4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1920x1080-light.png",
+      "sha256": "ba154667661bce6e92b97f5acae3794a0c781dddf2682fd2bb144d4b9f6a47d0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-2560x1440-dark.png",
+      "sha256": "0a60d2d4abc1e1fa8bc803544bfba7899508b88945036593acbda0496f175864"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-2560x1440-light.png",
+      "sha256": "63872e4fadaa8f093b1cf4da98f622a71c549d9f9af4b052881d0d89ba2b02c0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-320x640-dark.png",
+      "sha256": "cc152c7d35b52ec45e7d365a4b518e322517121a54b74115d52263c6c1a03230"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-320x640-light.png",
+      "sha256": "16285d14548b43c0f250be37f4003ebe385b863f768f2490752e3b6df9f991bb"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-375x812-dark.png",
+      "sha256": "0b2075eb3de699137a4630a8d94caf6d4fb1d1abb9457cae34877cd655de7162"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-375x812-light.png",
+      "sha256": "24e3b30c5564f3193e83bcaa0063270e66d120b304ee9d3f63b5c22d21ff7624"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-390x844-dark.png",
+      "sha256": "15e6bfcf3cffa33694b42d62175db3c9cd1e4c1bd65fe8efb15941d7542af718"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-390x844-light.png",
+      "sha256": "385875a9b864b821744edba7fa6f88d290910854b4aea2cf0e6ab0fa73699579"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-430x932-dark.png",
+      "sha256": "b4963aefef331c3691b16dafbc2e32a5bb842091cf2de3e810879756c70cd307"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-430x932-light.png",
+      "sha256": "c5c58aa2da0bdce64b2e779e048257e0dacaf8bc76b1f2ff9ab32f644bdcbc52"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-768x1024-dark.png",
+      "sha256": "32fac7523496bd876c45c0473166d63208f56c45fe349242cce411b8baa58b59"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-768x1024-light.png",
+      "sha256": "59debdf46e29638b2a6b7d7c7453e0b5c391105bc09a3b51e7e3e86b20b28827"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-820x1180-dark.png",
+      "sha256": "11bb0dba24fa8d4744fa1a49975f1908d89bd030789e64b8e63530396db0cabd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-820x1180-light.png",
+      "sha256": "56310173ff9aeb89f2a1df9e8775c14b257beada137207ac9dbaa18f49ef96fb"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1000.png",
+      "sha256": "9829afe78ee2477f364bca546ca2d3ba4e2add4a258ade9ab9498c00f7f39dee"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1279.png",
+      "sha256": "4084e2481a3a1f89aee200dd1b8afbc5c9573ffad46a776bd6e5f05045e17b95"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1280.png",
+      "sha256": "3e18e96fdb1a82c63bd43f9bd3bccec500fca842023f57f58fd6f48901a7f555"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1439.png",
+      "sha256": "718dfe0d1d9c106ebd921ebe06017e946771be4b32f3972307ce4aabfd4ffa70"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-719.png",
+      "sha256": "be02a1296f8604efa18455202b648564f11790cc064ae77f81c8a6b476a41185"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-720.png",
+      "sha256": "ae28bb9e7020961978e5308fec1f10993c83ecaab8a6a096162efad46508c5c0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-999.png",
+      "sha256": "249bd00b264adeea58345734dfdd1a074a0c8d465a0baec7b0a7140c1bd394b0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-custom-config-plain.png",
+      "sha256": "5cbecc92c52f5095084ec0eac8f74da6185ee4a9be3666f497c1ac1cb1155a5d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-forced-colors.png",
+      "sha256": "0d4e2e620e82ca77a4023d049fdc8499b28526d9c0238e8dbe63a674cc8bb25a"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-1920-dark.png",
+      "sha256": "f2da4d7b8fec891c8cf41291bd1f3e803d6b7f84af1c46f206b6e251300c9070"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-1920-light.png",
+      "sha256": "63da2d84b37ca13969d36dfc51ff5a8c55d3278fa346ad90b7d895ddf43f098f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-390-dark.png",
+      "sha256": "cd1dee9fb639bb1a9a76c15f325949060da14ec1e9b72adf610a38b5320065dd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-390-light.png",
+      "sha256": "9d74d78a9abf7c07e7a90777481fd4045d641fef8203f9179ce79660ffb7b7ac"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-820-dark.png",
+      "sha256": "8093fa2e121a1b4cc3f9e523305b965f3fe88a7bfaa3a2a0f59821c127f69fcd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-820-light.png",
+      "sha256": "f7ca6958f247a4dbe26290fbe814a1b5fd297f55044562cd0418b0174b77aa9f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-print.png",
+      "sha256": "eb6e5c190cee99b87709533895e26bead675ffd62175fb76e5738db3e107f1f3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1024-dark.png",
+      "sha256": "83911988a247139c80847ab1e8c6d5289f9d7b573dbfaa4e8202efd5e5c55ccd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1024-light.png",
+      "sha256": "53138490bfa9822a8605f69ce7ab379ad46b0c19bf5fc137ec46fa88bb49bc8b"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1366-dark.png",
+      "sha256": "356eabd2d07776a839eeea34cdd9e6b9271a4d678abbadbd097bc0641a180d70"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1366-light.png",
+      "sha256": "0467a4b5b86c07fbd4ad5dd048b119c5d1b51eaf77d7956c541ca039fef54a87"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1440-dark.png",
+      "sha256": "66d9a3979f346b4d3d530bca4dbb856474c7177cf1e3c64c5c028262b0d7a802"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1440-light.png",
+      "sha256": "27bbbd5703128e970b73c34d22a32b623ccba4f35af7223af909e7c7936203a6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1920-dark.png",
+      "sha256": "86f08eee80a0b081570c812c7ae1c151a50f8d88bb157497491613d9169de9ee"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1920-light.png",
+      "sha256": "bf5eb9c130b5561fcf37ef32823490bece9521504a0cf8a2c250550b8ec58b95"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-390-dark.png",
+      "sha256": "15e6bfcf3cffa33694b42d62175db3c9cd1e4c1bd65fe8efb15941d7542af718"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-390-light.png",
+      "sha256": "385875a9b864b821744edba7fa6f88d290910854b4aea2cf0e6ab0fa73699579"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-820-dark.png",
+      "sha256": "11bb0dba24fa8d4744fa1a49975f1908d89bd030789e64b8e63530396db0cabd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-820-light.png",
+      "sha256": "56310173ff9aeb89f2a1df9e8775c14b257beada137207ac9dbaa18f49ef96fb"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1024-dark.png",
+      "sha256": "7543b210feb3e9b17bee3edc99ed79d5180b0104ad0e981318eccf88095c923e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1024-light.png",
+      "sha256": "4114b3f8b744fe8602364f4c7b6d0eeb9c021db439565388d9161772777e4731"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1366-dark.png",
+      "sha256": "bcc501f3797531ccba42cba926ca838f45b9059d2006daa262ef32d0f37390d0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1366-light.png",
+      "sha256": "83f104cf6b1e3dde20eca7cb1b716c273273d5527c075645f14bb98f4dca7e66"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1440-dark.png",
+      "sha256": "98b9fd6de0e807f9c924b94f0f4e5fe76dc4a8a4b1b2279f3f2d99b47d91dca6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1440-light.png",
+      "sha256": "0265d6442911abad56778175f330e83b3d39e7c4c54187031e5c965af8afe756"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1920-dark.png",
+      "sha256": "d2f7edea0841f96a205a73beb228d753b08bca6a5ca989915b4c2eaaadb445e4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1920-light.png",
+      "sha256": "ba154667661bce6e92b97f5acae3794a0c781dddf2682fd2bb144d4b9f6a47d0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-390-dark.png",
+      "sha256": "658d95b3818fc1a86736ffd81700fc41c5096601c94a35bc4370a634b35f2775"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-390-light.png",
+      "sha256": "fc0b994743cc299573ddedfd16a64d7defb32167e98bb76d83731d5a4bc7eddd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-820-dark.png",
+      "sha256": "2ada9a1c3ba16c4aab95014712b09a56f5a5e05af15620bfe4e3e5d627ed2d0f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-820-light.png",
+      "sha256": "bf8f85e2643534d82382e40b8b6e0b670321ffae4a6bad223b682a38a603cddd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-1920-dark.png",
+      "sha256": "5c2deedbd9d11117ce363087a858037675784714ebd949c70312723e7f2258f2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-1920-light.png",
+      "sha256": "90f121e2c1a1b9834d9d37c9865e63044c3ce2de0b10cd58867627201e9927fd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-390-dark.png",
+      "sha256": "d85657391a334474c92efa7400fa48a904458ac7180af70daaadb775a07c1c96"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-390-light.png",
+      "sha256": "d1aa85b924b445fbf634719c543b31dc0a882aebd5911b4c76947737503f0355"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-820-dark.png",
+      "sha256": "fe09ab0cdbf904d8e19250441245478ca758dd34f1fcf022e8b0d15bac1a1279"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-820-light.png",
+      "sha256": "c6e4b6a5c62fa990d32e6b3403670d49a53b62edd391315dade84f1fad233e69"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1024x768-dark.png",
+      "sha256": "cc98f05a2d24de39b59b0f827261ce729086fb25c800dd2c52fa551c5145fde6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1024x768-light.png",
+      "sha256": "e739e5ee089fa70196637ea6314b56973a15feb1705886ec2661b440f8dd9359"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1180x820-dark.png",
+      "sha256": "bb09804f88a7763ee687ed579be06af301138b1fc1354bb78cfdba37df40010d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1180x820-light.png",
+      "sha256": "9005f76a598be0c77ba8c0e30b797b1c183b574b32e1aa04bb2b60a5a3025771"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1366x768-dark.png",
+      "sha256": "ea88b99d91175e6cead2ad94ca24469b2228fb39193aa85ca677c8bfde0906fe"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1366x768-light.png",
+      "sha256": "44e40f96b3c307666e387f168057ed78daaf17adf6ab685b3e5eb70f35c1c65e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1440x900-dark.png",
+      "sha256": "df1f811c5a18b13e3df909976768a5d3f5975b7338da34794f326d1f4a0931fa"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1440x900-light.png",
+      "sha256": "4574d86e1344b95de9b2f91bd856ca6325a5f7d72bbd97976b4e9bfad28a53b8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1920x1080-dark.png",
+      "sha256": "903180e0d40c8ce5acbb08b5f9854f5ee3400a90abecd841cea6d8667af90c9f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1920x1080-light.png",
+      "sha256": "17b1bc5fabbeb617f6f94848ef436fdfe9779acc57e19f868634771f616fd7c6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-2560x1440-dark.png",
+      "sha256": "dce0ba4799957f0cc39b126c8ab7ad2221c473b914c3ef941d81e4857f417504"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-2560x1440-light.png",
+      "sha256": "7e7d913d78d06b10d459f12ffe4313cead52aab785bae569f26dde13bff78c4c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-320x640-dark.png",
+      "sha256": "9f6436ef207133ddb89792e2d1fb8710e64427ad0eea65b09cda4c528ece9255"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-320x640-light.png",
+      "sha256": "5a8c614a6bf1bcaefea43ca272df221b01b71bc1cea9b5b9754b002de051d75e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-375x812-dark.png",
+      "sha256": "15d571c5cce2d75fb06b4b95b1d1f6d735992f20e07bdf46870c2589d3194558"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-375x812-light.png",
+      "sha256": "fd3477e41e18314d54a192234201fcbea2bfbfef0b9b3c7487828c57dd8eac90"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-390x844-dark.png",
+      "sha256": "078a26145fdc44103454173c9392f3bf50dba1f12459a3428e2888db0b870d6f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-390x844-light.png",
+      "sha256": "6d8d9c97b9d68d394458c4be8a36df6b6b42eaf9647ef6eb18d786b75d1d72e4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-430x932-dark.png",
+      "sha256": "86230ee7c807b006b2cf30d8d1d393c7a11b45fcf1fdcc30455d21d7db480f4a"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-430x932-light.png",
+      "sha256": "7e30231ab5b8888f683d8603278d1a1cafd87df81430193bd1f4d562bd28a1a8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-768x1024-dark.png",
+      "sha256": "f47d0a04869c91cd4adb2ca4abc553eea726ca65cb6bb4defbee9a6feb3be5b3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-768x1024-light.png",
+      "sha256": "ba008a86cef39ad9020837373fc2da0c970163fe6e2278a512bac7b163a54757"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-820x1180-dark.png",
+      "sha256": "7959f40174f9d3aa6516f5dfcae3d00b8dc5ee108158bdf834e20512c3df7372"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-820x1180-light.png",
+      "sha256": "5ebed870d2680e5167b905f1831fea626bf60a2e2533813477d94c884df04b4f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1000.png",
+      "sha256": "f368727d61c76ea29018bf87bc38e48a5cae35196309ce5e3e28b2b8cc7ac644"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1279.png",
+      "sha256": "fedb0873852925039c6d5fe8b18061aea12062301d7fd6cebc318d65c0c994da"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1280.png",
+      "sha256": "4b60a0afbbcaea40a404ff8b86aa6b95a4f54fe24c25dd28b2e65252583ed7e7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1439.png",
+      "sha256": "d4d64afeaf8cfedb0bd74ad2b41dd46e55df9f378a8be8d2aa3d9a030054308d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-719.png",
+      "sha256": "3e8ebb5ecce6cf3930c1bc27d154392c7392b0a487237410592c27f56768b09a"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-720.png",
+      "sha256": "b3837fb9a05b36aed92f4feec453502761c5b334a54d1e9411efa1df99638f10"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-999.png",
+      "sha256": "90e2b80cc75b5b1528d04f11619f03676cb1afe48010ef04674f89bd89c80a72"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-1920.png",
+      "sha256": "d4d20589e7413d4b92cc7e873d24dd4c2ec503d4549bc7014635be701d7ea0b2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-390.png",
+      "sha256": "09f74b9f4f8df532cd47ab8b1ebfbe2e8d9fec1246d6ce4e4c5f3f7862841a99"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-820.png",
+      "sha256": "f529609899d7571784ce7018801dd994c8968181a1a9d18af60a5b6ae3b5cae0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-1920.png",
+      "sha256": "9224be46c276fed1dc6b15208f559990722cbd68c51cd26aef1fcd77e176fccb"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-390.png",
+      "sha256": "49ef17a10a6e497acb0d68e90625ce1422b8d699f80bbdcb0a9e9605dcc4d928"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-820.png",
+      "sha256": "8c3de8676e4931eb7c0ab2462ea4317e8ec5e0e624eada61d2e0d275025d0df4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-1920.png",
+      "sha256": "2a6c09a199d003fce0d29e0f38bc5c3fb95d89bbabaf09e841540c1d8233a3db"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-390.png",
+      "sha256": "e8c0748f343e111de98a0bd204e047c47477bfb142efc1c4f85bca6e645a3589"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-820.png",
+      "sha256": "024012d871b6a914a897f0d3edd8b7749aaa8c19aa22fedf66af0e5b377264b8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/no-js-1920.png",
+      "sha256": "05d160ab3aa404398eb3a25fd6a133582cace483ec953cafc5ab0e82d675143c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/no-js-390.png",
+      "sha256": "3ae04837e0e75a7f5fab3df5b621e6c0e54eba4e5b3d02889c5a59075dc7a049"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-1920-dark.png",
+      "sha256": "809553783e988c4ec7b0cfa61372d6eaa7d2c4898999316b8d992f184a9640d5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-1920-light.png",
+      "sha256": "d8c1ea4271c43d8ba04c5981251994bfc9d380cb7b007881ec8edd1ea08391a9"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-390-dark.png",
+      "sha256": "f9d7ce49fdfa1ed0f9a32683279068a2e0e763e9b9d61df8bad3d74b627a7b1e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-390-light.png",
+      "sha256": "52200386431080b05116477d4363fff5dcc37eebee7dc19e2ae05308331ed759"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-820-dark.png",
+      "sha256": "68b2a8ddbc4f223177e1b100df4aff69d4f4df0fb3259e052f34857d7df8b9d8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-820-light.png",
+      "sha256": "c21d8486e46220cd218caf3d9db489f6fdca75b4b2997fba4f21841f39872d8d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-1920-dark.png",
+      "sha256": "dd8213e96d3d18edfaa824bcd11aaa7ec1f1f0f4b3146af81ae18917b6699268"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-1920-light.png",
+      "sha256": "861d42b97b3feea55863483ceb4b8cb2cc3ce499587f49f3c31f1f28a94eabc5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-390-dark.png",
+      "sha256": "4a4b819ee2093a274f386ba5e389a8db6d7d0f7efaafde80c325fce33a273342"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-390-light.png",
+      "sha256": "e2cc8e0285dc7b11c166bb25dd736e401730ea13d10bf182a3b807d21d979158"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-820-dark.png",
+      "sha256": "7287a3d891a40a294b44ba4d329e307d0434d0e4cb36b7f040230d8e1983f358"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-820-light.png",
+      "sha256": "c4b3ab157594bf40229c7973ddb733d5fbc3fe56d96b30532940d2ee0f4fcace"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-1920.png",
+      "sha256": "3343b7f4eb7a4b1ef7ab4450d6390e773df3fd390e166de4a553013bfaab4ad7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-390.png",
+      "sha256": "46da4f20e4c649cce52ce409d4be5cf4fac6b74c1cd9966d2a657e2e1656b0d8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-820.png",
+      "sha256": "7875e8d7a511089a1d7429019a2e99b2113744cb12a129ad8326f131e55f2cd7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/wallpaper-dark.png",
+      "sha256": "67f4ded529d31d244d11414ce8113d9284a761d63210e8ca97443ae197186bf1"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/wallpaper-light.png",
+      "sha256": "f316dfd27ab0e1768657f2a7e8cc593fffa997b826595904d82f8a2817ad2207"
+    }
+  ]
+}

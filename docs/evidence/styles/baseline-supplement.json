@@ -1,0 +1,1304 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.styles.config.ts",
+      "--grep",
+      "full content|optional content|optional wallpaper|no JavaScript|print and forced",
+      "--update-snapshots=missing"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.styles.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/styles",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge-windows",
+        "name": "edge-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-windows",
+        "name": "webkit-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge-windows"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-windows"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/styles/baseline-supplement.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "baseline.spec.ts",
+      "file": "baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "full content and supporting pages 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4124,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:18:59.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-792ad84e76a5f308f217",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5045,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:04.352Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-1bdec65432aab8095437",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21737,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:09.410Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-52c5c921df927a0cd142",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "print and forced colors preserve content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2925,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:31.158Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-c1fcce4559ed208620fd",
+          "file": "baseline.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "optional content fixture 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1149,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:34.097Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-2f05f372f63fd8995608",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:35.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-2200db0fe5b986558619",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:36.605Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-85fcf12eba352bb06c77",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional wallpaper surface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1154,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\wallpaper-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\wallpaper-dark.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:38.471Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "wallpaper-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\wallpaper-light.png"
+                    },
+                    {
+                      "name": "wallpaper-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-edge-windows\\wallpaper-light-actual.png"
+                    },
+                    {
+                      "name": "wallpaper-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\wallpaper-dark.png"
+                    },
+                    {
+                      "name": "wallpaper-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-edge-windows\\wallpaper-dark-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-84fa5e527d5c5ecb830e",
+          "file": "baseline.spec.ts",
+          "line": 162,
+          "column": 1
+        },
+        {
+          "title": "no JavaScript 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 997,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\no-js-390.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:39.637Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\no-js-390.png"
+                    },
+                    {
+                      "name": "no-js-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-390-edge-windows\\no-js-390-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-2d595a15002b6c99518b",
+          "file": "baseline.spec.ts",
+          "line": 183,
+          "column": 3
+        },
+        {
+          "title": "no JavaScript 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1287,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\no-js-1920.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:40.647Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\no-js-1920.png"
+                    },
+                    {
+                      "name": "no-js-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-1920-edge-windows\\no-js-1920-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-061f40f03dd07a98b8f5",
+          "file": "baseline.spec.ts",
+          "line": 183,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13378,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-dark.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-390.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-390.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-390.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-390.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-390.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:42.877Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-390-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-light.png"
+                    },
+                    {
+                      "name": "article-full-390-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\article-full-390-light-actual.png"
+                    },
+                    {
+                      "name": "article-full-390-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-dark.png"
+                    },
+                    {
+                      "name": "article-full-390-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\article-full-390-dark-actual.png"
+                    },
+                    {
+                      "name": "archives-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-390.png"
+                    },
+                    {
+                      "name": "archives-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\archives-390-actual.png"
+                    },
+                    {
+                      "name": "tags-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-390.png"
+                    },
+                    {
+                      "name": "tags-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\tags-390-actual.png"
+                    },
+                    {
+                      "name": "links-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-390.png"
+                    },
+                    {
+                      "name": "links-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\links-390-actual.png"
+                    },
+                    {
+                      "name": "about-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-390.png"
+                    },
+                    {
+                      "name": "about-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\about-390-actual.png"
+                    },
+                    {
+                      "name": "math-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-390.png"
+                    },
+                    {
+                      "name": "math-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\math-390-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d5c70418da70a83c0f70",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11983,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-dark.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-820.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-820.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-820.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-820.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-820.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:19:56.371Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-820-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-light.png"
+                    },
+                    {
+                      "name": "article-full-820-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\article-full-820-light-actual.png"
+                    },
+                    {
+                      "name": "article-full-820-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-dark.png"
+                    },
+                    {
+                      "name": "article-full-820-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\article-full-820-dark-actual.png"
+                    },
+                    {
+                      "name": "archives-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-820.png"
+                    },
+                    {
+                      "name": "archives-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\archives-820-actual.png"
+                    },
+                    {
+                      "name": "tags-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-820.png"
+                    },
+                    {
+                      "name": "tags-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\tags-820-actual.png"
+                    },
+                    {
+                      "name": "links-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-820.png"
+                    },
+                    {
+                      "name": "links-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\links-820-actual.png"
+                    },
+                    {
+                      "name": "about-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-820.png"
+                    },
+                    {
+                      "name": "about-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\about-820-actual.png"
+                    },
+                    {
+                      "name": "math-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-820.png"
+                    },
+                    {
+                      "name": "math-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\math-820-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-5782eb76d2e1179cdbb9",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17707,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-dark.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-1920.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-1920.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-1920.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-1920.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-1920.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:08.367Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-1920-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-light.png"
+                    },
+                    {
+                      "name": "article-full-1920-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\article-full-1920-light-actual.png"
+                    },
+                    {
+                      "name": "article-full-1920-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-dark.png"
+                    },
+                    {
+                      "name": "article-full-1920-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\article-full-1920-dark-actual.png"
+                    },
+                    {
+                      "name": "archives-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-1920.png"
+                    },
+                    {
+                      "name": "archives-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\archives-1920-actual.png"
+                    },
+                    {
+                      "name": "tags-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-1920.png"
+                    },
+                    {
+                      "name": "tags-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\tags-1920-actual.png"
+                    },
+                    {
+                      "name": "links-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-1920.png"
+                    },
+                    {
+                      "name": "links-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\links-1920-actual.png"
+                    },
+                    {
+                      "name": "about-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-1920.png"
+                    },
+                    {
+                      "name": "about-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\about-1920-actual.png"
+                    },
+                    {
+                      "name": "math-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-1920.png"
+                    },
+                    {
+                      "name": "math-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\math-1920-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d0e1701c6ddf62644231",
+          "file": "baseline.spec.ts",
+          "line": 59,
+          "column": 3
+        },
+        {
+          "title": "print and forced colors preserve content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7240,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-print.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-forced-colors.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:26.086Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-print-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-print.png"
+                    },
+                    {
+                      "name": "article-print-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-print-and-forced-colors-preserve-content-webkit-windows\\article-print-actual.png"
+                    },
+                    {
+                      "name": "article-forced-colors-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-forced-colors.png"
+                    },
+                    {
+                      "name": "article-forced-colors-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-print-and-forced-colors-preserve-content-webkit-windows\\article-forced-colors-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-91972153c7fc44227d5e",
+          "file": "baseline.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "optional content fixture 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:33.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-fb146517b4cf96b130b2",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:37.882Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-7eda2ee6b4514618fada",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6121,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-dark.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:42.719Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "optional-content-1920-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-light.png"
+                    },
+                    {
+                      "name": "optional-content-1920-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-1920-webkit-windows\\optional-content-1920-light-actual.png"
+                    },
+                    {
+                      "name": "optional-content-1920-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-dark.png"
+                    },
+                    {
+                      "name": "optional-content-1920-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-1920-webkit-windows\\optional-content-1920-dark-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ec30b7cdd3615ddcae06",
+          "file": "baseline.spec.ts",
+          "line": 135,
+          "column": 3
+        },
+        {
+          "title": "optional wallpaper surface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11801,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-light.png, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-dark.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:20:48.852Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "wallpaper-light-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-light.png"
+                    },
+                    {
+                      "name": "wallpaper-light-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-webkit-windows\\wallpaper-light-actual.png"
+                    },
+                    {
+                      "name": "wallpaper-dark-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-dark.png"
+                    },
+                    {
+                      "name": "wallpaper-dark-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-webkit-windows\\wallpaper-dark-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-139ca553e3abfb0c0ce9",
+          "file": "baseline.spec.ts",
+          "line": 162,
+          "column": 1
+        },
+        {
+          "title": "no JavaScript 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5559,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-390.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:21:00.666Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-390-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-390.png"
+                    },
+                    {
+                      "name": "no-js-390-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-390-webkit-windows\\no-js-390-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-66aac2464ef7d506cf8c",
+          "file": "baseline.spec.ts",
+          "line": 183,
+          "column": 3
+        },
+        {
+          "title": "no JavaScript 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5791,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-1920.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:21:06.238Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-1920.png"
+                    },
+                    {
+                      "name": "no-js-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-1920-webkit-windows\\no-js-1920-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ca35bdfa1ae2fa8d4855",
+          "file": "baseline.spec.ts",
+          "line": 183,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T08:18:58.817Z",
+    "duration": 133550.812,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

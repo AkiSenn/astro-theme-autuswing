@@ -1,0 +1,3232 @@
+{
+  "sourceCommit": "f111e47",
+  "files": [
+    {
+      "file": "legacy.css",
+      "lines": 1945,
+      "bytes": 36035,
+      "rules": 380,
+      "declarations": 1089,
+      "sha256": "5054a290f5faf600c63755d3b6f5d6f29841b611ce24dfc7891c09607b4a5b88"
+    },
+    {
+      "file": "astro.css",
+      "lines": 57,
+      "bytes": 1118,
+      "rules": 13,
+      "declarations": 27,
+      "sha256": "704f685b6a0742923e13221241d438f6d41b965407372fa8b3e064794c9dcae2"
+    },
+    {
+      "file": "responsive.css",
+      "lines": 761,
+      "bytes": 16310,
+      "rules": 148,
+      "declarations": 398,
+      "sha256": "170e2768d2788c3c17f477f46ae2073726b39edbced187129bd61038aaf3b2c7"
+    },
+    {
+      "file": "visual.css",
+      "lines": 787,
+      "bytes": 15050,
+      "rules": 161,
+      "declarations": 404,
+      "sha256": "442a8cd335ad03b22b069aefd317203ce924983cf56cb63bde72049f75beaf0e"
+    },
+    {
+      "file": "motion.css",
+      "lines": 138,
+      "bytes": 3244,
+      "rules": 26,
+      "declarations": 47,
+      "sha256": "398dba5cf59fc350d4275e81d85e1feb06535ad01a191b97dee76b417d346644"
+    }
+  ],
+  "repeatedSelectorProperties": 184,
+  "candidates": [
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 104,
+        "selector": ":root",
+        "prop": "--radius",
+        "value": "18px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1240,
+        "selector": ":root",
+        "prop": "--radius",
+        "value": "var(--autuswing-radius,18px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 103,
+        "selector": ":root",
+        "prop": "--sidebar-width",
+        "value": "272px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1241,
+        "selector": ":root",
+        "prop": "--sidebar-width",
+        "value": "var(--autuswing-sidebar,272px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 99,
+        "selector": ":root",
+        "prop": "--green",
+        "value": "#4c6855"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1242,
+        "selector": ":root",
+        "prop": "--green",
+        "value": "var(--accent,#4c6855)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 118,
+        "selector": ":root",
+        "prop": "font-family",
+        "value": "Inter,\"Segoe UI\",\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1243,
+        "selector": ":root",
+        "prop": "font-family",
+        "value": "var(--autuswing-font,Inter,\"Segoe UI\",\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 128,
+        "selector": ":root[data-theme=dark]",
+        "prop": "--green",
+        "value": "#a6c497"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1246,
+        "selector": ":root[data-theme=dark]",
+        "prop": "--green",
+        "value": "var(--accent,#a6c497)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 157,
+        "selector": "body",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1249,
+        "selector": "body",
+        "prop": "font-size",
+        "value": "calc(var(--autuswing-base-font,16px) - 1px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 635,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "16px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1252,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "var(--autuswing-base-font,16px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 313,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "1680px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1255,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "var(--autuswing-width,1680px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 687,
+        "selector": ".prose code",
+        "prop": "font-family",
+        "value": "\"Cascadia Code\",Consolas,monospace"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1259,
+        "selector": ".prose code",
+        "prop": "font-family",
+        "value": "var(--autuswing-code-font,\"Cascadia Code\",Consolas,monospace)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 221,
+        "selector": ".sidebar",
+        "prop": "background",
+        "value": "var(--sidebar)"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1281,
+        "selector": ".sidebar",
+        "prop": "background",
+        "value": "var(--sidebar)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 475,
+        "selector": ".site-footer",
+        "prop": "display",
+        "value": "flex"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1288,
+        "selector": ".site-footer",
+        "prop": "display",
+        "value": "block"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 482,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1289,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "11px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 832,
+        "selector": ".article-actions",
+        "prop": "justify-content",
+        "value": "space-between"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1456,
+        "selector": ".article-actions",
+        "prop": "justify-content",
+        "value": "flex-start"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 837,
+        "selector": ".article-actions button",
+        "prop": "padding",
+        "value": "0"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1466,
+        "selector": ".article-actions button",
+        "prop": "padding",
+        "value": "4px 0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1133,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "9px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1564,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "context": [
+        "@media (max-width:760px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1139,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1585,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "calc(var(--autuswing-base-font,16px) - 1px)"
+      },
+      "context": [
+        "@media (max-width:760px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1216,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "none"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1594,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "none"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 220,
+        "selector": ".sidebar",
+        "prop": "padding",
+        "value": "30px 30px 24px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1769,
+        "selector": ".sidebar",
+        "prop": "padding",
+        "value": "26px 28px 20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 229,
+        "selector": ".profile",
+        "prop": "padding",
+        "value": "0 0 26px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1777,
+        "selector": ".profile",
+        "prop": "padding",
+        "value": "0 0 18px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 248,
+        "selector": ".profile h2",
+        "prop": "font-size",
+        "value": "22px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1780,
+        "selector": ".profile h2",
+        "prop": "font-size",
+        "value": "20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 249,
+        "selector": ".profile h2",
+        "prop": "margin",
+        "value": "16px 0 5px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1781,
+        "selector": ".profile h2",
+        "prop": "margin",
+        "value": "12px 0 4px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 267,
+        "selector": ".site-nav",
+        "prop": "gap",
+        "value": "4px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1791,
+        "selector": ".site-nav",
+        "prop": "gap",
+        "value": "3px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 272,
+        "selector": ".site-nav a",
+        "prop": "gap",
+        "value": "14px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1794,
+        "selector": ".site-nav a",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 273,
+        "selector": ".site-nav a",
+        "prop": "padding",
+        "value": "10px 12px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1795,
+        "selector": ".site-nav a",
+        "prop": "padding",
+        "value": "9px 12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 295,
+        "selector": ".sidebar-bottom",
+        "prop": "margin-top",
+        "value": "auto"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1798,
+        "selector": ".sidebar-bottom",
+        "prop": "margin-top",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 296,
+        "selector": ".sidebar-bottom",
+        "prop": "padding-top",
+        "value": "24px"
+      },
+      "later": {
+        "file": "legacy.css",
+        "line": 1799,
+        "selector": ".sidebar-bottom",
+        "prop": "padding-top",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 883,
+        "selector": ".toc",
+        "prop": "list-style",
+        "value": "none"
+      },
+      "later": {
+        "file": "astro.css",
+        "line": 3,
+        "selector": ".toc",
+        "prop": "list-style",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 311,
+        "selector": ".main-shell",
+        "prop": "margin-left",
+        "value": "var(--sidebar-width)"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 24,
+        "selector": ".main-shell",
+        "prop": "margin-left",
+        "value": "var(--layout-sidebar)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1255,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "var(--autuswing-width,1680px)"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 25,
+        "selector": ".main-shell",
+        "prop": "max-width",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 312,
+        "selector": ".main-shell",
+        "prop": "padding",
+        "value": "0 6.3%"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 26,
+        "selector": ".main-shell",
+        "prop": "padding",
+        "value": "0 clamp(24px, 3vw, 64px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 340,
+        "selector": "#main",
+        "prop": "padding-top",
+        "value": "36px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 35,
+        "selector": "#main",
+        "prop": "padding-top",
+        "value": "36px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 81,
+        "selector": ".article-page #main",
+        "prop": "padding-top",
+        "value": "20px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 35,
+        "selector": ".article-page #main",
+        "prop": "padding-top",
+        "value": "36px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 299,
+        "selector": ".social-links",
+        "prop": "display",
+        "value": "flex"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 115,
+        "selector": ".social-links",
+        "prop": "display",
+        "value": "flex"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 300,
+        "selector": ".social-links",
+        "prop": "flex-wrap",
+        "value": "wrap"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 116,
+        "selector": ".social-links",
+        "prop": "flex-wrap",
+        "value": "wrap"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 301,
+        "selector": ".social-links",
+        "prop": "gap",
+        "value": "12px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 119,
+        "selector": ".social-links",
+        "prop": "gap",
+        "value": "8px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 303,
+        "selector": ".social-links",
+        "prop": "margin",
+        "value": "20px 0"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 120,
+        "selector": ".social-links",
+        "prop": "margin",
+        "value": "0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1807,
+        "selector": ".sidebar-bottom .social-links",
+        "prop": "gap",
+        "value": "4px 10px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 119,
+        "selector": ".sidebar-bottom .social-links",
+        "prop": "gap",
+        "value": "8px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1806,
+        "selector": ".sidebar-bottom .social-links",
+        "prop": "margin",
+        "value": "0 0 8px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 120,
+        "selector": ".sidebar-bottom .social-links",
+        "prop": "margin",
+        "value": "0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1598,
+        "selector": ".social-links a",
+        "prop": "display",
+        "value": "inline-flex"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 127,
+        "selector": ".social-links a",
+        "prop": "display",
+        "value": "inline-flex"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1599,
+        "selector": ".social-links a",
+        "prop": "align-items",
+        "value": "center"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 128,
+        "selector": ".social-links a",
+        "prop": "align-items",
+        "value": "center"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1811,
+        "selector": ".sidebar-bottom .social-links a",
+        "prop": "min-width",
+        "value": "36px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 133,
+        "selector": ".sidebar-bottom .social-links a",
+        "prop": "min-width",
+        "value": "44px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1810,
+        "selector": ".sidebar-bottom .social-links a",
+        "prop": "min-height",
+        "value": "36px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 134,
+        "selector": ".sidebar-bottom .social-links a",
+        "prop": "min-height",
+        "value": "44px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 306,
+        "selector": ".social-links .icon",
+        "prop": "width",
+        "value": "13px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 139,
+        "selector": ".social-links .icon",
+        "prop": "width",
+        "value": "20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 307,
+        "selector": ".social-links .icon",
+        "prop": "height",
+        "value": "13px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 140,
+        "selector": ".social-links .icon",
+        "prop": "height",
+        "value": "20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 607,
+        "selector": ".article-layout",
+        "prop": "max-width",
+        "value": "920px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 156,
+        "selector": ".article-layout",
+        "prop": "max-width",
+        "value": "var(--reading-width)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1852,
+        "selector": ".floating-tools",
+        "prop": "right",
+        "value": "25px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 247,
+        "selector": ".floating-tools",
+        "prop": "right",
+        "value": "max(12px, env(safe-area-inset-right))"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1853,
+        "selector": ".floating-tools",
+        "prop": "bottom",
+        "value": "25px"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 248,
+        "selector": ".floating-tools",
+        "prop": "bottom",
+        "value": "max(16px, env(safe-area-inset-bottom))"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1878,
+        "selector": ".floating-tools",
+        "prop": "display",
+        "value": "none"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 747,
+        "selector": ".floating-tools",
+        "prop": "display",
+        "value": "none"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1214,
+        "selector": ".main-shell",
+        "prop": "margin",
+        "value": "0"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 750,
+        "selector": ".main-shell",
+        "prop": "margin",
+        "value": "0"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1215,
+        "selector": ".main-shell",
+        "prop": "padding",
+        "value": "0"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 751,
+        "selector": ".main-shell",
+        "prop": "padding",
+        "value": "0"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1892,
+        "selector": ".article-layout",
+        "prop": "max-width",
+        "value": "none"
+      },
+      "later": {
+        "file": "responsive.css",
+        "line": 759,
+        "selector": ".article-layout",
+        "prop": "max-width",
+        "value": "none"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 93,
+        "selector": ":root",
+        "prop": "--paper",
+        "value": "#f5f4f0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 4,
+        "selector": ":root",
+        "prop": "--paper",
+        "value": "#f6f5f1"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 94,
+        "selector": ":root",
+        "prop": "--surface",
+        "value": "#fbfaf7"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 5,
+        "selector": ":root",
+        "prop": "--surface",
+        "value": "#fdfcf9"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 95,
+        "selector": ":root",
+        "prop": "--sidebar",
+        "value": "#eceee7"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 6,
+        "selector": ":root",
+        "prop": "--sidebar",
+        "value": "#edf0e8"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 96,
+        "selector": ":root",
+        "prop": "--text",
+        "value": "#26362d"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 7,
+        "selector": ":root",
+        "prop": "--text",
+        "value": "#29382f"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 97,
+        "selector": ":root",
+        "prop": "--muted",
+        "value": "#737b72"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 8,
+        "selector": ":root",
+        "prop": "--muted",
+        "value": "#5d6b60"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 98,
+        "selector": ":root",
+        "prop": "--line",
+        "value": "#dedfd6"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 9,
+        "selector": ":root",
+        "prop": "--line",
+        "value": "#dcded5"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 100,
+        "selector": ":root",
+        "prop": "--green-soft",
+        "value": "#e6ebdf"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 10,
+        "selector": ":root",
+        "prop": "--green-soft",
+        "value": "#e5ecdf"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 106,
+        "selector": ":root",
+        "prop": "--code-border",
+        "value": "#cdd6df"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 11,
+        "selector": ":root",
+        "prop": "--code-border",
+        "value": "#d4ddd6"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1621,
+        "selector": ":root",
+        "prop": "--mica-base",
+        "value": "#fbfaf7e8"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 13,
+        "selector": ":root",
+        "prop": "--mica-base",
+        "value": "#fdfcf9f2"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1623,
+        "selector": ":root",
+        "prop": "--mica-shadow",
+        "value": "0 6px 24px #26362d08,0 1px 3px #26362d08"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 14,
+        "selector": ":root",
+        "prop": "--mica-shadow",
+        "value": "0 2px 8px #29382f05, 0 8px 24px #29382f04"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1624,
+        "selector": ":root",
+        "prop": "--mica-hover-shadow",
+        "value": "0 16px 36px #26362d14,0 3px 8px #26362d08"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 15,
+        "selector": ":root",
+        "prop": "--mica-hover-shadow",
+        "value": "0 8px 24px #29382f0d"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1243,
+        "selector": ":root",
+        "prop": "font-family",
+        "value": "var(--autuswing-font,Inter,\"Segoe UI\",\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 16,
+        "selector": ":root",
+        "prop": "font-family",
+        "value": "var(\n    --autuswing-font,\n    'Segoe UI',\n    'PingFang SC',\n    'Hiragino Sans GB',\n    'Microsoft YaHei',\n    system-ui,\n    sans-serif\n  )"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1635,
+        "selector": ".mica-card",
+        "prop": "background",
+        "value": "var(--mica-base)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 43,
+        "selector": ".mica-card",
+        "prop": "background",
+        "value": "var(--surface)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1638,
+        "selector": ".mica-card",
+        "prop": "box-shadow",
+        "value": "var(--mica-shadow),inset 0 1px 0 var(--mica-edge)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 44,
+        "selector": ".mica-card",
+        "prop": "box-shadow",
+        "value": "var(--mica-shadow)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1639,
+        "selector": ".mica-card",
+        "prop": "backdrop-filter",
+        "value": "blur(var(--mica-blur,24px)) saturate(1.15)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 45,
+        "selector": ".mica-card",
+        "prop": "backdrop-filter",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1640,
+        "selector": ".mica-card",
+        "prop": "-webkit-backdrop-filter",
+        "value": "blur(var(--mica-blur,24px)) saturate(1.15)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 46,
+        "selector": ".mica-card",
+        "prop": "-webkit-backdrop-filter",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1650,
+        "selector": ".mica-card::before",
+        "prop": "background",
+        "value": "linear-gradient(135deg,#ffffff10,transparent 58%)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 49,
+        "selector": ".mica-card::before",
+        "prop": "background",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 194,
+        "selector": ":focus-visible",
+        "prop": "outline",
+        "value": "2px solid var(--green)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 61,
+        "selector": ":focus-visible",
+        "prop": "outline",
+        "value": "2px solid var(--green)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 195,
+        "selector": ":focus-visible",
+        "prop": "outline-offset",
+        "value": "5px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 62,
+        "selector": ":focus-visible",
+        "prop": "outline-offset",
+        "value": "4px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 379,
+        "selector": ".count",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 77,
+        "selector": ".count",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 381,
+        "selector": ".count",
+        "prop": "padding",
+        "value": "1px 7px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 78,
+        "selector": ".count",
+        "prop": "padding",
+        "value": "2px 9px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 383,
+        "selector": ".count",
+        "prop": "margin-left",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 79,
+        "selector": ".count",
+        "prop": "margin-left",
+        "value": "10px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 399,
+        "selector": ".post-card",
+        "prop": "gap",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 86,
+        "selector": ".post-card",
+        "prop": "gap",
+        "value": "24px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 398,
+        "selector": ".post-card",
+        "prop": "padding",
+        "value": "27px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 87,
+        "selector": ".post-card",
+        "prop": "padding",
+        "value": "28px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1671,
+        "selector": ".post-card.mica-card",
+        "prop": "padding",
+        "value": "26px 24px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 87,
+        "selector": ".post-card.mica-card",
+        "prop": "padding",
+        "value": "28px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1675,
+        "selector": ".post-card.mica-card .card-date",
+        "prop": "width",
+        "value": "48px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 91,
+        "selector": ".post-card.mica-card .card-date",
+        "prop": "width",
+        "value": "60px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 413,
+        "selector": ".card-date span",
+        "prop": "font-size",
+        "value": "33px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 96,
+        "selector": ".card-date span",
+        "prop": "font-size",
+        "value": "40px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 414,
+        "selector": ".card-date span",
+        "prop": "line-height",
+        "value": "1.25"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 97,
+        "selector": ".card-date span",
+        "prop": "line-height",
+        "value": "1.2"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 418,
+        "selector": ".card-date small",
+        "prop": "font-size",
+        "value": "9px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 101,
+        "selector": ".card-date small",
+        "prop": "font-size",
+        "value": "11px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 420,
+        "selector": ".card-date small",
+        "prop": "letter-spacing",
+        "value": "1px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 102,
+        "selector": ".card-date small",
+        "prop": "letter-spacing",
+        "value": "0.4px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 438,
+        "selector": ".post-card p",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 114,
+        "selector": ".post-card p",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 439,
+        "selector": ".post-card p",
+        "prop": "line-height",
+        "value": "1.9"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 115,
+        "selector": ".post-card p",
+        "prop": "line-height",
+        "value": "1.85"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 442,
+        "selector": ".post-card p",
+        "prop": "max-width",
+        "value": "640px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 116,
+        "selector": ".post-card p",
+        "prop": "max-width",
+        "value": "680px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 444,
+        "selector": ".post-card p",
+        "prop": "-webkit-line-clamp",
+        "value": "2"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 117,
+        "selector": ".post-card p",
+        "prop": "-webkit-line-clamp",
+        "value": "2"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 427,
+        "selector": ".post-meta",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 129,
+        "selector": ".post-meta",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 428,
+        "selector": ".post-meta",
+        "prop": "letter-spacing",
+        "value": ".4px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 131,
+        "selector": ".post-meta",
+        "prop": "letter-spacing",
+        "value": "0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 431,
+        "selector": ".post-meta",
+        "prop": "gap",
+        "value": "9px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 132,
+        "selector": ".post-meta",
+        "prop": "gap",
+        "value": "4px 12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 454,
+        "selector": ".card-tags",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 147,
+        "selector": ".card-tags",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 450,
+        "selector": ".card-tags",
+        "prop": "gap",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 149,
+        "selector": ".card-tags",
+        "prop": "gap",
+        "value": "4px 12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 452,
+        "selector": ".card-tags",
+        "prop": "margin-top",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 150,
+        "selector": ".card-tags",
+        "prop": "margin-top",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 466,
+        "selector": ".card-arrow",
+        "prop": "margin-top",
+        "value": "30px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 164,
+        "selector": ".card-arrow",
+        "prop": "margin-top",
+        "value": "34px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1533,
+        "selector": ".more-link",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 167,
+        "selector": ".more-link",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 50,
+        "selector": ".desktop-sidebar .profile p",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 172,
+        "selector": ".desktop-sidebar .profile p",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 95,
+        "selector": ".profile-description",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 172,
+        "selector": ".profile-description",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 81,
+        "selector": ".desktop-contents .toc a",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 175,
+        "selector": ".desktop-contents .toc a",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 82,
+        "selector": ".desktop-contents .toc a",
+        "prop": "line-height",
+        "value": "1.7"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 176,
+        "selector": ".desktop-contents .toc a",
+        "prop": "line-height",
+        "value": "1.6"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 80,
+        "selector": ".desktop-contents .toc a",
+        "prop": "padding",
+        "value": "7px 4px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 177,
+        "selector": ".desktop-contents .toc a",
+        "prop": "padding",
+        "value": "8px 6px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1883,
+        "selector": ".sidebar-article-title",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 185,
+        "selector": ".sidebar-article-title",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1689,
+        "selector": ".mica-article .article-header",
+        "prop": "padding-bottom",
+        "value": "24px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 190,
+        "selector": ".mica-article .article-header",
+        "prop": "padding-bottom",
+        "value": "24px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 618,
+        "selector": ".back-link",
+        "prop": "font-size",
+        "value": "11px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 193,
+        "selector": ".back-link",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 621,
+        "selector": ".back-link",
+        "prop": "margin-bottom",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 196,
+        "selector": ".back-link",
+        "prop": "margin-bottom",
+        "value": "8px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 624,
+        "selector": ".article-header h1",
+        "prop": "font-size",
+        "value": "clamp(27px,3vw,40px)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 200,
+        "selector": ".article-header h1",
+        "prop": "font-size",
+        "value": "clamp(28px, 2.7vw, 36px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 625,
+        "selector": ".article-header h1",
+        "prop": "line-height",
+        "value": "1.5"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 202,
+        "selector": ".article-header h1",
+        "prop": "line-height",
+        "value": "1.4"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 626,
+        "selector": ".article-header h1",
+        "prop": "letter-spacing",
+        "value": "-.8px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 203,
+        "selector": ".article-header h1",
+        "prop": "letter-spacing",
+        "value": "-0.7px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 627,
+        "selector": ".article-header h1",
+        "prop": "margin",
+        "value": "14px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 204,
+        "selector": ".article-header h1",
+        "prop": "margin",
+        "value": "8px 0 18px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "visual.css",
+        "line": 150,
+        "selector": ".article-header .card-tags",
+        "prop": "margin-top",
+        "value": "14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 208,
+        "selector": ".article-header .card-tags",
+        "prop": "margin-top",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1252,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "var(--autuswing-base-font,16px)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 213,
+        "selector": ".prose",
+        "prop": "font-size",
+        "value": "calc(var(--autuswing-base-font, 16px) + 1px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 636,
+        "selector": ".prose",
+        "prop": "line-height",
+        "value": "1.95"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 214,
+        "selector": ".prose",
+        "prop": "line-height",
+        "value": "1.9"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 641,
+        "selector": ".prose p",
+        "prop": "margin",
+        "value": "1em 0 1.5em"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 218,
+        "selector": ".prose p",
+        "prop": "margin",
+        "value": "0 0 1.3em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 651,
+        "selector": ".prose h2",
+        "prop": "font-size",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 234,
+        "selector": ".prose h2",
+        "prop": "font-size",
+        "value": "25px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 646,
+        "selector": ".prose h2",
+        "prop": "line-height",
+        "value": "1.5"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 235,
+        "selector": ".prose h2",
+        "prop": "line-height",
+        "value": "1.45"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 647,
+        "selector": ".prose h2",
+        "prop": "margin",
+        "value": "1.8em 0 .8em"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 238,
+        "selector": ".prose h2",
+        "prop": "margin",
+        "value": "2.1em 0 0.8em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 656,
+        "selector": ".prose h3",
+        "prop": "font-size",
+        "value": "21px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 244,
+        "selector": ".prose h3",
+        "prop": "font-size",
+        "value": "21px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 646,
+        "selector": ".prose h3",
+        "prop": "line-height",
+        "value": "1.5"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 245,
+        "selector": ".prose h3",
+        "prop": "line-height",
+        "value": "1.5"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 647,
+        "selector": ".prose h3",
+        "prop": "margin",
+        "value": "1.8em 0 .8em"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 246,
+        "selector": ".prose h3",
+        "prop": "margin",
+        "value": "1.8em 0 0.65em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 646,
+        "selector": ".prose h4",
+        "prop": "line-height",
+        "value": "1.5"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 251,
+        "selector": ".prose h4",
+        "prop": "line-height",
+        "value": "1.6"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 647,
+        "selector": ".prose h4",
+        "prop": "margin",
+        "value": "1.8em 0 .8em"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 252,
+        "selector": ".prose h4",
+        "prop": "margin",
+        "value": "1.7em 0 0.6em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 661,
+        "selector": ".prose a",
+        "prop": "text-underline-offset",
+        "value": "4px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 259,
+        "selector": ".prose a",
+        "prop": "text-underline-offset",
+        "value": "0.22em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 676,
+        "selector": ".prose ul",
+        "prop": "padding-left",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 267,
+        "selector": ".prose ul",
+        "prop": "padding-left",
+        "value": "1.6em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 676,
+        "selector": ".prose ol",
+        "prop": "padding-left",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 267,
+        "selector": ".prose ol",
+        "prop": "padding-left",
+        "value": "1.6em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 664,
+        "selector": ".prose blockquote",
+        "prop": "margin",
+        "value": "25px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 281,
+        "selector": ".prose blockquote",
+        "prop": "margin",
+        "value": "1.6em 0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 666,
+        "selector": ".prose blockquote",
+        "prop": "padding",
+        "value": "5px 24px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 282,
+        "selector": ".prose blockquote",
+        "prop": "padding",
+        "value": "16px 20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 665,
+        "selector": ".prose blockquote",
+        "prop": "border-left",
+        "value": "3px solid var(--green)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 283,
+        "selector": ".prose blockquote",
+        "prop": "border-left",
+        "value": "3px solid var(--green)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 668,
+        "selector": ".prose blockquote",
+        "prop": "border-radius",
+        "value": "0 8px 8px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 284,
+        "selector": ".prose blockquote",
+        "prop": "border-radius",
+        "value": "0 10px 10px 0"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 667,
+        "selector": ".prose blockquote",
+        "prop": "background",
+        "value": "var(--green-soft)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 285,
+        "selector": ".prose blockquote",
+        "prop": "background",
+        "value": "var(--green-soft)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 669,
+        "selector": ".prose blockquote",
+        "prop": "color",
+        "value": "var(--muted)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 286,
+        "selector": ".prose blockquote",
+        "prop": "color",
+        "value": "var(--text)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 672,
+        "selector": ".prose blockquote p",
+        "prop": "margin",
+        "value": "10px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 289,
+        "selector": ".prose blockquote p",
+        "prop": "margin",
+        "value": "0 0 0.8em"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 698,
+        "selector": ".prose pre",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 324,
+        "selector": ".prose pre",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 699,
+        "selector": ".prose pre",
+        "prop": "line-height",
+        "value": "1.8"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 325,
+        "selector": ".prose pre",
+        "prop": "line-height",
+        "value": "1.8"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 818,
+        "selector": ".prose img",
+        "prop": "margin",
+        "value": "20px auto"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 432,
+        "selector": ".prose img",
+        "prop": "margin",
+        "value": "1.6em auto"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 816,
+        "selector": ".prose img",
+        "prop": "border-radius",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 433,
+        "selector": ".prose img",
+        "prop": "border-radius",
+        "value": "10px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 826,
+        "selector": ".copyright-box",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 463,
+        "selector": ".copyright-box",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 824,
+        "selector": ".copyright-box",
+        "prop": "border-radius",
+        "value": "var(--radius)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 464,
+        "selector": ".copyright-box",
+        "prop": "border-radius",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 825,
+        "selector": ".copyright-box",
+        "prop": "background",
+        "value": "var(--surface)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 466,
+        "selector": ".copyright-box",
+        "prop": "background",
+        "value": "var(--paper)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 19,
+        "selector": ".copyright-box .copyright-heading",
+        "prop": "font-size",
+        "value": "16px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 469,
+        "selector": ".copyright-box .copyright-heading",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 34,
+        "selector": ".copyright-box .copyright-details",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 473,
+        "selector": ".copyright-box .copyright-details",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 32,
+        "selector": ".copyright-box .copyright-details",
+        "prop": "gap",
+        "value": "9px 14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 474,
+        "selector": ".copyright-box .copyright-details",
+        "prop": "gap",
+        "value": "8px 14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1457,
+        "selector": ".article-actions",
+        "prop": "gap",
+        "value": "8px 16px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 477,
+        "selector": ".article-actions",
+        "prop": "gap",
+        "value": "8px 12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 834,
+        "selector": ".article-actions",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 479,
+        "selector": ".article-actions",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1466,
+        "selector": ".article-actions a",
+        "prop": "padding",
+        "value": "4px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 483,
+        "selector": ".article-actions a",
+        "prop": "padding",
+        "value": "8px 10px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1466,
+        "selector": ".article-actions button",
+        "prop": "padding",
+        "value": "4px 0"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 483,
+        "selector": ".article-actions button",
+        "prop": "padding",
+        "value": "8px 10px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 842,
+        "selector": ".post-navigation",
+        "prop": "gap",
+        "value": "20px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 491,
+        "selector": ".post-navigation",
+        "prop": "gap",
+        "value": "16px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 849,
+        "selector": ".post-navigation a",
+        "prop": "gap",
+        "value": "7px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 498,
+        "selector": ".post-navigation a",
+        "prop": "gap",
+        "value": "8px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 853,
+        "selector": ".post-navigation small",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 504,
+        "selector": ".post-navigation small",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 856,
+        "selector": ".post-navigation strong",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 507,
+        "selector": ".post-navigation strong",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 857,
+        "selector": ".post-navigation strong",
+        "prop": "font-weight",
+        "value": "500"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 509,
+        "selector": ".post-navigation strong",
+        "prop": "font-weight",
+        "value": "600"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 506,
+        "selector": ".page-heading h1",
+        "prop": "font-size",
+        "value": "38px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 520,
+        "selector": ".page-heading h1",
+        "prop": "font-size",
+        "value": "clamp(28px, 3vw, 36px)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 508,
+        "selector": ".page-heading h1",
+        "prop": "letter-spacing",
+        "value": "-1px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 521,
+        "selector": ".page-heading h1",
+        "prop": "letter-spacing",
+        "value": "-0.5px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 512,
+        "selector": ".page-heading p",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 524,
+        "selector": ".page-heading p",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 524,
+        "selector": ".timeline article",
+        "prop": "gap",
+        "value": "25px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 529,
+        "selector": ".timeline article",
+        "prop": "gap",
+        "value": "20px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 530,
+        "selector": ".timeline time",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 543,
+        "selector": ".timeline time",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 593,
+        "selector": ".friend-grid p",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 553,
+        "selector": ".friend-grid p",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 594,
+        "selector": ".friend-grid p",
+        "prop": "color",
+        "value": "var(--muted)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 554,
+        "selector": ".friend-grid p",
+        "prop": "color",
+        "value": "var(--muted)"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 494,
+        "selector": ".pagination a",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 564,
+        "selector": ".pagination a",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1289,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "11px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 572,
+        "selector": ".site-footer",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 480,
+        "selector": ".site-footer",
+        "prop": "margin-top",
+        "value": "30px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 575,
+        "selector": ".site-footer",
+        "prop": "margin-top",
+        "value": "40px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1349,
+        "selector": ".registration a",
+        "prop": "min-height",
+        "value": "28px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 578,
+        "selector": ".registration a",
+        "prop": "min-height",
+        "value": "44px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 971,
+        "selector": ".search-field input",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 592,
+        "selector": ".search-field input",
+        "prop": "font-size",
+        "value": "16px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 974,
+        "selector": ".search-status",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 595,
+        "selector": ".search-status",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 997,
+        "selector": ".search-results p",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 603,
+        "selector": ".search-results p",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1009,
+        "selector": ".search-dialog footer",
+        "prop": "font-size",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 607,
+        "selector": ".search-dialog footer",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1021,
+        "selector": ".image-dialog",
+        "prop": "max-height",
+        "value": "94vh"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 610,
+        "selector": ".image-dialog",
+        "prop": "max-height",
+        "value": "92dvh"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 934,
+        "selector": "dialog::backdrop",
+        "prop": "backdrop-filter",
+        "value": "blur(5px)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 622,
+        "selector": "dialog::backdrop",
+        "prop": "backdrop-filter",
+        "value": "none"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1046,
+        "selector": ".toast",
+        "prop": "font-size",
+        "value": "12px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 626,
+        "selector": ".toast",
+        "prop": "font-size",
+        "value": "13px"
+      },
+      "context": []
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 429,
+        "selector": ".journal-home .post-card",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 632,
+        "selector": ".journal-home .post-card",
+        "prop": "padding",
+        "value": "22px"
+      },
+      "context": [
+        "@media (720px <= width < 1000px)",
+        "@container (min-width: 660px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 428,
+        "selector": ".journal-home .post-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 633,
+        "selector": ".journal-home .post-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "context": [
+        "@media (720px <= width < 1000px)",
+        "@container (min-width: 660px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 433,
+        "selector": ".journal-home .post-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 636,
+        "selector": ".journal-home .post-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "context": [
+        "@media (720px <= width < 1000px)",
+        "@container (min-width: 660px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 459,
+        "selector": ".journal-home .post-card p",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 646,
+        "selector": ".journal-home .post-card p",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": [
+        "@media (720px <= width < 1000px)",
+        "@container (min-width: 660px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 603,
+        "selector": ".mobile-brand-row .mobile-brand",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 653,
+        "selector": ".mobile-brand-row .mobile-brand",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 660,
+        "selector": ".post-card",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 663,
+        "selector": ".post-card",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 661,
+        "selector": ".post-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 664,
+        "selector": ".post-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 660,
+        "selector": ".post-card.mica-card",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 663,
+        "selector": ".post-card.mica-card",
+        "prop": "padding",
+        "value": "20px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 661,
+        "selector": ".post-card.mica-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 664,
+        "selector": ".post-card.mica-card",
+        "prop": "gap",
+        "value": "10px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 665,
+        "selector": ".post-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 668,
+        "selector": ".post-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 665,
+        "selector": ".post-card.mica-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 668,
+        "selector": ".post-card.mica-card .card-date",
+        "prop": "width",
+        "value": "auto"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 676,
+        "selector": ".post-card .card-date span",
+        "prop": "font-size",
+        "value": "26px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 672,
+        "selector": ".post-card .card-date span",
+        "prop": "font-size",
+        "value": "30px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 676,
+        "selector": ".post-card.mica-card .card-date span",
+        "prop": "font-size",
+        "value": "26px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 672,
+        "selector": ".post-card.mica-card .card-date span",
+        "prop": "font-size",
+        "value": "30px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 687,
+        "selector": ".post-card p",
+        "prop": "font-size",
+        "value": "14px"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 680,
+        "selector": ".post-card p",
+        "prop": "font-size",
+        "value": "15px"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "responsive.css",
+        "line": 715,
+        "selector": ".article-layout .prose",
+        "prop": "font-size",
+        "value": "var(--autuswing-base-font, 16px)"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 684,
+        "selector": ".article-layout .prose",
+        "prop": "font-size",
+        "value": "var(--autuswing-base-font, 16px)"
+      },
+      "context": [
+        "@media (width < 720px)"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1755,
+        "selector": ".mica-card",
+        "prop": "background",
+        "value": "white"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 766,
+        "selector": ".mica-card",
+        "prop": "background",
+        "value": "white"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1757,
+        "selector": ".mica-card",
+        "prop": "box-shadow",
+        "value": "none"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 767,
+        "selector": ".mica-card",
+        "prop": "box-shadow",
+        "value": "none"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1758,
+        "selector": ".mica-card",
+        "prop": "backdrop-filter",
+        "value": "none"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 768,
+        "selector": ".mica-card",
+        "prop": "backdrop-filter",
+        "value": "none"
+      },
+      "context": [
+        "@media print"
+      ]
+    },
+    {
+      "earlier": {
+        "file": "legacy.css",
+        "line": 1229,
+        "selector": ".prose pre",
+        "prop": "white-space",
+        "value": "pre-wrap"
+      },
+      "later": {
+        "file": "visual.css",
+        "line": 776,
+        "selector": ".prose pre",
+        "prop": "white-space",
+        "value": "pre-wrap"
+      },
+      "context": [
+        "@media print"
+      ]
+    }
+  ]
+}

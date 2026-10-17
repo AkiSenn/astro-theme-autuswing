@@ -20,6 +20,8 @@
     "test": "tsx --test tests/*.test.ts",
     "verify": "node scripts/verify-content.mjs && tsx scripts/verify-output.ts",
     "test:browser": "playwright test",
+    "test:styles": "playwright test --config playwright.styles.config.ts",
+    "verify:styles": "node scripts/check-styles.mjs",
     "test:browser:cross": "playwright test --config playwright.cross.config.ts",
     "test:nginx": "playwright test --config playwright.nginx.config.ts",
     "prepare:nginx": "node scripts/prepare-nginx.mjs",
