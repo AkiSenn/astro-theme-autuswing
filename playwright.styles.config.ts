@@ -5,6 +5,8 @@ import base from './playwright.config';
 // environment; ordinary test runs can never accept a changed screenshot.
 export default defineConfig({
   ...base,
+  fullyParallel: true,
+  workers: 2,
   testDir: './tests/styles',
   snapshotPathTemplate: '{testDir}/snapshots/{projectName}/{arg}{ext}',
   outputDir: 'test-results/styles',

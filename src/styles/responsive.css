@@ -1,10 +1,5 @@
 /* Phase three: layout and navigation. Brand/reading components still use the
    original palette and optional surface styles. Breakpoints use CSS width. */
-:root {
-  --layout-sidebar: clamp(240px, var(--autuswing-sidebar, 272px), 300px);
-  --reading-width: 704px;
-  --mobile-header-height: 112px;
-}
 html {
   scrollbar-gutter: stable;
 }

@@ -1,44 +1,5 @@
 /* AutuSwing visual system: warm paper, forest green and quiet reading rhythm.
    Layout ownership stays in responsive.css; theme configuration remains usable. */
-:root {
-  --paper: #f6f5f1;
-  --surface: #fdfcf9;
-  --sidebar: #edf0e8;
-  --text: #29382f;
-  --muted: #5d6b60;
-  --line: #dcded5;
-  --green-soft: #e5ecdf;
-  --code-border: #d4ddd6;
-  --inline-code-bg: #eaf0e8;
-  --mica-base: #fdfcf9f2;
-  --mica-shadow: 0 2px 8px #29382f05, 0 8px 24px #29382f04;
-  --mica-hover-shadow: 0 8px 24px #29382f0d;
-  font-family: var(
-    --autuswing-font,
-    'Segoe UI',
-    'PingFang SC',
-    'Hiragino Sans GB',
-    'Microsoft YaHei',
-    system-ui,
-    sans-serif
-  );
-  font-kerning: normal;
-  text-rendering: optimizeLegibility;
-}
-:root[data-theme='dark'] {
-  --paper: #151d18;
-  --surface: #1d2821;
-  --sidebar: #1a251e;
-  --text: #e1e9df;
-  --muted: #aab7a8;
-  --line: #37463b;
-  --green-soft: #2a3c2e;
-  --code-border: #425246;
-  --inline-code-bg: #2a3a2e;
-  --mica-base: #1d2821f2;
-  --mica-shadow: 0 2px 8px #00000012, 0 8px 24px #0000000f;
-  --mica-hover-shadow: 0 8px 24px #00000026;
-}
 .mica-card {
   background: var(--surface);
   box-shadow: var(--mica-shadow);

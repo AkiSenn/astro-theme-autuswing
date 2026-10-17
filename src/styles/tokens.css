@@ -1,0 +1,101 @@
+/* Shared design values. --autuswing-* and --accent remain public configuration inputs.
+   Layout breakpoints stay literal in the component media queries. */
+:root {
+  --paper: #f6f5f1;
+  --surface: #fdfcf9;
+  --sidebar: #edf0e8;
+  --text: #29382f;
+  --muted: #5d6b60;
+  --line: #dcded5;
+  --green: var(--accent, #4c6855);
+  --green-soft: #e5ecdf;
+  --sun: #deb965;
+  --shadow: 0 18px 70px #26362d18;
+  --sidebar-width: var(--autuswing-sidebar, 272px);
+  --radius: var(--autuswing-radius, 18px);
+  --code-bg: #f3f5f8;
+  --code-border: #d4ddd6;
+  --code-text: #24292f;
+  --code-muted: #57606a;
+  --code-keyword: #b42337;
+  --code-title: #6639ba;
+  --code-constant: #0550ae;
+  --code-string: #0a3069;
+  --code-builtin: #953800;
+  --code-tag: #116329;
+  --code-bullet: #6b5700;
+  --code-added-bg: #dafbe1;
+  --code-deleted-bg: #ffebe9;
+  font-family: var(--font-body);
+  color-scheme: light;
+  --mica-base: #fdfcf9f2;
+  --mica-edge: #ffffffc9;
+  --mica-shadow: 0 2px 8px #29382f05, 0 8px 24px #29382f04;
+  --mica-hover-shadow: 0 8px 24px #29382f0d;
+  --layout-sidebar: clamp(240px, var(--autuswing-sidebar, 272px), 300px);
+  --reading-width: 704px;
+  --mobile-header-height: 112px;
+  --inline-code-bg: #eaf0e8;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  --motion-fast: 150ms;
+  --motion-normal: 180ms;
+  --motion-page: 320ms;
+  --motion-exit: 120ms;
+  --motion-rise: 14px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-body: var(
+    --autuswing-font,
+    'Segoe UI',
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    system-ui,
+    sans-serif
+  );
+  --font-code: var(--autuswing-code-font, 'Cascadia Code', Consolas, monospace);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --radius-small: 6px;
+  --radius-control: 8px;
+  --radius-panel: 10px;
+  --z-tools: 20;
+  --z-navigation: 30;
+  --z-progress: 60;
+  --z-feedback: 100;
+}
+:root[data-theme='dark'] {
+  --paper: #151d18;
+  --surface: #1d2821;
+  --sidebar: #1a251e;
+  --text: #e1e9df;
+  --muted: #aab7a8;
+  --line: #37463b;
+  --green: var(--accent, #a6c497);
+  --green-soft: #2a3c2e;
+  --sun: #d8b76d;
+  --shadow: 0 18px 70px #0005;
+  --code-bg: #161b22;
+  --code-border: #425246;
+  --code-text: #e6edf3;
+  --code-muted: #a0abb7;
+  --code-keyword: #ff7b72;
+  --code-title: #d2a8ff;
+  --code-constant: #79c0ff;
+  --code-string: #a5d6ff;
+  --code-builtin: #ffa657;
+  --code-tag: #7ee787;
+  --code-bullet: #f2cc60;
+  --code-added-bg: #033a16;
+  --code-deleted-bg: #67060c;
+  color-scheme: dark;
+  --mica-base: #1d2821f2;
+  --mica-edge: #ffffff10;
+  --mica-shadow: 0 2px 8px #00000012, 0 8px 24px #0000000f;
+  --mica-hover-shadow: 0 8px 24px #00000026;
+  --inline-code-bg: #2a3a2e;
+}

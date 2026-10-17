@@ -89,61 +89,6 @@
   pointer-events: auto;
 }
 /* Base tokens and document defaults. */
-:root {
-  --paper: #f5f4f0;
-  --surface: #fbfaf7;
-  --sidebar: #eceee7;
-  --text: #26362d;
-  --muted: #737b72;
-  --line: #dedfd6;
-  --green: #4c6855;
-  --green-soft: #e6ebdf;
-  --sun: #deb965;
-  --shadow: 0 18px 70px #26362d18;
-  --sidebar-width: 272px;
-  --radius: 18px;
-  --code-bg: #f3f5f8;
-  --code-border: #cdd6df;
-  --code-text: #24292f;
-  --code-muted: #57606a;
-  --code-keyword: #b42337;
-  --code-title: #6639ba;
-  --code-constant: #0550ae;
-  --code-string: #0a3069;
-  --code-builtin: #953800;
-  --code-tag: #116329;
-  --code-bullet: #6b5700;
-  --code-added-bg: #dafbe1;
-  --code-deleted-bg: #ffebe9;
-  font-family: Inter,"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-  color-scheme: light;
-}
-:root[data-theme=dark] {
-  --paper: #141b18;
-  --surface: #1b2420;
-  --sidebar: #19221d;
-  --text: #e0e8de;
-  --muted: #a1ae9e;
-  --line: #344036;
-  --green: #a6c497;
-  --green-soft: #28382b;
-  --sun: #d8b76d;
-  --shadow: 0 18px 70px #0005;
-  --code-bg: #161b22;
-  --code-border: #3d4753;
-  --code-text: #e6edf3;
-  --code-muted: #a0abb7;
-  --code-keyword: #ff7b72;
-  --code-title: #d2a8ff;
-  --code-constant: #79c0ff;
-  --code-string: #a5d6ff;
-  --code-builtin: #ffa657;
-  --code-tag: #7ee787;
-  --code-bullet: #f2cc60;
-  --code-added-bg: #033a16;
-  --code-deleted-bg: #67060c;
-  color-scheme: dark;
-}
 * {
   box-sizing: border-box;
 }
@@ -1236,15 +1181,6 @@ dialog::backdrop {
   }
 }
 /* Configuration overrides and optional features. */
-:root {
-  --radius: var(--autuswing-radius,18px);
-  --sidebar-width: var(--autuswing-sidebar,272px);
-  --green: var(--accent,#4c6855);
-  font-family: var(--autuswing-font,Inter,"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif);
-}
-:root[data-theme=dark] {
-  --green: var(--accent,#a6c497);
-}
 body {
   font-size: calc(var(--autuswing-base-font,16px) - 1px);
 }
@@ -1617,18 +1553,6 @@ body:has(.site-background) {
   pointer-events: none;
 }
 /* Web approximation of Mica: tinted surfaces, soft edge light and restrained lift. */
-:root {
-  --mica-base: #fbfaf7e8;
-  --mica-edge: #ffffffc9;
-  --mica-shadow: 0 6px 24px #26362d08,0 1px 3px #26362d08;
-  --mica-hover-shadow: 0 16px 36px #26362d14,0 3px 8px #26362d08;
-}
-:root[data-theme=dark] {
-  --mica-base: #1e2823e8;
-  --mica-edge: #ffffff10;
-  --mica-shadow: 0 6px 24px #0000001a,0 1px 3px #0000001a;
-  --mica-hover-shadow: 0 16px 36px #00000033,0 3px 8px #00000020;
-}
 .mica-card {
   position: relative;
   isolation: isolate;

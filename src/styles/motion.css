@@ -1,11 +1,5 @@
 /* Autuswing Motion 1.0. Layout and color tokens remain in their own styles. */
 :root {
-  --motion-fast: 150ms;
-  --motion-normal: 180ms;
-  --motion-page: 320ms;
-  --motion-exit: 120ms;
-  --motion-rise: 14px;
-  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Leave the live shell visible; do not take a fading whole-page snapshot. */
   view-transition-name: none;
 }
