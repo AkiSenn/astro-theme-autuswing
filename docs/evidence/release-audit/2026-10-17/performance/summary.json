@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-17T15:39:07.930Z",
+  "origin": "http://127.0.0.1:8789/",
+  "environment": "Local Nginx, Edge headless; Lighthouse simulated throttling; no field/Core Web Vitals claim",
+  "crawlPolicy": "production-artifact-local-only",
+  "runs": [
+    {
+      "name": "home",
+      "profile": "mobile",
+      "run": 1,
+      "version": "13.5.0",
+      "url": "http://127.0.0.1:8789/",
+      "scores": {
+        "performance": 0.96,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "fcpMs": 903.0387000000001,
+      "lcpMs": 2853.0387,
+      "tbtMs": 0,
+      "cls": 0,
+      "transferBytes": 366274,
+      "warnings": [],
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "formFactor": "mobile",
+      "rawReport": "home-mobile-1.json.gz"
+    },
+    {
+      "name": "article",
+      "profile": "mobile",
+      "run": 1,
+      "version": "13.5.0",
+      "url": "http://127.0.0.1:8789/post/55b0541c/",
+      "scores": {
+        "performance": 0.89,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "fcpMs": 1236.9617500000002,
+      "lcpMs": 3753.9235,
+      "tbtMs": 1,
+      "cls": 0,
+      "transferBytes": 514155,
+      "warnings": [],
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "formFactor": "mobile",
+      "rawReport": "article-mobile-1.json.gz"
+    },
+    {
+      "name": "math",
+      "profile": "mobile",
+      "run": 1,
+      "version": "13.5.0",
+      "url": "http://127.0.0.1:8789/post/4e395565/",
+      "scores": {
+        "performance": 0.93,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 1
+      },
+      "fcpMs": 1354.5504,
+      "lcpMs": 3228.0336,
+      "tbtMs": 0,
+      "cls": 0,
+      "transferBytes": 424193,
+      "warnings": [],
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "formFactor": "mobile",
+      "rawReport": "math-mobile-1.json.gz"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "checkedAt": "2026-10-17T15:35:47.547Z",
+  "source": "E:\\autuswing-astro",
+  "root": "E:\\autuswing-astro\\.local-tools\\release-audit-20261017\\workspace",
+  "sourceCommit": "22ac4b1",
+  "productionEnvironment": {
+    "SITE_ENV": "production",
+    "ASTRO_PREVIEW_DRAFTS": "1"
+  },
+  "install": "Existing pinned dependency installation reused via a directory junction; no fresh npm ci claim",
+  "commands": [
+    {
+      "name": "typecheck",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\astro\\bin\\astro.mjs",
+        "check"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 9510
+    },
+    {
+      "name": "content-with-drafts",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "scripts/check-content.ts",
+        "--drafts"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 1860
+    },
+    {
+      "name": "production-build",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\astro\\bin\\astro.mjs",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 4579
+    },
+    {
+      "name": "content-output",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "scripts/check-content.ts",
+        "--output"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 1903
+    },
+    {
+      "name": "unit",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "--test",
+        "tests/back.test.ts",
+        "tests/contracts.test.ts",
+        "tests/markdown-reading.test.ts",
+        "tests/math.test.ts",
+        "tests/writing.test.ts"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 2490
+    },
+    {
+      "name": "source-integrity",
+      "args": [
+        "scripts/verify-content.mjs"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 302
+    },
+    {
+      "name": "output",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "scripts/verify-output.ts"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 1184
+    },
+    {
+      "name": "fourth-post-build",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\astro\\bin\\astro.mjs",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 4591
+    },
+    {
+      "name": "fourth-post-content-output",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "scripts/check-content.ts",
+        "--output"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 1877
+    },
+    {
+      "name": "fourth-post-verify-output",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\tsx\\dist\\cli.mjs",
+        "scripts/verify-output.ts"
+      ],
+      "exitCode": 1,
+      "elapsedMs": 1171
+    },
+    {
+      "name": "production-restored",
+      "args": [
+        "E:\\autuswing-astro\\node_modules\\astro\\bin\\astro.mjs",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 4677
+    }
+  ],
+  "productionPages": 28,
+  "draftsExcluded": [
+    "hdkzyv",
+    "oznmzt",
+    "qzvc5r"
+  ],
+  "draftHashes": [
+    {
+      "file": "content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md",
+      "sha256": "b853c88181f9dc1cef155e5ccefa081d959577ca4b90c77e0d6bcafb26241de9"
+    },
+    {
+      "file": "content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md",
+      "sha256": "b074ac2934a63eb77f701f1fe8e2dcb1fce576854e7aee83250a0f3206bf5da9"
+    },
+    {
+      "file": "content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md",
+      "sha256": "08357ec686490012600d2d3d121f7bad11602109d095b9b1b6cadb6c7bdffe75"
+    }
+  ],
+  "frozenImagesUnchanged": 274,
+  "frozenMetricsUnchanged": 274,
+  "productionCrawlPolicyPassed": true,
+  "publishedPostCountRegressionReproduced": true,
+  "artifact": {
+    "files": 356,
+    "bytes": 13389700,
+    "loadedHomeBundles": [
+      {
+        "url": "/_astro/BaseLayout.D_M-DZhX.css",
+        "bytes": 53283,
+        "gzipBytes": 11092
+      },
+      {
+        "url": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CCbU_jCD.js",
+        "bytes": 21925,
+        "gzipBytes": 7578
+      }
+    ],
+    "largestFiles": [
+      {
+        "file": "assets/vendor/mathjax/4.1.3/tex-mml-chtml.js",
+        "bytes": 997558
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/speech-worker.js",
+        "bytes": 425256
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/hi.json",
+        "bytes": 394568
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/ko.json",
+        "bytes": 392014
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/en.json",
+        "bytes": 364204
+      },
+      {
+        "file": "img/avatar.png",
+        "bytes": 317783
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/de.json",
+        "bytes": 284080
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/it.json",
+        "bytes": 282065
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/fr.json",
+        "bytes": 276403
+      },
+      {
+        "file": "assets/vendor/katex/0.19.0/dist/katex.min.js",
+        "bytes": 272868
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/sv.json",
+        "bytes": 271954
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/af.json",
+        "bytes": 267392
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/nn.json",
+        "bytes": 262158
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/a11y/sre.js",
+        "bytes": 261018
+      },
+      {
+        "file": "assets/vendor/mathjax/4.1.3/sre/mathmaps/nb.json",
+        "bytes": 260745
+      }
+    ]
+  }
+}

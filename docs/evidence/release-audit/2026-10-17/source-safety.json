@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-17T15:39:54.723Z",
+  "scope": "Tracked text files; high-confidence credential shapes only; no secret values recorded",
+  "trackedFiles": 2471,
+  "matches": [],
+  "trackedEnvFiles": [],
+  "trackedPrivateKeys": [],
+  "commit": "22ac4b16bba1d56aff1ee44f1ed072c7d7ab4d36",
+  "branch": "codex/astro-migration",
+  "baseline": "92887a219a165c0e6cc221f142c331722d3d3fc3",
+  "gitStatus": "?? content/posts/"
+}

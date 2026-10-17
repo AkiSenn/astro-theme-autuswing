@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-17T15:42:42.653Z",
+  "browser": "Edge",
+  "localOnly": true,
+  "scenario": "Installed current SW, change offline HTML only in isolated build, call registration.update(), go offline",
+  "newNetworkTitle": "离线页审计候选B",
+  "observedCachedTitle": "暂时离线",
+  "unchangedWorkerHash": "ece9367ba87ce9af7d9538d47566b16ee7b3cad589f6314fd12b800513e42f0c",
+  "reproduced": "Offline HTML stays stale when its content changes without a worker byte change",
+  "sourceUntouched": true
+}

@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-17T15:41:31.470Z",
+  "browser": "Edge",
+  "productionArtifact": true,
+  "checks": [
+    {
+      "kind": "home",
+      "width": 390,
+      "scrollWidth": 375,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": false,
+      "miniSidebar": false,
+      "mobileHeader": true
+    },
+    {
+      "kind": "article",
+      "width": 390,
+      "scrollWidth": 375,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": false,
+      "miniSidebar": false,
+      "mobileHeader": true
+    },
+    {
+      "width": 390,
+      "search": true,
+      "codeCopy": true,
+      "sixLegacyImages": true,
+      "smartBackHome": true
+    },
+    {
+      "kind": "home",
+      "width": 820,
+      "scrollWidth": 805,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": false,
+      "miniSidebar": true,
+      "mobileHeader": false
+    },
+    {
+      "kind": "article",
+      "width": 820,
+      "scrollWidth": 805,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": false,
+      "miniSidebar": true,
+      "mobileHeader": false
+    },
+    {
+      "width": 820,
+      "search": true,
+      "codeCopy": true,
+      "sixLegacyImages": true,
+      "smartBackHome": true
+    },
+    {
+      "kind": "home",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": true,
+      "miniSidebar": false,
+      "mobileHeader": false
+    },
+    {
+      "kind": "article",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "preview": "false",
+      "h1": 1,
+      "desktopSidebar": false,
+      "miniSidebar": true,
+      "mobileHeader": false
+    },
+    {
+      "width": 1920,
+      "search": true,
+      "codeCopy": true,
+      "sixLegacyImages": true,
+      "smartBackHome": true
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

@@ -1,0 +1,96 @@
+{
+  "checkedAt": "2026-10-17T15:36:02.213Z",
+  "results": [
+    {
+      "pathname": "/",
+      "status": 200,
+      "url": "https://akisenn.com/",
+      "headers": {
+        "cache-control": "max-age=60",
+        "content-type": "text/html",
+        "server": "ESA",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "bytes": 26855,
+      "canonical": "https://akisenn.com/"
+    },
+    {
+      "pathname": "/robots.txt",
+      "status": 200,
+      "url": "https://akisenn.com/robots.txt",
+      "headers": {
+        "cache-control": "max-age=60",
+        "content-type": "text/plain",
+        "server": "ESA",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "bytes": 110,
+      "body": "User-agent: *\nAllow: /\nSitemap: https://akisenn.com/sitemap.xml\nSitemap: https://akisenn.com/baidusitemap.xml\n"
+    },
+    {
+      "pathname": "/sitemap.xml",
+      "status": 200,
+      "url": "https://akisenn.com/sitemap.xml",
+      "headers": {
+        "cache-control": "max-age=60",
+        "content-type": "text/xml",
+        "server": "ESA",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "bytes": 1804,
+      "locations": [
+        "https://akisenn.com/about/",
+        "https://akisenn.com/post/55b0541c/",
+        "https://akisenn.com/post/4c6caf67/",
+        "https://akisenn.com/post/4e395565/",
+        "https://akisenn.com/archives/",
+        "https://akisenn.com/archives/2020/",
+        "https://akisenn.com/archives/2020/10/",
+        "https://akisenn.com/archives/2022/",
+        "https://akisenn.com/archives/2022/01/",
+        "https://akisenn.com/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/",
+        "https://akisenn.com/categories/%E5%8A%9F%E8%83%BD%E6%BC%94%E7%A4%BA/",
+        "https://akisenn.com/",
+        "https://akisenn.com/tags/GitHub/",
+        "https://akisenn.com/tags/Pages/",
+        "https://akisenn.com/tags/%E7%BD%91%E7%AB%99/",
+        "https://akisenn.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/",
+        "https://akisenn.com/tags/MathJax/",
+        "https://akisenn.com/tags/%E5%86%99%E4%BD%9C/",
+        "https://akisenn.com/tags/AutuSwing/",
+        "https://akisenn.com/tags/HexoThemes/",
+        "https://akisenn.com/tags/Hexo/",
+        "https://akisenn.com/tags/Cloudflare/",
+        "https://akisenn.com/tags/Workers/",
+        "https://akisenn.com/tags/",
+        "https://akisenn.com/categories/",
+        "https://akisenn.com/links/"
+      ]
+    },
+    {
+      "pathname": "/rss.xml",
+      "status": 200,
+      "url": "https://akisenn.com/rss.xml",
+      "headers": {
+        "cache-control": "max-age=60",
+        "content-type": "text/xml",
+        "server": "ESA",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "bytes": 3980
+    },
+    {
+      "pathname": "/sw.js",
+      "status": 200,
+      "url": "https://akisenn.com/sw.js",
+      "headers": {
+        "cache-control": "max-age=60",
+        "content-type": "application/javascript",
+        "server": "ESA",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "bytes": 945,
+      "body": "const CACHE='autuswing-6e4cba15ed6f',SHELL=[\"/offline.html\",\"/assets/autuswing.b1353ecc5365.css\",\"/assets/autuswing.8a9bd0f36937.js\",\"/assets/appearance.0a68c1e9567b.js\",\"/assets/comments.ce76c6fce499.js\",\"/assets/extras.3993e25e9271.js\"];self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>(k.startsWith('autuswing-')||k.startsWith('sunna-'))&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;if(e.request.mode==='navigate')e.respondWith(fetch(e.request).catch(()=>caches.match(SHELL[0])));else if(SHELL.some(p=>new URL(p,self.location.origin).href===e.request.url))e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))})"
+    }
+  ]
+}

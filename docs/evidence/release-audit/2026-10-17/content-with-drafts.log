@@ -1,0 +1,20 @@
+warning: content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md: Link points to unpublished content: #user-content-fn-ordinary
+warning: content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md: Link points to unpublished content: /oznmzt/
+warning: content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md: Link points to unpublished content: /qzvc5r/
+warning: content/posts/hdkzyv-演示随笔｜把普通的一天写下来.md: Link points to unpublished content: #user-content-fnref-ordinary
+warning: content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md: Link points to unpublished content: /hdkzyv/
+warning: content/posts/oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md: Link points to unpublished content: /qzvc5r/
+warning: content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md: Link points to unpublished content: /hdkzyv/
+warning: content/posts/qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md: Link points to unpublished content: /oznmzt/
+{
+  "files": 7,
+  "published": 4,
+  "drafts": 3,
+  "images": 8,
+  "links": 22,
+  "externalLinks": 12,
+  "deferredLinks": 1,
+  "remoteResults": [],
+  "errors": 0,
+  "warnings": 8
+}

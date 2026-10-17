@@ -1,0 +1,146 @@
+{
+  "totals": {
+    "404.html": {
+      "files": 1,
+      "bytes": 32389
+    },
+    "about": {
+      "files": 1,
+      "bytes": 33789
+    },
+    "archives": {
+      "files": 5,
+      "bytes": 163914
+    },
+    "assets/vendor/katex": {
+      "files": 65,
+      "bytes": 1386108
+    },
+    "assets/vendor/manifest.json": {
+      "files": 1,
+      "bytes": 45780
+    },
+    "assets/vendor/mathjax": {
+      "files": 80,
+      "bytes": 7335864
+    },
+    "assets/vendor/newcm": {
+      "files": 147,
+      "bytes": 2190080
+    },
+    "assets/vendor/THIRD-PARTY.md": {
+      "files": 1,
+      "bytes": 1193
+    },
+    "atom.xml": {
+      "files": 1,
+      "bytes": 2238
+    },
+    "background": {
+      "files": 6,
+      "bytes": 184448
+    },
+    "baidusitemap.xml": {
+      "files": 1,
+      "bytes": 2031
+    },
+    "categories": {
+      "files": 3,
+      "bytes": 98048
+    },
+    "img": {
+      "files": 9,
+      "bytes": 1124414
+    },
+    "index.html": {
+      "files": 1,
+      "bytes": 35011
+    },
+    "links": {
+      "files": 1,
+      "bytes": 32665
+    },
+    "manifest.webmanifest": {
+      "files": 1,
+      "bytes": 267
+    },
+    "offline.html": {
+      "files": 1,
+      "bytes": 435
+    },
+    "post": {
+      "files": 3,
+      "bytes": 204298
+    },
+    "redirects.json": {
+      "files": 1,
+      "bytes": 2040
+    },
+    "robots.txt": {
+      "files": 1,
+      "bytes": 110
+    },
+    "rss.xml": {
+      "files": 1,
+      "bytes": 2316
+    },
+    "search.json": {
+      "files": 1,
+      "bytes": 19210
+    },
+    "sitemap-0.xml": {
+      "files": 1,
+      "bytes": 2031
+    },
+    "sitemap-index.xml": {
+      "files": 1,
+      "bytes": 225
+    },
+    "sitemap.txt": {
+      "files": 1,
+      "bytes": 979
+    },
+    "sitemap.xml": {
+      "files": 1,
+      "bytes": 225
+    },
+    "sw.js": {
+      "files": 1,
+      "bytes": 760
+    },
+    "tags": {
+      "files": 12,
+      "bytes": 392999
+    },
+    "_astro": {
+      "files": 5,
+      "bytes": 94332
+    },
+    "_headers": {
+      "files": 1,
+      "bytes": 337
+    },
+    "_redirects": {
+      "files": 1,
+      "bytes": 1164
+    }
+  },
+  "parity": {
+    "online": 26,
+    "local": 26,
+    "missing": [],
+    "added": []
+  },
+  "loadedHomeBundles": [
+    {
+      "url": "/_astro/BaseLayout.D_M-DZhX.css",
+      "bytes": 53283,
+      "gzipBytes": 11092
+    },
+    {
+      "url": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CCbU_jCD.js",
+      "bytes": 21925,
+      "gzipBytes": 7578
+    }
+  ]
+}

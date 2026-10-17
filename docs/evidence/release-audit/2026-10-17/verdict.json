@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-17T15:44:34.715Z",
+  "verdict": "Hold production switch pending release-check fixes and real-environment acceptance",
+  "sourceCommit": "22ac4b16bba1d56aff1ee44f1ed072c7d7ab4d36",
+  "sourceChanges": "Only new audit report/evidence; original source/configuration/content unchanged",
+  "verifiedNow": {
+    "typeErrors": 0,
+    "typeWarnings": 0,
+    "existingHints": 1,
+    "unitPassed": 27,
+    "canonicalPages": 26,
+    "historicalRedirects": 21,
+    "httpChecks": 77,
+    "deploymentBrowserTestsPassed": 4,
+    "deploymentBrowsers": [
+      "Edge",
+      "WebKit"
+    ],
+    "smokeViewports": [
+      [
+        390,
+        844
+      ],
+      [
+        820,
+        1180
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "screenshots": 6,
+    "draftsExcluded": [
+      "hdkzyv",
+      "oznmzt",
+      "qzvc5r"
+    ],
+    "npmKnownVulnerabilities": 0,
+    "reproducibleArtifactFiles": 356,
+    "frozenImagesUnchanged": 274,
+    "frozenMetricsUnchanged": 274
+  },
+  "reproducedIssues": [
+    "Publishing a fourth valid article fails fixed-count output verification",
+    "Changing offline HTML without changing SW bytes leaves the installed offline cache stale"
+  ],
+  "limitations": [
+    "Existing dependency install reused; no fresh npm ci",
+    "Full 106-case visual suite not repeated in this read-only audit; previous approved results retained",
+    "Firefox and physical devices not verified in this audit",
+    "Production Nginx/ESA settings and rollback not exercised",
+    "Real comments remain intentionally disabled",
+    "Lighthouse one mobile simulated run per page; no real-user CWV claim"
+  ],
+  "productionWrites": false,
+  "deploymentPerformed": false
+}
