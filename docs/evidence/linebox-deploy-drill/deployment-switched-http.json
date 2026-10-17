@@ -1,0 +1,689 @@
+{
+  "checkedAt": "2026-10-17T19:59:09.900Z",
+  "origin": "http://127.0.0.1:1656/",
+  "policy": "production-artifact-local-only",
+  "canonicalPages": 29,
+  "redirectRules": 21,
+  "checks": [
+    {
+      "uri": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2026/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2026/10/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2022/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2022/01/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2020/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/archives/2020/10/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/数学公式/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/网站/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/写作/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/AutuSwing/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/Cloudflare/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/GitHub/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/Hexo/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/HexoThemes/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/MathJax/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/Pages/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/tags/Workers/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/categories/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/categories/功能演示/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/categories/网站建设/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/release4/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/post/55b0541c/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/post/4c6caf67/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/post/4e395565/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/about/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/links/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/post/4c6caf67.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4c6caf67/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4c6caf67/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4c6caf67?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/18/网站笔记/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/18/网站笔记/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/18/网站笔记?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4c6caf67/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/post/4e395565.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4e395565/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4e395565/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/4e395565?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2020/10/01/math-notebook/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2020/10/01/math-notebook/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2020/10/01/math-notebook?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/4e395565/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/post/55b0541c.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/55b0541c/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/55b0541c/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/p/55b0541c?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客/?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客/index.html?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/2022/01/20/Github-Hexo-yelee搭建个性化博客?from=phase5&value=1",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5&value=1",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/post/55b0541c?from=phase5",
+      "status": 301,
+      "type": "text/html",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": "/post/55b0541c/?from=phase5",
+      "checksumVerified": false
+    },
+    {
+      "uri": "/missing-check/",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/img/missing-check.png",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/_astro/missing-check.js",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/_headers",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/_redirects",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/redirects.json",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "cache": "no-store",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CVT2GcHH.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CVT2GcHH.js",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "status": 200,
+      "type": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/_astro/avatar.DADbckWz_Z23dhab.webp",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/katex.min.css",
+      "status": 200,
+      "type": "text/css",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/katex.min.css",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/assets/vendor/katex/0.19.0/dist/fonts/KaTeX_Main-Regular.woff2",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/img/avatar.png",
+      "status": 200,
+      "type": "image/png",
+      "cache": "public, max-age=86400",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/img/avatar.png",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=86400",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/rss.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/rss.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/atom.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/atom.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/sitemap.xml",
+      "status": 200,
+      "type": "text/xml; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/sitemap.xml",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/search.json",
+      "status": 200,
+      "type": "application/json",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/search.json",
+      "status": 304,
+      "type": null,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 200,
+      "type": "application/manifest+json",
+      "cache": "no-cache",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 304,
+      "type": null,
+      "cache": "no-cache",
+      "location": null,
+      "checksumVerified": false
+    },
+    {
+      "uri": "/sw.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "cache": "no-cache",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 200,
+      "type": "application/manifest+json",
+      "cache": "no-cache",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/manifest.webmanifest",
+      "status": 200,
+      "type": "application/manifest+json",
+      "cache": "no-cache",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/pwa/icon-192.563589a49d6a5dac.webp",
+      "status": 200,
+      "type": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/pwa/icon-512.56b4186141900e87.webp",
+      "status": 200,
+      "type": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/pwa/maskable-512.d66440e0c40f797c.webp",
+      "status": 200,
+      "type": "image/webp",
+      "cache": "public, max-age=31536000, immutable",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/post/55b0541c/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    },
+    {
+      "uri": "/robots.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "checksumVerified": true
+    }
+  ]
+}

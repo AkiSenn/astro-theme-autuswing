@@ -1,0 +1,2 @@
+nginx: [emerg] unknown directive "this_is_not_an_nginx_directive" in E:/autuswing-astro/.local-tools/release-drill-20261018-final/nginx/active-root.conf:1
+nginx: configuration file E:/autuswing-astro/.local-tools/release-drill-20261018-final/nginx/nginx.conf test failed

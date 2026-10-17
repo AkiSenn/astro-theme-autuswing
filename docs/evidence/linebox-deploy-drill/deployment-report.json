@@ -1,0 +1,104 @@
+{
+  "startedAt": "2026-10-17T19:59:04.245Z",
+  "scope": "loopback-only; upload simulated by local copy; no production/ESA access",
+  "root": "E:\\autuswing-astro\\.local-tools\\release-drill-20261018-final",
+  "nginxVersion": "nginx version: nginx/1.30.6",
+  "steps": [
+    {
+      "name": "upload-A-complete-set-and-SHA256",
+      "passed": true,
+      "files": 359
+    },
+    {
+      "name": "upload-B-complete-set-and-SHA256",
+      "passed": true,
+      "files": 362
+    },
+    {
+      "name": "blocked-modified-upload",
+      "passed": true
+    },
+    {
+      "name": "blocked-missing-upload",
+      "passed": true
+    },
+    {
+      "name": "blocked-extra-upload",
+      "passed": true
+    },
+    {
+      "name": "blocked-metadata-upload",
+      "passed": true
+    },
+    {
+      "name": "historical-audit-artifact-SHA256",
+      "passed": true,
+      "files": 356,
+      "certification": "audit snapshot only; not a production-approved rollback candidate"
+    },
+    {
+      "name": "blocked-immutable-path-collision",
+      "passed": true
+    },
+    {
+      "name": "initial-health",
+      "passed": true,
+      "release": "A",
+      "httpChecks": 82,
+      "retainedAssets": 302
+    },
+    {
+      "name": "invalid-config-rejected-without-reload",
+      "passed": true
+    },
+    {
+      "name": "switched-health",
+      "passed": true,
+      "release": "B",
+      "httpChecks": 85,
+      "retainedAssets": 302
+    },
+    {
+      "name": "health-failure-detected",
+      "passed": true
+    },
+    {
+      "name": "rollback-health",
+      "passed": true,
+      "release": "A",
+      "httpChecks": 82,
+      "retainedAssets": 302
+    },
+    {
+      "name": "concurrent-requests-no-500-no-mixed-release-body",
+      "passed": true,
+      "requests": 129,
+      "versions": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "all-source-uploaded-and-pooled-bytes-unchanged",
+      "passed": true
+    }
+  ],
+  "candidates": {
+    "A": {
+      "source": "E:\\autuswing-astro\\.local-tools\\releases\\autuswing-20261018-r4",
+      "sourceCommit": "83b88e089e0bf312d20c74e5b5fb7f93be352e02",
+      "READY": "b32687de169a2d2edf54c6d4ebe290dbb4ba54810e817b26c279d067baf29011",
+      "files": 359,
+      "siteSHA256": "b57abdf0f0fd1318f0bf6c16602ce7bd92cafb249da694d7fd5c83982d4fb651"
+    },
+    "B": {
+      "source": "E:\\autuswing-astro\\.local-tools\\release-fixtures-vcbVHE\\.local-tools\\releases\\fourth",
+      "sourceCommit": null,
+      "READY": "def3301b926ee8a9767c2bc7cba5a2ceb1d60bc300c9c6e5300abd602f89f092",
+      "files": 362,
+      "siteSHA256": "a5df0888c96e4c95379a1fa7e6490dc454ccffd2723069de6babd56f6e2e69db"
+    }
+  },
+  "finishedAt": "2026-10-17T19:59:13.294Z",
+  "result": "isolated drill passed; not production authorization"
+}

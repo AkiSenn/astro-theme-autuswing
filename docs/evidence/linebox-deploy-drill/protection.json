@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-17T20:02:57.322Z",
+  "baseCommit": "06f215d5db2ff2d33cf3b4cb5ada6da144682d58",
+  "frozenImages": 274,
+  "frozenMetrics": 274,
+  "allFrozenHashesUnchanged": true,
+  "productAndAcceptanceCodeUnchanged": true,
+  "oldCandidateValid": true,
+  "artifactFiles": 359,
+  "untrackedDrafts": [
+    {
+      "file": "hdkzyv-演示随笔｜把普通的一天写下来.md",
+      "bytes": 3477,
+      "sha256": "b853c88181f9dc1cef155e5ccefa081d959577ca4b90c77e0d6bcafb26241de9"
+    },
+    {
+      "file": "oznmzt-演示教程｜写一个可读的 TypeScript 小工具.md",
+      "bytes": 4291,
+      "sha256": "b074ac2934a63eb77f701f1fe8e2dcb1fce576854e7aee83250a0f3206bf5da9"
+    },
+    {
+      "file": "qzvc5r-演示系列｜从草稿到发布的写作流程（一）.md",
+      "bytes": 4034,
+      "sha256": "08357ec686490012600d2d3d121f7bad11602109d095b9b1b6cadb6c7bdffe75"
+    }
+  ],
+  "experimentScripts": [
+    {
+      "file": "analyze-linebox.mjs",
+      "bytes": 4599,
+      "sha256": "04148341d90d4bf43c9835423b9a4ea5a1d2e4d95122e92fee1f7d2b3bb1bd54"
+    },
+    {
+      "file": "firefox-linebox.mjs",
+      "bytes": 9133,
+      "sha256": "16dd538eab9322c06409169ac78c4fe942613447a9a3badcc72b935ae3362c81"
+    },
+    {
+      "file": "linebox-playwright.mjs",
+      "bytes": 4002,
+      "sha256": "d404b6ac6dec264a375d0a1f8f33dd780082c0386350e1d65d9edf3660dfb13a"
+    },
+    {
+      "file": "linebox.html",
+      "bytes": 2825,
+      "sha256": "5c31c9287d414edeacc50f972530a5bf82977a28ece1e6ca2bfa1f1ab388c663"
+    },
+    {
+      "file": "marionette.mjs",
+      "bytes": 2234,
+      "sha256": "0982384eff1b3152629c1f5032223dc651bf245fbc4762dd16b2e0aff9f290cf"
+    },
+    {
+      "file": "release-drill.mjs",
+      "bytes": 12963,
+      "sha256": "c0a52e253f5e191d102a29723a4a1f35202c01bc9396b678bcae1ba5c4f689d4"
+    },
+    {
+      "file": "strict-geometry.test.mjs",
+      "bytes": 4067,
+      "sha256": "1a247e4f27bc29bceae5ce469da7eec52f3679bbd7a27f908a7e4788b5deddf0"
+    }
+  ]
+}
