@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-17T20:46:34.827Z",
+  "baseCommit": "1a32ae8eeae7391dfc4acec2cd3579e1fe9a8ce5",
+  "frozenImages": 274,
+  "frozenMetrics": 274,
+  "allFrozenHashesUnchanged": true,
+  "productAndOriginalAcceptanceUnchanged": true,
+  "draftsUnchanged": true,
+  "candidateVerifiedFiles": 359,
+  "syntaxChecks": [
+    {
+      "file": "scripts/experiments/firefox-font-cause.mjs",
+      "passed": true,
+      "sha256": "978f009a518d7887993d97b61f4755df173a4772fa5d5066938171e5cc83418b"
+    },
+    {
+      "file": "scripts/experiments/webkit-transition-timeline.mjs",
+      "passed": true,
+      "sha256": "01a57ba1d90038720e86733d091f4023b6acb1051a6556962a0f0d4a0c812b1d"
+    },
+    {
+      "file": "scripts/experiments/webkit-minimal-transition.mjs",
+      "passed": true,
+      "sha256": "a674c26a18f606ec5f4f48a8e9f9d255ecce5bdf2ab37418bd2bb19d5e98bc65"
+    },
+    {
+      "file": "scripts/experiments/summarize-engine-investigation.mjs",
+      "passed": true,
+      "sha256": "bd32e6f1140c4800b7e6dcd80e10c0bbec624c1872ea287ae9c4ab63d29d3552"
+    },
+    {
+      "file": "scripts/experiments/engine-investigation.test.mjs",
+      "passed": true,
+      "sha256": "079cdbbf8759183096b86964081993d291c1d9ccbfd801f2ee653c441443f544"
+    }
+  ]
+}

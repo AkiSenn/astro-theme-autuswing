@@ -1,0 +1,6 @@
+minimal reuse=true run=0: 3/3
+minimal reuse=true run=1: 3/3
+minimal reuse=true run=2: 3/3
+minimal reuse=false run=0: 3/3
+minimal reuse=false run=1: 3/3
+minimal reuse=false run=2: 3/3

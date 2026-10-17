@@ -1,0 +1,7 @@
+import fs from 'node:fs';import path from 'node:path';import {spawn} from 'node:child_process';import {once} from 'node:events';import {pwaServer} from '../tests/support/pwa-server.ts';
+const s=await pwaServer('.local-tools/releases/autuswing-20261018-r4/site');
+const evidence=path.resolve('docs/evidence/engine-focused-20261018');
+const config=path.resolve('.local-tools/engine-original-webkit.config.ts');
+fs.writeFileSync(config,`import {defineConfig} from '@playwright/test';import base from '../playwright.cross.config';export default defineConfig({...base,testDir:${JSON.stringify(path.resolve('tests/browser'))},webServer:undefined,use:{...base.use,baseURL:${JSON.stringify(s.origin)}},outputDir:${JSON.stringify(path.resolve('.local-tools/engine-original-webkit-results'))},reporter:[['list'],['json',{outputFile:${JSON.stringify(path.join(evidence,'original-webkit.json'))}}]]});`);
+const child=spawn(process.execPath,['node_modules/@playwright/test/cli.js','test','--config',config,'--project','webkit','--grep','native MPA transitions use only the content group','--repeat-each','3'],{windowsHide:true,env:{...process.env,VISUAL_EVIDENCE_DIR:path.join(evidence,'original-webkit-details')},stdio:'inherit'});
+try{const [code]=await once(child,'exit');fs.writeFileSync(path.join(evidence,'original-webkit-exit.json'),JSON.stringify({code,origin:s.origin,serialized:true,unchangedAssertions:true,retries:0,originalTimeout:30000},null,2));process.exitCode=code;}finally{await s.close();}

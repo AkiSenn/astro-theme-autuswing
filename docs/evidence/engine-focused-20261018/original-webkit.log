@@ -1,0 +1,14 @@
+
+Running 3 tests using 1 worker
+
+(node:16640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [webkit] › tests\browser\motion.spec.ts:150:1 › native MPA transitions use only the content group and refresh article state (13.5s)
+(node:14332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [webkit] › tests\browser\motion.spec.ts:150:1 › native MPA transitions use only the content group and refresh article state (13.2s)
+(node:31504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 [webkit] › tests\browser\motion.spec.ts:150:1 › native MPA transitions use only the content group and refresh article state (13.3s)
+
+  3 passed (44.4s)

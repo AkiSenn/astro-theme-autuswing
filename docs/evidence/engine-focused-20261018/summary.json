@@ -1,0 +1,2312 @@
+{
+  "createdAt": "2026-10-17T20:45:38.566Z",
+  "acceptance": "NOT CLEARED; no site test assertion/reference was changed",
+  "firefox": [
+    {
+      "name": "firefox-font-cause-20261018",
+      "browser": "157.0",
+      "coldProcesses": 12,
+      "originalFontMismatch": [],
+      "fullArticleSamples": [
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        },
+        {
+          "width": 820,
+          "lineHeight": 25.20001220703125,
+          "gutter": "21.1px",
+          "articleHeight": 21658.349609375
+        },
+        {
+          "width": 320,
+          "lineHeight": 23.400009155273438,
+          "gutter": "21.1px",
+          "articleHeight": 25504.150390625
+        }
+      ]
+    },
+    {
+      "name": "firefox-font-cause-ranges-20261018",
+      "browser": "157.0",
+      "coldProcesses": 24,
+      "originalFontMismatch": [
+        8,
+        11,
+        19,
+        20
+      ],
+      "fullArticleSamples": []
+    },
+    {
+      "name": "firefox-font-cause-controls-20261018",
+      "browser": "157.0",
+      "coldProcesses": 24,
+      "originalFontMismatch": [
+        5,
+        9,
+        10,
+        14,
+        15
+      ],
+      "fullArticleSamples": []
+    },
+    {
+      "name": "firefox-font-no-shared-list-20261018",
+      "browser": "157.0",
+      "coldProcesses": 12,
+      "originalFontMismatch": [
+        2
+      ],
+      "fullArticleSamples": []
+    },
+    {
+      "name": "firefox-stock155-font-controls-20261018",
+      "browser": "155.0",
+      "coldProcesses": 12,
+      "originalFontMismatch": [
+        3,
+        8
+      ],
+      "fullArticleSamples": []
+    },
+    {
+      "name": "firefox-times-counter-r2-20261018",
+      "browser": "157.0",
+      "coldProcesses": 1,
+      "originalFontMismatch": [
+        0
+      ],
+      "fullArticleSamples": []
+    },
+    {
+      "name": "firefox-font-matrix-20261018",
+      "browser": "157.0",
+      "coldProcesses": 1,
+      "originalFontMismatch": [],
+      "fullArticleSamples": []
+    }
+  ],
+  "webkit": [
+    {
+      "name": "webkit-focused-20261018",
+      "runs": 24,
+      "passed": 8,
+      "failed": 16,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "legacy",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 1,
+          "instrumentation": "legacy",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 2,
+          "instrumentation": "legacy",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 3,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 4,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 5,
+          "instrumentation": "legacy",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 6,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 7,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 8,
+          "instrumentation": "legacy",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 9,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 10,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 11,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 0,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 1,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 2,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 3,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 4,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 5,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 6,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 7,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 8,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 9,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 10,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 11,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "webkit-network-focused-20261018",
+      "runs": 3,
+      "passed": 3,
+      "failed": 0,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 1,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 2,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "webkit-network-repeat-20261018",
+      "runs": 12,
+      "passed": 1,
+      "failed": 11,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 1,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 2,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 3,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 4,
+          "instrumentation": "timeline",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 5,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 6,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 7,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 8,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 9,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 10,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 11,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "name": "webkit-no-modules-20261018",
+      "runs": 4,
+      "passed": 0,
+      "failed": 4,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 1,
+          "instrumentation": "timeline",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 2,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 3,
+          "instrumentation": "timeline",
+          "count": 1,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "name": "webkit-storage-trace-20261018",
+      "runs": 6,
+      "passed": 2,
+      "failed": 4,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "legacy",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 1,
+          "instrumentation": "legacy",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 2,
+          "instrumentation": "legacy",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 3,
+          "instrumentation": "legacy",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 4,
+          "instrumentation": "legacy",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 5,
+          "instrumentation": "legacy",
+          "count": 2,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "name": "webkit-paired-css-20261018",
+      "runs": 8,
+      "passed": 3,
+      "failed": 5,
+      "controls": [
+        {
+          "run": 0,
+          "instrumentation": "timeline",
+          "control": "raw-document",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 1,
+          "instrumentation": "timeline",
+          "control": "inline-styles",
+          "count": 1,
+          "passed": false
+        },
+        {
+          "run": 2,
+          "instrumentation": "timeline",
+          "control": "raw-document",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 3,
+          "instrumentation": "timeline",
+          "control": "inline-styles",
+          "count": 2,
+          "passed": false
+        },
+        {
+          "run": 4,
+          "instrumentation": "timeline",
+          "control": "raw-document",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 5,
+          "instrumentation": "timeline",
+          "control": "inline-styles",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 6,
+          "instrumentation": "timeline",
+          "control": "raw-document",
+          "count": 3,
+          "passed": true
+        },
+        {
+          "run": 7,
+          "instrumentation": "timeline",
+          "control": "inline-styles",
+          "count": 1,
+          "passed": false
+        }
+      ]
+    }
+  ],
+  "minimal": [
+    {
+      "name": "webkit-minimal-20261018",
+      "externalCSS": false,
+      "noBridge": false,
+      "cases": [
+        {
+          "reuse": true,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 1,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 2,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 3,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 4,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 5,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 1,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 2,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 3,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 4,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 5,
+          "transitions": 3
+        }
+      ]
+    },
+    {
+      "name": "webkit-minimal-external-css-20261018",
+      "externalCSS": true,
+      "noBridge": false,
+      "cases": [
+        {
+          "reuse": true,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 1,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 2,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 3,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 4,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 5,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 1,
+          "transitions": 1
+        },
+        {
+          "reuse": false,
+          "run": 2,
+          "transitions": 1
+        },
+        {
+          "reuse": false,
+          "run": 3,
+          "transitions": 1
+        },
+        {
+          "reuse": false,
+          "run": 4,
+          "transitions": 2
+        },
+        {
+          "reuse": false,
+          "run": 5,
+          "transitions": 3
+        }
+      ]
+    },
+    {
+      "name": "webkit-minimal-no-bridge-20261018",
+      "externalCSS": true,
+      "noBridge": true,
+      "cases": [
+        {
+          "reuse": true,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 1,
+          "transitions": 0
+        },
+        {
+          "reuse": true,
+          "run": 2,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 3,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 4,
+          "transitions": 3
+        },
+        {
+          "reuse": true,
+          "run": 5,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 0,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 1,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 2,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 3,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 4,
+          "transitions": 3
+        },
+        {
+          "reuse": false,
+          "run": 5,
+          "transitions": 3
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "measuredHops": 117,
+    "missing": 39,
+    "missingMinSwapToRevealMs": 4019,
+    "missingMaxSwapToRevealMs": 25111,
+    "presentMaxSwapToRevealMs": 3918,
+    "pairs": [
+      {
+        "study": "webkit-focused-20261018",
+        "run": 0,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4229,
+        "initToRevealMs": 4223,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 0,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 77,
+        "initToRevealMs": 37,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 0,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4105,
+        "initToRevealMs": 4099,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 1,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4170,
+        "initToRevealMs": 4166,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 1,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 74,
+        "initToRevealMs": 34,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 1,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4166,
+        "initToRevealMs": 4161,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 2,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4206,
+        "initToRevealMs": 4200,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 2,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 80,
+        "initToRevealMs": 41,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 2,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 597,
+        "initToRevealMs": 592,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 3,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3791,
+        "initToRevealMs": 3783,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 3,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3797,
+        "initToRevealMs": 3756,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 3,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 635,
+        "initToRevealMs": 625,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 4,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3814,
+        "initToRevealMs": 3803,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 4,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 14493,
+        "initToRevealMs": 14446,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 4,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 40,
+        "initToRevealMs": 33,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 5,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15111,
+        "initToRevealMs": 15106,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 5,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 60,
+        "initToRevealMs": 28,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 5,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 35,
+        "initToRevealMs": 29,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 6,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 84,
+        "initToRevealMs": 78,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 6,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 60,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 6,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 43,
+        "initToRevealMs": 37,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 7,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 87,
+        "initToRevealMs": 82,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 7,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 57,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 7,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 35,
+        "initToRevealMs": 30,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 8,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 19529,
+        "initToRevealMs": 19524,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 8,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 72,
+        "initToRevealMs": 39,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 8,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5041,
+        "initToRevealMs": 5035,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 9,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 14898,
+        "initToRevealMs": 14891,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 9,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 63,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 9,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5045,
+        "initToRevealMs": 5037,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 10,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 97,
+        "initToRevealMs": 91,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 10,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 59,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 10,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 44,
+        "initToRevealMs": 38,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 11,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 102,
+        "initToRevealMs": 97,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 11,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 84,
+        "initToRevealMs": 38,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-focused-20261018",
+        "run": 11,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 43,
+        "initToRevealMs": 36,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 0,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 142,
+        "initToRevealMs": 124,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 0,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 78,
+        "initToRevealMs": 35,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 0,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 37,
+        "initToRevealMs": 31,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 1,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 86,
+        "initToRevealMs": 81,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 1,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 61,
+        "initToRevealMs": 27,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 1,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 38,
+        "initToRevealMs": 32,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 2,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 96,
+        "initToRevealMs": 92,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 2,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 62,
+        "initToRevealMs": 29,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-focused-20261018",
+        "run": 2,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 36,
+        "initToRevealMs": 31,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 0,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3918,
+        "initToRevealMs": 3909,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 0,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4238,
+        "initToRevealMs": 4201,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 0,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 35,
+        "initToRevealMs": 29,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 1,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3778,
+        "initToRevealMs": 3770,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 1,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4019,
+        "initToRevealMs": 3980,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 1,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 50,
+        "initToRevealMs": 44,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 2,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4467,
+        "initToRevealMs": 4463,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 2,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 68,
+        "initToRevealMs": 33,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 2,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4293,
+        "initToRevealMs": 4286,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 3,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 14804,
+        "initToRevealMs": 14799,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 3,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 87,
+        "initToRevealMs": 36,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 3,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5069,
+        "initToRevealMs": 5061,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 4,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 85,
+        "initToRevealMs": 80,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 4,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3887,
+        "initToRevealMs": 3842,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 4,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 1001,
+        "initToRevealMs": 995,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 5,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 8128,
+        "initToRevealMs": 8122,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 5,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 61,
+        "initToRevealMs": 27,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 5,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15057,
+        "initToRevealMs": 15046,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 6,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 25111,
+        "initToRevealMs": 25103,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 6,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 69,
+        "initToRevealMs": 38,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 6,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 36,
+        "initToRevealMs": 31,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 7,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 88,
+        "initToRevealMs": 84,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 7,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 1031,
+        "initToRevealMs": 975,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 7,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15054,
+        "initToRevealMs": 15044,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 8,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 19212,
+        "initToRevealMs": 19206,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 8,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 63,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 8,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 54,
+        "initToRevealMs": 49,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 9,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 25107,
+        "initToRevealMs": 25097,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 9,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 57,
+        "initToRevealMs": 21,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 9,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 40,
+        "initToRevealMs": 34,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 10,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 25108,
+        "initToRevealMs": 25098,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 10,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 68,
+        "initToRevealMs": 36,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 10,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 36,
+        "initToRevealMs": 30,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 11,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 10097,
+        "initToRevealMs": 10091,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 11,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 51,
+        "initToRevealMs": 21,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-network-repeat-20261018",
+        "run": 11,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 38,
+        "initToRevealMs": 32,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 0,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3686,
+        "initToRevealMs": 3680,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 0,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15072,
+        "initToRevealMs": 15037,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 0,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 47,
+        "initToRevealMs": 42,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 1,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 10104,
+        "initToRevealMs": 10095,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 1,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 54,
+        "initToRevealMs": 22,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 1,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 50,
+        "initToRevealMs": 44,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 2,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 11649,
+        "initToRevealMs": 11644,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 2,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 60,
+        "initToRevealMs": 29,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 2,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 10068,
+        "initToRevealMs": 10058,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 3,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5112,
+        "initToRevealMs": 5108,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 3,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 56,
+        "initToRevealMs": 25,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-no-modules-20261018",
+        "run": 3,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 14008,
+        "initToRevealMs": 14003,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 0,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 4255,
+        "initToRevealMs": 4249,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 0,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 93,
+        "initToRevealMs": 36,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 0,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 20066,
+        "initToRevealMs": 20059,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 1,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 3743,
+        "initToRevealMs": 3737,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 1,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15070,
+        "initToRevealMs": 15036,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 1,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5044,
+        "initToRevealMs": 5037,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 2,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 15100,
+        "initToRevealMs": 15096,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 2,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 55,
+        "initToRevealMs": 23,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 2,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 47,
+        "initToRevealMs": 41,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 3,
+        "path": "/post/55b0541c/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5091,
+        "initToRevealMs": 5086,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 3,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 59,
+        "initToRevealMs": 27,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 3,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 47,
+        "initToRevealMs": 43,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 4,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 90,
+        "initToRevealMs": 85,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 4,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 57,
+        "initToRevealMs": 26,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 4,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 48,
+        "initToRevealMs": 41,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 5,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 87,
+        "initToRevealMs": 81,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 5,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 63,
+        "initToRevealMs": 29,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 5,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 46,
+        "initToRevealMs": 41,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 6,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 92,
+        "initToRevealMs": 88,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 6,
+        "path": "/post/4c6caf67/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 57,
+        "initToRevealMs": 27,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 6,
+        "path": "/about/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 47,
+        "initToRevealMs": 42,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 7,
+        "path": "/post/55b0541c/",
+        "transition": true,
+        "outbound": true,
+        "swapToRevealMs": 133,
+        "initToRevealMs": 127,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 7,
+        "path": "/post/4c6caf67/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5060,
+        "initToRevealMs": 5023,
+        "previousFinished": true,
+        "sourceRevealed": true
+      },
+      {
+        "study": "webkit-paired-css-20261018",
+        "run": 7,
+        "path": "/about/",
+        "transition": false,
+        "outbound": true,
+        "swapToRevealMs": 5045,
+        "initToRevealMs": 5040,
+        "previousFinished": true,
+        "sourceRevealed": true
+      }
+    ]
+  },
+  "archiveManifest": [
+    {
+      "file": "firefox-font-cause-20261018.json.gz",
+      "inputSHA256": "3534b2611efcb412e56d21bdfe7dc223ddc392cf5f2ca7237a670d321e0be1be",
+      "sha256": "b438eead4bc132e0deca1e0068b2c6806690441b7d574ceffa59fa467416c12d"
+    },
+    {
+      "file": "firefox-font-cause-ranges-20261018.json.gz",
+      "inputSHA256": "dc7b9a43b01c32a64ab4c82b308618c1e46b42dc4b4821968844e2adeb47b4ee",
+      "sha256": "864d3d027dd7bd8a4b4b444c03b44a397fdeb1f3ecb863007799cd360aae79ba"
+    },
+    {
+      "file": "firefox-font-cause-controls-20261018.json.gz",
+      "inputSHA256": "37e46cb04cf1a2754a00d92e884518bfdffd66a4d5c88f4a38390993cccc6953",
+      "sha256": "4644a8cbadb597aa006337daf1b45ceec32756c9c9766276eb73ccba35a3a070"
+    },
+    {
+      "file": "firefox-font-no-shared-list-20261018.json.gz",
+      "inputSHA256": "bdbdc05b7c1a06feac6bc8af03779eb7d01512582d980290b125b1d6e164fe95",
+      "sha256": "6f3d613e197625b9ca47d81d71ad48c0cc2764db240d6fed8750f040c0d15e1f"
+    },
+    {
+      "file": "firefox-stock155-font-controls-20261018.json.gz",
+      "inputSHA256": "44da48e07d1756e5b2d3c22cd31b0e740c70dcec2041b6918c7a775321489904",
+      "sha256": "2284430511b1e88eeb2f48f36bf4cd7eed4a21b72533c9bb4c5d909372ffad4b"
+    },
+    {
+      "file": "firefox-times-counter-r2-20261018.json.gz",
+      "inputSHA256": "217d7f3aaa23880c7452b8f6c785a2676c8d4e8d72edf1c224c66419ea172772",
+      "sha256": "2d537b7429d5a72164564a9096f69aa04bf43914b6ed8d631b41b3c7c0f0821a"
+    },
+    {
+      "file": "firefox-font-matrix-20261018.json.gz",
+      "inputSHA256": "63d3a032b085b7157446996e9d4166380a5c032c6f4ad659aa1d01d067176c64",
+      "sha256": "2e7059d71edb0d108278e5452347cb21e774872f121f38a699cdf83bedbff490"
+    },
+    {
+      "file": "webkit-focused-20261018.json.gz",
+      "inputSHA256": "a7e18e35cc7cb79ad47ca0603c4d50769d853eb17d51b6454ec84c8a213531d2",
+      "sha256": "1c39804bd1f5751f37b2a6608cbebbca44f4621b7cc1239227ee986d38a3c5cc"
+    },
+    {
+      "file": "webkit-network-focused-20261018.json.gz",
+      "inputSHA256": "6d0a9816b2cc91360d526c24172126a16fbe0051a17ed16c067fbfd80bdbe2cf",
+      "sha256": "14f4db4b5f595d449b7d77734c0f5cf776ca265eb8f52f77b53bfbb4597bf710"
+    },
+    {
+      "file": "webkit-network-repeat-20261018.json.gz",
+      "inputSHA256": "d6dd720b081c18c86e9b2d87125ab5c06eb8bffb52819ab787d328906b96b768",
+      "sha256": "ee0ad767056cab20436a25232e0c9fd3263d9bad1b202e43f2245e774f026fb9"
+    },
+    {
+      "file": "webkit-no-modules-20261018.json.gz",
+      "inputSHA256": "f2c3adfe66b133ed330462e394364ca70bddf0174b987f0088087dfab58d4b74",
+      "sha256": "7f2df1adfcd5d537aaeed49afcb58cbbb82945f468ae903b292161723e05cad2"
+    },
+    {
+      "file": "webkit-storage-trace-20261018.json.gz",
+      "inputSHA256": "de68bd8087bdab0b4137bfaec75032a3951c978a1e61fcb4596603f7a52fc8e1",
+      "sha256": "a97ad53a213cdd4e60851110042afb815865b0fe7de6a9e785b13df84d1a2e04"
+    },
+    {
+      "file": "webkit-paired-css-20261018.json.gz",
+      "inputSHA256": "31d9887c564e681dc6308be0af9059e3872ccd981ddad587f0dd90fa981d984d",
+      "sha256": "3c42a782d00b0eb02b77302ec7cbd1d99eb3c9b797d827881c22834df54f40fc"
+    },
+    {
+      "file": "webkit-minimal-20261018.json.gz",
+      "inputSHA256": "79d5dbacc0c3cc72f8770a77e1d1d4fbc3ac02d6f904e6c663e3bacb161c1179",
+      "sha256": "bd036130e72351e6b0866c94c7020c7e210ef3fa6595e2b3322bebba88d1f89d"
+    },
+    {
+      "file": "webkit-minimal-external-css-20261018.json.gz",
+      "inputSHA256": "ef8c43c3d69f141020fa3d0ebc2a2967236206efd27610baa89636bc0f9a9a2b",
+      "sha256": "09b49bf8f30ea220f38063de4470f2f99be690ca9750ee70f27863bcacbe1700"
+    },
+    {
+      "file": "webkit-minimal-no-bridge-20261018.json.gz",
+      "inputSHA256": "ab494d0d1002ecce7dc680aca57921e0c13cd36b54406f930399920248da310e",
+      "sha256": "48e4cc00f1a7bda561fe5b071d82a436142fd7f3ef642373b1f959f1e5dbc732"
+    },
+    {
+      "file": "webkit-serial-confirmation-20261018.json.gz",
+      "inputSHA256": "f1610a16004cd2720accc9d445422fc6d96610f44154416ac70a9e7259391bca",
+      "sha256": "657382bd1777e920016dfb5ef40b5377ac274ef883e5fb47c4877f210f5aa3bf"
+    }
+  ],
+  "serialMinimalConfirmation": {
+    "externalCSS": true,
+    "noBridge": true,
+    "cases": [
+      {
+        "reuse": true,
+        "run": 0,
+        "transitions": 3
+      },
+      {
+        "reuse": true,
+        "run": 1,
+        "transitions": 3
+      },
+      {
+        "reuse": true,
+        "run": 2,
+        "transitions": 3
+      },
+      {
+        "reuse": false,
+        "run": 0,
+        "transitions": 3
+      },
+      {
+        "reuse": false,
+        "run": 1,
+        "transitions": 3
+      },
+      {
+        "reuse": false,
+        "run": 2,
+        "transitions": 3
+      }
+    ]
+  }
+}

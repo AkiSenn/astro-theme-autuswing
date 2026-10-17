@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: font evidence identifies the generated digit and normal text separately
+ok 1 - font evidence identifies the generated digit and normal text separately
+  ---
+  duration_ms: 62.9033
+  type: 'test'
+  ...
+# Subtest: recomputing ch and replacing counter() do not repair the anomalous group
+ok 2 - recomputing ch and replacing counter() do not repair the anomalous group
+  ---
+  duration_ms: 75.5381
+  type: 'test'
+  ...
+# Subtest: font mismatch also exists with shared font list disabled and local Firefox 155
+ok 3 - font mismatch also exists with shared font list disabled and local Firefox 155
+  ---
+  duration_ms: 65.0474
+  type: 'test'
+  ...
+# Subtest: font substitution evidence does not prove the historical 23.5px trigger
+ok 4 - font substitution evidence does not prove the historical 23.5px trigger
+  ---
+  duration_ms: 34.7127
+  type: 'test'
+  ...
+# Subtest: WebKit missing transitions have true outbound events and the observed 4s boundary
+ok 5 - WebKit missing transitions have true outbound events and the observed 4s boundary
+  ---
+  duration_ms: 0.2356
+  type: 'test'
+  ...
+# Subtest: independent WebKit page reproduces with external CSS and without Node bindings
+ok 6 - independent WebKit page reproduces with external CSS and without Node bindings
+  ---
+  duration_ms: 2.5846
+  type: 'test'
+  ...
+# Subtest: disabling enhancement modules and inlining CSS are not demonstrated fixes
+ok 7 - disabling enhancement modules and inlining CSS are not demonstrated fixes
+  ---
+  duration_ms: 5.5233
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 379.944
