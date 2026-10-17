@@ -1,0 +1,3829 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.styles.config.ts",
+      "--project=webkit-windows",
+      "--update-snapshots=all"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.styles.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/styles",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge-windows",
+        "name": "edge-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-windows",
+        "name": "webkit-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-windows"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/styles/baseline-webkit-final.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "all",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "baseline.spec.ts",
+      "file": "baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "shells 320x640 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19514,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-320x640-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:40:51.322Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-320x640-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-320x640-light.json"
+                    },
+                    {
+                      "name": "article-320x640-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-320x640-light-webkit-windows\\article-320x640-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-2b43f1cf8e7c768c4eb2",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 320x640 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12013,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-320x640-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-320x640-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:41:10.937Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-320x640-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-320x640-dark.json"
+                    },
+                    {
+                      "name": "home-320x640-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-320x640-dark-webkit-windows\\home-320x640-dark-actual.json"
+                    },
+                    {
+                      "name": "article-320x640-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-320x640-dark.json"
+                    },
+                    {
+                      "name": "article-320x640-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-320x640-dark-webkit-windows\\article-320x640-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d3fe0765389dba648d21",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 375x812 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11718,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-375x812-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-375x812-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:41:22.960Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-375x812-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-375x812-light.json"
+                    },
+                    {
+                      "name": "home-375x812-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-375x812-light-webkit-windows\\home-375x812-light-actual.json"
+                    },
+                    {
+                      "name": "article-375x812-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-375x812-light.json"
+                    },
+                    {
+                      "name": "article-375x812-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-375x812-light-webkit-windows\\article-375x812-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-1fb7139395eaef621881",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 375x812 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12336,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-375x812-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-375x812-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:41:34.686Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-375x812-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-375x812-dark.json"
+                    },
+                    {
+                      "name": "home-375x812-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-375x812-dark-webkit-windows\\home-375x812-dark-actual.json"
+                    },
+                    {
+                      "name": "article-375x812-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-375x812-dark.json"
+                    },
+                    {
+                      "name": "article-375x812-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-375x812-dark-webkit-windows\\article-375x812-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-024263600c28a2b38584",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 390x844 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12183,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-390x844-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-390x844-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:41:47.031Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-390x844-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-390x844-light.json"
+                    },
+                    {
+                      "name": "home-390x844-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-390x844-light-webkit-windows\\home-390x844-light-actual.json"
+                    },
+                    {
+                      "name": "article-390x844-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-390x844-light.json"
+                    },
+                    {
+                      "name": "article-390x844-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-390x844-light-webkit-windows\\article-390x844-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-47c9ff01a4f2556e2a31",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 390x844 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11744,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-390x844-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-390x844-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:41:59.224Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-390x844-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-390x844-dark.json"
+                    },
+                    {
+                      "name": "home-390x844-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-390x844-dark-webkit-windows\\home-390x844-dark-actual.json"
+                    },
+                    {
+                      "name": "article-390x844-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-390x844-dark.json"
+                    },
+                    {
+                      "name": "article-390x844-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-390x844-dark-webkit-windows\\article-390x844-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-cb3349229e273388ea5c",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 430x932 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8940,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-430x932-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-430x932-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:42:10.978Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-430x932-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-430x932-light.json"
+                    },
+                    {
+                      "name": "home-430x932-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-430x932-light-webkit-windows\\home-430x932-light-actual.json"
+                    },
+                    {
+                      "name": "article-430x932-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-430x932-light.json"
+                    },
+                    {
+                      "name": "article-430x932-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-430x932-light-webkit-windows\\article-430x932-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-122c8d5dd61eaa99ba24",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 430x932 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12003,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-430x932-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-430x932-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:42:19.927Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-430x932-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-430x932-dark.json"
+                    },
+                    {
+                      "name": "home-430x932-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-430x932-dark-webkit-windows\\home-430x932-dark-actual.json"
+                    },
+                    {
+                      "name": "article-430x932-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-430x932-dark.json"
+                    },
+                    {
+                      "name": "article-430x932-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-430x932-dark-webkit-windows\\article-430x932-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-3654a06d4ed8b4304cbd",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 768x1024 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12771,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-768x1024-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-768x1024-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:42:31.940Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-768x1024-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-768x1024-light.json"
+                    },
+                    {
+                      "name": "home-768x1024-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-768x1024-light-webkit-windows\\home-768x1024-light-actual.json"
+                    },
+                    {
+                      "name": "article-768x1024-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-768x1024-light.json"
+                    },
+                    {
+                      "name": "article-768x1024-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-768x1024-light-webkit-windows\\article-768x1024-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-873029298259b3c24b1f",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 768x1024 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12133,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-768x1024-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-768x1024-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:42:44.720Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-768x1024-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-768x1024-dark.json"
+                    },
+                    {
+                      "name": "home-768x1024-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-768x1024-dark-webkit-windows\\home-768x1024-dark-actual.json"
+                    },
+                    {
+                      "name": "article-768x1024-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-768x1024-dark.json"
+                    },
+                    {
+                      "name": "article-768x1024-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-768x1024-dark-webkit-windows\\article-768x1024-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-3527665c3c7ff501efe5",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 820x1180 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8803,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-820x1180-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-820x1180-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:42:56.860Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-820x1180-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-820x1180-light.json"
+                    },
+                    {
+                      "name": "home-820x1180-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-820x1180-light-webkit-windows\\home-820x1180-light-actual.json"
+                    },
+                    {
+                      "name": "article-820x1180-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-820x1180-light.json"
+                    },
+                    {
+                      "name": "article-820x1180-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-820x1180-light-webkit-windows\\article-820x1180-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-da3a2fdbce525525ae98",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 820x1180 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8720,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-820x1180-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-820x1180-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:05.671Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-820x1180-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-820x1180-dark.json"
+                    },
+                    {
+                      "name": "home-820x1180-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-820x1180-dark-webkit-windows\\home-820x1180-dark-actual.json"
+                    },
+                    {
+                      "name": "article-820x1180-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-820x1180-dark.json"
+                    },
+                    {
+                      "name": "article-820x1180-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-820x1180-dark-webkit-windows\\article-820x1180-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-df7b952e7acf4f61143b",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1024x768 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9190,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1024x768-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1024x768-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:14.399Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1024x768-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1024x768-light.json"
+                    },
+                    {
+                      "name": "home-1024x768-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1024x768-light-webkit-windows\\home-1024x768-light-actual.json"
+                    },
+                    {
+                      "name": "article-1024x768-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1024x768-light.json"
+                    },
+                    {
+                      "name": "article-1024x768-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1024x768-light-webkit-windows\\article-1024x768-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-747e140182215000f38a",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1024x768 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4871,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1024x768-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1024x768-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:23.599Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1024x768-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1024x768-dark.json"
+                    },
+                    {
+                      "name": "home-1024x768-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1024x768-dark-webkit-windows\\home-1024x768-dark-actual.json"
+                    },
+                    {
+                      "name": "article-1024x768-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1024x768-dark.json"
+                    },
+                    {
+                      "name": "article-1024x768-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1024x768-dark-webkit-windows\\article-1024x768-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-75fc7e5b38b06aa01f9b",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1180x820 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12590,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1180x820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1180x820-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:28.480Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1180x820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1180x820-light.json"
+                    },
+                    {
+                      "name": "home-1180x820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1180x820-light-webkit-windows\\home-1180x820-light-actual.json"
+                    },
+                    {
+                      "name": "article-1180x820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1180x820-light.json"
+                    },
+                    {
+                      "name": "article-1180x820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1180x820-light-webkit-windows\\article-1180x820-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-fe37347c49054664dd8e",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1180x820 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9389,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1180x820-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1180x820-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:41.083Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1180x820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1180x820-dark.json"
+                    },
+                    {
+                      "name": "home-1180x820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1180x820-dark-webkit-windows\\home-1180x820-dark-actual.json"
+                    },
+                    {
+                      "name": "article-1180x820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1180x820-dark.json"
+                    },
+                    {
+                      "name": "article-1180x820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1180x820-dark-webkit-windows\\article-1180x820-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-dac81410e4080f731087",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1366x768 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12811,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1366x768-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1366x768-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:43:50.482Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1366x768-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1366x768-light.json"
+                    },
+                    {
+                      "name": "home-1366x768-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1366x768-light-webkit-windows\\home-1366x768-light-actual.json"
+                    },
+                    {
+                      "name": "article-1366x768-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1366x768-light.json"
+                    },
+                    {
+                      "name": "article-1366x768-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1366x768-light-webkit-windows\\article-1366x768-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-adada8d30d76c8dd0455",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1366x768 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12328,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1366x768-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1366x768-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:44:03.304Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1366x768-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1366x768-dark.json"
+                    },
+                    {
+                      "name": "home-1366x768-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1366x768-dark-webkit-windows\\home-1366x768-dark-actual.json"
+                    },
+                    {
+                      "name": "article-1366x768-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1366x768-dark.json"
+                    },
+                    {
+                      "name": "article-1366x768-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1366x768-dark-webkit-windows\\article-1366x768-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-745df00b5a1d6c4e43be",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1440x900 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11871,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1440x900-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1440x900-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:44:15.643Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1440x900-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1440x900-light.json"
+                    },
+                    {
+                      "name": "home-1440x900-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1440x900-light-webkit-windows\\home-1440x900-light-actual.json"
+                    },
+                    {
+                      "name": "article-1440x900-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1440x900-light.json"
+                    },
+                    {
+                      "name": "article-1440x900-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1440x900-light-webkit-windows\\article-1440x900-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ff33c2b92d6c015f3249",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1440x900 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12314,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1440x900-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1440x900-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:44:27.524Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1440x900-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1440x900-dark.json"
+                    },
+                    {
+                      "name": "home-1440x900-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1440x900-dark-webkit-windows\\home-1440x900-dark-actual.json"
+                    },
+                    {
+                      "name": "article-1440x900-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1440x900-dark.json"
+                    },
+                    {
+                      "name": "article-1440x900-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1440x900-dark-webkit-windows\\article-1440x900-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-32cd255a4af172a9605a",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1920x1080 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8952,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1920x1080-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1920x1080-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:44:39.849Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1920x1080-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1920x1080-light.json"
+                    },
+                    {
+                      "name": "home-1920x1080-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1920x1080-light-webkit-windows\\home-1920x1080-light-actual.json"
+                    },
+                    {
+                      "name": "article-1920x1080-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1920x1080-light.json"
+                    },
+                    {
+                      "name": "article-1920x1080-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1920x1080-light-webkit-windows\\article-1920x1080-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-9be550ae5b33d22ac0a1",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 1920x1080 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12590,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1920x1080-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1920x1080-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:44:48.810Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-1920x1080-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-1920x1080-dark.json"
+                    },
+                    {
+                      "name": "home-1920x1080-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1920x1080-dark-webkit-windows\\home-1920x1080-dark-actual.json"
+                    },
+                    {
+                      "name": "article-1920x1080-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-1920x1080-dark.json"
+                    },
+                    {
+                      "name": "article-1920x1080-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-1920x1080-dark-webkit-windows\\article-1920x1080-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-bc21c82d9dd238ed3c96",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 2560x1440 light",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12750,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-2560x1440-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-2560x1440-light.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:45:01.408Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-2560x1440-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-2560x1440-light.json"
+                    },
+                    {
+                      "name": "home-2560x1440-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-2560x1440-light-webkit-windows\\home-2560x1440-light-actual.json"
+                    },
+                    {
+                      "name": "article-2560x1440-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-2560x1440-light.json"
+                    },
+                    {
+                      "name": "article-2560x1440-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-2560x1440-light-webkit-windows\\article-2560x1440-light-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-74ac017d21418a0740c2",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "shells 2560x1440 dark",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13139,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-2560x1440-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-2560x1440-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:45:14.167Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-2560x1440-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-2560x1440-dark.json"
+                    },
+                    {
+                      "name": "home-2560x1440-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-2560x1440-dark-webkit-windows\\home-2560x1440-dark-actual.json"
+                    },
+                    {
+                      "name": "article-2560x1440-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-2560x1440-dark.json"
+                    },
+                    {
+                      "name": "article-2560x1440-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-shells-2560x1440-dark-webkit-windows\\article-2560x1440-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-55456c00b6e344c5c0a0",
+          "file": "baseline.spec.ts",
+          "line": 92,
+          "column": 5
+        },
+        {
+          "title": "breakpoint 719",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12076,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-719.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-719.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:45:27.315Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-719-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-719.json"
+                    },
+                    {
+                      "name": "home-boundary-719-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-719-webkit-windows\\home-boundary-719-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-719-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-719.json"
+                    },
+                    {
+                      "name": "article-boundary-719-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-719-webkit-windows\\article-boundary-719-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-a9ab1bfa824c756a06dd",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11725,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-720.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-720.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:45:39.400Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-720-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-720.json"
+                    },
+                    {
+                      "name": "home-boundary-720-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-720-webkit-windows\\home-boundary-720-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-720-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-720.json"
+                    },
+                    {
+                      "name": "article-boundary-720-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-720-webkit-windows\\article-boundary-720-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-a67172d40381b97318f1",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 999",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13010,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-999.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-999.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:45:51.134Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-999-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-999.json"
+                    },
+                    {
+                      "name": "home-boundary-999-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-999-webkit-windows\\home-boundary-999-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-999-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-999.json"
+                    },
+                    {
+                      "name": "article-boundary-999-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-999-webkit-windows\\article-boundary-999-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ee920fa2b59def582756",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 1000",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12457,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1000.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1000.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:46:04.152Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-1000-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1000.json"
+                    },
+                    {
+                      "name": "home-boundary-1000-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1000-webkit-windows\\home-boundary-1000-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-1000-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1000.json"
+                    },
+                    {
+                      "name": "article-boundary-1000-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1000-webkit-windows\\article-boundary-1000-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-e57062e8f755ad74ad19",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 1279",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12506,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1279.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1279.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:46:16.619Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-1279-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1279.json"
+                    },
+                    {
+                      "name": "home-boundary-1279-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1279-webkit-windows\\home-boundary-1279-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-1279-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1279.json"
+                    },
+                    {
+                      "name": "article-boundary-1279-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1279-webkit-windows\\article-boundary-1279-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-df034737b1665491c5d3",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12312,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1280.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1280.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:46:29.137Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-1280-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1280.json"
+                    },
+                    {
+                      "name": "home-boundary-1280-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1280-webkit-windows\\home-boundary-1280-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-1280-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1280.json"
+                    },
+                    {
+                      "name": "article-boundary-1280-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1280-webkit-windows\\article-boundary-1280-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-3e8ddb140200fcaa1477",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "breakpoint 1439",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12280,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1439.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1439.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:46:41.458Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "home-boundary-1439-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\home-boundary-1439.json"
+                    },
+                    {
+                      "name": "home-boundary-1439-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1439-webkit-windows\\home-boundary-1439-actual.json"
+                    },
+                    {
+                      "name": "article-boundary-1439-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-boundary-1439.json"
+                    },
+                    {
+                      "name": "article-boundary-1439-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-breakpoint-1439-webkit-windows\\article-boundary-1439-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-1b45ae151732e0ab74c5",
+          "file": "baseline.spec.ts",
+          "line": 103,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10766,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-390.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-390.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-390.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-390.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-390.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:46:53.749Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-light.json"
+                    },
+                    {
+                      "name": "article-full-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\article-full-390-light-actual.json"
+                    },
+                    {
+                      "name": "article-full-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-390-dark.json"
+                    },
+                    {
+                      "name": "article-full-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\article-full-390-dark-actual.json"
+                    },
+                    {
+                      "name": "archives-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-390.json"
+                    },
+                    {
+                      "name": "archives-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\archives-390-actual.json"
+                    },
+                    {
+                      "name": "tags-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-390.json"
+                    },
+                    {
+                      "name": "tags-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\tags-390-actual.json"
+                    },
+                    {
+                      "name": "links-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-390.json"
+                    },
+                    {
+                      "name": "links-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\links-390-actual.json"
+                    },
+                    {
+                      "name": "about-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-390.json"
+                    },
+                    {
+                      "name": "about-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\about-390-actual.json"
+                    },
+                    {
+                      "name": "math-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-390.json"
+                    },
+                    {
+                      "name": "math-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-390-webkit-windows\\math-390-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d5c70418da70a83c0f70",
+          "file": "baseline.spec.ts",
+          "line": 112,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12843,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-820.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-820.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-820.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-820.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-820.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:04.525Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-light.json"
+                    },
+                    {
+                      "name": "article-full-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\article-full-820-light-actual.json"
+                    },
+                    {
+                      "name": "article-full-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-820-dark.json"
+                    },
+                    {
+                      "name": "article-full-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\article-full-820-dark-actual.json"
+                    },
+                    {
+                      "name": "archives-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-820.json"
+                    },
+                    {
+                      "name": "archives-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\archives-820-actual.json"
+                    },
+                    {
+                      "name": "tags-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-820.json"
+                    },
+                    {
+                      "name": "tags-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\tags-820-actual.json"
+                    },
+                    {
+                      "name": "links-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-820.json"
+                    },
+                    {
+                      "name": "links-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\links-820-actual.json"
+                    },
+                    {
+                      "name": "about-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-820.json"
+                    },
+                    {
+                      "name": "about-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\about-820-actual.json"
+                    },
+                    {
+                      "name": "math-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-820.json"
+                    },
+                    {
+                      "name": "math-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-820-webkit-windows\\math-820-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-5782eb76d2e1179cdbb9",
+          "file": "baseline.spec.ts",
+          "line": 112,
+          "column": 3
+        },
+        {
+          "title": "full content and supporting pages 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18466,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-1920.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-1920.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-1920.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-1920.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-1920.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:17.379Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-full-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-light.json"
+                    },
+                    {
+                      "name": "article-full-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\article-full-1920-light-actual.json"
+                    },
+                    {
+                      "name": "article-full-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-full-1920-dark.json"
+                    },
+                    {
+                      "name": "article-full-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\article-full-1920-dark-actual.json"
+                    },
+                    {
+                      "name": "archives-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\archives-1920.json"
+                    },
+                    {
+                      "name": "archives-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\archives-1920-actual.json"
+                    },
+                    {
+                      "name": "tags-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\tags-1920.json"
+                    },
+                    {
+                      "name": "tags-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\tags-1920-actual.json"
+                    },
+                    {
+                      "name": "links-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\links-1920.json"
+                    },
+                    {
+                      "name": "links-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\links-1920-actual.json"
+                    },
+                    {
+                      "name": "about-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\about-1920.json"
+                    },
+                    {
+                      "name": "about-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\about-1920-actual.json"
+                    },
+                    {
+                      "name": "math-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\math-1920.json"
+                    },
+                    {
+                      "name": "math-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-and-supporting-pages-1920-webkit-windows\\math-1920-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d0e1701c6ddf62644231",
+          "file": "baseline.spec.ts",
+          "line": 112,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6252,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-390-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:35.855Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-390-light.json"
+                    },
+                    {
+                      "name": "contents-closed-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-390-webkit-windows\\contents-closed-390-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-light.json"
+                    },
+                    {
+                      "name": "contents-open-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-390-webkit-windows\\contents-open-390-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-390-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-390-webkit-windows\\contents-closed-390-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-390-dark.json"
+                    },
+                    {
+                      "name": "contents-open-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-390-webkit-windows\\contents-open-390-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-7054d56fd0f96b672cdf",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6749,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-820-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-820-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:42.118Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-820-light.json"
+                    },
+                    {
+                      "name": "contents-closed-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-820-webkit-windows\\contents-closed-820-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-820-light.json"
+                    },
+                    {
+                      "name": "contents-open-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-820-webkit-windows\\contents-open-820-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-820-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-820-webkit-windows\\contents-closed-820-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-820-dark.json"
+                    },
+                    {
+                      "name": "contents-open-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-820-webkit-windows\\contents-open-820-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-149fb6f3707139c6e356",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 1024",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6580,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1024-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1024-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1024-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1024-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:48.878Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-1024-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1024-light.json"
+                    },
+                    {
+                      "name": "contents-closed-1024-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1024-webkit-windows\\contents-closed-1024-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1024-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1024-light.json"
+                    },
+                    {
+                      "name": "contents-open-1024-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1024-webkit-windows\\contents-open-1024-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-1024-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1024-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-1024-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1024-webkit-windows\\contents-closed-1024-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1024-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1024-dark.json"
+                    },
+                    {
+                      "name": "contents-open-1024-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1024-webkit-windows\\contents-open-1024-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-e839a220f412df79d98e",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 1366",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6497,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1366-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1366-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1366-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1366-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:47:55.469Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-1366-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1366-light.json"
+                    },
+                    {
+                      "name": "contents-closed-1366-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1366-webkit-windows\\contents-closed-1366-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1366-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1366-light.json"
+                    },
+                    {
+                      "name": "contents-open-1366-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1366-webkit-windows\\contents-open-1366-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-1366-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1366-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-1366-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1366-webkit-windows\\contents-closed-1366-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1366-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1366-dark.json"
+                    },
+                    {
+                      "name": "contents-open-1366-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1366-webkit-windows\\contents-open-1366-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-bbd68617edb687c96ab8",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7061,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1440-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1440-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1440-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1440-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:48:01.975Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-1440-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1440-light.json"
+                    },
+                    {
+                      "name": "contents-closed-1440-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1440-webkit-windows\\contents-closed-1440-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1440-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1440-light.json"
+                    },
+                    {
+                      "name": "contents-open-1440-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1440-webkit-windows\\contents-open-1440-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-1440-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1440-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-1440-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1440-webkit-windows\\contents-closed-1440-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1440-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1440-dark.json"
+                    },
+                    {
+                      "name": "contents-open-1440-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1440-webkit-windows\\contents-open-1440-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-c87a83af2e8bf5b3d967",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "contents open and closed 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7643,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1920-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1920-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:48:09.045Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "contents-closed-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1920-light.json"
+                    },
+                    {
+                      "name": "contents-closed-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1920-webkit-windows\\contents-closed-1920-light-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1920-light.json"
+                    },
+                    {
+                      "name": "contents-open-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1920-webkit-windows\\contents-open-1920-light-actual.json"
+                    },
+                    {
+                      "name": "contents-closed-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-closed-1920-dark.json"
+                    },
+                    {
+                      "name": "contents-closed-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1920-webkit-windows\\contents-closed-1920-dark-actual.json"
+                    },
+                    {
+                      "name": "contents-open-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\contents-open-1920-dark.json"
+                    },
+                    {
+                      "name": "contents-open-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-contents-open-and-closed-1920-webkit-windows\\contents-open-1920-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-7299c6566c3670905b81",
+          "file": "baseline.spec.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20541,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-390-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-390.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:48:16.697Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "search-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-390-light.json"
+                    },
+                    {
+                      "name": "search-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-390-webkit-windows\\search-390-light-actual.json"
+                    },
+                    {
+                      "name": "focus-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-light.json"
+                    },
+                    {
+                      "name": "focus-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-390-webkit-windows\\focus-390-light-actual.json"
+                    },
+                    {
+                      "name": "search-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-390-dark.json"
+                    },
+                    {
+                      "name": "search-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-390-webkit-windows\\search-390-dark-actual.json"
+                    },
+                    {
+                      "name": "focus-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-dark.json"
+                    },
+                    {
+                      "name": "focus-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-390-webkit-windows\\focus-390-dark-actual.json"
+                    },
+                    {
+                      "name": "lightbox-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-390.json"
+                    },
+                    {
+                      "name": "lightbox-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-390-webkit-windows\\lightbox-390-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-e0b33f3f0146cce2e2dd",
+          "file": "baseline.spec.ts",
+          "line": 147,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21102,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-820-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-820.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:48:37.248Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "search-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-820-light.json"
+                    },
+                    {
+                      "name": "search-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-820-webkit-windows\\search-820-light-actual.json"
+                    },
+                    {
+                      "name": "focus-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-light.json"
+                    },
+                    {
+                      "name": "focus-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-820-webkit-windows\\focus-820-light-actual.json"
+                    },
+                    {
+                      "name": "search-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-820-dark.json"
+                    },
+                    {
+                      "name": "search-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-820-webkit-windows\\search-820-dark-actual.json"
+                    },
+                    {
+                      "name": "focus-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-dark.json"
+                    },
+                    {
+                      "name": "focus-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-820-webkit-windows\\focus-820-dark-actual.json"
+                    },
+                    {
+                      "name": "lightbox-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-820.json"
+                    },
+                    {
+                      "name": "lightbox-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-820-webkit-windows\\lightbox-820-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d71c7894066bf696e06c",
+          "file": "baseline.spec.ts",
+          "line": 147,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23079,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-1920-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-dark.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-1920.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:48:58.365Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "search-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-1920-light.json"
+                    },
+                    {
+                      "name": "search-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-1920-webkit-windows\\search-1920-light-actual.json"
+                    },
+                    {
+                      "name": "focus-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-light.json"
+                    },
+                    {
+                      "name": "focus-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-1920-webkit-windows\\focus-1920-light-actual.json"
+                    },
+                    {
+                      "name": "search-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\search-1920-dark.json"
+                    },
+                    {
+                      "name": "search-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-1920-webkit-windows\\search-1920-dark-actual.json"
+                    },
+                    {
+                      "name": "focus-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-dark.json"
+                    },
+                    {
+                      "name": "focus-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-1920-webkit-windows\\focus-1920-dark-actual.json"
+                    },
+                    {
+                      "name": "lightbox-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\lightbox-1920.json"
+                    },
+                    {
+                      "name": "lightbox-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-search-image-and-focus-1920-webkit-windows\\lightbox-1920-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-8994b020c6f5a87eb2ed",
+          "file": "baseline.spec.ts",
+          "line": 147,
+          "column": 3
+        },
+        {
+          "title": "print and forced colors preserve content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7567,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-print.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-forced-colors.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:21.453Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-print-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-print.json"
+                    },
+                    {
+                      "name": "article-print-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-print-and-forced-colors-preserve-content-webkit-windows\\article-print-actual.json"
+                    },
+                    {
+                      "name": "article-forced-colors-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-forced-colors.json"
+                    },
+                    {
+                      "name": "article-forced-colors-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-print-and-forced-colors-preserve-content-webkit-windows\\article-forced-colors-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-91972153c7fc44227d5e",
+          "file": "baseline.spec.ts",
+          "line": 165,
+          "column": 1
+        },
+        {
+          "title": "configuration and optional rendering keep their contracts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4347,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-custom-config-plain.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:29.035Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "article-custom-config-plain-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\article-custom-config-plain.json"
+                    },
+                    {
+                      "name": "article-custom-config-plain-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-configuration-and-30193-dering-keep-their-contracts-webkit-windows\\article-custom-config-plain-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-b0a9f8e610a2b3a44a50",
+          "file": "baseline.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "optional content fixture 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4947,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-390-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-390-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:33.394Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "optional-content-390-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-390-light.json"
+                    },
+                    {
+                      "name": "optional-content-390-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-390-webkit-windows\\optional-content-390-light-actual.json"
+                    },
+                    {
+                      "name": "optional-content-390-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-390-dark.json"
+                    },
+                    {
+                      "name": "optional-content-390-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-390-webkit-windows\\optional-content-390-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-fb146517b4cf96b130b2",
+          "file": "baseline.spec.ts",
+          "line": 188,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5356,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-820-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-820-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:38.352Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "optional-content-820-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-820-light.json"
+                    },
+                    {
+                      "name": "optional-content-820-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-820-webkit-windows\\optional-content-820-light-actual.json"
+                    },
+                    {
+                      "name": "optional-content-820-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-820-dark.json"
+                    },
+                    {
+                      "name": "optional-content-820-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-820-webkit-windows\\optional-content-820-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-7eda2ee6b4514618fada",
+          "file": "baseline.spec.ts",
+          "line": 188,
+          "column": 3
+        },
+        {
+          "title": "optional content fixture 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7069,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:43.719Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "optional-content-1920-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-light.json"
+                    },
+                    {
+                      "name": "optional-content-1920-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-1920-webkit-windows\\optional-content-1920-light-actual.json"
+                    },
+                    {
+                      "name": "optional-content-1920-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\optional-content-1920-dark.json"
+                    },
+                    {
+                      "name": "optional-content-1920-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-content-fixture-1920-webkit-windows\\optional-content-1920-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ec30b7cdd3615ddcae06",
+          "file": "baseline.spec.ts",
+          "line": 188,
+          "column": 3
+        },
+        {
+          "title": "optional wallpaper surface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16645,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-light.json, writing actual.\n"
+                    },
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-dark.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:49:50.801Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "wallpaper-light-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-light.json"
+                    },
+                    {
+                      "name": "wallpaper-light-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-webkit-windows\\wallpaper-light-actual.json"
+                    },
+                    {
+                      "name": "wallpaper-dark-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\wallpaper-dark.json"
+                    },
+                    {
+                      "name": "wallpaper-dark-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-optional-wallpaper-surface-webkit-windows\\wallpaper-dark-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-139ca553e3abfb0c0ce9",
+          "file": "baseline.spec.ts",
+          "line": 215,
+          "column": 1
+        },
+        {
+          "title": "no JavaScript 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5830,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-390.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:50:07.459Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-390-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-390.json"
+                    },
+                    {
+                      "name": "no-js-390-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-390-webkit-windows\\no-js-390-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-66aac2464ef7d506cf8c",
+          "file": "baseline.spec.ts",
+          "line": 236,
+          "column": 3
+        },
+        {
+          "title": "no JavaScript 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6048,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-1920.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:50:13.304Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "no-js-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\no-js-1920.json"
+                    },
+                    {
+                      "name": "no-js-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-no-JavaScript-1920-webkit-windows\\no-js-1920-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-ca35bdfa1ae2fa8d4855",
+          "file": "baseline.spec.ts",
+          "line": 236,
+          "column": 3
+        },
+        {
+          "title": "full content cards 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5185,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-820.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:50:19.365Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-820-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-820.json"
+                    },
+                    {
+                      "name": "full-content-cards-820-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-820-webkit-windows\\full-content-cards-820-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-cea2855a739969618ee0",
+          "file": "baseline.spec.ts",
+          "line": 247,
+          "column": 3
+        },
+        {
+          "title": "full content cards 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4887,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-1920.json, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:50:24.563Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-1920-expected.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-1920.json"
+                    },
+                    {
+                      "name": "full-content-cards-1920-actual.json",
+                      "contentType": "application/json",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-1920-webkit-windows\\full-content-cards-1920-actual.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d48807e4e18acdb772d5",
+          "file": "baseline.spec.ts",
+          "line": 247,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T08:40:50.404Z",
+    "duration": 579597.9339999999,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

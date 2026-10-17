@@ -41,6 +41,9 @@
   "note": "Initial 5s WebKit screenshot timeouts were resolved with a 20s assertion timeout before any CSS change. Capture runs now execute serially to avoid output-directory collisions. Fixture-only initial run: 5 passed, 1 timeout; all fixtures passed in supplement.",
   "stabilization": "Original CSS repeated search: 2 pass / 1 inert-avatar raster difference. Search-only avatar mask, pointer reset, single appearance initializer were established with original CSS. Normal shell/avatar screenshots remain unmasked.",
   "uniqueCases": 106,
+  "imageColorThreshold": 0.1,
+  "maxDiffPixels": 0,
+  "exactMetrics": true,
   "images": [
     {
       "file": "tests/styles/snapshots/edge-windows/about-1920.png",
@@ -308,11 +311,11 @@
     },
     {
       "file": "tests/styles/snapshots/edge-windows/contents-open-390-dark.png",
-      "sha256": "b939ff239d5733e95037a51f2c645dc2dc65a7b8f52479176c93e2730bdb166f"
+      "sha256": "e479ef7843d6aa175ba3f417b8289b6eb6679fdaf2b20a1f37c2e44152b8ad08"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/contents-open-390-light.png",
-      "sha256": "bf5566ae71b9d958f496a88887c4c34c53a27bfb47140ee310c6112dc6b8d352"
+      "sha256": "dfa7c595af59534766513ab8de4e80f777e2beac5696a7597856662bac14f127"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/contents-open-820-dark.png",
@@ -856,11 +859,11 @@
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/contents-open-390-dark.png",
-      "sha256": "658d95b3818fc1a86736ffd81700fc41c5096601c94a35bc4370a634b35f2775"
+      "sha256": "da6ff64af1ed12a6026d6f59e65641fdffafbd1dc93d06a3a7c4edc88340637c"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/contents-open-390-light.png",
-      "sha256": "fc0b994743cc299573ddedfd16a64d7defb32167e98bb76d83731d5a4bc7eddd"
+      "sha256": "5e6dc4d248afda37bef0e3b3193802267a6af909e3d54426f571c5d2a9da2f29"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/contents-open-820-dark.png",
@@ -1137,6 +1140,1104 @@
     {
       "file": "tests/styles/snapshots/webkit-windows/wallpaper-light.png",
       "sha256": "f316dfd27ab0e1768657f2a7e8cc593fffa997b826595904d82f8a2817ad2207"
+    }
+  ],
+  "metrics": [
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-1920.json",
+      "sha256": "7d60ec2412d9eeb1dd61a42511cfb3786c17d805fd546200a018403cda129c44"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-390.json",
+      "sha256": "d75083399a409f15e1cf2f80b2aa8ba19c7773e810eae4a1b494f9da49046838"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/about-820.json",
+      "sha256": "364fe78ac6a499543aa357cc7c332b99bef9fbfc0ad607603c00a652c5ba92d8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-1920.json",
+      "sha256": "f3de7d093f865119edd7f48fd672c43d181785f44e90456b46a2896e1f69887c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-390.json",
+      "sha256": "ce1c53e0f2a561fc5bc1dfffe7270d77ce7a0a831a410617dbb33396478fff87"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/archives-820.json",
+      "sha256": "ea618067e1102a8c1263ce1c764db582ee589cf4cc556c69dbaea76771f822be"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1024x768-dark.json",
+      "sha256": "22d7d7f5d75514790843a90e4ecebddeaa15b24e446fcb8b92744e21370f942c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1024x768-light.json",
+      "sha256": "15cd15ab2c5979110bcf08782e083e047931906527b37608a5bc41013f1d4045"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1180x820-dark.json",
+      "sha256": "61748c088c8f92690025363b1f589e2c79ada982410fb273d0c9806b5f18bb03"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1180x820-light.json",
+      "sha256": "303a1794cb93548987152a27362ddee9763c8d80cdf7263aecf298901eab0dca"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1366x768-dark.json",
+      "sha256": "e95c87845bca7500a90b36f2a23e0ae0903dd940ec5a7a1a69f832bb0d976a47"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1366x768-light.json",
+      "sha256": "e824df6abe19498c0329fb0d7af9ae1576a57dc26cdc14b016bebae491432aaa"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1440x900-dark.json",
+      "sha256": "e435430d29c1a3570bdd811973702213557ec3c595fc56d7c895c3c66910556f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1440x900-light.json",
+      "sha256": "2375902ba80ae2214fe187558c148cbf3c2a8e4e474d0e1a962a73ecbb5398e2"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1920x1080-dark.json",
+      "sha256": "55d3581703072f35c918bd8ee2300bb6b4fd05e68e9993105b937a11dd638db6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-1920x1080-light.json",
+      "sha256": "096e418a2a6048b607370825601eec03391ee8122ec8d8a332f2c1d90c6db206"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-2560x1440-dark.json",
+      "sha256": "29ebcffa6bcc132c2691d3e8e0490b9e17739a38225502038e68af6545df5fdd"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-2560x1440-light.json",
+      "sha256": "92336edae22beb3ef0b3a4b0f297a23f5358a0002844066993973f8ca5531e70"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-320x640-dark.json",
+      "sha256": "76d3d7e02257a0ec55e7c881598d089b412348d317b3dd68bc59b092194eaf9e"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-320x640-light.json",
+      "sha256": "8dbe2c0bd5970ce427beb25631cda111ed7dfef3da1efd916cad2d7556b2aeb3"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-375x812-dark.json",
+      "sha256": "35163de9f8486e03d194e15998a44743eb732a8df257a6c94edd0d7cb4455f0d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-375x812-light.json",
+      "sha256": "db80faf51bad2fe9cc9dfb457534ef502c6179f3f5dcf0d4e14ab427c60ec6c1"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-390x844-dark.json",
+      "sha256": "78aed7686b7bafd331e0070c8b1ec0b6596e9f52d876ecde64761d768ff6941c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-390x844-light.json",
+      "sha256": "bca168145e3c65539150669059333e8bacb16a7e56e0549b21ed16620814b647"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-430x932-dark.json",
+      "sha256": "60a5e7a9c9b988a70b8df627886d4021a905eb1526f51e2105c7bd4785b8ff00"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-430x932-light.json",
+      "sha256": "e5845204e16d5109dfb289ba4c155fce43c30c61ee06ff4f65737d2a2d6eaf5a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-768x1024-dark.json",
+      "sha256": "1193ee96a1c02a77e080d7a82c3df118d90f46357e0e71a5be65e89689ee5c29"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-768x1024-light.json",
+      "sha256": "11185fb9974751654b7ee784ebf3947f7f8551c2b43d3375ce434a748c42f3d6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-820x1180-dark.json",
+      "sha256": "d3291475fb17e0b295d9b97e95ef60277ca5495f84052c5c93c1c3b001207655"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-820x1180-light.json",
+      "sha256": "94220c5d6cdcc0e525faf10c15d796c9664fb86c11c2efc30440aa6ed65ca557"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1000.json",
+      "sha256": "acaf9339702cce59babc7fd41fc45f86460f6df49a3d2587302ef8ba425a8882"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1279.json",
+      "sha256": "c40000ce6848ae14e5e3cbc3f1521c3f124f3e20ef6a38c14d90ffafe5dd5f88"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1280.json",
+      "sha256": "bea2c0043b6c311a91e97b11a32bd541a6f8ac9f00778da38d2af3498dd480c6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-1439.json",
+      "sha256": "f6f93d9bdbecf8bf60c799c8d7e3260a076ce46d06fdf373dd4f04af17c27732"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-719.json",
+      "sha256": "4d48b66906b49c93bd2775db79e1b123a4ac4495300cb20cea23da467a40631d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-720.json",
+      "sha256": "1e23ae2d2bdc2597b05ee115c78cb1f076aed8be91722a22571b06045bd03052"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-boundary-999.json",
+      "sha256": "0beaa391c2873522e8c310c66347d042061f34b6956eb4c864b5098ad6ba031d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-custom-config-plain.json",
+      "sha256": "3ff4c68a4c82c683ff2f0e0955781011f7a53f79b37f375ad2be3d04c057618c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-forced-colors.json",
+      "sha256": "ec877585489b4d40a276bf9642a9f69023864d2ebefe13fabba4eadac2fee578"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-1920-dark.json",
+      "sha256": "55d3581703072f35c918bd8ee2300bb6b4fd05e68e9993105b937a11dd638db6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-1920-light.json",
+      "sha256": "096e418a2a6048b607370825601eec03391ee8122ec8d8a332f2c1d90c6db206"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-390-dark.json",
+      "sha256": "78aed7686b7bafd331e0070c8b1ec0b6596e9f52d876ecde64761d768ff6941c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-390-light.json",
+      "sha256": "bca168145e3c65539150669059333e8bacb16a7e56e0549b21ed16620814b647"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-820-dark.json",
+      "sha256": "d3291475fb17e0b295d9b97e95ef60277ca5495f84052c5c93c1c3b001207655"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-full-820-light.json",
+      "sha256": "94220c5d6cdcc0e525faf10c15d796c9664fb86c11c2efc30440aa6ed65ca557"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/article-print.json",
+      "sha256": "993d949eb9049261cdd3fe5bd729d7944e67d3f9d30d387fc3f49d3ecedb8634"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1024-dark.json",
+      "sha256": "22d7d7f5d75514790843a90e4ecebddeaa15b24e446fcb8b92744e21370f942c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1024-light.json",
+      "sha256": "15cd15ab2c5979110bcf08782e083e047931906527b37608a5bc41013f1d4045"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1366-dark.json",
+      "sha256": "e95c87845bca7500a90b36f2a23e0ae0903dd940ec5a7a1a69f832bb0d976a47"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1366-light.json",
+      "sha256": "e824df6abe19498c0329fb0d7af9ae1576a57dc26cdc14b016bebae491432aaa"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1440-dark.json",
+      "sha256": "fa115e65bc891587157eba69dac83375853ba4437e67dc2003b01fefa8376df9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1440-light.json",
+      "sha256": "a5b4fd70b4b10889ff18b87bc7b0b73f1eda8b61433276de95adf84a29418b32"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1920-dark.json",
+      "sha256": "782bde90a20bc8166b92aed554133aa1c02d10d99ec4d0edd9d50ceaa6cdf551"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-1920-light.json",
+      "sha256": "33bd845607e48d73ab99956f1169f208b78a365545d4533bec5c663942153502"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-390-dark.json",
+      "sha256": "78aed7686b7bafd331e0070c8b1ec0b6596e9f52d876ecde64761d768ff6941c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-390-light.json",
+      "sha256": "bca168145e3c65539150669059333e8bacb16a7e56e0549b21ed16620814b647"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-820-dark.json",
+      "sha256": "d3291475fb17e0b295d9b97e95ef60277ca5495f84052c5c93c1c3b001207655"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-closed-820-light.json",
+      "sha256": "94220c5d6cdcc0e525faf10c15d796c9664fb86c11c2efc30440aa6ed65ca557"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1024-dark.json",
+      "sha256": "9f1c3eac71f067a881cf5c5d881e7ced59afe76ea168f5f42f1ff9c500e06dd1"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1024-light.json",
+      "sha256": "633dcb549e23796067a89f86bc953881be1738b83d6b75a1f16816b9cb4952af"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1366-dark.json",
+      "sha256": "a11456cc02316ee4a75fbc5202b4d887b4aa373a67844b5ef4dd28973d1478cb"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1366-light.json",
+      "sha256": "65e5c2a18534252013cbc05e8879d239d5d5f72f1c954f2f7f0cdd4f0992d19f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1440-dark.json",
+      "sha256": "e435430d29c1a3570bdd811973702213557ec3c595fc56d7c895c3c66910556f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1440-light.json",
+      "sha256": "2375902ba80ae2214fe187558c148cbf3c2a8e4e474d0e1a962a73ecbb5398e2"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1920-dark.json",
+      "sha256": "55d3581703072f35c918bd8ee2300bb6b4fd05e68e9993105b937a11dd638db6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-1920-light.json",
+      "sha256": "096e418a2a6048b607370825601eec03391ee8122ec8d8a332f2c1d90c6db206"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-390-dark.json",
+      "sha256": "1dcd07c2b111a0e0a3bf93d5316d3689956fa0b722243840f5b7991036c5bb6a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-390-light.json",
+      "sha256": "43f01f7351da0423375c765cc95911110dfa5a8e3b28265db48b41c1cdeb690d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-820-dark.json",
+      "sha256": "f085ff4b51dbbdf36cc854e3986cf2aa7e0eeb44c43835dc0ccbef6406927248"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/contents-open-820-light.json",
+      "sha256": "9584e44ee9e0f9ccc3285a93bccff0e460a21300df8e3862a58774625e1f09e9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-1920-dark.json",
+      "sha256": "cdd8d11b7f3960398ee4155f9e26a0f1d9ce9362396e8f6464ff8f73e90ac0a2"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-1920-light.json",
+      "sha256": "08aa2b951b55b1c4d0104e4ca51915b1e40fa9ea0f2a5539bf627ce46c1e3bc1"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-390-dark.json",
+      "sha256": "a12a8a8637415628ae88399e4f2c284dd938411c6e53f6b5b885d0e1669ad071"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-390-light.json",
+      "sha256": "cc7a479c559c2d7d656afe6ef0b6128c6d56fe0785700d7cd981da0726b37eb4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-820-dark.json",
+      "sha256": "86abfd4139a245c2a696c8b835497d849dfcce1fd3416000a02c28cc37de1068"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/focus-820-light.json",
+      "sha256": "583fbf2f0032602720ed2be83c290a9ba416b7df917c4370cda4a046fa6688d6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/full-content-cards-1920.json",
+      "sha256": "b647f2a775f9d3b4ba1262aa1c6cebb9e577bb1b83f44b8104da448c930e2738"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/full-content-cards-820.json",
+      "sha256": "e1c4b8580bdf88b01affb388bad9acd2a1e5e2e56a534a2db1082f40ac89e4f8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1024x768-dark.json",
+      "sha256": "1731e4aaa56d9a97cce1d6a4e142d5bc576703a3f9f3641e09f2da8bcb526bc3"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1024x768-light.json",
+      "sha256": "8f26f6a7c680478ba3126d0864a6d3548bac0ca4f5d75ba7b2a691e7c93cb0c3"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1180x820-dark.json",
+      "sha256": "79feba53ee3a7341c291173ab3e768edabb125d21523c16b6b83f299664f18e8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1180x820-light.json",
+      "sha256": "b8ed460a75c57ad37b81334ec74602ee4aad448ed5897c10779ba4884f5aa8a8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1366x768-dark.json",
+      "sha256": "e2c4d3714ce201b22296c2d587af1f3bbc8e1f5f812bf1efb116197c4880f4ba"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1366x768-light.json",
+      "sha256": "ec651c68ca566100ed093dc82fe59e49b675e1121e8ff0e2fb607afdb60cccb5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1440x900-dark.json",
+      "sha256": "c4f741823845a5487da793fc560e7225b7af6b9229a7d619833afad3786c9b27"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1440x900-light.json",
+      "sha256": "ed7d75d0b5022d0c5dce95910b2c9462acb7708c33934548e456e9fbcc50d3b2"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1920x1080-dark.json",
+      "sha256": "df2fd6e95fc6823823f0b91f1ba5d50ba993457c080b8068db1d057034a1448a"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-1920x1080-light.json",
+      "sha256": "794803146d3abd849cc9d4d889393ce33c6e442cc889b2d327c32bd76142d750"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-2560x1440-dark.json",
+      "sha256": "5a28ba5edb55284362e8eee92e989d640851ae3124bd290b3fbab980be975314"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-2560x1440-light.json",
+      "sha256": "100aa0b12caf71b03f007c49c181d376fccae66a255cda3100661962779848fb"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-320x640-dark.json",
+      "sha256": "30361fa1510ea5dd47afafd92b6f448459c1254c12dd5b859675ae4dd84940e4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-320x640-light.json",
+      "sha256": "ba7c9dd9c6b6eb1376ca9145e1b2d5dc45972c771af5f62ca2d818b4cb336ed4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-375x812-dark.json",
+      "sha256": "9c9e64e2219ade6da3bddf78695f15da2cbc43bbf7ea51c6d00979a58fca81ce"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-375x812-light.json",
+      "sha256": "c01053409c733e94c0e4ca1459dd4655a9080220c4dc4ee2ce8569d33cadbc36"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-390x844-dark.json",
+      "sha256": "97682a026582380d505fe16352686718584fa24d48c8649f1c49ba4234f82777"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-390x844-light.json",
+      "sha256": "01566cc92f18f8e8a0e3ea85c1ae61984ae048445bcb9227b4a746ee05596e66"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-430x932-dark.json",
+      "sha256": "d9b470b6610968fed33036b5d584cea92f69cfef7486cfc5dc323c7501552fa3"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-430x932-light.json",
+      "sha256": "dfd0f28327ab1c89531cb9ec8d9d1f15f647d10277fcafcbb316daa191f5dc74"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-768x1024-dark.json",
+      "sha256": "aca911d17c6541d7c0b64f26b28aa17939ba5416d1805cf490529bdf0f57c474"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-768x1024-light.json",
+      "sha256": "ed1215eb6f0b9a74706ccb29cf4631da0d12b1675241329f40810215589a6983"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-820x1180-dark.json",
+      "sha256": "60c7d36675477435b65d5fe4cb9111f17e4a03c21b5f6988c2f2831ab79a9902"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-820x1180-light.json",
+      "sha256": "84a92edab041614852558d521c5daa78348c365459ea57a2f410859cbe166bcf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1000.json",
+      "sha256": "88ba6cd8ab656e890327b6059df8fe4cda46485beb9e657c9d2842ab5a369138"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1279.json",
+      "sha256": "7728b0f1ea2409633ae6ab6dd9228531d9236f46cfe7a82e64ee39b3c715df63"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1280.json",
+      "sha256": "a1d56ab7fd757d3375a104a9f1b4da75d98c72de04f8cf58813518e5d0566420"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-1439.json",
+      "sha256": "185b5e7b62563419a38a44cf3aed729d096deb58ec85a9a2b255f1c4666509be"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-719.json",
+      "sha256": "d41fc57f8e91cc7eccfa5e291d583f07fe5bb9cae7e2f740497c6d31a3c3d9f8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-720.json",
+      "sha256": "2633a90a50b79c6a9f8fd5b359d3091f2c1bd9a26de0820a1dedad98e5ddd7e6"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/home-boundary-999.json",
+      "sha256": "6f82584cdd66093c83319391b21d83172fc956add6fb22389ab55eb661c5b17d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-1920.json",
+      "sha256": "4ff4b22ab0bc1c38063d80407ecf19944b2364501ce55e9c6bca8ba4e2818a9c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-390.json",
+      "sha256": "b19c4382fdf49c27e5e71b772aa536db8b064713ec980e9f04da8bf488d529e4"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/lightbox-820.json",
+      "sha256": "bc5a1a66df382123fb7fb98dc6b6289cbb95408e7b19a23da48bef647804c0b5"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-1920.json",
+      "sha256": "d8df2dbfcf47383712a0fb4281ab6a518e70e048b90f90a26300098e1bdb734b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-390.json",
+      "sha256": "b5d58ad209bb621649ba51182cbf4e3db7ff3e76a8a32e990925a2623ecebf34"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/links-820.json",
+      "sha256": "8f133d8dcc584bbda5bf719af1bfd1e911df694c150dfb2cab62eb78cf628767"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-1920.json",
+      "sha256": "722661979ca26cc4e8f03724fbb0db712f1a7e25bb518e5ab58e99d1376487eb"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-390.json",
+      "sha256": "2976565c14299f611bcfca9c6ea9dd0e1d9a44378a23d3df96d77f52e6bf85cd"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/math-820.json",
+      "sha256": "cb47d43514a83629b8200f50e25a1faa184e743f0d561ca72d74c2f85025bcff"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/no-js-1920.json",
+      "sha256": "73f2454d3e320a4ec673450837c89e759b325e196ab9ab1d633a9f99dd59ec5f"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/no-js-390.json",
+      "sha256": "584fd5083a5c3b4f8e0ebdf0051677b0c6ef4e22630f6aebbfe64bd23948c42d"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-1920-dark.json",
+      "sha256": "701ee390f494ebc3cd51e872ba2ac1d8c94d38ee7477dd8968fa74b36ad2e4f9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-1920-light.json",
+      "sha256": "f7232f7d8c2a0b983ad0eaf44fc609c6070afe48dcd7a771b64feb85ced18a22"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-390-dark.json",
+      "sha256": "4f0d6e8f5e9f51a48821683375d42e5d1a26f8b4ad0879e2f6b3d957402ee59c"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-390-light.json",
+      "sha256": "8481a0decb55df26d8512dc82caa7c5cbb6b783183edcf389ae893ea3a078260"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-820-dark.json",
+      "sha256": "e5143f7719170a35b8cff49bb21c1dde8ba51ee88867bcf61e9614aec57a0f72"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/optional-content-820-light.json",
+      "sha256": "126608a905fc1ed92601e8bec82ab4b346618a82a74585b9e830c81ef15df7b8"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-1920-dark.json",
+      "sha256": "5afa6fb43dcb8da50e25d6da416b20ba9768eee8fb589dd08e4e744b410deb21"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-1920-light.json",
+      "sha256": "3b05f793d257e4269183d1cb5cef0adf9f62735c3d2cb43eb113b841ba0b95cf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-390-dark.json",
+      "sha256": "1d69a9bf19c4bb67f4c89b262b98cdd374c940fc91cb38dd25a9bb6e3ca8892b"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-390-light.json",
+      "sha256": "dd9b56ef8b9f5b317edd50b963669789ba696b16565be8f7c55388344a685872"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-820-dark.json",
+      "sha256": "d39a85cdf1d11e1f956d290e153c40674c5165c78312da8f5c85e590f027eb87"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/search-820-light.json",
+      "sha256": "6d402741d307050ca20764c91598807666f340439544da68cdeed7d8517cb690"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-1920.json",
+      "sha256": "6bdc382d18fe1cf96ce5901d3a8e60a036a74752440830a3fda37be8b93c5c04"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-390.json",
+      "sha256": "3750827eb44a754d83b261a8e8cd95f6b006a1dd37ad60295f8c2c505e7c7566"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/tags-820.json",
+      "sha256": "ab4cbaec57b9cbac706696d9c46707e158d2ee5961fd20ae5b11054db9210bdf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/wallpaper-dark.json",
+      "sha256": "0afbea40793e49b0757acc6cdc876f37e936e4fdeb8ed2d05767c56735e176c9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/wallpaper-light.json",
+      "sha256": "553155d9f4aaf92f4cdc9b8d4e21238125acb9b8722cee77a38054cd8eeb8a49"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-1920.json",
+      "sha256": "39fa6f751cf9524ba89220cf61261f66518c5d5af55d335e9536aac350081a57"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-390.json",
+      "sha256": "aac9850dbbb87af0811c863a16e92f793d937e418707f139402689acf4b6483b"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/about-820.json",
+      "sha256": "22cbd6a6eace901f310870bf60341af337b9463d3757d46db84d5b307b5225a7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-1920.json",
+      "sha256": "eef77cdd1ba28b67bfed95be463e59199be95b2395f5aaaad40c3edf039012c0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-390.json",
+      "sha256": "60a1f2832dea2059d1c098232cc9c9e87776670da4c43081296d5771989c3ab0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/archives-820.json",
+      "sha256": "d86ea56e7431947028cca03a75521aa041e2ec36c3cbeff99cec168b6f2153d5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1024x768-dark.json",
+      "sha256": "41e175f817f32a26ce6ed2e8cf0842d94cc2a2a1bf05767d5782fc3fec4025d6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1024x768-light.json",
+      "sha256": "13ae7d4b7c6499b715a0a99b8f76a8d1e29a551a8ab4060b99d6fa1705081249"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1180x820-dark.json",
+      "sha256": "d135f3756bdb1212fcb036237710036e70fd9c3865401571bf764b1444cc832e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1180x820-light.json",
+      "sha256": "a287c2e103aa955c4fe54dab4f0fdcf703a6805d266afe58693c89b59468f2da"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1366x768-dark.json",
+      "sha256": "7e89f85008d883ccacbf13585466e2fe75b2bcbcc8d364ffa096ac04dc231bf2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1366x768-light.json",
+      "sha256": "7c16775a208f099d4d23180cd2c32020a6f63ed9ef3a799b97650c87f843c00f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1440x900-dark.json",
+      "sha256": "af1c511668dbb678b7a0eaeadd4b056bbdd7b0c1b176aafec0cf40b8b401bf2d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1440x900-light.json",
+      "sha256": "39d87adc22d106efee1fd70b3fa850ebef82dcb1eb6da45844071ce958ee1c82"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1920x1080-dark.json",
+      "sha256": "d85911fb5a37c2c5d5ac51bc1e61946bfa90650875493fd017ef542de5ffdf77"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-1920x1080-light.json",
+      "sha256": "322ee03eeb06344fca362bdf0fd1ec5ed6502edd08eb9eac39a8f97d856315b3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-2560x1440-dark.json",
+      "sha256": "62600ab7d0673c926983ae1a1adf44d1c010476b5c858e612c5e938fcec58f2f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-2560x1440-light.json",
+      "sha256": "0d47b9627be9972cca121e78c1d3883c548a3b0f5b641b065f721e528aa2a9f9"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-320x640-dark.json",
+      "sha256": "40c413dc2a2ada95b5a09bdeefe16a255e6df5fc5c2880ceab1ee9dd5416eb88"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-320x640-light.json",
+      "sha256": "910d781311481c718274d5aa4b27e4581a07aa852167d95c4f20fc81cd37824e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-375x812-dark.json",
+      "sha256": "4e2e47e4e9178d0f476ccae0c955f330fe59fd450f0ea4a78f9232194dae9e48"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-375x812-light.json",
+      "sha256": "3f56226253a259ff65926f49b0463d693eccd079b35b43a247bc61171887ff2c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-390x844-dark.json",
+      "sha256": "6600d22c5e870f45bccb7bc82317caef63607817576fb6146cc1a2deaeb552d4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-390x844-light.json",
+      "sha256": "5d825e4f70c9d11c4c1f6923b47fcb184e7869d988625a23360f448595bdade5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-430x932-dark.json",
+      "sha256": "5ded2298d0188ead6103f55ff93e7b22fd86686c022ba5692fdf0d16849cbbd4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-430x932-light.json",
+      "sha256": "59092353d51449466830d77eaf74205852e95c5a8673830d9223a11bc46a7f3b"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-768x1024-dark.json",
+      "sha256": "62b5a374c77ebdea5b534324ad0dddeed3692242916e0c584722caac49b4fd1b"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-768x1024-light.json",
+      "sha256": "8a48d8f158d14b565fbe4cee170cc5d3d4a2a16f73f65dec1c5f446174deb61e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-820x1180-dark.json",
+      "sha256": "d885ffaca79b483e47371e2fbe55a703c72d95fa729711d98d0787295e704420"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-820x1180-light.json",
+      "sha256": "824ebcc306fda6c410cd49d9c544bbe02fae63b608a8187f8427020584e330d1"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1000.json",
+      "sha256": "380342e0fe0a994745bd9f2151ddcefba398d0d013992139e705bb3dfb779795"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1279.json",
+      "sha256": "a70e0b127990e23bae1614af10f9a9d7be60fa1d67ef354d513ee4ba937c9bdf"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1280.json",
+      "sha256": "d4af259bdd9e3b8e0915a9b2e1ae4420a695b9b60f146bd2f60d15361cc3f7f9"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-1439.json",
+      "sha256": "db73678629389e1a1a907f9f1554ea6cc42e56a3e9ad0f0268700558e68fc60e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-719.json",
+      "sha256": "38ccf4c241883c61889af6d0ad081e2f8d90351508a520f0737da6a630095258"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-720.json",
+      "sha256": "c71879193f8dd895cfc5470798d9edfe6c758cbb12d64c0f6ee5b98b1093478d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-boundary-999.json",
+      "sha256": "d5a11f6824663e877ba610c8a23ac9f2265286d24113c136959ae59590474f3c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-custom-config-plain.json",
+      "sha256": "8e38a529dbb4e92561937057d6309a06c821cf3fcc86eac6dbe91bb814dda733"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-forced-colors.json",
+      "sha256": "5af2fcc6e30af65426aaa799bfc276166b37c8aaf6becf517fc1243bcce0c71d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-1920-dark.json",
+      "sha256": "d85911fb5a37c2c5d5ac51bc1e61946bfa90650875493fd017ef542de5ffdf77"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-1920-light.json",
+      "sha256": "322ee03eeb06344fca362bdf0fd1ec5ed6502edd08eb9eac39a8f97d856315b3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-390-dark.json",
+      "sha256": "6600d22c5e870f45bccb7bc82317caef63607817576fb6146cc1a2deaeb552d4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-390-light.json",
+      "sha256": "5d825e4f70c9d11c4c1f6923b47fcb184e7869d988625a23360f448595bdade5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-820-dark.json",
+      "sha256": "d885ffaca79b483e47371e2fbe55a703c72d95fa729711d98d0787295e704420"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-full-820-light.json",
+      "sha256": "824ebcc306fda6c410cd49d9c544bbe02fae63b608a8187f8427020584e330d1"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/article-print.json",
+      "sha256": "bb5866d71866aeea9dc07bab415713d20699377f70a2e7f111d64f5f8ca8b12f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1024-dark.json",
+      "sha256": "41e175f817f32a26ce6ed2e8cf0842d94cc2a2a1bf05767d5782fc3fec4025d6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1024-light.json",
+      "sha256": "13ae7d4b7c6499b715a0a99b8f76a8d1e29a551a8ab4060b99d6fa1705081249"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1366-dark.json",
+      "sha256": "7e89f85008d883ccacbf13585466e2fe75b2bcbcc8d364ffa096ac04dc231bf2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1366-light.json",
+      "sha256": "7c16775a208f099d4d23180cd2c32020a6f63ed9ef3a799b97650c87f843c00f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1440-dark.json",
+      "sha256": "ee9b78a36fb4c229eb3d5fcaf712091f6bfe999f3456de86355e55c91c318860"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1440-light.json",
+      "sha256": "20e11b53d475f3ff6b3faafd640ac9a504893c8ace1e25f913863795a288d517"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1920-dark.json",
+      "sha256": "3b3fbff56cd2951a2f9b43d37f89b469d306d1fb06bc4b2ebb0487a1eda8220d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-1920-light.json",
+      "sha256": "c3925013a9a5dd6e868441494ddc71e0dda056805cbc98ec047afba56f6883b5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-390-dark.json",
+      "sha256": "6600d22c5e870f45bccb7bc82317caef63607817576fb6146cc1a2deaeb552d4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-390-light.json",
+      "sha256": "5d825e4f70c9d11c4c1f6923b47fcb184e7869d988625a23360f448595bdade5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-820-dark.json",
+      "sha256": "d885ffaca79b483e47371e2fbe55a703c72d95fa729711d98d0787295e704420"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-closed-820-light.json",
+      "sha256": "824ebcc306fda6c410cd49d9c544bbe02fae63b608a8187f8427020584e330d1"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1024-dark.json",
+      "sha256": "25fd0f83ea80e6273058ed208dbdf680a3ee2c488e3e06e917288707a88b5a55"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1024-light.json",
+      "sha256": "328689bf20519a775c8f4d4a818759d2b3f2630cf67fc427fc90bfc69387b1c4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1366-dark.json",
+      "sha256": "7374595dfa324c89799ef8f365737affa587ee1305550ceeac37ae81355ed932"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1366-light.json",
+      "sha256": "3ae928238900cb3328f0e5a5771cf8029bae68cabed6072c8a352bf23a1c96cd"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1440-dark.json",
+      "sha256": "af1c511668dbb678b7a0eaeadd4b056bbdd7b0c1b176aafec0cf40b8b401bf2d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1440-light.json",
+      "sha256": "39d87adc22d106efee1fd70b3fa850ebef82dcb1eb6da45844071ce958ee1c82"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1920-dark.json",
+      "sha256": "d85911fb5a37c2c5d5ac51bc1e61946bfa90650875493fd017ef542de5ffdf77"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-1920-light.json",
+      "sha256": "322ee03eeb06344fca362bdf0fd1ec5ed6502edd08eb9eac39a8f97d856315b3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-390-dark.json",
+      "sha256": "bc6a149e517dbb7d2bf50b108adbf8f3ce0aff4a7f8dfdd369accc3ea53bc17e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-390-light.json",
+      "sha256": "de85116df90ba62acdb1ee1ec187c69c80a4d9be574758c5bd350d2be2fd79d4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-820-dark.json",
+      "sha256": "badf9d0c6fe239b713d5c657f44547413a985c88fcced5887fa2114bfda08da3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/contents-open-820-light.json",
+      "sha256": "2f1123f8cfea1a7792ef76bcf7287a92d2bb67da3188766226df9cd60f522650"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-1920-dark.json",
+      "sha256": "900d931b8497085d039c3dfafbfbb1ae6f81bf63ade3de419b9ff107a0491266"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-1920-light.json",
+      "sha256": "c115ff0d25b3e0459aee9252f010a28d56e66a14f2c6498bf62841e8895cc391"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-390-dark.json",
+      "sha256": "a9dc9dfe389ec88e0f3318011e35f7b18e3cc8fb1abe4a43168f1ebb859a736f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-390-light.json",
+      "sha256": "5139e9dac49ca9b8a953de0b4e72845db9fecb3ba9d3e26d04511ab001580f36"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-820-dark.json",
+      "sha256": "24c6da841d16f9bf3b42cf07c38565dc62a1f3ec9112c500af7929c011fe4622"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/focus-820-light.json",
+      "sha256": "d24083d09ad79060d8cff3c40ea4d0d417e13ad38008774297d7afc1a9af62d8"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/full-content-cards-1920.json",
+      "sha256": "9cdd96ae0ffacde82a41ef21fe450ed121e7ca7fc4b34cc76f75f24a61459050"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/full-content-cards-820.json",
+      "sha256": "301aae4d2617dfb4f9a47024cdd765ff92472c03c9905ac03e1b54d59006cf80"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1024x768-dark.json",
+      "sha256": "360a16684fe4228945b4956b61eafad5d3ea54611b51278b378d90f9bf720372"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1024x768-light.json",
+      "sha256": "a999816107a3c43f0fd783c1bf0c241ab5ad5a1ef45b81a7778722dffbcaca5e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1180x820-dark.json",
+      "sha256": "d907709ce8d113ccde36ecf9b84ab8ba64d4e32409d66d1a013db398a130e962"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1180x820-light.json",
+      "sha256": "89d2715130ae84b065d2c12d0a0e869817d3c90d9567c030d8a7863261785fd2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1366x768-dark.json",
+      "sha256": "6e6e33a0fc5c78a47aad1cdb587099cf8030a12b7f6f7f9b4103ce8ea488c053"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1366x768-light.json",
+      "sha256": "c52459f71f93b59f5fb30de2125ef09b3f086b501feaada5a498876814a4e7c2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1440x900-dark.json",
+      "sha256": "92c7c150d8175028a50ad23a836005e4daa2ab2dde334aca710a6df2caa7ba44"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1440x900-light.json",
+      "sha256": "89c54b17b3c57cee772ae4cac1fdc0c4254417a50e4f49415db35e3e419bcbab"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1920x1080-dark.json",
+      "sha256": "2d50ced7cc96fad3b1754b568d984c965a373267eae1b02f2c8c046f77fcbb80"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-1920x1080-light.json",
+      "sha256": "17e0e44aa889327c3af5cd6bfa46736e071b6a00759bb94a6c5c581b501c966c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-2560x1440-dark.json",
+      "sha256": "511f625ce30aa456d8811cfad4d5f47a260e34ab013168f0e63679c6e7277db7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-2560x1440-light.json",
+      "sha256": "5788c943b6f31225e031156254737e1df03736760caf1ab70b1a728e62463bb5"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-320x640-dark.json",
+      "sha256": "2a5d541dddc37d184d150778acaafbdc024a92e11e15fa13928d972f69a291d0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-320x640-light.json",
+      "sha256": "ae74f4335d29563e034a552660b94217ad257e6d33e1d02030a354d3ac241167"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-375x812-dark.json",
+      "sha256": "80ede7fe0de609713e013da1340b5ad90e485e40ebb163209be11bfade8b2fd3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-375x812-light.json",
+      "sha256": "06a7f8f9263aa1fa85e12af439b9424af6ac85a3f5116f8926dedffbb1c5865a"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-390x844-dark.json",
+      "sha256": "14141cf28cc400c6f07115340e0394817d7850d6d104ae047e378c556f6d537f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-390x844-light.json",
+      "sha256": "68553994ccdd11fea850b373a8054afbff3382b65d496d57283210c80e8b896c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-430x932-dark.json",
+      "sha256": "12a4212868e0da299d296db46045d1123034fe13215e8c0b4f99e016e8aa4c18"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-430x932-light.json",
+      "sha256": "92c44cec4b54b18fd567d91d2936a4462c8ed0451271a9aa95253e3ff3f6133d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-768x1024-dark.json",
+      "sha256": "3209fd2531fb641aa89ff9591dffd2566adffba6fa2b83dc927e6b8d5a5fdabc"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-768x1024-light.json",
+      "sha256": "f340d15fd3c3379a036a61192a550560ba8ac3beeed3d1221a6528f629b68086"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-820x1180-dark.json",
+      "sha256": "6f04ca9621e3d464d619f88dd4fb961e1d1957831c5222fb33f0dd0baf2cfb17"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-820x1180-light.json",
+      "sha256": "3852fa20fd39d8d61c7f2c85a402a9567776c9a158726c3b8b78e46780733b45"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1000.json",
+      "sha256": "5711fb3912ee45bcfb1948d304d73320a48dd5665329d54f95c2e6cb64d7f4d6"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1279.json",
+      "sha256": "f946aba02bc73c374e086f93c3dbc2dcda2effdbbc9c2b014a89ab6f9ffb3110"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1280.json",
+      "sha256": "e2db3392dba15821586e5cfb4a7cf8773775cd5340760b417a91b15515bf4679"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-1439.json",
+      "sha256": "344624701f139107a0284e1225abf57f873ec9a6b7f2848c8bdb637189d38fe7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-719.json",
+      "sha256": "ce2bd5fa14e8905891932d8ae20c87e3f56f164c46cba20fc49785a20caada38"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-720.json",
+      "sha256": "d513d46aa014ce4c5cab675363dccde6a2174969b9a19a9ef806aed7a8534fff"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/home-boundary-999.json",
+      "sha256": "3be1ab83f59d1f61b05ed91be1da8ca8a088df8d0df2b68c29c1649f8cee1d41"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-1920.json",
+      "sha256": "ba944f2ca5494578915f45f8a5a6698392ae9d0de04d863382a3d8b55857967e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-390.json",
+      "sha256": "9c75005907839cdccd483a7995ed7f89b6d2d4d5e65d9a2bc5f78fbac85b8378"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/lightbox-820.json",
+      "sha256": "cecfbead7b7fd5fb1d6d1bec61d329b4668150f6a5779ead0744463412068da3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-1920.json",
+      "sha256": "4fcf3a2b7a55417447304624d511eba65796b4294c483330e304c47ca37e642d"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-390.json",
+      "sha256": "71a5d1877edcfffd962ac203370e52937ad48049b2da3259e53c9bd62c871e84"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/links-820.json",
+      "sha256": "ade2d65fa064dc8750329cc30b41d24aa88a6a36259a6ef5c8c804dcb66cdaf4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-1920.json",
+      "sha256": "d1b6e8e2e83bfadab54cbe303d0d59c28d615dd7c9980907e788e51867510d79"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-390.json",
+      "sha256": "207e98b18d78419a33773ee0175e8ed0f94027816b23f03d3a20003e03e141de"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/math-820.json",
+      "sha256": "6ad56f221bdeb41c19cae0d9af7af857acaea40c926b6b11eb376537380bad3a"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/no-js-1920.json",
+      "sha256": "aba109d69a4603b59683ebb32408164946d5be2741f048c44ce6802aadf92d7f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/no-js-390.json",
+      "sha256": "d910e18f082fe745bb108310db2bb5d4cca8c33b1c0c493a801dc33c31473845"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-1920-dark.json",
+      "sha256": "4be9fc5cae37c295ab3429a2a80997ad1ec30c26886c3589542a887e80582192"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-1920-light.json",
+      "sha256": "1468fc1ee1b31a628c909da449f7ec1cd62c9412cac1f608807e6abd55134e47"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-390-dark.json",
+      "sha256": "a65abb467f5c24f543aea7900c42310d5c2fff39705ca04f72ecc94c7102d500"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-390-light.json",
+      "sha256": "65497b90ef32e51683f2ab2e7305c29c4921e45a160a316c0023271be0227fe0"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-820-dark.json",
+      "sha256": "80fbe79f356a7feb69f793e300a40408b6f75f1dc0f6c2a9f2b47c8666507b1e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/optional-content-820-light.json",
+      "sha256": "573584e6675d1ef992c4109fd8e6bae43f48a6a9de2a913b11c1ddc9e53fc993"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-1920-dark.json",
+      "sha256": "563e67250778345581c1710a516661293993bb015a27da081b562cbfbdd51a98"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-1920-light.json",
+      "sha256": "cb8c22a6b828df0567637be1cbb495a987448414e88e5262b7ab46f1cefc5f2c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-390-dark.json",
+      "sha256": "71a68c7ff20b5b2854a913be6bccdddb1c1b733320ae8ebd9f554d4f50d28336"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-390-light.json",
+      "sha256": "8794ec3dba7eac66885c46c6c7091d32c9769f9753a1ee2563523dbf9fe850d4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-820-dark.json",
+      "sha256": "b4e8c9f210f616f18d996f462d27fdda3c92e66aace3751f5800223d5b4a834f"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/search-820-light.json",
+      "sha256": "9b944efa5815f3b8855608705a89c0e3e2746001541e3c6ca5840ea3cf2c506e"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-1920.json",
+      "sha256": "8cf5c7551909ecc22dccc70743d6260640bf83d43210b43771041683d26e3245"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-390.json",
+      "sha256": "53aeef286be0f782ca259daa974dd28d5cb7fda194d714a4fa93d86ce94a7ad2"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/tags-820.json",
+      "sha256": "048491923e3daee65cd83e21b7961a150c7618d498695d2113944dec570ba4c7"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/wallpaper-dark.json",
+      "sha256": "259c3e052c5bce733c62e05f5ce4d78fd8c2e301c29bd9c91fe45f4635544ad4"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/wallpaper-light.json",
+      "sha256": "3a78834a9d6ef8a8af1519dbcef909693ae82e1c4c635a0280f9372499529877"
     }
   ]
 }
