@@ -2,6 +2,7 @@ import identity from './config/site.json';
 import themeConfig from './config/theme.json';
 import { translate } from './lib/i18n';
 import { imageUrl } from './lib/image-url.mjs';
+import { buildMode } from './lib/build-mode.mjs';
 export const site = identity;
 type MenuValue = string | { path?: string; url?: string; icon?: string; new_tab?: boolean };
 type SocialValue = string | { url?: string; path?: string; icon?: string };
@@ -49,7 +50,8 @@ export const theme = {
   social_items: typeof social_items;
 };
 // Preview is the default. Only an explicit production build changes crawl policy.
-export const preview = process.env.SITE_ENV !== 'production';
+export const environment = buildMode(process.env.SITE_ENV, import.meta.env.DEV);
+export const preview = environment !== 'production';
 export const navigation = theme.menu_items.map((item) => ({
   ...item,
   icon:

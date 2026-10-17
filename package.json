@@ -29,7 +29,11 @@
     "audit:performance": "node scripts/audit-performance.mjs",
     "new-post": "node scripts/new-post.mjs",
     "check:content": "tsx scripts/check-content.ts",
-    "publish:check": "npm run check && npm run check:content && npm run build && npm run check:content -- --output && npm test && npm run verify",
+    "publish:check": "node scripts/release.mjs",
+    "build:preview": "node scripts/build-preview.mjs",
+    "release:build": "node scripts/release.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "test:release": "node scripts/verify-release-fixtures.mjs",
     "dev:drafts": "node scripts/dev-drafts.mjs",
     "test:markdown": "playwright test tests/browser/markdown-reading.spec.ts",
     "verify:writing": "node scripts/verify-writing.mjs"

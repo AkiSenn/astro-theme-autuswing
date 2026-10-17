@@ -1,0 +1,4 @@
+{
+  "productionUrl": "https://akisenn.com",
+  "noindexPaths": ["/404.html", "/offline.html"]
+}

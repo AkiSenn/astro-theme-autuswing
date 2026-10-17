@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-10-17T16:29:49.012Z",
+  "workspace": "E:\\autuswing-astro\\.local-tools\\release-fixtures-HOD5Ei",
+  "cases": [
+    {
+      "name": "fourth-article-full-release",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "sealed-artifact-missing-and-mixed-files",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "delete-fourth-rebuild",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "delete-fourth-verify",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "old-release-verifies-after-source-deletion-for-rollback",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "duplicate-id-release",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "invalid-route-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "preview-build",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "preview-cannot-pass-production",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "production-build",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "production-verify",
+      "expected": "success",
+      "passed": true
+    },
+    {
+      "name": "global-meta-noindex-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-canonical-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "robots-disallow-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "x-robots-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "missing-sitemap-entry-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-search-membership-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "unapproved-draft-file-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "wrong-production-origin-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "development-static-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "unknown-mode-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "restored-production-output",
+      "expected": "success",
+      "passed": true
+    }
+  ]
+}

@@ -1,131 +1,185 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parseArgs } from 'node:util';
 import assert from 'node:assert/strict';
 import { load } from 'cheerio';
-import { outputFile } from '../src/lib/urls';
+import { outputFile, persistentId, newPostPath, publicPath, assertUniquePaths } from '../src/lib/urls';
+import { contentSchema, isPublished } from '../src/lib/content-schema';
+import { frontmatter } from '../src/lib/frontmatter.mjs';
+import { markdownFiles } from './new-post.mjs';
+import { inputManifest, verifyFiles, sha256 } from './release-integrity.mjs';
+import { assertProductionUrl } from '../src/lib/build-mode.mjs';
 import oldRoutes from '../migration/existing-output-routes.json';
 import legacy from '../migration/effective-metadata.json';
-const root = path.resolve('dist');
-const read = (file: string) => fs.readFileSync(path.join(root, file), 'utf8');
-const files = (dir: string): string[] =>
-  fs
-    .readdirSync(dir, { withFileTypes: true })
-    .flatMap((e) => (e.isDirectory() ? files(path.join(dir, e.name)) : [path.join(dir, e.name)]));
-const old = oldRoutes.filter((r) => r.canonical && !r.redirect && !r.noindex);
-for (const r of old) {
-  const $ = load(read(outputFile(r.path)));
-  assert.equal($('link[rel=canonical]').attr('href'), r.canonical, `Canonical changed: ${r.path}`);
+import { redirects } from '../src/lib/legacy-redirects.mjs';
+
+function inventory(root: string) {
+  const entries = ['content/posts', 'content/legacy/posts', 'content/legacy/pages']
+    .flatMap(dir => markdownFiles(path.join(root, dir))).map(file => {
+      const data = contentSchema.parse(frontmatter(fs.readFileSync(file, 'utf8')).data);
+      const source = path.relative(root, file).replaceAll('\\', '/');
+      const post = !source.startsWith('content/legacy/pages/');
+      const url = post ? source.startsWith('content/legacy/posts/') ? publicPath(data) : newPostPath(data)
+        : publicPath({ permalink: data.permalink || '/' + source.replace(/^content\/legacy\/pages\//, '').replace(/(?:\/index)?\.md$/, '') + '/' });
+      return {
+        source, collection: post ? 'posts' : 'pages', id: post ? persistentId(data) : undefined,
+        path: url, title: data.title, published: isPublished(data),
+        indexable: isPublished(data) && !data.noindex && !data.password,
+        search: data.search !== false, feed: data.feed !== false,
+      };
+    });
+  const ids = entries.filter(e => e.collection === 'posts').map(e => e.id!.toLowerCase());
+  assert.equal(new Set(ids).size, ids.length, 'Duplicate article ID in source inventory');
+  assertUniquePaths(entries.filter(e => e.published).map(e => ({ path: e.path, source: e.source })));
+  return entries;
 }
-let localReferences = 0;
-for (const file of files(root).filter((f) => f.endsWith('.html'))) {
-  const $ = load(fs.readFileSync(file, 'utf8'));
-  assert.equal($('h1').length, 1, `Expected one h1: ${file}`);
-  $('[src],[href]').each((_, el) => {
-    const value = $(el).attr('src') || $(el).attr('href');
-    if (!value || /^(https?:|data:|mailto:|tel:|#|\/\/)/i.test(value)) return;
-    const rel = path.relative(root, file).replaceAll('\\', '/'),
-      base = 'https://akisenn.com/' + rel.replace(/index\.html$/, '');
-    const url = new URL(value, base),
-      target = path.join(root, decodeURIComponent(url.pathname));
-    let found =
-      (fs.existsSync(target) && fs.statSync(target).isFile()) ||
-      fs.existsSync(path.join(target, 'index.html'));
-    if (!found && url.pathname.endsWith('/404.html'))
-      found = fs.existsSync(path.join(root, '404.html'));
-    assert.ok(found, `Missing local reference ${value} in ${rel}`);
-    localReferences++;
-  });
+const sorted = (values: string[]) => [...values].sort();
+const canonicalKey = (url: string) => decodeURI(new URL(url).href);
+function sameUrls(actual: string[], expected: string[], label: string) {
+  assert.equal(new Set(actual.map(canonicalKey)).size, actual.length, `Duplicate ${label}`);
+  assert.deepEqual(sorted(actual.map(canonicalKey)), sorted(expected.map(canonicalKey)), `Incorrect ${label}`);
 }
-for (const p of legacy) {
-  const $ = load(read(outputFile(p.path)));
-  assert.equal($('meta[property="article:published_time"]').attr('content'), p.date);
-  assert.equal($('meta[property="article:modified_time"]').attr('content'), p.updated);
-  const ids = new Set(
-    $('.prose [id]')
-      .toArray()
-      .map((el) => $(el).attr('id')),
-  );
-  for (const h of p.headings) assert.ok(ids.has(h.id), `Missing historical heading ${h.id}`);
-  const ld = JSON.parse($('script[type="application/ld+json"]').text());
-  assert.equal(ld['@type'], 'BlogPosting');
-  assert.equal(ld.url, 'https://akisenn.com' + p.path);
-  assert.equal(ld.dateModified, p.updated);
-  assert.equal(
-    $('[data-comments-config]').length,
-    0,
-    'Current preview must not initialize real comments',
-  );
+
+export function verifyOutput({ projectRoot = process.cwd(), outDir = path.join(projectRoot, 'dist'),
+  recordFile = path.join(projectRoot, '.astro/autuswing-build.json'), production = false,
+}: { projectRoot?: string; outDir?: string; recordFile?: string; production?: boolean } = {}) {
+  const root = path.resolve(outDir);
+  const build = JSON.parse(fs.readFileSync(recordFile, 'utf8'));
+  const contract = build.contract;
+  const policy = JSON.parse(fs.readFileSync(path.join(projectRoot, 'deployment/release-policy.json'), 'utf8'));
+  assert.equal(build.outputRoot, root, 'Build record belongs to another artifact');
+  assert.equal(build.mode, contract.mode);
+  assert.equal(build.siteUrl, contract.siteUrl);
+  assert.equal(build.policyHash, sha256(JSON.stringify(policy)));
+  assert.deepEqual(inputManifest(projectRoot), build.inputs, 'Source inputs changed after build');
+  verifyFiles(root, build.files);
+  if (production) {
+    assert.equal(build.mode, 'production', 'Production gate rejects preview/development artifacts');
+    assertProductionUrl(build.siteUrl, policy.productionUrl);
+  }
+  const source = inventory(projectRoot);
+  const comparable = (e: any) => Object.fromEntries(Object.keys(source[0] || {}).map(key => [key, e[key]]));
+  assert.deepEqual(contract.entries.map(comparable).sort((a: any,b: any) => a.source.localeCompare(b.source)),
+    source.map(comparable).sort((a,b) => String(a.source).localeCompare(String(b.source))), 'Collections/source inventory differs');
+  const entries = contract.entries.filter((e: any) => e.published);
+  const posts = entries.filter((e: any) => e.collection === 'posts').sort((a: any,b: any) => b.date.localeCompare(a.date) || a.path.localeCompare(b.path));
+  const routes = contract.routes;
+  assertUniquePaths(routes.map((r: any) => ({ path: r.path, source: r.kind })));
+  sameUrls(routes.filter((r: any) => ['post','page'].includes(r.kind) && entries.some((e: any) => e.path === r.path)).map((r: any) => new URL(r.path, build.siteUrl).href),
+    entries.map((e: any) => new URL(e.path, build.siteUrl).href), 'content routes');
+  const read = (file: string) => fs.readFileSync(path.join(root, file), 'utf8');
+  const expectedHtml = new Set([...routes.map((r: any) => outputFile(r.path)), ...policy.noindexPaths.map((p: string) => p.slice(1)),
+    ...build.inputs.filter((f: any) => f.file.startsWith('public/') && f.file.endsWith('.html')).map((f: any) => f.file.slice(7))]);
+  assert.deepEqual(sorted(build.files.filter((f: any) => f.file.endsWith('.html')).map((f: any) => f.file)), sorted([...expectedHtml]), 'Unexpected/missing HTML (possibly stale or draft content)');
+  const headers = fs.existsSync(path.join(root, '_headers')) ? read('_headers') : '';
+  const headerBlocks: { pattern: string; robots: string }[] = [];
+  for (const line of headers.split(/\r?\n/)) {
+    if (!line.trim() || line.trim().startsWith('#')) continue;
+    if (!/^\s/.test(line)) headerBlocks.push({ pattern: line.trim(), robots: '' });
+    else if (/^\s*x-robots-tag:/i.test(line)) {
+      assert.ok(headerBlocks.length, 'Header without path pattern');
+      headerBlocks.at(-1)!.robots += ' ' + line;
+    }
+  }
+  const headerRobots = (uri: string) => headerBlocks.filter(block => new RegExp('^' + block.pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replaceAll('*', '.*') + '$').test(uri)).map(b => b.robots).join(' ');
+  let localReferences = 0;
+  for (const route of routes) {
+    const $ = load(read(outputFile(route.path)));
+    const absolute = new URL(route.path, build.siteUrl).href;
+    assert.equal($('h1').length, 1, route.path);
+    assert.equal($('link[rel=canonical]').length, 1, route.path);
+    assert.equal($('link[rel=canonical]').attr('href'), absolute, route.path);
+    assert.equal($('meta[property="og:url"]').attr('content'), absolute, route.path);
+    assert.equal($('body').attr('data-preview'), String(build.mode !== 'production'));
+    const robots = $('meta[name=robots], meta[name=googlebot], meta[name=bingbot]').toArray().map(e => $(e).attr('content')).join(' ');
+    if (build.mode === 'production' && route.indexable) {
+      assert.ok(!/noindex|none|nofollow/i.test(robots), `Production public page blocks indexing: ${route.path}`);
+      assert.ok(!/noindex|none|nofollow/i.test(headerRobots(route.path)), `X-Robots-Tag blocks public page: ${route.path}`);
+    } else {
+      assert.match(robots, /noindex/i, `Missing exclusion policy: ${route.path}`);
+      if (build.mode !== 'production' && headers) assert.match(headerRobots(route.path), /noindex/i, 'Missing preview X-Robots-Tag');
+    }
+    const entry = entries.find((e: any) => e.path === route.path);
+    if (entry?.collection === 'posts') {
+      const ld = JSON.parse($('script[type="application/ld+json"]').text());
+      assert.equal(ld['@type'], 'BlogPosting'); assert.equal(ld.url, absolute); assert.equal(ld.mainEntityOfPage, absolute);
+      assert.equal(ld.datePublished, entry.date); assert.equal(ld.dateModified, entry.updated);
+      assert.equal($('meta[property="article:published_time"]').attr('content'), entry.date);
+      assert.equal($('meta[property="article:modified_time"]').attr('content'), entry.updated);
+      assert.equal($('link[data-math-styles]').length, entry.math ? 1 : 0);
+    }
+    $('[src],[href]').each((_, el) => {
+      const value = $(el).attr('src') || $(el).attr('href');
+      if (!value || /^(https?:|data:|mailto:|tel:|#|\/\/)/i.test(value)) return;
+      const url = new URL(value, absolute), target = path.resolve(root, '.' + decodeURIComponent(url.pathname));
+      assert.ok(target.startsWith(root + path.sep) || target === root, `Unsafe reference: ${value}`);
+      assert.ok((fs.existsSync(target) && fs.statSync(target).isFile()) || fs.existsSync(path.join(target, 'index.html')), `Missing local reference ${value} in ${route.path}`);
+      localReferences++;
+    });
+  }
+  for (const hidden of contract.entries.filter((e: any) => !e.published)) {
+    assert.ok(!routes.some((r: any) => r.path === hidden.path), `Draft route leaked: ${hidden.path}`);
+    assert.ok(!fs.existsSync(path.join(root, outputFile(hidden.path))), `Draft file leaked: ${hidden.path}`);
+  }
+  for (const uri of policy.noindexPaths) assert.match(load(read(uri.slice(1)))('meta[name=robots]').attr('content') || '', /noindex/i, uri);
+  const expectedRobots = build.mode !== 'production' ? 'User-agent: *\nDisallow: /\n'
+    : contract.config.seo.robots ? `User-agent: *\nAllow: /\n${contract.config.seo.sitemap ? `Sitemap: ${build.siteUrl}/sitemap.xml\nSitemap: ${build.siteUrl}/baidusitemap.xml\n` : ''}` : '';
+  assert.equal(read('robots.txt'), expectedRobots, 'robots.txt does not match build policy');
+  const search = JSON.parse(read('search.json'));
+  sameUrls(search.map((p: any) => new URL(p.url, build.siteUrl).href),
+    (contract.config.search.enable ? posts.filter((e: any) => e.indexable && e.search) : []).map((e: any) => new URL(e.path, build.siteUrl).href), 'search membership');
+  let feed = contract.config.feed.enable ? posts.filter((e: any) => e.indexable && e.feed) : [];
+  if (contract.config.feed.limit > 0) feed = feed.slice(0, contract.config.feed.limit);
+  for (const [file, selector] of [['rss.xml', 'item > guid'], ['atom.xml', 'entry > id']]) {
+    const $ = load(read(file), { xml: true });
+    sameUrls($(selector).toArray().map(e => $(e).text()), feed.map((e: any) => new URL(e.path, build.siteUrl).href), file);
+  }
+  let locations: string[] = [];
+  function sitemap(file: string, seen = new Set<string>()): string[] {
+    assert.ok(!seen.has(file), 'Sitemap loop'); seen.add(file);
+    const $ = load(read(file), { xml: true });
+    if ($('sitemapindex').length) return $('sitemap > loc').toArray().flatMap(e => {
+      const url = new URL($(e).text());
+      assert.equal(url.origin, new URL(build.siteUrl).origin, 'External sitemap index');
+      assert.match(url.pathname, /^\/sitemap-\d+\.xml$/);
+      return sitemap(url.pathname.slice(1), seen);
+    });
+    assert.equal($('urlset').length, 1, file);
+    return $('url > loc').toArray().map(e => $(e).text());
+  }
+  if (contract.config.seo.sitemap) {
+    locations = sitemap('sitemap-index.xml');
+    const expected = routes.filter((r: any) => r.indexable).map((r: any) => new URL(r.path, build.siteUrl).href);
+    sameUrls(locations, expected, 'Sitemap routes');
+    for (const file of ['sitemap.xml', 'baidusitemap.xml']) sameUrls(sitemap(file), expected, file);
+    sameUrls(read('sitemap.txt').trim().split('\n').filter(Boolean), expected, 'sitemap.txt');
+  }
+  // Frozen migration requirements are a subset, never the site's total size.
+  for (const r of oldRoutes.filter(r => r.canonical && !r.redirect && !r.noindex))
+    assert.equal(load(read(outputFile(r.path)))('link[rel=canonical]').attr('href'), r.canonical);
+  for (const p of legacy) {
+    const $ = load(read(outputFile(p.path)));
+    assert.equal($('meta[property="article:published_time"]').attr('content'), p.date);
+    assert.equal($('meta[property="article:modified_time"]').attr('content'), p.updated);
+    const ids = new Set($('.prose [id]').toArray().map(el => $(el).attr('id')));
+    for (const h of p.headings) assert.ok(ids.has(h.id), `Missing historical heading ${h.id}`);
+    for (const alias of [`/post/${p.abbrlink}.html`, `/p/${p.abbrlink}/`]) assert.ok(read('_redirects').includes(`${alias} ${p.path} 301`));
+  }
+  const redirectRows = read('_redirects').trim().split('\n').map(line => line.trim().split(/\s+/));
+  assert.deepEqual(redirectRows.map(([from,to,status]) => ({ from: decodeURI(from), to, status: Number(status) })), redirects(), 'Historical redirect rules differ');
+  if (!contract.config.comments) for (const e of entries) assert.equal(load(read(outputFile(e.path)))('[data-comments-config]').length, 0);
+  return { checkedAt: new Date().toISOString(), mode: build.mode, canonicalPages: routes.filter((r: any) => r.indexable).length,
+    posts: posts.length, draftsExcluded: contract.entries.filter((e: any) => !e.published).length, localReferences,
+    mathWrappers: posts.reduce((n: number,e: any) => n + load(read(outputFile(e.path)))('.katex').length, 0),
+    feedEntries: feed.length, sitemapUrls: locations.length, redirectRules: read('_redirects').trim().split('\n').length };
 }
-const math = load(read('post/4e395565/index.html'));
-assert.equal(math('.math-inline,.math-display').length, 4);
-assert.equal(math('.katex').length, 4);
-assert.equal(math('.katex math annotation[encoding="application/x-tex"]').length, 4);
-assert.equal(math('link[data-math-styles="katex"]').length, 1);
-const plain = load(read('post/4c6caf67/index.html'));
-assert.equal(plain('link[data-math-styles]').length, 0);
-assert.equal('math' in JSON.parse(plain('#autuswing-config').text()), false);
-assert.equal(load(read('index.html'))('link[data-math-styles]').length, 0);
-const rss = load(read('rss.xml'), { xml: true }),
-  atom = load(read('atom.xml'), { xml: true });
-assert.equal(rss('item').length, 3);
-assert.equal(atom('entry').length, 3);
-for (const p of legacy) {
-  const guid = 'https://akisenn.com' + p.path;
-  assert.equal(
-    rss('item > guid')
-      .toArray()
-      .filter((e) => rss(e).text() === guid).length,
-    1,
-    `RSS guid must be unique: ${guid}`,
-  );
-  assert.ok(
-    atom('entry > id')
-      .toArray()
-      .some((e) => atom(e).text() === guid),
-  );
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const { values } = parseArgs({ options: { root: { type: 'string' }, record: { type: 'string' }, production: { type: 'boolean' } } });
+  const result = verifyOutput({ outDir: values.root, recordFile: values.record, production: values.production });
+  const evidence = process.env.OUTPUT_EVIDENCE_FILE || 'docs/evidence/output-check.json';
+  fs.mkdirSync(path.dirname(evidence), { recursive: true });
+  fs.writeFileSync(evidence, JSON.stringify(result, null, 2) + '\n');
+  console.log(result);
 }
-const map = load(read('sitemap-0.xml'), { xml: true });
-const locations = map('url > loc')
-  .toArray()
-  .map((el) => map(el).text());
-assert.equal(locations.length, 26);
-for (const r of old)
-  assert.ok(
-    locations.some((url) => decodeURI(url) === decodeURI(r.canonical!)),
-    `Missing sitemap route ${r.path}`,
-  );
-for (const p of legacy) {
-  const element = map('url')
-    .toArray()
-    .find((el) => map(el).find('loc').text() === 'https://akisenn.com' + p.path);
-  assert.ok(element);
-  assert.ok(map(element).find('lastmod').text().startsWith(p.updated.slice(0, 10)));
-}
-const redirects = read('_redirects');
-for (const p of legacy) {
-  assert.ok(redirects.includes(`/post/${p.abbrlink}.html ${p.path} 301`));
-  assert.ok(redirects.includes(`/p/${p.abbrlink}/ ${p.path} 301`));
-}
-const search = JSON.parse(read('search.json'));
-if (fs.existsSync(path.join(root, '_headers'))) {
-  const globalHeaders = read('_headers').split(/\n\s*\n/)[0];
-  assert.ok(
-    !globalHeaders.includes('Cache-Control:'),
-    'Global and specific static-asset cache rules must not overlap',
-  );
-}
-assert.equal(search.length, 3);
-assert.ok(search.every((p: { url: string }) => legacy.some((old) => old.path === p.url)));
-const report = {
-  checkedAt: new Date().toISOString(),
-  canonicalPages: old.length,
-  posts: legacy.length,
-  localReferences,
-  mathWrappers: 4,
-  feedEntries: 3,
-  sitemapUrls: locations.length,
-  redirectRules: redirects.trim().split('\n').length,
-};
-fs.mkdirSync('docs/evidence', { recursive: true });
-fs.writeFileSync('docs/evidence/output-check.json', JSON.stringify(report, null, 2) + '\n');
-console.log(report);

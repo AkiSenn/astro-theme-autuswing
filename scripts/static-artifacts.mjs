@@ -5,10 +5,23 @@ import { redirects } from '../src/lib/legacy-redirects.mjs';
 export { redirects };
 import theme from '../src/config/theme.json' with { type: 'json' };
 import { gzipSync, brotliCompressSync, constants } from 'node:zlib';
+import { buildMode, assertProductionUrl } from '../src/lib/build-mode.mjs';
+import { fileManifest, inputManifest, sha256 } from './release-integrity.mjs';
+import site from '../src/config/site.json' with { type: 'json' };
+import policy from '../deployment/release-policy.json' with { type: 'json' };
 export function staticArtifacts() {
+  let inputs, projectRoot;
   return {
     name: 'autuswing-static-artifacts',
     hooks: {
+      'astro:config:setup': ({ command, config }) => {
+        projectRoot = fileURLToPath(config.root);
+        const mode = buildMode(process.env.SITE_ENV, command === 'dev');
+        if (command === 'build' && mode === 'development') throw new Error('Development mode cannot produce static release artifacts');
+        if (command === 'dev' && mode === 'production') throw new Error('Use development/preview for the dev server');
+        if (mode === 'production') assertProductionUrl(site.url, policy.productionUrl);
+        if (command === 'build') inputs = inputManifest(projectRoot);
+      },
       'astro:build:done': async ({ dir }) => {
         const root = fileURLToPath(dir),
           write = (file, text) => fs.writeFile(path.join(root, file), text);
@@ -87,6 +100,15 @@ export function staticArtifacts() {
           }
           await compress(root);
         }
+        const finalInputs = inputManifest(projectRoot);
+        if (JSON.stringify(finalInputs) !== JSON.stringify(inputs)) throw new Error('Build inputs changed while generating the artifact; rebuild before release');
+        const contract = JSON.parse(await fs.readFile(path.join(projectRoot, '.astro/autuswing-content.json'), 'utf8'));
+        const mode = buildMode(process.env.SITE_ENV);
+        if (contract.mode !== mode) throw new Error('Content manifest belongs to a different build mode');
+        await fs.writeFile(path.join(projectRoot, '.astro/autuswing-build.json'), JSON.stringify({
+          version: 1, mode, siteUrl: site.url, outputRoot: path.resolve(root),
+          policyHash: sha256(JSON.stringify(policy)), inputs, contract, files: fileManifest(root),
+        }, null, 2) + '\n');
       },
     },
   };

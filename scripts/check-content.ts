@@ -22,11 +22,13 @@ export async function checkContent({
   output = false,
   includeDrafts = false,
   remote = false,
+  outDir = path.join(root, 'dist'),
 }: {
   root: string;
   output?: boolean;
   includeDrafts?: boolean;
   remote?: boolean;
+  outDir?: string;
 }) {
   const issues: Issue[] = [],
     entries: any[] = [],
@@ -204,7 +206,7 @@ export async function checkContent({
         report.deferredLinks++;
         continue;
       }
-      const built = safeFile(path.join(root, 'dist'), '/' + outputFile(target));
+      const built = safeFile(outDir, '/' + outputFile(target));
       if (!image && output && built && fs.existsSync(built) && fs.statSync(built).isFile()) {
         if (
           fragment &&
@@ -253,14 +255,17 @@ export async function checkContent({
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  for (const argument of process.argv.slice(2))
-    if (!['--output', '--drafts', '--remote'].includes(argument))
-      throw new Error(`Unknown option: ${argument}`);
+  const { parseArgs } = await import('node:util');
+  const { values } = parseArgs({ options: {
+    output: { type: 'boolean' }, drafts: { type: 'boolean' }, remote: { type: 'boolean' },
+    'out-dir': { type: 'string' },
+  } });
   const report = await checkContent({
     root: fileURLToPath(new URL('../', import.meta.url)),
-    output: process.argv.includes('--output'),
-    includeDrafts: process.argv.includes('--drafts'),
-    remote: process.argv.includes('--remote'),
+    output: values.output,
+    includeDrafts: values.drafts,
+    remote: values.remote,
+    outDir: values['out-dir'],
   });
   for (const issue of report.issues) console.log(`${issue.level}: ${issue.file}: ${issue.message}`);
   console.log(

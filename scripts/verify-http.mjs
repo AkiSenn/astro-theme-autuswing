@@ -7,7 +7,9 @@ import { redirects } from '../src/lib/legacy-redirects.mjs';
 const origin = new URL(process.argv[2] || 'http://127.0.0.1:8788');
 const production = process.argv.includes('--production');
 const reportFile = process.env.HTTP_EVIDENCE_FILE || 'docs/evidence/phase5/nginx-http.json';
-const routes = JSON.parse(fs.readFileSync('.astro/autuswing-routes.json', 'utf8'));
+const routes = process.env.HTTP_RELEASE_DIR
+  ? JSON.parse(fs.readFileSync(path.join(process.env.HTTP_RELEASE_DIR, 'release.json'), 'utf8')).build.contract.routes
+  : JSON.parse(fs.readFileSync('.astro/autuswing-routes.json', 'utf8'));
 const checks = [];
 async function request(uri, options = {}) {
   const response = await fetch(new URL(uri, origin), { redirect: 'manual', ...options });
