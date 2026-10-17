@@ -27,7 +27,13 @@ async function request(uri, options = {}) {
   );
   assert.equal(response.headers.get('x-content-type-options'), 'nosniff', uri);
   if (!production) assert.match(response.headers.get('x-robots-tag') || '', /noindex/, uri);
-  else assert.equal(response.headers.get('x-robots-tag'), null, uri);
+  else {
+    const pathname = new URL(uri, origin).pathname;
+    const exception =
+      policy.noindexPaths.includes(pathname) ||
+      (response.status === 404 && policy.noindexPaths.includes('/404.html'));
+    if (!exception) assert.equal(response.headers.get('x-robots-tag'), null, uri);
+  }
   const checksumVerified =
     !!release && response.status === 200 && options.method !== 'HEAD'
       ? verifyHttpBytes(release.build, uri, Buffer.from(await response.clone().arrayBuffer()))

@@ -45,7 +45,7 @@ npm run test:nginx
 npm run verify:release -- <candidate>
 ```
 
-production 配置生成必须传入已验证候选。模板是独立测试站示例，不覆盖宝塔维护的正式 server/SSL 配置。测试时直接服务该 `site/`，不能重建另一份后代替原候选。
+production 配置生成必须传入已验证候选。生产 HTTP 检查也必须指定 `HTTP_RELEASE_DIR`，并把实际成功响应的解压后字节与候选 SHA256 对比，能阻断 canonical 相同但正文仍旧的 CDN 响应；检查前后还会复核候选文件。ESA 的内容改写也会造成哈希不一致，应停用相关改写或另行评审交付方案，不能忽略错误。模板是独立测试站示例，不覆盖宝塔维护的正式 server/SSL 配置。测试时直接服务该 `site/`，不能重建另一份后代替原候选。
 
 ## 缓存原则
 
