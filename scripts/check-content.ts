@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { load } from 'cheerio';
 import { markdownFiles } from './new-post.mjs';
 import { frontmatter } from '../src/lib/frontmatter.mjs';
@@ -80,7 +80,7 @@ export async function checkContent({
       const html = (
         await renderer.render(body, {
           frontmatter: data,
-          fileURL: new URL('file:///' + file.replaceAll('\\', '/')),
+          fileURL: pathToFileURL(file),
         })
       ).code;
       const $ = load(html);
@@ -121,9 +121,12 @@ export async function checkContent({
     for (const name of Object.keys(entry.data))
       if (!(name in contentSchema.shape)) issue(file, `Preserving custom field: ${name}`, true);
     const resources: { value: string; image: boolean; alt?: string; source?: boolean }[] = [];
-    $('img').each((_: number, node: any) =>
-      resources.push({ value: $(node).attr('src') || '', image: true, alt: $(node).attr('alt') }),
-    );
+    $('img').each((_: number, node: any) => {
+      // Astro serializes relative imported images before emitting their variants.
+      const imported = $(node).attr('__astro_image_');
+      const image = imported ? JSON.parse(imported) : node.attribs;
+      resources.push({ value: image.src || '', image: true, alt: image.alt, source: !!imported });
+    });
     if (entry.data.cover)
       resources.push({ value: entry.data.cover, image: true, alt: entry.data.title });
     $('a[href]').each((_: number, node: any) =>
@@ -167,7 +170,7 @@ export async function checkContent({
         continue;
       }
       // Relative imported images are handled by Astro's native assets pipeline.
-      if (image && !value.startsWith('/') && !URL.canParse(value)) {
+      if (image && resource.source && !value.startsWith('/') && !URL.canParse(value)) {
         const local = path.resolve(path.dirname(file), value.split(/[?#]/)[0]);
         if (fs.existsSync(local) && fs.statSync(local).isFile()) continue;
       }

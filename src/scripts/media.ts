@@ -18,6 +18,13 @@ export function initMedia() {
     toolbar.className = 'code-toolbar';
     block.before(wrapper);
     toolbar.append(badge);
+    if (block.dataset.filename) {
+      const filename = document.createElement('span');
+      filename.className = 'code-filename';
+      filename.textContent = block.dataset.filename;
+      filename.title = block.dataset.filename;
+      toolbar.append(filename);
+    }
     wrapper.append(toolbar, block);
     const button = document.createElement('button');
     button.type = 'button';
@@ -33,6 +40,30 @@ export function initMedia() {
       }
     });
     toolbar.append(button);
+  });
+  document.querySelectorAll<HTMLElement>('.prose :is(h2,h3,h4,h5,h6)[id]').forEach((heading) => {
+    const title = heading.textContent || '';
+    heading.setAttribute('aria-label', title);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'heading-link';
+    button.title = `复制章节链接：${title}`;
+    button.setAttribute('aria-label', button.title);
+    // The visible hash is CSS generated, so TOC text and copied content stay clean.
+    button.addEventListener('click', async () => {
+      try {
+        const url = new URL(document.querySelector<HTMLLinkElement>('link[rel=canonical]')!.href);
+        url.hash = heading.id;
+        await copy(url.href);
+        toast(config.labels.copied);
+      } catch {
+        toast(config.labels.shareError);
+      }
+    });
+    const slot = document.createElement('span');
+    slot.className = 'heading-link-slot';
+    slot.append(button);
+    heading.append(slot);
   });
   const canonical = () => document.querySelector<HTMLLinkElement>('link[rel=canonical]')!.href;
   document.querySelectorAll('.copy-link,.share-copy').forEach((button) =>
@@ -72,7 +103,7 @@ export function initMedia() {
     img.setAttribute('aria-label', `预览图片：${img.alt || '文章配图'}`);
     const open = () => {
       trigger = img;
-      preview.src = img.currentSrc || img.src;
+      preview.src = img.dataset.fullsize || (img.srcset ? img.src : img.currentSrc || img.src);
       preview.alt = img.alt;
       openDialog(dialog);
     };

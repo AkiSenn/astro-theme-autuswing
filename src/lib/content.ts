@@ -126,6 +126,8 @@ async function prepare(entry: Entry) {
   };
 }
 let postPromise: Promise<Post[]> | undefined, pagePromise: Promise<Post[]> | undefined;
+// Explicit local authoring mode; static builds always exclude unpublished work.
+const previewDrafts = import.meta.env.DEV && process.env.ASTRO_PREVIEW_DRAFTS === '1';
 export function posts() {
   return (postPromise ??= getCollection('posts').then(async (entries) => {
     const ids = new Set<string>();
@@ -134,14 +136,16 @@ export function posts() {
       if (ids.has(id)) throw new Error(`Duplicate persistent post ID: ${id}`);
       ids.add(id);
     }
-    const result = await Promise.all(entries.filter((e) => isPublished(e.data)).map(prepare));
+    const result = await Promise.all(
+      entries.filter((e) => isPublished(e.data) || previewDrafts).map(prepare),
+    );
     assertUniquePaths(result);
     return result.sort((a, b) => b.date.localeCompare(a.date) || a.path.localeCompare(b.path));
   }));
 }
 export function pages() {
   return (pagePromise ??= getCollection('pages').then((entries) =>
-    Promise.all(entries.filter((e) => isPublished(e.data)).map(prepare)),
+    Promise.all(entries.filter((e) => isPublished(e.data) || previewDrafts).map(prepare)),
   ));
 }
 export function taxonomy(all: Post[], kind: 'tags' | 'categories') {

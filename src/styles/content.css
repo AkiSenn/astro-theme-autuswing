@@ -604,3 +604,82 @@ html[data-theme='dark'] .prose .astro-code span {
     break-after: avoid;
   }
 }
+
+/* Optional writing features; existing blocks keep their established layout. */
+.code-toolbar:has(.code-filename) .code-language {
+  flex: none;
+}
+.code-filename {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--code-muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+}
+.prose pre .code-line-highlight {
+  background: var(--green-soft);
+}
+.prose pre .code-line-add {
+  background: var(--code-added-bg);
+}
+.prose pre .code-line-delete {
+  background: var(--code-deleted-bg);
+}
+.prose pre .code-line-add::before {
+  content: '+' counter(line);
+  color: var(--code-tag);
+}
+.prose pre .code-line-delete::before {
+  content: '−' counter(line);
+  color: var(--code-keyword);
+}
+.heading-link-slot {
+  position: relative;
+}
+.heading-link {
+  position: absolute;
+  inset-block-start: -0.2em;
+  inset-inline-end: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--green);
+  opacity: 0;
+  cursor: pointer;
+}
+.heading-link::before {
+  content: '#';
+}
+.prose :is(h2, h3, h4, h5, h6):hover .heading-link,
+.heading-link:focus-visible {
+  opacity: 1;
+}
+.prose :is(h5, h6) {
+  font-weight: 650;
+  line-height: 1.6;
+  margin: 1.7em 0 0.6em;
+}
+.prose h5 {
+  font-size: 16px;
+}
+.prose h6 {
+  font-size: 15px;
+}
+.prose .admonition {
+  border-radius: 0;
+}
+.prose .footnotes {
+  font-size: 0.9em;
+  border-top: 1px solid var(--line);
+  margin-block-start: 2em;
+}
+@media print {
+  .heading-link {
+    display: none;
+  }
+}

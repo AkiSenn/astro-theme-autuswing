@@ -15,6 +15,9 @@ export default defineConfig({
   },
   devToolbar: { enabled: false },
   compressHTML: theme.performance.minify,
+  // Native imported Markdown images get responsive variants. Public /img URLs
+  // remain untouched; the established prose CSS owns their presentation.
+  image: { layout: 'constrained', responsiveStyles: false },
   vite: { build: { minify: theme.performance.minify, cssMinify: theme.performance.minify } },
   prerenderConflictBehavior: 'error',
   markdown: {

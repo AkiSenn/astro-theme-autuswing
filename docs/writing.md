@@ -41,3 +41,19 @@ npm run check:content -- --drafts
 preview 默认 noindex，分享、RSS/Atom 标识与评论身份始终使用正式 canonical。`comment_id` 可覆盖默认路径标识；预览不初始化真实评论，生产配置当前也保持关闭。密码字段只按原主题排除索引，不代表实现了内容加密。
 
 复制副本校验：`npm run verify`。一次性导入工具已归档在迁移前备份的 `import-tools`，不属于新工程的日常构建命令；恢复内容时先核对迁移清单哈希，不覆盖不同内容的目标文件。
+
+## 本地草稿预览
+
+`npm run dev:drafts` 显式开启本地写作预览；已有静态预览占用端口时可用 `npm run dev:drafts -- --port 4323`。只有 Astro dev 模式会读取 `ASTRO_PREVIEW_DRAFTS=1`。即使误将该环境变量带入静态构建，也仍然过滤草稿；草稿在本地不进入搜索与 Feed，并保持 noindex。普通 `npm run dev` 也不显示草稿。预览地址就是新稿 frontmatter 保存的 permalink。
+
+## 技术 Markdown
+
+围栏代码支持 `ts title="src/demo.ts" {2,4-6} add={4} del={5}`：语言和文件名在工具栏展示；行号、高亮、增删标记不进入复制文本。也可使用 `filename=` / `file=`；只有显式标记的代码行新增背景色。标准 `diff` 代码块继续由 Shiki 高亮。
+
+原生 GFM 脚注、任务列表、表格沿用 Astro；`> [!NOTE]`、`TIP`、`IMPORTANT`、`WARNING`、`CAUTION` 使用现有引用样式表达提示。正文 H1 继续按原兼容规则降为 H2，页面标题保留唯一 H1。H2–H6 的复制章节链接按钮支持悬停与键盘焦点，使用正式 canonical 加原有标题 ID，不改变锚点。
+
+新文章的公开目录图片可在构建时获得尺寸属性，原图路径不变；历史文章不自动补属性，以保持冻结的像素与布局指标。新导入的相对 Markdown 图片使用 Astro 原生 `srcset`，sizes 按约 810px 实际正文及窄屏布局估算，不引入第二套图片生成器。远程图不在构建时探测；作者应显式提供尺寸。说明文字使用 figcaption，alt 用于表达图片内容。
+
+响应式图片在灯箱打开时使用其完整尺寸的优化源，而不是已选中的窄屏缩略版本。手写 HTML 图也可用 `data-fullsize="原图地址"` 指定按需加载的大图；常规阅读不会主动请求该地址。
+
+完整样本位于 `tests/fixtures/markdown/reading.md`。`npm run test:markdown` 验证各屏幕和文章交互并生成诊断截图；样本不会被生产发布。`npm run verify:writing` 会创建一次性草稿、运行生产隔离/发布/本地预览/响应式图片契约，结束后删除自己的临时稿件并恢复普通预览构建；不要与其他构建或浏览器回归同时运行。

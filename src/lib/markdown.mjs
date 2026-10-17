@@ -4,6 +4,7 @@ import theme from '../config/theme.json' with { type: 'json' };
 import { imageUrl } from './image-url.mjs';
 import rehypeRaw from 'rehype-raw';
 import { mathEnabled, renderMath } from './math.mjs';
+import { codeMetadata, localImageDimensions, writingBlocks } from './markdown-features.mjs';
 
 const escaped = (s, i) => {
   let n = 0;
@@ -113,10 +114,11 @@ function rejectHexoTags() {
   };
 }
 export function compatibleHtml() {
-  return (tree, file) => {
+  return async (tree, file) => {
     const data = file.data.astro?.frontmatter || {},
       old = legacy.find((p) => p.abbrlink === String(data.abbrlink || data.id || ''));
     const used = new Set();
+    const dimensions = [];
     let image = 0;
     function visit(node, parent, index, protectedText = false) {
       if (node.type === 'element') {
@@ -140,7 +142,23 @@ export function compatibleHtml() {
           node.properties.id = id;
         }
         if (node.tagName === 'img') {
+          // Imported images use Astro's responsive variants. Match the reading
+          // column rather than advertising the entire desktop viewport as sizes.
+          if (file.data.astro?.localImagePaths?.includes(decodeURI(node.properties.src || '')))
+            node.properties.sizes ||=
+              '(max-width: 719px) calc(100vw - 48px), (max-width: 999px) calc(100vw - 168px), 810px';
           if (node.properties.src) node.properties.src = imageUrl(node.properties.src);
+          // Historical render geometry is frozen. Infer dimensions for new
+          // articles and explicit test samples; leave legacy image sizing intact.
+          if (!old && !node.properties.width && !node.properties.height)
+            dimensions.push(
+              localImageDimensions(node.properties.src).then((size) => {
+                if (size) {
+                  node.properties.width = size.width;
+                  node.properties.height = size.height;
+                }
+              }),
+            );
           node.properties.decoding = 'async';
           node.properties.alt ||= '';
           node.properties.loading ||= theme.article.lazyload
@@ -188,17 +206,24 @@ export function compatibleHtml() {
       (node.children || []).forEach((child, i) => visit(child, node, i, protectedText));
     }
     visit(tree);
+    await Promise.all(dimensions);
   };
 }
 export function markdownProcessor() {
   const processor = unified({
     smartypants: false,
-    remarkPlugins: [rejectHexoTags],
+    remarkPlugins: [rejectHexoTags, writingBlocks],
     rehypePlugins: [rehypeRaw, compatibleHtml, renderMath],
   });
   const create = processor.createRenderer.bind(processor);
   processor.createRenderer = async (shared) => {
-    const renderer = await create(shared);
+    const renderer = await create({
+      ...shared,
+      shikiConfig: {
+        ...shared?.shikiConfig,
+        transformers: [...(shared?.shikiConfig?.transformers || []), codeMetadata()],
+      },
+    });
     return {
       render: async (content, options) => {
         const data = options?.frontmatter || {};

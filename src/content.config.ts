@@ -23,6 +23,7 @@ function contentLoader(pattern: string[], base: string): Loader {
         .update(JSON.stringify({ theme, legacyMetadata, katexVersion }));
       for (const file of [
         'lib/markdown.mjs',
+        'lib/markdown-features.mjs',
         'lib/math.mjs',
         'lib/frontmatter.mjs',
         'lib/image-url.mjs',

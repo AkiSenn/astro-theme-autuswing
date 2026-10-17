@@ -29,7 +29,10 @@
     "audit:performance": "node scripts/audit-performance.mjs",
     "new-post": "node scripts/new-post.mjs",
     "check:content": "tsx scripts/check-content.ts",
-    "publish:check": "npm run check && npm run check:content && npm run build && npm run check:content -- --output && npm test && npm run verify"
+    "publish:check": "npm run check && npm run check:content && npm run build && npm run check:content -- --output && npm test && npm run verify",
+    "dev:drafts": "node scripts/dev-drafts.mjs",
+    "test:markdown": "playwright test tests/browser/markdown-reading.spec.ts",
+    "verify:writing": "node scripts/verify-writing.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.3",

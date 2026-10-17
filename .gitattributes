@@ -9,3 +9,4 @@ src/styles/legacy.css -text
 # Keep review focused on source; the frozen screenshots/metrics remain tracked.
 tests/styles/snapshots/** linguist-generated=true
 docs/evidence/styles/** linguist-generated=true
+docs/evidence/writing-reading/** linguist-generated=true

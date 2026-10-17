@@ -3,6 +3,8 @@
   "publishedFalseExcluded": true,
   "stablePublishedId": true,
   "explicitDescription": true,
+  "nativeResponsiveImage": true,
+  "localDraftPreview": true,
   "sampleAbsentFromProduction": true,
   "previewRestored": true
 }
