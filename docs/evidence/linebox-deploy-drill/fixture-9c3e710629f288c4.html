@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent Firefox line-box experiment (not a public article)</title>
+<style>
+  /* No imports, application layout, webfonts, motion, images or service worker. */
+  * { box-sizing: border-box; }
+  html { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; font-kerning:normal; text-rendering:optimizeLegibility; }
+  body { margin:0; padding:16px; }
+  pre { margin:0; padding:14px 12px; overflow-x:auto; white-space:pre; font-family:'Cascadia Code',Consolas,monospace; font-size:14px; line-height:1.8; }
+  code { display:block; min-width:max-content; font:inherit; counter-reset:line; }
+  .line { display:inline-block; min-width:100%; }
+  .line::before { counter-increment:line; content:counter(line); display:inline-block; text-align:right; font-size:12px; padding-right:12px; border-right:1px solid; min-width:3ch; margin-right:14px; }
+  @media (width < 720px) { pre { font-size:13px; } }
+  html[data-variant="no-counter"] .line::before { content:none; }
+  html[data-variant="counter-same-size"] .line::before { font-size:inherit; }
+  html[data-variant="block-lines"] .line { display:block; }
+  html[data-variant="pixel-height"] pre { line-height:23.4px; }
+  html[data-variant="explicit-consolas"] pre { font-family:Consolas; }
+  html[data-variant="explicit-cascadia"] pre { font-family:'Cascadia Code'; }
+  html[data-variant="counter-consolas"] .line::before { font-family:Consolas; }
+  html[data-variant="counter-sans"] .line::before { font-family:'Segoe UI'; }
+  html[data-variant="mixed-parent-fonts"] pre { font-family:Consolas; }
+  html[data-variant="mixed-parent-fonts"] code { font-family:'Cascadia Code'; }
+</style>
+<pre><code id="code"></code></pre><div id="after">End sentinel</div>
+<script>
+  const params=new URLSearchParams(location.search);
+  document.documentElement.dataset.variant=params.get('variant')||'original';
+  const text=params.get('text')||'latin';
+  const line=text==='mixed'?'const message = "记录技术与生活"; // 中文 Hello': 'const message = "Autuswing"; // abcdefghijklmnopqrstuvwxyz 0123456789';
+  document.querySelector('code').innerHTML=Array.from({length:160},()=>'<span class="line"><span>'+line+'</span></span>').join('\n');
+</script></html>

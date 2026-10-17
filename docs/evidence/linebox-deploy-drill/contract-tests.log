@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: Playwright samples repeat exactly in their complete actual viewport/text/style groups
+ok 1 - Playwright samples repeat exactly in their complete actual viewport/text/style groups
+  ---
+  duration_ms: 69.6545
+  type: 'test'
+  ...
+# Subtest: strict local geometry rejects 0.1px line-box and 1px position/width mutations
+ok 2 - strict local geometry rejects 0.1px line-box and 1px position/width mutations
+  ---
+  duration_ms: 17.7674
+  type: 'test'
+  ...
+# Subtest: experimental block and pixel-line-height controls cause real geometry changes
+ok 3 - experimental block and pixel-line-height controls cause real geometry changes
+  ---
+  duration_ms: 55.3102
+  type: 'test'
+  ...
+# Subtest: cold system-font mismatches remain failures despite fonts.ready
+ok 4 - cold system-font mismatches remain failures despite fonts.ready
+  ---
+  duration_ms: 79.466
+  type: 'test'
+  ...
+# Subtest: hash-pinned font contract repeats exactly across 24 independent cold processes
+ok 5 - hash-pinned font contract repeats exactly across 24 independent cold processes
+  ---
+  duration_ms: 49.2244
+  type: 'test'
+  ...
+# Subtest: historical 23.5px/23.4px evidence is not accepted as numeric noise
+ok 6 - historical 23.5px/23.4px evidence is not accepted as numeric noise
+  ---
+  duration_ms: 1.1721
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 610.3673

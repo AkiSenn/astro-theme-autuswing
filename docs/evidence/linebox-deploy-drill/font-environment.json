@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-17T19:55:49.722Z",
+  "os": "10.0.26300",
+  "node": "v22.23.2",
+  "files": [
+    {
+      "file": "C:/Windows/Fonts/CascadiaCode.ttf",
+      "bytes": 387948,
+      "sha256": "cfb6a8d474018fe46d53a427e5fbee44b998822d0d3d8772914bd712cfc55ac4"
+    },
+    {
+      "file": "C:/Windows/Fonts/CascadiaMono.ttf",
+      "bytes": 371352,
+      "sha256": "0e141cb99609f6f10ad05313fd1807d5cc9e28658dcbb35ab162e52ff67dc718"
+    },
+    {
+      "file": "C:/Windows/Fonts/consola.ttf",
+      "bytes": 453088,
+      "sha256": "cf00b507b3286870cc5064ebd0633c303f70b491a4af25eec2d32df413db0179"
+    },
+    {
+      "file": "C:/Windows/Fonts/arial.ttf",
+      "bytes": 1045720,
+      "sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a"
+    },
+    {
+      "file": "C:/Windows/Fonts/simsun.ttc",
+      "bytes": 18316748,
+      "sha256": "1526ac24375f51f6eb73bc2d3f8072dbe4a80a3a65217677c9d9a84f67dab2ab"
+    },
+    {
+      "file": "C:/Windows/Fonts/msyh.ttc",
+      "bytes": 19704352,
+      "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f"
+    }
+  ],
+  "note": "Font file inventory; font selection itself was read through InspectorUtils, not inferred solely from this inventory."
+}

@@ -1,0 +1,3895 @@
+{
+  "source": "previous full-site trace, not newly reproduced by the minimal experiment",
+  "lines": 160,
+  "firstHeightChange": {
+    "domIndex": 499,
+    "text": "node -v",
+    "before": {
+      "tag": "SPAN",
+      "cls": "line",
+      "h": 23.5,
+      "y": 3276.583251953125,
+      "w": 352.3500061035156,
+      "client": 24,
+      "scroll": 24,
+      "text": "node -v"
+    },
+    "after": {
+      "tag": "SPAN",
+      "cls": "line",
+      "h": 23.400009155273438,
+      "y": 3276.583251953125,
+      "w": 355.45001220703125,
+      "client": 23,
+      "scroll": 23,
+      "text": "node -v"
+    }
+  },
+  "firstAccumulatedTopChange": {
+    "domIndex": 502,
+    "text": "npm -v",
+    "before": {
+      "tag": "SPAN",
+      "cls": "line",
+      "h": 23.5,
+      "y": 3300.083251953125,
+      "w": 352.3500061035156,
+      "client": 24,
+      "scroll": 24,
+      "text": "npm -v"
+    },
+    "after": {
+      "tag": "SPAN",
+      "cls": "line",
+      "h": 23.399993896484375,
+      "y": 3299.9833984375,
+      "w": 355.45001220703125,
+      "client": 23,
+      "scroll": 23,
+      "text": "npm -v"
+    }
+  },
+  "totalHeightChange": 16.000015258789062,
+  "allLines": [
+    {
+      "domIndex": 499,
+      "text": "node -v",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3276.583251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": "node -v"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 3276.583251953125,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": "node -v"
+      }
+    },
+    {
+      "domIndex": 502,
+      "text": "npm -v",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3300.083251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm -v"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 3299.9833984375,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm -v"
+      }
+    },
+    {
+      "domIndex": 505,
+      "text": "git --version",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3323.583251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": "git --version"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 3323.38330078125,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git --version"
+      }
+    },
+    {
+      "domIndex": 508,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3347.083251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 3346.783447265625,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 509,
+      "text": "git config --global user.",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3370.583251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": "git config --global user."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 3370.183349609375,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git config --global user."
+      }
+    },
+    {
+      "domIndex": 515,
+      "text": "git config --global user.",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3394.083251953125,
+        "w": 352.3500061035156,
+        "client": 24,
+        "scroll": 24,
+        "text": "git config --global user."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 3393.583251953125,
+        "w": 355.45001220703125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git config --global user."
+      }
+    },
+    {
+      "domIndex": 536,
+      "text": "ls -al ~/.ssh",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 3859.38330078125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "ls -al ~/.ssh"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 3858.783447265625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "ls -al ~/.ssh"
+      }
+    },
+    {
+      "domIndex": 547,
+      "text": "ssh-keygen -t ed25519 -C ",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 4072.88330078125,
+        "w": 306.6499938964844,
+        "client": 24,
+        "scroll": 24,
+        "text": "ssh-keygen -t ed25519 -C "
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 4072.183349609375,
+        "w": 309.75,
+        "client": 23,
+        "scroll": 23,
+        "text": "ssh-keygen -t ed25519 -C "
+      }
+    },
+    {
+      "domIndex": 562,
+      "text": "eval \"$(ssh-agent -s)\"",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 4347.18310546875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "eval \"$(ssh-agent -s)\""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 4346.38330078125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "eval \"$(ssh-agent -s)\""
+      }
+    },
+    {
+      "domIndex": 568,
+      "text": "ssh-add ~/.ssh/id_ed25519",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 4370.68310546875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "ssh-add ~/.ssh/id_ed25519"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 4369.783203125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "ssh-add ~/.ssh/id_ed25519"
+      }
+    },
+    {
+      "domIndex": 571,
+      "text": "cat ~/.ssh/id_ed25519.pub",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 4394.18310546875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "cat ~/.ssh/id_ed25519.pub"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 4393.18310546875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "cat ~/.ssh/id_ed25519.pub"
+      }
+    },
+    {
+      "domIndex": 584,
+      "text": "ssh -T git@github.com",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 4698.88330078125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "ssh -T git@github.com"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 4697.783203125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "ssh -T git@github.com"
+      }
+    },
+    {
+      "domIndex": 607,
+      "text": "npm install -g hexo-cli",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5590.61669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm install -g hexo-cli"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 5589.41650390625,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm install -g hexo-cli"
+      }
+    },
+    {
+      "domIndex": 612,
+      "text": "cd /e/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5614.11669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "cd /e/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 5612.81689453125,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "cd /e/"
+      }
+    },
+    {
+      "domIndex": 615,
+      "text": "hexo init hexo-blog",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5637.61669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "hexo init hexo-blog"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 5636.216796875,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "hexo init hexo-blog"
+      }
+    },
+    {
+      "domIndex": 619,
+      "text": "cd /e/hexo-blog",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5661.11669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "cd /e/hexo-blog"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 5659.61669921875,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "cd /e/hexo-blog"
+      }
+    },
+    {
+      "domIndex": 622,
+      "text": "npm install",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5684.61669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm install"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 5683.0166015625,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm install"
+      }
+    },
+    {
+      "domIndex": 625,
+      "text": "npm install hexo@^8.1.2 h",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5708.11669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm install hexo@^8.1.2 h"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 5706.41650390625,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm install hexo@^8.1.2 h"
+      }
+    },
+    {
+      "domIndex": 631,
+      "text": "hexo version",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5731.61669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "hexo version"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 5729.81689453125,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "hexo version"
+      }
+    },
+    {
+      "domIndex": 634,
+      "text": "hexo server",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 5755.11669921875,
+        "w": 562.933349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "hexo server"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 5753.216796875,
+        "w": 566.0333251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "hexo server"
+      }
+    },
+    {
+      "domIndex": 657,
+      "text": "git clone git@github.com:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6393.2666015625,
+        "w": 661.9500122070312,
+        "client": 24,
+        "scroll": 24,
+        "text": "git clone git@github.com:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 6391.2666015625,
+        "w": 665.0499877929688,
+        "client": 23,
+        "scroll": 23,
+        "text": "git clone git@github.com:"
+      }
+    },
+    {
+      "domIndex": 662,
+      "text": "cd /e/hexo-blog",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6416.7666015625,
+        "w": 661.9500122070312,
+        "client": 24,
+        "scroll": 24,
+        "text": "cd /e/hexo-blog"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6414.66650390625,
+        "w": 665.0499877929688,
+        "client": 23,
+        "scroll": 23,
+        "text": "cd /e/hexo-blog"
+      }
+    },
+    {
+      "domIndex": 665,
+      "text": "mkdir -p themes/autuswing",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6440.2666015625,
+        "w": 661.9500122070312,
+        "client": 24,
+        "scroll": 24,
+        "text": "mkdir -p themes/autuswing"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6438.06689453125,
+        "w": 665.0499877929688,
+        "client": 23,
+        "scroll": 23,
+        "text": "mkdir -p themes/autuswing"
+      }
+    },
+    {
+      "domIndex": 669,
+      "text": "git -C /e/hexo-theme-autu",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6463.7666015625,
+        "w": 661.9500122070312,
+        "client": 24,
+        "scroll": 24,
+        "text": "git -C /e/hexo-theme-autu"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 6461.466796875,
+        "w": 665.0499877929688,
+        "client": 23,
+        "scroll": 23,
+        "text": "git -C /e/hexo-theme-autu"
+      }
+    },
+    {
+      "domIndex": 689,
+      "text": "themes/autuswing/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6880.466796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "themes/autuswing/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6878.06689453125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "themes/autuswing/"
+      }
+    },
+    {
+      "domIndex": 691,
+      "text": "├── _config.yml",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6903.966796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── _config.yml"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 6901.466796875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── _config.yml"
+      }
+    },
+    {
+      "domIndex": 693,
+      "text": "├── package.json",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6927.466796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── package.json"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6924.86669921875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── package.json"
+      }
+    },
+    {
+      "domIndex": 695,
+      "text": "├── package-lock.json",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6950.966796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── package-lock.json"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 6948.2666015625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── package-lock.json"
+      }
+    },
+    {
+      "domIndex": 697,
+      "text": "├── layout/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6974.466796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── layout/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6971.66650390625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── layout/"
+      }
+    },
+    {
+      "domIndex": 699,
+      "text": "├── scripts/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 6997.966796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── scripts/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 6995.06689453125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── scripts/"
+      }
+    },
+    {
+      "domIndex": 701,
+      "text": "├── lib/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 7021.466796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── lib/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 7018.466796875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── lib/"
+      }
+    },
+    {
+      "domIndex": 703,
+      "text": "├── source/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 7044.966796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── source/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 7041.86669921875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── source/"
+      }
+    },
+    {
+      "domIndex": 705,
+      "text": "├── assets/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 7068.466796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "├── assets/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 7065.2666015625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "├── assets/"
+      }
+    },
+    {
+      "domIndex": 707,
+      "text": "└── vendor/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 7091.966796875,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "└── vendor/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 7088.66650390625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "└── vendor/"
+      }
+    },
+    {
+      "domIndex": 721,
+      "text": "npm ci --prefix themes/au",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 7536.466796875,
+        "w": 372.51666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm ci --prefix themes/au"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 7533.06689453125,
+        "w": 375.6166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm ci --prefix themes/au"
+      }
+    },
+    {
+      "domIndex": 743,
+      "text": "title: 我的个人博客",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8041.7666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "title: 我的个人博客"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 8038.2666015625,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "title: 我的个人博客"
+      }
+    },
+    {
+      "domIndex": 747,
+      "text": "subtitle: 记录生活与技术",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8065.2666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "subtitle: 记录生活与技术"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8061.66650390625,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "subtitle: 记录生活与技术"
+      }
+    },
+    {
+      "domIndex": 751,
+      "text": "description: 一个使用 Hexo 与 ",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8088.7666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "description: 一个使用 Hexo 与 "
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8085.06689453125,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "description: 一个使用 Hexo 与 "
+      }
+    },
+    {
+      "domIndex": 755,
+      "text": "author: 你的名字",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8112.2666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "author: 你的名字"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 8108.466796875,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "author: 你的名字"
+      }
+    },
+    {
+      "domIndex": 759,
+      "text": "language: zh-CN",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8135.7666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "language: zh-CN"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8131.86669921875,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "language: zh-CN"
+      }
+    },
+    {
+      "domIndex": 763,
+      "text": "timezone: Asia/Shanghai",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8159.2666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "timezone: Asia/Shanghai"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 8155.2666015625,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "timezone: Asia/Shanghai"
+      }
+    },
+    {
+      "domIndex": 767,
+      "text": "url: https://blog.example",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8182.7666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "url: https://blog.example"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8178.66650390625,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "url: https://blog.example"
+      }
+    },
+    {
+      "domIndex": 771,
+      "text": "root: /",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8206.2666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "root: /"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8202.06640625,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "root: /"
+      }
+    },
+    {
+      "domIndex": 775,
+      "text": "theme: autuswing",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8229.7666015625,
+        "w": 413.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "theme: autuswing"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 8225.466796875,
+        "w": 416.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "theme: autuswing"
+      }
+    },
+    {
+      "domIndex": 788,
+      "text": "cp themes/autuswing/_conf",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 8555.2666015625,
+        "w": 448.683349609375,
+        "client": 24,
+        "scroll": 24,
+        "text": "cp themes/autuswing/_conf"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 8550.8662109375,
+        "w": 451.7833251953125,
+        "client": 23,
+        "scroll": 23,
+        "text": "cp themes/autuswing/_conf"
+      }
+    },
+    {
+      "domIndex": 813,
+      "text": "avatar: /img/my-avatar.pn",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9371.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "avatar: /img/my-avatar.pn"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9367.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "avatar: /img/my-avatar.pn"
+      }
+    },
+    {
+      "domIndex": 817,
+      "text": "favicon: /img/my-favicon.",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9395.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "favicon: /img/my-favicon."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9390.7001953125,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "favicon: /img/my-favicon."
+      }
+    },
+    {
+      "domIndex": 821,
+      "text": "since: 2026",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9418.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "since: 2026"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9414.099609375,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "since: 2026"
+      }
+    },
+    {
+      "domIndex": 825,
+      "text": "color_mode: auto",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9442.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "color_mode: auto"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9437.5,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "color_mode: auto"
+      }
+    },
+    {
+      "domIndex": 829,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9465.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9460.900390625,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 830,
+      "text": "menu:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9489.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "menu:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9484.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "menu:"
+      }
+    },
+    {
+      "domIndex": 833,
+      "text": "  Home: /",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9512.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  Home: /"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9507.7001953125,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  Home: /"
+      }
+    },
+    {
+      "domIndex": 837,
+      "text": "  Archives: /archives/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9536.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  Archives: /archives/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9531.099609375,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  Archives: /archives/"
+      }
+    },
+    {
+      "domIndex": 841,
+      "text": "  Tags: /tags/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9559.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  Tags: /tags/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9554.5,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  Tags: /tags/"
+      }
+    },
+    {
+      "domIndex": 845,
+      "text": "  Links: /links/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9583.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  Links: /links/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9577.900390625,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  Links: /links/"
+      }
+    },
+    {
+      "domIndex": 849,
+      "text": "  About: /about/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9606.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  About: /about/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9601.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  About: /about/"
+      }
+    },
+    {
+      "domIndex": 853,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9630.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9624.7001953125,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 854,
+      "text": "social:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9653.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "social:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9648.099609375,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "social:"
+      }
+    },
+    {
+      "domIndex": 857,
+      "text": "  GitHub: https://github.",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9677.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  GitHub: https://github."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9671.5,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  GitHub: https://github."
+      }
+    },
+    {
+      "domIndex": 861,
+      "text": "  Email: mailto:you@examp",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9700.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  Email: mailto:you@examp"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9694.900390625,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  Email: mailto:you@examp"
+      }
+    },
+    {
+      "domIndex": 865,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9724.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9718.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 866,
+      "text": "profile:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9747.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "profile:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9741.7001953125,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "profile:"
+      }
+    },
+    {
+      "domIndex": 869,
+      "text": "  author: 你的名字",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9771.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  author: 你的名字"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9765.099609375,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  author: 你的名字"
+      }
+    },
+    {
+      "domIndex": 873,
+      "text": "  subtitle: 记录生活与技术",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9794.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  subtitle: 记录生活与技术"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9788.5,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  subtitle: 记录生活与技术"
+      }
+    },
+    {
+      "domIndex": 877,
+      "text": "  email: you@example.com",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9818.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  email: you@example.com"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9811.900390625,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  email: you@example.com"
+      }
+    },
+    {
+      "domIndex": 881,
+      "text": "  aboutme: '<p>你好，欢迎来到我的博",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9841.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  aboutme: '<p>你好，欢迎来到我的博"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9835.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  aboutme: '<p>你好，欢迎来到我的博"
+      }
+    },
+    {
+      "domIndex": 885,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9865.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9858.7001953125,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 886,
+      "text": "friends:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9888.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "friends:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9882.099609375,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "friends:"
+      }
+    },
+    {
+      "domIndex": 889,
+      "text": "  - name: Hexo",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9912.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "  - name: Hexo"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9905.5,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "  - name: Hexo"
+      }
+    },
+    {
+      "domIndex": 894,
+      "text": "    url: https://hexo.io",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9935.7998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "    url: https://hexo.io"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 9928.900390625,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "    url: https://hexo.io"
+      }
+    },
+    {
+      "domIndex": 898,
+      "text": "    description: 静态博客框架",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 9959.2998046875,
+        "w": 365.33331298828125,
+        "client": 24,
+        "scroll": 24,
+        "text": "    description: 静态博客框架"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 9952.2998046875,
+        "w": 368.433349609375,
+        "client": 23,
+        "scroll": 23,
+        "text": "    description: 静态博客框架"
+      }
+    },
+    {
+      "domIndex": 924,
+      "text": "cards:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10779.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "cards:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 10772.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "cards:"
+      }
+    },
+    {
+      "domIndex": 927,
+      "text": "  enable: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10803.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  enable: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10796.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  enable: true"
+      }
+    },
+    {
+      "domIndex": 931,
+      "text": "  article: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10826.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  article: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10819.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  article: true"
+      }
+    },
+    {
+      "domIndex": 935,
+      "text": "  hover: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10850.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  hover: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 10842.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  hover: true"
+      }
+    },
+    {
+      "domIndex": 939,
+      "text": "  blur: 24",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10873.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  blur: 24"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10866.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  blur: 24"
+      }
+    },
+    {
+      "domIndex": 943,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10897.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 10889.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 944,
+      "text": "appearance:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10920.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "appearance:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10913.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "appearance:"
+      }
+    },
+    {
+      "domIndex": 947,
+      "text": "  base_font_size: 16",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10944.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  base_font_size: 16"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10936.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  base_font_size: 16"
+      }
+    },
+    {
+      "domIndex": 951,
+      "text": "  sidebar_width: 272",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10967.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  sidebar_width: 272"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 10959.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  sidebar_width: 272"
+      }
+    },
+    {
+      "domIndex": 955,
+      "text": "  width: 1680",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 10991.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  width: 1680"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 10983.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  width: 1680"
+      }
+    },
+    {
+      "domIndex": 959,
+      "text": "  radius: 18",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11014.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  radius: 18"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11006.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  radius: 18"
+      }
+    },
+    {
+      "domIndex": 963,
+      "text": "  background_image: false",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11038.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  background_image: false"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11030.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  background_image: false"
+      }
+    },
+    {
+      "domIndex": 967,
+      "text": "  theme_switch: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11061.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  theme_switch: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11053.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  theme_switch: true"
+      }
+    },
+    {
+      "domIndex": 971,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11085.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11076.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 972,
+      "text": "reading:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11108.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "reading:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11100.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "reading:"
+      }
+    },
+    {
+      "domIndex": 975,
+      "text": "  toc: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11132.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  toc: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11123.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  toc: true"
+      }
+    },
+    {
+      "domIndex": 979,
+      "text": "  progress: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11155.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  progress: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11147.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  progress: true"
+      }
+    },
+    {
+      "domIndex": 983,
+      "text": "  words_per_minute: 250",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11179.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  words_per_minute: 250"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11170.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  words_per_minute: 250"
+      }
+    },
+    {
+      "domIndex": 987,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11202.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11193.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 988,
+      "text": "article:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11226.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "article:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11217.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "article:"
+      }
+    },
+    {
+      "domIndex": 991,
+      "text": "  excerpt: auto",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11249.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  excerpt: auto"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11240.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  excerpt: auto"
+      }
+    },
+    {
+      "domIndex": 995,
+      "text": "  excerpt_length: 200",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11273.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  excerpt_length: 200"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11264.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  excerpt_length: 200"
+      }
+    },
+    {
+      "domIndex": 999,
+      "text": "  lightbox: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11296.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  lightbox: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11287.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  lightbox: true"
+      }
+    },
+    {
+      "domIndex": 1003,
+      "text": "  lazyload: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11320.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  lazyload: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11310.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  lazyload: true"
+      }
+    },
+    {
+      "domIndex": 1007,
+      "text": "  updated: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11343.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  updated: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11334.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  updated: true"
+      }
+    },
+    {
+      "domIndex": 1011,
+      "text": "  word_count: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11367.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  word_count: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11357.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  word_count: true"
+      }
+    },
+    {
+      "domIndex": 1015,
+      "text": "  reading_time: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11390.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  reading_time: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11381.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  reading_time: true"
+      }
+    },
+    {
+      "domIndex": 1019,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11414.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11404.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 1020,
+      "text": "search:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11437.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "search:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11427.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "search:"
+      }
+    },
+    {
+      "domIndex": 1023,
+      "text": "  enable: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11461.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  enable: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11451.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  enable: true"
+      }
+    },
+    {
+      "domIndex": 1027,
+      "text": "  content: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11484.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  content: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11474.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  content: true"
+      }
+    },
+    {
+      "domIndex": 1031,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11508.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11498.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 1032,
+      "text": "feed:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11531.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "feed:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11521.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "feed:"
+      }
+    },
+    {
+      "domIndex": 1035,
+      "text": "  enable: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11555.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  enable: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11544.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  enable: true"
+      }
+    },
+    {
+      "domIndex": 1039,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11578.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11568.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 1040,
+      "text": "seo:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11602.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "seo:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11591.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "seo:"
+      }
+    },
+    {
+      "domIndex": 1043,
+      "text": "  sitemap: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11625.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  sitemap: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11615.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  sitemap: true"
+      }
+    },
+    {
+      "domIndex": 1047,
+      "text": "  robots: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11649.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  robots: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11638.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  robots: true"
+      }
+    },
+    {
+      "domIndex": 1051,
+      "text": "  json_ld: true",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11672.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  json_ld: true"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11661.900390625,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  json_ld: true"
+      }
+    },
+    {
+      "domIndex": 1055,
+      "text": "  social_image: /img/my-a",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11696.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  social_image: /img/my-a"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11685.2998046875,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  social_image: /img/my-a"
+      }
+    },
+    {
+      "domIndex": 1059,
+      "text": "",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11719.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": ""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 11708.7001953125,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": ""
+      }
+    },
+    {
+      "domIndex": 1060,
+      "text": "edge:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11743.2998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "edge:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11732.099609375,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "edge:"
+      }
+    },
+    {
+      "domIndex": 1063,
+      "text": "  provider: cf",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 11766.7998046875,
+        "w": 303.9666748046875,
+        "client": 24,
+        "scroll": 24,
+        "text": "  provider: cf"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 11755.5,
+        "w": 307.066650390625,
+        "client": 23,
+        "scroll": 23,
+        "text": "  provider: cf"
+      }
+    },
+    {
+      "domIndex": 1087,
+      "text": "npx hexo clean",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 12779.533203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo clean"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 12768.1337890625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo clean"
+      }
+    },
+    {
+      "domIndex": 1091,
+      "text": "npx hexo generate",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 12803.033203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo generate"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 12791.533203125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo generate"
+      }
+    },
+    {
+      "domIndex": 1095,
+      "text": "npx hexo server",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 12826.533203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo server"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 12814.93359375,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo server"
+      }
+    },
+    {
+      "domIndex": 1109,
+      "text": "npx hexo new \"我的第一篇文章\"",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13215.8330078125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo new \"我的第一篇文章\""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 13204.1337890625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo new \"我的第一篇文章\""
+      }
+    },
+    {
+      "domIndex": 1122,
+      "text": "---",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13429.3330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "---"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13417.533203125,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "---"
+      }
+    },
+    {
+      "domIndex": 1124,
+      "text": "title: 我的第一篇文章",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13452.8330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "title: 我的第一篇文章"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13440.93359375,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "title: 我的第一篇文章"
+      }
+    },
+    {
+      "domIndex": 1128,
+      "text": "date: 2026-10-05 10:00:00",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13476.3330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "date: 2026-10-05 10:00:00"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 13464.3330078125,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "date: 2026-10-05 10:00:00"
+      }
+    },
+    {
+      "domIndex": 1132,
+      "text": "tags:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13499.8330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "tags:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13487.7333984375,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "tags:"
+      }
+    },
+    {
+      "domIndex": 1135,
+      "text": "  - 生活",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13523.3330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "  - 生活"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 13511.1337890625,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "  - 生活"
+      }
+    },
+    {
+      "domIndex": 1138,
+      "text": "categories:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13546.8330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "categories:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13534.533203125,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "categories:"
+      }
+    },
+    {
+      "domIndex": 1141,
+      "text": "  - 随笔",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13570.3330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "  - 随笔"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13557.93359375,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "  - 随笔"
+      }
+    },
+    {
+      "domIndex": 1144,
+      "text": "description: 这篇文章的简短介绍。",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13593.8330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "description: 这篇文章的简短介绍。"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 13581.3330078125,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "description: 这篇文章的简短介绍。"
+      }
+    },
+    {
+      "domIndex": 1148,
+      "text": "---",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13617.3330078125,
+        "w": 284.01666259765625,
+        "client": 24,
+        "scroll": 24,
+        "text": "---"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13604.7333984375,
+        "w": 287.1166687011719,
+        "client": 23,
+        "scroll": 23,
+        "text": "---"
+      }
+    },
+    {
+      "domIndex": 1162,
+      "text": "![图片说明](/img/posts/my-fir",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 13973.2333984375,
+        "w": 420.8999938964844,
+        "client": 24,
+        "scroll": 24,
+        "text": "![图片说明](/img/posts/my-fir"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 13960.533203125,
+        "w": 424,
+        "client": 23,
+        "scroll": 23,
+        "text": "![图片说明](/img/posts/my-fir"
+      }
+    },
+    {
+      "domIndex": 1193,
+      "text": "node_modules/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 14936.533203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "node_modules/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 14923.7333984375,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "node_modules/"
+      }
+    },
+    {
+      "domIndex": 1195,
+      "text": "public/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 14960.033203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "public/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 14947.1337890625,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "public/"
+      }
+    },
+    {
+      "domIndex": 1197,
+      "text": "db.json",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 14983.533203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "db.json"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 14970.533203125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "db.json"
+      }
+    },
+    {
+      "domIndex": 1199,
+      "text": ".deploy*/",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15007.033203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": ".deploy*/"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 14993.93359375,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": ".deploy*/"
+      }
+    },
+    {
+      "domIndex": 1201,
+      "text": "*.log",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15030.533203125,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "*.log"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 15017.3330078125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "*.log"
+      }
+    },
+    {
+      "domIndex": 1220,
+      "text": "git add .",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15617.43359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git add ."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 15604.1337890625,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git add ."
+      }
+    },
+    {
+      "domIndex": 1224,
+      "text": "git status",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15640.93359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git status"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 15627.533203125,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git status"
+      }
+    },
+    {
+      "domIndex": 1227,
+      "text": "git commit -m \"Initialize",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15664.43359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git commit -m \"Initialize"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 15650.93359375,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git commit -m \"Initialize"
+      }
+    },
+    {
+      "domIndex": 1232,
+      "text": "git branch -M main",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15687.93359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git branch -M main"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 15674.3330078125,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git branch -M main"
+      }
+    },
+    {
+      "domIndex": 1237,
+      "text": "git remote add origin git",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15711.43359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git remote add origin git"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 15697.7333984375,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git remote add origin git"
+      }
+    },
+    {
+      "domIndex": 1243,
+      "text": "git push -u origin main",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 15734.93359375,
+        "w": 585.7833251953125,
+        "client": 24,
+        "scroll": 24,
+        "text": "git push -u origin main"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 15721.1337890625,
+        "w": 588.88330078125,
+        "client": 23,
+        "scroll": 23,
+        "text": "git push -u origin main"
+      }
+    },
+    {
+      "domIndex": 1312,
+      "text": "npm ci --prefix themes/au",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 17513.232421875,
+        "w": 669.566650390625,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm ci --prefix themes/au"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 17499.333984375,
+        "w": 672.6666870117188,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm ci --prefix themes/au"
+      }
+    },
+    {
+      "domIndex": 1334,
+      "text": "npx wrangler deploy --nam",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 17696.333984375,
+        "w": 456.29998779296875,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx wrangler deploy --nam"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 17682.333984375,
+        "w": 459.3999938964844,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx wrangler deploy --nam"
+      }
+    },
+    {
+      "domIndex": 1415,
+      "text": "url: https://blog.example",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 21151.30078125,
+        "w": 265.8833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "url: https://blog.example"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 21137.19921875,
+        "w": 268.98333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "url: https://blog.example"
+      }
+    },
+    {
+      "domIndex": 1419,
+      "text": "root: /",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 21174.80078125,
+        "w": 265.8833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "root: /"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 21160.599609375,
+        "w": 268.98333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "root: /"
+      }
+    },
+    {
+      "domIndex": 1431,
+      "text": "git add _config.yml",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 21449.099609375,
+        "w": 364.8999938964844,
+        "client": 24,
+        "scroll": 24,
+        "text": "git add _config.yml"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 21434.80078125,
+        "w": 368,
+        "client": 23,
+        "scroll": 23,
+        "text": "git add _config.yml"
+      }
+    },
+    {
+      "domIndex": 1435,
+      "text": "git commit -m \"Set produc",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 21472.599609375,
+        "w": 364.8999938964844,
+        "client": 24,
+        "scroll": 24,
+        "text": "git commit -m \"Set produc"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 21458.19921875,
+        "w": 368,
+        "client": 23,
+        "scroll": 23,
+        "text": "git commit -m \"Set produc"
+      }
+    },
+    {
+      "domIndex": 1440,
+      "text": "git push",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 21496.099609375,
+        "w": 364.8999938964844,
+        "client": 24,
+        "scroll": 24,
+        "text": "git push"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 21481.599609375,
+        "w": 368,
+        "client": 23,
+        "scroll": 23,
+        "text": "git push"
+      }
+    },
+    {
+      "domIndex": 1463,
+      "text": "npx hexo new \"新文章标题\"",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22340.400390625,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo new \"新文章标题\""
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22325.80078125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo new \"新文章标题\""
+      }
+    },
+    {
+      "domIndex": 1475,
+      "text": "npx hexo clean",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22523.5,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo clean"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22508.80078125,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo clean"
+      }
+    },
+    {
+      "domIndex": 1479,
+      "text": "npx hexo generate",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22547,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo generate"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 22532.19921875,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo generate"
+      }
+    },
+    {
+      "domIndex": 1483,
+      "text": "npx hexo server",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22570.5,
+        "w": 262,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo server"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22555.599609375,
+        "w": 262,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo server"
+      }
+    },
+    {
+      "domIndex": 1495,
+      "text": "git add .",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22753.599609375,
+        "w": 273.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "git add ."
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22738.599609375,
+        "w": 276.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "git add ."
+      }
+    },
+    {
+      "domIndex": 1499,
+      "text": "git status",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22777.099609375,
+        "w": 273.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "git status"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22762,
+        "w": 276.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "git status"
+      }
+    },
+    {
+      "domIndex": 1502,
+      "text": "git commit -m \"Add a new ",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22800.599609375,
+        "w": 273.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "git commit -m \"Add a new "
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 22785.400390625,
+        "w": 276.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "git commit -m \"Add a new "
+      }
+    },
+    {
+      "domIndex": 1507,
+      "text": "git push",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 22824.099609375,
+        "w": 273.5,
+        "client": 24,
+        "scroll": 24,
+        "text": "git push"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 22808.80078125,
+        "w": 276.6000061035156,
+        "client": 23,
+        "scroll": 23,
+        "text": "git push"
+      }
+    },
+    {
+      "domIndex": 1523,
+      "text": "git clone git@github.com:",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23194.80078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "git clone git@github.com:"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 23179.400390625,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "git clone git@github.com:"
+      }
+    },
+    {
+      "domIndex": 1527,
+      "text": "cd hexo-blog-source",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23218.30078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "cd hexo-blog-source"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 23202.80078125,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "cd hexo-blog-source"
+      }
+    },
+    {
+      "domIndex": 1530,
+      "text": "npm ci",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23241.80078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm ci"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 23226.19921875,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm ci"
+      }
+    },
+    {
+      "domIndex": 1533,
+      "text": "npm ci --prefix themes/au",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23265.30078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "npm ci --prefix themes/au"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 23249.599609375,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "npm ci --prefix themes/au"
+      }
+    },
+    {
+      "domIndex": 1539,
+      "text": "npx hexo generate",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23288.80078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo generate"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.399993896484375,
+        "y": 23273,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo generate"
+      }
+    },
+    {
+      "domIndex": 1543,
+      "text": "npx hexo server",
+      "before": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.5,
+        "y": 23312.30078125,
+        "w": 494.3833312988281,
+        "client": 24,
+        "scroll": 24,
+        "text": "npx hexo server"
+      },
+      "after": {
+        "tag": "SPAN",
+        "cls": "line",
+        "h": 23.400009155273438,
+        "y": 23296.400390625,
+        "w": 497.48333740234375,
+        "client": 23,
+        "scroll": 23,
+        "text": "npx hexo server"
+      }
+    }
+  ]
+}
