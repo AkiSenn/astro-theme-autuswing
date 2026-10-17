@@ -251,6 +251,7 @@ try {
   fs.writeFileSync(siteFile, originalSite);
 }
 build('development-static-build', 'development', false);
+run('cli-site-override-blocked', ['node_modules/astro/bin/astro.mjs', 'build', '--site', 'https://preview.invalid'], false);
 build('unknown-mode-build', 'prod', false);
 check('restored-production-output');
 report.checkedAt = new Date().toISOString();

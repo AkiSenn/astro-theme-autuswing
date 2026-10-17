@@ -22,7 +22,10 @@ export function staticArtifacts() {
           throw new Error('Development mode cannot produce static release artifacts');
         if (command === 'dev' && mode === 'production')
           throw new Error('Use development/preview for the dev server');
-        if (mode === 'production') assertProductionUrl(site.url, policy.productionUrl);
+        if (mode === 'production') {
+          assertProductionUrl(site.url, policy.productionUrl);
+          assertProductionUrl(config.site, policy.productionUrl);
+        }
         if (command === 'build') inputs = inputManifest(projectRoot);
       },
       'astro:build:done': async ({ dir }) => {
