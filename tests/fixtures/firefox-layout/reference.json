@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-10-17T19:03:41.626Z",
+  "engine": "firefox",
+  "browserVersion": "157.0",
+  "sourceCommit": "83b88e089e0bf312d20c74e5b5fb7f93be352e02",
+  "candidateReady": "b32687de169a2d2edf54c6d4ebe290dbb4ba54810e817b26c279d067baf29011",
+  "sourceArtifactDigest": "b57abdf0f0fd1318f0bf6c16602ce7bd92cafb249da694d7fd5c83982d4fb651",
+  "purpose": "Engine-specific layout metrics from sealed unchanged UI; not a new approved pixel baseline",
+  "records": [
+    {
+      "file": "motion.json",
+      "cases": 18,
+      "sha256": "cadb13e32f4e466655a63e259b0de5eb082b101acb0cfd77b52fd32becca8951"
+    },
+    {
+      "file": "sidebar.json",
+      "cases": 16,
+      "sha256": "22ae778b1212a1a1ba8c89ca97d5bf90ab194376649ad2b19b4af46f2ffc1528"
+    }
+  ],
+  "status": "provisional-renderer-metrics-unstable",
+  "issue": "Repeated sealed-artifact capture differs by 16 CSS px in cumulative code line boxes; do not use as accepted baseline"
+}

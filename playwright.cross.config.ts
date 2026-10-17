@@ -10,7 +10,16 @@ export default defineConfig({
   use: sharedUse,
   testIgnore: ['**/desktop-reading.spec.ts'],
   projects: [
-    { name: 'firefox', use: { browserName: 'firefox', channel: undefined } },
+    {
+      name: 'firefox',
+      use: {
+        browserName: 'firefox',
+        channel: undefined,
+        launchOptions: process.env.FIREFOX_EXECUTABLE_PATH
+          ? { executablePath: process.env.FIREFOX_EXECUTABLE_PATH }
+          : {},
+      },
+    },
     { name: 'webkit', use: { browserName: 'webkit', channel: undefined } },
   ],
 });

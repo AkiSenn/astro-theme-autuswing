@@ -1,62 +1,7 @@
 import { test, expect, chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import http from 'node:http';
-import { serviceWorker } from '../../src/lib/service-worker.mjs';
-
-async function server() {
-  const root = path.resolve(process.env.PWA_ARTIFACT_ROOT || 'dist');
-  const initial = fs.readFileSync(path.join(root, 'offline.html'), 'utf8');
-  const state = { html: initial, workerHtml: initial };
-  const mime: Record<string, string> = {
-    '.js': 'application/javascript',
-    '.css': 'text/css',
-    '.webp': 'image/webp',
-    '.png': 'image/png',
-    '.json': 'application/json',
-    '.webmanifest': 'application/manifest+json',
-    '.woff2': 'font/woff2',
-    '.xml': 'application/xml',
-  };
-  const instance = http.createServer((req, res) => {
-    const pathname = new URL(req.url!, 'http://localhost').pathname;
-    res.setHeader('Cache-Control', 'no-store');
-    if (pathname === '/sw.js') {
-      res.setHeader('Content-Type', 'application/javascript');
-      res.end(serviceWorker(state.workerHtml));
-      return;
-    }
-    if (pathname === '/offline.html') {
-      res.setHeader('Content-Type', 'text/html');
-      res.end(state.html);
-      return;
-    }
-    const file = path.resolve(root, '.' + decodeURI(pathname));
-    if (!file.startsWith(root + path.sep) && file !== root) {
-      res.writeHead(400).end();
-      return;
-    }
-    try {
-      const target = fs.statSync(file).isDirectory() ? path.join(file, 'index.html') : file;
-      res.setHeader('Content-Type', mime[path.extname(target)] || 'text/html');
-      res.end(fs.readFileSync(target));
-    } catch {
-      res.writeHead(404).end('Missing');
-    }
-  });
-  await new Promise<void>((resolve) => instance.listen(0, '127.0.0.1', resolve));
-  const address = instance.address() as { port: number };
-  return {
-    state,
-    initial,
-    origin: `http://127.0.0.1:${address.port}`,
-    close: () =>
-      new Promise<void>((resolve) => {
-        instance.close(() => resolve());
-        instance.closeAllConnections();
-      }),
-  };
-}
+import { pwaServer as server } from '../support/pwa-server';
 
 test('PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work', async ({
   browser,
@@ -70,6 +15,12 @@ test('PWA updates online across tabs without reloading unsaved input; offline la
     await first.evaluate(() => navigator.serviceWorker.ready.then(() => true));
     await first.reload();
     await first.waitForFunction(() => !!navigator.serviceWorker.controller);
+    await first.evaluate(async () => {
+      await (
+        await caches.open('autuswing-astro-shell-v2')
+      ).put('/offline.html', new Response('obsolete'));
+      await (await caches.open('autuswing-search-cache')).put('/keep', new Response('keep'));
+    });
     await second.goto(fixture.origin);
     for (const page of [first, second])
       await page.evaluate(() => {
@@ -83,15 +34,31 @@ test('PWA updates online across tabs without reloading unsaved input; offline la
     fixture.state.html = fixture.state.workerHtml = fixture.initial.replace('暂时离线', '新版离线');
     await first.evaluate(async () => (await navigator.serviceWorker.getRegistration())!.update());
     await expect.poll(() => first.evaluate(() => caches.keys())).not.toEqual(before);
+    await expect
+      .poll(() =>
+        first.evaluate(async () => {
+          const keys = await caches.keys();
+          return {
+            old: keys.includes('autuswing-astro-shell-v2'),
+            unrelated: await (
+              await caches.open('autuswing-search-cache')
+            )
+              .match('/keep')
+              .then((r) => r?.text()),
+          };
+        }),
+      )
+      .toEqual({ old: false, unrelated: 'keep' });
     for (const page of [first, second]) {
       await expect(page.locator('#unsaved')).toHaveValue('keep my text');
       expect(await page.evaluate(() => (window as any).__unchangedDocument)).toBe('yes');
     }
-    await context.setOffline(true);
+    fixture.state.disconnected = true;
     const offline = await context.newPage();
     await offline.goto(fixture.origin + '/offline-start/');
     await expect(offline).toHaveTitle(/新版离线/);
-    await context.setOffline(false);
+    expect(fixture.requests.some((r) => r.path === '/offline-start/' && r.disconnected)).toBe(true);
+    fixture.state.disconnected = false;
     await offline.goto(fixture.origin);
     await expect(offline.locator('.post-card').first()).toBeVisible();
   } finally {
@@ -125,17 +92,20 @@ test('PWA keeps the active version when worker and CDN offline bytes differ, the
         );
     });
     expect(await page.evaluate(() => caches.keys())).toEqual(before);
-    await context.setOffline(true);
+    fixture.state.disconnected = true;
     await page.goto(fixture.origin + '/old-version-offline/');
     await expect(page.locator('h1')).toHaveText('暂时离线');
-    await context.setOffline(false);
+    fixture.state.disconnected = false;
     fixture.state.html = fixture.state.workerHtml;
     await page.goto(fixture.origin);
     await page.evaluate(async () => (await navigator.serviceWorker.getRegistration())!.update());
     await expect.poll(() => page.evaluate(() => caches.keys())).not.toEqual(before);
-    await context.setOffline(true);
+    fixture.state.disconnected = true;
     await page.goto(fixture.origin + '/new-version-offline/');
     await expect(page).toHaveTitle(/更新离线/);
+    expect(fixture.requests.some((r) => r.path === '/new-version-offline/' && r.disconnected)).toBe(
+      true,
+    );
   } finally {
     await context.close();
     await fixture.close();

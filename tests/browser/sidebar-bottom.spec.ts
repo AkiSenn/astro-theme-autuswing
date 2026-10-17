@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import { activeLayoutMetrics } from './layout-metrics';
+import { layoutReference } from '../support/layout-reference';
+import { referencePage } from '../support/reference-page';
 
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/sidebar-bottom/edge';
 fs.mkdirSync(dir, { recursive: true });
@@ -172,41 +174,38 @@ test('desktop search, appearance and social keyboard controls retain their origi
 test('footer, mini rail, profile, navigation and content remain equal to their own browser baseline', async ({
   page,
   browserName,
+  browser,
 }) => {
-  const engine = browserName === 'webkit' ? 'webkit' : 'edge';
-  const baseline = JSON.parse(
-    fs.readFileSync(`docs/evidence/sidebar-bottom/before-${engine}.json`, 'utf8'),
-  );
+  const { engine, baseline } = layoutReference('sidebar-bottom', browserName);
   await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'dark' });
   for (const item of baseline.cases) {
-    await page.setViewportSize({ width: item.width, height: item.height });
-    await page.goto(item.path);
-    await page.evaluate(() => document.fonts.ready);
-    for (const [selector, expected] of Object.entries(item.regions)) {
-      const actual = await page.locator(selector).evaluateAll((nodes) =>
-        nodes.map((el) => {
-          const b = el.getBoundingClientRect(),
-            s = getComputedStyle(el);
-          return {
-            x: b.x,
-            y: b.y,
-            width: b.width,
-            height: b.height,
-            display: s.display,
-            fontSize: s.fontSize,
-            lineHeight: s.lineHeight,
-            color: s.color,
-            background: s.backgroundColor,
-            gap: s.gap,
-            padding: s.padding,
-            border: s.borderTop,
-          };
-        }),
-      );
-      expect(
-        activeLayoutMetrics(actual),
-        `${engine} ${item.width} ${item.path} ${selector}`,
-      ).toEqual(activeLayoutMetrics(expected as typeof actual));
-    }
+    await referencePage(browser, page, browserName, item, async (page) => {
+      for (const [selector, expected] of Object.entries(item.regions)) {
+        const actual = await page.locator(selector).evaluateAll((nodes) =>
+          nodes.map((el) => {
+            const b = el.getBoundingClientRect(),
+              s = getComputedStyle(el);
+            return {
+              x: b.x,
+              y: b.y,
+              width: b.width,
+              height: b.height,
+              display: s.display,
+              fontSize: s.fontSize,
+              lineHeight: s.lineHeight,
+              color: s.color,
+              background: s.backgroundColor,
+              gap: s.gap,
+              padding: s.padding,
+              border: s.borderTop,
+            };
+          }),
+        );
+        expect(
+          activeLayoutMetrics(actual),
+          `${engine} ${item.width} ${item.path} ${selector}`,
+        ).toEqual(activeLayoutMetrics(expected as typeof actual));
+      }
+    });
   }
 });

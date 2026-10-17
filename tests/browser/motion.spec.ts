@@ -2,6 +2,9 @@ import { test, expect, type Page } from '@playwright/test';
 import { load } from 'cheerio';
 import fs from 'node:fs';
 import { activeLayoutMetrics } from './layout-metrics';
+import { layoutReference } from '../support/layout-reference';
+import { referencePage } from '../support/reference-page';
+import { inspectTransitionMode, assertUnanimatedNavigation } from '../support/transition-contract';
 
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/motion-system/edge';
 fs.mkdirSync(dir, { recursive: true });
@@ -74,6 +77,7 @@ async function freshContents(page: Page) {
 
 test('native transitions keep the correct navigation shell across responsive layouts', async ({
   page,
+  browserName,
 }) => {
   test.setTimeout(60000);
   const events = await observe(page);
@@ -89,13 +93,21 @@ test('native transitions keep the correct navigation shell across responsive lay
   ]) {
     await page.setViewportSize({ width, height });
     await page.goto('/');
+    const mode = await inspectTransitionMode(page, browserName);
+    const documentId = await page.evaluate(() => (window as any).__documentId);
     const homeShell =
       width < 720 ? '.mobile-header' : width < 1000 ? '.tablet-sidebar' : '.desktop-sidebar';
     await expect(page.locator(homeShell)).toBeVisible();
     const count = events.filter((e) => e.transition).length;
     await page.locator('.post-card-title a').first().click();
     await settled(page);
-    await expect.poll(() => events.filter((e) => e.transition).length).toBe(count + 1);
+    if (mode === 'native')
+      await expect.poll(() => events.filter((e) => e.transition).length).toBe(count + 1);
+    else {
+      expect(events.filter((e) => e.transition)).toHaveLength(0);
+      expect(await page.evaluate(() => (window as any).__documentId)).not.toBe(documentId);
+      await assertUnanimatedNavigation(page);
+    }
     await expect(page.locator(width < 720 ? '.mobile-header' : '.reading-rail')).toBeVisible();
     await freshContents(page);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -104,7 +116,7 @@ test('native transitions keep the correct navigation shell across responsive lay
     await page.goBack();
     await settled(page);
     await expect(page.locator(homeShell)).toBeVisible();
-    results.push({ width, height, homeShell, passed: true });
+    results.push({ width, height, homeShell, mode, passed: true });
   }
   fs.writeFileSync(`${dir}/responsive-transitions.json`, JSON.stringify(results, null, 2));
 });
@@ -137,11 +149,13 @@ test('search and image dialogs use actual shared fades and a live preference cha
 
 test('native MPA transitions use only the content group and refresh article state', async ({
   page,
+  browserName,
 }) => {
   const events = await observe(page);
   await page.emulateMedia({ reducedMotion: 'no-preference', colorScheme: 'dark' });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
+  const mode = await inspectTransitionMode(page, browserName);
   const documentId = await page.evaluate(() => (window as any).__documentId);
   await page.locator('.post-card-title a').first().click();
   await expect(page).toHaveURL(new RegExp(article));
@@ -149,14 +163,25 @@ test('native MPA transitions use only the content group and refresh article stat
   expect(await page.evaluate(() => (window as any).__documentId)).not.toBe(documentId);
   await expect(page.locator('.reading-rail')).toBeVisible();
   await freshContents(page);
+  const firstArticleDocument = await page.evaluate(() => (window as any).__documentId);
   await page.locator('.post-navigation a').first().click();
   await settled(page);
+  const secondDocument = await page.evaluate(() => (window as any).__documentId);
+  expect(secondDocument).not.toBe(firstArticleDocument);
   await freshContents(page);
   await page.locator('.reading-rail a[href="/about/"]').click();
   await expect(page).toHaveURL(/\/about\/$/);
   await settled(page);
   await expect(page.locator('.desktop-sidebar')).toBeVisible();
-  await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);
+  if (mode === 'native') await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);
+  else {
+    expect(events.filter((e) => e.transition)).toHaveLength(0);
+    expect(await page.evaluate(() => (window as any).__documentId)).not.toBe(secondDocument);
+    await assertUnanimatedNavigation(page);
+    await page.locator('.search-open:visible').click();
+    await expect(page.locator('#search-input')).toBeFocused();
+    await page.keyboard.press('Escape');
+  }
   for (const event of events.filter((e) => e.transition)) {
     expect(event.skipped).toBeUndefined();
     expect(event.animations.map((a: any) => a.name).sort()).toEqual([
@@ -356,6 +381,7 @@ test('rapid native navigation and back interruptions settle without stale contro
 
 test('actual transition frames preserve the live shell and selected appearance', async ({
   page,
+  browserName,
 }) => {
   await page.addInitScript(() => {
     (window as any).__frozenTransition = false;
@@ -380,13 +406,23 @@ test('actual transition frames preserve the live shell and selected appearance',
     });
   });
   await page.goto('/');
+  const crossDocumentMode = await inspectTransitionMode(page, browserName);
   for (const mode of ['dark', 'light']) {
     await page.evaluate((value) => localStorage.setItem('autuswing-appearance', value), mode);
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('/');
     await page.locator('.post-card-title a').first().click();
-    await expect.poll(() => page.evaluate(() => (window as any).__frozenTransition)).toBe(true);
-    expect(await page.evaluate(() => (window as any).__revealTheme)).toBe(mode);
+    const native = crossDocumentMode === 'native';
+    if (native) {
+      await expect.poll(() => page.evaluate(() => (window as any).__frozenTransition)).toBe(true);
+      expect(await page.evaluate(() => (window as any).__revealTheme)).toBe(mode);
+    } else {
+      await settled(page);
+      await assertUnanimatedNavigation(page);
+      expect(await page.evaluate(() => (window as any).__frozenTransition)).toBe(false);
+      await expect(page.locator('html')).toHaveAttribute('data-theme', mode);
+      await freshContents(page);
+    }
     const frame = await page.evaluate(() => {
       const navigation = document.querySelector('.reading-rail')!,
         main = document.querySelector('#main')!;
@@ -410,12 +446,16 @@ test('actual transition frames preserve the live shell and selected appearance',
       root: 'none',
       mainOpacity: '1',
     });
-    expect(+frame.newOpacity).toBeGreaterThan(0);
-    expect(+frame.newOpacity).toBeLessThan(1);
-    await page.screenshot({ path: `${dir}/native-frame-80ms-${mode}.png`, animations: 'allow' });
-    await page.evaluate(() =>
-      (window as any).__frozenAnimations.forEach((a: Animation) => a.play()),
-    );
+    if (native) {
+      expect(+frame.newOpacity).toBeGreaterThan(0);
+      expect(+frame.newOpacity).toBeLessThan(1);
+      await page.screenshot({ path: `${dir}/native-frame-80ms-${mode}.png`, animations: 'allow' });
+      await page.evaluate(() =>
+        (window as any).__frozenAnimations.forEach((a: Animation) => a.play()),
+      );
+    } else {
+      await page.screenshot({ path: `${dir}/fallback-frame-${mode}.png`, animations: 'disabled' });
+    }
     await expect
       .poll(() =>
         page.evaluate(
@@ -434,58 +474,60 @@ test('actual transition frames preserve the live shell and selected appearance',
 test('responsive layout geometry is unchanged after motion cleanup', async ({
   page,
   browserName,
+  browser,
 }) => {
   test.setTimeout(90000);
   await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'dark' });
-  const engine = browserName === 'webkit' ? 'webkit' : 'edge';
-  const before = JSON.parse(
-    fs.readFileSync(`docs/evidence/motion-system/before-${engine}.json`, 'utf8'),
-  );
+  const { baseline: before } = layoutReference('motion-system', browserName);
   const results = [];
   for (const sample of before.cases) {
-    await page.setViewportSize({ width: sample.width, height: sample.height });
-    await page.goto(sample.path);
-    await page.evaluate(() => document.fonts.ready);
-    const regions = await page.evaluate(
-      (selectors) =>
-        Object.fromEntries(
-          selectors.map((selector) => [
-            selector,
-            [...document.querySelectorAll(selector)].map((el) => {
-              const b = el.getBoundingClientRect(),
-                s = getComputedStyle(el);
-              return {
-                x: b.x,
-                y: b.y,
-                width: b.width,
-                height: b.height,
-                display: s.display,
-                fontSize: s.fontSize,
-                lineHeight: s.lineHeight,
-                color: s.color,
-                background: s.backgroundColor,
-                gap: s.gap,
-                padding: s.padding,
-                border: s.borderTop,
-              };
-            }),
-          ]),
-        ),
-      Object.keys(sample.regions),
-    );
-    for (const selector of Object.keys(sample.regions)) {
-      expect(
-        activeLayoutMetrics(regions[selector]),
-        `${sample.path} ${sample.width}x${sample.height} ${selector}`,
-      ).toEqual(activeLayoutMetrics(sample.regions[selector]));
-    }
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
-      true,
-    );
-    await page.screenshot({
-      path: `${dir}/${sample.path === '/' ? 'home' : 'article'}-${sample.width}x${sample.height}.png`,
+    await referencePage(browser, page, browserName, sample, async (page) => {
+      const regions = await page.evaluate(
+        (selectors) =>
+          Object.fromEntries(
+            selectors.map((selector) => [
+              selector,
+              [...document.querySelectorAll(selector)].map((el) => {
+                const b = el.getBoundingClientRect(),
+                  s = getComputedStyle(el);
+                return {
+                  x: b.x,
+                  y: b.y,
+                  width: b.width,
+                  height: b.height,
+                  display: s.display,
+                  fontSize: s.fontSize,
+                  lineHeight: s.lineHeight,
+                  color: s.color,
+                  background: s.backgroundColor,
+                  gap: s.gap,
+                  padding: s.padding,
+                  border: s.borderTop,
+                };
+              }),
+            ]),
+          ),
+        Object.keys(sample.regions),
+      );
+      for (const selector of Object.keys(sample.regions)) {
+        expect(
+          activeLayoutMetrics(regions[selector]),
+          `${sample.path} ${sample.width}x${sample.height} ${selector}`,
+        ).toEqual(activeLayoutMetrics(sample.regions[selector]));
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+        true,
+      );
+      await page.screenshot({
+        path: `${dir}/${sample.path === '/' ? 'home' : 'article'}-${sample.width}x${sample.height}.png`,
+      });
+      results.push({
+        width: sample.width,
+        height: sample.height,
+        path: sample.path,
+        matched: true,
+      });
     });
-    results.push({ width: sample.width, height: sample.height, path: sample.path, matched: true });
   }
   fs.writeFileSync(`${dir}/layout-regression.json`, JSON.stringify(results, null, 2));
 });

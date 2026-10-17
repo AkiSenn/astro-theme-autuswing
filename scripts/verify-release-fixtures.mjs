@@ -30,6 +30,7 @@ for (const file of [
   'playwright.styles.config.ts',
   'playwright.cross.config.ts',
   'playwright.nginx.config.ts',
+  'playwright.pwa.config.ts',
 ])
   fs.copyFileSync(path.join(original, file), path.join(root, file));
 fs.symlinkSync(

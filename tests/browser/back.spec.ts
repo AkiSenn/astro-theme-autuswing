@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import fs from 'node:fs';
+import { inspectTransitionMode, assertUnanimatedNavigation } from '../support/transition-contract';
 
 const article = '/post/55b0541c/';
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/smart-back/edge';
@@ -191,7 +192,7 @@ test('missing Navigation API and disabled JavaScript keep the ordinary archive l
   await context.close();
 });
 
-test('smart return runs the existing native content transition', async ({ page }) => {
+test('smart return runs the existing native content transition', async ({ page, browserName }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   const events: any[] = [];
   await page.exposeFunction('recordBackTransition', (event: any) => events.push(event));
@@ -207,13 +208,25 @@ test('smart return runs the existing native content transition', async ({ page }
     }),
   );
   await page.goto('/');
+  const mode = await inspectTransitionMode(page, browserName);
   await page.locator('.post-card-title a').first().click();
   await settled(page);
   await back(page, '/');
-  await expect
-    .poll(() => events.filter((e) => e.path === '/' && e.type === 'traverse').length)
-    .toBe(1);
-  expect(events.at(-1).names.sort()).toEqual(['autuswing-page-in', 'autuswing-page-out']);
+  if (mode === 'native') {
+    await expect
+      .poll(() => events.filter((e) => e.path === '/' && e.type === 'traverse').length)
+      .toBe(1);
+    expect(events.at(-1).names.sort()).toEqual(['autuswing-page-in', 'autuswing-page-out']);
+  } else {
+    expect(events).toHaveLength(0);
+    await assertUnanimatedNavigation(page);
+    await expect(page.locator('.desktop-sidebar')).toBeVisible();
+    await expect(page.locator('.post-card')).toHaveCount(3);
+    expect(await page.evaluate(() => navigation.activation?.navigationType)).toBe('traverse');
+    await page.goForward();
+    await expect(page).toHaveURL(new RegExp(article));
+    await assertUnanimatedNavigation(page);
+  }
   fs.writeFileSync(`${dir}/transition.json`, JSON.stringify(events, null, 2));
 });
 

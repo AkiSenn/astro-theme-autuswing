@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { pwaServer } from '../support/pwa-server';
 test('legacy appearance, system changes and cross-tab preference sync', async ({
   context,
   page,
@@ -82,15 +83,27 @@ test('site content and navigation stay accessible without JS', async ({ browser 
   await context.close();
 });
 test('PWA installs its own shell cache and returns the offline page', async ({ browser }) => {
+  const fixture = await pwaServer();
   const context = await browser.newContext({ serviceWorkers: 'allow' });
-  const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4322/');
-  await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
-  await page.reload();
-  await page.waitForFunction(() => !!navigator.serviceWorker.controller);
-  await context.setOffline(true);
-  await page.goto('http://127.0.0.1:4322/offline-check/');
-  await expect(page.locator('h1')).toHaveText('暂时离线');
-  await context.setOffline(false);
-  await context.close();
+  try {
+    const page = await context.newPage();
+    await page.goto(fixture.origin);
+    await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
+    await page.reload();
+    await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+    const cache = await page.evaluate(async () =>
+      (await caches.keys()).filter((k) => k.startsWith('autuswing-astro-shell-')),
+    );
+    expect(cache).toHaveLength(1);
+    fixture.state.disconnected = true;
+    await page.goto(fixture.origin + '/offline-check/');
+    await expect(page.locator('h1')).toHaveText('暂时离线');
+    expect(fixture.requests.some((r) => r.path === '/offline-check/' && r.disconnected)).toBe(true);
+    fixture.state.disconnected = false;
+    await page.goto(fixture.origin);
+    await expect(page.locator('.post-card')).toHaveCount(3);
+  } finally {
+    await context.close();
+    await fixture.close();
+  }
 });

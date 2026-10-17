@@ -50,6 +50,7 @@ export function inputManifest(root) {
     'playwright.styles.config.ts',
     'playwright.cross.config.ts',
     'playwright.nginx.config.ts',
+    'playwright.pwa.config.ts',
   ])
     if (fs.existsSync(path.join(root, file))) files.push(path.join(root, file));
   return files

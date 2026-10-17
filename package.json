@@ -24,6 +24,7 @@
     "verify:styles": "node scripts/check-styles.mjs",
     "test:browser:cross": "playwright test --config playwright.cross.config.ts",
     "test:nginx": "playwright test --config playwright.nginx.config.ts",
+    "test:pwa": "playwright test --config playwright.pwa.config.ts",
     "prepare:nginx": "node scripts/prepare-nginx.mjs",
     "verify:http": "node scripts/verify-http.mjs",
     "audit:performance": "node scripts/audit-performance.mjs",

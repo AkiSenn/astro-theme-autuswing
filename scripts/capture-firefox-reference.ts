@@ -1,0 +1,136 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { parseArgs } from 'node:util';
+import { firefox } from '@playwright/test';
+import { pwaServer } from '../tests/support/pwa-server';
+import { firefoxLayoutReady } from '../tests/support/layout-ready';
+import { verifyRelease, sha256 } from './release-integrity.mjs';
+import policy from '../deployment/release-policy.json' with { type: 'json' };
+
+// Explicit, non-overwriting capture from an already verified historical
+// artifact. Ordinary test runs cannot generate/update their own expectations.
+const { values } = parseArgs({
+  options: { release: { type: 'string' }, output: { type: 'string' } },
+});
+assert.ok(
+  values.release && values.output,
+  'Pass --release <sealed-candidate> --output <new-directory>',
+);
+assert.ok(
+  !fs.existsSync(values.output),
+  'Reference output already exists; capture must be reviewed separately',
+);
+const candidate = path.resolve(values.release);
+const release = verifyRelease(candidate, policy);
+for (const entry of release.build.inputs.filter((e: { file: string }) =>
+  /^src\/(styles|components|layouts)\//.test(e.file),
+))
+  assert.equal(
+    sha256(fs.readFileSync(entry.file)),
+    entry.sha256,
+    `UI differs from sealed reference: ${entry.file}`,
+  );
+const server = await pwaServer(path.join(candidate, 'site'));
+const browser = await firefox.launch({ executablePath: process.env.FIREFOX_EXECUTABLE_PATH });
+fs.mkdirSync(values.output, { recursive: true });
+try {
+  const records = [];
+  const repeated = new Map<string, string>();
+  for (const [source, name] of [
+    ['motion-system', 'motion'],
+    ['sidebar-bottom', 'sidebar'],
+  ] as const) {
+    const shape = JSON.parse(fs.readFileSync(`docs/evidence/${source}/before-edge.json`, 'utf8'));
+    const cases = [];
+    for (const sample of shape.cases) {
+      const context = await browser.newContext({
+        viewport: { width: sample.width, height: sample.height },
+        serviceWorkers: 'block',
+        reducedMotion: 'reduce',
+        colorScheme: 'dark',
+      });
+      const page = await context.newPage();
+      await page.goto(server.origin + sample.path);
+      await firefoxLayoutReady(page);
+      const regions = await page.evaluate(
+        (selectors) =>
+          Object.fromEntries(
+            selectors.map((selector) => [
+              selector,
+              [...document.querySelectorAll(selector)].map((el) => {
+                const b = el.getBoundingClientRect(),
+                  s = getComputedStyle(el);
+                return {
+                  x: b.x,
+                  y: b.y,
+                  width: b.width,
+                  height: b.height,
+                  display: s.display,
+                  fontSize: s.fontSize,
+                  lineHeight: s.lineHeight,
+                  color: s.color,
+                  background: s.backgroundColor,
+                  gap: s.gap,
+                  padding: s.padding,
+                  border: s.borderTop,
+                };
+              }),
+            ]),
+          ),
+        Object.keys(sample.regions),
+      );
+      assert.equal(
+        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+        true,
+      );
+      const key = JSON.stringify([sample.width, sample.height, sample.path]);
+      if (repeated.has(key))
+        assert.equal(
+          JSON.stringify(regions),
+          repeated.get(key),
+          'Repeated capture differs; reference is not stable',
+        );
+      repeated.set(key, JSON.stringify(regions));
+      cases.push({ width: sample.width, height: sample.height, path: sample.path, regions });
+      await context.close();
+    }
+    const bytes =
+      JSON.stringify(
+        {
+          engine: 'firefox',
+          browserVersion: browser.version(),
+          sourceCommit: release.git.commit,
+          cases,
+        },
+        null,
+        2,
+      ) + '\n';
+    fs.writeFileSync(path.join(values.output, name + '.json'), bytes, { flag: 'wx' });
+    records.push({ file: name + '.json', cases: cases.length, sha256: sha256(bytes) });
+  }
+  fs.writeFileSync(
+    path.join(values.output, 'reference.json'),
+    JSON.stringify(
+      {
+        capturedAt: new Date().toISOString(),
+        engine: 'firefox',
+        browserVersion: browser.version(),
+        sourceCommit: release.git.commit,
+        candidateReady: fs.readFileSync(path.join(candidate, 'READY'), 'utf8').trim(),
+        sourceArtifactDigest: sha256(JSON.stringify(release.build.files)),
+        purpose:
+          'Engine-specific layout metrics from sealed unchanged UI; not a new approved pixel baseline',
+        status: 'validated-repeatable',
+        records,
+      },
+      null,
+      2,
+    ) + '\n',
+    { flag: 'wx' },
+  );
+  console.log({ output: values.output, browserVersion: browser.version(), records });
+} finally {
+  await browser.close();
+  await server.close();
+}
