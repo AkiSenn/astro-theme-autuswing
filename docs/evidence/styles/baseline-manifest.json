@@ -39,7 +39,8 @@
     "report": "baseline-supplement.json"
   },
   "note": "Initial 5s WebKit screenshot timeouts were resolved with a 20s assertion timeout before any CSS change. Capture runs now execute serially to avoid output-directory collisions. Fixture-only initial run: 5 passed, 1 timeout; all fixtures passed in supplement.",
-  "uniqueCases": 102,
+  "stabilization": "Original CSS repeated search: 2 pass / 1 inert-avatar raster difference. Search-only avatar mask, pointer reset, single appearance initializer were established with original CSS. Normal shell/avatar screenshots remain unmasked.",
+  "uniqueCases": 106,
   "images": [
     {
       "file": "tests/styles/snapshots/edge-windows/about-1920.png",
@@ -323,27 +324,35 @@
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-1920-dark.png",
-      "sha256": "3f4a083aaa0fb019ca093f387566d5b125c510a65fe0a83bfa8fb0dfa5d3d7dc"
+      "sha256": "ad5a1166ffee2bae66335db652cf2e38ff7d7e70acaf5aa7c634f4a98e63f2fc"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-1920-light.png",
-      "sha256": "1611f95d73248fdf611dac1e2b21beb1517cd7850f5a8d50e42258e20dd99983"
+      "sha256": "4ef8f8be75ac8efcdf718d702f3c54e2f4983f3a26fb1baf7d61e94a56e6ce4a"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-390-dark.png",
-      "sha256": "0c4f3b172d3bcbcde89811aff99a7e69ff07bfe7aedce7c3d1eb55878477322e"
+      "sha256": "935c90286bda7be7aee7c850ebbc3f94c52418cd91f85edbae45abb6839477ef"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-390-light.png",
-      "sha256": "03b0622e2c4d7c1c9257750636242ef8980e10addd47ea5f1695cb0e8272f18a"
+      "sha256": "32fa79b85f0f6e85611c31c8259d75a6412e3acefc4f7f965a5d3e0ddc2aa4cf"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-820-dark.png",
-      "sha256": "3ed0d74354bc37a4034b9ed66de871e1dccab0925cdb7a17728ecb621bc9b8ba"
+      "sha256": "afd68720650e027fce143b3c13f2ff0617804398eee8cdcd4cdc8d938dd54629"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/focus-820-light.png",
-      "sha256": "ecb1a27389acb6d9354bafb4711290535fab462f34aed95af973bb5428bea1f4"
+      "sha256": "b77b284201adc6ecb08ef233c6e898d3192c42c7d47d3653c3ceff5e41072eb9"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/full-content-cards-1920.png",
+      "sha256": "7c3ad77e0b13becd78a3da9e685a1ecdf632a3119ec43bdaa6cd373f75cf09bf"
+    },
+    {
+      "file": "tests/styles/snapshots/edge-windows/full-content-cards-820.png",
+      "sha256": "2d70a822a7873c110e85f2560c3a8a57af0d36109e3c814045076b6a70398def"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/home-1024x768-dark.png",
@@ -539,27 +548,27 @@
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-1920-dark.png",
-      "sha256": "c9ab1801ffea85e4fcecb5b593064f6dc9c4fcdfa4d1dbba9e80199288dbe336"
+      "sha256": "a88befb0c187efbebc3329686d6d0372407d1ebbae9f7b7c2aea63d90e1e50cf"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-1920-light.png",
-      "sha256": "1628d68da72d806009e6d0031aa83df7e9cf1ae8888317c2c2621f3d1b363a05"
+      "sha256": "d977f148689f46957e2db20f2d00efec284d34e01cc741ff3066289edfac2707"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-390-dark.png",
-      "sha256": "5824ca74373768bb166913c992b65049010191b29ebfcde868adb2d82713d732"
+      "sha256": "f66f7c1b159cb4902f056ad95310515f87348c365be2e89fbd53fce6d91c8096"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-390-light.png",
-      "sha256": "7a9a4b55e2ef81a51d14b91e93e7ad05678ad83bc94a103adc4e03a7a5f8c888"
+      "sha256": "fd679e5f0ca94817ea852032ffb421d864d73c77f4a7942a42dfb34679d261c4"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-820-dark.png",
-      "sha256": "dc9c4a8e7a6bc366447815e98ff11e22ed07b7beafa4584ffadc9d9175e10efb"
+      "sha256": "62e93e70fe5671e761344e12bc2f512c4f0c9d924df7986248338c027dcc1f34"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/search-820-light.png",
-      "sha256": "0e8294706d4d0d9d957245a6b1fed4387a5cdcfac94a27d3b1ba3301cddbe5a8"
+      "sha256": "e374a1f189af5baa9568a7f7a91996c42e7f5f042de0febc42b8499757151fcf"
     },
     {
       "file": "tests/styles/snapshots/edge-windows/tags-1920.png",
@@ -863,11 +872,11 @@
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/focus-1920-dark.png",
-      "sha256": "5c2deedbd9d11117ce363087a858037675784714ebd949c70312723e7f2258f2"
+      "sha256": "a66b4868d924ccebf238ef907ec9160108238b03cb3ce1f4b2c45080094addc1"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/focus-1920-light.png",
-      "sha256": "90f121e2c1a1b9834d9d37c9865e63044c3ce2de0b10cd58867627201e9927fd"
+      "sha256": "5ff7842527bb489fe9ee7502f15721f3fbe59eb8bd9bf645caca669723b6a734"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/focus-390-dark.png",
@@ -879,11 +888,19 @@
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/focus-820-dark.png",
-      "sha256": "fe09ab0cdbf904d8e19250441245478ca758dd34f1fcf022e8b0d15bac1a1279"
+      "sha256": "ddde50e4738be4135db46a5b56ceee62abdc6ba9543af2dd354c0f2bf4a794e7"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/focus-820-light.png",
-      "sha256": "c6e4b6a5c62fa990d32e6b3403670d49a53b62edd391315dade84f1fad233e69"
+      "sha256": "e6a1841e62a870e7cc1e206db9743d4fb496c64edc01c1cbaa26947f1057a1e3"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/full-content-cards-1920.png",
+      "sha256": "2d88a8c3e70f9c868e8eb0c0c65741d547c55b142292740805db99f81f18eb2c"
+    },
+    {
+      "file": "tests/styles/snapshots/webkit-windows/full-content-cards-820.png",
+      "sha256": "f2f36a87209ed1bc1424c040aa908c8d9af8bc56ca85097c9dc3ec101d7d1a5e"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/home-1024x768-dark.png",
@@ -1079,27 +1096,27 @@
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-1920-dark.png",
-      "sha256": "dd8213e96d3d18edfaa824bcd11aaa7ec1f1f0f4b3146af81ae18917b6699268"
+      "sha256": "3292e8499d9f4839be8473d4bedb9e07833127f5e47853b71a5bd686cd07466c"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-1920-light.png",
-      "sha256": "861d42b97b3feea55863483ceb4b8cb2cc3ce499587f49f3c31f1f28a94eabc5"
+      "sha256": "7e206637a90ebf9d17e4a2aa7b63cace21aa073c5643480bb10673acc3329c48"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-390-dark.png",
-      "sha256": "4a4b819ee2093a274f386ba5e389a8db6d7d0f7efaafde80c325fce33a273342"
+      "sha256": "e35d7ab37d67794b6b114421fbbdca818d3364b0604d98bc4e75b53a907e4ddb"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-390-light.png",
-      "sha256": "e2cc8e0285dc7b11c166bb25dd736e401730ea13d10bf182a3b807d21d979158"
+      "sha256": "42ad875a650d365176b22e8d0e87eb42ea6f4999a4ca004a6f01b1daa182d975"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-820-dark.png",
-      "sha256": "7287a3d891a40a294b44ba4d329e307d0434d0e4cb36b7f040230d8e1983f358"
+      "sha256": "12152a2c60aa722fe79f14b62598e9e2728f43d0e6caf86aaa6742b4e37fbe59"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/search-820-light.png",
-      "sha256": "c4b3ab157594bf40229c7973ddb733d5fbc3fe56d96b30532940d2ee0f4fcace"
+      "sha256": "985ab752519092f3abc1b3efcb2b6f1aa64e067ecc1ce1f205f89b6ae66ae81b"
     },
     {
       "file": "tests/styles/snapshots/webkit-windows/tags-1920.png",

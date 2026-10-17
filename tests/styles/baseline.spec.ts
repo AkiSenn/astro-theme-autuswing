@@ -11,14 +11,17 @@ type Mode = 'light' | 'dark';
 test.beforeEach(async ({ page }) => {
   // Only Date is frozen: dialog, scroll and animation clocks remain usable.
   await page.clock.setFixedTime(new Date('2026-10-17T04:00:00Z'));
+  // One initializer per page: Playwright does not promise ordering between
+  // multiple addInitScript calls. The query is only a local test input.
+  await page.addInitScript(() => {
+    const mode = new URLSearchParams(location.search).get('__visual_mode');
+    if (mode === 'light' || mode === 'dark') localStorage.setItem('autuswing-appearance', mode);
+  });
 });
 
 async function visit(page: Page, path: string, width: number, height: number, mode: Mode) {
   await page.setViewportSize({ width, height });
-  await page.addInitScript((appearance) => {
-    localStorage.setItem('autuswing-appearance', appearance);
-  }, mode);
-  await page.goto(path);
+  await page.goto(`${path}?__visual_mode=${mode}`);
   await expect(page.locator('html')).toHaveAttribute('data-theme', mode);
   await page.evaluate(async () => {
     // Include lazy images in full-page baselines without changing source data.
@@ -30,8 +33,17 @@ async function visit(page: Page, path: string, width: number, height: number, mo
   expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)).toBe(false);
 }
 
-async function capture(page: Page, name: string, fullPage = false) {
-  await expect(page).toHaveScreenshot(`${name}.png`, { fullPage });
+async function capture(page: Page, name: string, fullPage = false, inertAvatar = false) {
+  // A stationary pointer over a dismissed native dialog can leave WebKit's
+  // old hover state until the next mouse event. Never baseline that accident.
+  await page.mouse.move(0, 0);
+  await expect(page).toHaveScreenshot(`${name}.png`, {
+    fullPage,
+    // Chromium can resample the tiny inert avatar differently under a native
+    // modal. Reproduced with untouched CSS; unmasked shell shots cover it.
+    mask: inertAvatar ? [page.locator('.avatar,.mobile-brand img,.rail-brand img')] : [],
+    maskColor: '#808080',
+  });
 }
 
 for (const [width, height] of sizes) {
@@ -97,7 +109,7 @@ for (const [width, height] of [[390, 844], [820, 1180], [1920, 1080]]) {
       await page.locator('.search-open:visible').click();
       await page.locator('#search-input').fill('欧拉');
       await expect(page.locator('.search-results a')).toHaveCount(1);
-      await capture(page, `search-${width}-${mode}`);
+      await capture(page, `search-${width}-${mode}`, false, true);
       await page.keyboard.press('Escape');
       await page.locator('.mode-toggle:visible').focus();
       await capture(page, `focus-${width}-${mode}`);
@@ -187,5 +199,18 @@ for (const width of [390, 1920]) {
     await page.evaluate(() => document.fonts.ready);
     await capture(page, `no-js-${width}`);
     await context.close();
+  });
+}
+
+for (const width of [820, 1920]) {
+  test(`full content cards ${width}`, async ({ page }) => {
+    await visit(page, '/', width, 1080, 'dark');
+    await page.locator('.card-body > p').first().evaluate((node) => {
+      const prose = document.createElement('div');
+      prose.className = 'prose';
+      prose.innerHTML = '<h2>全文卡片样本</h2><p>第一段中文与 English：保留正文在卡片中的段落间距。</p><p>第二段继续阅读。<a href="#sample">文字链接</a>和 <code>inline_code</code>。</p><blockquote><p>引用段落不应采用摘要截断。</p></blockquote>';
+      node.replaceWith(prose);
+    });
+    await capture(page, `full-content-cards-${width}`, true);
   });
 }

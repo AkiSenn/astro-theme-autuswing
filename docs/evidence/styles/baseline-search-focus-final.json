@@ -1,0 +1,449 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.styles.config.ts",
+      "--grep",
+      "search image and focus",
+      "--update-snapshots=all"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.styles.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/styles",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge-windows",
+        "name": "edge-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-windows",
+        "name": "webkit-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge-windows"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-windows"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/styles/baseline-search-focus-final.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "all",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "baseline.spec.ts",
+      "file": "baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "search image and focus 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2587,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-390-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-390-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-390-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-390-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:27:30.776Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-26610c2546ef15bbd400",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2796,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-820-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-820-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-820-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-820-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:27:33.706Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-c2a7461419311340fbff",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3167,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-1920-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-1920-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-1920-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\focus-1920-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:27:36.515Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-094d0a3a9397da14e0a0",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25221,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-390-light.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:27:40.464Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-e0b33f3f0146cce2e2dd",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22492,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-820-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:28:05.812Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d71c7894066bf696e06c",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        },
+        {
+          "title": "search image and focus 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23872,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-light.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-dark.png is re-generated, writing actual.\n"
+                    },
+                    {
+                      "text": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\focus-1920-dark.png is re-generated, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:28:28.317Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-8994b020c6f5a87eb2ed",
+          "file": "baseline.spec.ts",
+          "line": 106,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T08:27:29.723Z",
+    "duration": 82896.815,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

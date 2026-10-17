@@ -1,0 +1,369 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.styles.config.ts",
+      "--grep",
+      "full content cards",
+      "--update-snapshots=missing"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.styles.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/styles",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge-windows",
+        "name": "edge-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/test-results/styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-windows",
+        "name": "webkit-windows",
+        "testDir": "E:/autuswing-astro/tests/styles",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "chromium",
+          "channel": "msedge",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge-windows"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\test-results\\styles",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-windows",
+        "testDir": "E:\\autuswing-astro\\tests\\styles",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\styles",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4322",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block",
+          "locale": "zh-CN",
+          "timezoneId": "Asia/Shanghai",
+          "deviceScaleFactor": 1,
+          "reducedMotion": "reduce",
+          "colorScheme": "dark"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-windows"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/styles/baseline-full-cards.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "baseline.spec.ts",
+      "file": "baseline.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "full content cards 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1075,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\full-content-cards-820.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:29:45.309Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\full-content-cards-820.png"
+                    },
+                    {
+                      "name": "full-content-cards-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-820-edge-windows\\full-content-cards-820-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-6b6515e4471236e5e771",
+          "file": "baseline.spec.ts",
+          "line": 206,
+          "column": 3
+        },
+        {
+          "title": "full content cards 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge-windows",
+              "projectName": "edge-windows",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 814,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\full-content-cards-1920.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:29:46.734Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\edge-windows\\full-content-cards-1920.png"
+                    },
+                    {
+                      "name": "full-content-cards-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-1920-edge-windows\\full-content-cards-1920-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-1242db6592293d01429e",
+          "file": "baseline.spec.ts",
+          "line": 206,
+          "column": 3
+        },
+        {
+          "title": "full content cards 820",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8499,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-820.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:29:48.338Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-820-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-820.png"
+                    },
+                    {
+                      "name": "full-content-cards-820-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-820-webkit-windows\\full-content-cards-820-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-cea2855a739969618ee0",
+          "file": "baseline.spec.ts",
+          "line": 206,
+          "column": 3
+        },
+        {
+          "title": "full content cards 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-windows",
+              "projectName": "webkit-windows",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4453,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "A snapshot doesn't exist at E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-1920.png, writing actual.\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T08:29:56.961Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "full-content-cards-1920-expected.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\tests\\styles\\snapshots\\webkit-windows\\full-content-cards-1920.png"
+                    },
+                    {
+                      "name": "full-content-cards-1920-actual.png",
+                      "contentType": "image/png",
+                      "path": "E:\\autuswing-astro\\test-results\\styles\\baseline-full-content-cards-1920-webkit-windows\\full-content-cards-1920-actual.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2923076b323a8336a93-d48807e4e18acdb772d5",
+          "file": "baseline.spec.ts",
+          "line": 206,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T08:29:44.178Z",
+    "duration": 17633.892,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
