@@ -140,15 +140,22 @@ export async function verifyOutput({
     'Unexpected/missing HTML (possibly stale or draft content)',
   );
   const headers = fs.existsSync(path.join(root, '_headers')) ? read('_headers') : '';
-  const headerBlocks: { pattern: string; robots: string }[] = [];
+  const headerBlocks: { pattern: string; robots: string; cache: string }[] = [];
   for (const line of headers.split(/\r?\n/)) {
     if (!line.trim() || line.trim().startsWith('#')) continue;
-    if (!/^\s/.test(line)) headerBlocks.push({ pattern: line.trim(), robots: '' });
+    if (!/^\s/.test(line)) headerBlocks.push({ pattern: line.trim(), robots: '', cache: '' });
     else if (/^\s*x-robots-tag:/i.test(line)) {
       assert.ok(headerBlocks.length, 'Header without path pattern');
       headerBlocks.at(-1)!.robots += ' ' + line;
+    } else if (/^\s*cache-control:/i.test(line)) {
+      assert.ok(headerBlocks.length, 'Header without path pattern');
+      headerBlocks.at(-1)!.cache += line;
     }
   }
+  assert.ok(
+    !headerBlocks.some((block) => block.pattern === '/*' && block.cache),
+    'Global and asset cache rules must not overlap',
+  );
   const headerRobots = (uri: string) =>
     headerBlocks
       .filter((block) =>
@@ -196,7 +203,15 @@ export async function verifyOutput({
       assert.equal($('meta[property="article:published_time"]').attr('content'), entry.date);
       assert.equal($('meta[property="article:modified_time"]').attr('content'), entry.updated);
       assert.equal($('link[data-math-styles]').length, entry.math ? 1 : 0);
+      if (!entry.math) assert.equal('math' in JSON.parse($('#autuswing-config').text()), false);
     }
+  }
+  // Include 404/offline/static HTML references too, preserving the pre-migration
+  // integrity checks without assuming a fixed number of public pages.
+  for (const file of build.files.filter((file: any) => file.file.endsWith('.html'))) {
+    const $ = load(read(file.file));
+    assert.equal($('h1').length, 1, file.file);
+    const absolute = new URL('/' + file.file.replace(/index\.html$/, ''), build.siteUrl).href;
     $('[src],[href]').each((_, el) => {
       const value = $(el).attr('src') || $(el).attr('href');
       if (!value || /^(https?:|data:|mailto:|tel:|#|\/\/)/i.test(value)) return;
@@ -209,7 +224,7 @@ export async function verifyOutput({
       assert.ok(
         (fs.existsSync(target) && fs.statSync(target).isFile()) ||
           fs.existsSync(path.join(target, 'index.html')),
-        `Missing local reference ${value} in ${route.path}`,
+        `Missing local reference ${value} in ${file.file}`,
       );
       localReferences++;
     });
@@ -252,6 +267,11 @@ export async function verifyOutput({
     ['atom.xml', 'entry > id'],
   ]) {
     const $ = load(read(file), { xml: true });
+    assert.equal(
+      $(file === 'rss.xml' ? 'item' : 'entry').length,
+      feed.length,
+      file + ' entry count',
+    );
     sameUrls(
       $(selector)
         .toArray()
@@ -288,6 +308,18 @@ export async function verifyOutput({
           return sitemap(url.pathname.slice(1), seen);
         });
     assert.equal($('urlset').length, 1, file);
+    for (const node of $('url').toArray()) {
+      const location = $(node).find('loc').text();
+      const entry = entries.find(
+        (entry: any) =>
+          canonicalKey(new URL(entry.path, build.siteUrl).href) === canonicalKey(location),
+      );
+      if (entry?.updated)
+        assert.ok(
+          $(node).find('lastmod').text().startsWith(entry.updated.slice(0, 10)),
+          `Incorrect Sitemap lastmod: ${entry.path}`,
+        );
+    }
     return $('url > loc')
       .toArray()
       .map((e) => $(e).text());
@@ -335,6 +367,15 @@ export async function verifyOutput({
         .map((el) => $(el).attr('id')),
     );
     for (const h of p.headings) assert.ok(ids.has(h.id), `Missing historical heading ${h.id}`);
+    if (p.abbrlink === '4e395565') {
+      assert.equal(
+        $('.math-inline,.math-display').length,
+        4,
+        'Historical formula containers changed',
+      );
+      assert.equal($('.katex').length, 4, 'Historical formulas were lost');
+      assert.equal($('.katex math annotation[encoding="application/x-tex"]').length, 4);
+    }
     for (const alias of [`/post/${p.abbrlink}.html`, `/p/${p.abbrlink}/`])
       assert.ok(read('_redirects').includes(`${alias} ${p.path} 301`));
   }

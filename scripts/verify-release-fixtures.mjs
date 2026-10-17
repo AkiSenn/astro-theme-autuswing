@@ -198,6 +198,15 @@ malformed('missing-sitemap-entry-blocked', 'sitemap-0.xml', (text) =>
   text.replace(/<url>.*?<\/url>/, ''),
 );
 malformed('wrong-search-membership-blocked', 'search.json', () => '[]');
+malformed('wrong-sitemap-lastmod-blocked', 'sitemap-0.xml', (text) =>
+  text.replace(/<lastmod>[^<]+<\/lastmod>/, '<lastmod>1999-01-01</lastmod>'),
+);
+malformed('rss-unidentified-extra-item-blocked', 'rss.xml', (text) =>
+  text.replace('</channel>', '<item><title>unidentified</title></item></channel>'),
+);
+malformed('lost-historical-formulas-blocked', 'post/4e395565/index.html', (text) =>
+  text.replaceAll('class="katex"', 'class="not-katex"'),
+);
 malformed('404-noindex-exception-required', '404.html', (text) => text.replace('noindex', 'index'));
 const stale = path.join(root, 'dist/private-draft.html');
 try {
@@ -251,7 +260,11 @@ try {
   fs.writeFileSync(siteFile, originalSite);
 }
 build('development-static-build', 'development', false);
-run('cli-site-override-blocked', ['node_modules/astro/bin/astro.mjs', 'build', '--site', 'https://preview.invalid'], false);
+run(
+  'cli-site-override-blocked',
+  ['node_modules/astro/bin/astro.mjs', 'build', '--site', 'https://preview.invalid'],
+  false,
+);
 build('unknown-mode-build', 'prod', false);
 check('restored-production-output');
 report.checkedAt = new Date().toISOString();
