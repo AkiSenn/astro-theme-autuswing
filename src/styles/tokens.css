@@ -63,7 +63,6 @@
   /* Global layers; sticky children and isolated wallpapers keep local layers */
   --z-tools: 20;
   --z-navigation: 30;
-  --z-progress: 60;
   --z-feedback: 100;
   /* Autuswing Motion 1.0; behavior stays in motion.css */
   --motion-fast: 150ms;

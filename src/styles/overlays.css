@@ -1,13 +1,4 @@
-/* Search, image viewer, floating tools, progress and feedback. Motion stays in motion.css. */
-.reading-progress {
-  position: fixed;
-  height: 2px;
-  left: 0;
-  top: 0;
-  background: var(--green);
-  z-index: var(--z-progress);
-  width: 0;
-}
+/* Search, image viewer, floating tools and feedback. Motion stays in motion.css. */
 .back-top {
   /* Geometry is shared by .floating-tools > .icon-button. */
   z-index: var(--z-tools);
@@ -147,8 +138,7 @@ dialog::backdrop {
   }
 }
 @media print {
-  .back-top,
-  .reading-progress {
+  .back-top {
     display: none !important;
   }
 }

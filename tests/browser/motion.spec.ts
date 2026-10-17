@@ -206,9 +206,8 @@ test('back and forward restore long-page scroll and current navigation without r
   await settled(page);
   await expect.poll(() => page.evaluate(() => Math.abs(scrollY - 1800))).toBeLessThan(3);
   await freshContents(page);
-  expect(
-    await page.locator('.reading-progress').evaluate((n) => getComputedStyle(n).transform),
-  ).not.toContain('matrix(0,');
+  await expect(page.locator('.reading-progress')).toHaveCount(0);
+  await expect(page.locator('.back-top')).toBeVisible();
   await page.goForward();
   await settled(page);
   await expect(page).toHaveURL(/\/about\/$/);

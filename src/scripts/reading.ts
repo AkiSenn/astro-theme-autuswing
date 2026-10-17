@@ -1,18 +1,10 @@
 import { scrollBehavior } from './helpers';
 export function initReading() {
-  const progress = document.querySelector<HTMLElement>('.reading-progress'),
-    article = document.querySelector<HTMLElement>('.article .prose'),
-    back = document.querySelector<HTMLButtonElement>('.back-top'),
+  const back = document.querySelector<HTMLButtonElement>('.back-top'),
     tools = document.querySelector<HTMLElement>('.floating-tools');
   let pending = false;
   function update() {
     pending = false;
-    const top = article ? article.getBoundingClientRect().top + scrollY : 0,
-      length = article
-        ? article.scrollHeight - innerHeight
-        : document.documentElement.scrollHeight - innerHeight;
-    const amount = length <= 0 ? 1 : Math.min(1, Math.max(0, (scrollY - top) / length));
-    if (progress) progress.style.transform = `scaleX(${amount})`;
     if (back) back.hidden = scrollY < 250;
     if (tools) tools.hidden = scrollY < 250 && !tools.querySelector('.goto-toc:not([hidden])');
   }
@@ -28,9 +20,7 @@ export function initReading() {
   );
   addEventListener('resize', update);
   update();
-  back?.addEventListener('click', () =>
-    scrollTo({ top: 0, behavior: scrollBehavior() }),
-  );
+  back?.addEventListener('click', () => scrollTo({ top: 0, behavior: scrollBehavior() }));
   const headings = [
       ...document.querySelectorAll<HTMLElement>('.prose h2[id],.prose h3[id],.prose h4[id]'),
     ],

@@ -110,7 +110,6 @@ const background = theme.backgrounds.length
     <a class="skip-link" href="#main">
       {t('skip')}
     </a>
-    {theme.reading.progress && <div class="reading-progress" aria-hidden="true"></div>}
     {!isArticle && <DesktopSidebar path={path} title={post?.title} headings={headings} />}
     <TabletSidebar path={path} hasContents={headings.length > 0} reading={isArticle} />
     {isArticle && headings.length > 0 && <ReadingSidebar title={post!.title} headings={headings} />}
