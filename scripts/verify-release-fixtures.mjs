@@ -10,90 +10,252 @@ import policy from '../deployment/release-policy.json' with { type: 'json' };
 const original = process.cwd();
 fs.mkdirSync('.local-tools', { recursive: true });
 const root = fs.mkdtempSync(path.resolve('.local-tools/release-fixtures-'));
-for (const directory of ['src','public','content','scripts','migration','templates','deployment','tests'])
+for (const directory of [
+  'src',
+  'public',
+  'content',
+  'scripts',
+  'migration',
+  'templates',
+  'deployment',
+  'tests',
+])
   fs.cpSync(path.join(original, directory), path.join(root, directory), { recursive: true });
-for (const file of ['package.json','package-lock.json','astro.config.mjs','tsconfig.json','playwright.config.ts','playwright.styles.config.ts','playwright.cross.config.ts','playwright.nginx.config.ts'])
+for (const file of [
+  'package.json',
+  'package-lock.json',
+  'astro.config.mjs',
+  'tsconfig.json',
+  'playwright.config.ts',
+  'playwright.styles.config.ts',
+  'playwright.cross.config.ts',
+  'playwright.nginx.config.ts',
+])
   fs.copyFileSync(path.join(original, file), path.join(root, file));
-fs.symlinkSync(path.join(original, 'node_modules'), path.join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
+fs.symlinkSync(
+  path.join(original, 'node_modules'),
+  path.join(root, 'node_modules'),
+  process.platform === 'win32' ? 'junction' : 'dir',
+);
 const report = { checkedAt: '', workspace: root, cases: [] };
-const env = { ...process.env, SITE_ENV: 'production', ASTRO_PREVIEW_DRAFTS: '1', ASTRO_TELEMETRY_DISABLED: '1', OUTPUT_EVIDENCE_FILE: path.join(root, 'output.json') };
+const env = {
+  ...process.env,
+  SITE_ENV: 'production',
+  ASTRO_PREVIEW_DRAFTS: '1',
+  ASTRO_TELEMETRY_DISABLED: '1',
+  OUTPUT_EVIDENCE_FILE: path.join(root, 'output.json'),
+};
 function run(name, args, success = true, overrides = {}) {
-  let output, passed = true;
-  try { output = execFileSync(process.execPath, args, { cwd: root, env: { ...env, ...overrides }, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 }); }
-  catch (error) { output = (error.stdout || '') + (error.stderr || ''); passed = false; }
+  let output,
+    passed = true;
+  try {
+    output = execFileSync(process.execPath, args, {
+      cwd: root,
+      env: { ...env, ...overrides },
+      encoding: 'utf8',
+      maxBuffer: 32 * 1024 * 1024,
+    });
+  } catch (error) {
+    output = (error.stdout || '') + (error.stderr || '');
+    passed = false;
+  }
   fs.writeFileSync(path.join(root, name + '.log'), output);
   assert.equal(passed, success, `${name}: ${output.slice(-4000)}`);
   report.cases.push({ name, expected: success ? 'success' : 'blocked', passed: true });
   console.log(name, success ? 'passed' : 'correctly blocked');
   return output;
 }
-const build = (name, mode = 'production', success = true) => run(name, ['node_modules/astro/bin/astro.mjs','build'], success, { SITE_ENV: mode });
-const check = (name, success = true) => run(name, ['node_modules/tsx/dist/cli.mjs','scripts/verify-output.ts','--production'], success);
+const build = (name, mode = 'production', success = true) =>
+  run(name, ['node_modules/astro/bin/astro.mjs', 'build'], success, { SITE_ENV: mode });
+const check = (name, success = true) =>
+  run(name, ['node_modules/tsx/dist/cli.mjs', 'scripts/verify-output.ts', '--production'], success);
 const file = path.join(root, 'content/posts/release-fixture.md');
-const raw = '---\ntitle: Release fourth article\nid: release4\npermalink: /release4/\ndate: 2026-10-18T08:00:00+08:00\ndraft: false\n---\n\nPublication regression fixture.\n';
+const raw =
+  '---\ntitle: Release fourth article\nid: release4\npermalink: /release4/\ndate: 2026-10-18T08:00:00+08:00\ndraft: false\n---\n\nPublication regression fixture.\n';
 fs.writeFileSync(file, raw, { flag: 'wx' });
 const draft = path.join(root, 'content/posts/release-private.md');
-fs.writeFileSync(draft, raw.replaceAll('release4','releaseprivate').replace('draft: false','draft: true').replace('Release fourth article','PRIVATE_RELEASE_MARKER'), { flag: 'wx' });
+fs.writeFileSync(
+  draft,
+  raw
+    .replaceAll('release4', 'releaseprivate')
+    .replace('draft: false', 'draft: true')
+    .replace('Release fourth article', 'PRIVATE_RELEASE_MARKER'),
+  { flag: 'wx' },
+);
 
-const released = run('fourth-article-full-release', ['scripts/release.mjs', '--output', '.local-tools/releases/fourth']);
+const released = run('fourth-article-full-release', [
+  'scripts/release.mjs',
+  '--output',
+  '.local-tools/releases/fourth',
+]);
 assert.match(released, /VERIFIED_RELEASE=/);
 const candidate = path.join(root, '.local-tools/releases/fourth');
 const verified = verifyRelease(candidate, policy);
-assert.equal(verified.build.contract.entries.filter(e => e.collection === 'posts' && e.published).length, 4);
+assert.equal(
+  verified.build.contract.entries.filter((e) => e.collection === 'posts' && e.published).length,
+  4,
+);
 assert.ok(!fs.existsSync(path.join(candidate, 'site/releaseprivate')));
+for (const file of verified.build.files.filter((file) => /\.(html|json|xml)$/.test(file.file)))
+  assert.ok(
+    !fs
+      .readFileSync(path.join(candidate, 'site', file.file), 'utf8')
+      .includes('PRIVATE_RELEASE_MARKER'),
+    `Draft text leaked in ${file.file}`,
+  );
+run(
+  'existing-candidate-not-overwritten',
+  ['scripts/release.mjs', '--output', '.local-tools/releases/fourth'],
+  false,
+);
+run(
+  'nginx-production-without-seal-blocked',
+  ['scripts/prepare-nginx.mjs', '--mode', 'production', '--output', '.local-tools/nginx-unsealed'],
+  false,
+);
+run('nginx-verified-production-candidate', [
+  'scripts/prepare-nginx.mjs',
+  '--mode',
+  'production',
+  '--release',
+  candidate,
+  '--output',
+  '.local-tools/nginx-sealed',
+]);
 // Corruption must block the same package that would be uploaded.
 const htmlFile = path.join(candidate, 'site/release4/index.html');
 const html = fs.readFileSync(htmlFile);
-fs.unlinkSync(htmlFile); assert.throws(() => verifyRelease(candidate, policy));
+fs.unlinkSync(htmlFile);
+assert.throws(() => verifyRelease(candidate, policy));
 fs.writeFileSync(htmlFile, html);
-fs.appendFileSync(htmlFile, 'wrong release'); assert.throws(() => verifyRelease(candidate, policy));
+fs.appendFileSync(htmlFile, 'wrong release');
+assert.throws(() => verifyRelease(candidate, policy));
 fs.writeFileSync(htmlFile, html);
-report.cases.push({ name: 'sealed-artifact-missing-and-mixed-files', expected: 'blocked', passed: true });
+report.cases.push({
+  name: 'sealed-artifact-missing-and-mixed-files',
+  expected: 'blocked',
+  passed: true,
+});
 
 fs.unlinkSync(file);
-build('delete-fourth-rebuild'); check('delete-fourth-verify');
+build('delete-fourth-rebuild');
+check('delete-fourth-verify');
 assert.ok(!fs.existsSync(path.join(root, 'dist/release4')));
 verifyRelease(candidate, policy);
-report.cases.push({ name: 'old-release-verifies-after-source-deletion-for-rollback', expected: 'success', passed: true });
+report.cases.push({
+  name: 'old-release-verifies-after-source-deletion-for-rollback',
+  expected: 'success',
+  passed: true,
+});
 
-fs.writeFileSync(file, raw.replace('id: release4','id: 55b0541c'));
-run('duplicate-id-release', ['scripts/release.mjs','--output','.local-tools/releases/duplicate'], false);
+fs.writeFileSync(file, raw.replace('id: release4', 'id: 55b0541c'));
+run(
+  'duplicate-id-release',
+  ['scripts/release.mjs', '--output', '.local-tools/releases/duplicate'],
+  false,
+);
 assert.ok(!fs.existsSync(path.join(root, '.local-tools/releases/duplicate/READY')));
-fs.writeFileSync(file, raw.replace('/release4/','/../invalid/'));
+fs.writeFileSync(file, raw.replace('/release4/', '/../invalid/'));
 build('invalid-route-build', 'production', false);
 fs.unlinkSync(file);
-build('preview-build','preview'); check('preview-cannot-pass-production',false);
-build('production-build'); check('production-verify');
+build('preview-build', 'preview');
+check('preview-cannot-pass-production', false);
+build('production-build');
+check('production-verify');
 
 // Reach the SEO checks even when the malformed output was generated by a
 // build (not merely changed after sealing): recapture hashes in this copy.
 const recordFile = path.join(root, '.astro/autuswing-build.json');
 const cleanRecord = fs.readFileSync(recordFile);
 function malformed(name, relative, change) {
-  const target = path.join(root, 'dist', relative), bytes = fs.readFileSync(target);
+  const target = path.join(root, 'dist', relative),
+    bytes = fs.readFileSync(target);
   try {
     fs.writeFileSync(target, change(bytes.toString()));
-    const record = JSON.parse(cleanRecord); record.files = fileManifest(path.join(root, 'dist'));
-    fs.writeFileSync(recordFile, JSON.stringify(record)); check(name, false);
-  } finally { fs.writeFileSync(target, bytes); fs.writeFileSync(recordFile, cleanRecord); }
+    const record = JSON.parse(cleanRecord);
+    record.files = fileManifest(path.join(root, 'dist'));
+    fs.writeFileSync(recordFile, JSON.stringify(record));
+    check(name, false);
+  } finally {
+    fs.writeFileSync(target, bytes);
+    fs.writeFileSync(recordFile, cleanRecord);
+  }
 }
-malformed('global-meta-noindex-blocked', 'index.html', text => text.replace('</head>', '<meta name="robots" content="noindex"></head>'));
-malformed('wrong-canonical-blocked', 'index.html', text => text.replace('rel="canonical" href="https://akisenn.com/"','rel="canonical" href="https://preview.invalid/"'));
+malformed('global-meta-noindex-blocked', 'index.html', (text) =>
+  text.replace('</head>', '<meta name="robots" content="noindex"></head>'),
+);
+malformed('wrong-canonical-blocked', 'index.html', (text) =>
+  text.replace(
+    'rel="canonical" href="https://akisenn.com/"',
+    'rel="canonical" href="https://preview.invalid/"',
+  ),
+);
 malformed('robots-disallow-blocked', 'robots.txt', () => 'User-agent: *\nDisallow: /\n');
-malformed('x-robots-blocked', '_headers', text => text.replace('/*\n', '/*\n  X-Robots-Tag: noindex\n'));
-malformed('missing-sitemap-entry-blocked', 'sitemap-0.xml', text => text.replace(/<url>.*?<\/url>/, ''));
+malformed('x-robots-blocked', '_headers', (text) =>
+  text.replace('/*\n', '/*\n  X-Robots-Tag: noindex\n'),
+);
+malformed('missing-sitemap-entry-blocked', 'sitemap-0.xml', (text) =>
+  text.replace(/<url>.*?<\/url>/, ''),
+);
 malformed('wrong-search-membership-blocked', 'search.json', () => '[]');
-malformed('unapproved-draft-file-blocked', '404.html', text => text.replace('noindex','index'));
-const siteFile = path.join(root, 'src/config/site.json'), originalSite = fs.readFileSync(siteFile);
+malformed('404-noindex-exception-required', '404.html', (text) => text.replace('noindex', 'index'));
+const stale = path.join(root, 'dist/private-draft.html');
 try {
-  const config = JSON.parse(originalSite); config.url = 'https://preview.invalid'; fs.writeFileSync(siteFile, JSON.stringify(config));
-  build('wrong-production-origin-build','production',false);
-} finally { fs.writeFileSync(siteFile, originalSite); }
-build('development-static-build','development',false);
-build('unknown-mode-build','prod',false);
+  fs.writeFileSync(stale, '<h1>Draft</h1>');
+  const record = JSON.parse(cleanRecord);
+  record.files = fileManifest(path.join(root, 'dist'));
+  fs.writeFileSync(recordFile, JSON.stringify(record));
+  check('stale-draft-html-blocked', false);
+} finally {
+  fs.unlinkSync(stale);
+  fs.writeFileSync(recordFile, cleanRecord);
+}
+for (const [name, change] of [
+  [
+    'missing-collection-entry-blocked',
+    (c) => {
+      c.entries = c.entries.filter((e) => e.path !== '/post/55b0541c/');
+    },
+  ],
+  [
+    'missing-content-route-blocked',
+    (c) => {
+      c.routes = c.routes.filter((e) => e.path !== '/post/55b0541c/');
+    },
+  ],
+]) {
+  const record = JSON.parse(cleanRecord);
+  change(record.contract);
+  fs.writeFileSync(recordFile, JSON.stringify(record));
+  try {
+    check(name, false);
+  } finally {
+    fs.writeFileSync(recordFile, cleanRecord);
+  }
+}
+const originalDraft = fs.readFileSync(draft);
+try {
+  fs.appendFileSync(draft, '\nChanged after build');
+  check('changed-inputs-blocked', false);
+} finally {
+  fs.writeFileSync(draft, originalDraft);
+}
+const siteFile = path.join(root, 'src/config/site.json'),
+  originalSite = fs.readFileSync(siteFile);
+try {
+  const config = JSON.parse(originalSite);
+  config.url = 'https://preview.invalid';
+  fs.writeFileSync(siteFile, JSON.stringify(config));
+  build('wrong-production-origin-build', 'production', false);
+} finally {
+  fs.writeFileSync(siteFile, originalSite);
+}
+build('development-static-build', 'development', false);
+build('unknown-mode-build', 'prod', false);
 check('restored-production-output');
 report.checkedAt = new Date().toISOString();
-const evidence = process.env.RELEASE_FIXTURE_EVIDENCE || 'docs/evidence/release-fixes/fixtures.json';
+const evidence =
+  process.env.RELEASE_FIXTURE_EVIDENCE || 'docs/evidence/release-fixes/fixtures.json';
 fs.mkdirSync(path.dirname(evidence), { recursive: true });
 fs.writeFileSync(evidence, JSON.stringify(report, null, 2) + '\n');
 console.log({ workspace: root, passed: report.cases.length, evidence });

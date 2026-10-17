@@ -34,11 +34,12 @@ test('Nginx PWA offline fallback is styled, updates owned caches and preserves u
   const context = await browser.newContext({ serviceWorkers: 'allow' });
   const page = await context.newPage();
   // The standalone fallback has no registration script: create old caches
-  // before v2 activates, then confirm the activation cleanup is scoped.
+  // before the content-versioned worker activates; cleanup must be scoped.
   await page.goto(new URL('/offline.html', baseURL).href);
   await page.evaluate(async () => {
     await caches.open('unrelated-test-cache');
     await caches.open('autuswing-astro-shell-v1');
+    await caches.open('autuswing-search-cache');
   });
   await page.goto(baseURL!);
   await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
@@ -47,12 +48,15 @@ test('Nginx PWA offline fallback is styled, updates owned caches and preserves u
   const cache = await page.evaluate(async () => ({
     names: await caches.keys(),
     keys: await (
-      await caches.open('autuswing-astro-shell-v2')
+      await caches.open(
+        (await caches.keys()).find((k) => /^autuswing-astro-shell-[a-f0-9]{16}$/.test(k))!,
+      )
     )
       .keys()
       .then((keys) => keys.map((key) => new URL(key.url).pathname)),
   }));
   expect(cache.names).toContain('unrelated-test-cache');
+  expect(cache.names).toContain('autuswing-search-cache');
   expect(cache.names).not.toContain('autuswing-astro-shell-v1');
   expect(cache.keys).toEqual(['/offline.html']);
   await context.setOffline(true);

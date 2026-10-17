@@ -1,5 +1,7 @@
 # Autuswing for Astro
 
+生产候选已采用失败即阻断的独立流程：`npm run release:build`（或 `npm run publish:check`）只生成 `.local-tools/releases/<版本>/`，不会部署。上传前用 `npm run verify:release -- <候选目录>` 复核，只公开其中 `site/`；日常 `dist/` 仍是预览。详见[生产构建与宝塔/ESA 回滚手册](deployment/release-runbook.md)。
+
 GitHub：[`AkiSenn/astro-theme-autuswing`](https://github.com/AkiSenn/astro-theme-autuswing)（私有仓库）。这是 Autuswing 的独立 Astro 版本，当前保留 AkiSenn 博客的迁移内容与配置，尚未整理为使用示例内容的通用发行包。
 
 AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，保留预览 noindex 和关闭的真实评论。保留森林绿、日期卡片与个人侧栏：PC首页及普通页面使用272px完整侧栏；PC文章页复用72px迷你导航，并提供260px独立目录。平板仍为72px迷你栏，手机仍为顶部品牌与横向导航。文章外层上限860px、默认正文实际810px，较窄窗口弹性缩小。目录入口按实际布局保持唯一：手机悬浮按钮、迷你栏按钮、已展开面板的收起按钮。PC 底部样式见[功能与社交分区](docs/sidebar-bottom.md)，社交区说明见[纯图标布局](docs/social-links.md)，目录行为见[目录入口统一](docs/contents-controls.md)，布局方案见[首页与文章布局分离](docs/reading-layout.md)，前序宽度调整记录见[宽屏补充](docs/desktop-reading-wide.md)。

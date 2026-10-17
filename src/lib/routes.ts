@@ -122,42 +122,78 @@ export async function routes(paginate: PaginateFunction) {
       '/sw.js',
     ].map((path) => ({ path, source: 'reserved endpoint' })),
   ]);
-  fs.mkdirSync('.astro', { recursive: true });
-  const collections = [...await getCollection('posts'), ...await getCollection('pages')];
-  // Private build contract: never copied into the public site. This records the
-  // actual Collections result, including exclusion decisions, for final checks.
-  const entries = collections.map(entry => {
-    const prepared = [...all, ...standalone].find(p => p.entry.collection === entry.collection && p.entry.id === entry.id);
-    const source = path.relative(process.cwd(), entry.filePath!).replaceAll('\\', '/');
-    return {
-      collection: entry.collection, key: entry.id, source,
-      id: entry.collection === 'posts' ? persistentId(entry.data) : undefined,
-      path: prepared?.path || (entry.collection === 'posts'
-        ? source.startsWith('content/legacy/posts/') ? publicPath(entry.data) : newPostPath(entry.data)
-        : publicPath({ permalink: entry.data.permalink || '/' + entry.id.replace(/\/index$/, '') + '/' })),
-      published: isPublished(entry.data), indexable: isPublished(entry.data) && !entry.data.noindex && !entry.data.password,
-      search: entry.data.search !== false, feed: entry.data.feed !== false,
-      title: entry.data.title, date: prepared?.date, updated: prepared?.updated,
-      math: prepared?.math || false,
-    };
-  });
-  fs.writeFileSync('.astro/autuswing-content.json', JSON.stringify({
-    version: 1, mode: environment, siteUrl: site.url, entries,
-    config: { feed: theme.feed, search: theme.search, seo: theme.seo, comments: theme.comments.enable },
-    routes: routes.map(r => ({ path: r.path, kind: r.kind, indexable: !r.post?.data.noindex && !r.post?.data.password })),
-  }, null, 2) + '\n');
-  fs.writeFileSync(
-    '.astro/autuswing-routes.json',
-    JSON.stringify(
-      routes.map((r) => ({
-        path: r.path,
-        title: r.title,
-        updated: r.post?.updated,
-        indexable: !r.post?.data.noindex && !r.post?.data.password,
-      })),
-      null,
-      2,
-    ) + '\n',
-  );
+  if (!import.meta.env.DEV) {
+    fs.mkdirSync('.astro', { recursive: true });
+    const collections = [...(await getCollection('posts')), ...(await getCollection('pages'))];
+    // Private build contract: never copied into the public site. This records the
+    // actual Collections result, including exclusion decisions, for final checks.
+    const entries = collections.map((entry) => {
+      const prepared = [...all, ...standalone].find(
+        (p) => p.entry.collection === entry.collection && p.entry.id === entry.id,
+      );
+      const source = path.relative(process.cwd(), entry.filePath!).replaceAll('\\', '/');
+      return {
+        collection: entry.collection,
+        key: entry.id,
+        source,
+        id: entry.collection === 'posts' ? persistentId(entry.data) : undefined,
+        path:
+          prepared?.path ||
+          (entry.collection === 'posts'
+            ? source.startsWith('content/legacy/posts/')
+              ? publicPath(entry.data)
+              : newPostPath(entry.data)
+            : publicPath({
+                permalink: entry.data.permalink || '/' + entry.id.replace(/\/index$/, '') + '/',
+              })),
+        published: isPublished(entry.data),
+        indexable: isPublished(entry.data) && !entry.data.noindex && !entry.data.password,
+        search: entry.data.search !== false,
+        feed: entry.data.feed !== false,
+        title: entry.data.title,
+        date: prepared?.date,
+        updated: prepared?.updated,
+        math: prepared?.math || false,
+      };
+    });
+    fs.writeFileSync(
+      '.astro/autuswing-content.json',
+      JSON.stringify(
+        {
+          version: 1,
+          mode: environment,
+          siteUrl: site.url,
+          entries,
+          config: {
+            feed: theme.feed,
+            search: theme.search,
+            seo: theme.seo,
+            comments: theme.comments.enable,
+            pwa: theme.pwa,
+          },
+          routes: routes.map((r) => ({
+            path: r.path,
+            kind: r.kind,
+            indexable: !r.post?.data.noindex && !r.post?.data.password,
+          })),
+        },
+        null,
+        2,
+      ) + '\n',
+    );
+    fs.writeFileSync(
+      '.astro/autuswing-routes.json',
+      JSON.stringify(
+        routes.map((r) => ({
+          path: r.path,
+          title: r.title,
+          updated: r.post?.updated,
+          indexable: !r.post?.data.noindex && !r.post?.data.password,
+        })),
+        null,
+        2,
+      ) + '\n',
+    );
+  }
   return routes;
 }

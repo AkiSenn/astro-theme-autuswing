@@ -9,6 +9,7 @@ import { buildMode, assertProductionUrl } from '../src/lib/build-mode.mjs';
 import { fileManifest, inputManifest, sha256 } from './release-integrity.mjs';
 import site from '../src/config/site.json' with { type: 'json' };
 import policy from '../deployment/release-policy.json' with { type: 'json' };
+import { serviceWorker } from '../src/lib/service-worker.mjs';
 export function staticArtifacts() {
   let inputs, projectRoot;
   return {
@@ -17,8 +18,10 @@ export function staticArtifacts() {
       'astro:config:setup': ({ command, config }) => {
         projectRoot = fileURLToPath(config.root);
         const mode = buildMode(process.env.SITE_ENV, command === 'dev');
-        if (command === 'build' && mode === 'development') throw new Error('Development mode cannot produce static release artifacts');
-        if (command === 'dev' && mode === 'production') throw new Error('Use development/preview for the dev server');
+        if (command === 'build' && mode === 'development')
+          throw new Error('Development mode cannot produce static release artifacts');
+        if (command === 'dev' && mode === 'production')
+          throw new Error('Use development/preview for the dev server');
         if (mode === 'production') assertProductionUrl(site.url, policy.productionUrl);
         if (command === 'build') inputs = inputManifest(projectRoot);
       },
@@ -44,6 +47,11 @@ export function staticArtifacts() {
           }
         }
         const rules = redirects();
+        // Version the actual emitted offline bytes, after Astro has completed.
+        await write(
+          'sw.js',
+          serviceWorker(await fs.readFile(path.join(root, 'offline.html')), theme.pwa.enable),
+        );
         await write(
           '_redirects',
           rules.map((r) => `${encodeURI(r.from)} ${r.to} ${r.status}`).join('\n') + '\n',
@@ -101,14 +109,33 @@ export function staticArtifacts() {
           await compress(root);
         }
         const finalInputs = inputManifest(projectRoot);
-        if (JSON.stringify(finalInputs) !== JSON.stringify(inputs)) throw new Error('Build inputs changed while generating the artifact; rebuild before release');
-        const contract = JSON.parse(await fs.readFile(path.join(projectRoot, '.astro/autuswing-content.json'), 'utf8'));
+        if (JSON.stringify(finalInputs) !== JSON.stringify(inputs))
+          throw new Error(
+            'Build inputs changed while generating the artifact; rebuild before release',
+          );
+        const contract = JSON.parse(
+          await fs.readFile(path.join(projectRoot, '.astro/autuswing-content.json'), 'utf8'),
+        );
         const mode = buildMode(process.env.SITE_ENV);
-        if (contract.mode !== mode) throw new Error('Content manifest belongs to a different build mode');
-        await fs.writeFile(path.join(projectRoot, '.astro/autuswing-build.json'), JSON.stringify({
-          version: 1, mode, siteUrl: site.url, outputRoot: path.resolve(root),
-          policyHash: sha256(JSON.stringify(policy)), inputs, contract, files: fileManifest(root),
-        }, null, 2) + '\n');
+        if (contract.mode !== mode)
+          throw new Error('Content manifest belongs to a different build mode');
+        await fs.writeFile(
+          path.join(projectRoot, '.astro/autuswing-build.json'),
+          JSON.stringify(
+            {
+              version: 1,
+              mode,
+              siteUrl: site.url,
+              outputRoot: path.resolve(root),
+              policyHash: sha256(JSON.stringify(policy)),
+              inputs,
+              contract,
+              files: fileManifest(root),
+            },
+            null,
+            2,
+          ) + '\n',
+        );
       },
     },
   };

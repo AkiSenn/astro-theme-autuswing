@@ -8,7 +8,8 @@ const origin = new URL(process.argv[2] || 'http://127.0.0.1:8788');
 const production = process.argv.includes('--production');
 const reportFile = process.env.HTTP_EVIDENCE_FILE || 'docs/evidence/phase5/nginx-http.json';
 const routes = process.env.HTTP_RELEASE_DIR
-  ? JSON.parse(fs.readFileSync(path.join(process.env.HTTP_RELEASE_DIR, 'release.json'), 'utf8')).build.contract.routes
+  ? JSON.parse(fs.readFileSync(path.join(process.env.HTTP_RELEASE_DIR, 'release.json'), 'utf8'))
+      .build.contract.routes
   : JSON.parse(fs.readFileSync('.astro/autuswing-routes.json', 'utf8'));
 const checks = [];
 async function request(uri, options = {}) {
@@ -33,6 +34,12 @@ async function request(uri, options = {}) {
 for (const route of routes.filter((r) => r.indexable)) {
   const response = await request(route.path);
   assert.equal(response.status, 200, route.path);
+  assert.match(
+    response.headers.get('cache-control') || '',
+    /(?:max-age=0|no-cache|no-store)/,
+    `HTML must revalidate: ${route.path}`,
+  );
+  assert.doesNotMatch(response.headers.get('cache-control') || '', /immutable/, route.path);
   const $ = load(await response.text());
   assert.equal(
     $('link[rel=canonical]').attr('href'),
@@ -98,6 +105,15 @@ for (const [uri, type, immutable] of [
 const sw = await request('/sw.js');
 assert.equal(sw.status, 200);
 assert.equal(sw.headers.get('cache-control'), 'no-cache');
+const manifest = await (await request('/manifest.webmanifest')).json();
+assert.equal((await request('/manifest.webmanifest')).headers.get('cache-control'), 'no-cache');
+for (const icon of manifest.icons) {
+  const response = await request(icon.src);
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /image\/webp/);
+  assert.match(response.headers.get('cache-control'), /max-age=31536000, immutable/);
+  assert.ok(Number(response.headers.get('content-length')) < 64 * 1024);
+}
 const compressed = await request('/post/55b0541c/', { headers: { 'Accept-Encoding': 'gzip' } });
 assert.equal(compressed.headers.get('content-encoding'), 'gzip');
 const robots = await request('/robots.txt');

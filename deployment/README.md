@@ -4,7 +4,7 @@ akisenn.com 的现有部署目标是宝塔中的 Nginx。用户在第五阶段�
 
 ## 交付内容
 
-- `dist/`：Astro SSG网站文件，旧文保持 `/post/编号/`，新稿使用 `/编号/`。
+- `dist/`：日常预览；正式候选由 `npm run release:build` 生成到独立目录，只交付其中 `site/`，并用 `verify:release` 复核。旧文保持 `/post/编号/`，新稿使用 `/编号/`。详见[生产门禁与 ESA 回滚手册](release-runbook.md)。
 - `nginx/site.conf.template`：独立测试站的缓存、gzip、MIME、404与历史301配置。
 - `npm run prepare:nginx`：从同一历史路由清单生成 `site.conf` 和21条精确匹配的 `redirects.conf`，不继承生产宝塔配置。
 
@@ -31,7 +31,7 @@ npm run test:nginx
 1. 确认测试域名和独立目录，备份该测试站的Nginx配置；上传完整dist并保留目录结构。
 2. 使用生成的301、缓存、MIME与`try_files`规则，核对宝塔已有location、SSL、缓存模块及前方CDN规则。示例不会自动替换面板维护的SSL配置。
 3. 运行生产服务器的`nginx -t`，再通过独立测试地址执行HTTP校验。真实服务器需确认Linux权限、TLS、压缩、404、ETag、字体CORS与缓存，不能用本轮Windows结果替代。
-4. `SITE_ENV=production`仅切换本地产物抓取策略；配置的`--mode production`须与之匹配。这两个设置都不执行上传或站点切换。
+4. 正式候选统一使用 `npm run release:build`；`prepare:nginx --mode production` 必须传入 `--release <已验证候选目录>`，未封存或产物已变化会拒绝生成。这些命令不执行上传或站点切换。
 5. 正式切换前补齐Firefox、真机、真实浏览器缩放及需启用的评论服务验收，保存线上发布目录和配置的可回退副本，再取得用户明确授权。
 
 ## 其他静态托管

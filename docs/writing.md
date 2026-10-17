@@ -13,7 +13,7 @@ npm run new-post -- "第一篇" --template series --series "Astro 实践"
 npm run check:content -- --drafts
 ```
 
-新文件默认 `draft: true`，构建、首页、归档、搜索、RSS、Sitemap 均不发布草稿。`published: false` 同样阻止发布；两者同时存在时，任一个禁止发布即可生效。完成写作后显式改为 `draft: false`，再运行 `npm run publish:check`：类型检查 → 原稿检查 → 静态构建 → 产物链接检查 → 单元测试 → 历史导入/输出验证。本命令不部署。
+新文件默认 `draft: true`，构建、首页、归档、搜索、RSS、Sitemap 均不发布草稿。`published: false` 同样阻止发布；两者同时存在时，任一个禁止发布即可生效。完成写作后显式改为 `draft: false`，再运行 `npm run publish:check`：依赖 → 类型/原稿/单元/历史完整性检查 → 生产构建一次 → 同一产物的资源、动态内容与 SEO 门禁。成功输出独立候选目录及 READY，失败退出非零；不覆盖日常 `dist/`，也不部署。只公开候选里的 `site/`，上传前运行 `npm run verify:release -- <候选目录>`。见[发布与回滚手册](../deployment/release-runbook.md)。
 
 | 字段                 | 要求                                                           |
 | -------------------- | -------------------------------------------------------------- |

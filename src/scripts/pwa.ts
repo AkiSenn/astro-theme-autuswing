@@ -4,7 +4,25 @@ export function initPwa() {
   addEventListener('load', async () => {
     try {
       if (client().pwa) {
-        await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        const registration = await navigator.serviceWorker.register('/sw.js', {
+          scope: '/',
+          updateViaCache: 'none',
+        });
+        let lastCheck = Date.now();
+        const update = () => {
+          if (!navigator.onLine || Date.now() - lastCheck < 60000) return;
+          lastCheck = Date.now();
+          void registration.update().catch(() => {});
+        };
+        addEventListener('online', () => {
+          lastCheck = 0;
+          update();
+        });
+        addEventListener('pageshow', update);
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) update();
+        });
+        // Claiming a new network-first worker does not reload open documents.
       } else {
         for (const registration of await navigator.serviceWorker.getRegistrations())
           if (registration.active?.scriptURL === new URL('/sw.js', location.origin).href)

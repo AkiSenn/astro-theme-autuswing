@@ -256,10 +256,14 @@ export async function checkContent({
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const { parseArgs } = await import('node:util');
-  const { values } = parseArgs({ options: {
-    output: { type: 'boolean' }, drafts: { type: 'boolean' }, remote: { type: 'boolean' },
-    'out-dir': { type: 'string' },
-  } });
+  const { values } = parseArgs({
+    options: {
+      output: { type: 'boolean' },
+      drafts: { type: 'boolean' },
+      remote: { type: 'boolean' },
+      'out-dir': { type: 'string' },
+    },
+  });
   const report = await checkContent({
     root: fileURLToPath(new URL('../', import.meta.url)),
     output: values.output,

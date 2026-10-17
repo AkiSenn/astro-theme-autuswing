@@ -19,11 +19,13 @@ if (!/^(?:127\.0\.0\.1|0\.0\.0\.0):\d{2,5}$/.test(values.listen))
   throw new Error('Use an explicit IPv4 listen address and port');
 if (!['preview', 'production'].includes(values.mode)) throw new Error('Unknown build policy');
 if (values.mode === 'production') {
-  if (!values.release) throw new Error('Production Nginx requires --release <verified-candidate-directory>');
+  if (!values.release)
+    throw new Error('Production Nginx requires --release <verified-candidate-directory>');
   const directory = path.resolve(values.release);
   verifyRelease(directory, policy);
   values.root = path.join(directory, 'site');
-} else if (values.release) throw new Error('A verified production release must use --mode production');
+} else if (values.release)
+  throw new Error('A verified production release must use --mode production');
 if (Number(values.listen.split(':')[1]) > 65535) throw new Error('Invalid listen port');
 if (!path.posix.isAbsolute(values.root) && !path.win32.isAbsolute(values.root))
   throw new Error('Use an absolute web root');
@@ -33,7 +35,8 @@ const quote = (value) => {
   return value.replaceAll('\\', '/').replaceAll('$', '\\$').replaceAll('"', '\\"');
 };
 fs.mkdirSync(output, { recursive: true });
-for (const directory of ['logs', 'temp']) fs.mkdirSync(path.join(output, directory), { recursive: true });
+for (const directory of ['logs', 'temp'])
+  fs.mkdirSync(path.join(output, directory), { recursive: true });
 const redirectFile = path.join(output, 'redirects.conf');
 const rules = redirects();
 fs.writeFileSync(
