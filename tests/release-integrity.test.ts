@@ -4,7 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { buildMode, assertProductionUrl } from '../src/lib/build-mode.mjs';
-import { fileManifest, verifyFiles, verifyRelease, sha256 } from '../scripts/release-integrity.mjs';
+import {
+  fileManifest,
+  verifyFiles,
+  verifyRelease,
+  verifyHttpBytes,
+  sha256,
+} from '../scripts/release-integrity.mjs';
 
 test('build modes are explicit; production requires the approved HTTPS origin', () => {
   assert.equal(buildMode(undefined, true), 'development');
@@ -20,6 +26,21 @@ test('build modes are explicit; production requires the approved HTTPS origin', 
   ])
     assert.throws(() => assertProductionUrl(url, 'https://akisenn.com'));
   assert.doesNotThrow(() => assertProductionUrl('https://akisenn.com', 'https://akisenn.com'));
+});
+test('HTTP verification rejects stale CDN bytes even when the URL and metadata still match', () => {
+  const build = {
+    files: [
+      { file: 'index.html', sha256: sha256('new page') },
+      { file: 'post/abc/index.html', sha256: sha256('new article') },
+    ],
+  };
+  assert.equal(verifyHttpBytes(build, '/?query=keep', Buffer.from('new page')), true);
+  assert.equal(verifyHttpBytes(build, '/post/abc/', Buffer.from('new article')), true);
+  assert.throws(
+    () => verifyHttpBytes(build, '/post/abc/', Buffer.from('old article')),
+    /HTTP bytes differ/,
+  );
+  assert.equal(verifyHttpBytes(build, '/missing/', Buffer.from('404')), false);
 });
 
 test('release seal detects missing, changed, extra files and metadata; older packages remain verifiable', () => {

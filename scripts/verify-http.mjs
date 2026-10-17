@@ -3,13 +3,19 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { load } from 'cheerio';
 import { redirects } from '../src/lib/legacy-redirects.mjs';
+import { verifyRelease, verifyHttpBytes } from './release-integrity.mjs';
+import policy from '../deployment/release-policy.json' with { type: 'json' };
 
 const origin = new URL(process.argv[2] || 'http://127.0.0.1:8788');
 const production = process.argv.includes('--production');
 const reportFile = process.env.HTTP_EVIDENCE_FILE || 'docs/evidence/phase5/nginx-http.json';
-const routes = process.env.HTTP_RELEASE_DIR
-  ? JSON.parse(fs.readFileSync(path.join(process.env.HTTP_RELEASE_DIR, 'release.json'), 'utf8'))
-      .build.contract.routes
+if (production && !process.env.HTTP_RELEASE_DIR)
+  throw new Error('Production HTTP checks require HTTP_RELEASE_DIR pointing to a verified release');
+const release = process.env.HTTP_RELEASE_DIR
+  ? verifyRelease(path.resolve(process.env.HTTP_RELEASE_DIR), policy)
+  : undefined;
+const routes = release
+  ? release.build.contract.routes
   : JSON.parse(fs.readFileSync('.astro/autuswing-routes.json', 'utf8'));
 const checks = [];
 async function request(uri, options = {}) {
@@ -22,12 +28,17 @@ async function request(uri, options = {}) {
   assert.equal(response.headers.get('x-content-type-options'), 'nosniff', uri);
   if (!production) assert.match(response.headers.get('x-robots-tag') || '', /noindex/, uri);
   else assert.equal(response.headers.get('x-robots-tag'), null, uri);
+  const checksumVerified =
+    !!release && response.status === 200 && options.method !== 'HEAD'
+      ? verifyHttpBytes(release.build, uri, Buffer.from(await response.clone().arrayBuffer()))
+      : false;
   checks.push({
     uri,
     status: response.status,
     type: response.headers.get('content-type'),
     cache,
     location: response.headers.get('location'),
+    checksumVerified,
   });
   return response;
 }
@@ -126,6 +137,7 @@ const report = {
   redirectRules: redirects().length,
   checks,
 };
+if (release) verifyRelease(path.resolve(process.env.HTTP_RELEASE_DIR), policy);
 fs.mkdirSync(path.dirname(reportFile), { recursive: true });
 fs.writeFileSync(reportFile, JSON.stringify(report, null, 2) + '\n');
 console.log({

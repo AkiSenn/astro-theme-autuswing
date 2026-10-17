@@ -66,6 +66,18 @@ export function verifyFiles(root, expected) {
     'Final artifact changed: missing, added or modified files',
   );
 }
+export function verifyHttpBytes(build, uri, bytes) {
+  const pathname = decodeURIComponent(new URL(uri, 'https://candidate.invalid').pathname).slice(1);
+  const file = build.files.find(
+    (file) =>
+      file.file === pathname ||
+      file.file ===
+        (pathname.endsWith('/') || !pathname ? pathname : pathname + '/') + 'index.html',
+  );
+  if (!file) return false;
+  assert.equal(sha256(bytes), file.sha256, `HTTP bytes differ from the verified candidate: ${uri}`);
+  return true;
+}
 export function verifyRelease(directory, policy) {
   const metadata = fs.readFileSync(path.join(directory, 'release.json'));
   const ready = fs.readFileSync(path.join(directory, 'READY'), 'utf8').trim();
