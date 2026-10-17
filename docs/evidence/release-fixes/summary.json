@@ -1,0 +1,177 @@
+{
+  "completedAt": "2026-10-17T17:41:12.448Z",
+  "sourceCommit": "83b88e089e0bf312d20c74e5b5fb7f93be352e02",
+  "candidate": "E:\\autuswing-astro\\.local-tools\\releases\\autuswing-20261018-r4",
+  "ready": "b32687de169a2d2edf54c6d4ebe290dbb4ba54810e817b26c279d067baf29011",
+  "gates": [
+    {
+      "name": "dependencies",
+      "passed": true,
+      "elapsedMs": 1712
+    },
+    {
+      "name": "types",
+      "passed": true,
+      "elapsedMs": 15682
+    },
+    {
+      "name": "content",
+      "passed": true,
+      "elapsedMs": 2787
+    },
+    {
+      "name": "unit",
+      "passed": true,
+      "elapsedMs": 4599
+    },
+    {
+      "name": "historical-integrity",
+      "passed": true,
+      "elapsedMs": 525
+    },
+    {
+      "name": "build",
+      "passed": true,
+      "elapsedMs": 7250
+    },
+    {
+      "name": "content-output",
+      "passed": true,
+      "elapsedMs": 2631
+    },
+    {
+      "name": "production-output",
+      "passed": true,
+      "elapsedMs": 2748
+    }
+  ],
+  "sourceInputs": 1049,
+  "artifactFiles": 359,
+  "production": {
+    "url": "https://akisenn.com",
+    "checkedAt": "2026-10-17T17:15:40.429Z",
+    "mode": "production",
+    "canonicalPages": 26,
+    "posts": 3,
+    "draftsExcluded": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "unit": 35,
+  "releaseFixtures": 33,
+  "browser": {
+    "edge": {
+      "startTime": "2026-10-17T16:48:42.092Z",
+      "duration": 294123.158,
+      "expected": 94,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "file": "functional-final.json"
+    },
+    "webkit": {
+      "startTime": "2026-10-17T17:10:20.796Z",
+      "duration": 535324.2459999999,
+      "expected": 37,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0,
+      "file": "webkit-functional-final.json"
+    },
+    "visual": {
+      "startTime": "2026-10-17T16:56:38.364Z",
+      "duration": 611187.9199999999,
+      "expected": 106,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "file": "visual-serial-final.json"
+    },
+    "deployment": {
+      "startTime": "2026-10-17T17:38:54.511Z",
+      "duration": 38595.855,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "file": "nginx-browser-r4.json"
+    }
+  },
+  "http": {
+    "checks": 82,
+    "responseHashesVerified": 44
+  },
+  "cleanInstall": {
+    "freshNodeModules": true,
+    "sameInputDigest": true,
+    "sameArtifact": true,
+    "workspace": "E:\\autuswing-astro\\.local-tools\\clean-release-tUdSMD"
+  },
+  "protection": {
+    "frozenPng": 274,
+    "frozenMetrics": 274,
+    "unchanged": true,
+    "sourceAndLayoutProtected": true,
+    "demoDraftsPreserved": 3
+  },
+  "icons": [
+    {
+      "src": "/pwa/icon-192.563589a49d6a5dac.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any",
+      "bytes": 5812
+    },
+    {
+      "src": "/pwa/icon-512.56b4186141900e87.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any",
+      "bytes": 17238
+    },
+    {
+      "src": "/pwa/maskable-512.d66440e0c40f797c.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable",
+      "bytes": 8700
+    }
+  ],
+  "firefox": {
+    "available": false,
+    "checkedAt": "2026-10-17T16:49:52.056Z",
+    "error": "browserType.launch: spawn UNKNOWN\nCall log:\n\u001b[2m  - <launching> C:\\Users\\AutumnThousand\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\AUTUMN~1\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-s9637S -juggler-pipe -silent\u001b[22m\n"
+  },
+  "overallAcceptance": "NOT PASSED: WebKit native MPA transition event-count test failed once; also reproduced against old audit artifact. Product/test motion changes reverted; no release authorization.",
+  "nativeTransitionControl": {
+    "current": {
+      "startTime": "2026-10-17T17:21:49.277Z",
+      "duration": 48528.531,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "previous": {
+      "startTime": "2026-10-17T17:31:48.916Z",
+      "duration": 59833.630000000005,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    }
+  },
+  "deployment": "Local only; no uploads, production server, DNS, ESA or Workers changes",
+  "limitations": [
+    "One WebKit native MPA transition event-count failure remains unresolved; reproduced on old audit artifact",
+    "Firefox launch fails: spawn UNKNOWN",
+    "One fixture run aborted on Windows EPERM rename; full retry retained separately",
+    "No physical-device or OS installation UI testing",
+    "Real comments remain disabled",
+    "Actual Baota/ESA configuration, cutover and rollback require manual acceptance"
+  ],
+  "visualNote": "First run: 105 passed / one WebKit page.goto load timeout; complete serial rerun passed without changing baselines, thresholds or timeout"
+}

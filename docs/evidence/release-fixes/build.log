@@ -1,0 +1,62 @@
+01:15:32 [content] Syncing content
+01:15:32 [content] Synced content
+01:15:32 [types] Generated 1.18s
+01:15:32 [build] output: "static"
+01:15:32 [build] mode: "static"
+01:15:32 [build] directory: E:\autuswing-astro\.local-tools\releases\autuswing-20261018-r4\site\
+01:15:32 [build] Collecting build info...
+01:15:32 [build] ✓ Completed in 1.56s.
+01:15:32 [build] Building static entrypoints...
+01:15:33 [vite] ✓ built in 379ms
+01:15:33 [vite] ✓ built in 434ms
+01:15:33 [build] Rearranging server assets...
+
+ generating static routes 
+01:15:34   ├─ /404.html (+34ms) 
+01:15:34   ├─ /atom.xml (+11ms) 
+01:15:34   ├─ /manifest.webmanifest (+5ms) 
+01:15:34   ├─ /offline.html (+4ms) 
+01:15:34   ├─ /pwa/icon-192.563589a49d6a5dac.webp/ (+6ms) 
+01:15:34   ├─ /pwa/icon-512.56b4186141900e87.webp/ (+3ms) 
+01:15:34   ├─ /pwa/maskable-512.d66440e0c40f797c.webp/ (+4ms) 
+01:15:34   ├─ /robots.txt (+3ms) 
+01:15:34   ├─ /rss.xml (+78ms) 
+01:15:34   ├─ /search.json (+15ms) 
+01:15:34   ├─ /sw.js (+4ms) 
+01:15:34   ├─ /index.html (+9ms) 
+01:15:34   ├─ /archives/index.html (+6ms) 
+01:15:34   ├─ /archives/2022/index.html (+6ms) 
+01:15:34   ├─ /archives/2022/01/index.html (+4ms) 
+01:15:34   ├─ /archives/2020/index.html (+6ms) 
+01:15:34   ├─ /archives/2020/10/index.html (+5ms) 
+01:15:34   ├─ /tags/index.html (+5ms) 
+01:15:34   ├─ /tags/数学公式/index.html (+6ms) 
+01:15:34   ├─ /tags/网站/index.html (+5ms) 
+01:15:34   ├─ /tags/写作/index.html (+4ms) 
+01:15:34   ├─ /tags/AutuSwing/index.html (+4ms) 
+01:15:34   ├─ /tags/Cloudflare/index.html (+5ms) 
+01:15:34   ├─ /tags/GitHub/index.html (+5ms) 
+01:15:34   ├─ /tags/Hexo/index.html (+4ms) 
+01:15:34   ├─ /tags/HexoThemes/index.html (+5ms) 
+01:15:34   ├─ /tags/MathJax/index.html (+4ms) 
+01:15:34   ├─ /tags/Pages/index.html (+4ms) 
+01:15:34   ├─ /tags/Workers/index.html (+4ms) 
+01:15:34   ├─ /categories/index.html (+6ms) 
+01:15:34   ├─ /categories/功能演示/index.html (+5ms) 
+01:15:34   ├─ /categories/网站建设/index.html (+4ms) 
+01:15:34   ├─ /post/55b0541c/index.html (+13ms) 
+01:15:34   ├─ /post/4c6caf67/index.html (+5ms) 
+01:15:34   ├─ /post/4e395565/index.html (+6ms) 
+01:15:34   ├─ /about/index.html (+3ms) 
+01:15:34   ├─ /links/index.html (+7ms) 
+01:15:34 ✓ Completed in 742ms.
+
+ generating optimized images 
+01:15:34   ▶ /_astro/avatar.DADbckWz_Z23dhab.webp (reused cache entry) (+2ms) (1/2)
+01:15:34   ▶ /_astro/avatar.DADbckWz_Z2bfHLu.webp (reused cache entry) (+1ms) (2/2)
+01:15:34 ✓ Completed in 5ms.
+
+01:15:34 [build] ✓ Completed in 1.65s.
+01:15:34 [@astrojs/sitemap] `sitemap-index.xml` created at `.local-tools\releases\autuswing-20261018-r4\site`
+01:15:34 [build] 27 page(s) built in 3.69s
+01:15:34 [build] Complete!

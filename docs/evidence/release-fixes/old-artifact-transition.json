@@ -1,0 +1,282 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=playwright.cross.config.ts",
+      "--project=webkit",
+      "--workers=1",
+      "--repeat-each=3",
+      "--grep=native MPA transitions use only the content group and refresh article state",
+      "--output=.local-tools/release-fixes/old-artifact-transition-results",
+      "tests/browser/motion.spec.ts"
+    ],
+    "configFile": "E:\\autuswing-astro\\playwright.cross.config.ts",
+    "rootDir": "E:/autuswing-astro/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/release-fixes/old-artifact-transition-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/release-fixes/old-artifact-transition-results",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "E:/autuswing-astro/tests/browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\release-fixes\\old-artifact-transition-results",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "E:\\autuswing-astro\\tests\\browser",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\browser",
+        "testIgnore": [
+          "**/desktop-reading.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4336",
+          "browserName": "webkit",
+          "trace": "retain-on-failure",
+          "serviceWorkers": "block"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "E:/autuswing-astro/.local-tools/release-fixes/old-artifact-transition.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/preview.mjs",
+      "url": "http://127.0.0.1:4322",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "motion.spec.ts",
+      "file": "motion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15089,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T17:31:50.641Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-9600a82fef27ddc60675",
+          "file": "motion.spec.ts",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T17:32:06.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "472f259022e25a651642-f0960c6c5a5dd75e5738",
+          "file": "motion.spec.ts",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "native MPA transitions use only the content group and refresh article state",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28285,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:159:70",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                      "column": 70,
+                      "line": 159
+                    },
+                    "snippet": "  157 |   await settled(page);\n  158 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();\n> 159 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);\n      |                                                                      ^\n  160 |   for (const event of events.filter((e) => e.transition)) {\n  161 |     expect(event.skipped).toBeUndefined();\n  162 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual(["
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                        "column": 70,
+                        "line": 159
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m2\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  157 |   await settled(page);\n  158 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();\n> 159 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);\n      |                                                                      ^\n  160 |   for (const event of events.filter((e) => e.transition)) {\n  161 |     expect(event.skipped).toBeUndefined();\n  162 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual([\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:159:70"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T17:32:20.059Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\release-fixes\\old-artifact-transition-results\\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit-repeat2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\release-fixes\\old-artifact-transition-results\\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit-repeat2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\browser\\motion.spec.ts",
+                    "column": 70,
+                    "line": 159
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "472f259022e25a651642-46ffad8abe89803e68ce",
+          "file": "motion.spec.ts",
+          "line": 138,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T17:31:48.916Z",
+    "duration": 59833.630000000005,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

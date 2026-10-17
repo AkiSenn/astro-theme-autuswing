@@ -1,0 +1,113 @@
+{
+  "version": "0.2.0",
+  "name": "astro-theme-autuswing",
+  "problems": [
+    "extraneous: @img/sharp-wasm32@0.35.5 E:\\autuswing-astro\\node_modules\\@img\\sharp-wasm32",
+    "extraneous: @napi-rs/wasm-runtime@1.2.5 E:\\autuswing-astro\\node_modules\\@napi-rs\\wasm-runtime"
+  ],
+  "dependencies": {
+    "@astrojs/check": {
+      "version": "0.9.10",
+      "resolved": "https://registry.npmmirror.com/@astrojs/check/-/check-0.9.10.tgz",
+      "overridden": false
+    },
+    "@astrojs/markdown-remark": {
+      "version": "7.3.3",
+      "resolved": "https://registry.npmmirror.com/@astrojs/markdown-remark/-/markdown-remark-7.3.3.tgz",
+      "overridden": false
+    },
+    "@astrojs/rss": {
+      "version": "4.0.19",
+      "resolved": "https://registry.npmmirror.com/@astrojs/rss/-/rss-4.0.19.tgz",
+      "overridden": false
+    },
+    "@astrojs/sitemap": {
+      "version": "3.7.4",
+      "resolved": "https://registry.npmmirror.com/@astrojs/sitemap/-/sitemap-3.7.4.tgz",
+      "overridden": false
+    },
+    "@axe-core/playwright": {
+      "version": "4.14.0",
+      "resolved": "https://registry.npmmirror.com/@axe-core/playwright/-/playwright-4.14.0.tgz",
+      "overridden": false
+    },
+    "@img/sharp-wasm32": {
+      "version": "0.35.5",
+      "resolved": "https://registry.npmmirror.com/@img/sharp-wasm32/-/sharp-wasm32-0.35.5.tgz",
+      "overridden": false,
+      "extraneous": true,
+      "problems": [
+        "extraneous: @img/sharp-wasm32@0.35.5 E:\\autuswing-astro\\node_modules\\@img\\sharp-wasm32"
+      ]
+    },
+    "@napi-rs/wasm-runtime": {
+      "version": "1.2.5",
+      "resolved": "https://registry.npmmirror.com/@napi-rs/wasm-runtime/-/wasm-runtime-1.2.5.tgz",
+      "overridden": false,
+      "extraneous": true,
+      "problems": [
+        "extraneous: @napi-rs/wasm-runtime@1.2.5 E:\\autuswing-astro\\node_modules\\@napi-rs\\wasm-runtime"
+      ]
+    },
+    "@playwright/test": {
+      "version": "1.64.1",
+      "resolved": "https://registry.npmmirror.com/@playwright/test/-/test-1.64.1.tgz",
+      "overridden": false
+    },
+    "@types/js-yaml": {
+      "version": "4.0.9",
+      "resolved": "https://registry.npmmirror.com/@types/js-yaml/-/js-yaml-4.0.9.tgz",
+      "overridden": false
+    },
+    "astro": {
+      "version": "7.4.0",
+      "resolved": "https://registry.npmmirror.com/astro/-/astro-7.4.0.tgz",
+      "overridden": false
+    },
+    "cheerio": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmmirror.com/cheerio/-/cheerio-1.2.0.tgz",
+      "overridden": false
+    },
+    "entities": {
+      "version": "8.1.0",
+      "resolved": "https://registry.npmmirror.com/entities/-/entities-8.1.0.tgz",
+      "overridden": false
+    },
+    "js-yaml": {
+      "version": "5.5.0",
+      "resolved": "https://registry.npmmirror.com/js-yaml/-/js-yaml-5.5.0.tgz",
+      "overridden": false
+    },
+    "katex": {
+      "version": "0.19.0",
+      "resolved": "https://registry.npmmirror.com/katex/-/katex-0.19.0.tgz",
+      "overridden": false
+    },
+    "prettier-plugin-astro": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmmirror.com/prettier-plugin-astro/-/prettier-plugin-astro-1.1.1.tgz",
+      "overridden": false
+    },
+    "prettier": {
+      "version": "3.9.10",
+      "resolved": "https://registry.npmmirror.com/prettier/-/prettier-3.9.10.tgz",
+      "overridden": false
+    },
+    "rehype-raw": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmmirror.com/rehype-raw/-/rehype-raw-7.0.0.tgz",
+      "overridden": false
+    },
+    "tsx": {
+      "version": "4.23.15",
+      "resolved": "https://registry.npmmirror.com/tsx/-/tsx-4.23.15.tgz",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "6.0.3",
+      "resolved": "https://registry.npmmirror.com/typescript/-/typescript-6.0.3.tgz",
+      "overridden": false
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-17T16:44:04.284Z",
-  "workspace": "E:\\autuswing-astro\\.local-tools\\release-fixtures-p1K1On",
+  "checkedAt": "2026-10-17T17:41:09.374Z",
+  "workspace": "E:\\autuswing-astro\\.local-tools\\release-fixtures-0WsMOw",
   "cases": [
     {
       "name": "fourth-article-full-release",
@@ -103,6 +103,21 @@
       "passed": true
     },
     {
+      "name": "wrong-sitemap-lastmod-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "rss-unidentified-extra-item-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "lost-historical-formulas-blocked",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
       "name": "404-noindex-exception-required",
       "expected": "blocked",
       "passed": true
@@ -134,6 +149,11 @@
     },
     {
       "name": "development-static-build",
+      "expected": "blocked",
+      "passed": true
+    },
+    {
+      "name": "cli-site-override-blocked",
       "expected": "blocked",
       "passed": true
     },

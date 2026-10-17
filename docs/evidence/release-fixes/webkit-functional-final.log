@@ -1,0 +1,79 @@
+
+Running 38 tests using 1 worker
+
+(node:33384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [webkit] › tests\browser\back.spec.ts:29:1 › direct and refreshed article entries fall back to archives (9.1s)
+  ok  2 [webkit] › tests\browser\back.spec.ts:39:1 › an external previous page and a same-origin new tab cannot become an unsafe back target (19.0s)
+  ok  3 [webkit] › tests\browser\back.spec.ts:70:1 › home returns share one implementation on phone, tablet and PC without scroll resets (36.6s)
+  ok  4 [webkit] › tests\browser\back.spec.ts:97:1 › archive and taxonomy sources survive article refresh and repeated forward/back traversal (16.2s)
+  ok  5 [webkit] › tests\browser\back.spec.ts:116:1 › article fragments are skipped and long-page scroll is restored by native history (17.1s)
+  ok  6 [webkit] › tests\browser\back.spec.ts:141:1 › return restores search results on cold history navigation and respects a later manual close (9.9s)
+  ok  7 [webkit] › tests\browser\back.spec.ts:168:1 › missing Navigation API and disabled JavaScript keep the ordinary archive link (21.1s)
+  ok  8 [webkit] › tests\browser\back.spec.ts:194:1 › smart return runs the existing native content transition (18.2s)
+  ok  9 [webkit] › tests\browser\back.spec.ts:220:1 › a failed traversal falls back and rapid duplicate activations do not navigate twice (14.0s)
+  ok 10 [webkit] › tests\browser\contents-controls.spec.ts:19:1 › one contents action across phone, portrait/landscape tablets, desktop and breakpoint boundaries (37.0s)
+  ok 11 [webkit] › tests\browser\contents-controls.spec.ts:97:1 › resizing an open or closed contents surface keeps exactly one action and releases the modal (15.0s)
+  ok 12 [webkit] › tests\browser\contents-controls.spec.ts:130:1 › phone contents works at the top and after scrolling without removing back-to-top or search (6.2s)
+  ok 13 [webkit] › tests\browser\contents-controls.spec.ts:156:1 › scrolling reveals reading tools without introducing a second contents action (15.7s)
+  ok 14 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 320x740 (13.0s)
+  ok 15 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 390x844 (12.9s)
+  ok 16 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 430x932 (12.7s)
+  ok 17 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 768x1024 (14.3s)
+  ok 18 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 820x1180 (14.7s)
+  ok 19 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 1180x820 (9.4s)
+  ok 20 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 1366x768 (9.4s)
+  ok 21 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 1440x900 (8.9s)
+  ok 22 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 1920x1080 (13.8s)
+  ok 23 [webkit] › tests\browser\markdown-reading.spec.ts:21:3 › Markdown sample 2560x1440 (13.6s)
+  ok 24 [webkit] › tests\browser\markdown-reading.spec.ts:100:1 › native document navigation initializes sample copy, image and TOC once per visit (9.9s)
+  ok 25 [webkit] › tests\browser\markdown-reading.spec.ts:145:1 › test sample has no physical route or discovery artifacts (28ms)
+  ok 26 [webkit] › tests\browser\markdown-reading.spec.ts:153:1 › lightbox uses the complete responsive source only when opened (8.3s)
+  ok 27 [webkit] › tests\browser\markdown-reading.spec.ts:176:1 › optional Markdown features use the established dark palette in all layouts (13.5s)
+  ok 28 [webkit] › tests\browser\motion.spec.ts:75:1 › native transitions keep the correct navigation shell across responsive layouts (17.5s)
+  ok 29 [webkit] › tests\browser\motion.spec.ts:112:1 › search and image dialogs use actual shared fades and a live preference change cancels an exit (4.9s)
+  x  30 [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state (19.4s)
+(node:38496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 31 [webkit] › tests\browser\motion.spec.ts:180:1 › back and forward restore long-page scroll and current navigation without reinitializing (24.6s)
+  ok 32 [webkit] › tests\browser\motion.spec.ts:229:1 › fragment links do not navigate a document or run a page transition (8.1s)
+  ok 33 [webkit] › tests\browser\motion.spec.ts:241:1 › functional dialog exits keep a single TOC action and handle reopening and replacements (5.7s)
+  ok 34 [webkit] › tests\browser\motion.spec.ts:285:1 › reduced motion disables page and decorative motion while keeping controls functional (9.1s)
+  ok 35 [webkit] › tests\browser\motion.spec.ts:309:1 › without the native opt-in normal MPA links and interactions work (9.2s)
+  ok 36 [webkit] › tests\browser\motion.spec.ts:331:1 › rapid native navigation and back interruptions settle without stale controls (12.8s)
+  ok 37 [webkit] › tests\browser\motion.spec.ts:357:1 › actual transition frames preserve the live shell and selected appearance (10.5s)
+  ok 38 [webkit] › tests\browser\motion.spec.ts:434:1 › responsive layout geometry is unchanged after motion cleanup (19.3s)
+
+
+  1) [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 2
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      157 |   await settled(page);
+      158 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();
+    > 159 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);
+          |                                                                      ^
+      160 |   for (const event of events.filter((e) => e.transition)) {
+      161 |     expect(event.skipped).toBeUndefined();
+      162 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual([
+        at E:\autuswing-astro\tests\browser\motion.spec.ts:159:70
+
+    Error Context: .local-tools\release-fixes\webkit-functional-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\release-fixes\webkit-functional-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\release-fixes\webkit-functional-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state 
+  37 passed (8.9m)

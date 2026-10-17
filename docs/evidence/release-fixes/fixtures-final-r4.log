@@ -1,0 +1,109 @@
+
+> astro-theme-autuswing@0.2.0 test:release
+> node scripts/verify-release-fixtures.mjs
+
+fourth-article-full-release passed
+file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/release.mjs:24
+  throw new Error('Refusing to overwrite an existing release directory');
+        ^
+
+Error: Refusing to overwrite an existing release directory
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/release.mjs:24:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+existing-candidate-not-overwritten correctly blocked
+file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/prepare-nginx.mjs:23
+    throw new Error('Production Nginx requires --release <verified-candidate-directory>');
+          ^
+
+Error: Production Nginx requires --release <verified-candidate-directory>
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/prepare-nginx.mjs:23:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+nginx-production-without-seal-blocked correctly blocked
+nginx-verified-production-candidate passed
+delete-fourth-rebuild passed
+delete-fourth-verify passed
+file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/release.mjs:56
+    throw new Error(`${name} failed; see ${path.join(audit, name + '.log')}`);
+          ^
+
+Error: content failed; see E:\autuswing-astro\.local-tools\release-fixtures-3LqwNl\.local-tools\releases\duplicate\audit\content.log
+    at run (file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/release.mjs:56:11)
+    at file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/scripts/release.mjs:67:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
+duplicate-id-release correctly blocked
+Unsafe local path: /../invalid/
+  Location:
+    E:\autuswing-astro\node_modules\astro\dist\core\render\route-cache.js:64:16
+  Stack trace:
+    at normalizePath (file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/dist/.prerender/chunks/manifest_C-JQXoMT.mjs:95:136)
+    at newPostPath (file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/dist/.prerender/chunks/manifest_C-JQXoMT.mjs:116:29)
+    at Array.map (<anonymous>)
+    at async routes (file:///E:/autuswing-astro/.local-tools/release-fixtures-3LqwNl/dist/.prerender/chunks/_.._BihqYb5v.mjs:50:14)
+    at async computeStaticPaths (file:///E:/autuswing-astro/node_modules/astro/dist/core/render/route-cache.js:64:16)
+invalid-route-build correctly blocked
+[UnknownFilesystemError] 
+  Hint:
+    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unknown-filesystem-error/
+  Location:
+    E:\autuswing-astro\node_modules\astro\dist\content\mutable-data-store.js:183:10
+  Stack trace:
+    at MutableDataStore.writeAssetImports (file:///E:/autuswing-astro/node_modules/astro/dist/content/mutable-data-store.js:183:10)
+    at async run (file:///E:/autuswing-astro/node_modules/p-queue/dist/index.js:406:36)
+  Caused by:
+  EPERM: operation not permitted, rename 'E:\autuswing-astro\.local-tools\release-fixtures-3LqwNl\.astro\content-assets.mjs.tmp' -> 'E:\autuswing-astro\.local-tools\release-fixtures-3LqwNl\.astro\content-assets.mjs'
+    at async Object.rename (node:internal/fs/promises:784:10)
+    at async MutableDataStore.writeAssetImports (file:///E:/autuswing-astro/node_modules/astro/dist/content/mutable-data-store.js:181:4)
+    at async run (file:///E:/autuswing-astro/node_modules/p-queue/dist/index.js:406:36)
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: preview-build: 01:35:52 [content] Syncing content
+[UnknownFilesystemError] 
+  Hint:
+    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unknown-filesystem-error/
+  Location:
+    E:\autuswing-astro\node_modules\astro\dist\content\mutable-data-store.js:183:10
+  Stack trace:
+    at MutableDataStore.writeAssetImports (file:///E:/autuswing-astro/node_modules/astro/dist/content/mutable-data-store.js:183:10)
+    at async run (file:///E:/autuswing-astro/node_modules/p-queue/dist/index.js:406:36)
+  Caused by:
+  EPERM: operation not permitted, rename 'E:\autuswing-astro\.local-tools\release-fixtures-3LqwNl\.astro\content-assets.mjs.tmp' -> 'E:\autuswing-astro\.local-tools\release-fixtures-3LqwNl\.astro\content-assets.mjs'
+    at async Object.rename (node:internal/fs/promises:784:10)
+    at async MutableDataStore.writeAssetImports (file:///E:/autuswing-astro/node_modules/astro/dist/content/mutable-data-store.js:181:4)
+    at async run (file:///E:/autuswing-astro/node_modules/p-queue/dist/index.js:406:36)
+
+
+false !== true
+
+    at run (file:///E:/autuswing-astro/scripts/verify-release-fixtures.mjs:63:10)
+    at build (file:///E:/autuswing-astro/scripts/verify-release-fixtures.mjs:69:3)
+    at file:///E:/autuswing-astro/scripts/verify-release-fixtures.mjs:161:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

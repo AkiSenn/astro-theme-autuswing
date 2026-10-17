@@ -1,0 +1,22 @@
+
+Running 10 tests using 1 worker
+
+
+
+(node:38668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/10] [edge] › tests\deployment\nginx.spec.ts:3:1 › Nginx delivers small avatars, math and comments-disabled pages without failed resources
+[2/10] [edge] › tests\deployment\nginx.spec.ts:30:1 › Nginx PWA offline fallback is styled, updates owned caches and preserves unrelated caches
+[3/10] [edge] › tests\deployment\pwa-updates.spec.ts:61:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work
+[4/10] [edge] › tests\deployment\pwa-updates.spec.ts:103:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers
+[5/10] [edge] › tests\deployment\pwa-updates.spec.ts:145:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available
+
+
+(node:7188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[6/10] [webkit] › tests\deployment\nginx.spec.ts:3:1 › Nginx delivers small avatars, math and comments-disabled pages without failed resources
+[7/10] [webkit] › tests\deployment\nginx.spec.ts:30:1 › Nginx PWA offline fallback is styled, updates owned caches and preserves unrelated caches
+[8/10] [webkit] › tests\deployment\pwa-updates.spec.ts:61:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work
+[9/10] [webkit] › tests\deployment\pwa-updates.spec.ts:103:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers
+[10/10] [webkit] › tests\deployment\pwa-updates.spec.ts:145:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available
+  10 passed (38.6s)

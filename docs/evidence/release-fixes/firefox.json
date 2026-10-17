@@ -1,0 +1,5 @@
+{
+  "available": false,
+  "checkedAt": "2026-10-17T16:49:52.056Z",
+  "error": "browserType.launch: spawn UNKNOWN\nCall log:\n\u001b[2m  - <launching> C:\\Users\\AutumnThousand\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\AUTUMN~1\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-s9637S -juggler-pipe -silent\u001b[22m\n"
+}

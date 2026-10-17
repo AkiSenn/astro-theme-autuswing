@@ -1,0 +1,13 @@
+
+> astro-theme-autuswing@0.2.0 release:build
+> node scripts/release.mjs --output .local-tools/releases/autuswing-20261018-r4
+
+dependencies: passed
+types: passed
+content: passed
+unit: passed
+historical-integrity: passed
+build: passed
+content-output: passed
+production-output: passed
+VERIFIED_RELEASE=E:\autuswing-astro\.local-tools\releases\autuswing-20261018-r4

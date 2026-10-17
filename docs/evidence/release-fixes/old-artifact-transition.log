@@ -1,0 +1,46 @@
+
+Running 3 tests using 1 worker
+
+(node:33728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state (15.1s)
+(node:30124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state (11.5s)
+(node:1180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state (28.3s)
+
+
+  1) [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 2
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      157 |   await settled(page);
+      158 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();
+    > 159 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);
+          |                                                                      ^
+      160 |   for (const event of events.filter((e) => e.transition)) {
+      161 |     expect(event.skipped).toBeUndefined();
+      162 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual([
+        at E:\autuswing-astro\tests\browser\motion.spec.ts:159:70
+
+    Error Context: .local-tools\release-fixes\old-artifact-transition-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit-repeat2\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\release-fixes\old-artifact-transition-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit-repeat2\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\release-fixes\old-artifact-transition-results\motion-native-MPA-transiti-3099d-p-and-refresh-article-state-webkit-repeat2\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests\browser\motion.spec.ts:138:1 › native MPA transitions use only the content group and refresh article state 
+  2 passed (59.8s)

@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-17T17:39:28.358Z",
+  "inputDigest": "968075240a3f27c71d193fd2dc6c93fc2975d625e5bcb3a5497515c643f960e2",
+  "files": 359,
+  "freshInstallInputsIdentical": true,
+  "freshInstallFilesIdentical": true,
+  "previousCandidateFilesIdentical": true,
+  "candidate": ".local-tools/releases/autuswing-20261018-r4",
+  "sourceCommit": "83b88e089e0bf312d20c74e5b5fb7f93be352e02"
+}
