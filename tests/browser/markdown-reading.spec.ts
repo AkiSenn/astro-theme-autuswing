@@ -172,3 +172,40 @@ test('lightbox uses the complete responsive source only when opened', async ({ p
   await img.click();
   await expect(page.locator('.image-dialog img')).toHaveAttribute('src', full + '#fullsize');
 });
+
+test('optional Markdown features use the established dark palette in all layouts', async ({
+  page,
+}, info) => {
+  test.setTimeout(90000);
+  await page.addInitScript(() => localStorage.setItem('autuswing-appearance', 'dark'));
+  await installMarkdownFixture(page);
+  for (const width of [390, 820, 1920]) {
+    await page.setViewportSize({ width, height: 1080 });
+    await page.goto(samplePath);
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    const block = page.locator('.code-block').first();
+    await block.scrollIntoViewIfNeeded();
+    const colors = await block.locator('.code-line-add').evaluate((node) => {
+      const swatch = document.createElement('span');
+      swatch.style.backgroundColor = 'var(--code-added-bg)';
+      document.body.append(swatch);
+      const result = [
+        getComputedStyle(node).backgroundColor,
+        getComputedStyle(swatch).backgroundColor,
+      ];
+      swatch.remove();
+      return result;
+    });
+    expect(colors[0]).toBe(colors[1]);
+    await expect(page.locator('.admonition')).toHaveCount(2);
+    await expect(page.locator('.prose [data-footnotes]')).toHaveCount(1);
+    await expect(page.locator('.prose math')).toHaveCount(4);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
+      true,
+    );
+    const dir = path.join(evidence, info.project.name || 'edge');
+    fs.mkdirSync(dir, { recursive: true });
+    await page.mouse.move(0, 0);
+    await page.screenshot({ path: path.join(dir, `markdown-dark-${width}.png`) });
+  }
+});

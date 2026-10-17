@@ -39,6 +39,22 @@ npm run preview
 
 ## 验证
 
+### 写作与阅读验收
+
+新稿默认草稿，普通、教程、系列模板可选。日常操作与字段说明见[写作指南](docs/writing.md)，本轮改动及验收结果见[写作与阅读完善报告](docs/writing-reading-report.md)。
+
+```powershell
+npm run new-post -- "文章标题" --template tutorial
+npm run dev:drafts -- --port 4323
+npm run publish:check
+npm run test:markdown
+npm run verify:writing
+```
+
+`publish:check` 只校验和构建，不部署。`verify:writing` 使用临时稿件与本地服务验证草稿隔离、发布、原生图片和全文 Feed，结束时恢复配置及普通预览构建；与其他构建和浏览器回归顺序运行。Markdown 样本只用于测试，不增加公开路由。旧阅读进度条已完整移除，目录高亮和返回顶部保留。
+
+### 完整检查
+
 ```powershell
 npm run test
 npm run verify

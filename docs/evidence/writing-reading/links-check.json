@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-17T13:39:11.100Z",
+  "files": 4,
+  "published": 4,
+  "drafts": 0,
+  "images": 6,
+  "links": 14,
+  "externalLinks": 12,
+  "deferredLinks": 0,
+  "remoteResults": [
+    {
+      "url": "https://nodejs.org/zh-cn/download",
+      "status": 200
+    },
+    {
+      "url": "https://hexo.io/",
+      "status": 200
+    },
+    {
+      "url": "https://www.github.com/AkiSenn",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/AkiSenn/hexo-theme-autuswing",
+      "status": 200
+    },
+    {
+      "url": "https://git-scm.com/downloads/win",
+      "status": 200
+    },
+    {
+      "url": "https://hexo.io/docs/",
+      "status": 200
+    },
+    {
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints",
+      "status": 200
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/ci-cd/builds/",
+      "status": 200
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/ci-cd/builds/configuration/",
+      "status": 200
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/configuration/routing/custom-domains/",
+      "status": 200
+    },
+    {
+      "url": "https://developers.cloudflare.com/changelog/post/2026-05-14-domains-tab/",
+      "status": 200
+    }
+  ],
+  "issues": []
+}

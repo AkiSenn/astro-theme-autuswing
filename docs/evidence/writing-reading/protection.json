@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-17T13:39:08.225Z",
+  "tag": "astro-style-baseline",
+  "tagCommit": "92887a219a165c0e6cc221f142c331722d3d3fc3",
+  "frozenImagesUnchanged": 274,
+  "frozenMetricsUnchanged": 274,
+  "baselineConfigUnchanged": true,
+  "protectedSourcesUnchanged": true,
+  "noNewDependencies": true,
+  "themeConfigOnlyChange": "removed reading.progress"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/post/55b0541c/",
+    "type": "push",
+    "names": [
+      "autuswing-page-in",
+      "autuswing-page-out"
+    ]
+  },
+  {
+    "path": "/",
+    "type": "traverse",
+    "names": [
+      "autuswing-page-in",
+      "autuswing-page-out"
+    ]
+  }
+]

@@ -42,6 +42,8 @@ preview 默认 noindex，分享、RSS/Atom 标识与评论身份始终使用正�
 
 复制副本校验：`npm run verify`。一次性导入工具已归档在迁移前备份的 `import-tools`，不属于新工程的日常构建命令；恢复内容时先核对迁移清单哈希，不覆盖不同内容的目标文件。
 
+需要联网核对外部链接时，可显式执行 `npm run check:content -- --output --remote`。它以最多四个并发请求检查 HTTP 状态，单次请求限时八秒；404/410 报错，登录限制、限流、服务错误或网络超时仅提示核对。普通发布检查不依赖外网。HTTP 成功状态不保证远程内容、站外锚点或需要登录的内容正确。
+
 ## 本地草稿预览
 
 `npm run dev:drafts` 显式开启本地写作预览；已有静态预览占用端口时可用 `npm run dev:drafts -- --port 4323`。只有 Astro dev 模式会读取 `ASTRO_PREVIEW_DRAFTS=1`。即使误将该环境变量带入静态构建，也仍然过滤草稿；草稿在本地不进入搜索与 Feed，并保持 noindex。普通 `npm run dev` 也不显示草稿。预览地址就是新稿 frontmatter 保存的 permalink。

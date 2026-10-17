@@ -1,0 +1,129 @@
+{
+  "completedAt": "2026-10-17T13:48:48.895Z",
+  "baseline": {
+    "checkedAt": "2026-10-17T13:39:08.225Z",
+    "tag": "astro-style-baseline",
+    "tagCommit": "92887a219a165c0e6cc221f142c331722d3d3fc3",
+    "frozenImagesUnchanged": 274,
+    "frozenMetricsUnchanged": 274,
+    "baselineConfigUnchanged": true,
+    "protectedSourcesUnchanged": true,
+    "noNewDependencies": true,
+    "themeConfigOnlyChange": "removed reading.progress"
+  },
+  "check": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 1
+  },
+  "build": "passed; static preview output restored",
+  "unit": {
+    "passed": 27,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "edgeFull": 93,
+    "edgeAdditionalDark": 1,
+    "edgeTotalDistinct": 94,
+    "webkitSupplement": 37,
+    "webkitAdditionalDark": 1,
+    "webkitTotalDistinct": 38,
+    "visual": 106,
+    "reports": {
+      "edge": {
+        "file": "functional-final.json",
+        "startTime": "2026-10-17T10:24:09.686Z",
+        "duration": 261755.862,
+        "expected": 93,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "edgeDark": {
+        "file": "markdown-dark-edge.json",
+        "startTime": "2026-10-17T13:45:03.017Z",
+        "duration": 5815.906,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "webkit": {
+        "file": "webkit-functional.json",
+        "startTime": "2026-10-17T13:38:55.523Z",
+        "duration": 482814.267,
+        "expected": 37,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "webkitDark": {
+        "file": "markdown-dark-webkit.json",
+        "startTime": "2026-10-17T13:45:33.640Z",
+        "duration": 17438.61,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "visual": {
+        "file": "visual-final.json",
+        "startTime": "2026-10-17T10:23:58.843Z",
+        "duration": 259183.58500000002,
+        "expected": 106,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  },
+  "writing": {
+    "productionDraftExcluded": true,
+    "publishedFalseExcluded": true,
+    "stablePublishedId": true,
+    "explicitDescription": true,
+    "nativeResponsiveImage": true,
+    "coverDimensions": true,
+    "mixedImageAndMath": true,
+    "fullFeedNativeImage": true,
+    "localDraftPreview": true,
+    "sampleAbsentFromProduction": true,
+    "previewRestored": true
+  },
+  "output": {
+    "checkedAt": "2026-10-17T13:37:24.154Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "importedFilesVerified": 307,
+  "optionalAssetsVerified": 6,
+  "originalSourceFilesVerified": 365,
+  "content": {
+    "files": 4,
+    "images": 6,
+    "links": 14,
+    "externalReferences": 12,
+    "externalUniqueChecked": 11,
+    "errors": 0,
+    "warnings": 0
+  },
+  "firefox": {
+    "attempted": true,
+    "available": false,
+    "engine": "firefox",
+    "error": "browserType.launch: spawn UNKNOWN\nCall log:\n\u001b[2m  - <launching> C:\\Users\\AutumnThousand\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\AUTUMN~1\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-C5jYq3 -juggler-pipe -silent\u001b[22m\n"
+  },
+  "limitations": [
+    "Firefox launch failed: spawn UNKNOWN",
+    "No physical-device testing",
+    "Real comment service remains disabled and unverified",
+    "Legacy image dimensions intentionally unchanged to preserve approved rendering"
+  ],
+  "deployment": "No uploads, production server, DNS or deployment changes"
+}
