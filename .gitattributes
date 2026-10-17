@@ -5,3 +5,7 @@ src/styles/legacy.css -text
 *.png binary
 *.webp binary
 *.woff2 binary
+
+# Keep review focused on source; the frozen screenshots/metrics remain tracked.
+tests/styles/snapshots/** linguist-generated=true
+docs/evidence/styles/** linguist-generated=true
