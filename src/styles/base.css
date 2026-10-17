@@ -1,0 +1,119 @@
+/* Document defaults, shared primitives and shell sizing. No page visual overrides. */
+.skip-link {
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-link:focus {
+  opacity: 1;
+  pointer-events: auto;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  line-height: 1.7;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  color: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  border: 0;
+  background: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+::selection {
+  background: var(--sun);
+  color: #26362d;
+}
+[hidden] {
+  display: none !important;
+}
+.icon {
+  vertical-align: middle;
+  flex: none;
+}
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: -100px;
+  z-index: var(--z-feedback);
+  background: var(--surface);
+  padding: 10px var(--space-5);
+}
+.skip-link:focus {
+  top: 10px;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  padding: var(--space-2);
+  border-radius: var(--radius-control);
+}
+.icon-button:hover {
+  background: var(--green-soft);
+}
+kbd {
+  font-size: 9px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 var(--space-1);
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .search-open span {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .icon-button {
+    padding: var(--space-2);
+  }
+}
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
+body {
+  font-size: calc(var(--autuswing-base-font, 16px) - 1px);
+}
+.sprite {
+  overflow: hidden;
+  pointer-events: none;
+}
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+a,
+button {
+  touch-action: manipulation;
+}

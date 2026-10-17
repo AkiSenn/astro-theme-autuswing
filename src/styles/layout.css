@@ -1,0 +1,90 @@
+/* Shared shell sizing, scroll offsets and reading gutters; breakpoint ownership stays here. */
+html {
+  scroll-padding-top: 90px;
+}
+#main {
+  min-height: 70vh;
+  outline: none;
+}
+@media (max-width: 760px) {
+  .main-shell {
+    margin: 0;
+  }
+}
+@media print {
+  #main {
+    padding: 0;
+  }
+}
+html {
+  scrollbar-gutter: stable;
+}
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+.main-shell {
+  margin-left: var(--layout-sidebar);
+  max-width: none;
+  padding: 0 clamp(var(--space-6), 3vw, 64px);
+}
+#main {
+  max-width: min(var(--autuswing-width, 1680px), 1120px);
+  margin-inline: auto;
+  padding-top: 36px;
+}
+.article-page #main {
+  padding-top: 36px;
+}
+@media screen and (min-width: 1000px) {
+  .article-page {
+    --reading-width: 860px;
+  }
+}
+@media (720px <= width < 1000px) {
+  :root {
+    --layout-sidebar: 72px;
+  }
+  .main-shell {
+    padding-inline: var(--space-6);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .article-page {
+    --layout-sidebar: 72px;
+    --reading-contents-width: 260px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article-page.has-reading-contents .main-shell {
+    margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
+  }
+}
+@media (width < 720px) {
+  :root {
+    --layout-sidebar: 0px;
+  }
+  html {
+    scroll-padding-top: calc(var(--mobile-header-height) + 16px);
+  }
+  .main-shell {
+    margin-left: 0;
+    padding-inline: var(--space-4);
+  }
+  #main,
+  .article-page #main {
+    padding-top: var(--space-6);
+  }
+  .article-page .main-shell {
+    padding-inline: 0;
+  }
+}
+@media print {
+  .main-shell {
+    margin: 0;
+    padding: 0;
+  }
+  #main,
+  .article-page #main {
+    padding-top: 0;
+  }
+}

@@ -18,7 +18,16 @@ export default defineConfig({
   // Stricter than Playwright's default 0.2 per-pixel color threshold. Tiny
   // resampling noise is filtered; the differing-pixel budget remains zero.
   // Exact geometry/typography/color snapshots complement every screenshot.
-  expect: { timeout: 20000, toHaveScreenshot: { timeout: 20000, animations: 'disabled', caret: 'hide', threshold: 0.1, maxDiffPixels: 0 } },
+  expect: {
+    timeout: 20000,
+    toHaveScreenshot: {
+      timeout: 20000,
+      animations: 'disabled',
+      caret: 'hide',
+      threshold: 0.1,
+      maxDiffPixels: 0,
+    },
+  },
   use: {
     ...base.use,
     channel: undefined,

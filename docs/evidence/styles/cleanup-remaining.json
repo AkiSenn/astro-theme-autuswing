@@ -1,0 +1,1408 @@
+[
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".copy-code",
+    "property": "right",
+    "value": "12px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".copy-code",
+    "property": "top",
+    "value": "7px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".back-top",
+    "property": "right",
+    "value": "25px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".back-top",
+    "property": "bottom",
+    "value": "25px"
+  },
+  {
+    "reason": "superseded by layout-sidebar",
+    "file": "legacy.css",
+    "selector": ":root",
+    "property": "--sidebar-width",
+    "value": "240px"
+  },
+  {
+    "reason": "superseded by layout-sidebar",
+    "file": "legacy.css",
+    "selector": ":root",
+    "property": "--sidebar-width",
+    "value": "272px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".back-top",
+    "property": "right",
+    "value": "15px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".back-top",
+    "property": "bottom",
+    "value": "15px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".goto-comments",
+    "property": "right",
+    "value": "25px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".goto-comments",
+    "property": "bottom",
+    "value": "78px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".code-language",
+    "property": "top",
+    "value": "9px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".code-language",
+    "property": "left",
+    "value": "18px"
+  },
+  {
+    "reason": "superseded by layout-sidebar",
+    "file": "legacy.css",
+    "selector": ":root",
+    "property": "--sidebar-width",
+    "value": "240px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".goto-comments",
+    "property": "right",
+    "value": "15px"
+  },
+  {
+    "reason": "element is static in its current wrapper",
+    "file": "legacy.css",
+    "selector": ".goto-comments",
+    "property": "bottom",
+    "value": "68px"
+  },
+  {
+    "reason": "transparent unused pseudo-element: visual.css always resets its background to none",
+    "file": "legacy.css",
+    "selector": ".mica-card::before"
+  },
+  {
+    "reason": "transparent unused pseudo-element: visual.css always resets its background to none",
+    "file": "legacy.css",
+    "selector": ".mica-card::before"
+  },
+  {
+    "reason": "transparent unused pseudo-element: visual.css always resets its background to none",
+    "file": "visual.css",
+    "selector": ".mica-card::before"
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".article-layout",
+    "property": "max-width",
+    "value": "none",
+    "replacement": "var(--reading-width)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "font-size",
+    "value": "29px",
+    "replacement": "clamp(28px, 2.7vw, 36px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "font-size",
+    "value": "26px",
+    "replacement": "clamp(28px, 2.7vw, 36px)",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".mica-article .article-header h1",
+    "property": "font-size",
+    "value": "26px",
+    "replacement": "clamp(28px, 2.7vw, 36px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".copyright-box",
+    "property": "padding",
+    "value": "16px",
+    "replacement": "20px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".copyright-box",
+    "property": "background",
+    "value": "none",
+    "replacement": "var(--paper)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-heading",
+    "property": "font-size",
+    "value": "15px",
+    "replacement": "15px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-details",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-details",
+    "property": "gap",
+    "value": "8px 10px",
+    "replacement": "8px 14px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "reading.css",
+    "selector": ".post-navigation",
+    "property": "gap",
+    "value": "12px",
+    "replacement": "16px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions",
+    "property": "justify-content",
+    "value": "space-between",
+    "replacement": "flex-start",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions button",
+    "property": "padding",
+    "value": "0",
+    "replacement": "4px 0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".toc",
+    "property": "list-style",
+    "value": "none",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-layout",
+    "property": "max-width",
+    "value": "920px",
+    "replacement": "var(--reading-width)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".mica-article .article-header",
+    "property": "padding-bottom",
+    "value": "24px",
+    "replacement": "24px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".back-link",
+    "property": "font-size",
+    "value": "11px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".back-link",
+    "property": "margin-bottom",
+    "value": "25px",
+    "replacement": "8px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "font-size",
+    "value": "clamp(27px,3vw,40px)",
+    "replacement": "clamp(28px, 2.7vw, 36px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "line-height",
+    "value": "1.5",
+    "replacement": "1.4",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "letter-spacing",
+    "value": "-.8px",
+    "replacement": "-0.7px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-header h1",
+    "property": "margin",
+    "value": "14px 0",
+    "replacement": "8px 0 18px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box",
+    "property": "padding",
+    "value": "20px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box",
+    "property": "border-radius",
+    "value": "var(--radius)",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box",
+    "property": "background",
+    "value": "var(--surface)",
+    "replacement": "var(--paper)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-heading",
+    "property": "font-size",
+    "value": "16px",
+    "replacement": "15px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-details",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".copyright-box .copyright-details",
+    "property": "gap",
+    "value": "9px 14px",
+    "replacement": "8px 14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions",
+    "property": "gap",
+    "value": "8px 16px",
+    "replacement": "8px 12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions a",
+    "property": "padding",
+    "value": "4px 0",
+    "replacement": "8px 10px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".article-actions button",
+    "property": "padding",
+    "value": "4px 0",
+    "replacement": "8px 10px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".post-navigation",
+    "property": "gap",
+    "value": "20px",
+    "replacement": "16px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".post-navigation a",
+    "property": "gap",
+    "value": "7px",
+    "replacement": "8px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".post-navigation small",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".post-navigation strong",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "15px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "reading.css",
+    "selector": ".post-navigation strong",
+    "property": "font-weight",
+    "value": "500",
+    "replacement": "600",
+    "conditions": []
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "max-width",
+    "value": "none",
+    "replacement": "var(--autuswing-width,1680px)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "max-width",
+    "value": "none",
+    "replacement": "none",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0 7%",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": [
+      "@media (min-width:1500px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0 4%",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": [
+      "@media (max-width:1200px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0 22px",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0 16px",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "layout.css",
+    "selector": "#main",
+    "property": "padding-top",
+    "value": "24px",
+    "replacement": "36px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "max-width",
+    "value": "1680px",
+    "replacement": "var(--autuswing-width,1680px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "margin-left",
+    "value": "var(--sidebar-width)",
+    "replacement": "var(--layout-sidebar)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "max-width",
+    "value": "var(--autuswing-width,1680px)",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "padding",
+    "value": "0 6.3%",
+    "replacement": "0 clamp(24px, 3vw, 64px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": "#main",
+    "property": "padding-top",
+    "value": "36px",
+    "replacement": "36px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".article-page #main",
+    "property": "padding-top",
+    "value": "20px",
+    "replacement": "36px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "layout.css",
+    "selector": ".main-shell",
+    "property": "margin",
+    "value": "0",
+    "replacement": "0",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "base.css",
+    "selector": "body",
+    "property": "font-size",
+    "value": "15px",
+    "replacement": "calc(var(--autuswing-base-font,16px) - 1px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "base.css",
+    "selector": ":focus-visible",
+    "property": "outline",
+    "value": "2px solid var(--green)",
+    "replacement": "2px solid var(--green)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "base.css",
+    "selector": ":focus-visible",
+    "property": "outline-offset",
+    "value": "5px",
+    "replacement": "4px",
+    "conditions": []
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "pages.css",
+    "selector": ".page-heading h1",
+    "property": "font-size",
+    "value": "32px",
+    "replacement": "clamp(28px, 3vw, 36px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "pages.css",
+    "selector": ".timeline article",
+    "property": "gap",
+    "value": "15px",
+    "replacement": "20px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "pages.css",
+    "selector": ".timeline article > a",
+    "property": "font-size",
+    "value": "14px",
+    "replacement": "17px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".page-heading h1",
+    "property": "font-size",
+    "value": "38px",
+    "replacement": "clamp(28px, 3vw, 36px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".page-heading h1",
+    "property": "letter-spacing",
+    "value": "-1px",
+    "replacement": "-0.5px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".page-heading p",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "15px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".timeline article",
+    "property": "gap",
+    "value": "25px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".timeline article > a",
+    "property": "font-size",
+    "value": "16px",
+    "replacement": "17px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".timeline time",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".timeline article > span",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".friend-grid p",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".friend-grid p",
+    "property": "color",
+    "value": "var(--muted)",
+    "replacement": "var(--muted)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "pages.css",
+    "selector": ".pagination a",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".prose",
+    "property": "font-size",
+    "value": "15px",
+    "replacement": "var(--autuswing-base-font,16px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".prose",
+    "property": "font-size",
+    "value": "calc(var(--autuswing-base-font,16px) - 1px)",
+    "replacement": "calc(var(--autuswing-base-font, 16px) + 1px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".article-layout .prose",
+    "property": "font-size",
+    "value": "var(--autuswing-base-font, 16px)",
+    "replacement": "calc(var(--autuswing-base-font, 16px) + 1px)",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".mica-article .prose",
+    "property": "font-size",
+    "value": "15px",
+    "replacement": "calc(var(--autuswing-base-font, 16px) + 1px)",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".prose h2",
+    "property": "font-size",
+    "value": "23px",
+    "replacement": "25px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "content.css",
+    "selector": ".mica-article .prose h2",
+    "property": "font-size",
+    "value": "22px",
+    "replacement": "25px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose",
+    "property": "font-size",
+    "value": "16px",
+    "replacement": "var(--autuswing-base-font,16px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose code",
+    "property": "font-family",
+    "value": "\"Cascadia Code\",Consolas,monospace",
+    "replacement": "var(--autuswing-code-font,\"Cascadia Code\",Consolas,monospace)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose",
+    "property": "font-size",
+    "value": "var(--autuswing-base-font,16px)",
+    "replacement": "calc(var(--autuswing-base-font, 16px) + 1px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose",
+    "property": "line-height",
+    "value": "1.95",
+    "replacement": "1.9",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose p",
+    "property": "margin",
+    "value": "1em 0 1.5em",
+    "replacement": "0 0 1.3em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h2",
+    "property": "font-size",
+    "value": "25px",
+    "replacement": "25px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h2",
+    "property": "line-height",
+    "value": "1.5",
+    "replacement": "1.45",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h2",
+    "property": "margin",
+    "value": "1.8em 0 .8em",
+    "replacement": "2.1em 0 0.8em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h3",
+    "property": "font-size",
+    "value": "21px",
+    "replacement": "21px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h3",
+    "property": "line-height",
+    "value": "1.5",
+    "replacement": "1.5",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h3",
+    "property": "margin",
+    "value": "1.8em 0 .8em",
+    "replacement": "1.8em 0 0.65em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h4",
+    "property": "line-height",
+    "value": "1.5",
+    "replacement": "1.6",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose h4",
+    "property": "margin",
+    "value": "1.8em 0 .8em",
+    "replacement": "1.7em 0 0.6em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose a",
+    "property": "text-underline-offset",
+    "value": "4px",
+    "replacement": "0.22em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose ul",
+    "property": "padding-left",
+    "value": "25px",
+    "replacement": "1.6em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose ol",
+    "property": "padding-left",
+    "value": "25px",
+    "replacement": "1.6em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "margin",
+    "value": "25px 0",
+    "replacement": "1.6em 0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "padding",
+    "value": "5px 24px",
+    "replacement": "16px 20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "border-left",
+    "value": "3px solid var(--green)",
+    "replacement": "3px solid var(--green)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "border-radius",
+    "value": "0 8px 8px 0",
+    "replacement": "0 10px 10px 0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "background",
+    "value": "var(--green-soft)",
+    "replacement": "var(--green-soft)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote",
+    "property": "color",
+    "value": "var(--muted)",
+    "replacement": "var(--text)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose blockquote p",
+    "property": "margin",
+    "value": "10px 0",
+    "replacement": "0 0 0.8em",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre",
+    "property": "line-height",
+    "value": "1.8",
+    "replacement": "1.8",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre .line::before",
+    "property": "opacity",
+    "value": "0.45",
+    "replacement": "1",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre .line::before",
+    "property": "min-width",
+    "value": "2ch",
+    "replacement": "3ch",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre .line::before",
+    "property": "margin-right",
+    "value": "1.3em",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose img",
+    "property": "margin",
+    "value": "20px auto",
+    "replacement": "1.6em auto",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose img",
+    "property": "border-radius",
+    "value": "10px",
+    "replacement": "10px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "content.css",
+    "selector": ".prose pre",
+    "property": "white-space",
+    "value": "pre-wrap",
+    "replacement": "pre-wrap",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "overlays.css",
+    "selector": ".floating-tools",
+    "property": "right",
+    "value": "12px",
+    "replacement": "max(12px, env(safe-area-inset-right))",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "overlays.css",
+    "selector": ".floating-tools",
+    "property": "bottom",
+    "value": "15px",
+    "replacement": "max(16px, env(safe-area-inset-bottom))",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".floating-tools",
+    "property": "right",
+    "value": "25px",
+    "replacement": "max(12px, env(safe-area-inset-right))",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".floating-tools",
+    "property": "bottom",
+    "value": "25px",
+    "replacement": "max(16px, env(safe-area-inset-bottom))",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".floating-tools",
+    "property": "display",
+    "value": "none",
+    "replacement": "none",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".search-field input",
+    "property": "font-size",
+    "value": "14px",
+    "replacement": "16px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".search-status",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".search-results p",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".search-dialog footer",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".image-dialog",
+    "property": "max-height",
+    "value": "94vh",
+    "replacement": "92dvh",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".image-dialog > img",
+    "property": "max-height",
+    "value": "88vh",
+    "replacement": "86dvh",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": "dialog::backdrop",
+    "property": "backdrop-filter",
+    "value": "blur(5px)",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "overlays.css",
+    "selector": ".toast",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "background",
+    "value": "var(--surface)",
+    "replacement": "var(--surface)",
+    "conditions": [
+      "@media (prefers-reduced-transparency:reduce)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "background",
+    "value": "white",
+    "replacement": "var(--surface)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "box-shadow",
+    "value": "none",
+    "replacement": "var(--mica-shadow)",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "backdrop-filter",
+    "value": "none",
+    "replacement": "none",
+    "conditions": [
+      "@media (prefers-reduced-transparency:reduce)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "backdrop-filter",
+    "value": "none",
+    "replacement": "none",
+    "conditions": [
+      "@media print"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "-webkit-backdrop-filter",
+    "value": "none",
+    "replacement": "none",
+    "conditions": [
+      "@media (prefers-reduced-transparency:reduce)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "background",
+    "value": "var(--mica-base)",
+    "replacement": "var(--surface)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "box-shadow",
+    "value": "var(--mica-shadow),inset 0 1px 0 var(--mica-edge)",
+    "replacement": "var(--mica-shadow)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "backdrop-filter",
+    "value": "blur(var(--mica-blur,24px)) saturate(1.15)",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-card",
+    "property": "-webkit-backdrop-filter",
+    "value": "blur(var(--mica-blur,24px)) saturate(1.15)",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-article > .surface-wallpaper",
+    "property": "position",
+    "value": "fixed",
+    "replacement": "absolute",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "surfaces.css",
+    "selector": ".mica-article > .surface-wallpaper",
+    "property": "max-height",
+    "value": "100vh",
+    "replacement": "none",
+    "conditions": []
+  },
+  {
+    "reason": "footer always uses display:block",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "gap",
+    "value": "var(--space-5)"
+  },
+  {
+    "reason": "footer always uses display:block",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "flex-wrap",
+    "value": "wrap"
+  },
+  {
+    "reason": "footer always uses display:block",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "justify-content",
+    "value": "space-between"
+  },
+  {
+    "reason": "footer always uses display:block",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "justify-content",
+    "value": "flex-start"
+  },
+  {
+    "reason": "footer always uses display:block",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "gap",
+    "value": "var(--space-2) var(--space-4)"
+  },
+  {
+    "reason": "superseded by layout-sidebar",
+    "file": "navigation.css",
+    "selector": ".sidebar",
+    "property": "width",
+    "value": "var(--sidebar-width)"
+  },
+  {
+    "reason": "superseded by layout-sidebar",
+    "file": "tokens.css",
+    "selector": ":root",
+    "property": "--sidebar-width",
+    "value": "var(--autuswing-sidebar, 272px)"
+  }
+]
