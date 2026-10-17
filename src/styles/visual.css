@@ -26,126 +26,6 @@ a,
 button {
   touch-action: manipulation;
 }
-.section-heading {
-  padding-block: 6px 24px;
-}
-.section-heading > h1 {
-  font-size: clamp(25px, 2vw, 30px);
-  line-height: 1.4;
-  letter-spacing: -0.5px;
-}
-.count {
-  font-size: 12px;
-  padding: 2px 9px;
-  margin-left: 10px;
-}
-.post-list:has(> .mica-card) {
-  gap: 20px;
-}
-.post-card,
-.post-card.mica-card {
-  gap: 24px;
-  padding: 28px;
-}
-.post-card .card-date,
-.post-card.mica-card .card-date {
-  width: 60px;
-  padding-top: 1px;
-}
-.card-date span,
-.post-card.mica-card .card-date span {
-  font-size: 40px;
-  line-height: 1.2;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-.card-date small {
-  font-size: 11px;
-  letter-spacing: 0.4px;
-}
-.post-card .post-card-title,
-.post-card.mica-card .post-card-title {
-  font-size: 22px;
-  font-weight: 650;
-  line-height: 1.5;
-  letter-spacing: -0.3px;
-  margin: 8px 0 12px;
-  text-wrap: pretty;
-}
-.post-card p {
-  font-size: 15px;
-  line-height: 1.85;
-  max-width: 680px;
-  -webkit-line-clamp: 2;
-}
-.post-card .post-card-title a:hover {
-  color: var(--green);
-}
-.post-card .card-body .prose p {
-  font-size: inherit;
-  line-height: inherit;
-}
-.post-meta,
-.post-card .post-meta,
-.article-header .post-meta {
-  font-size: 12px;
-  line-height: 1.8;
-  letter-spacing: 0;
-  gap: 4px 12px;
-  align-items: baseline;
-}
-.post-meta > * + *::before {
-  content: '·';
-  display: inline-block;
-  margin-right: 12px;
-  color: var(--muted);
-}
-.post-meta time {
-  white-space: nowrap;
-}
-.card-tags,
-.post-card .card-tags,
-.article-header .card-tags {
-  font-size: 12px;
-  line-height: 1.7;
-  gap: 4px 12px;
-  margin-top: 14px;
-}
-.card-tags a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-}
-.card-tags a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.card-arrow {
-  min-width: 36px;
-  min-height: 36px;
-  margin-top: 34px;
-}
-.more-link {
-  font-size: 14px;
-  min-height: 36px;
-}
-.desktop-sidebar .profile p,
-.profile-description {
-  font-size: 13px;
-}
-.desktop-contents .toc a {
-  font-size: 13px;
-  line-height: 1.6;
-  padding: 8px 6px;
-  border-radius: 6px;
-}
-.desktop-contents .toc a.active {
-  background: var(--green-soft);
-  color: var(--text);
-}
-.sidebar-article-title {
-  font-size: 13px;
-  margin-block: 4px 12px;
-}
 .article-header,
 .mica-article .article-header {
   padding-bottom: 24px;
@@ -164,9 +44,6 @@ button {
   letter-spacing: -0.7px;
   margin: 8px 0 18px;
   text-wrap: balance;
-}
-.article-header .card-tags {
-  margin-top: 12px;
 }
 .prose,
 .article-layout .prose,
@@ -529,15 +406,6 @@ button {
   color: var(--text);
   font-weight: 600;
 }
-.site-footer {
-  font-size: 12px;
-  line-height: 1.9;
-  padding-block: 28px 36px;
-  margin-top: 40px;
-}
-.registration a {
-  min-height: 44px;
-}
 .search-header {
   padding-top: 16px;
 }
@@ -588,58 +456,8 @@ dialog::backdrop {
   text-align: center;
 }
 @media (720px <= width < 1000px) {
-  @container (min-width: 660px) {
-    .journal-home .post-card {
-      padding: 22px;
-      gap: 10px;
-    }
-    .journal-home .post-card .card-date {
-      width: auto;
-    }
-    .journal-home .post-card .card-date span {
-      font-size: 30px;
-    }
-    .journal-home .post-card .post-card-title {
-      font-size: 21px;
-      margin-top: 6px;
-    }
-    .journal-home .post-card p {
-      font-size: 15px;
-    }
-  }
 }
 @media (width < 720px) {
-  .mobile-brand-row .mobile-brand {
-    max-width: none;
-    font-size: 14px;
-  }
-  .mobile-brand img {
-    border: 1px solid var(--line);
-  }
-  .section-heading {
-    padding-bottom: 20px;
-  }
-  .post-card,
-  .post-card.mica-card {
-    padding: 20px;
-    gap: 10px;
-  }
-  .post-card .card-date,
-  .post-card.mica-card .card-date {
-    width: auto;
-  }
-  .post-card .card-date span,
-  .post-card.mica-card .card-date span {
-    font-size: 30px;
-  }
-  .post-card .post-card-title,
-  .post-card.mica-card .post-card-title {
-    font-size: 21px;
-    margin-block: 6px 10px;
-  }
-  .post-card p {
-    font-size: 15px;
-  }
   .article-layout .prose,
   .mica-article .prose {
     font-size: var(--autuswing-base-font, 16px);
@@ -681,14 +499,6 @@ dialog::backdrop {
   .timeline article > a {
     font-size: 15px;
   }
-  .site-footer {
-    font-size: 12px;
-  }
-}
-@media (max-height: 800px) and (min-width: 1000px) {
-  .desktop-sidebar .profile p {
-    font-size: 12px;
-  }
 }
 @media (prefers-reduced-transparency: reduce) {
   body:has(.site-background) .mica-card {
@@ -705,8 +515,6 @@ dialog::backdrop {
     border: 1px solid CanvasText;
     box-shadow: none;
   }
-  .card-date span,
-  .post-meta,
   .code-toolbar .copy-code,
   .code-toolbar .code-language {
     color: CanvasText;

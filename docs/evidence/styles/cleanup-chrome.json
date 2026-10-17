@@ -1,0 +1,1087 @@
+[
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 203,
+    "selector": ".eyebrow i"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 316,
+    "selector": ".section-heading h2"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 443,
+    "selector": ".pagination .current"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 510,
+    "selector": ".about-profile"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 515,
+    "selector": ".about-profile img"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 521,
+    "selector": ".about-profile p"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 754,
+    "selector": ".image-open"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "legacy.css",
+    "line": 1047,
+    "selector": ".section-heading h2"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "responsive.css",
+    "line": 89,
+    "selector": ".profile-description"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "responsive.css",
+    "line": 257,
+    "selector": ".desktop-sidebar .profile-description"
+  },
+  {
+    "reason": "no callers in templates/scripts/content",
+    "file": "visual.css",
+    "line": 131,
+    "selector": ".profile-description"
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-list:has(> .mica-card)",
+    "property": "gap",
+    "value": "14px",
+    "replacement": "20px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "gap",
+    "value": "16px",
+    "replacement": "24px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "gap",
+    "value": "10px",
+    "replacement": "24px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "padding",
+    "value": "32px 0",
+    "replacement": "28px",
+    "conditions": [
+      "@media (min-width:1500px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "padding",
+    "value": "24px 0",
+    "replacement": "28px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "padding",
+    "value": "20px",
+    "replacement": "28px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "gap",
+    "value": "14px",
+    "replacement": "24px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "gap",
+    "value": "10px",
+    "replacement": "24px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "padding",
+    "value": "23px 20px",
+    "replacement": "28px",
+    "conditions": [
+      "@media (max-width:1200px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "padding",
+    "value": "21px 18px",
+    "replacement": "28px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "padding",
+    "value": "20px",
+    "replacement": "28px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .card-date",
+    "property": "width",
+    "value": "auto",
+    "replacement": "60px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .card-date",
+    "property": "padding-top",
+    "value": "0",
+    "replacement": "1px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date",
+    "property": "width",
+    "value": "38px",
+    "replacement": "60px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date",
+    "property": "width",
+    "value": "auto",
+    "replacement": "60px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date",
+    "property": "padding-top",
+    "value": "0",
+    "replacement": "1px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".card-date span",
+    "property": "font-size",
+    "value": "29px",
+    "replacement": "40px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date span",
+    "property": "font-size",
+    "value": "28px",
+    "replacement": "40px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date span",
+    "property": "font-size",
+    "value": "26px",
+    "replacement": "40px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".card-date small",
+    "property": "font-size",
+    "value": "8px",
+    "replacement": "11px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "15px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "font-size",
+    "value": "14px",
+    "replacement": "15px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-meta",
+    "property": "font-size",
+    "value": "9px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-meta",
+    "property": "gap",
+    "value": "6px",
+    "replacement": "4px 12px",
+    "conditions": [
+      "@media (max-width:450px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .post-meta",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .post-meta",
+    "property": "letter-spacing",
+    "value": "0",
+    "replacement": "0",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .post-meta",
+    "property": "gap",
+    "value": "8px",
+    "replacement": "4px 12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".article-header .post-meta",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".article-header .post-meta",
+    "property": "letter-spacing",
+    "value": "0",
+    "replacement": "0",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".card-tags",
+    "property": "font-size",
+    "value": "9px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".card-tags",
+    "property": "gap",
+    "value": "10px",
+    "replacement": "4px 12px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .card-tags",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".post-card .card-tags",
+    "property": "gap",
+    "value": "8px",
+    "replacement": "4px 12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "cards.css",
+    "selector": ".article-header .card-tags",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".section-heading > h1",
+    "property": "font-size",
+    "value": "22px",
+    "replacement": "clamp(25px, 2vw, 30px)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".section-heading > h1",
+    "property": "letter-spacing",
+    "value": "-.5px",
+    "replacement": "-0.5px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".count",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".count",
+    "property": "padding",
+    "value": "1px 7px",
+    "replacement": "2px 9px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".count",
+    "property": "margin-left",
+    "value": "12px",
+    "replacement": "10px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-list:has(> .mica-card)",
+    "property": "gap",
+    "value": "18px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "gap",
+    "value": "25px",
+    "replacement": "24px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card",
+    "property": "padding",
+    "value": "27px 0",
+    "replacement": "28px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card",
+    "property": "padding",
+    "value": "26px 24px",
+    "replacement": "28px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card.mica-card .card-date",
+    "property": "width",
+    "value": "48px",
+    "replacement": "60px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-date span",
+    "property": "font-size",
+    "value": "33px",
+    "replacement": "40px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-date span",
+    "property": "line-height",
+    "value": "1.25",
+    "replacement": "1.2",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-date small",
+    "property": "font-size",
+    "value": "9px",
+    "replacement": "11px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-date small",
+    "property": "letter-spacing",
+    "value": "1px",
+    "replacement": "0.4px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "15px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "line-height",
+    "value": "1.9",
+    "replacement": "1.85",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "max-width",
+    "value": "640px",
+    "replacement": "680px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card p",
+    "property": "-webkit-line-clamp",
+    "value": "2",
+    "replacement": "2",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-meta",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-meta",
+    "property": "letter-spacing",
+    "value": ".4px",
+    "replacement": "0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-meta",
+    "property": "gap",
+    "value": "9px",
+    "replacement": "4px 12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-tags",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-tags",
+    "property": "gap",
+    "value": "13px",
+    "replacement": "4px 12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-tags",
+    "property": "margin-top",
+    "value": "13px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".card-arrow",
+    "property": "margin-top",
+    "value": "30px",
+    "replacement": "34px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".more-link",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".article-header .card-tags",
+    "property": "margin-top",
+    "value": "14px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".journal-home .post-card",
+    "property": "padding",
+    "value": "20px",
+    "replacement": "22px",
+    "conditions": [
+      "@media (720px <= width < 1000px)",
+      "@container (min-width:660px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".journal-home .post-card",
+    "property": "gap",
+    "value": "10px",
+    "replacement": "10px",
+    "conditions": [
+      "@media (720px <= width < 1000px)",
+      "@container (min-width:660px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".journal-home .post-card .card-date",
+    "property": "width",
+    "value": "auto",
+    "replacement": "auto",
+    "conditions": [
+      "@media (720px <= width < 1000px)",
+      "@container (min-width:660px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".journal-home .post-card p",
+    "property": "font-size",
+    "value": "14px",
+    "replacement": "15px",
+    "conditions": [
+      "@media (720px <= width < 1000px)",
+      "@container (min-width:660px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "cards.css",
+    "selector": ".post-card .card-date span",
+    "property": "font-size",
+    "value": "26px",
+    "replacement": "30px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "navigation.css",
+    "selector": ".sidebar",
+    "property": "padding",
+    "value": "25px",
+    "replacement": "26px 28px 20px",
+    "conditions": [
+      "@media (max-width:1200px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom .social-links a",
+    "property": "min-height",
+    "value": "44px",
+    "replacement": "44px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar",
+    "property": "background",
+    "value": "var(--sidebar)",
+    "replacement": "var(--sidebar)",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar",
+    "property": "padding",
+    "value": "30px 30px 24px",
+    "replacement": "26px 28px 20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".profile",
+    "property": "padding",
+    "value": "0 0 26px",
+    "replacement": "0 0 18px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".profile h2",
+    "property": "font-size",
+    "value": "22px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".profile h2",
+    "property": "margin",
+    "value": "16px 0 5px",
+    "replacement": "12px 0 4px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".site-nav",
+    "property": "gap",
+    "value": "4px",
+    "replacement": "3px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".site-nav a",
+    "property": "gap",
+    "value": "14px",
+    "replacement": "10px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".site-nav a",
+    "property": "padding",
+    "value": "10px 12px",
+    "replacement": "9px 12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom",
+    "property": "margin-top",
+    "value": "auto",
+    "replacement": "14px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom",
+    "property": "padding-top",
+    "value": "24px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links",
+    "property": "display",
+    "value": "flex",
+    "replacement": "flex",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links",
+    "property": "flex-wrap",
+    "value": "wrap",
+    "replacement": "wrap",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links",
+    "property": "gap",
+    "value": "12px",
+    "replacement": "8px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links",
+    "property": "margin",
+    "value": "20px 0",
+    "replacement": "0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom .social-links",
+    "property": "gap",
+    "value": "4px 10px",
+    "replacement": "8px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom .social-links",
+    "property": "margin",
+    "value": "0 0 8px",
+    "replacement": "0",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links a",
+    "property": "display",
+    "value": "inline-flex",
+    "replacement": "inline-flex",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links a",
+    "property": "align-items",
+    "value": "center",
+    "replacement": "center",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom .social-links a",
+    "property": "min-width",
+    "value": "36px",
+    "replacement": "44px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-bottom .social-links a",
+    "property": "min-height",
+    "value": "36px",
+    "replacement": "44px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links .icon",
+    "property": "width",
+    "value": "13px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".social-links .icon",
+    "property": "height",
+    "value": "13px",
+    "replacement": "20px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".desktop-sidebar .profile p",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".desktop-contents .toc a",
+    "property": "font-size",
+    "value": "12px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".desktop-contents .toc a",
+    "property": "line-height",
+    "value": "1.7",
+    "replacement": "1.6",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".desktop-contents .toc a",
+    "property": "padding",
+    "value": "7px 4px",
+    "replacement": "8px 6px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".sidebar-article-title",
+    "property": "font-size",
+    "value": "13px",
+    "replacement": "13px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "navigation.css",
+    "selector": ".mobile-brand-row .mobile-brand",
+    "property": "font-size",
+    "value": "14px",
+    "replacement": "14px",
+    "conditions": [
+      "@media (width < 720px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "font-size",
+    "value": "9px",
+    "replacement": "11px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "later unconditional rule supersedes earlier media declaration",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "12px",
+    "conditions": [
+      "@media (max-width:760px)"
+    ]
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "display",
+    "value": "flex",
+    "replacement": "block",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "font-size",
+    "value": "10px",
+    "replacement": "11px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "font-size",
+    "value": "11px",
+    "replacement": "12px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "footer.css",
+    "selector": ".site-footer",
+    "property": "margin-top",
+    "value": "30px",
+    "replacement": "40px",
+    "conditions": []
+  },
+  {
+    "reason": "superseded same selector/property/condition",
+    "file": "footer.css",
+    "selector": ".registration a",
+    "property": "min-height",
+    "value": "28px",
+    "replacement": "44px",
+    "conditions": []
+  }
+]

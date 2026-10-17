@@ -1,0 +1,391 @@
+/* Home feed, cards and shared post metadata. Responsive card rules live here. */
+.journal.journal-home {
+  padding-top: 0;
+}
+.section-heading > h1 {
+  margin: 0;
+  font-weight: 600;
+}
+.journal {
+  padding-top: 38px;
+  scroll-margin-top: 25px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 18px;
+}
+.count {
+  vertical-align: middle;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.section-heading > a {
+  font-size: 11px;
+  color: var(--muted);
+}
+.post-list {
+  border-top: 1px solid var(--line);
+}
+.post-card {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+}
+.card-date {
+  width: 54px;
+  flex: none;
+  text-align: center;
+  padding-top: var(--space-1);
+}
+.card-date time {
+  display: grid;
+}
+.card-date span {
+  font-family: Georgia, serif;
+  color: var(--green);
+}
+.card-date small {
+  color: var(--muted);
+}
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+.post-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-label {
+  color: var(--green);
+}
+.post-card p {
+  color: var(--muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+.card-tags a:hover {
+  color: var(--green);
+}
+.card-arrow {
+  border: 1px solid var(--line);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-size: 17px;
+  flex: none;
+}
+.card-arrow:hover {
+  background: var(--green-soft);
+  border-color: var(--green);
+}
+@media (max-width: 760px) {
+  .journal {
+    padding-top: 30px;
+  }
+  .card-date {
+    width: 43px;
+  }
+  .card-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  .card-arrow {
+    display: none;
+  }
+}
+.post-card .prose p {
+  display: block;
+  max-width: none;
+  overflow: visible;
+}
+.more-link {
+  color: var(--green);
+  display: inline-block;
+  margin-top: 14px;
+}
+.post-list:has(> .mica-card) {
+  border-top: 0;
+  display: grid;
+}
+.post-card.mica-card {
+  margin: 0;
+}
+.post-card.mica-card .card-arrow {
+  background: var(--surface);
+}
+.post-card.mica-card:focus-within {
+  border-color: var(--green);
+  box-shadow: var(--mica-hover-shadow);
+}
+@media (max-width: 450px) {
+  .post-card.mica-card .card-tags {
+    gap: var(--space-2);
+  }
+}
+.post-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (720px <= width < 1000px) {
+  .journal-home {
+    container-type: inline-size;
+  }
+  @container (min-width: 660px) {
+    .journal-home .post-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .journal-home .post-list:has(.prose) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .journal-home .post-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+    }
+    .journal-home .post-card .card-date {
+      text-align: left;
+    }
+    .journal-home .card-date time {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-2);
+    }
+    .journal-home .card-date span,
+    .journal-home .card-date small {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .journal-home .card-date span {
+      font-size: 26px;
+    }
+    .journal-home .card-date small {
+      font-size: 11px;
+    }
+    .journal-home .card-arrow {
+      display: none;
+    }
+    .journal-home .post-card h3 {
+      font-size: 19px;
+    }
+    .journal-home .post-meta,
+    .journal-home .card-tags {
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+  }
+}
+@media (width < 720px) {
+  .post-card,
+  .post-card.mica-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .post-card .card-date,
+  .post-card.mica-card .card-date {
+    text-align: left;
+  }
+  .post-card .card-date time {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+  .post-card .card-date small {
+    font-size: 11px;
+  }
+  .post-card h3,
+  .post-card.mica-card h3 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .post-card .card-tags {
+    letter-spacing: 0;
+  }
+  .post-card .card-arrow {
+    display: none;
+  }
+  .article-header .card-tags {
+    letter-spacing: 0;
+  }
+}
+.section-heading {
+  padding-block: 6px var(--space-6);
+}
+.section-heading > h1 {
+  font-size: clamp(25px, 2vw, 30px);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+.count {
+  font-size: 12px;
+  padding: 2px 9px;
+  margin-left: 10px;
+}
+.post-list:has(> .mica-card) {
+  gap: var(--space-5);
+}
+.post-card,
+.post-card.mica-card {
+  gap: var(--space-6);
+  padding: 28px;
+}
+.post-card .card-date,
+.post-card.mica-card .card-date {
+  width: 60px;
+  padding-top: 1px;
+}
+.card-date span,
+.post-card.mica-card .card-date span {
+  font-size: 40px;
+  line-height: 1.2;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.card-date small {
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+.post-card .post-card-title,
+.post-card.mica-card .post-card-title {
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  margin: var(--space-2) 0 var(--space-3);
+  text-wrap: pretty;
+}
+.post-card p {
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 680px;
+  -webkit-line-clamp: 2;
+}
+.post-card .post-card-title a:hover {
+  color: var(--green);
+}
+.post-card .card-body .prose p {
+  font-size: inherit;
+  line-height: inherit;
+}
+.post-meta,
+.post-card .post-meta,
+.article-header .post-meta {
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0;
+  gap: var(--space-1) var(--space-3);
+  align-items: baseline;
+}
+.post-meta > * + *::before {
+  content: '·';
+  display: inline-block;
+  margin-right: var(--space-3);
+  color: var(--muted);
+}
+.post-meta time {
+  white-space: nowrap;
+}
+.card-tags,
+.post-card .card-tags {
+  font-size: 12px;
+  line-height: 1.7;
+  gap: var(--space-1) var(--space-3);
+  margin-top: 14px;
+}
+.article-header .card-tags {
+  font-size: 12px;
+  line-height: 1.7;
+  gap: var(--space-1) var(--space-3);
+}
+.card-tags a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+}
+.card-tags a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.card-arrow {
+  min-width: 36px;
+  min-height: 36px;
+  margin-top: 34px;
+}
+.more-link {
+  font-size: 14px;
+  min-height: 36px;
+}
+.article-header .card-tags {
+  margin-top: var(--space-3);
+}
+@media (720px <= width < 1000px) {
+  @container (min-width: 660px) {
+    .journal-home .post-card {
+      padding: 22px;
+      gap: 10px;
+    }
+    .journal-home .post-card .card-date {
+      width: auto;
+    }
+    .journal-home .post-card .card-date span {
+      font-size: 30px;
+    }
+    .journal-home .post-card .post-card-title {
+      font-size: 21px;
+      margin-top: 6px;
+    }
+    .journal-home .post-card p {
+      font-size: 15px;
+    }
+  }
+}
+@media (width < 720px) {
+  .section-heading {
+    padding-bottom: var(--space-5);
+  }
+  .post-card,
+  .post-card.mica-card {
+    padding: var(--space-5);
+    gap: 10px;
+  }
+  .post-card .card-date,
+  .post-card.mica-card .card-date {
+    width: auto;
+  }
+  .post-card .card-date span,
+  .post-card.mica-card .card-date span {
+    font-size: 30px;
+  }
+  .post-card .post-card-title,
+  .post-card.mica-card .post-card-title {
+    font-size: 21px;
+    margin-block: 6px 10px;
+  }
+  .post-card p {
+    font-size: 15px;
+  }
+}
+@media (forced-colors: active) {
+  .card-date span,
+  .post-meta {
+    color: CanvasText;
+  }
+}

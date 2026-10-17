@@ -6,10 +6,7 @@ html {
 html:has(dialog[open]) {
   overflow: hidden;
 }
-.tablet-sidebar,
-.mobile-header,
-.contents-access,
-.compact-social {
+.contents-access {
   display: none;
 }
 .reading-sidebar {
@@ -20,8 +17,7 @@ html:has(dialog[open]) {
   max-width: none;
   padding: 0 clamp(24px, 3vw, 64px);
 }
-#main,
-.main-shell > .site-footer {
+#main {
   max-width: min(var(--autuswing-width, 1680px), 1120px);
   margin-inline: auto;
 }
@@ -29,123 +25,11 @@ html:has(dialog[open]) {
 .article-page #main {
   padding-top: 36px;
 }
-.desktop-sidebar.sidebar {
-  width: var(--layout-sidebar);
-  height: 100dvh;
-  padding: 24px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-}
-.desktop-sidebar .profile,
-.desktop-sidebar .site-nav,
-.desktop-sidebar .sidebar-bottom {
-  flex-shrink: 0;
-}
-.desktop-sidebar .profile p {
-  font-size: 12px;
-}
-.desktop-sidebar .site-nav a {
-  min-height: 44px;
-  font-size: 14px;
-}
-.desktop-contents {
-  flex: 1 1 auto;
-  min-height: 100px;
-  margin-top: 20px;
-  border-top: 1px solid var(--line);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-}
-.desktop-contents > h2 {
-  position: sticky;
-  top: 0;
-  padding: 12px 0 8px;
-  margin: 0;
-  font-size: 12px;
-  color: var(--muted);
-  background: var(--sidebar);
-  z-index: 1;
-}
-.desktop-contents .toc {
-  margin-block: 0 12px;
-}
-.desktop-contents .toc a {
-  display: block;
-  padding: 7px 4px;
-  font-size: 12px;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
-.desktop-sidebar .sidebar-bottom {
-  margin-top: auto;
-  padding-top: 12px;
-  max-height: none;
-  overflow: visible;
-}
-.desktop-sidebar:has(.desktop-contents) .sidebar-bottom {
-  margin-top: 14px;
-}
-.profile-description {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0 0 8px;
-  overflow-wrap: anywhere;
-}
-.site-tools {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.site-tools .icon-button,
 .contents-close {
   width: 44px;
   height: 44px;
   min-width: 44px;
   min-height: 44px;
-}
-.social-links,
-.sidebar-bottom .social-links,
-.compact-social .social-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 0;
-}
-.sidebar-bottom .social-links {
-  margin-top: 8px;
-}
-.social-links a,
-.sidebar-bottom .social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0;
-  border-radius: 8px;
-}
-.social-links .icon {
-  width: 20px;
-  height: 20px;
-  flex: none;
-}
-.social-links a:hover {
-  background: var(--green-soft);
-}
-.site-footer {
-  text-align: center;
-}
-.site-footer .footer-row {
-  justify-content: center;
-}
-.site-footer .compact-social {
-  margin-bottom: 12px;
 }
 .article-layout {
   max-width: var(--reading-width);
@@ -161,7 +45,6 @@ html:has(dialog[open]) {
   max-width: var(--reading-width);
   margin-inline: auto;
 }
-.post-card,
 .article-header,
 .standalone-page {
   min-width: 0;
@@ -245,231 +128,28 @@ html:has(dialog[open]) {
 .floating-tools .copy-link {
   display: none;
 } /* Copy/share remain in the article actions. */
-
-@media (max-height: 800px) and (min-width: 1000px) {
-  .desktop-sidebar .profile {
-    padding-bottom: 10px;
-  }
-  .desktop-sidebar .profile h2 {
-    font-size: 18px;
-    margin-top: 8px;
-  }
-  .desktop-sidebar .profile-description {
-    display: none;
-  }
-  .desktop-sidebar .desktop-contents {
-    flex-basis: 180px;
-  }
-}
 /* Full desktop branding remains on home and ordinary pages. */
 @media screen and (min-width: 1000px) {
-  .desktop-sidebar .sidebar-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-top: 0;
-  }
-  .desktop-sidebar .sidebar-bottom .site-tools {
-    justify-content: center;
-    gap: 12px;
-    flex-shrink: 0;
-  }
-  .desktop-sidebar .sidebar-bottom .site-tools .icon-button {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    min-height: 42px;
-    padding: 0;
-    border-radius: 10px;
-    color: var(--text);
-    background: color-mix(in srgb, var(--green-soft) 35%, transparent);
-  }
-  .desktop-sidebar .sidebar-bottom .site-tools .icon-button:hover,
-  .desktop-sidebar .sidebar-bottom .site-tools .icon-button:focus-visible {
-    background: var(--green-soft);
-  }
-  .desktop-sidebar .sidebar-bottom .social-links {
-    margin: 0;
-    padding-top: 12px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-  }
-  .desktop-sidebar .sidebar-bottom .social-links a {
-    background: transparent;
-  }
-  .desktop-sidebar .sidebar-bottom .social-links a:hover {
-    color: var(--text);
-  }
-  .desktop-sidebar .profile {
-    padding-bottom: 12px;
-  }
-  .desktop-sidebar .avatar-link {
-    width: 72px;
-    height: 72px;
-    padding: 4px;
-  }
-  .desktop-sidebar .avatar {
-    width: 62px;
-    height: 62px;
-  }
-  .desktop-sidebar .profile h2 {
-    margin: 8px 0 4px;
-  }
-  .desktop-sidebar.sidebar .profile > p {
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--muted);
-  }
   .article-page {
     --reading-width: 860px;
   }
   .article-page .article-layout:has(> .mica-article) {
     max-width: var(--reading-width);
   }
-  .home-page .desktop-sidebar .profile {
-    padding-bottom: 20px;
-  }
-  .home-page .desktop-sidebar .site-nav {
-    gap: 4px;
-  }
 }
 /* One rail implementation serves tablets and desktop reading pages. */
-@media (min-width: 720px) {
-  .tablet-sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: var(--layout-sidebar);
-    height: 100dvh;
-    padding: 20px 8px max(16px, env(safe-area-inset-bottom));
-    background: var(--sidebar);
-    border-right: 1px solid var(--line);
-    z-index: 30;
-    overflow-y: auto;
-    scrollbar-width: thin;
-  }
-  .rail-brand {
-    display: grid;
-    place-content: center;
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-  }
-  .rail-brand img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-  }
-  .rail-nav {
-    display: grid;
-    gap: 8px;
-  }
-  .rail-nav a {
-    width: 48px;
-    min-height: 48px;
-    display: grid;
-    place-content: center;
-    border-radius: 12px;
-    color: var(--muted);
-  }
-  .rail-nav a:hover,
-  .rail-nav a[aria-current] {
-    background: var(--green-soft);
-    color: var(--text);
-  }
-  .rail-nav a[aria-current] {
-    box-shadow: inset 3px 0 var(--green);
-  }
-  .rail-tools {
-    margin-top: auto;
-    padding-top: 12px;
-    display: grid;
-    gap: 8px;
-  }
-  .rail-tools .site-tools {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
 @media (720px <= width < 1000px) {
   :root {
     --layout-sidebar: 72px;
   }
-  .desktop-sidebar.sidebar {
-    display: none;
-  }
   .main-shell {
     padding-inline: 24px;
   }
-  .journal-home {
-    container-type: inline-size;
-  }
-  @container (min-width: 660px) {
-    .journal-home .post-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .journal-home .post-list:has(.prose) {
-      grid-template-columns: minmax(0, 1fr);
-    }
-    .journal-home .post-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 10px;
-      padding: 20px;
-      align-content: start;
-    }
-    .journal-home .post-card .card-date {
-      width: auto;
-      text-align: left;
-    }
-    .journal-home .card-date time {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .journal-home .card-date span,
-    .journal-home .card-date small {
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .journal-home .card-date span {
-      font-size: 26px;
-    }
-    .journal-home .card-date small {
-      font-size: 11px;
-    }
-    .journal-home .card-arrow {
-      display: none;
-    }
-    .journal-home .post-card h3 {
-      font-size: 19px;
-    }
-    .journal-home .post-card p {
-      font-size: 14px;
-    }
-    .journal-home .post-meta,
-    .journal-home .card-tags {
-      font-size: 12px;
-      letter-spacing: 0;
-    }
-  }
 }
 @media screen and (min-width: 1000px) {
-  body:not(.article-page) > .tablet-sidebar {
-    display: none;
-  }
   .article-page {
     --layout-sidebar: 72px;
     --reading-contents-width: 260px;
-  }
-  .article-page .compact-social {
-    display: block;
   }
   .reading-sidebar-header {
     display: flex;
@@ -547,15 +227,9 @@ html:has(dialog[open]) {
   }
 }
 @media (width < 1000px) {
-  .compact-social {
-    display: block;
-  }
   .floating-tools {
     flex-direction: row;
     gap: 8px;
-  }
-  .main-shell > .site-footer {
-    padding-bottom: 88px;
   }
 }
 @media (width < 720px) {
@@ -565,130 +239,13 @@ html:has(dialog[open]) {
   html {
     scroll-padding-top: calc(var(--mobile-header-height) + 16px);
   }
-  .desktop-sidebar.sidebar,
-  .tablet-sidebar {
-    display: none;
-  }
   .main-shell {
     margin-left: 0;
     padding-inline: 16px;
   }
-  .mobile-header {
-    display: block;
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    padding: env(safe-area-inset-top) max(12px, env(safe-area-inset-right)) 0
-      max(12px, env(safe-area-inset-left));
-  }
-  .mobile-brand-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    min-height: 60px;
-  }
-  .mobile-brand-row .mobile-brand {
-    display: flex;
-    align-items: center;
-    min-width: 0;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    min-height: 44px;
-  }
-  .mobile-brand img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    flex: none;
-  }
-  .mobile-brand span {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .mobile-brand-row .site-tools {
-    flex: none;
-  }
-  .mobile-navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 4px;
-    padding-bottom: 6px;
-  }
-  .mobile-navigation a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-    min-width: 44px;
-    min-height: 44px;
-    max-width: 100%;
-    padding: 8px 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    overflow-wrap: anywhere;
-    text-align: center;
-  }
-  .mobile-navigation a[aria-current] {
-    background: var(--green-soft);
-    color: var(--green);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-  }
-  .mobile-navigation a:hover {
-    background: var(--green-soft);
-  }
   #main,
   .article-page #main {
     padding-top: 24px;
-  }
-  .post-card,
-  .post-card.mica-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    padding: 20px;
-    gap: 10px;
-  }
-  .post-card .card-date,
-  .post-card.mica-card .card-date {
-    width: auto;
-    text-align: left;
-    padding-top: 0;
-  }
-  .post-card .card-date time {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-  }
-  .post-card .card-date span,
-  .post-card.mica-card .card-date span {
-    font-size: 26px;
-  }
-  .post-card .card-date small {
-    font-size: 11px;
-  }
-  .post-card h3,
-  .post-card.mica-card h3 {
-    font-size: 20px;
-    line-height: 1.5;
-  }
-  .post-card p {
-    font-size: 14px;
-  }
-  .post-card .post-meta,
-  .post-card .card-tags {
-    font-size: 12px;
-    letter-spacing: 0;
-    gap: 8px;
-  }
-  .post-card .card-arrow {
-    display: none;
   }
   .article-page .main-shell {
     padding-inline: 0;
@@ -709,14 +266,6 @@ html:has(dialog[open]) {
   .article-layout .prose {
     font-size: var(--autuswing-base-font, 16px);
   }
-  .article-header .post-meta,
-  .article-header .card-tags {
-    font-size: 12px;
-    letter-spacing: 0;
-  }
-  .article-page .site-footer {
-    margin-inline: 16px;
-  }
   .contents-dialog {
     width: 100%;
     max-width: none;
@@ -732,11 +281,7 @@ html:has(dialog[open]) {
 }
 @media print {
   .reading-sidebar,
-  .desktop-sidebar.sidebar,
-  .tablet-sidebar,
-  .mobile-header,
   .contents-access,
-  .compact-social,
   .contents-dialog,
   .floating-tools {
     display: none !important;
