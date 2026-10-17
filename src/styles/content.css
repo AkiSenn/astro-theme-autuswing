@@ -168,15 +168,6 @@
   color: var(--code-keyword);
   background: var(--code-deleted-bg);
 }
-.copy-code {
-  position: absolute;
-  border: 1px solid var(--code-border);
-  background: var(--code-bg);
-  color: var(--code-muted);
-  padding: 2px var(--space-2);
-  border-radius: 5px;
-  font-size: 10px;
-}
 .prose > table {
   display: block;
   overflow-x: auto;
@@ -237,11 +228,7 @@
   position: static;
 }
 .code-language {
-  position: absolute;
-  font-size: 10px;
-  color: var(--code-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
   user-select: none;
 }
 .katex-display {

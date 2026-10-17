@@ -1,6 +1,7 @@
 /* Shared design values. --autuswing-* and --accent remain public configuration inputs.
    Layout breakpoints stay literal in the component media queries. */
 :root {
+  /* Palette and surfaces */
   --paper: #f6f5f1;
   --surface: #fdfcf9;
   --sidebar: #edf0e8;
@@ -11,7 +12,11 @@
   --green-soft: #e5ecdf;
   --sun: #deb965;
   --shadow: 0 18px 70px #26362d18;
-  --radius: var(--autuswing-radius, 18px);
+  --inline-code-bg: #eaf0e8;
+  --mica-base: #fdfcf9f2;
+  --mica-shadow: 0 2px 8px #29382f05, 0 8px 24px #29382f04;
+  --mica-hover-shadow: 0 8px 24px #29382f0d;
+  /* Code colors also support preserved raw HTML highlighting */
   --code-bg: #f3f5f8;
   --code-border: #d4ddd6;
   --code-text: #24292f;
@@ -25,24 +30,7 @@
   --code-bullet: #6b5700;
   --code-added-bg: #dafbe1;
   --code-deleted-bg: #ffebe9;
-  font-family: var(--font-body);
-  color-scheme: light;
-  --mica-base: #fdfcf9f2;
-  --mica-edge: #ffffffc9;
-  --mica-shadow: 0 2px 8px #29382f05, 0 8px 24px #29382f04;
-  --mica-hover-shadow: 0 8px 24px #29382f0d;
-  --layout-sidebar: clamp(240px, var(--autuswing-sidebar, 272px), 300px);
-  --reading-width: 704px;
-  --mobile-header-height: 112px;
-  --inline-code-bg: #eaf0e8;
-  font-kerning: normal;
-  text-rendering: optimizeLegibility;
-  --motion-fast: 150ms;
-  --motion-normal: 180ms;
-  --motion-page: 320ms;
-  --motion-exit: 120ms;
-  --motion-rise: 14px;
-  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Typography and public configuration inputs */
   --font-body: var(
     --autuswing-font,
     'Segoe UI',
@@ -53,6 +41,16 @@
     sans-serif
   );
   --font-code: var(--autuswing-code-font, 'Cascadia Code', Consolas, monospace);
+  font-family: var(--font-body);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+  /* Layout: article-specific width is owned by layout.css */
+  --layout-sidebar: clamp(240px, var(--autuswing-sidebar, 272px), 300px);
+  --reading-width: 704px;
+  --mobile-header-height: 112px;
+  --radius: var(--autuswing-radius, 18px);
+  /* Repeated spacing and control corners; exceptions keep their current values */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -62,12 +60,21 @@
   --radius-small: 6px;
   --radius-control: 8px;
   --radius-panel: 10px;
+  /* Global layers; sticky children and isolated wallpapers keep local layers */
   --z-tools: 20;
   --z-navigation: 30;
   --z-progress: 60;
   --z-feedback: 100;
+  /* Autuswing Motion 1.0; behavior stays in motion.css */
+  --motion-fast: 150ms;
+  --motion-normal: 180ms;
+  --motion-page: 320ms;
+  --motion-exit: 120ms;
+  --motion-rise: 14px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 :root[data-theme='dark'] {
+  /* Palette and surfaces */
   --paper: #151d18;
   --surface: #1d2821;
   --sidebar: #1a251e;
@@ -78,6 +85,11 @@
   --green-soft: #2a3c2e;
   --sun: #d8b76d;
   --shadow: 0 18px 70px #0005;
+  --inline-code-bg: #2a3a2e;
+  --mica-base: #1d2821f2;
+  --mica-shadow: 0 2px 8px #00000012, 0 8px 24px #0000000f;
+  --mica-hover-shadow: 0 8px 24px #00000026;
+  /* Code colors also support preserved raw HTML highlighting */
   --code-bg: #161b22;
   --code-border: #425246;
   --code-text: #e6edf3;
@@ -91,10 +103,6 @@
   --code-bullet: #f2cc60;
   --code-added-bg: #033a16;
   --code-deleted-bg: #67060c;
+  /* Typography and public configuration inputs */
   color-scheme: dark;
-  --mica-base: #1d2821f2;
-  --mica-edge: #ffffff10;
-  --mica-shadow: 0 2px 8px #00000012, 0 8px 24px #0000000f;
-  --mica-hover-shadow: 0 8px 24px #00000026;
-  --inline-code-bg: #2a3a2e;
 }

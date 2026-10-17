@@ -22,7 +22,7 @@ npm run preview
 
 预览地址：**http://127.0.0.1:4322/**。开发模式用 `npm run dev`，同端口，请先结束占用该端口的预览进程。构建默认输出预览策略（noindex、关闭真实评论和统计），不会部署。
 
-本轮已经启动的 Nginx 验收地址：**http://127.0.0.1:8788/**。复现命令见[宝塔 Nginx 静态交付](deployment/README.md)，验收结果、截图和未完成项见[第五阶段报告](docs/phase-5.md)。
+本轮样式验收使用上述 Node 静态预览。既有服务器适配记录见[宝塔 Nginx 静态交付](deployment/README.md)，历史验收结果见[第五阶段报告](docs/phase-5.md)。
 
 ## 内容与职责
 
@@ -34,7 +34,7 @@ npm run preview
 - 数学公式默认由 KaTeX 在构建时渲染，含公式页面才加载配套样式；保留旧文章的 `mathjax` 等标记。详见[数学扫描与实现](docs/math-rendering.md)。
 - `src/components/` / `layouts/`：原生 Astro 视图；没有 React、Vue、Svelte 或 Hexo 运行时。
 - `src/scripts/`：独立的原生交互模块。`responsive` 管理目录与断点焦点恢复；`dialogs` 保持搜索、目录、灯箱互斥。已移除抽屉与导航页签脚本。
-- `src/styles/`：基础样式、Astro 渲染适配、三端布局与视觉样式按职责分开；没有远程字体或新 UI 框架。代码复制工具栏独立于横向滚动区域，正文默认可见。
+- `src/styles/`：设计变量、布局、导航、卡片、正文、阅读工具、页脚与弹窗按职责维护，见[样式架构与视觉回归](docs/styles-architecture.md)。主样式仍由 Astro 打包为一个 CSS 文件。代码复制工具栏独立于横向滚动区域，正文默认可见。
 - `migration/`：来源哈希、冻结的历史时间和锚点、旧配置映射；构建缓存和结果只写 `.astro/`、`dist/`。
 
 ## 验证
@@ -52,6 +52,18 @@ node scripts/verify-motion.mjs
 浏览器测试默认使用本机 Edge；没有 Edge 时在 `playwright.config.ts` 调整 channel，并安装对应 Playwright 浏览器。fixture 脚本只临时写入新工程并在 finally 中恢复，不能在他人正在编辑相同配置时并行执行。
 
 `verify-motion.mjs` 会重建 dist，需在浏览器测试之前单独运行。动效专项为 `tests/browser/motion.spec.ts`；设置 `PLAYWRIGHT_BASE_URL=http://127.0.0.1:8788` 可用本地 Nginx 验证该专项。普通完整套件默认使用4322端口，其中部分旧测试固定了该来源。
+
+### 视觉回归
+
+```powershell
+npm run verify:styles
+# 只比较已构建的 dist：
+npm run test:styles
+```
+
+当前冻结基准为 Windows Edge / Playwright WebKit，各 137 张截图及对应 CSS/几何快照，包含深浅色、三端布局、断点、目录、搜索和排版样本。`verify:styles` 顺序运行检查、构建和比较，不自动接受新截图。基准在 `tests/styles/snapshots/`，来源与哈希在 `docs/evidence/styles/baseline-manifest.json`。
+
+图像色差阈值为 0.1，差异像素预算为零；关键 CSS 数值和尺寸另做精确比较。搜索弹窗背景头像是已记录的遮罩例外。Windows 字体基准不直接用于 Linux；跨平台基准需单独审核。这些限制与待办详见样式报告。运行测试通过现有 Node 预览服务，不执行部署。
 
 ## 备份与范围
 

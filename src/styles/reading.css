@@ -1,4 +1,11 @@
 /* Reading column, article header/actions, attribution, comments and contents panels. */
+/* This component's ordinary border follows surfaces.css. Keep its forced-color
+   variant specific so the former late visual.css rule retains precedence. */
+@media (forced-colors: active) {
+  .copyright-box.mica-card {
+    border-color: CanvasText;
+  }
+}
 .copyright-box .copyright-heading {
   display: flex;
   align-items: flex-start;
@@ -232,9 +239,6 @@
 .comments .v,
 .comments .tk-comments {
   color: var(--text);
-}
-.comment-jump {
-  color: var(--green);
 }
 .article-actions {
   justify-content: flex-start;

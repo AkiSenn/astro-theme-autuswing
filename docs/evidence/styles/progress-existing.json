@@ -1,0 +1,16 @@
+{
+  "original": {
+    "cssWidth": "0px",
+    "renderedWidth": 0,
+    "transform": "matrix(0.0949991, 0, 0, 1, 0, 0)",
+    "scroll": 2000
+  },
+  "refactored": {
+    "cssWidth": "0px",
+    "renderedWidth": 0,
+    "transform": "matrix(0.0949991, 0, 0, 1, 0, 0)",
+    "scroll": 2000
+  },
+  "existingIssue": true,
+  "note": "Original and refactored CSS both leave width:0 while reading.ts updates scaleX only. Preserved in this visual-neutral cleanup; requires a separate visible behavior fix."
+}

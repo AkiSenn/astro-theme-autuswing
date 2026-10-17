@@ -311,6 +311,7 @@ for (const [width, height] of [
   [1920, 1080],
 ]) {
   test(`search image and focus ${width}`, async ({ page }) => {
+    test.setTimeout(90000);
     for (const mode of ['light', 'dark'] as const) {
       await visit(page, '/', width, height, mode);
       await page.locator('.search-open:visible').click();

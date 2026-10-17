@@ -39,17 +39,18 @@ test('direct and refreshed article entries fall back to archives', async ({ page
 test('an external previous page and a same-origin new tab cannot become an unsafe back target', async ({
   page,
   context,
+  baseURL,
 }) => {
   await page.route('https://outside.invalid/**', (route) =>
     route.fulfill({
       contentType: 'text/html',
-      body: `<a href="http://127.0.0.1:8788${article}">Read</a>`,
+      body: `<a href="${new URL(article, baseURL).href}">Read</a>`,
     }),
   );
   await page.goto('https://outside.invalid/');
   await page.getByRole('link', { name: 'Read' }).click();
   await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL('http://127.0.0.1:8788/archives/');
+  await expect(page).toHaveURL(new URL('/archives/', baseURL).href);
   await page.goto('/');
   await page
     .locator('.post-card-title a')
@@ -59,7 +60,7 @@ test('an external previous page and a same-origin new tab cannot become an unsaf
   await page.locator('.post-card-title a').first().click();
   const popup = await popupPromise;
   await popup.waitForLoadState();
-  expect(await popup.evaluate(() => document.referrer)).toContain('127.0.0.1');
+  expect(await popup.evaluate(() => document.referrer)).toContain(new URL(baseURL!).origin);
   await expect(popup.locator('[data-article-back]')).toHaveAttribute('href', /\/archives\/$/);
   await popup.locator('[data-article-back]').click();
   await expect(popup).toHaveURL(/\/archives\/$/);
@@ -167,6 +168,7 @@ test('return restores search results on cold history navigation and respects a l
 test('missing Navigation API and disabled JavaScript keep the ordinary archive link', async ({
   page,
   browser,
+  baseURL,
 }) => {
   await page.addInitScript(() =>
     Object.defineProperty(window, 'navigation', { value: undefined, configurable: true }),
@@ -177,11 +179,12 @@ test('missing Navigation API and disabled JavaScript keep the ordinary archive l
   await page.locator('[data-article-back]').click();
   await expect(page).toHaveURL(/\/archives\/$/);
   const context = await browser.newContext({
+    baseURL,
     javaScriptEnabled: false,
     viewport: { width: 390, height: 844 },
   });
   const native = await context.newPage();
-  await native.goto('http://127.0.0.1:8788' + article);
+  await native.goto(article);
   await expect(native.locator('[data-article-back]')).toHaveAccessibleName('返回');
   await native.locator('[data-article-back]').click();
   await expect(native).toHaveURL(/\/archives\/$/);

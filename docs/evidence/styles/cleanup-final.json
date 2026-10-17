@@ -1,0 +1,37 @@
+[
+  {
+    "file": "tokens.css",
+    "selector": ":root / dark",
+    "property": "--mica-edge",
+    "count": 2,
+    "reason": "no remaining references after removal of superseded inset shadow"
+  },
+  {
+    "file": "content.css",
+    "selector": ".copy-code",
+    "properties": 7,
+    "reason": "all copy buttons are created inside .code-toolbar by media.ts; toolbar owns their final styles"
+  },
+  {
+    "file": "content.css",
+    "selector": ".code-language",
+    "properties": 4,
+    "reason": "position and typography are owned by .code-toolbar .code-language"
+  },
+  {
+    "file": "overlays.css",
+    "selector": ".back-top",
+    "properties": 7,
+    "reason": "all instances are .floating-tools > .icon-button; shared geometry retained there"
+  },
+  {
+    "file": "overlays.css",
+    "selector": ".goto-comments",
+    "reason": "no callers in source/scripts/content; comments and back-top retained"
+  },
+  {
+    "file": "reading.css",
+    "selector": ".comment-jump",
+    "reason": "no callers in source/scripts/content; comment-bar remains supported"
+  }
+]

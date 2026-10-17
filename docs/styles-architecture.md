@@ -56,3 +56,87 @@
 当前源码与交付文档记录了静态输出、Node 本地预览及曾准备的宝塔 Nginx 适配。本轮不据此新增或启用任何服务器，也不将 Nginx 作为通用 CI 的依赖。
 
 后续 CI 可以按 `npm ci → check → test → build → verify → 浏览器功能/视觉比较 → 上传 dist 与测试报告` 组织。视觉任务须固定操作系统、浏览器和字体；现有 Windows 基准不能直接搬到 Linux 后自动重录。发布步骤应在重新确认实际托管目标、认证方式和回滚约定后单独设计，当前不配置自动部署。
+
+## 已实施的文件职责
+
+| 文件 | 职责 |
+| --- | --- |
+| tokens.css | 最终生效的深浅色、字体、间距、圆角、层级与 Motion Tokens；保留 `--autuswing-*` / `--accent` 配置输入 |
+| base.css | 文档默认值、按钮/图标基础、焦点、跳过导航 |
+| layout.css | 主内容容器、侧栏占位、文章目录保留区、视口断点和滚动偏移 |
+| navigation.css | 完整侧栏、迷你轨道、手机顶部导航、共用工具与社交图标 |
+| cards.css | 首页列表、卡片及共用文章元信息；包含全文模式与容器查询 |
+| surfaces.css | 可选 Mica 表面、壁纸和透明度降级 |
+| content.css | 正文、Shiki、行号、复制工具栏、表格、图片、公式、旧 HTML 高亮 |
+| reading.css | 文章容器/头部、版权、上下篇、评论外观、目录面板/抽屉及无脚本目录 |
+| pages.css | 归档、标签、友链、关于、分页 |
+| footer.css | 社交区域以外的版权、备案和可选统计 |
+| overlays.css | 搜索、灯箱、悬浮工具、进度条和 Toast 的布局 |
+| motion.css | 原生跨文档转场、微交互、减少动画和配置关闭策略 |
+
+`BaseLayout.astro` 显式导入这些模块。顺序为 tokens → base/layout → surfaces → navigation/cards → content/reading/pages/footer/overlays → motion。基础表面先于组件，全文卡片的通用正文规则仍由 content 补齐；组件的可访问性状态由组件自己维护。没有增加 CSS Layers、框架或运行时依赖。旧的 legacy.css / astro.css / responsive.css / visual.css 已移除，渲染适配和可选功能迁到对应模块。
+
+### 统一参数与保持项
+
+- 间距只提取重复使用的 4/8/12/16/20/24px；6/8/10px 的常用圆角与配置圆角分开，保留现有例外值。
+- 字体保留系统中文栈、代码字体及原配置输入。正文 PC 仍为默认 18px / 1.8；文章外层上限 860px，未重新调字号或行宽。
+- 完整侧栏默认 272px，阅读侧轨 72px，目录 260px；720/1000/1280/1440px 行为保持原样。
+- Motion 仍为入场 320ms / 14px、退出 120ms、按钮 150ms；侧栏没有新增动画。
+- 只提取全局层级 20/30/60/100；局部 sticky 标题与壁纸继续使用局部层级。
+
+## 整理前后
+
+以下由相同 PostCSS 解析器计数；gzip 为 Node zlib 默认参数估算，未代表任何生产服务器的实际传输配置。
+
+| 指标 | 整理前 | 整理后 |
+| --- | ---: | ---: |
+| 源 CSS 文件 | 5 | 12 |
+| 源码行数 | 3688 | 3337 |
+| 源声明数（含变量） | 1965 | 1680 |
+| 源规则数 | 728 | 644 |
+| 主样式构建字节 | 55408 | 52208 |
+| 主样式 gzip 字节 | 11854 | 10873 |
+
+主样式仍是一个构建文件；KaTeX 样式继续按公式页面加载。数字用于记录结果，整理目标是职责与覆盖关系清晰，并非压缩源码行数。
+
+### 删除或归并的内容
+
+- 相同选择器/属性/条件的 159 条覆盖记录，以及后续无条件声明覆盖前面媒体条件的 73 条记录。合并相邻同条件块，保留必要状态和简写/长写关系。
+- 无调用的 image-open、about-profile 及后代、profile-description、eyebrow i、旧 pagination .current、section-heading h2；共 11 条不同位置的规则记录。
+- 旧 `--sidebar-width` 常量与初始 sidebar 宽度，统一使用现有 `--layout-sidebar`。
+- 始终透明的 Mica `::before` 装饰、失效 inset shadow 对应的 `--mica-edge`。
+- 块级页脚中失效的 flex 属性；代码工具栏、悬浮按钮中被组件最终样式覆盖的旧定位/尺寸。
+- 无调用的 goto-comments / comment-jump 样式；评论组件、返回顶部、搜索、翻译入口保持现有实现。
+
+详细条目位于 `cleanup-chrome.json`、`cleanup-remaining.json`、`cleanup-final.json`。274 是混合粒度的审计记录数，不等于删除了 274 个完整 CSS 规则。原始与最终统计见 audit-before.json / audit-after.json。
+
+## 验证记录
+
+- 修改 CSS 前建立两引擎原始截图，来源五份 CSS 的 SHA-256 与 `f111e47` 一致；基准最终为 274 张 PNG + 274 份精确数值快照。
+- 三批各执行 check、build、Edge 全矩阵：变量、导航/卡片/页脚、其余组件分别 53 项通过。JSON 报告为 phase1-tokens-verified、phase2-chrome、phase3-components。
+- 最终第一次两引擎运行 102 通过、4 失败：三个 WebKit 搜索长用例超过整项 30 秒限制；一个高对比模式版权框边框颜色因拆分后的顺序改变。没有接受新基准。搜索测试总时间改为 90 秒；阅读组件为 `.copyright-box.mica-card` 恢复 CanvasText 边框优先级，保留原打印优先级。
+- 最终修复后重新 check、build，两引擎完整复验 **106/106 通过**（Edge 53 / WebKit 53），没有跳过或自动重录；见 final-confirmed.json。274 张 PNG 和 274 份 JSON 的冻结哈希全部保持不变。
+- 既有功能套件首轮 76/80：两个返回测试硬编码旧的 8788 服务；两个历史几何测试比较了块级页脚无效 gap。返回测试改为读取 Playwright baseURL，未启动 Nginx；几何比较对无多栏的块级流只归一化无效 gap，flex/grid gap、边界、字体、颜色等继续精确比较，旧基准文件没有改写。完整重跑 **80/80 通过**，见 functional-confirmed.json；首轮失败记录保留在 functional-edge.json。
+- 单元测试 20 项通过；内容校验：3 篇文章、1 个关于页、307 份导入文件、6 份可选资源、365 份原源文件；26 个 canonical / Sitemap URL、3 条 Feed、21 条重定向和 879 处本地引用一致。
+- 已人工查看修改前和修改后的 1920 桌面首页、1366 桌面阅读页、820 平板首页及 390 手机阅读页；修改后代表图保存在 `docs/evidence/styles/after/`。其余矩阵由自动截图与数值快照比较验证。
+
+### 复现与产物
+
+```powershell
+npm run verify:styles
+npm test
+npm run verify
+npm run test:browser
+```
+
+本轮默认 Node 预览为 127.0.0.1:4322。`PLAYWRIGHT_REPORT_FILE` / `PLAYWRIGHT_OUTPUT_DIR` 可单独指定普通浏览器测试的 JSON 报告和临时产物目录；`VISUAL_EVIDENCE_DIR` 将常规功能测试截图放到忽略的 test-results，避免覆写历史报告。单个视觉测试进程使用两个独立 worker，不并行启动会清空同一目录的多个测试进程。构建不能与正在读取 dist 的浏览器测试并发。
+
+保留版本化冻结基准和本轮少量代表图，常规测试产物留在 test-results。后续 CI 应将其上传为 artifacts。当前没有新建 GitHub 自动部署工作流、服务器、DNS 或在线预览。
+
+## 保留与尚未解决
+
+1. **原有阅读进度条问题**：CSS `width: 0` 与 reading.ts 只更新 scaleX 不一致，条实际不可见。在浏览器分别注入原五份 CSS、使用最终 CSS，1366×768 滚动到 2000px 后，两者均为宽度 0、同一缩放矩阵。见 progress-existing.json。本轮保持现有视觉行为，未借整理进行可见功能修正。
+2. 保留 `figure.highlight` / `.hljs`、MathJax 容器、无脚本目录、评论/统计外部类名；这些有兼容或可选用途。全文模式的卡片 H3 规则也被保留并加入断言，不能按卡片标题已用 H2 就删掉。
+3. 760px / 450px 的部分搜索、归档和小字号规则仍有效，未强行统一为新断点；基础与组件之间仍有明确的继承和状态覆盖，未承诺所有选择器只有一条规则。
+4. 本轮未覆盖 Firefox、Safari/手机真机、实际服务器/CDN；WebKit Windows 不是 Safari 真机。评论继续关闭，真实服务验收仍待以后启用时进行。
+5. 原 Markdown、公开 URL、SEO、部署配置和生产 DNS 没有修改；没有开始专题、推荐、新首页或新的动效功能。

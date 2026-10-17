@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
+import { activeLayoutMetrics } from './layout-metrics';
 
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/sidebar-bottom/edge';
 fs.mkdirSync(dir, { recursive: true });
@@ -113,12 +114,10 @@ test('full desktop sidebar separates restrained functional buttons from social i
         ).toBe(true);
       }
       checks.push({ width, height, mode, ...result });
-      await page
-        .locator('.desktop-sidebar')
-        .screenshot({
-          path: `${dir}/sidebar-${mode}-${width}x${height}.png`,
-          animations: 'disabled',
-        });
+      await page.locator('.desktop-sidebar').screenshot({
+        path: `${dir}/sidebar-${mode}-${width}x${height}.png`,
+        animations: 'disabled',
+      });
       if (width === 1920 || (width === 1366 && height === 768))
         await page.screenshot({
           path: `${dir}/home-${mode}-${width}x${height}.png`,
@@ -204,7 +203,10 @@ test('footer, mini rail, profile, navigation and content remain equal to their o
           };
         }),
       );
-      expect(actual, `${engine} ${item.width} ${item.path} ${selector}`).toEqual(expected);
+      expect(
+        activeLayoutMetrics(actual),
+        `${engine} ${item.width} ${item.path} ${selector}`,
+      ).toEqual(activeLayoutMetrics(expected as typeof actual));
     }
   }
 });

@@ -1,5 +1,7 @@
 # Autuswing Motion 1.0
 
+后续样式整理将 Motion Tokens 集中到 `src/styles/tokens.css`，转场与减少动画策略继续位于 `src/styles/motion.css`，参数与交互保持不变。下面的旧文件名是本阶段的历史审计记录；当前结构见[样式架构报告](styles-architecture.md)。
+
 ## 审计（修改前）
 
 审计入口为 `BaseLayout.astro` 的四份样式和 `main.ts`，沿组件类名、配置字段和脚本导入逐项核对。旧布局样式仍有用途，本次只移除已确认的历史动效，不整份删除 legacy.css。

@@ -9,13 +9,7 @@
   width: 0;
 }
 .back-top {
-  position: fixed;
-  border: 1px solid var(--line);
-  width: 42px;
-  height: 42px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  font-size: 20px;
+  /* Geometry is shared by .floating-tools > .icon-button. */
   z-index: var(--z-tools);
 }
 dialog {
@@ -155,19 +149,6 @@ dialog::backdrop {
 @media print {
   .back-top,
   .reading-progress {
-    display: none !important;
-  }
-}
-.goto-comments {
-  position: fixed;
-  min-width: 44px;
-  min-height: 44px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  z-index: var(--z-tools);
-}
-@media print {
-  .goto-comments {
     display: none !important;
   }
 }

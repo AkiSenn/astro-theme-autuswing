@@ -1,0 +1,62 @@
+{
+  "baselineCommit": "c7056a6",
+  "originalSourceCommit": "f111e47",
+  "check": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 1,
+    "note": "execCommand copy fallback deprecation; unchanged"
+  },
+  "build": "static preview output; completed before all final browser tests",
+  "visual": {
+    "passed": 106,
+    "failed": 0,
+    "skipped": 0,
+    "edge": 53,
+    "webkit": 53,
+    "approvedPngsUnchanged": 274,
+    "approvedMetricsUnchanged": 274,
+    "colorThreshold": 0.1,
+    "maxDiffPixels": 0
+  },
+  "functional": {
+    "passed": 80,
+    "failed": 0,
+    "skipped": 0,
+    "engine": "Windows Edge",
+    "comments": "controlled SDK mocks; real service remains off"
+  },
+  "unit": {
+    "passed": 20,
+    "failed": 0
+  },
+  "content": {
+    "checkedAt": "2026-10-17T09:25:22.300Z",
+    "canonicalPages": 26,
+    "posts": 3,
+    "localReferences": 879,
+    "mathWrappers": 4,
+    "feedEntries": 3,
+    "sitemapUrls": 26,
+    "redirectRules": 21
+  },
+  "source": {
+    "lines": 3337,
+    "bytes": 66790,
+    "rules": 644,
+    "declarations": 1680
+  },
+  "bundle": [
+    {
+      "file": "BaseLayout.cfGgQ2F6.css",
+      "bytes": 52208,
+      "gzip": 10873
+    }
+  ],
+  "protectedContentConfigScriptsAndDeploymentUnchanged": true,
+  "unresolved": [
+    "Original progress bar width:0 reproduced with original and refactored CSS; see progress-existing.json",
+    "Firefox, physical Safari/mobile/tablet, native browser zoom and deployment/CDN not covered by this round",
+    "Historical HTML highlighting and optional service CSS intentionally retained"
+  ]
+}

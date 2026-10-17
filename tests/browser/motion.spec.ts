@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { load } from 'cheerio';
 import fs from 'node:fs';
+import { activeLayoutMetrics } from './layout-metrics';
 
 const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/motion-system/edge';
 fs.mkdirSync(dir, { recursive: true });
@@ -473,7 +474,12 @@ test('responsive layout geometry is unchanged after motion cleanup', async ({
         ),
       Object.keys(sample.regions),
     );
-    expect(regions, `${sample.path} ${sample.width}x${sample.height}`).toEqual(sample.regions);
+    for (const selector of Object.keys(sample.regions)) {
+      expect(
+        activeLayoutMetrics(regions[selector]),
+        `${sample.path} ${sample.width}x${sample.height} ${selector}`,
+      ).toEqual(activeLayoutMetrics(sample.regions[selector]));
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );

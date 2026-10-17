@@ -1,0 +1,119 @@
+{
+  "files": [
+    {
+      "file": "base.css",
+      "lines": 119,
+      "bytes": 1859,
+      "rules": 26,
+      "declarations": 56
+    },
+    {
+      "file": "cards.css",
+      "lines": 391,
+      "bytes": 7495,
+      "rules": 86,
+      "declarations": 181
+    },
+    {
+      "file": "content.css",
+      "lines": 606,
+      "bytes": 12043,
+      "rules": 117,
+      "declarations": 290
+    },
+    {
+      "file": "footer.css",
+      "lines": 114,
+      "bytes": 2132,
+      "rules": 25,
+      "declarations": 53
+    },
+    {
+      "file": "layout.css",
+      "lines": 90,
+      "bytes": 1659,
+      "rules": 21,
+      "declarations": 29
+    },
+    {
+      "file": "motion.css",
+      "lines": 132,
+      "bytes": 3074,
+      "rules": 26,
+      "declarations": 41
+    },
+    {
+      "file": "navigation.css",
+      "lines": 585,
+      "bytes": 11875,
+      "rules": 109,
+      "declarations": 315
+    },
+    {
+      "file": "overlays.css",
+      "lines": 244,
+      "bytes": 4473,
+      "rules": 47,
+      "declarations": 136
+    },
+    {
+      "file": "pages.css",
+      "lines": 261,
+      "bytes": 4856,
+      "rules": 56,
+      "declarations": 139
+    },
+    {
+      "file": "reading.css",
+      "lines": 569,
+      "bytes": 11750,
+      "rules": 108,
+      "declarations": 301
+    },
+    {
+      "file": "surfaces.css",
+      "lines": 118,
+      "bytes": 2352,
+      "rules": 21,
+      "declarations": 55
+    },
+    {
+      "file": "tokens.css",
+      "lines": 108,
+      "bytes": 3222,
+      "rules": 2,
+      "declarations": 84
+    }
+  ],
+  "totals": {
+    "lines": 3337,
+    "bytes": 66790,
+    "rules": 644,
+    "declarations": 1680
+  },
+  "bundle": [
+    {
+      "file": "BaseLayout.cfGgQ2F6.css",
+      "bytes": 52208,
+      "gzip": 10873
+    }
+  ],
+  "cleanupRecords": 274,
+  "reasons": {
+    "no callers in templates/scripts/content": 11,
+    "later unconditional rule supersedes earlier media declaration": 73,
+    "superseded same selector/property/condition": 159,
+    "element is static in its current wrapper": 12,
+    "superseded by layout-sidebar": 5,
+    "transparent unused pseudo-element: visual.css always resets its background to none": 3,
+    "footer always uses display:block": 5,
+    "no remaining references after removal of superseded inset shadow": 1,
+    "all copy buttons are created inside .code-toolbar by media.ts; toolbar owns their final styles": 1,
+    "position and typography are owned by .code-toolbar .code-language": 1,
+    "all instances are .floating-tools > .icon-button; shared geometry retained there": 1,
+    "no callers in source/scripts/content; comments and back-top retained": 1,
+    "no callers in source/scripts/content; comment-bar remains supported": 1
+  },
+  "baselineImagesUnchanged": 274,
+  "baselineMetricsUnchanged": 274
+}
