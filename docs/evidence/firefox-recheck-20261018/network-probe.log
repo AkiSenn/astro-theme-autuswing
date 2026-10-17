@@ -1,0 +1,12 @@
+{
+  checkedAt: '2026-10-17T18:49:28.448Z',
+  checks: [
+    'online update preserves two documents and unsaved text',
+    'new page receives updated offline shell on actual socket failure',
+    'restored server makes online content accessible again',
+    'mixed offline/worker bytes retain previous usable shell',
+    'matching bytes recover the update and serve the new shell offline'
+  ],
+  passed: true,
+  offlineEmulation: { serverRequests: 1, h1: 'Network is reachable' }
+}

@@ -1,0 +1,84 @@
+
+Running 3 tests using 1 worker
+
+(node:33404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\deployment\pwa-updates.spec.ts:61:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work (8.6s)
+(node:35304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\deployment\pwa-updates.spec.ts:103:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers (7.7s)
+(node:32364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 tests\deployment\pwa-updates.spec.ts:145:1 › PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available (1.5s)
+
+
+  1) tests\deployment\pwa-updates.spec.ts:61:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /新版离线/
+    Received string:  ""
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        14 × locator resolved to <html>…</html>
+           - unexpected value ""
+
+
+      91 |     const offline = await context.newPage();
+      92 |     await offline.goto(fixture.origin + '/offline-start/');
+    > 93 |     await expect(offline).toHaveTitle(/新版离线/);
+         |                           ^
+      94 |     await context.setOffline(false);
+      95 |     await offline.goto(fixture.origin);
+      96 |     await expect(offline.locator('.post-card').first()).toBeVisible();
+        at E:\autuswing-astro\tests\deployment\pwa-updates.spec.ts:93:27
+
+    Error Context: .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-updates-on-b7805-aunch-and-reconnection-work\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-updates-on-b7805-aunch-and-reconnection-work\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-updates-on-b7805-aunch-and-reconnection-work\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\deployment\pwa-updates.spec.ts:103:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('h1')
+    Expected: "暂时离线"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" locator('h1') with timeout 5000ms
+      - waiting for locator('h1')
+
+
+      128 |     await context.setOffline(true);
+      129 |     await page.goto(fixture.origin + '/old-version-offline/');
+    > 130 |     await expect(page.locator('h1')).toHaveText('暂时离线');
+          |                                      ^
+      131 |     await context.setOffline(false);
+      132 |     fixture.state.html = fixture.state.workerHtml;
+      133 |     await page.goto(fixture.origin);
+        at E:\autuswing-astro\tests\deployment\pwa-updates.spec.ts:130:38
+
+    Error Context: .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-keeps-the--a41a6--bytes-differ-then-recovers\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-keeps-the--a41a6--bytes-differ-then-recovers\trace.zip
+    Usage:
+
+        npx playwright show-trace .local-tools\firefox-recheck-20261018\pwa-results\pwa-updates-PWA-keeps-the--a41a6--bytes-differ-then-recovers\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\deployment\pwa-updates.spec.ts:61:1 › PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work 
+    tests\deployment\pwa-updates.spec.ts:103:1 › PWA keeps the active version when worker and CDN offline bytes differ, then recovers 
+  1 passed (22.8s)

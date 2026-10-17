@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-17T18:50:38.077Z",
+  "browser": {
+    "checkedAt": "2026-10-17T18:42:44.223Z",
+    "executable": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\browsers\\firefox-1555\\firefox\\firefox.exe",
+    "available": true,
+    "version": "157.0",
+    "title": "Firefox ready"
+  },
+  "suite": {
+    "startTime": "2026-10-17T18:43:00.573Z",
+    "duration": 318886.627,
+    "expected": 78,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "file": "back.spec.ts",
+      "line": 194,
+      "title": "smart return runs the existing native content transition",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 0\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  213 |   await expect\n  214 |     .poll(() => events.filter((e) => e.path === '/' && e.type === 'traverse').length)\n> 215 |     .toBe(1);\n      |      ^\n  216 |   expect(events.at(-1).names.sort()).toEqual(['autuswing-page-in', 'autuswing-page-out']);\n  217 |   fs.writeFileSync(`${dir}/transition.json`, JSON.stringify(events, null, 2));\n  218 | });\n    at E:\\autuswing-astro\\tests\\browser\\back.spec.ts:215:6"
+      ]
+    },
+    {
+      "file": "motion.spec.ts",
+      "line": 75,
+      "title": "native transitions keep the correct navigation shell across responsive layouts",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 0\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n   96 |     await page.locator('.post-card-title a').first().click();\n   97 |     await settled(page);\n>  98 |     await expect.poll(() => events.filter((e) => e.transition).length).toBe(count + 1);\n      |                                                                        ^\n   99 |     await expect(page.locator(width < 720 ? '.mobile-header' : '.reading-rail')).toBeVisible();\n  100 |     await freshContents(page);\n  101 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:98:72"
+      ]
+    },
+    {
+      "file": "motion.spec.ts",
+      "line": 138,
+      "title": "native MPA transitions use only the content group and refresh article state",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 3\nReceived: 0\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  157 |   await settled(page);\n  158 |   await expect(page.locator('.desktop-sidebar')).toBeVisible();\n> 159 |   await expect.poll(() => events.filter((e) => e.transition).length).toBe(3);\n      |                                                                      ^\n  160 |   for (const event of events.filter((e) => e.transition)) {\n  161 |     expect(event.skipped).toBeUndefined();\n  162 |     expect(event.animations.map((a: any) => a.name).sort()).toEqual([\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:159:70"
+      ]
+    },
+    {
+      "file": "motion.spec.ts",
+      "line": 357,
+      "title": "actual transition frames preserve the live shell and selected appearance",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  386 |     await page.goto('/');\n  387 |     await page.locator('.post-card-title a').first().click();\n> 388 |     await expect.poll(() => page.evaluate(() => (window as any).__frozenTransition)).toBe(true);\n      |                                                                                      ^\n  389 |     expect(await page.evaluate(() => (window as any).__revealTheme)).toBe(mode);\n  390 |     const frame = await page.evaluate(() => {\n  391 |       const navigation = document.querySelector('.reading-rail')!,\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:388:86"
+      ]
+    },
+    {
+      "file": "motion.spec.ts",
+      "line": 434,
+      "title": "responsive layout geometry is unchanged after motion cleanup",
+      "errors": [
+        "Error: / 320x640 .desktop-sidebar .profile\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 1\n\n@@ -1,9 +1,9 @@\n  Array [\n    Object {\n      \"background\": \"rgba(0, 0, 0, 0)\",\n-     \"border\": \"0px none rgb(225, 233, 223)\",\n+     \"border\": \"0px rgb(225, 233, 223)\",\n      \"color\": \"rgb(225, 233, 223)\",\n      \"display\": \"block\",\n      \"fontSize\": \"15px\",\n      \"gap\": \"(inactive)\",\n      \"height\": 0,\n\n  478 |         activeLayoutMetrics(regions[selector]),\n  479 |         `${sample.path} ${sample.width}x${sample.height} ${selector}`,\n> 480 |       ).toEqual(activeLayoutMetrics(sample.regions[selector]));\n      |         ^\n  481 |     }\n  482 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(\n  483 |       true,\n    at E:\\autuswing-astro\\tests\\browser\\motion.spec.ts:480:9"
+      ]
+    },
+    {
+      "file": "sidebar-bottom.spec.ts",
+      "line": 172,
+      "title": "footer, mini rail, profile, navigation and content remain equal to their own browser baseline",
+      "errors": [
+        "Error: edge 320 / .desktop-sidebar .profile\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 1\n\n@@ -1,9 +1,9 @@\n  Array [\n    Object {\n      \"background\": \"rgba(0, 0, 0, 0)\",\n-     \"border\": \"0px none rgb(225, 233, 223)\",\n+     \"border\": \"0px rgb(225, 233, 223)\",\n      \"color\": \"rgb(225, 233, 223)\",\n      \"display\": \"block\",\n      \"fontSize\": \"15px\",\n      \"gap\": \"(inactive)\",\n      \"height\": 0,\n\n  207 |         activeLayoutMetrics(actual),\n  208 |         `${engine} ${item.width} ${item.path} ${selector}`,\n> 209 |       ).toEqual(activeLayoutMetrics(expected as typeof actual));\n      |         ^\n  210 |     }\n  211 |   }\n  212 | });\n    at E:\\autuswing-astro\\tests\\browser\\sidebar-bottom.spec.ts:209:9"
+      ]
+    },
+    {
+      "file": "state.spec.ts",
+      "line": 84,
+      "title": "PWA installs its own shell cache and returns the offline page",
+      "errors": [
+        "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  locator('h1')\nExpected: \"暂时离线\"\nReceived: \"404\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" locator('h1') with timeout 5000ms\n  - waiting for locator('h1')\n    14 × locator resolved to <h1>404</h1>\n       - unexpected value \"404\"\n\n\n  91 |   await context.setOffline(true);\n  92 |   await page.goto('http://127.0.0.1:4322/offline-check/');\n> 93 |   await expect(page.locator('h1')).toHaveText('暂时离线');\n     |                                    ^\n  94 |   await context.setOffline(false);\n  95 |   await context.close();\n  96 | });\n    at E:\\autuswing-astro\\tests\\browser\\state.spec.ts:93:36"
+      ]
+    }
+  ],
+  "pwaSuite": {
+    "startTime": "2026-10-17T18:48:27.620Z",
+    "duration": 22801.208000000002,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "actualConnectionFailureProbe": {
+    "checkedAt": "2026-10-17T18:49:28.448Z",
+    "checks": [
+      "online update preserves two documents and unsaved text",
+      "new page receives updated offline shell on actual socket failure",
+      "restored server makes online content accessible again",
+      "mixed offline/worker bytes retain previous usable shell",
+      "matching bytes recover the update and serve the new shell offline"
+    ],
+    "passed": true,
+    "offlineEmulation": {
+      "serverRequests": 1,
+      "h1": "Network is reachable"
+    }
+  },
+  "protection": {
+    "checkedAt": "2026-10-17T18:46:37.942Z",
+    "frozenPng": 274,
+    "frozenMetrics": 274,
+    "unchanged": true,
+    "productionCandidateVerified": true,
+    "sourceInputsUnchanged": true,
+    "candidate": ".local-tools/releases/autuswing-20261018-r4",
+    "files": 359
+  },
+  "notes": [
+    "Raw failing results retained; no test assertions, runtime source or frozen baselines changed",
+    "Original globally cached Firefox still fails SideBySide startup; identical top-level files alone do not establish a root cause",
+    "Isolated official Playwright runtime succeeds; set PLAYWRIGHT_BROWSERS_PATH explicitly to reuse",
+    "Desktop 1920, tablet 820 and phone 390 screenshots inspected; these are evidence, not newly approved baselines",
+    "Existing WebKit transition issue has not been resolved or retested here",
+    "No OS installation UI, physical device, production or deployment changes"
+  ]
+}

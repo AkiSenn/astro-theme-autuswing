@@ -1,0 +1,56 @@
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {firefox,expect} from 'playwright/test';
+import {serviceWorker} from '../../src/lib/service-worker.mjs';
+const root=path.resolve('.local-tools/releases/autuswing-20261018-r4/site');
+const original=fs.readFileSync(path.join(root,'offline.html'),'utf8');
+const state={html:original,worker:original,down:false,emulatedRequests:0};
+const result={checkedAt:new Date().toISOString(),checks:[],passed:false};
+const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.webmanifest':'application/manifest+json','.json':'application/json','.woff2':'font/woff2','.woff':'font/woff','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
+const server=http.createServer((req,res)=>{
+ const pathname=decodeURI(new URL(req.url,'http://local').pathname);
+ if(pathname==='/emulated-offline/')state.emulatedRequests++;
+ if(state.down){req.socket.destroy();return;}
+ res.setHeader('Cache-Control','no-store');
+ if(pathname==='/sw.js'){res.setHeader('Content-Type','application/javascript');res.end(serviceWorker(state.worker));return;}
+ if(pathname==='/offline.html'){res.setHeader('Content-Type','text/html');res.end(state.html);return;}
+ const file=path.resolve(root,'.'+pathname);
+ if(file!==root&&!file.startsWith(root+path.sep)){res.writeHead(400).end();return;}
+ try{const target=fs.statSync(file).isDirectory()?path.join(file,'index.html'):file;res.setHeader('Content-Type',mime[path.extname(target)]||'application/octet-stream');res.end(fs.readFileSync(target));}
+ catch{res.writeHead(404,{'Content-Type':'text/html'}).end('<h1>Network is reachable</h1>');}
+});
+await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+const origin='http://127.0.0.1:'+server.address().port;
+const browser=await firefox.launch();
+const context=await browser.newContext({serviceWorkers:'allow'});
+try{
+ const first=await context.newPage();await first.goto(origin);await first.evaluate(()=>navigator.serviceWorker.ready.then(()=>true));await first.reload();await first.waitForFunction(()=>!!navigator.serviceWorker.controller);
+ const second=await context.newPage();await second.goto(origin);
+ for(const page of [first,second])await page.evaluate(()=>{const t=document.createElement('textarea');t.id='probe-unsaved';t.value='Keep this text';document.body.append(t);window.__probeDocument='same';});
+ const before=await first.evaluate(()=>caches.keys());
+ await context.setOffline(true);const emulated=await context.newPage();await emulated.goto(origin+'/emulated-offline/');
+ result.offlineEmulation={serverRequests:state.emulatedRequests,h1:await emulated.locator('h1').textContent()};
+ await context.setOffline(false);
+ state.html=state.worker=original.replace('暂时离线','新版离线');
+ await first.evaluate(async()=>(await navigator.serviceWorker.getRegistration()).update());
+ await expect.poll(()=>first.evaluate(()=>caches.keys())).not.toEqual(before);
+ for(const page of [first,second]){await expect(page.locator('#probe-unsaved')).toHaveValue('Keep this text');assert.equal(await page.evaluate(()=>window.__probeDocument),'same');}
+ result.checks.push('online update preserves two documents and unsaved text');
+ state.down=true;const offline=await context.newPage();await offline.goto(origin+'/physical-network-failure/');await expect(offline).toHaveTitle(/新版离线/);
+ result.checks.push('new page receives updated offline shell on actual socket failure');
+ state.down=false;await offline.goto(origin);await expect(offline.locator('.post-card').first()).toBeVisible();
+ result.checks.push('restored server makes online content accessible again');
+ const current=await first.evaluate(()=>caches.keys());state.worker=original.replace('暂时离线','第三版离线');
+ await first.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await r.update();const w=r.installing;if(w&&!['redundant','activated'].includes(w.state))await new Promise(resolve=>w.addEventListener('statechange',()=>{if(['redundant','activated'].includes(w.state))resolve();}));});
+ assert.deepEqual(await first.evaluate(()=>caches.keys()),current);
+ state.down=true;await offline.goto(origin+'/mixed-version-failure/');await expect(offline).toHaveTitle(/新版离线/);
+ result.checks.push('mixed offline/worker bytes retain previous usable shell');
+ state.down=false;state.html=state.worker;await offline.goto(origin);await offline.evaluate(async()=>(await navigator.serviceWorker.getRegistration()).update());
+ await expect.poll(()=>offline.evaluate(()=>caches.keys())).not.toEqual(current);
+ state.down=true;await offline.goto(origin+'/recovered-update/');await expect(offline).toHaveTitle(/第三版离线/);
+ result.checks.push('matching bytes recover the update and serve the new shell offline');
+ result.passed=true;
+}catch(error){result.error=String(error);process.exitCode=1;}
+finally{await context.close();await browser.close();await new Promise(resolve=>{server.close(resolve);server.closeAllConnections();});fs.writeFileSync('.local-tools/firefox-recheck-20261018/network-probe.json',JSON.stringify(result,null,2)+'\n');console.log(result);}

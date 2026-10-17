@@ -1,0 +1,9 @@
+export default {
+  testDir: '../../tests/deployment',
+  testMatch: 'pwa-updates.spec.ts',
+  timeout: 60000,
+  workers: 1,
+  outputDir: './pwa-results',
+  reporter: [['list'], ['json', {outputFile: '.local-tools/firefox-recheck-20261018/pwa.json'}]],
+  use: {browserName: 'firefox', trace: 'retain-on-failure'},
+};

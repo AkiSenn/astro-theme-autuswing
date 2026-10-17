@@ -1,0 +1,284 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\autuswing-astro\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".local-tools/firefox-recheck-20261018/pwa.config.mjs"
+    ],
+    "configFile": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa.config.mjs",
+    "rootDir": "E:/autuswing-astro/tests/deployment",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/autuswing-astro/.local-tools/firefox-recheck-20261018/pwa-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "E:/autuswing-astro/tests/deployment",
+        "testIgnore": [],
+        "testMatch": [
+          "pwa-updates.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "E:\\autuswing-astro\\tests\\deployment",
+        "snapshotDir": "E:\\autuswing-astro\\tests\\deployment",
+        "testIgnore": [],
+        "testMatch": "pwa-updates.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "browserName": "firefox",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".local-tools/firefox-recheck-20261018/pwa.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "pwa-updates.spec.ts",
+      "file": "pwa-updates.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PWA updates online across tabs without reloading unsaved input; offline launch and reconnection work",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8647,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/新版离线/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/新版离线/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts:93:27",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                      "column": 27,
+                      "line": 93
+                    },
+                    "snippet": "  91 |     const offline = await context.newPage();\n  92 |     await offline.goto(fixture.origin + '/offline-start/');\n> 93 |     await expect(offline).toHaveTitle(/新版离线/);\n     |                           ^\n  94 |     await context.setOffline(false);\n  95 |     await offline.goto(fixture.origin);\n  96 |     await expect(offline.locator('.post-card').first()).toBeVisible();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                        "column": 27,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/新版离线/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html>…</html>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n  91 |     const offline = await context.newPage();\n  92 |     await offline.goto(fixture.origin + '/offline-start/');\n> 93 |     await expect(offline).toHaveTitle(/新版离线/);\n     |                           ^\n  94 |     await context.setOffline(false);\n  95 |     await offline.goto(fixture.origin);\n  96 |     await expect(offline.locator('.post-card').first()).toBeVisible();\n    at E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts:93:27"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T18:48:28.183Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa-results\\pwa-updates-PWA-updates-on-b7805-aunch-and-reconnection-work\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa-results\\pwa-updates-PWA-updates-on-b7805-aunch-and-reconnection-work\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                    "column": 27,
+                    "line": 93
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-0ee36fc8759c82818836",
+          "file": "pwa-updates.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "PWA keeps the active version when worker and CDN offline bytes differ, then recovers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7713,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1')\nExpected: \u001b[32m\"暂时离线\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1')\nExpected: \u001b[32m\"暂时离线\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n\n    at E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts:130:38",
+                    "location": {
+                      "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                      "column": 38,
+                      "line": 130
+                    },
+                    "snippet": "  128 |     await context.setOffline(true);\n  129 |     await page.goto(fixture.origin + '/old-version-offline/');\n> 130 |     await expect(page.locator('h1')).toHaveText('暂时离线');\n      |                                      ^\n  131 |     await context.setOffline(false);\n  132 |     fixture.state.html = fixture.state.workerHtml;\n  133 |     await page.goto(fixture.origin);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                        "column": 38,
+                        "line": 130
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1')\nExpected: \u001b[32m\"暂时离线\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('h1') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n\n\n  128 |     await context.setOffline(true);\n  129 |     await page.goto(fixture.origin + '/old-version-offline/');\n> 130 |     await expect(page.locator('h1')).toHaveText('暂时离线');\n      |                                      ^\n  131 |     await context.setOffline(false);\n  132 |     fixture.state.html = fixture.state.workerHtml;\n  133 |     await page.goto(fixture.origin);\n    at E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts:130:38"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T18:48:38.585Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa-results\\pwa-updates-PWA-keeps-the--a41a6--bytes-differ-then-recovers\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\autuswing-astro\\.local-tools\\firefox-recheck-20261018\\pwa-results\\pwa-updates-PWA-keeps-the--a41a6--bytes-differ-then-recovers\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\autuswing-astro\\tests\\deployment\\pwa-updates.spec.ts",
+                    "column": 38,
+                    "line": 130
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-3466bb3c46975730876e",
+          "file": "pwa-updates.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "PWA manifest/icons are downloadable and rendered; favicon and Apple icon stay available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T18:48:47.907Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "becdedbf54ebcdcd49b0-302b0a43eaa12fbe1957",
+          "file": "pwa-updates.spec.ts",
+          "line": 145,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T18:48:27.620Z",
+    "duration": 22801.208000000002,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
