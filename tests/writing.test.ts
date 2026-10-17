@@ -124,3 +124,42 @@ test('publication checks detect missing resources, anchors, IDs and warn about a
     close();
   }
 });
+
+test('external HTTP audit is opt-in and treats restrictions differently from missing pages', async () => {
+  const { root, close } = workspace();
+  const originalFetch = globalThis.fetch,
+    calls: string[] = [];
+  try {
+    const file = createPost({ root, title: '外链检查' });
+    fs.writeFileSync(
+      file,
+      fs.readFileSync(file, 'utf8').replace('draft: true', 'draft: false') +
+        '\n[missing](https://example.invalid/missing)\n[restricted](https://example.invalid/restricted)\n[fallback](https://example.invalid/fallback)\n',
+    );
+    globalThis.fetch = (async (url, options) => {
+      calls.push(`${options?.method || 'GET'} ${url}`);
+      const status = String(url).endsWith('/missing')
+        ? 404
+        : String(url).endsWith('/restricted')
+          ? 403
+          : options?.method === 'HEAD'
+            ? 405
+            : 200;
+      return new Response(null, { status });
+    }) as typeof fetch;
+    await checkContent({ root });
+    assert.equal(calls.length, 0);
+    const report = await checkContent({ root, remote: true });
+    assert.equal(report.remoteResults.length, 3);
+    assert.ok(
+      report.issues.some((issue) => issue.level === 'error' && /HTTP 404/.test(issue.message)),
+    );
+    assert.ok(
+      report.issues.some((issue) => issue.level === 'warning' && /HTTP 403/.test(issue.message)),
+    );
+    assert.ok(calls.some((call) => call.startsWith('GET ') && call.endsWith('/fallback')));
+  } finally {
+    globalThis.fetch = originalFetch;
+    close();
+  }
+});

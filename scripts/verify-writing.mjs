@@ -8,6 +8,8 @@ import { load } from 'cheerio';
 
 const root = path.resolve('.'),
   created = [];
+const themeFile = path.join(root, 'src/config/theme.json');
+const originalTheme = fs.readFileSync(themeFile);
 const build = (production = false) =>
   execFileSync(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build'], {
     cwd: root,
@@ -25,6 +27,9 @@ const report = {
   stablePublishedId: false,
   explicitDescription: false,
   nativeResponsiveImage: false,
+  coverDimensions: false,
+  mixedImageAndMath: false,
+  fullFeedNativeImage: false,
   localDraftPreview: false,
   sampleAbsentFromProduction: false,
   previewRestored: false,
@@ -103,10 +108,13 @@ try {
   created.push(asset);
   const published =
     raw
-      .replace('draft: true', 'draft: false')
+      .replace('draft: true', 'draft: false\ncover: /img/posts/hexo-yelee/01-workflow.png')
       .replace('description: ""', 'description: "作者手写摘要，正文保持不变。"') +
-    `\n\n![响应式图片](./${path.basename(asset)})\n`;
+    `\n\n![响应式图片](./${path.basename(asset)})\n\n$$E=mc^2$$\n`;
   fs.writeFileSync(file, published);
+  const testTheme = JSON.parse(originalTheme.toString());
+  testTheme.feed.full_content = true;
+  fs.writeFileSync(themeFile, JSON.stringify(testTheme, null, 2) + '\n');
   build(true);
   const $ = load(fs.readFileSync(path.join('dist', data.id, 'index.html'), 'utf8'));
   assert.equal($('link[rel=canonical]').attr('href'), `https://akisenn.com/${data.id}/`);
@@ -119,8 +127,32 @@ try {
   assert.ok(image.attr('sizes')?.includes('810px'));
   assert.ok(image.attr('src')?.startsWith('/_astro/'));
   report.nativeResponsiveImage = true;
+  assert.equal($('.post-cover').attr('width'), '1440');
+  assert.equal($('.post-cover').attr('height'), '840');
+  report.coverDimensions = true;
+  assert.ok($('.prose [data-math-rendered=katex]').length);
+  assert.ok(
+    $('link[rel=stylesheet]')
+      .toArray()
+      .some((node) => node.attribs.href.includes('katex')),
+  );
+  report.mixedImageAndMath = true;
+  for (const name of ['rss.xml', 'atom.xml']) {
+    const feed = fs.readFileSync(path.join('dist', name), 'utf8');
+    assert.ok(!feed.includes('srcset='), 'Feeds use the absolute complete image fallback');
+    assert.ok(
+      !feed.includes('__ASTRO_IMAGE_'),
+      'Feed must not expose unresolved Astro image placeholders',
+    );
+    assert.ok(
+      feed.includes('https://akisenn.com/_astro/'),
+      'Full feeds use resolved absolute image URLs',
+    );
+  }
+  report.fullFeedNativeImage = true;
   report.stablePublishedId = report.explicitDescription = true;
 } finally {
+  fs.writeFileSync(themeFile, originalTheme);
   for (const file of created) {
     const target = path.resolve(file);
     assert.ok(target.startsWith(path.join(root, 'content/posts') + path.sep));

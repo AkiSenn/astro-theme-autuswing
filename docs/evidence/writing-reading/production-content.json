@@ -4,6 +4,9 @@
   "stablePublishedId": true,
   "explicitDescription": true,
   "nativeResponsiveImage": true,
+  "coverDimensions": true,
+  "mixedImageAndMath": true,
+  "fullFeedNativeImage": true,
   "localDraftPreview": true,
   "sampleAbsentFromProduction": true,
   "previewRestored": true

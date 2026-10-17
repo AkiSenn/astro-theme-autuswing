@@ -149,3 +149,26 @@ test('test sample has no physical route or discovery artifacts', async ({ reques
       'AUTUSWING_MARKDOWN_TEST_ONLY',
     );
 });
+
+test('lightbox uses the complete responsive source only when opened', async ({ page }) => {
+  await installMarkdownFixture(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(samplePath);
+  const img = page.locator('.prose img').first();
+  const full = await img.evaluate((node: HTMLImageElement) => {
+    const thumbnail = new URL(node.src);
+    thumbnail.searchParams.set('test-thumbnail', '1');
+    node.srcset = thumbnail.href + ' 1x';
+    return node.src;
+  });
+  await img.evaluate((node: HTMLImageElement) => node.decode());
+  await expect.poll(() => img.evaluate((node: HTMLImageElement) => node.currentSrc)).not.toBe(full);
+  await img.click();
+  await expect(page.locator('.image-dialog img')).toHaveAttribute('src', full);
+  await page.keyboard.press('Escape');
+  await img.evaluate((node: HTMLImageElement) => {
+    node.dataset.fullsize = node.src + '#fullsize';
+  });
+  await img.click();
+  await expect(page.locator('.image-dialog img')).toHaveAttribute('src', full + '#fullsize');
+});

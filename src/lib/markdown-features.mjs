@@ -1,10 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { imageMetadata } from 'astro/assets/utils';
 
 // Reuse Astro's metadata decoder. Never fetch remote images or rewrite old URLs.
-const publicRoot = fileURLToPath(new URL('../../public/', import.meta.url));
+// Match image-url.mjs: Astro can bundle this module into its server output, so
+// import.meta.url is not a reliable source-tree location at render time.
+const publicRoot = path.resolve('public') + path.sep;
 const imageCache = new Map();
 export async function localImageDimensions(src) {
   if (typeof src !== 'string' || !src.startsWith('/') || src.startsWith('//')) return;

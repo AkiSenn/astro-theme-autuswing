@@ -77,7 +77,16 @@ async function prepare(entry: Entry) {
         : newPostPath(data)
       : publicPath({ permalink: data.permalink || '/' + entry.id.replace(/\/index$/, '') + '/' });
   const rendered = await render(entry);
-  const html = entry.rendered?.html || '';
+  const rawHtml = entry.rendered?.html || '';
+  // Collection HTML can still contain imported-image placeholders. Reuse the
+  // Content returned by Astro (which has resolved them) for summaries/full feeds.
+  // Legacy/public-image articles keep their exact original HTML path.
+  let html = rawHtml;
+  if (rawHtml.includes('__ASTRO_IMAGE_')) {
+    const { experimental_AstroContainer } = await import('astro/container');
+    const container = await experimental_AstroContainer.create();
+    html = await container.renderToString(rendered.Content);
+  }
   const paragraphs = [
     ...html
       .replace(/<(h[1-6]|pre|figure|blockquote|table|ul|ol)\b[^>]*>[\s\S]*?<\/\1>/gi, '')

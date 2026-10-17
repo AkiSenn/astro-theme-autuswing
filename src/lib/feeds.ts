@@ -14,10 +14,14 @@ export const xml = (s: unknown) =>
       (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[c]!,
     );
 export function absoluteHtml(html: string, path: string) {
-  return html.replace(
-    /\b(href|src)="([^"]+)"/g,
-    (_, attr, value) => `${attr}="${xml(new URL(decodeHTML(value), absolute(path)).href)}"`,
-  );
+  // Feed readers do not share the site's responsive layout or document base.
+  // Use the complete optimized src; relative srcset candidates are inappropriate.
+  return html
+    .replace(/\s+(?:srcset|sizes)="[^"]*"/gi, '')
+    .replace(
+      /\b(href|src)="([^"]+)"/g,
+      (_, attr, value) => `${attr}="${xml(new URL(decodeHTML(value), absolute(path)).href)}"`,
+    );
 }
 export const feedContent = (p: Awaited<ReturnType<typeof feedPosts>>[number]) =>
   theme.feed.full_content ? absoluteHtml(p.html, p.path) : `<p>${xml(p.excerpt)}</p>`;

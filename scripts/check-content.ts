@@ -21,14 +21,18 @@ export async function checkContent({
   root,
   output = false,
   includeDrafts = false,
+  remote = false,
 }: {
   root: string;
   output?: boolean;
   includeDrafts?: boolean;
+  remote?: boolean;
 }) {
   const issues: Issue[] = [],
     entries: any[] = [],
     ids = new Map<string, string>();
+  const external = new Map<string, { file: string; warning: boolean }[]>();
+  const remoteResults: { url: string; status?: number; error?: string }[] = [];
   const report = {
     files: 0,
     published: 0,
@@ -37,6 +41,7 @@ export async function checkContent({
     links: 0,
     externalLinks: 0,
     deferredLinks: 0,
+    remoteResults,
     issues,
   };
   const issue = (file: string, message: string, warning = false) =>
@@ -159,6 +164,10 @@ export async function checkContent({
       }
       if (url.origin !== 'https://akisenn.com') {
         report.externalLinks++;
+        url.hash = '';
+        const references = external.get(url.href) || [];
+        references.push({ file, warning: warn });
+        external.set(url.href, references);
         continue;
       }
       let pathname: string, fragment: string;
@@ -209,14 +218,49 @@ export async function checkContent({
       issue(file, `${image ? 'Missing image' : 'Missing local output/link'}: ${value}`, warn);
     }
   }
+  if (remote) {
+    const queue = [...external];
+    // Bound concurrency and each request; offline writing never waits on this.
+    for (let i = 0; i < queue.length; i += 4)
+      await Promise.all(
+        queue.slice(i, i + 4).map(async ([url, references]) => {
+          try {
+            let response = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(8000) });
+            if (response.status === 405) {
+              response = await fetch(url, {
+                headers: { Range: 'bytes=0-0' },
+                signal: AbortSignal.timeout(8000),
+              });
+              await response.body?.cancel();
+            }
+            remoteResults.push({ url, status: response.status });
+            if (!response.ok)
+              for (const reference of references)
+                issue(
+                  reference.file,
+                  `External HTTP ${response.status}: ${url}`,
+                  reference.warning || ![404, 410].includes(response.status),
+                );
+          } catch (error) {
+            remoteResults.push({ url, error: (error as Error).message });
+            for (const reference of references)
+              issue(reference.file, `External URL could not be verified: ${url}`, true);
+          }
+        }),
+      );
+  }
   return report;
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  for (const argument of process.argv.slice(2))
+    if (!['--output', '--drafts', '--remote'].includes(argument))
+      throw new Error(`Unknown option: ${argument}`);
   const report = await checkContent({
     root: fileURLToPath(new URL('../', import.meta.url)),
     output: process.argv.includes('--output'),
     includeDrafts: process.argv.includes('--drafts'),
+    remote: process.argv.includes('--remote'),
   });
   for (const issue of report.issues) console.log(`${issue.level}: ${issue.file}: ${issue.message}`);
   console.log(

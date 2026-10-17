@@ -10,6 +10,7 @@ import Comments from '../components/Comments.astro';
 import SurfaceWallpaper from '../components/SurfaceWallpaper.astro';
 import CopyrightNotice from '../components/CopyrightNotice.astro';
 import Glyph from '../components/Glyph.astro';
+import { localImageDimensions } from '../lib/markdown-features.mjs';
 interface Props {
   post: Post;
 }
@@ -19,6 +20,8 @@ const { post } = Astro.props,
   previous = all[index - 1],
   next = all[index + 1];
 const Content = post.rendered.Content;
+const coverSize =
+  post.data.cover && !post.isLegacy ? await localImageDimensions(post.data.cover) : undefined;
 const networks: Record<string, string> = {
   weibo: `https://service.weibo.com/share/share.php?url=${encodeURIComponent(absolute(post.path))}&title=${encodeURIComponent(post.title)}`,
   twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(absolute(post.path))}&text=${encodeURIComponent(post.title)}`,
@@ -89,6 +92,8 @@ const related = theme.reading.related
         <img
           class="post-cover"
           src={post.data.cover}
+          width={coverSize?.width}
+          height={coverSize?.height}
           alt={post.title}
           decoding="async"
           fetchpriority="high"
