@@ -1,6 +1,16 @@
 import { motionEnabled, reduced } from './helpers';
+import {
+  prepareLegacyDialog,
+  showLegacyDialog,
+  closeLegacyDialog,
+  isLegacyDialog,
+  initLegacyDialogs,
+  focusDialogTarget,
+} from './legacy-dialog';
 
 const closing = new Map<HTMLDialogElement, Animation>();
+const finishClose = (dialog: HTMLDialogElement) =>
+  isLegacyDialog(dialog) ? closeLegacyDialog(dialog) : dialog.close();
 
 // Keep native modal semantics until the exit finishes. In particular, the TOC
 // opener must not reappear while its dialog is still visible. No timer guesses.
@@ -10,7 +20,7 @@ export function closeDialog(dialog: HTMLDialogElement, immediate = false) {
     closing.get(dialog)?.cancel();
     closing.delete(dialog);
     delete dialog.dataset.closing;
-    dialog.close();
+    finishClose(dialog);
     return;
   }
   if (closing.has(dialog)) return;
@@ -33,14 +43,16 @@ export function closeDialog(dialog: HTMLDialogElement, immediate = false) {
       if (closing.get(dialog) !== animation) return;
       closing.delete(dialog);
       delete dialog.dataset.closing;
-      dialog.close();
+      finishClose(dialog);
       animation.cancel();
     })
     .catch(() => {}); // Reopening or replacing a surface cancels its exit.
 }
 
 export function initDialogs() {
+  initLegacyDialogs((dialog) => closeDialog(dialog, true));
   document.querySelectorAll<HTMLDialogElement>('dialog').forEach((dialog) => {
+    prepareLegacyDialog(dialog);
     dialog.addEventListener('cancel', (event) => {
       event.preventDefault();
       closeDialog(dialog);
@@ -63,7 +75,10 @@ export function openDialog(dialog: HTMLDialogElement) {
   closing.get(dialog)?.cancel();
   closing.delete(dialog);
   delete dialog.dataset.closing;
-  if (!dialog.open) dialog.showModal();
+  if (!dialog.open) {
+    if (isLegacyDialog(dialog)) showLegacyDialog(dialog, () => closeDialog(dialog));
+    else dialog.showModal();
+  }
 }
 export function restoreDialogFocus(trigger: HTMLElement | null) {
   if (document.querySelector('dialog[open]')) return;
@@ -74,5 +89,5 @@ export function restoreDialogFocus(trigger: HTMLElement | null) {
       [...document.querySelectorAll<HTMLElement>('[data-focus-key]')].find(
         (node) => node.dataset.focusKey === key && node.getClientRects().length,
       );
-  if (destination) destination.focus({ preventScroll: true });
+  if (destination) focusDialogTarget(destination);
 }

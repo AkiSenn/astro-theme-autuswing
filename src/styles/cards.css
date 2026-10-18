@@ -121,7 +121,7 @@
   display: inline-block;
   margin-top: 14px;
 }
-.post-list:has(> .mica-card) {
+.post-list[data-mica-list] {
   border-top: 0;
   display: grid;
 }
@@ -242,7 +242,7 @@
   padding: 2px 9px;
   margin-left: 10px;
 }
-.post-list:has(> .mica-card) {
+.post-list[data-mica-list] {
   gap: var(--space-5);
 }
 .post-card,

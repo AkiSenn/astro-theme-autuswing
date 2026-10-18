@@ -43,6 +43,15 @@ test('rejects range comparisons and MQ4 boolean syntax, including minifier rewri
   assert.throws(() => assertLegacyMediaCss('@media screen{@media(width<720px){a{color:red}}}'));
 });
 
+test('unbundled imports cannot hide media conditions or unchecked sheets from the gate', () => {
+  for (const css of [
+    '@import "remote.css" (width < 720px);',
+    '@import url("remote.css") not (min-width: 720px);',
+    '@import "remote.css" screen and (max-width: 720px);',
+  ])
+    assert.throws(() => assertLegacyMediaCss(css), /unbundled CSS @import/);
+});
+
 test('build gate checks external CSS, inline noscript CSS and media attributes', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'autuswing-media-'));
   try {

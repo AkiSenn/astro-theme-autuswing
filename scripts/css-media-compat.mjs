@@ -18,7 +18,13 @@ export function assertLegacyMediaQuery(query, label = 'CSS') {
 }
 
 export function assertLegacyMediaCss(css, label = 'CSS') {
-  postcss.parse(css, { from: label }).walkAtRules(/^media$/i, (rule) => {
+  const root = postcss.parse(css, { from: label });
+  // Vite must bundle imports. A residual @import can hide an unchecked
+  // remote sheet or an MQ4 import condition from the emitted-byte gate.
+  root.walkAtRules(/^import$/i, () => {
+    throw new Error(`${label}: unbundled CSS @import is not allowed`);
+  });
+  root.walkAtRules(/^media$/i, (rule) => {
     assertLegacyMediaQuery(rule.params, label);
   });
 }

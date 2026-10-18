@@ -11,6 +11,60 @@ dialog {
   border-radius: 16px;
   padding: 0;
 }
+/* Unknown <dialog> elements have no UA hiding rule before Safari 15.4. */
+dialog:not([open]) {
+  display: none;
+}
+
+html[data-legacy-modal-open] {
+  overflow: hidden;
+}
+.legacy-dialog-host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  background: #101c1890;
+}
+.legacy-dialog-host[data-contents] {
+  background: #101c1870;
+}
+.legacy-dialog-host > dialog {
+  display: block;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  flex: none;
+  margin: auto;
+  max-width: 100%;
+  max-height: calc(100% - 32px);
+}
+.legacy-dialog-host > .contents-dialog {
+  max-height: min(calc(var(--legacy-viewport-height) * 0.76), 720px);
+  overflow: auto;
+}
+.legacy-dialog-host > .search-dialog {
+  margin: calc(var(--legacy-viewport-height) * 0.12) auto auto;
+  max-height: 75%;
+}
+@media (max-width: 760px) {
+  .legacy-dialog-host > .search-dialog {
+    margin-top: calc(var(--legacy-viewport-height) * 0.08);
+    max-height: 82%;
+  }
+}
+@media not all and (min-width: 720px) {
+  .legacy-dialog-host > .contents-dialog {
+    max-height: 75%;
+    margin: auto 0 0;
+  }
+}
 dialog::backdrop {
   background: #101c1890;
 }
@@ -213,9 +267,11 @@ dialog::backdrop {
   font-size: 12px;
 }
 .image-dialog {
+  max-height: 92vh;
   max-height: 92dvh;
 }
 .image-dialog > img {
+  max-height: 86vh;
   max-height: 86dvh;
   margin: 0;
 }

@@ -306,6 +306,7 @@
 .contents-dialog {
   padding: 0 var(--space-6) var(--space-6);
   width: min(520px, calc(100% - 48px));
+  max-height: min(76vh, 720px);
   max-height: min(76dvh, 720px);
   color: var(--text);
   background: var(--surface);
@@ -432,6 +433,7 @@
     position: fixed;
     inset: 0 auto 0 var(--layout-sidebar);
     width: var(--reading-contents-width);
+    height: 100vh;
     height: 100dvh;
     padding: var(--space-4) var(--space-4) var(--space-5);
     background: var(--paper);
@@ -469,6 +471,7 @@
   .contents-dialog {
     width: 100%;
     max-width: none;
+    max-height: 75vh;
     max-height: 75dvh;
     margin: auto 0 0;
     padding: 0 var(--space-5) max(var(--space-6), env(safe-area-inset-bottom));

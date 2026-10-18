@@ -1,4 +1,5 @@
 import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
+import { isLegacyDialog } from './legacy-dialog';
 
 export function initResponsive() {
   const wide = matchMedia('(min-width: 1000px)'),
@@ -91,7 +92,7 @@ export function initResponsive() {
         (node) => node.getClientRects().length,
       );
       const first = targets[0],
-        last = targets.at(-1);
+        last = targets[targets.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last?.focus();
@@ -113,8 +114,16 @@ export function initResponsive() {
     });
     let destination: HTMLElement | null = null;
     dialog.querySelectorAll<HTMLAnchorElement>('.toc-link').forEach((link) =>
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (event) => {
         destination = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+        if (isLegacyDialog(dialog)) {
+          event.preventDefault();
+          const target = destination;
+          closeDialog(dialog, true);
+          if (location.hash !== link.hash) location.hash = link.hash;
+          else target?.scrollIntoView({ block: 'start' });
+          return;
+        }
         closeDialog(dialog);
       }),
     );
