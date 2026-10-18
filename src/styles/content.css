@@ -539,7 +539,7 @@ html[data-theme='dark'] .prose .astro-code span {
 .standalone-page:has(.prose) {
   max-width: var(--reading-width);
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .article-layout .prose,
   .mica-article .prose {
     font-size: var(--autuswing-base-font, 16px);

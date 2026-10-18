@@ -450,9 +450,11 @@
     gap: var(--space-2);
   }
 }
-@media (720px <= width < 1000px) {
-  .desktop-sidebar.sidebar {
-    display: none;
+@media (min-width: 720px) {
+  @media not all and (min-width: 1000px) {
+    .desktop-sidebar.sidebar {
+      display: none;
+    }
   }
 }
 @media screen and (min-width: 1000px) {
@@ -463,12 +465,12 @@
     display: block;
   }
 }
-@media (width < 1000px) {
+@media not all and (min-width: 1000px) {
   .compact-social {
     display: block;
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .desktop-sidebar.sidebar,
   .tablet-sidebar {
     display: none;
@@ -569,7 +571,7 @@
   font-size: 13px;
   margin-block: var(--space-1) var(--space-3);
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .mobile-brand-row .mobile-brand {
     max-width: none;
     font-size: 14px;

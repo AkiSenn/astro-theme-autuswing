@@ -251,7 +251,7 @@
   color: var(--text);
   font-weight: 600;
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .timeline article {
     gap: var(--space-3);
   }

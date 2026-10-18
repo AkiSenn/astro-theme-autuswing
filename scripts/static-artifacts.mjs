@@ -10,6 +10,7 @@ import { fileManifest, inputManifest, sha256 } from './release-integrity.mjs';
 import site from '../src/config/site.json' with { type: 'json' };
 import policy from '../deployment/release-policy.json' with { type: 'json' };
 import { serviceWorker } from '../src/lib/service-worker.mjs';
+import { verifyMediaCompatibility } from './css-media-compat.mjs';
 export function staticArtifacts() {
   let inputs, projectRoot;
   return {
@@ -84,6 +85,7 @@ export function staticArtifacts() {
         }
         // Build outputs only: persistent migration inputs remain immutable.
         await write('redirects.json', JSON.stringify(rules, null, 2) + '\n');
+        await verifyMediaCompatibility(root);
         if (theme.performance.precompress) {
           async function compress(dir) {
             for (const entry of await fs.readdir(dir, { withFileTypes: true })) {

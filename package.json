@@ -58,6 +58,7 @@
     "@types/js-yaml": "4.0.9",
     "cheerio": "1.2.0",
     "katex": "0.19.0",
+    "postcss": "8.5.30",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
     "tsx": "4.23.15",

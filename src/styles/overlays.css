@@ -167,13 +167,13 @@ dialog::backdrop {
 .floating-tools .copy-link {
   display: none;
 }
-@media (width < 1000px) {
+@media not all and (min-width: 1000px) {
   .floating-tools {
     flex-direction: row;
     gap: var(--space-2);
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .search-dialog {
     width: calc(100% - 24px);
   }

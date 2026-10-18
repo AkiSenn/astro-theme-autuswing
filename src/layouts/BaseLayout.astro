@@ -74,17 +74,23 @@ const background = theme.backgrounds.length
         .js-control {
           display: none !important;
         }
-        @media screen and (width < 1280px) {
-          body .contents-access {
-            display: block;
-          }
-          .main-shell:has(.contents-access) #main {
-            padding-top: 0;
+        @media screen {
+          @media not all and (min-width: 1280px) {
+            body .contents-access {
+              display: block;
+            }
+            .main-shell:has(.contents-access) #main {
+              padding-top: 0;
+            }
           }
         }
-        @media screen and (1280px <= width < 1440px) {
-          .article-page .reading-sidebar {
-            display: flex !important;
+        @media screen {
+          @media (min-width: 1280px) {
+            @media not all and (min-width: 1440px) {
+              .article-page .reading-sidebar {
+                display: flex !important;
+              }
+            }
           }
         }
       </style>

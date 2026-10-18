@@ -40,12 +40,14 @@ html:has(dialog[open]) {
     --reading-width: 860px;
   }
 }
-@media (720px <= width < 1000px) {
-  :root {
-    --layout-sidebar: 72px;
-  }
-  .main-shell {
-    padding-inline: var(--space-6);
+@media (min-width: 720px) {
+  @media not all and (min-width: 1000px) {
+    :root {
+      --layout-sidebar: 72px;
+    }
+    .main-shell {
+      padding-inline: var(--space-6);
+    }
   }
 }
 @media screen and (min-width: 1000px) {
@@ -59,7 +61,7 @@ html:has(dialog[open]) {
     margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   :root {
     --layout-sidebar: 0px;
   }

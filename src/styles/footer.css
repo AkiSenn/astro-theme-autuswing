@@ -88,12 +88,12 @@
 .site-footer .footer-row {
   justify-content: center;
 }
-@media (width < 1000px) {
+@media not all and (min-width: 1000px) {
   .main-shell > .site-footer {
     padding-bottom: 88px;
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .article-page .site-footer {
     margin-inline: var(--space-4);
   }
@@ -107,7 +107,7 @@
 .registration a {
   min-height: 44px;
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .site-footer {
     font-size: 12px;
   }

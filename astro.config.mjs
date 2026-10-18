@@ -18,7 +18,15 @@ export default defineConfig({
   // Native imported Markdown images get responsive variants. Public /img URLs
   // remain untouched; the established prose CSS owns their presentation.
   image: { layout: 'constrained', responsiveStyles: false },
-  vite: { build: { minify: theme.performance.minify, cssMinify: theme.performance.minify } },
+  // Keep CSS minification from rewriting min/max queries into Safari 16.4+
+  // range syntax. JavaScript's target and all visual declarations stay intact.
+  vite: {
+    build: {
+      minify: theme.performance.minify,
+      cssMinify: theme.performance.minify,
+      cssTarget: 'safari14',
+    },
+  },
   prerenderConflictBehavior: 'error',
   markdown: {
     processor: markdownProcessor(),

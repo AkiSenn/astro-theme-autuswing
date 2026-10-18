@@ -144,57 +144,59 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
-@media (720px <= width < 1000px) {
-  .journal-home {
-    container-type: inline-size;
-  }
-  @container (min-width: 660px) {
-    .journal-home .post-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+@media (min-width: 720px) {
+  @media not all and (min-width: 1000px) {
+    .journal-home {
+      container-type: inline-size;
     }
-    .journal-home .post-list:has(.prose) {
-      grid-template-columns: minmax(0, 1fr);
-    }
-    .journal-home .post-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      align-content: start;
-    }
-    .journal-home .post-card .card-date {
-      text-align: left;
-    }
-    .journal-home .card-date time {
-      display: flex;
-      align-items: baseline;
-      gap: var(--space-2);
-    }
-    .journal-home .card-date span,
-    .journal-home .card-date small {
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .journal-home .card-date span {
-      font-size: 26px;
-    }
-    .journal-home .card-date small {
-      font-size: 11px;
-    }
-    .journal-home .card-arrow {
-      display: none;
-    }
-    .journal-home .post-card h3 {
-      font-size: 19px;
-    }
-    .journal-home .post-meta,
-    .journal-home .card-tags {
-      font-size: 12px;
-      letter-spacing: 0;
+    @container (min-width: 660px) {
+      .journal-home .post-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .journal-home .post-list:has(.prose) {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .journal-home .post-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-content: start;
+      }
+      .journal-home .post-card .card-date {
+        text-align: left;
+      }
+      .journal-home .card-date time {
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-2);
+      }
+      .journal-home .card-date span,
+      .journal-home .card-date small {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .journal-home .card-date span {
+        font-size: 26px;
+      }
+      .journal-home .card-date small {
+        font-size: 11px;
+      }
+      .journal-home .card-arrow {
+        display: none;
+      }
+      .journal-home .post-card h3 {
+        font-size: 19px;
+      }
+      .journal-home .post-meta,
+      .journal-home .card-tags {
+        font-size: 12px;
+        letter-spacing: 0;
+      }
     }
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .post-card,
   .post-card.mica-card {
     display: grid;
@@ -336,28 +338,30 @@
 .article-header .card-tags {
   margin-top: var(--space-3);
 }
-@media (720px <= width < 1000px) {
-  @container (min-width: 660px) {
-    .journal-home .post-card {
-      padding: 22px;
-      gap: 10px;
-    }
-    .journal-home .post-card .card-date {
-      width: auto;
-    }
-    .journal-home .post-card .card-date span {
-      font-size: 30px;
-    }
-    .journal-home .post-card .post-card-title {
-      font-size: 21px;
-      margin-top: 6px;
-    }
-    .journal-home .post-card p {
-      font-size: 15px;
+@media (min-width: 720px) {
+  @media not all and (min-width: 1000px) {
+    @container (min-width: 660px) {
+      .journal-home .post-card {
+        padding: 22px;
+        gap: 10px;
+      }
+      .journal-home .post-card .card-date {
+        width: auto;
+      }
+      .journal-home .post-card .card-date span {
+        font-size: 30px;
+      }
+      .journal-home .post-card .post-card-title {
+        font-size: 21px;
+        margin-top: 6px;
+      }
+      .journal-home .post-card p {
+        font-size: 15px;
+      }
     }
   }
 }
-@media (width < 720px) {
+@media not all and (min-width: 720px) {
   .section-heading {
     padding-bottom: var(--space-5);
   }
