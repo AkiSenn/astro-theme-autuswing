@@ -2,7 +2,7 @@
 
 ## Tabler Icons
 
-`src/components/Icons.astro` 中以下四个折角取自 [Tabler Icons](https://github.com/tabler/tabler-icons)，固定提交为 `a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d`。本声明仅涵盖这四个图标，不表示其余图标的授权已确认。
+`src/components/Icons.astro` 中以下十个图标取自 [Tabler Icons](https://github.com/tabler/tabler-icons)，固定提交为 `a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d`。本声明仅涵盖这些图标，不表示其余图标的授权已确认。
 
 | 图标 ID           | 上游文件                                                                                                                                  | 坐标适配（viewBox 单位） |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
@@ -10,8 +10,14 @@
 | `i-chevron-down`  | [chevron-down.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/chevron-down.svg)   | `translate(0 0.5)`       |
 | `i-chevron-left`  | [chevron-left.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/chevron-left.svg)   | `translate(-0.5 0)`      |
 | `i-chevron-right` | [chevron-right.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/chevron-right.svg) | `translate(0.5 0)`       |
+| `i-home`          | [home.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/home.svg)                   | 无平移                   |
+| `i-list`          | [list.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/list.svg)                   | 无平移                   |
+| `i-user`          | [user.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/user.svg)                   | 无平移                   |
+| `i-calendar`      | [calendar.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/calendar.svg)           | 移除日期数字，无平移     |
+| `i-clock`         | [clock.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/clock.svg)                 | 无平移                   |
+| `i-search`        | [search.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/search.svg)               | 无平移                   |
 
-路径 `d` 保留上游原文；沿用现有 symbol ID、24×24 viewBox、20×20 引用尺寸与 `currentColor`，描边从上游的 2 适配为现有的 1.7，保留圆角端点和连接。上述平移保持原有对齐；这些是对授权作品的适配，不声称独立原创。
+路径 `d` 保留上游原文；`calendar` 省略上游最后两条组成日期数字的路径。沿用现有 symbol ID、24×24 viewBox、20×20 引用尺寸与 `currentColor`，描边从上游的 2 适配为现有的 1.7，保留圆角端点和连接。四个折角通过上述平移保持原有对齐，其余六个图标不移动坐标；这些是对授权作品的适配，不声称独立原创。
 
 以下全文来自该提交的 [LICENSE](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/LICENSE)：
 
