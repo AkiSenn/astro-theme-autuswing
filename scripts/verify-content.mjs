@@ -3,16 +3,23 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
+import { legacyRevisionState } from './legacy-revisions.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const manifest = JSON.parse(
   fs.readFileSync(path.join(root, 'migration/source-manifest.json'), 'utf8'),
 );
 const sha = (f) => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+const revisions = legacyRevisionState(root);
+const approved = new Map([...revisions.values()].map((item) => [item.source, item.approvedSha256]));
 const files = manifest.files.filter(
   (f) => f.target.startsWith('content/') || f.target.startsWith('public/'),
 );
 for (const f of files) {
-  assert.equal(sha(path.join(root, f.target)), f.sha256, `Imported file changed: ${f.target}`);
+  assert.equal(
+    sha(path.join(root, f.target)),
+    approved.get(f.target) || f.sha256,
+    `Imported file changed: ${f.target}`,
+  );
   if (fs.existsSync(manifest.source))
     assert.equal(
       sha(path.join(manifest.source, f.source)),
@@ -47,6 +54,7 @@ console.log(
     optionalAssetsVerified: optional.files.length,
     posts: 3,
     pages: 1,
+    approvedRevisions: [...revisions.values()].reduce((n, item) => n + item.sequence, 0),
     originalSourceFiles: fs.existsSync(manifest.source)
       ? baseline.length
       : 'original directory unavailable; portable import hashes verified',

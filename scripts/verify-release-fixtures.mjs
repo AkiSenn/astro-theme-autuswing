@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileManifest, sha256, verifyRelease } from './release-integrity.mjs';
 import policy from '../deployment/release-policy.json' with { type: 'json' };
+import { importRevisionHistory } from './revision-fixture-git.mjs';
 
 // All publication/mutation scenarios run in a fresh private copy, including
 // Markdown deletion. The author's actual files are never edited by this suite.
@@ -39,6 +40,7 @@ fs.symlinkSync(
   process.platform === 'win32' ? 'junction' : 'dir',
 );
 const report = { checkedAt: '', workspace: root, cases: [] };
+importRevisionHistory(original, root);
 const env = {
   ...process.env,
   SITE_ENV: 'production',

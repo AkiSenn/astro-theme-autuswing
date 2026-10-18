@@ -29,6 +29,8 @@
     "verify:http": "node scripts/verify-http.mjs",
     "audit:performance": "node scripts/audit-performance.mjs",
     "new-post": "node scripts/new-post.mjs",
+    "legacy:approve": "node scripts/approve-legacy-revision.mjs",
+    "test:legacy-revisions": "node scripts/verify-legacy-revision-fixtures.mjs",
     "check:content": "tsx scripts/check-content.ts",
     "publish:check": "node scripts/release.mjs",
     "build:preview": "node scripts/build-preview.mjs",

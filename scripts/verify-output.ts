@@ -22,6 +22,7 @@ import { redirects } from '../src/lib/legacy-redirects.mjs';
 import { imageMetadata } from 'astro/assets/utils';
 import { parseDate } from '../src/lib/dates';
 import legacyPages from '../migration/page-metadata.json';
+import { legacyRevisionState } from './legacy-revisions.mjs';
 
 function inventory(root: string) {
   const entries = ['content/posts', 'content/legacy/posts', 'content/legacy/pages']
@@ -87,6 +88,7 @@ export async function verifyOutput({
   production = false,
 }: { projectRoot?: string; outDir?: string; recordFile?: string; production?: boolean } = {}) {
   const root = path.resolve(outDir);
+  const approvedLegacy = legacyRevisionState(projectRoot);
   const build = JSON.parse(fs.readFileSync(recordFile, 'utf8'));
   const contract = build.contract;
   const policy = JSON.parse(
@@ -360,14 +362,17 @@ export async function verifyOutput({
   for (const p of legacy) {
     const $ = load(read(outputFile(p.path)));
     assert.equal($('meta[property="article:published_time"]').attr('content'), p.date);
-    assert.equal($('meta[property="article:modified_time"]').attr('content'), p.updated);
+    assert.equal(
+      $('meta[property="article:modified_time"]').attr('content'),
+      approvedLegacy.get(p.abbrlink)!.updated,
+    );
     const ids = new Set(
       $('.prose [id]')
         .toArray()
         .map((el) => $(el).attr('id')),
     );
     for (const h of p.headings) assert.ok(ids.has(h.id), `Missing historical heading ${h.id}`);
-    if (p.abbrlink === '4e395565') {
+    if (p.abbrlink === '4e395565' && approvedLegacy.get(p.abbrlink)!.sequence === 0) {
       assert.equal(
         $('.math-inline,.math-display').length,
         4,
