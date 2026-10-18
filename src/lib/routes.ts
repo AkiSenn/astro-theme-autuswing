@@ -10,12 +10,14 @@ import { getCollection } from 'astro:content';
 import { isPublished } from './content-schema';
 import { persistentId, publicPath, newPostPath } from './urls';
 import { environment, theme } from '../site.config';
+import { listingRoutes } from './listing';
 export type Route = {
   path: string;
   title: string;
   kind: 'post' | 'page' | 'archive' | 'taxonomy' | 'links' | 'home';
   post?: Post;
   posts?: Post[];
+  totalItems?: number;
   page?: number;
   totalPages?: number;
   base?: string;
@@ -26,27 +28,8 @@ export async function routes(paginate: PaginateFunction) {
   const all = await posts(),
     standalone = await pages(),
     routes: Route[] = [];
-  const addListing = (base: string, title: string, selected: Post[], kind: Route['kind']) => {
-    const per = site.per_page > 0 ? site.per_page : Number.POSITIVE_INFINITY;
-    const result = paginate(selected, {
-      pageSize: per,
-      format: (url) => {
-        const number = url === '/' ? 1 : Number(url.replaceAll('/', ''));
-        return number === 1 ? base : `${base}page/${number}/`;
-      },
-    });
-    for (const item of result) {
-      const page = item.props.page;
-      routes.push({
-        path: page.url.current,
-        title,
-        kind,
-        posts: page.data as Post[],
-        page: page.currentPage,
-        totalPages: page.lastPage,
-        base,
-      });
-    }
+  const addListing = (base: string, title: string, selected: Post[], kind: 'home' | 'archive') => {
+    routes.push(...listingRoutes(paginate, base, title, selected, kind, site.per_page));
   };
   addListing('/', t('latest'), all, 'home');
   addListing('/archives/', t('archives'), all, 'archive');
