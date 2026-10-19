@@ -6,7 +6,8 @@ import { layoutReference } from '../support/layout-reference';
 import { referencePage } from '../support/reference-page';
 import { inspectTransitionMode, assertUnanimatedNavigation } from '../support/transition-contract';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/motion-system/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('motion');
 fs.mkdirSync(dir, { recursive: true });
 const article = '/post/55b0541c/';
 const actions =

@@ -1,7 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 import fs from 'node:fs';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/social-links/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('social-links');
 fs.mkdirSync(dir, { recursive: true });
 const config = JSON.parse(fs.readFileSync('src/config/theme.json', 'utf8'));
 const expectedLinks = [...Object.entries(config.social), ['RSS', '/rss.xml']];

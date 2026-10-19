@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase5/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('cross-browser');
 fs.mkdirSync(dir, { recursive: true });
 
 test('welcome message belongs to the about page rather than the sidebar', async ({ page }) => {

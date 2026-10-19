@@ -3,7 +3,8 @@ import fs from 'node:fs';
 import { inspectTransitionMode, assertUnanimatedNavigation } from '../support/transition-contract';
 
 const article = '/post/55b0541c/';
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/smart-back/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('back');
 fs.mkdirSync(dir, { recursive: true });
 async function settled(page: Page) {
   await page.evaluate(async () => {

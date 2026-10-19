@@ -9,11 +9,6 @@ export default defineConfig({
   workers: 2,
   testDir: './tests/styles',
   snapshotPathTemplate: '{testDir}/snapshots/{projectName}/{arg}{ext}',
-  outputDir: 'test-results/styles',
-  reporter: [
-    ['list'],
-    ['json', { outputFile: process.env.STYLE_REPORT || 'test-results/styles/report.json' }],
-  ],
   updateSnapshots: 'none',
   // Stricter than Playwright's default 0.2 per-pixel color threshold. Tiny
   // resampling noise is filtered; the differing-pixel budget remains zero.

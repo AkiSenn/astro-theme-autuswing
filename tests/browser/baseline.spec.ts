@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { redirects } from '../../scripts/static-artifacts.mjs';
 const ids = ['55b0541c', '4c6caf67', '4e395565'];
-const evidenceDir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase3';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const evidenceDir = evidenceDirectory('baseline');
 test('copy buttons preserve raw code without line numbers or UI text', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(navigator, 'clipboard', {

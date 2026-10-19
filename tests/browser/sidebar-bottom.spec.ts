@@ -4,7 +4,8 @@ import { activeLayoutMetrics } from './layout-metrics';
 import { layoutReference } from '../support/layout-reference';
 import { referencePage } from '../support/reference-page';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/sidebar-bottom/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('sidebar-bottom');
 fs.mkdirSync(dir, { recursive: true });
 
 test('full desktop sidebar separates restrained functional buttons from social icons', async ({

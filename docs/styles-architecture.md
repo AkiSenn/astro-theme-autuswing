@@ -129,9 +129,11 @@ npm run verify
 npm run test:browser
 ```
 
-本轮默认 Node 预览为 127.0.0.1:4322。`PLAYWRIGHT_REPORT_FILE` / `PLAYWRIGHT_OUTPUT_DIR` 可单独指定普通浏览器测试的 JSON 报告和临时产物目录；`VISUAL_EVIDENCE_DIR` 将常规功能测试截图放到忽略的 test-results，避免覆写历史报告。单个视觉测试进程使用两个独立 worker，不并行启动会清空同一目录的多个测试进程。构建不能与正在读取 dist 的浏览器测试并发。
+默认 Node 预览为 127.0.0.1:4322。所有现有 Playwright 配置在加载时独占新目录：临时附件位于 `.local-tools/test-runs/<本次名称>/artifacts`，JSON 报告、测试日志和分组截图位于独立的 `.local-tools/test-evidence/<本次名称>/`。运行记录 `run.json` 保存绝对路径；截图、Trace 等文件附件另存副本，由 `attachments.jsonl` 记录原路径与 SHA-256。证据目录不参与自动清理，禁止把批准预览或原件放入临时附件目录。
 
-保留版本化冻结基准和本轮少量代表图，常规测试产物留在 test-results。后续 CI 应将其上传为 artifacts。当前没有新建 GitHub 自动部署工作流、服务器、DNS 或在线预览。
+默认每次生成新名称。显式指定时，`PLAYWRIGHT_OUTPUT_DIR` 必须是上述临时范围内的新绝对路径，`AUTUSWING_EVIDENCE_DIR` 必须是上述证据范围内的新绝对路径；`PLAYWRIGHT_REPORT_FILE` / `STYLE_REPORT` 及 `VISUAL_EVIDENCE_DIR` 只能位于本次证据目录内。已有目录、相对路径、目录联接及符号链接均拒绝使用，不提供覆盖或清理开关。不要传 `--output`、`--reporter` 或更新基准参数，它们会在清理之前被拒绝。构建与读取 dist 的浏览器测试仍须顺序运行。
+
+已有 `test-results`、历史 `docs/evidence`、批准预览和冻结基准保持原位，不自动迁移或删除。新证据先按本次目录保留；需要长期归档时另行审阅并核对哈希。该保护覆盖现有 Playwright 入口，不接管独立的历史审计脚本或手工清理命令；这些脚本的固定输出须先核对，不能当作可安全重跑的命令。
 
 ## 保留与尚未解决
 

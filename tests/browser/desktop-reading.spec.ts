@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import AxeBuilder from '@axe-core/playwright';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/reading-layout/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('desktop-reading');
 const baseline = JSON.parse(fs.readFileSync('docs/evidence/contents-controls/before.json', 'utf8'));
 fs.mkdirSync(dir, { recursive: true });
 const views = [

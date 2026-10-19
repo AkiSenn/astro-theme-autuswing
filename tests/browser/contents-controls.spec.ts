@@ -1,7 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 import fs from 'node:fs';
 
-const dir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/contents-controls/edge';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const dir = evidenceDirectory('contents-controls');
 fs.mkdirSync(dir, { recursive: true });
 const actions =
   '.contents-open:visible,.goto-toc:visible,.reading-contents-close:visible,.contents-close:visible';

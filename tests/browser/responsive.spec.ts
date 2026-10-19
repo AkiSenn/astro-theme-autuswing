@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
-const evidenceDir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase3';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const evidenceDir = evidenceDirectory('responsive');
 
 const widths = [320, 375, 390, 430, 719, 720, 768, 820, 999, 1000, 1024, 1280, 1600];
 const pages = [

@@ -3,7 +3,8 @@ import AxeBuilder from '@axe-core/playwright';
 import { load } from 'cheerio';
 import fs from 'node:fs';
 import { markdownProcessor } from '../../src/lib/markdown.mjs';
-const evidenceDir = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/phase4';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const evidenceDir = evidenceDirectory('visual');
 
 async function typographyFixture(page: Page) {
   const markdown = [

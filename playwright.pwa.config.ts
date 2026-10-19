@@ -1,4 +1,6 @@
 import { defineConfig } from '@playwright/test';
+import { prepareTestEvidence, protectedReporters } from './scripts/test-evidence.mjs';
+const run = prepareTestEvidence();
 
 // All tests own their loopback origin; no Nginx or production configuration.
 export default defineConfig({
@@ -6,11 +8,8 @@ export default defineConfig({
   testMatch: ['pwa-updates.spec.ts', 'pwa-network.spec.ts'],
   timeout: 60000,
   workers: 1,
-  outputDir: process.env.PLAYWRIGHT_OUTPUT_DIR || 'test-results/pwa',
-  reporter: [
-    ['list'],
-    ['json', { outputFile: process.env.PLAYWRIGHT_REPORT_FILE || 'test-results/pwa/report.json' }],
-  ],
+  outputDir: run.output,
+  reporter: protectedReporters(run),
   use: { trace: 'retain-on-failure' },
   projects: [
     { name: 'edge', use: { browserName: 'chromium', channel: 'msedge' } },

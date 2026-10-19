@@ -3,7 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { installMarkdownFixture, samplePath } from './markdown-fixture';
 
-const evidence = process.env.VISUAL_EVIDENCE_DIR || 'docs/evidence/writing-reading/browser';
+import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
+const evidence = evidenceDirectory('markdown-reading');
 const sizes = [
   [320, 740],
   [390, 844],
