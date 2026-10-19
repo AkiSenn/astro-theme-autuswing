@@ -2,7 +2,7 @@
 
 ## Tabler Icons
 
-`src/components/Icons.astro` 中以下十个图标取自 [Tabler Icons](https://github.com/tabler/tabler-icons)，固定提交为 `a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d`。本声明仅涵盖这些图标，不表示其余图标的授权已确认。
+`src/components/Icons.astro` 中以下十二个图标取自 [Tabler Icons](https://github.com/tabler/tabler-icons)，固定提交为 `a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d`。本声明仅涵盖这些图标，不表示其余图标的授权已确认。
 
 | 图标 ID           | 上游文件                                                                                                                                  | 坐标适配（viewBox 单位） |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
@@ -16,8 +16,10 @@
 | `i-calendar`      | [calendar.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/calendar.svg)           | 移除日期数字，无平移     |
 | `i-clock`         | [clock.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/clock.svg)                 | 无平移                   |
 | `i-search`        | [search.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/search.svg)               | 无平移                   |
+| `i-pencil`        | [pencil.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/pencil.svg)               | `translate(0.5 -0.5)`    |
+| `i-check`         | [check.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/check.svg)                 | `translate(-0.5 0.25)`   |
 
-路径 `d` 保留上游原文；`calendar` 省略上游最后两条组成日期数字的路径。沿用现有 symbol ID、24×24 viewBox、20×20 引用尺寸与 `currentColor`，描边从上游的 2 适配为现有的 1.7，保留圆角端点和连接。四个折角通过上述平移保持原有对齐，其余六个图标不移动坐标；这些是对授权作品的适配，不声称独立原创。
+路径 `d` 保留上游原文；`calendar` 省略上游最后两条组成日期数字的路径。沿用现有 symbol ID、24×24 viewBox、20×20 引用尺寸与 `currentColor`，描边从上游的 2 适配为现有宽度（`check` 为 1.9，其余为 1.7），保留圆角端点和连接。折角、`pencil` 和 `check` 的平移如表所示，`pencil`、`check` 与已批准的适配预览一致；其余六个图标不移动坐标。这些是对授权作品的适配，不声称独立原创。
 
 以下全文来自该提交的 [LICENSE](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/LICENSE)：
 
