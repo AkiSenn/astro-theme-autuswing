@@ -66,6 +66,16 @@
 .mobile-brand {
   display: none;
 }
+/* 由首屏同步初始化的主题决定图形，避免等待脚本加载时闪现错误图标。 */
+.mode-toggle .appearance-moon {
+  display: none;
+}
+html[data-theme='dark'] .mode-toggle .appearance-sun {
+  display: none;
+}
+html[data-theme='dark'] .mode-toggle .appearance-moon {
+  display: inline;
+}
 @media (max-width: 760px) {
   .mobile-brand {
     display: flex;
@@ -364,7 +374,7 @@
     color: var(--text);
   }
   .desktop-sidebar .profile {
-    padding-bottom: var(--space-3);
+    padding-bottom: var(--space-5);
   }
   .desktop-sidebar .avatar-link {
     width: 72px;
@@ -383,10 +393,8 @@
     line-height: 1.6;
     color: var(--muted);
   }
-  .home-page .desktop-sidebar .profile {
-    padding-bottom: var(--space-5);
-  }
-  .home-page .desktop-sidebar .site-nav {
+  /* 完整侧栏共用导航间距，避免首页与功能页之间出现稳定的坐标差异。 */
+  .desktop-sidebar .site-nav {
     gap: var(--space-1);
   }
 }

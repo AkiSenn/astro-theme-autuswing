@@ -1,7 +1,6 @@
 ---
 import { translate } from '../lib/i18n';
 const t = translate();
-import Glyph from './Glyph.astro';
 ---
 
 <button
@@ -11,6 +10,9 @@ import Glyph from './Glyph.astro';
   aria-label={t('mode')}
   title={t('mode')}
 >
-  <Glyph name="sun" />
+  <svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <use class="appearance-sun" href="#i-sun"></use>
+    <use class="appearance-moon" href="#i-moon"></use>
+  </svg>
   <span class="mode-label">{t('mode')}</span>
 </button>
