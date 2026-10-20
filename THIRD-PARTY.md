@@ -36,9 +36,9 @@
 | `i-globe` | [world.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/world.svg) | 无平移 |
 | `i-sun` | [sun.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/sun.svg) | 无平移 |
 | `i-moon` | [moon.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/moon.svg) | 无平移 |
-| `i-auto` | [circle-half-2.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/circle-half-2.svg) | 无平移 |
+| `i-auto` | [circle-half-2.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/circle-half-2.svg) | 移除两条斜纹路径，仅保留中间一条；无平移 |
 | `i-palette` | [palette.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/palette.svg) | 无平移 |
-| `i-license` | [creative-commons.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/creative-commons.svg) | 无平移 |
+| `i-license` | [file-description.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/file-description.svg) | 通用文档，不代表特定许可证；无平移 |
 | `i-heart` | [heart.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/filled/heart.svg) | 实心；无平移 |
 | `i-shield` | [shield-check.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/shield-check.svg) | 无平移 |
 | `i-alert` | [exclamation-circle.svg](https://github.com/tabler/tabler-icons/blob/a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d/icons/outline/exclamation-circle.svg) | 无平移 |
@@ -62,7 +62,7 @@
 
 沿用原有 symbol ID、24×24 viewBox、20×20 引用尺寸与 `currentColor`。线性图标采用圆角端点和连接，描边从上游 2 适配为 1.7（`check` 为 1.9）；缩放图标在组内反向补偿描边，保持有效线宽。`heart`、`github`、`twitter` 保留上游实心，表中列出整体缩放和平移。
 
-路径 `d` 保留上游原文，不含透明画布辅助路径；`calendar` 省略组成日期数字的两条路径。`tag`、`copy` 等缩放以及 `auto` 的斜线半圆、`share` 的三节点、`shield` 的右下勾选均为已批准的适配候选。这些属于授权作品的适配，不声称独立原创。
+保留的路径 `d` 使用上游原文，不含透明画布辅助路径；`calendar` 和 `auto` 按表中说明省略部分路径。`tag`、`copy` 等缩放以及 `auto` 的一条斜纹、`share` 的三节点、`shield` 的右下勾选均为已批准的适配。`license` 使用通用文档，具体许可由相邻文案或链接说明。这些属于授权作品的适配，不声称独立原创。
 
 `jianshu` 使用 `notebook.svg`，`csdn` 使用 `code.svg`，`v2ex` 使用 `messages.svg`，均为通用替代，不能作为对应品牌官方标识宣传。没有采用候选调查中的 Simple Icons 备选，也没有引入该库依赖。
 
