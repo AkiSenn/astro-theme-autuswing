@@ -46,6 +46,38 @@ html[data-motion='true'] #main {
   }
 }
 
+/* 同文档主题截图与跨文档 main-content 分开；旧色板保持不透明，避免露底闪烁。 */
+html[data-appearance-transition] {
+  view-transition-name: appearance-theme;
+  --motion-fast: 0ms;
+}
+html[data-appearance-transition] #main {
+  view-transition-name: none;
+}
+::view-transition-group(appearance-theme) {
+  animation: none;
+}
+::view-transition-image-pair(appearance-theme) {
+  isolation: isolate;
+}
+::view-transition-old(appearance-theme) {
+  mix-blend-mode: normal;
+  animation: none;
+  opacity: 1;
+}
+::view-transition-new(appearance-theme) {
+  mix-blend-mode: normal;
+  animation: autuswing-appearance-in var(--motion-normal) var(--motion-ease) both;
+}
+@keyframes autuswing-appearance-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :where(
   button,
   .site-nav a,
