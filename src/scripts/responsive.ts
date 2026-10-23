@@ -1,5 +1,6 @@
 import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
 import { isLegacyDialog } from './legacy-dialog';
+import { contentsMotion } from './contents-motion';
 
 export function initResponsive() {
   const wide = matchMedia('(min-width: 1000px)'),
@@ -21,7 +22,10 @@ export function initResponsive() {
   const setExpanded = (value: boolean) =>
     buttons.forEach((button) => button.setAttribute('aria-expanded', String(value)));
   const panelOpen = () => !!panel && docked.matches && (panelPreference ?? expandedDefault.matches);
-  function syncContents() {
+  const animatePanel =
+    panel && contentsMotion(panel, () => visibleButton()?.focus({ preventScroll: true }));
+  function syncContents(animate = false) {
+    animatePanel?.(panelOpen(), animate && docked.matches);
     if (panelPreference === null) delete document.body.dataset.readingContents;
     else document.body.dataset.readingContents = panelPreference ? 'open' : 'closed';
     buttons.forEach((button) => {
@@ -47,7 +51,7 @@ export function initResponsive() {
   }
   panelClose?.addEventListener('click', () => {
     panelPreference = false;
-    syncContents();
+    syncContents(true);
     visibleButton()?.focus({ preventScroll: true });
   });
   panel?.addEventListener('keydown', (event) => {
@@ -72,7 +76,7 @@ export function initResponsive() {
       button.addEventListener('click', () => {
         if (panel && docked.matches) {
           panelPreference = !panelOpen();
-          syncContents();
+          syncContents(true);
           if (panelOpen()) desktopHeading?.focus({ preventScroll: true });
           return;
         }

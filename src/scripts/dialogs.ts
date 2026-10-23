@@ -61,6 +61,10 @@ export function initDialogs() {
   reduced.addEventListener('change', () => {
     if (reduced.matches) [...closing.keys()].forEach((dialog) => closeDialog(dialog, true));
   });
+  // 总开关在退出中关闭时，同样立即释放模态状态和恢复焦点。
+  new MutationObserver(() => {
+    if (!motionEnabled()) [...closing.keys()].forEach((dialog) => closeDialog(dialog, true));
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-motion'] });
   // Do not restore an in-flight exit from the back/forward cache.
   addEventListener('pagehide', () => {
     [...closing.keys()].forEach((dialog) => closeDialog(dialog, true));

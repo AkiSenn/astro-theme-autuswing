@@ -81,6 +81,14 @@ html[data-motion='true'] #main {
 .toast.visible {
   transform: translate(-50%, 0);
 }
+@media screen and (min-width: 1280px) {
+  .article-page .reading-sidebar[data-contents-animating] {
+    display: flex;
+  }
+}
+.reading-sidebar[aria-hidden='true'] {
+  pointer-events: none;
+}
 dialog[open] {
   opacity: 1;
   transform: none;
@@ -108,7 +116,8 @@ dialog[data-closing]::backdrop {
 /* One policy for config and OS preference; content is never reveal-gated. */
 html[data-motion='false'] *,
 html[data-motion='false'] *::before,
-html[data-motion='false'] *::after {
+html[data-motion='false'] *::after,
+html[data-motion='false'] dialog::backdrop {
   animation: none !important;
   transition: none !important;
   scroll-behavior: auto !important;
@@ -119,7 +128,8 @@ html[data-motion='false'] *::after {
   }
   *,
   *::before,
-  *::after {
+  *::after,
+  dialog::backdrop {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
