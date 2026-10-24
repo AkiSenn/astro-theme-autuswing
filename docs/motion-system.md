@@ -26,7 +26,7 @@
 ## 实施方案
 
 1. 统一配置为 `theme.motion.enable` 和 `theme.motion.page`，移除已经失去用途的 `animations.avatar/articles` 和重复总开关 `appearance.animate`。配置文件是本项目当前配置，没有兼容空壳。
-2. `motion.css` 管理 fast=150ms、normal=180ms、page=320ms、exit=120ms、rise=14px，以及统一 ease-out。只过渡颜色、背景、边框、opacity、transform。
+2. `tokens.css` 管理 fast=150ms、normal=180ms、page=360ms、exit=160ms、page-fallback=280ms、rise=14px，以及统一 ease-out。`motion.css` 只过渡颜色、背景、边框、opacity、transform。
 3. Astro 静态页面在 head 按配置用 `@view-transition { navigation: auto }` 选择同源跨文档转场，仅在 no-preference 下启用。只命名主内容，关闭 root 截图，不动画侧栏或主内容容器几何尺寸。
 4. 不使用 ClientRouter、不拦截普通链接、不模拟 history、不设置 scrollRestoration；每份文档按现有入口初始化一次，后退缓存恢复不重复初始化。
 5. 原生 dialog 保留焦点和单弹窗语义；关闭期间继续保持 open，动画完成再 close，避免目录入口提前出现。替换弹窗、断点切换时立即关闭；减少动画直接关闭。
@@ -55,13 +55,13 @@
 "motion": { "enable": true, "page": true }
 ```
 
-`enable=false`：不输出跨文档选择加入和页面回退脚本，关闭同文档主题转场、CSS 装饰过渡、JS 弹窗退出动效和平滑返回顶部。`page=false`：关闭跨文档转场及CSS页面入场，保留同文档主题转场和微交互。时间和距离直接修改 motion.css 的变量即可；弹窗退出从同一变量读取时长及缓动。
+`enable=false`：不输出跨文档选择加入和页面回退脚本，关闭同文档主题转场、CSS 装饰过渡、JS 弹窗退出动效和平滑返回顶部。`page=false`：关闭跨文档转场及CSS页面入场，保留同文档主题转场和微交互。时间和原生位移修改 tokens.css 的变量；CSS回退位移在 motion.css 固定为6px。弹窗退出从 normal 变量读取时长及缓动。
 
-原生主内容旧图像淡出120ms、新图像渐现320ms并上浮14px。禁用 root 截图以及 main-content group 的几何插值，不给导航、目录面板、背景或浮动工具设置转场名称。没有逐项延迟或内容隐藏等待类。
+原生主内容旧图像淡出160ms、新图像渐现360ms并上浮14px；CSS入场为280ms/6px。两者沿用 `cubic-bezier(0.22, 1, 0.36, 1)` 自然减速曲线，主题切换、目录和弹层仍为180ms。禁用 root 截图以及 main-content group 的几何插值，不给导航、目录面板、背景或浮动工具设置转场名称。没有逐项延迟或内容隐藏等待类。
 
 同文档转场仅接入外观按钮引起的有效色板变化：原生 `document.startViewTransition()` 使用独立的 `appearance-theme` 根截图，新色板淡入180ms，旧色板保持不透明；期间移除 `main-content` 名称并暂停 fast 颜色过渡，避免叠加页面入场。首次加载、同色板模式切换、系统偏好和跨标签同步仍直接更新。缺少 API、减动、关闭总开关或已有导航转场时不启动；连续操作取消旧动画并立即采用最新选择，过期回调不能回写旧状态。出站、离页及中途禁用动效时收尾，恢复原有跨文档名称。`skipTransition()` 仍会执行更新回调，依据见 [W3C View Transitions](https://www.w3.org/TR/css-view-transitions-1/)。没有客户端路由。
 
-CSS页面入场由Autuswing独立实现，仅借鉴淡入上移的设计思路。同步head脚本在绘制前选择200ms/6px回退：有可靠`pagereveal`时读取实际`viewTransition`，没有跨文档能力时提前选择；部分能力无法可靠判断时直接显示。原生对象存在但后续被跳过时不补播CSS，避免晚隐藏。首次访问、刷新及重新加载的历史文档可入场；BFCache恢复、带锚点或后台页面不重播，优先保留缓存画面及浏览器滚动恢复。事件时序依据见[跨文档生命周期](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document)。
+CSS页面入场由Autuswing独立实现，仅借鉴淡入上移的设计思路。同步head脚本在绘制前选择280ms/6px回退：有可靠`pagereveal`时读取实际`viewTransition`，没有跨文档能力时提前选择；部分能力无法可靠判断时直接显示。原生对象存在但后续被跳过时不补播CSS，避免晚隐藏。首次访问、刷新及重新加载的历史文档可入场；BFCache恢复、带锚点或后台页面不重播，优先保留缓存画面及浏览器滚动恢复。事件时序依据见[跨文档生命周期](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document)。
 
 回退只动画`#main`的opacity和transform，不改变布局尺寸；不设常驻opacity/visibility/hidden，也不等待页面模块下载。动画结束/取消、离页、减动或主题原生截图启动时移除标记并释放监听。有限CSS动画没有forwards残留；脚本缺失、晚执行或API不完整时内容正常可见。不会在`pageshow`或DOMContentLoaded之后补加淡入状态。
 
@@ -70,6 +70,12 @@ CSS页面入场由Autuswing独立实现，仅借鉴淡入上移的设计思路�
 HTML 的默认滚动恢复与锚点处理交给浏览器，不全局启用 smooth scroll；只有明确的返回顶部/评论定位操作在允许动效时平滑滚动。目录内部定位仍直接更新自己的 scrollTop，不移动正文。没有新增滚动监听或动画依赖。
 
 ## 验收
+
+### 2026-10-24：页面节奏微调（未提交、未部署）
+
+- CSS入场改为280ms/6px，原生跨文档入场/退场改为360/160ms，沿用现有减速曲线；180ms局部动画和导航判定脚本未改。用户已确认旧参数版本在iOS14 Safari、PC Firefox和Chromium体验正常，新参数仍待体验。
+- 隔离构建27页、类型检查0错误/0警告（5项既有提示）、相关单测32/32。三引擎专项首轮25/33；校正CSS关键帧缓动的采样层级后，定向复核WebKit5/5、Edge2/2、Firefox1/1，未延长超时或增加重试。
+- 首轮8项失败中5项为缓动采样错误，另外3项WebKit首次动画事件未采样到，原因未完全确认；相同产品代码定向复验通过，原始失败保留。已检查刷新、导航、历史/滚动恢复、减动、无API回退及局部180ms动画；没有新参数的旧Safari真机结果。
 
 ### 2026-10-24：CSS页面入场回退（待审阅）
 

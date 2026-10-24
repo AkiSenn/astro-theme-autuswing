@@ -67,8 +67,10 @@
   /* Autuswing Motion 1.0; behavior stays in motion.css */
   --motion-fast: 150ms;
   --motion-normal: 180ms;
-  --motion-page: 320ms;
-  --motion-exit: 120ms;
+  /* 页面节奏单独配置，不改变主题切换、目录及弹层的 normal 时长。 */
+  --motion-page: 360ms;
+  --motion-exit: 160ms;
+  --motion-page-fallback: 280ms;
   --motion-rise: 14px;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }

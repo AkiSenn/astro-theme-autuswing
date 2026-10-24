@@ -8,7 +8,14 @@ const browserMessages = new Map<string, { errors: string[]; console: string[] }>
 test.beforeEach(({}, info) => {
   browserMessages.set(info.testId, { errors: [], console: [] });
 });
-test.afterEach(async ({}, info) => {
+test.afterEach(async ({ page }, info) => {
+  if (info.status !== info.expectedStatus && !page.isClosed()) {
+    await info.attach('entry-state-at-failure', { body: JSON.stringify(await page.evaluate(() => ({
+      readyState: document.readyState, visibility: document.visibilityState,
+      root: { ...document.documentElement.dataset }, records: (window as any).__entryRecords,
+      main: document.getElementById('main') ? { opacity: getComputedStyle(document.getElementById('main')!).opacity, transform: getComputedStyle(document.getElementById('main')!).transform } : null,
+    }))), contentType: 'application/json' });
+  }
   const messages = browserMessages.get(info.testId)!;
   await info.attach('browser-messages', { body: JSON.stringify(messages), contentType: 'application/json' });
   browserMessages.delete(info.testId);
@@ -37,6 +44,8 @@ async function observe(page: Page, hold = true) {
         transform: main ? getComputedStyle(main).transform : null,
         animations: document.getAnimations().map((a: any) => ({
           name: a.animationName, duration: a.effect?.getTiming().duration,
+          // CSS animation-timing-function 作用于关键帧区间，不是整个 effect 的 easing。
+          easing: a.effect?.getKeyframes()[0]?.easing,
           frames: a.effect?.getKeyframes(),
         })),
       };
@@ -111,7 +120,7 @@ async function assertFinal(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
 }
 
-test('direct entry and reload use real 200ms/6px CSS with stable shell and finite visible state', async ({ page }, info) => {
+test('direct entry and reload use real 280ms/6px CSS with stable shell and finite visible state', async ({ page }, info) => {
   const records = await observe(page);
   for (const operation of ['direct', 'reload']) {
     if (operation === 'direct') await page.goto('/archives/');
@@ -119,7 +128,8 @@ test('direct entry and reload use real 200ms/6px CSS with stable shell and finit
     await expect.poll(async () => (await localRecords(page, 'css')).length).toBe(1);
     const css = (await localRecords(page, 'css'))[0];
     const animation = css.animations.find((a: any) => a.name === entry);
-    expect(animation.duration).toBe(200);
+    expect(animation.duration).toBe(280);
+    expect(animation.easing).toBe('cubic-bezier(0.22, 1, 0.36, 1)');
     expect(animation.frames.map((f: any) => f.transform)).toEqual(['translateY(6px)', 'none']);
     expect(Number(css.opacity)).toBeGreaterThan(0);
     expect(Number(css.opacity)).toBeLessThan(1);
@@ -152,7 +162,8 @@ test('ordinary MPA navigation chooses actual native cross-document or CSS, never
       await expect.poll(async () => (await localRecords(page, 'cross')).length).toBe(1);
       const event = (await localRecords(page, 'cross'))[0];
       expect(event.marker).toBe(false);
-      expect(event.animations.filter((a: any) => /^autuswing-page-/.test(a.name)).map((a: any) => a.duration).sort((a: number, b: number) => a - b)).toEqual([120, 320]);
+      expect(event.animations.filter((a: any) => /^autuswing-page-/.test(a.name)).map((a: any) => a.duration).sort((a: number, b: number) => a - b)).toEqual([160, 360]);
+      expect(event.animations.filter((a: any) => /^autuswing-page-/.test(a.name)).map((a: any) => a.easing)).toEqual(['cubic-bezier(0.22, 1, 0.36, 1)', 'cubic-bezier(0.22, 1, 0.36, 1)']);
       expect(await localRecords(page, 'css')).toEqual([]);
     } else {
       await expect.poll(async () => (await localRecords(page, 'css')).length).toBe(1);
@@ -184,7 +195,7 @@ test('slow page and delayed module select entry before late initialization inste
     expect(blocked.hidden).toBe(false);
     expect(blocked.visibility).toBe('visible');
     expect(blocked.inlineOpacity).toBe('');
-    if (blocked.marker) expect(blocked.animations.filter(a => a.name === entry).map(a => a.duration)).toEqual([200]);
+    if (blocked.marker) expect(blocked.animations.filter(a => a.name === entry).map(a => a.duration)).toEqual([280]);
     else expect(blocked.opacity).toBe('1');
     release(); await page.waitForLoadState('load');
     await expect.poll(async () => (await localRecords(page, 'css')).length).toBe(1);

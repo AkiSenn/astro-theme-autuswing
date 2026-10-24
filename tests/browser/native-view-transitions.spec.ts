@@ -325,7 +325,7 @@ test('ordinary links, history and same-document palette transitions coexist with
           .filter((a: any) => /^autuswing-page-/.test(a.name))
           .map((a: any) => a.duration)
           .sort((a: number, b: number) => a - b),
-      ).toEqual([120, 320]);
+      ).toEqual([160, 360]);
       expect(event.animations.some((a: any) => a.name === 'autuswing-appearance-in')).toBe(false);
     }
   } else {

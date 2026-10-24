@@ -196,9 +196,9 @@ test('native MPA transitions use only the content group and refresh article stat
     for (const animation of event.animations)
       if (animation.pseudo !== null) expect(animation.pseudo).toContain('(main-content)');
     const incoming = event.animations.find((a: any) => a.name === 'autuswing-page-in');
-    expect(incoming.duration).toBe(320);
+    expect(incoming.duration).toBe(360);
     expect(incoming.frames[0]).toMatchObject({ transform: 'translateY(14px)', opacity: '0' });
-    expect(event.animations.find((a: any) => a.name === 'autuswing-page-out').duration).toBe(120);
+    expect(event.animations.find((a: any) => a.name === 'autuswing-page-out').duration).toBe(160);
   }
   fs.writeFileSync(`${dir}/native-transitions.json`, JSON.stringify(events, null, 2));
 });
