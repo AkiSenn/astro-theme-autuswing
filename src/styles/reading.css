@@ -72,10 +72,6 @@
   border-bottom: 1px solid var(--line);
   padding: 0 0 28px;
 }
-.back-link {
-  color: var(--muted);
-  display: inline-block;
-}
 .post-cover {
   width: 100%;
   border-radius: 12px;
@@ -493,12 +489,6 @@
 .article-header,
 .mica-article .article-header {
   padding-bottom: var(--space-6);
-}
-.back-link {
-  font-size: 13px;
-  line-height: 1.6;
-  min-height: 32px;
-  margin-bottom: var(--space-2);
 }
 .article-header h1,
 .mica-article .article-header h1 {

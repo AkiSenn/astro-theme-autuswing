@@ -1,146 +1,131 @@
 import { test, expect, type Page } from '@playwright/test';
-import fs from 'node:fs';
-import { inspectTransitionMode, assertUnanimatedNavigation } from '../support/transition-contract';
 
 const article = '/post/55b0541c/';
-import { evidenceDirectory } from '../../scripts/test-evidence.mjs';
-const dir = evidenceDirectory('back');
-fs.mkdirSync(dir, { recursive: true });
-async function settled(page: Page) {
-  await page.evaluate(async () => {
-    await new Promise<void>((resolve) =>
-      requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
-    );
-    await Promise.all(
-      document
-        .getAnimations()
-        .filter((a: any) => ['autuswing-page-in', 'autuswing-page-out'].includes(a.animationName))
-        .map((a) => a.finished.catch(() => {})),
-    );
-  });
-}
-async function back(page: Page, path: string) {
-  const href = new URL(path, page.url()).href;
-  await expect(page.locator('[data-article-back]')).toHaveAccessibleName('返回');
-  await expect(page.locator('[data-article-back]')).toHaveAttribute('href', href);
-  await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL(href);
-  await settled(page);
+
+async function expectArticleNavigation(page: Page) {
+  await expect(page.locator('.article-header h1')).toBeVisible();
+  await expect(page.locator('[data-article-back],.back-link')).toHaveCount(0);
+  expect(await page.locator('.article-header').evaluate((node) => ({
+    first: node.firstElementChild?.tagName,
+    emptyChildren: [...node.children].filter((child) => !child.textContent?.trim()).length,
+    paddingTop: getComputedStyle(node).paddingTop,
+  }))).toEqual({ first: 'H1', emptyChildren: 0, paddingTop: '0px' });
+  await expect(page.locator('.mobile-navigation a[href="/"]')).toBeVisible();
+  await expect(page.locator('.mobile-navigation a[href="/archives/"]')).toBeVisible();
 }
 
-test('direct and refreshed article entries fall back to archives', async ({ page }) => {
-  await page.goto(article);
-  await expect(page.locator('[data-article-back]')).toHaveText('← 返回');
-  await expect(page.locator('[data-article-back]')).toHaveAttribute('href', /\/archives\/$/);
-  await page.reload();
-  await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL(/\/archives\/$/);
-  await expect(page.locator('.timeline')).toBeVisible();
-});
-
-test('an external previous page and a same-origin new tab cannot become an unsafe back target', async ({
-  page,
-  context,
-  baseURL,
-}) => {
-  await page.route('https://outside.invalid/**', (route) =>
-    route.fulfill({
-      contentType: 'text/html',
-      body: `<a href="${new URL(article, baseURL).href}">Read</a>`,
-    }),
-  );
-  await page.goto('https://outside.invalid/');
-  await page.getByRole('link', { name: 'Read' }).click();
-  await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL(new URL('/archives/', baseURL).href);
-  await page.goto('/');
-  await page
-    .locator('.post-card-title a')
-    .first()
-    .evaluate((node) => node.setAttribute('target', '_blank'));
-  const popupPromise = context.waitForEvent('page');
-  await page.locator('.post-card-title a').first().click();
-  const popup = await popupPromise;
-  await popup.waitForLoadState();
-  expect(await popup.evaluate(() => document.referrer)).toContain(new URL(baseURL!).origin);
-  await expect(popup.locator('[data-article-back]')).toHaveAttribute('href', /\/archives\/$/);
-  await popup.locator('[data-article-back]').click();
-  await expect(popup).toHaveURL(/\/archives\/$/);
-  await popup.close();
-});
-
-test('home returns share one implementation on phone, tablet and PC without scroll resets', async ({
-  page,
-}) => {
-  test.setTimeout(90000);
-  await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'dark' });
-  const checks = [];
-  for (const [width, height] of [
-    [390, 844],
-    [820, 1180],
-    [1024, 768],
-    [1366, 768],
-    [1920, 1080],
-  ]) {
-    await page.setViewportSize({ width, height });
-    await page.goto('/');
-    await page.locator('.post-card-title a').last().scrollIntoViewIfNeeded();
-    const before = await page.evaluate(() => scrollY);
-    await page.locator('.post-card-title a').last().click();
-    await settled(page);
-    await page.screenshot({ path: `${dir}/article-back-${width}.png` });
-    await back(page, '/');
-    await expect.poll(() => page.evaluate((y) => Math.abs(scrollY - y), before)).toBeLessThan(3);
-    checks.push({ width, height, before, after: await page.evaluate(() => scrollY) });
+async function browserHistory(page: Page, direction: 'back' | 'forward', path: string, restoredSearch = false) {
+  const expected = new URL(path, page.url()).href;
+  await page.evaluate((direction) => history[direction](), direction);
+  // 缓存恢复没有新 load；只观察真实地址、文档状态和最终可见内容。
+  await expect(page).toHaveURL(expected);
+  await page.waitForFunction(() => document.readyState === 'complete' &&
+    !document.activeViewTransition && !document.documentElement.hasAttribute('data-page-entry') &&
+    !document.documentElement.hasAttribute('data-reading-native') &&
+    !document.documentElement.hasAttribute('data-reading-stage'));
+  await expect(page.locator('#main')).toHaveCSS('opacity', '1');
+  await expect(page.locator('#main')).toHaveCSS('transform', 'none');
+  if (restoredSearch) {
+    await expect(page.locator('.search-dialog[open]')).toHaveCount(1);
+    await expect(page.locator('dialog[open]:not(.search-dialog),.legacy-dialog-host')).toHaveCount(0);
+  } else {
+    await expect(page.locator('dialog[open],.legacy-dialog-host')).toHaveCount(0);
   }
-  fs.writeFileSync(`${dir}/layouts.json`, JSON.stringify(checks, null, 2));
-});
+}
 
-test('archive and taxonomy sources survive article refresh and repeated forward/back traversal', async ({
-  page,
-}) => {
-  test.setTimeout(90000);
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const source of ['/archives/', '/tags/Hexo/', '/categories/网站建设/']) {
+for (const source of ['/', '/archives/'])
+  test(`article entered from ${source} has no top navigation and retains existing mobile links`, async ({ page }) => {
     await page.goto(source);
-    const href = page.url();
-    await page.locator(`.timeline a[href="${article}"]`).click();
-    await page.reload();
-    await back(page, href);
-    await page.goForward();
-    await settled(page);
-    await expect(page.locator('[data-article-back]')).toHaveAttribute('href', href);
-    await back(page, href);
-    await expect(page.locator('a[href="/archives/"]:visible').first()).toBeVisible();
-  }
+    await page.locator(`#main a[href="${article}"]`).first().click();
+    await expectArticleNavigation(page);
+    await page.locator('.mobile-navigation a[href="/archives/"]').click();
+    await expect(page).toHaveURL(/\/archives\/$/);
+    await expect(page.locator('.timeline')).toBeVisible();
+  });
+
+test('external direct entry can reach home and archives through existing mobile navigation', async ({ page }) => {
+  const external = process.env.ARTICLE_EXTERNAL_ORIGIN!;
+  expect(external).toBeTruthy();
+  await page.goto(external);
+  await page.getByRole('link', { name: 'Read article' }).click();
+  await expectArticleNavigation(page);
+  expect(await page.evaluate(() => document.referrer)).toBe(external + '/');
+  await page.locator('.mobile-navigation a[href="/"]').click();
+  await expect(page.locator('.post-card')).toHaveCount(3);
+  await page.goto(article);
+  await expectArticleNavigation(page);
+  await page.locator('.mobile-navigation a[href="/archives/"]').focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/archives\/$/);
 });
 
-test('article fragments are skipped and long-page scroll is restored by native history', async ({
-  page,
-}) => {
-  await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.setViewportSize({ width: 1440, height: 600 });
+test('direct and refreshed articles do not recreate a top button', async ({ page }) => {
+  await page.goto(article);
+  await expectArticleNavigation(page);
+  await page.reload();
+  await expectArticleNavigation(page);
+});
+
+test('missing Navigation API retains mobile navigation and native history (not an iOS device test)', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(window, 'navigation', {
+    value: undefined, configurable: true,
+  }));
   await page.goto('/');
-  await page.locator('.post-card-title a').last().scrollIntoViewIfNeeded();
-  const before = await page.evaluate(() => scrollY);
-  expect(before).toBeGreaterThan(0);
-  // Programmatic anchor activation keeps the source list's scroll position.
-  await page
-    .locator(`.post-card-title a[href="${article}"]`)
-    .evaluate((node: HTMLAnchorElement) => node.click());
-  await expect(page).toHaveURL(new RegExp(article));
-  await page.locator('.reading-sidebar .toc-link').nth(7).click();
-  await page.locator('.reading-sidebar .toc-link').nth(12).click();
-  expect(await page.evaluate(() => scrollY)).toBeGreaterThan(1000);
-  await back(page, '/');
-  await expect.poll(() => page.evaluate((y) => Math.abs(scrollY - y), before)).toBeLessThan(3);
-  fs.writeFileSync(
-    `${dir}/scroll.json`,
-    JSON.stringify({ before, restored: await page.evaluate(() => scrollY) }),
-  );
+  await page.locator(`#main a[href="${article}"]`).first().click();
+  await expectArticleNavigation(page);
+  expect(await page.evaluate(() => typeof window.navigation)).toBe('undefined');
+  await browserHistory(page, 'back', '/');
+  await browserHistory(page, 'forward', article);
+  await expectArticleNavigation(page);
+  await page.locator('.mobile-navigation a[href="/archives/"]').click();
+  await expect(page).toHaveURL(/\/archives\/$/);
 });
 
-test('return restores search results on cold history navigation and respects a later manual close', async ({
+test('disabled JavaScript retains usable home and archive links', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ baseURL, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  try {
+    const page = await context.newPage();
+    await page.goto(article);
+    await expectArticleNavigation(page);
+    await page.locator('.mobile-navigation a[href="/"]').click();
+    await expect(page.locator('.post-card')).toHaveCount(3);
+    await page.goto(article);
+    await page.locator('.mobile-navigation a[href="/archives/"]').click();
+    await expect(page.locator('.timeline')).toBeVisible();
+  } finally { await context.close(); }
+});
+
+test('browser back and forward preserve the original target and scroll without overlays', async ({ page }, info) => {
+  const events: unknown[] = [];
+  await page.exposeFunction('recordArticleHistory', (event: unknown) => events.push(event));
+  await page.addInitScript(() => {
+    const send = (kind: string, extra: object = {}) => (window as any).recordArticleHistory({
+      kind, path: location.pathname, ...extra,
+    });
+    addEventListener('pageshow', (event) => send('pageshow', { persisted: event.persisted }));
+    addEventListener('pagereveal', (event: any) => {
+      send('pagereveal', { native: !!event.viewTransition });
+      event.viewTransition?.ready.then(() => send('native-ready', {
+        animations: document.getAnimations().map((a: any) => ({ name: a.animationName, duration: a.effect?.getTiming().duration })),
+      }), (error: unknown) => send('native-skipped', { error: String(error) }));
+    });
+    document.addEventListener('animationstart', (event) => {
+      if (event.animationName === 'autuswing-content-enter') send('css-entry');
+    });
+  });
+  await page.goto('/');
+  await page.evaluate(() => scrollTo(0, 150));
+  const before = await page.evaluate(() => scrollY);
+  await page.locator(`#main a[href="${article}"]`).first().evaluate((node: HTMLAnchorElement) => node.click());
+  await expectArticleNavigation(page);
+  await browserHistory(page, 'back', '/');
+  await expect.poll(() => page.evaluate(() => scrollY)).toBe(before);
+  await browserHistory(page, 'forward', article);
+  await expectArticleNavigation(page);
+  await info.attach('native-history-and-entry', { body: JSON.stringify({ events, before }), contentType: 'application/json' });
+});
+
+test('browser history retains existing search restoration independently of the article list link', async ({
   page,
 }) => {
   test.setTimeout(60000);
@@ -151,9 +136,9 @@ test('return restores search results on cold history navigation and respects a l
   await expect(page.locator('.search-results a').first()).toBeVisible();
   await page.locator('#search-input').press('ArrowDown');
   await page.locator('#search-input').press('Enter');
-  await expect(page.locator('[data-article-back]')).toBeVisible();
+  await expect(page.locator('.article-header h1')).toBeVisible();
   await page.reload();
-  await back(page, '/archives/');
+  await browserHistory(page, 'back', '/archives/', true);
   await expect(page.locator('.search-dialog')).toBeVisible();
   await expect(page.locator('#search-input')).toHaveValue('GitHub');
   await expect(page.locator('.search-results a.selected')).toHaveCount(1);
@@ -162,96 +147,7 @@ test('return restores search results on cold history navigation and respects a l
   expect(
     await page.evaluate(() => navigation.currentEntry?.getState()?.autuswingSearch),
   ).toBeUndefined();
-  await page.goForward();
-  await back(page, '/archives/');
+  await browserHistory(page, 'forward', article);
+  await browserHistory(page, 'back', '/archives/');
   await expect(page.locator('.search-dialog')).not.toBeVisible();
-});
-
-test('missing Navigation API and disabled JavaScript keep the ordinary archive link', async ({
-  page,
-  browser,
-  baseURL,
-}) => {
-  await page.addInitScript(() =>
-    Object.defineProperty(window, 'navigation', { value: undefined, configurable: true }),
-  );
-  await page.goto('/');
-  await page.locator('.post-card-title a').first().click();
-  await expect(page.locator('[data-article-back]')).toHaveAttribute('href', /\/archives\/$/);
-  await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL(/\/archives\/$/);
-  const context = await browser.newContext({
-    baseURL,
-    javaScriptEnabled: false,
-    viewport: { width: 390, height: 844 },
-  });
-  const native = await context.newPage();
-  await native.goto(article);
-  await expect(native.locator('[data-article-back]')).toHaveAccessibleName('返回');
-  await native.locator('[data-article-back]').click();
-  await expect(native).toHaveURL(/\/archives\/$/);
-  await context.close();
-});
-
-test('smart return runs the existing native content transition', async ({ page, browserName }) => {
-  await page.emulateMedia({ reducedMotion: 'no-preference' });
-  const events: any[] = [];
-  await page.exposeFunction('recordBackTransition', (event: any) => events.push(event));
-  await page.addInitScript(() =>
-    addEventListener('pagereveal', async (event: any) => {
-      if (!event.viewTransition) return;
-      await event.viewTransition.ready;
-      (window as any).recordBackTransition({
-        path: location.pathname,
-        type: navigation.activation?.navigationType,
-        names: document.getAnimations().map((a: any) => a.animationName),
-      });
-    }),
-  );
-  await page.goto('/');
-  const mode = await inspectTransitionMode(page, browserName);
-  await page.locator('.post-card-title a').first().click();
-  await settled(page);
-  await back(page, '/');
-  if (mode === 'native') {
-    await expect
-      .poll(() => events.filter((e) => e.path === '/' && e.type === 'traverse').length)
-      .toBe(1);
-    expect(events.at(-1).names.sort()).toEqual(['autuswing-page-in', 'autuswing-page-out']);
-  } else {
-    expect(events).toHaveLength(0);
-    await assertUnanimatedNavigation(page);
-    await expect(page.locator('.desktop-sidebar')).toBeVisible();
-    await expect(page.locator('.post-card')).toHaveCount(3);
-    expect(await page.evaluate(() => navigation.activation?.navigationType)).toBe('traverse');
-    await page.goForward();
-    await expect(page).toHaveURL(new RegExp(article));
-    await assertUnanimatedNavigation(page);
-  }
-  fs.writeFileSync(`${dir}/transition.json`, JSON.stringify(events, null, 2));
-});
-
-test('a failed traversal falls back and rapid duplicate activations do not navigate twice', async ({
-  page,
-}) => {
-  await page.goto('/');
-  await page.locator('.post-card-title a').first().click();
-  await settled(page);
-  await page.evaluate(() => {
-    navigation.traverseTo = () => ({
-      committed: Promise.reject(new DOMException('Disposed', 'InvalidStateError')),
-      finished: Promise.reject(new DOMException('Disposed', 'InvalidStateError')),
-    });
-  });
-  await page.locator('[data-article-back]').click();
-  await expect(page).toHaveURL(/\/archives\/$/);
-  await page.locator(`.timeline a[href="${article}"]`).click();
-  await settled(page);
-  await page.evaluate(() => {
-    const link = document.querySelector<HTMLAnchorElement>('[data-article-back]')!;
-    link.click();
-    link.click();
-  });
-  await expect(page).toHaveURL(/\/archives\/$/);
-  await settled(page);
 });
