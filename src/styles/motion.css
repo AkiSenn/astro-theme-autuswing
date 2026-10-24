@@ -46,6 +46,23 @@ html[data-motion='true'] #main {
   }
 }
 
+/* 首次绘制前选择回退；有限动画不留下隐藏状态，也不改变布局尺寸。 */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html[data-motion='true'][data-page-entry]:not([data-appearance-transition]) #main {
+    animation: autuswing-content-enter 200ms var(--motion-ease) backwards;
+  }
+}
+@keyframes autuswing-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* 同文档主题截图与跨文档 main-content 分开；旧色板保持不透明，避免露底闪烁。 */
 html[data-appearance-transition] {
   view-transition-name: appearance-theme;

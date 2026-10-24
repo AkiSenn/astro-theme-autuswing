@@ -42,6 +42,7 @@
 | ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | src/styles/motion.css                                      | 唯一的 CSS 动效定义、tokens、主内容转场、微交互和减少动画规则                    |
 | src/layouts/BaseLayout.astro                               | 按 motion 配置输出 head 的 CSS 跨文档 opt-in；首屏外观脚本保持提前运行           |
+| src/scripts/page-entry-init.js                            | head 同步选择页面入场回退，原生导航、离页和缓存恢复时清理，不拦截导航          |
 | src/config/theme.json                                      | motion.enable 为总开关，motion.page 为页面转场开关；没有旧 animations 开关兼容层 |
 | src/scripts/dialogs.ts                                     | 统一原生弹窗生命周期、可取消的关闭动效、焦点和弹窗互斥                           |
 | src/scripts/helpers.ts                                     | 统一系统偏好和主题总开关；返回顶部与评论定位使用 scrollBehavior                  |
@@ -54,17 +55,28 @@
 "motion": { "enable": true, "page": true }
 ```
 
-`enable=false`：不输出跨文档选择加入，关闭同文档主题转场、CSS 装饰过渡、JS 弹窗退出动效和平滑返回顶部。`page=false`：只关闭跨文档转场，保留同文档主题转场和微交互。时间和距离直接修改 motion.css 的变量即可；弹窗退出从同一变量读取时长及缓动。
+`enable=false`：不输出跨文档选择加入和页面回退脚本，关闭同文档主题转场、CSS 装饰过渡、JS 弹窗退出动效和平滑返回顶部。`page=false`：关闭跨文档转场及CSS页面入场，保留同文档主题转场和微交互。时间和距离直接修改 motion.css 的变量即可；弹窗退出从同一变量读取时长及缓动。
 
-主内容旧图像淡出120ms、新图像渐现320ms并上浮14px。禁用 root 截图以及 main-content group 的几何插值，不给导航、目录面板、背景或浮动工具设置转场名称。没有逐项延迟，没有内容隐藏等待类，也没有刷新时的装饰入场。首屏立即可读。
+原生主内容旧图像淡出120ms、新图像渐现320ms并上浮14px。禁用 root 截图以及 main-content group 的几何插值，不给导航、目录面板、背景或浮动工具设置转场名称。没有逐项延迟或内容隐藏等待类。
 
-同文档转场仅接入外观按钮引起的有效色板变化：原生 `document.startViewTransition()` 使用独立的 `appearance-theme` 根截图，新色板淡入180ms，旧色板保持不透明；期间移除 `main-content` 名称并暂停 fast 颜色过渡，避免叠加页面入场。首次加载、同色板模式切换、系统偏好和跨标签同步仍直接更新。缺少 API、减动、关闭总开关或已有导航转场时不启动；连续操作取消旧动画并立即采用最新选择，过期回调不能回写旧状态。出站、离页及中途禁用动效时收尾，恢复原有跨文档名称。`skipTransition()` 仍会执行更新回调，依据见 [W3C View Transitions](https://www.w3.org/TR/css-view-transitions-1/)。没有 CSS 页面入场回退或客户端路由。
+同文档转场仅接入外观按钮引起的有效色板变化：原生 `document.startViewTransition()` 使用独立的 `appearance-theme` 根截图，新色板淡入180ms，旧色板保持不透明；期间移除 `main-content` 名称并暂停 fast 颜色过渡，避免叠加页面入场。首次加载、同色板模式切换、系统偏好和跨标签同步仍直接更新。缺少 API、减动、关闭总开关或已有导航转场时不启动；连续操作取消旧动画并立即采用最新选择，过期回调不能回写旧状态。出站、离页及中途禁用动效时收尾，恢复原有跨文档名称。`skipTransition()` 仍会执行更新回调，依据见 [W3C View Transitions](https://www.w3.org/TR/css-view-transitions-1/)。没有客户端路由。
+
+CSS页面入场由Autuswing独立实现，仅借鉴淡入上移的设计思路。同步head脚本在绘制前选择200ms/6px回退：有可靠`pagereveal`时读取实际`viewTransition`，没有跨文档能力时提前选择；部分能力无法可靠判断时直接显示。原生对象存在但后续被跳过时不补播CSS，避免晚隐藏。首次访问、刷新及重新加载的历史文档可入场；BFCache恢复、带锚点或后台页面不重播，优先保留缓存画面及浏览器滚动恢复。事件时序依据见[跨文档生命周期](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document)。
+
+回退只动画`#main`的opacity和transform，不改变布局尺寸；不设常驻opacity/visibility/hidden，也不等待页面模块下载。动画结束/取消、离页、减动或主题原生截图启动时移除标记并释放监听。有限CSS动画没有forwards残留；脚本缺失、晚执行或API不完整时内容正常可见。不会在`pageshow`或DOMContentLoaded之后补加淡入状态。
 
 停靠目录进出为180ms / 4px，仅动画 opacity 和 transform，正文预留空间和原有断点不变；收起开始即禁止交互和聚焦，快速反向操作从当前绘制状态继续。模态目录、搜索、灯箱进出仍为180ms / 6px；入口 CSS 使用 @starting-style，关闭使用原生 Web Animations 并等待 finished。减少动画、关闭动效总开关或缺少动画 API 时立即切换，遮罩也遵守减动设置。替换弹窗、切换断点立即收尾。页面离开时清理未完成退出，避免缓存恢复时遗留关闭状态。
 
 HTML 的默认滚动恢复与锚点处理交给浏览器，不全局启用 smooth scroll；只有明确的返回顶部/评论定位操作在允许动效时平滑滚动。目录内部定位仍直接更新自己的 scrollTop，不移动正文。没有新增滚动监听或动画依赖。
 
 ## 验收
+
+### 2026-10-24：CSS页面入场回退（待审阅）
+
+- 隔离生产门禁8/8、单测135/135；新增回退相关单测9项，连同既有外观测试共25/25，专项测试通过严格TS检查。产品代码从首轮后未修改；后续只修正浏览器采样夹具。
+- 浏览器原始56/66、Edge复验21/22、定向10/12、最后定向9/9分别保留，不描述为同次全量通过。失败涉及BFCache不重发load、新夹具重复启动Trace、同页锚点计数、暂停采样和模块阻塞等待环；修正均保留功能断言，未加超时或重试。
+- Edge/WebKit普通导航实际使用320/120ms原生跨文档转场，Firefox实际使用200ms CSS入场；三者主题切换继续使用180ms原生同文档转场。Edge专项实际恢复BFCache并验证前进、后退和1200px滚动位置，缓存及锚点不重播CSS。
+- WebKit可延后首次渲染及animationstart派发；慢加载检查分别记录流式HTML和模块阻塞状态，再验证实际入场及最终可见性，不要求浏览器在任意下载阶段立即派发事件。旧Safari仅验证无API能力模型，尚无本批真机结果。历史Firefox/WebKit观察项继续保留，冻结视觉基准未变。
 
 ### 2026-10-24：原生双转场
 

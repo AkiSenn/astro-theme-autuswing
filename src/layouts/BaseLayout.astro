@@ -28,6 +28,7 @@ import Footer from '../components/Footer.astro';
 import Search from '../components/Search.astro';
 import Glyph from '../components/Glyph.astro';
 import appearance from '../scripts/appearance-init.js?raw';
+import pageEntry from '../scripts/page-entry-init.js?raw';
 interface Props {
   path: string;
   title?: string;
@@ -69,6 +70,9 @@ const background = theme.backgrounds.length
         }
       }
     </style>}
+    {theme.motion.enable && theme.motion.page && (
+      <script id="autuswing-page-entry" is:inline set:html={pageEntry} />
+    )}
     <noscript>
       <style is:inline>
         .js-control {
