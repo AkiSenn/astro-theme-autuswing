@@ -7,6 +7,8 @@
   --sidebar: #edf0e8;
   --text: #29382f;
   --muted: #5d6b60;
+  /* 内容区次要文字独立配色，避免影响导航与弹层；浅色保留原有对比度。 */
+  --text-secondary: #5d6b60;
   --line: #dcded5;
   --green: var(--accent, #4c6855);
   --green-soft: #e5ecdf;
@@ -81,6 +83,7 @@
   --sidebar: #1a251e;
   --text: #e1e9df;
   --muted: #aab7a8;
+  --text-secondary: #bfcdbf;
   --line: #37463b;
   --green: var(--accent, #a6c497);
   --green-soft: #2a3c2e;

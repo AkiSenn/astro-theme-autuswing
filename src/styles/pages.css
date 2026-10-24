@@ -41,7 +41,7 @@
   line-height: 1.4;
 }
 .page-heading p {
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .timeline h2 {
   font-family: Georgia, serif;
@@ -57,14 +57,14 @@
   align-items: center;
 }
 .timeline time {
-  color: var(--muted);
+  color: var(--text-secondary);
   flex: none;
 }
 .timeline article > a {
   flex: 1;
 }
 .timeline article > span {
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .taxonomy {
   display: grid;
@@ -87,7 +87,7 @@
   flex: 1;
 }
 .taxonomy small {
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .friend-grid {
   display: grid;
