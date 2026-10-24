@@ -531,7 +531,7 @@ test('theme transition leaves desktop directory 180ms and modal focus/animation 
     await page
       .locator('.contents-dialog')
       .evaluate((n) => getComputedStyle(n, '::backdrop').transitionDuration),
-  ).toBe('0.18s');
+  ).toBe('0.24s');
   await page.keyboard.press('Escape');
   await expect(page.locator('.contents-dialog')).not.toBeVisible();
   await expect(page.locator('.contents-open:visible')).toBeFocused();

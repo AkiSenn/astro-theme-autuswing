@@ -149,6 +149,11 @@ dialog::backdrop {
   opacity: 1;
   transition: opacity var(--motion-normal) var(--motion-ease);
 }
+/* 目录弹层只放缓入场；关闭标记恢复 normal，遮罩与脚本退场仍为180ms。 */
+.contents-dialog[open]:not([data-closing]),
+.contents-dialog[open]:not([data-closing])::backdrop {
+  transition-duration: 240ms;
+}
 dialog[data-closing]::backdrop {
   opacity: 0;
 }

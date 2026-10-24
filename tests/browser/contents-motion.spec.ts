@@ -267,7 +267,7 @@ for (const policy of ['system', 'config'] as const)
   });
 
 for (const width of [390, 820])
-  test(`modal ${width}: normal 180ms retained; reduced/config gates include backdrop`, async ({
+  test(`modal ${width}: contents entry 240ms, other surfaces 180ms; reduced/config gates include backdrop`, async ({
     page,
   }, info) => {
     await ready(page, width);
@@ -289,7 +289,11 @@ for (const width of [390, 820])
         body: getComputedStyle(n).transitionDuration,
         backdrop: getComputedStyle(n, '::backdrop').transitionDuration,
       }));
-      expect(normal).toEqual({ body: '0.18s, 0.18s', backdrop: '0.18s' });
+      expect(normal).toEqual(
+        surface === 'contents'
+          ? { body: '0.24s', backdrop: '0.24s' }
+          : { body: '0.18s, 0.18s', backdrop: '0.18s' },
+      );
       const exit = await page.locator(selector).evaluate((n) => {
         n.dispatchEvent(new Event('cancel', { cancelable: true }));
         return n
@@ -327,6 +331,91 @@ for (const width of [390, 820])
     }
     await info.attach('modal-policy', {
       body: JSON.stringify(records),
+      contentType: 'application/json',
+    });
+  });
+
+for (const width of [390, 820])
+  test(`contents ${width}: actual 240ms panel/backdrop entry, 180ms exit and rapid reversal`, async ({
+    page,
+  }, info) => {
+    await ready(page, width);
+    await page.evaluate(() => scrollTo(0, 900));
+    const before = await geometry(page);
+    const opened = await page.evaluate(() => {
+      const trigger = [...document.querySelectorAll<HTMLButtonElement>('.contents-open,.goto-toc')]
+        .find((node) => node.getClientRects().length)!;
+      trigger.click();
+      const dialog = document.querySelector<HTMLDialogElement>('.contents-dialog')!;
+      getComputedStyle(dialog).opacity;
+      getComputedStyle(dialog, '::backdrop').opacity;
+      // 顶层遮罩不在默认列表中；subtree 才包含 ::backdrop，排除子控件的过渡。
+      const animations = dialog.getAnimations({ subtree: true })
+        .filter((a) => (a.effect as KeyframeEffect)?.target === dialog);
+      animations.forEach((animation) => {
+        animation.pause();
+        animation.currentTime = 120;
+      });
+      const style = getComputedStyle(dialog);
+      return {
+        durations: animations.map((a) => a.effect?.getTiming().duration).sort(),
+        opacity: Number(style.opacity),
+        backdrop: Number(getComputedStyle(dialog, '::backdrop').opacity),
+        y: new DOMMatrixReadOnly(style.transform).m42,
+        overflow: getComputedStyle(document.documentElement).overflowY,
+      };
+    });
+    expect(opened.durations).toEqual([240, 240, 240]);
+    expect(opened.opacity).toBeGreaterThan(0);
+    expect(opened.opacity).toBeLessThan(1);
+    expect(opened.backdrop).toBeGreaterThan(0);
+    expect(opened.backdrop).toBeLessThan(1);
+    expect(opened.y).toBeGreaterThan(0);
+    expect(opened.y).toBeLessThan(6);
+    expect(opened.overflow).toBe('hidden');
+    expect(await geometry(page)).toEqual(before);
+    await info.attach('contents-entry-midpoint', { body: await page.screenshot(), contentType: 'image/png' });
+    await page.locator('.contents-dialog').evaluate((n) => n.getAnimations({ subtree: true })
+      .filter((a) => (a.effect as KeyframeEffect)?.target === n).forEach((a) => a.finish()));
+    const closed = await page.locator('.contents-dialog').evaluate((n) => {
+      (n.querySelector('.contents-close') as HTMLButtonElement).click();
+      const animations = n.getAnimations();
+      animations.forEach((a) => { a.pause(); a.currentTime = 90; });
+      return {
+        durations: animations.filter((a) => a.constructor.name === 'Animation')
+          .map((a) => a.effect?.getTiming().duration),
+        backdropDuration: getComputedStyle(n, '::backdrop').transitionDuration,
+        open: (n as HTMLDialogElement).open,
+      };
+    });
+    expect(closed).toEqual({ durations: [180], backdropDuration: '0.18s', open: true });
+    for (let i = 0; i < 3; i++) {
+      // 关闭期间入口应隐藏；经现有触发器模拟重入，验证退出取消和最后状态。
+      await page.evaluate(() => {
+        const trigger = [...document.querySelectorAll<HTMLButtonElement>('.contents-open,.goto-toc')]
+          .find((n) => n.closest('.tablet-sidebar')?.getClientRects().length || n.matches('.goto-toc'))!;
+        trigger.click();
+      });
+      await expect(page.locator('.contents-dialog')).toBeVisible();
+      await expect(page.locator('.contents-dialog')).not.toHaveAttribute('data-closing');
+      await page.locator('.contents-dialog').evaluate((n) => {
+        n.dispatchEvent(new Event('cancel', { cancelable: true }));
+        n.getAnimations().forEach((a) => { a.pause(); a.currentTime = 90; });
+      });
+      await expect(page.locator('.contents-dialog')).toHaveAttribute('data-closing', 'true');
+    }
+    await page.locator('.contents-dialog').evaluate((n) => n.getAnimations().forEach((a) => a.finish()));
+    await expect(page.locator('.contents-dialog')).not.toBeVisible();
+    await expect(page.locator(opener)).toBeFocused();
+    expect(await geometry(page)).toEqual(before);
+    expect(await page.evaluate(() => getComputedStyle(document.documentElement).overflowY)).not.toBe('hidden');
+    await page.locator(opener).click();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.contents-dialog')).not.toBeVisible();
+    await expect(page.locator(opener)).toBeFocused();
+    expect(await geometry(page)).toEqual(before);
+    await info.attach('contents-durations-and-geometry', {
+      body: JSON.stringify({ opened, closed, before, after: await geometry(page) }),
       contentType: 'application/json',
     });
   });
