@@ -226,6 +226,10 @@ dialog::backdrop {
     flex-direction: row;
     gap: var(--space-2);
   }
+  .floating-tools > .back-top {
+    /* 从目录左侧出现，保留目录滚动前的位置；hidden 仍直接退出布局与焦点顺序。 */
+    order: -1;
+  }
 }
 @media not all and (min-width: 720px) {
   .search-dialog {
