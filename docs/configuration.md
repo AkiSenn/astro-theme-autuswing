@@ -1,4 +1,19 @@
-# 配置迁移与消费边界
+← [项目首页](../README.md) · [文档首页](index.md)
+
+# 配置入口与迁移边界
+
+日常使用先区分 `src/config/site.json` 的站点身份与 `src/config/theme.json` 的主题设置；这里均为 JSON，不使用 Hexo 的 YAML 覆盖文件。本页保留迁移字段对应表，当前实现与生产差异见[源码状态](repository-state.md)。
+
+| 你想调整什么 | 配置入口 / 说明 |
+| --- | --- |
+| 站名、语言、域名与分页 | `site.json`；跨站与 root 仍受下文迁移约束 |
+| 作者、头像、菜单和社交 | `theme.json` 的 `profile`、顶层图片键、`menu`、`social` |
+| 明暗、排版和背景 | `color_mode`、`appearance`、`cards`；见[外观指南](appearance.md) |
+| 搜索、Feed 与 SEO | `search`、`feed`、`seo`；见[SEO 与 URL](seo-and-urls.md) |
+| 评论、统计与页脚 | `comments`、`analytics`、`footer`；预览隔离真实请求，服务需另验收 |
+| 离线提示与安装 | `pwa`；不提供文章全文离线缓存 |
+
+修改局部键时保留其他字段；本轮不改真实站点配置，也不宣称中性模板已就绪。
 
 `src/config/site.json` 保留站名、描述、作者、语言、时区、正式 URL、root 和每页数量。`theme.json` 保留本站的外观和服务配置。导航、社交条目和背景列表在 `site.config.ts` 从原始数据派生，不保存容易过期的 menu_items/social_items 缓存。
 
@@ -20,7 +35,7 @@
 | performance                                                            | Astro/Vite 压缩、可选 gzip/Brotli 侧文件、缓存头、渐进预取；侧文件不表示服务器已启用对应编码                                                                    |
 | pwa                                                                    | 静态 manifest、隔离 cache 名称的 SW、离线页；不缓存全部文章 HTML                                                                                                |
 
-## 移除的旧构建控制项
+## Astro 中的设置与旧构建控制项
 
 `appearance.base_font_size` 为手机正文基准，默认16px；平板正文在基准上加1px。桌面文章页在基准上加2px（默认18px），行高1.8；桌面其他页面仍在基准上加1px。自定义代码字体、品牌色和圆角继续可用。默认卡片使用实色表面；显式启用背景图时才使用对应背景模糊，正文内容不依赖动态效果显示。
 

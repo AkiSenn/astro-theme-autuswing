@@ -1,94 +1,121 @@
-# Autuswing for Astro
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/autuswing-header-dark.svg">
+    <img src="docs/assets/autuswing-header-light.svg" width="760" alt="Autuswing · 秋漾 — A, pages, swing and star">
+  </picture>
+</p>
 
-生产候选已采用失败即阻断的独立流程：`npm run release:build`（或 `npm run publish:check`）只生成 `.local-tools/releases/<版本>/`，不会部署。上传前用 `npm run verify:release -- <候选目录>` 复核，只公开其中 `site/`；日常 `dist/` 仍是预览。详见[生产构建与宝塔/ESA 回滚手册](deployment/release-runbook.md)。
+<p align="center">
+  <strong>让文字有处安放，让阅读慢下来。</strong><br>
+  经典侧栏 · 森林绿 · 静态博客 · 自在阅读
+</p>
 
-GitHub：[`AkiSenn/astro-theme-autuswing`](https://github.com/AkiSenn/astro-theme-autuswing)（私有仓库）。这是 Autuswing 的独立 Astro 版本，当前保留 AkiSenn 博客的迁移内容与配置，尚未整理为使用示例内容的通用发行包。
+<p align="center">
+  <a href="package.json"><img src="docs/assets/badge-version.svg" alt="Development version 0.2.0"></a>
+  <a href="https://astro.build/"><img src="docs/assets/badge-astro.svg" alt="Astro 7.4.0"></a>
+  <a href="package.json"><img src="docs/assets/badge-node.svg" alt="Node.js >= 22.22.0"></a>
+</p>
 
-AutuSwing 从 Hexo 迁移到 Astro 的独立项目。当前进行本地验收，保留预览 noindex 和关闭的真实评论。保留森林绿、日期卡片与个人侧栏：PC首页及普通页面使用272px完整侧栏；PC文章页复用72px迷你导航，并提供260px独立目录。平板仍为72px迷你栏，手机仍为顶部品牌与横向导航。文章外层上限860px、默认正文实际810px，较窄窗口弹性缩小。目录入口按实际布局保持唯一：手机悬浮按钮、迷你栏按钮、已展开面板的收起按钮。PC 底部样式见[功能与社交分区](docs/sidebar-bottom.md)，社交区说明见[纯图标布局](docs/social-links.md)，目录行为见[目录入口统一](docs/contents-controls.md)，布局方案见[首页与文章布局分离](docs/reading-layout.md)，前序宽度调整记录见[宽屏补充](docs/desktop-reading-wide.md)。
+<p align="center">
+  <strong>简体中文</strong> | <a href="README.en.md">English</a>
+</p>
 
-## 本地运行
+<p align="center">
+  <a href="https://akisenn.com/">正式站实景</a> ·
+  <a href="#preview">主题预览</a> ·
+  <a href="#quick-start">快速开始</a> ·
+  <a href="docs/index.md">阅读文档</a>
+</p>
 
-动效已更新为 [Autuswing Motion 1.0](docs/motion-system.md)：主内容使用原生跨文档转场（320ms / 14px，旧内容淡出120ms），保持静态多页面导航；侧栏不做位移动画。旧头像摇晃、缩放入场和卡片上移已移除，按钮反馈为150ms。配置入口为 `theme.motion.enable/page`，减少动画模式关闭装饰性动效。
+---
 
-文章顶部现为[智能「← 返回」](docs/smart-back.md)：校验站内历史后返回来源并沿用浏览器滚动恢复，没有可靠目标时进入归档。冷返回搜索结果时恢复查询与界面状态。
+**Autuswing · 秋漾** 是一个基于 Astro 的独立博客主题项目。名字取自 **Autu**mn 与 **Swing**：秋日的风，轻轻摇荡的秋千，以及属于自己的书写节奏。
 
-Node.js ≥22.22.0。依赖版本与锁文件已固定。
+它保留经典博客侧栏的辨识度，让日期卡片、温润的森林绿和清晰的正文排版陪伴技术笔记与日常记录。从宽屏上的专注阅读，到平板和手机上的轻便导航，界面随着屏幕展开，也尊重访客的深浅色与减少动态效果偏好。
 
-```powershell
-cd E:\autuswing-astro
+> [!NOTE]
+> **正式站已使用 Astro，仓库仍在整理。** [akisenn.com](https://akisenn.com/) 于 2026-10-26 完成迁移并通过生产与真机验收，此状态由站点维护者确认。仓库仍为 Private，包版本 `0.2.0` 是开发版本；尚无正式 GitHub Release 或版本标签，也尚未整理为零配置的通用 Starter。生产封存候选与本分支有差异，见[源码与生产对应说明](docs/repository-state.md)。
+
+<a id="preview"></a>
+
+## 主题预览
+
+<p align="center">
+  <img src="docs/assets/responsive-showcase.webp" width="1100" alt="Astro 正式站：桌面首页完整侧栏、深色文章阅读、平板与手机布局">
+</p>
+
+来自 [akisenn.com](https://akisenn.com/) 的真实页面，采集于 2026-10-27；平板和手机尺寸由浏览器视口模拟。拼图仅排版原始截图，不替换页面内容。它们展示正式站外观，不代表本分支构建与生产产物逐字节一致，也不替代真机验收。[全部深浅色截图与采集说明](docs/preview.md)。
+
+## 功能概览
+
+下表按[文档基线](docs/repository-state.md)的实际实现整理。“可选”表示需要配置；外部服务接入能力与真实服务验收分开看待。
+
+| 方向 | 已有能力与边界 |
+| --- | --- |
+| 外观 | 森林绿、日期卡片、日间 / 夜间 / 跟随系统；可选全站背景与文章卡片壁纸 |
+| 响应式布局 | 桌面完整侧栏；文章页迷你导航与独立目录；平板迷你栏；手机顶部导航与可收起目录 |
+| 文章阅读 | 字数与阅读时间、章节锚点、目录高亮、代码复制、图片灯箱、分享和相邻文章；已移除阅读进度条 |
+| Markdown | Astro 内容集合、草稿隔离、普通 / 教程 / 系列模板、表格、脚注、提示块及代码行标记；系列字段暂不生成系列页 |
+| 数学公式 | KaTeX 构建时渲染、自动检测公式、按需引用本地样式和字体；旧数学标记不表示切换为 MathJax |
+| 搜索与导航 | 按需读取静态搜索索引、多关键词匹配、键盘操作、标签 / 分类 / 年月归档与分页 |
+| SEO 与订阅 | canonical、Open Graph、JSON-LD、robots、站长验证字段、Sitemap、RSS 与 Atom；可选全文 Feed |
+| PWA | 可选安装、生成图标和离线提示页；不缓存文章全文，不承诺离线阅读文章 |
+| 性能与交付 | Astro 静态生成、Vite 资源指纹、压缩、图片资源管线、可选预取与预压缩；服务器缓存需另外配置 |
+| 站点设置 | 作者、头像、菜单、社交、排版、页脚、备案及可选评论 / 统计；预览隔离真实评论与分析请求，外部服务需单独验收 |
+
+跨站复用、子路径托管及公开发行包仍需整理与验证，不能将现有实现描述为这些场景已全部验收。完整入口见[配置](docs/configuration.md)、[外观](docs/appearance.md)及[写作](docs/writing.md)。
+
+<a id="quick-start"></a>
+
+## 快速开始
+
+面向已有私有仓库访问权限的开发者，需要 **Node.js ≥ 22.22.0**。请使用独立副本并先保留已有工作。本仓库包含站主内容、配置和迁移约束，不能直接当作自己的站点发布。
+
+```sh
+git clone https://github.com/AkiSenn/astro-theme-autuswing.git
+cd astro-theme-autuswing
+git switch codex/astro-migration
 npm ci
+npm run dev
+```
+
+打开 <http://127.0.0.1:4322/>。本文命令和功能核对于该分支的 `f1d0e65`，后续分支更新可能有差异。停止开发服务后，可检查和生成静态预览：
+
+```sh
 npm run check
 npm run build
 npm run preview
 ```
 
-预览地址：**http://127.0.0.1:4322/**。开发模式用 `npm run dev`，同端口，请先结束占用该端口的预览进程。构建默认输出预览策略（noindex、关闭真实评论和统计），不会部署。
+默认构建输出 `dist/`，使用预览 noindex 策略；上述命令不会部署。`src/config/site.json` 管站点身份，`src/config/theme.json` 管主题设置；生产候选构建另有门禁。详见[开始使用](docs/getting-started.md)。
 
-本轮样式验收使用上述 Node 静态预览。既有服务器适配记录见[宝塔 Nginx 静态交付](deployment/README.md)，历史验收结果见[第五阶段报告](docs/phase-5.md)。
+## 文档导航
 
-## 内容与职责
+| 你想做什么 | 阅读 |
+| --- | --- |
+| 本地运行、理解预览与构建 | [开始使用](docs/getting-started.md) |
+| 设置作者、菜单与可选服务 | [配置入口](docs/configuration.md) |
+| 调整深浅色、壁纸和阅读布局 | [外观指南](docs/appearance.md) |
+| 写文章、使用草稿、图片与公式 | [写作指南](docs/writing.md) |
+| 理解永久链接、搜索与订阅 | [SEO 与 URL](docs/seo-and-urls.md) |
+| 了解静态托管与缓存 | [部署原则](docs/deployment.md) |
+| 使用项目 Logo 和品牌素材 | [品牌说明](docs/branding.md) |
+| 阅读源码、选择必要检查 | [源码指南](docs/source-guide.md) |
 
-- `content/legacy/`：3 篇原稿与关于页的逐字节副本，不重新序列化 front matter。
-- `content/posts/`：新稿。`npm run new-post -- "文章标题"` 只在创建时生成并保存编号；build 不写文章。
-- URL：旧文保持 `/post/原编号/`，新文采用 `https://akisenn.com/编号/`；新稿的完整 permalink 创建时一并保存。
-- `src/config/site.json` / `theme.json`：站点数据与单主题设置，不保存发布凭据。
-- `src/lib/`：内容、路由、日期、SEO、搜索、评论身份、Markdown 兼容；不依赖侧栏或卡片 DOM。
-- 数学公式默认由 KaTeX 在构建时渲染，含公式页面才加载配套样式；保留旧文章的 `mathjax` 等标记。详见[数学扫描与实现](docs/math-rendering.md)。
-- `src/components/` / `layouts/`：原生 Astro 视图；没有 React、Vue、Svelte 或 Hexo 运行时。
-- `src/scripts/`：独立的原生交互模块。`responsive` 管理目录与断点焦点恢复；`dialogs` 保持搜索、目录、灯箱互斥。已移除抽屉与导航页签脚本。
-- `src/styles/`：设计变量、布局、导航、卡片、正文、阅读工具、页脚与弹窗按职责维护，见[样式架构与视觉回归](docs/styles-architecture.md)。主样式仍由 Astro 打包为一个 CSS 文件。代码复制工具栏独立于横向滚动区域，正文默认可见。
-- `migration/`：来源哈希、冻结的历史时间和锚点、旧配置映射；构建缓存和结果只写 `.astro/`、`dist/`。
+[全部文档与历史开发记录 →](docs/index.md)
+
+## 从 Hexo 到 Astro
+
+[Hexo Autuswing](https://github.com/AkiSenn/hexo-theme-autuswing) 是此前的独立主题；这里是 Astro 的独立演进版本。两者延续侧栏与阅读设计，但模板、内容集合、构建和交付方式已经改变，并非简单替换运行时。Astro 版本不需要 Hexo、EJS 或 Hexo 的主题安装命令。
+
+保留历史文章、编号和旧地址，是原站迁移的兼容工作。未来新用户不应被要求复制站主文章或运行完整历史迁移流程；通用化说明将在发行范围确定后补齐。
 
 ## 验证
 
-### 写作与阅读验收
+日常源码检查使用 `npm run check` 和 `npm test`；内容、输出、浏览器和视觉检查按改动范围选择，见[源码指南](docs/source-guide.md#validation)。历史报告仍可查阅，不作为当前分支的新验收结果。文档和品牌修改只需检查链接、图片、命令与渲染，无需重跑整套生产验收。
 
-新稿默认草稿，普通、教程、系列模板可选。日常操作与字段说明见[写作指南](docs/writing.md)，本轮改动及验收结果见[写作与阅读完善报告](docs/writing-reading-report.md)。
+## 许可证、致谢与项目状态
 
-```powershell
-npm run new-post -- "文章标题" --template tutorial
-npm run dev:drafts -- --port 4323
-npm run publish:check
-npm run test:markdown
-npm run verify:writing
-```
+此文档基线的 [LICENSE](LICENSE) 和包元数据保留 **MIT 声明**。筛选快照以 `UNLICENSED` 标记待核实的项目授权边界。既有 MIT 声明不能替代对实际继承片段的来源核查，也不表示已获准公开发行；本轮不改动既有许可证。
 
-`publish:check` 只校验和构建，不部署。`verify:writing` 使用临时稿件与本地服务验证草稿隔离、发布、原生图片和全文 Feed，结束时恢复配置及普通预览构建；与其他构建和浏览器回归顺序运行。Markdown 样本只用于测试，不增加公开路由。旧阅读进度条已完整移除，目录高亮和返回顶部保留。
-
-### 完整检查
-
-```powershell
-npm run test
-npm run verify
-npm run test:browser
-node scripts/verify-fixtures.mjs
-node scripts/verify-reproducible.mjs
-node scripts/verify-configurations.mjs
-node scripts/verify-motion.mjs
-```
-
-浏览器测试默认使用本机 Edge；没有 Edge 时在 `playwright.config.ts` 调整 channel，并安装对应 Playwright 浏览器。fixture 脚本只临时写入新工程并在 finally 中恢复，不能在他人正在编辑相同配置时并行执行。
-
-`verify-motion.mjs` 会重建 dist，需在浏览器测试之前单独运行。动效专项为 `tests/browser/motion.spec.ts`；设置 `PLAYWRIGHT_BASE_URL=http://127.0.0.1:8788` 可用本地 Nginx 验证该专项。普通完整套件默认使用4322端口，其中部分旧测试固定了该来源。
-
-### 视觉回归
-
-```powershell
-npm run verify:styles
-# 只比较已构建的 dist：
-npm run test:styles
-```
-
-当前冻结基准为 Windows Edge / Playwright WebKit，各 137 张截图及对应 CSS/几何快照，包含深浅色、三端布局、断点、目录、搜索和排版样本。`verify:styles` 顺序运行检查、构建和比较，不自动接受新截图。基准在 `tests/styles/snapshots/`，来源与哈希在 `docs/evidence/styles/baseline-manifest.json`。
-
-图像色差阈值为 0.1，差异像素预算为零；关键 CSS 数值和尺寸另做精确比较。搜索弹窗背景头像是已记录的遮罩例外。Windows 字体基准不直接用于 Linux；跨平台基准需单独审核。这些限制与待办详见样式报告。运行测试通过现有 Node 预览服务，不执行部署。
-
-## 备份与范围
-
-迁移前备份：`E:/autuswing-backups/2026-10-16T00-59-43-724Z/`。包含原工作区（含未提交/未跟踪文件）、public、主题独立包与 Git 历史 bundle；源码与主题都已解压逐文件 SHA256 核对。排除可重装的 node_modules 和工具缓存，没有远程服务器或评论数据库快照。
-
-原站 `E:/hexo-akisenn`、Yelee-Next、生产域名和 516700.xyz 均不由本工程写入。第一阶段审计保存在 `E:/autuswing-astro-audit-20261016`。
-
-详细说明：[阶段五本地验收](docs/phase-5.md)、[阶段四交付](docs/phase-4.md)、[阶段三记录](docs/phase-3.md)、[阶段二记录](docs/phase-2.md)、[配置迁移](docs/configuration.md)、[写作与 URL](docs/writing.md)、[宝塔 Nginx 静态交付](deployment/README.md)。
-
-原主题、图标、样式及适配脚本沿用 MIT 许可；原稿保留作者原有内容许可。数学 vendor 的版本、许可证与校验清单见 `public/assets/vendor/`。本项目没有迁移 Yelee-Next，也没有双主题运行系统。
+感谢 **Yelee / MOxFIVE**、**Yilia / Litten**、Autuswing Hexo 版及历史 Yelee Next 参考项目。具体沿用范围仍需逐项闭合，致谢不代替许可。文章、头像、壁纸、品牌图形、图标和字体各有权利边界；见 [THIRD-PARTY.md](THIRD-PARTY.md)、[随包资源声明](public/assets/vendor/THIRD-PARTY.md)和[剩余开源准备事项](docs/repository-state.md#open-source)。正式站运行状态与开源准备分别维护。

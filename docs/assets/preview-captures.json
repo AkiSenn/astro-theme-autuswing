@@ -1,0 +1,92 @@
+{
+  "capturedAt": "2026-10-26T17:42:41.308Z",
+  "browser": "Microsoft Edge 156.0.4314.42",
+  "purpose": "Public production-site documentation screenshots; viewport emulation, not physical-device acceptance.",
+  "processing": "WebP encoding only; page content and site styles were not replaced or modified.",
+  "screenshots": [
+    {
+      "file": "desktop-home-light.webp",
+      "url": "https://akisenn.com/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "colorScheme": "light",
+      "actualTheme": "light",
+      "status": 200,
+      "title": "秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "desktop-home-dark.webp",
+      "url": "https://akisenn.com/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "colorScheme": "dark",
+      "actualTheme": "dark",
+      "status": 200,
+      "title": "秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "desktop-article-light.webp",
+      "url": "https://akisenn.com/post/55b0541c/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "colorScheme": "light",
+      "actualTheme": "light",
+      "status": 200,
+      "title": "GitHub + Hexo + AutuSwing + Workers：搭建个性化博客 · 秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "desktop-article-dark.webp",
+      "url": "https://akisenn.com/post/55b0541c/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "colorScheme": "dark",
+      "actualTheme": "dark",
+      "status": 200,
+      "title": "GitHub + Hexo + AutuSwing + Workers：搭建个性化博客 · 秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "tablet-article-light.webp",
+      "url": "https://akisenn.com/post/55b0541c/",
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "colorScheme": "light",
+      "actualTheme": "light",
+      "status": 200,
+      "title": "GitHub + Hexo + AutuSwing + Workers：搭建个性化博客 · 秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "mobile-home-light.webp",
+      "url": "https://akisenn.com/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "actualTheme": "light",
+      "status": 200,
+      "title": "秋千AkiSenn生活笔记"
+    },
+    {
+      "file": "mobile-article-dark.webp",
+      "url": "https://akisenn.com/post/55b0541c/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "actualTheme": "dark",
+      "status": 200,
+      "title": "GitHub + Hexo + AutuSwing + Workers：搭建个性化博客 · 秋千AkiSenn生活笔记"
+    }
+  ]
+}

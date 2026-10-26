@@ -1,3 +1,5 @@
+← [项目首页](../README.md) · [文档首页](index.md)
+
 # 写作、日期与 URL
 
 历史 Markdown 位于 `content/legacy/`，保留首次迁移的原始哈希、未知元数据和原图路径；主动修订旧文章须使用下述审批流程。原稿日期按 Asia/Shanghai（UTC+8）解释；缺少 updated 的历史文章、关于页从 `migration/*metadata.json` 取已公开的有效时间，不读取 clone/复制后的 mtime。更改标题时，仍通过原编号匹配回退值；显式新增 updated 优先。
