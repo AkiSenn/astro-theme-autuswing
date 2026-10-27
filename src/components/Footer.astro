@@ -5,25 +5,31 @@ import SocialLinks from './SocialLinks.astro';
 const t = translate();
 const f = theme.footer,
   counter = f.visit_counter;
+// SSG 在构建时计算结束年，跨年后需重新构建；运行时统计另用 footer.runtime.since。
+const currentYear = new Date().getFullYear();
+const copyrightYears = theme.since === currentYear ? `${currentYear}` : `${theme.since}–${currentYear}`;
 ---
 
 <footer class="site-footer">
   <div class="compact-social">
     <SocialLinks />
   </div>
-  <div class="footer-row">
+  <div class="footer-row footer-credits">
     {f.copyright && (
-      <span>
-        © {theme.since}–{new Date().getFullYear()} {theme.profile.author}
+      <span class="footer-copyright">
+        © {copyrightYears} {theme.profile.author}
       </span>
     )}
     {f.powered_by && (
-      <span>
+      <span class="footer-powered">
         Powered by{' '}
-        <a href="https://astro.build/" rel="noopener">
+        <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">
           Astro
         </a>{' '}
-        · AutuSwing
+        ·{' '}
+        <a href="https://github.com/AkiSenn/astro-theme-autuswing" target="_blank" rel="noopener noreferrer">
+          AutuSwing
+        </a>
       </span>
     )}
   </div>
