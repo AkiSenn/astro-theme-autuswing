@@ -28,7 +28,11 @@ export const contentSchema = z.looseObject({
   noindex: z.boolean().optional(),
   search: z.boolean().optional(),
   feed: z.boolean().optional(),
-  password: z.string().optional(),
+  // 只兼容旧空字段；历史非空值也须停下确认公开意图，不能自动转为可索引。
+  password: z.string().refine(
+    (value) => value.length === 0,
+    'password 不提供加密或访问保护，禁止使用非空值。历史文章请先确认公开意图；仅禁止收录请显式使用 noindex: true，保密内容请设为草稿或 published: false，并在确认后迁移此字段。',
+  ).optional(),
   comments: z.boolean().optional(),
   comment_id: z.union([z.string(), z.number()]).optional(),
   toc: z.boolean().optional(),
