@@ -1,4 +1,5 @@
-import { posts, isIndexable, plain } from '../lib/content';
+import { posts, isIndexable } from '../lib/content';
+import { searchText } from '../lib/search-index.mjs';
 import { theme } from '../site.config';
 export async function GET() {
   const items = (await posts())
@@ -9,7 +10,7 @@ export async function GET() {
       tags: p.tags,
       categories: p.categories,
       excerpt: p.excerpt,
-      content: theme.search.content ? plain(p.html).slice(0, theme.search.max_content_length) : '',
+      content: theme.search.content ? searchText(p.html) : '',
     }));
   return Response.json(theme.search.enable ? items : []);
 }

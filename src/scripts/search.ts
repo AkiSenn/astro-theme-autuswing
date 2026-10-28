@@ -1,4 +1,4 @@
-import { search, normalize, type SearchItem } from '../lib/search';
+import { search, searchExcerpt, normalize, type SearchItem } from '../lib/search';
 import { client } from './helpers';
 import { openDialog, closeDialog, restoreDialogFocus } from './dialogs';
 export function initSearch() {
@@ -117,11 +117,7 @@ export function initSearch() {
           p = document.createElement('p');
         a.href = item.url;
         highlight(h, item.title, terms);
-        highlight(
-          p,
-          item.excerpt || item.content.slice(0, config.searchOptions.excerpt_length),
-          terms,
-        );
+        highlight(p, searchExcerpt(item, query, config.searchOptions.excerpt_length), terms);
         a.append(h, p);
         li.append(a);
         list.append(li);

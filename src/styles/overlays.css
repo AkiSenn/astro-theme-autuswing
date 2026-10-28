@@ -115,6 +115,7 @@ dialog::backdrop {
 }
 .search-results a {
   display: block;
+  overflow-wrap: break-word;
   border-radius: var(--radius-panel);
   padding: 14px;
   border-bottom: 1px solid var(--line);
