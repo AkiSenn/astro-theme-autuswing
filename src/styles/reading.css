@@ -490,6 +490,9 @@
 .mica-article .article-header {
   padding-bottom: var(--space-6);
 }
+.article-mobile-details {
+  display: none;
+}
 .article-header h1,
 .mica-article .article-header h1 {
   font-size: clamp(28px, 2.7vw, 36px);
@@ -550,6 +553,23 @@
   overflow-wrap: anywhere;
 }
 @media not all and (min-width: 720px) {
+  .article-page .article-header {
+    padding-bottom: var(--space-4);
+  }
+  .article-page .article-header h1 {
+    margin-bottom: var(--space-3);
+  }
+  .article-page .article-header .article-meta-secondary,
+  .article-page .article-header .card-tags {
+    display: none;
+  }
+  .article-page .article-mobile-details {
+    display: block;
+    padding-bottom: var(--space-5);
+  }
+  .article-mobile-details > :first-child {
+    margin-top: 0;
+  }
   .article-header h1,
   .mica-article .article-header h1 {
     font-size: 27px;

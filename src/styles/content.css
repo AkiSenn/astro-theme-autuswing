@@ -540,6 +540,12 @@ html[data-theme='dark'] .prose .astro-code span {
   max-width: var(--reading-width);
 }
 @media not all and (min-width: 720px) {
+  .article-page .article-layout .prose {
+    padding-top: var(--space-4);
+  }
+  .article-page .article-layout .prose > :first-child {
+    margin-top: 0;
+  }
   .article-layout .prose,
   .mica-article .prose {
     font-size: var(--autuswing-base-font, 16px);
