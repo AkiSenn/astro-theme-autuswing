@@ -78,6 +78,9 @@ html:has(dialog[open]) {
   .article-page #main {
     padding-top: var(--space-6);
   }
+  .article-page #main {
+    padding-top: var(--space-4);
+  }
   .article-page .main-shell {
     padding-left: 0;
     padding-right: 0;

@@ -22,6 +22,10 @@ const { post } = Astro.props,
 const Content = post.rendered.Content;
 const coverSize =
   post.data.cover && !post.isLegacy ? await localImageDimensions(post.data.cover) : undefined;
+const showUpdated = theme.article.updated && post.updated !== post.date;
+// 文末版权已有更新时间；关闭版权模块时仍保留这项文章信息。
+const showMobileUpdated = showUpdated && !theme.copyright.enable;
+const hasTaxonomy = post.categoryItems.length > 0 || post.tags.length > 0;
 const networks: Record<string, string> = {
   weibo: `https://service.weibo.com/share/share.php?url=${encodeURIComponent(absolute(post.path))}&title=${encodeURIComponent(post.title)}`,
   twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(absolute(post.path))}&text=${encodeURIComponent(post.title)}`,
@@ -62,13 +66,13 @@ const related = theme.reading.related
             </span>
           )}
           {theme.article.word_count && (
-            <span>
+            <span class="article-meta-secondary">
               {' '}
               {post.words} {t('words')}
             </span>
           )}
-          {theme.article.updated && post.updated !== post.date && (
-            <span>
+          {showUpdated && (
+            <span class="article-meta-secondary">
               {' '}
               {t('updated')} <time datetime={post.updated}>{formatDate(post.updated)}</time>
             </span>
@@ -99,6 +103,36 @@ const related = theme.reading.related
       <div class="prose">
         <Content />
       </div>
+      {(theme.article.word_count || showMobileUpdated || hasTaxonomy) && (
+        <div class="article-mobile-details">
+          {(theme.article.word_count || showMobileUpdated) && (
+            <div class="post-meta">
+              {theme.article.word_count && (
+                <span>
+                  {post.words} {t('words')}
+                </span>
+              )}
+              {showMobileUpdated && (
+                <span>
+                  {t('updated')} <time datetime={post.updated}>{formatDate(post.updated)}</time>
+                </span>
+              )}
+            </div>
+          )}
+          {hasTaxonomy && (
+            <div class="card-tags">
+              {post.categoryItems.map((c) => (
+                <a class="category-label" href={c.path}>
+                  {c.name}
+                </a>
+              ))}
+              {post.tags.map((tag) => (
+                <a href={`/tags/${tag}/`}>#{tag}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
       <CopyrightNotice post={post} />
       {theme.article.share.length > 0 && (
         <div class="article-actions" aria-label="分享文章">
