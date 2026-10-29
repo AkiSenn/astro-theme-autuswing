@@ -493,6 +493,9 @@
 .article-mobile-details {
   display: none;
 }
+.article-meta-mobile-updated {
+  display: none;
+}
 .article-header h1,
 .mica-article .article-header h1 {
   font-size: clamp(28px, 2.7vw, 36px);
@@ -562,6 +565,9 @@
   .article-page .article-header .article-meta-secondary,
   .article-page .article-header .card-tags {
     display: none;
+  }
+  .article-page .article-header .article-meta-mobile-updated {
+    display: inline;
   }
   .article-page .article-mobile-details {
     display: block;

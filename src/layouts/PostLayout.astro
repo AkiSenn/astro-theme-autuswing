@@ -5,6 +5,7 @@ import BaseLayout from './BaseLayout.astro';
 import { posts, type Post, isIndexable } from '../lib/content';
 import { absolute } from '../lib/urls';
 import { formatDate } from '../lib/dates';
+import { cardUpdated } from '../lib/card-updated';
 import { theme } from '../site.config';
 import Comments from '../components/Comments.astro';
 import SurfaceWallpaper from '../components/SurfaceWallpaper.astro';
@@ -23,6 +24,7 @@ const Content = post.rendered.Content;
 const coverSize =
   post.data.cover && !post.isLegacy ? await localImageDimensions(post.data.cover) : undefined;
 const showUpdated = theme.article.updated && post.updated !== post.date;
+const mobileUpdated = theme.article.updated ? cardUpdated(post.data) : undefined;
 // 文末版权已有更新时间；关闭版权模块时仍保留这项文章信息。
 const showMobileUpdated = showUpdated && !theme.copyright.enable;
 const hasTaxonomy = post.categoryItems.length > 0 || post.tags.length > 0;
@@ -75,6 +77,14 @@ const related = theme.reading.related
             <span class="article-meta-secondary">
               {' '}
               {t('updated')} <time datetime={post.updated}>{formatDate(post.updated)}</time>
+            </span>
+          )}
+          {mobileUpdated && (
+            <span class="article-meta-mobile-updated">
+              {t('updated')}{' '}
+              <time datetime={mobileUpdated.datetime}>
+                {mobileUpdated.label.replaceAll('-', '.')}
+              </time>
             </span>
           )}
         </div>

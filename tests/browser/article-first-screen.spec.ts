@@ -20,7 +20,9 @@ for (const width of [320, 375, 390, 430]) {
     const header = page.locator('.article-header');
     await expect(header.locator('h1')).toBeVisible();
     await expect(header.locator('.post-meta > time')).toBeVisible();
-    await expect(header.locator('.post-meta > :visible')).toHaveCount(2);
+    await expect(header.locator('.post-meta > :visible')).toHaveCount(3);
+    await expect(header.locator('.article-meta-mobile-updated')).toBeVisible();
+    await expect(header.locator('.article-meta-mobile-updated')).toHaveText('更新于 2026.10.05');
     for (const el of await header.locator('.article-meta-secondary, .card-tags').all()) {
       await expect(el).toBeHidden();
     }

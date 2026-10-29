@@ -20,7 +20,9 @@ for (const width of [375, 390]) {
     await expect(page).toHaveURL(/\/post\/55b0541c\/$/);
     await page.evaluate(() => document.fonts.ready);
     await expect(page.locator('.article-header h1')).toBeVisible();
-    await expect(page.locator('.article-header .post-meta > :visible')).toHaveCount(2);
+    await expect(page.locator('.article-header .post-meta > :visible')).toHaveCount(3);
+    await expect(page.locator('.article-meta-mobile-updated')).toBeVisible();
+    await expect(page.locator('.article-meta-mobile-updated')).toHaveText('更新于 2026.10.05');
     await expect(page.locator('.article-header .card-tags')).toBeHidden();
     const details = page.locator('.article-mobile-details');
     await expect(details).toBeVisible();
