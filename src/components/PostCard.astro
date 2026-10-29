@@ -2,6 +2,7 @@
 import { translate } from '../lib/i18n';
 const t = translate();
 import type { Post } from '../lib/content';
+import { cardUpdated } from '../lib/card-updated';
 import { theme } from '../site.config';
 import SurfaceWallpaper from './SurfaceWallpaper.astro';
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 const { post } = Astro.props;
 const Content = post.rendered.Content;
+const updated = theme.article.updated ? cardUpdated(post.data) : undefined;
 ---
 
 <article
@@ -37,6 +39,11 @@ const Content = post.rendered.Content;
         <span>
           {post.minutes} {t('minutes')}
         </span>
+      )}
+      {updated && (
+        <time datetime={updated.datetime}>
+          {t('updated')} {updated.label}
+        </time>
       )}
     </div>
     <h2 class="post-card-title">
