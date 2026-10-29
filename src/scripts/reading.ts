@@ -1,4 +1,5 @@
 import { scrollBehavior } from './helpers';
+let disposeReading: (() => void) | undefined;
 export function chapterAt(positions: readonly number[], boundary: number) {
   let low = 0,
     high = positions.length;
@@ -11,11 +12,36 @@ export function chapterAt(positions: readonly number[], boundary: number) {
 }
 
 export function initReading() {
+  disposeReading?.();
   const back = document.querySelector<HTMLButtonElement>('.back-top'),
     tools = document.querySelector<HTMLElement>('.floating-tools'),
     contentsButton = tools?.querySelector<HTMLElement>('.goto-toc'),
     pane = document.querySelector<HTMLElement>('.reading-sidebar-scroll'),
-    article = document.querySelector<HTMLElement>('.article');
+    contentRoot = document.querySelector<HTMLElement>('.article, .standalone-page');
+  const subscriptions: (() => void)[] = [];
+  let disposed = false,
+    observer: ResizeObserver | undefined,
+    updateFrame: number | undefined,
+    followFrame: number | undefined;
+  function listen(
+    target: EventTarget,
+    name: string,
+    handler: EventListener,
+    options?: AddEventListenerOptions | boolean,
+  ) {
+    target.addEventListener(name, handler, options);
+    subscriptions.push(() => target.removeEventListener(name, handler, options));
+  }
+  function cleanup() {
+    if (disposed) return;
+    disposed = true;
+    subscriptions.splice(0).forEach((remove) => remove());
+    observer?.disconnect();
+    if (updateFrame !== undefined) cancelAnimationFrame(updateFrame);
+    if (followFrame !== undefined) cancelAnimationFrame(followFrame);
+    if (disposeReading === cleanup) disposeReading = undefined;
+  }
+  disposeReading = cleanup;
   type Group = { heading: HTMLElement; links: HTMLAnchorElement[] };
   const groups = new Map<string, Group>();
   document.querySelectorAll<HTMLAnchorElement>('.toc-link').forEach((link) => {
@@ -31,10 +57,11 @@ export function initReading() {
     group.links.push(link);
     groups.set(id, group);
   });
+  // null 强制首次同步，重复初始化时也能清除上次留下的高亮。
   let pending = false,
     dirty = true,
     followPending = false,
-    active: string | undefined,
+    active: string | undefined | null = null,
     readingLine = 0,
     maximumScroll = 0,
     positions: number[] = [],
@@ -49,11 +76,12 @@ export function initReading() {
     }
   }
   function follow() {
-    if (followPending) return;
+    if (disposed || followPending) return;
     followPending = true;
-    requestAnimationFrame(() => {
+    followFrame = requestAnimationFrame(() => {
+      followFrame = undefined;
       followPending = false;
-      followCurrentChapter();
+      if (!disposed) followCurrentChapter();
     });
   }
   function updateTools(y = scrollY) {
@@ -61,7 +89,9 @@ export function initReading() {
     if (tools) tools.hidden = y < 250 && (!contentsButton || contentsButton.hidden);
   }
   function update() {
+    updateFrame = undefined;
     pending = false;
+    if (disposed) return;
     const y = scrollY;
     if (dirty) {
       // 与原生锚点采用相同的 padding/margin 坐标；滚动中只查缓存，不逐标题读布局。
@@ -94,49 +124,58 @@ export function initReading() {
           else link.removeAttribute('aria-current');
         }),
       );
-      follow();
+      if (groups.size) follow();
     }
     updateTools(y);
   }
   function schedule() {
-    if (pending) return;
+    if (disposed || pending) return;
     pending = true;
-    requestAnimationFrame(update);
+    updateFrame = requestAnimationFrame(update);
   }
   function invalidate() {
+    if (disposed) return;
     dirty = true;
     schedule();
   }
-  addEventListener('scroll', schedule, { passive: true });
-  addEventListener('resize', invalidate);
-  addEventListener('pageshow', invalidate);
-  addEventListener('hashchange', schedule);
-  document.addEventListener('reading-contents-change', () => {
+  listen(window, 'scroll', schedule, { passive: true });
+  listen(window, 'resize', invalidate);
+  listen(window, 'pageshow', invalidate);
+  listen(window, 'hashchange', schedule);
+  // 缓存恢复仍复用当前文档；只有最终离页才释放订阅。
+  listen(window, 'pagehide', (event) => {
+    if (!(event as PageTransitionEvent).persisted) cleanup();
+  });
+  listen(document, 'reading-contents-change', () => {
     // 关闭旧 Dialog 后，焦点恢复前必须同步显示目录入口。
     updateTools();
     invalidate();
     follow();
   });
   if (groups.size) {
-    if (article && 'ResizeObserver' in window) new ResizeObserver(invalidate).observe(article);
+    if (contentRoot && 'ResizeObserver' in window) {
+      observer = new ResizeObserver(invalidate);
+      observer.observe(contentRoot);
+    }
     const contentChanged = (event: Event) => {
       const target = event.target;
       if (
         target instanceof Element &&
-        article &&
-        (article.contains(target) || target.contains(article))
+        contentRoot &&
+        (contentRoot.contains(target) || target.contains(contentRoot))
       )
         invalidate();
     };
-    document.addEventListener('load', contentChanged, true);
-    document.addEventListener('toggle', contentChanged, true);
+    listen(document, 'load', contentChanged, true);
+    listen(document, 'toggle', contentChanged, true);
     // 入场 transform 不触发 ResizeObserver，结束后需刷新标题坐标。
-    document.addEventListener('animationend', contentChanged, true);
-    document.addEventListener('animationcancel', contentChanged, true);
-    document.addEventListener('transitionend', contentChanged, true);
+    listen(document, 'animationend', contentChanged, true);
+    listen(document, 'animationcancel', contentChanged, true);
+    listen(document, 'transitionend', contentChanged, true);
     document.fonts?.ready.then(invalidate);
-    document.fonts?.addEventListener('loadingdone', invalidate);
+    if (document.fonts) listen(document.fonts, 'loadingdone', invalidate);
   }
   update();
-  back?.addEventListener('click', () => scrollTo({ top: 0, behavior: scrollBehavior() }));
+  if (back) listen(back, 'click', () => scrollTo({ top: 0, behavior: scrollBehavior() }));
+  return cleanup;
 }
