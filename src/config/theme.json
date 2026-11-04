@@ -160,6 +160,8 @@
   "footer": {
     "copyright": true,
     "powered_by": true,
+    "theme_name": "AutuSwing",
+    "theme_url": "https://github.com/AkiSenn/astro-theme-autuswing",
     "custom": "",
     "icp": "粤ICP备2026144331号-1",
     "icp_link": "https://beian.miit.gov.cn/",

@@ -1,6 +1,7 @@
 import { unified } from '@astrojs/markdown-remark';
 import legacy from '../../migration/effective-metadata.json' with { type: 'json' };
 import theme from '../config/theme.json' with { type: 'json' };
+import site from '../config/site.json' with { type: 'json' };
 import { imageUrl } from './image-url.mjs';
 import rehypeRaw from 'rehype-raw';
 import { mathEnabled, renderMath } from './math.mjs';
@@ -113,7 +114,8 @@ function rejectHexoTags() {
     visit(tree);
   };
 }
-export function compatibleHtml() {
+export function compatibleHtml({ siteUrl = site.url } = {}) {
+  const siteOrigin = new URL(siteUrl).origin;
   return async (tree, file) => {
     const data = file.data.astro?.frontmatter || {},
       old = legacy.find((p) => p.abbrlink === String(data.abbrlink || data.id || ''));
@@ -170,10 +172,10 @@ export function compatibleHtml() {
         }
         if (node.tagName === 'a' && theme.open_in_new) {
           try {
-            const url = new URL(node.properties.href, 'https://akisenn.com');
+            const url = new URL(node.properties.href, siteUrl);
             if (
               /^https?:$/.test(url.protocol) &&
-              url.origin !== 'https://akisenn.com' &&
+              url.origin !== siteOrigin &&
               !theme.open_in_new_exclude.some(
                 (host) => url.hostname === host || url.hostname.endsWith('.' + host),
               )

@@ -20,6 +20,16 @@
 | performance                                                            | Astro/Vite 压缩、可选 gzip/Brotli 侧文件、缓存头、渐进预取；侧文件不表示服务器已启用对应编码                                                                    |
 | pwa                                                                    | 静态 manifest、隔离 cache 名称的 SW、离线页；不缓存全部文章 HTML                                                                                                |
 
+## 品牌、导航与社交
+
+站名、SEO 默认作者与离线页标题作者读取 `site.json` 的 `title` / `author`；正式链接和 Markdown 站外链接判断读取 `url`。侧栏、页脚版权和文章版权的默认署名仍读取 `theme.json` 的 `profile.author`，侧栏标语读取 `profile.subtitle`；两处作者可按用途分别设置，界面字典不保存个人信息。
+
+`theme.json` 的 `menu` 按键的声明顺序生成三端共用导航。值可直接写路径，也可写 `{ "path": "/notes/", "icon": "book", "new_tab": true }`；`url` 是 `path` 的兼容别名，同时提供时优先 `path`，两者均空时回到 `/`。内置键 `Home` / `Archives` / `Tags` / `Categories` / `Links` / `About` 使用界面字典和默认图标，其他键原样显示；显式 `icon` 优先，未知导航默认使用 `globe`。
+
+`social` 同样保留声明顺序。值可为 URL 字符串，或 `{ "url": "https://example.com", "icon": "globe" }`；兼容 `path` 别名，优先 `url`，未写图标时使用条目名。空字符串、`false` 和 `null` 不生成条目；`true` 不是有效链接，会明确报错。`profile.email` 非空且没有名称为 `Email` / `Mail`（不区分大小写）的有效条目时，才追加邮箱入口。RSS 仍单独由 `feed.enable` 控制。
+
+页脚主题署名由可选的 `footer.theme_name` / `footer.theme_url` 设置；旧配置缺少这两项时仍使用现有 AutuSwing 名称与仓库链接。`footer.powered_by` 继续控制整组来源信息。版权开关、起始年 `since`、备案信息和 `footer.custom` 的消费方式不变。导航、社交和主题署名链接沿用 `safeLink`，不支持的协议及以 `//` 开头的地址回退为 `#`；新窗口链接保留安全的 `rel` 属性。配置类型与派生规则集中在 `src/lib/site-options.ts`，由 `site.config.ts` 连接 JSON 与视图，不需要修改三套导航模板。
+
 ## 移除的旧构建控制项
 
 搜索保持 `/search.json` 的每篇一条记录格式，默认首次输入查询才下载，当前页面复用索引与规范化文本。`search.content` 开启时索引完整正文、行内代码及代码块；旧 `search.max_content_length` 字段保留配置兼容，但不再截断正文。`search.excerpt_length` 控制命中上下文长度；仅标题或标签命中时回退到文章摘要。草稿、未发布、noindex、password 非空和 `search: false` 的文章仍不进入索引；noindex 本身不提供访问保护。

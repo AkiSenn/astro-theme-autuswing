@@ -10,8 +10,156 @@ import {
 import { parseDate } from '../src/lib/dates';
 import { search } from '../src/lib/search';
 import { frontmatter } from '../src/lib/frontmatter.mjs';
-import { protectMath, markdownProcessor } from '../src/lib/markdown.mjs';
+import { protectMath, markdownProcessor, compatibleHtml } from '../src/lib/markdown.mjs';
 import { redirects } from '../scripts/static-artifacts.mjs';
+import {
+  normalizeMenu,
+  normalizeSocial,
+  navigationItems,
+  normalizeFooter,
+} from '../src/lib/site-options';
+
+test('footer theme attribution keeps legacy defaults and accepts explicit configuration', () => {
+  assert.deepEqual(
+    normalizeFooter({ powered_by: false, copyright: false, custom: '<span>Custom</span>' }),
+    {
+      powered_by: false,
+      copyright: false,
+      custom: '<span>Custom</span>',
+      theme_name: 'AutuSwing',
+      theme_url: 'https://github.com/AkiSenn/astro-theme-autuswing',
+    },
+  );
+  assert.deepEqual(
+    normalizeFooter({ powered_by: true, theme_name: 'Custom', theme_url: '/credits/' }),
+    {
+      powered_by: true,
+      theme_name: 'Custom',
+      theme_url: '/credits/',
+    },
+  );
+  assert.equal(normalizeFooter({ powered_by: true, theme_name: '', theme_url: '' }).theme_url, '');
+});
+
+test('menu configuration retains order, aliases, icons and explicit new-tab choices', () => {
+  assert.deepEqual(
+    normalizeMenu({
+      Home: '/',
+      Notes: { path: '/notes/', url: '/ignored/', icon: 'book', new_tab: true },
+      External: { url: 'https://notes.example', new_tab: false },
+      Empty: {},
+    }),
+    [
+      { name: 'Home', path: '/', icon: '', new_tab: false },
+      { name: 'Notes', path: '/notes/', icon: 'book', new_tab: true },
+      { name: 'External', path: 'https://notes.example', icon: '', new_tab: false },
+      { name: 'Empty', path: '/', icon: '', new_tab: false },
+    ],
+  );
+});
+
+test('all layouts share translated built-in navigation and literal custom names', () => {
+  const menu = normalizeMenu({
+    Home: '/',
+    Archives: '/archives/',
+    Tags: '/tags/',
+    Categories: '/categories/',
+    Links: '/links/',
+    About: { path: '/about/', icon: 'heart' },
+    我的笔记: '/notes/',
+    constructor: '/custom/',
+  });
+  const zh = navigationItems(menu, 'zh-CN');
+  assert.deepEqual(
+    zh.map((item) => item.label),
+    ['首页', '归档', '标签', '分类', '友链', '关于', '我的笔记', 'constructor'],
+  );
+  assert.deepEqual(
+    zh.map((item) => item.icon),
+    ['home', 'list', 'tag', 'folder', 'link', 'heart', 'globe', 'globe'],
+  );
+  assert.deepEqual(
+    navigationItems(menu, 'en').map((item) => item.label),
+    ['Home', 'Archives', 'Tags', 'Categories', 'Friends', 'About', '我的笔记', 'constructor'],
+  );
+  assert.equal(menu[0].icon, '', 'Navigation defaults do not mutate raw derived menu items');
+});
+
+test('social configuration keeps URL aliases, default icons and disabled entries', () => {
+  assert.deepEqual(
+    normalizeSocial(
+      {
+        GitHub: 'https://github.com/example',
+        Notes: { url: 'https://notes.example', path: '/ignored/', icon: 'book' },
+        Contact: { path: '/contact/' },
+        Off: false,
+        Missing: null,
+        Empty: '',
+      },
+      'owner@example.test',
+    ),
+    [
+      { name: 'GitHub', url: 'https://github.com/example', icon: 'GitHub' },
+      { name: 'Notes', url: 'https://notes.example', icon: 'book' },
+      { name: 'Contact', url: '/contact/', icon: 'Contact' },
+      { name: 'Email', url: 'mailto:owner@example.test', icon: 'mail' },
+    ],
+  );
+  assert.deepEqual(normalizeSocial({}, 'mailto:owner@example.test'), [
+    { name: 'Email', url: 'mailto:owner@example.test', icon: 'mail' },
+  ]);
+  for (const name of ['Email', 'MAIL', 'email'])
+    assert.deepEqual(
+      normalizeSocial({ [name]: 'mailto:custom@example.test' }, 'fallback@example.test'),
+      [{ name, url: 'mailto:custom@example.test', icon: name }],
+    );
+  assert.deepEqual(normalizeSocial({ Email: '' }, 'owner@example.test'), [
+    { name: 'Email', url: 'mailto:owner@example.test', icon: 'mail' },
+  ]);
+  assert.deepEqual(normalizeSocial({}), []);
+});
+
+test('social accepts JSON-style widened booleans only for disabled entries', () => {
+  const social = {
+    Notes: 'https://notes.example',
+    Disabled: false,
+    DisabledNull: null,
+    DisabledEmpty: '',
+  };
+  assert.deepEqual(normalizeSocial(social), [
+    { name: 'Notes', url: 'https://notes.example', icon: 'Notes' },
+  ]);
+  assert.throws(() => normalizeSocial({ ...social, Invalid: true }), {
+    name: 'TypeError',
+    message: /social\.Invalid.*true/,
+  });
+});
+
+test('Markdown external-link policy follows the configured origin, including URL paths', async () => {
+  const links = [
+    '/local/',
+    'https://notes.example/internal/',
+    'https://akisenn.com/previous-site/',
+    'https://other.example/article/',
+    'mailto:owner@notes.example',
+    '#heading',
+  ].map((href) => ({
+    type: 'element',
+    tagName: 'a',
+    properties: { href } as Record<string, unknown>,
+    children: [],
+  }));
+  await compatibleHtml({ siteUrl: 'https://notes.example/blog/' })(
+    { type: 'root', children: links },
+    { data: {} },
+  );
+  assert.deepEqual(
+    links.map((link) => link.properties.target),
+    [undefined, undefined, '_blank', '_blank', undefined, undefined],
+  );
+  assert.deepEqual(links[2].properties.rel, ['noopener', 'noreferrer']);
+  assert.deepEqual(links[3].properties.rel, ['noopener', 'noreferrer']);
+});
 
 test('public IDs are persistent; explicit URLs and leading zeros are retained', () => {
   assert.equal(publicPath({ id: '00123', abbrlink: 'other' }), '/post/00123/');

@@ -5,6 +5,18 @@ import { webcrypto } from 'node:crypto';
 import { serviceWorker } from '../src/lib/service-worker.mjs';
 import { pwaIcons } from '../src/lib/pwa-icons.mjs';
 import { imageMetadata } from 'astro/assets/utils';
+import { offlineDocument, offlineHtml } from '../src/lib/offline.mjs';
+import site from '../src/config/site.json';
+import { load } from 'cheerio';
+
+test('offline branding follows site author and cannot inject document markup', () => {
+  assert.equal(load(offlineHtml)('title').text(), `暂时离线 · ${site.author}`);
+  const author = 'Writer & </title><script>alert(1)</script>';
+  const page = load(offlineDocument(author));
+  assert.equal(page('title').text(), `暂时离线 · ${author}`);
+  assert.equal(page('script').length, 0);
+  assert.equal(page('a[href="/"]').text(), '返回首页');
+});
 
 function runtime(
   html: string,

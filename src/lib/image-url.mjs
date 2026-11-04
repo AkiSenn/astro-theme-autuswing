@@ -2,10 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import theme from '../config/theme.json' with { type: 'json' };
+import site from '../config/site.json' with { type: 'json' };
 export function imageUrl(value, pagePath = '/') {
   if (!theme.assets.image_fingerprint || !value || /^(?:https?:|data:|\/\/|#)/i.test(value))
     return value;
-  const url = new URL(value, 'https://akisenn.com' + pagePath),
+  const url = new URL(value, new URL(pagePath, site.url)),
     root = path.resolve('public'),
     file = path.resolve(root, '.' + decodeURIComponent(url.pathname));
   if (!file.startsWith(root + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile())

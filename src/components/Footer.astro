@@ -8,6 +8,7 @@ const f = theme.footer,
 // SSG 在构建时计算结束年，跨年后需重新构建；运行时统计另用 footer.runtime.since。
 const currentYear = new Date().getFullYear();
 const copyrightYears = theme.since === currentYear ? `${currentYear}` : `${theme.since}–${currentYear}`;
+// 主题署名保留原 HTML 换行，避免配置化后编译器改成空格。
 ---
 
 <footer class="site-footer">
@@ -27,9 +28,7 @@ const copyrightYears = theme.since === currentYear ? `${currentYear}` : `${theme
           Astro
         </a>{' '}
         ·{' '}
-        <a href="https://github.com/AkiSenn/astro-theme-autuswing" target="_blank" rel="noopener noreferrer">
-          AutuSwing
-        </a>
+        <a href={safeLink(f.theme_url)} target="_blank" rel="noopener noreferrer">{`\n${f.theme_name}\n`}</a>
       </span>
     )}
   </div>
