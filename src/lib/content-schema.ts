@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 import { parseDate } from './dates';
+import { persistentId, publicPath } from './urls';
 
 const date = z.string().refine((value) => {
   try {
@@ -10,14 +11,34 @@ const date = z.string().refine((value) => {
   }
 }, 'Use a valid calendar date, preferably ISO 8601 with a timezone');
 
+const publicId = z.union([z.string(), z.number()]).refine((value) => {
+  if (value === '') return true;
+  try {
+    persistentId({ id: value });
+    return true;
+  } catch {
+    return false;
+  }
+}, 'Invalid public ID; use 1–64 letters, digits, underscores or hyphens');
+
+const permalink = z.string().refine((value) => {
+  if (value === '') return true;
+  try {
+    publicPath({ permalink: value });
+    return true;
+  } catch {
+    return false;
+  }
+}, 'Permalink must be a safe local path without an origin, query, fragment or traversal');
+
 // Unknown legacy/custom fields remain available to the author and renderer.
 export const contentSchema = z.looseObject({
   title: z.string().refine((value) => !!value.trim(), 'Title must not be empty'),
   date,
   updated: date.optional(),
-  id: z.union([z.string(), z.number()]).optional(),
-  abbrlink: z.union([z.string(), z.number()]).optional(),
-  permalink: z.string().optional(),
+  id: publicId.optional(),
+  abbrlink: publicId.optional(),
+  permalink: permalink.optional(),
   description: z.string().optional(),
   excerpt: z.string().optional(),
   author: z.string().optional(),

@@ -15,16 +15,42 @@ npm run check:content -- --drafts
 
 新文件默认 `draft: true`，构建、首页、归档、搜索、RSS、Sitemap 均不发布草稿。`published: false` 同样阻止发布；两者同时存在时，任一个禁止发布即可生效。完成写作后显式改为 `draft: false`，再运行 `npm run publish:check`：依赖 → 类型/原稿/单元/历史完整性检查 → 生产构建一次 → 同一产物的资源、动态内容与 SEO 门禁。成功输出独立候选目录及 READY，失败退出非零；不覆盖日常 `dist/`，也不部署。只公开候选里的 `site/`，上传前运行 `npm run verify:release -- <候选目录>`。见[发布与回滚手册](../deployment/release-runbook.md)。
 
-| 字段                 | 要求                                                           |
-| -------------------- | -------------------------------------------------------------- |
-| title、date          | 必填；标题非空，日期必须是真实日历日期                         |
-| id 或 abbrlink       | 文章必须有持久 ID；新稿脚本自动写入 id/permalink，不应手工重建 |
-| updated              | 选填；不填沿用既有稳定回退；早于 date 提示作者核对             |
-| description、excerpt | 选填；手写优先，空值按既有正文摘要回退，不修改正文             |
-| tags、categories     | 选填；支持既有字符串、数组及分类层级数组                       |
-| draft、published     | 选填布尔值；旧文章缺省仍公开，避免迁移行为变化；新稿默认草稿   |
-| cover                | 选填图片 URL；本地文件必须存在                                 |
-| series、series_order | 选填系列名称与正整数顺序；当前保存元数据，不新增系列页面或导航 |
+| 字段                  | 要求                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------ |
+| title、date           | 必填；标题非空，日期必须是真实日历日期                                               |
+| id 或 abbrlink        | 文章必须有持久 ID；1–64 位字母、数字、下划线或连字符；新稿脚本自动写入，不应手工重建 |
+| permalink             | 选填安全站内路径；允许既有相对路径或 `.html`，不接受跨域、查询、片段及路径穿越       |
+| updated               | 选填；不填沿用既有稳定回退；早于 date 提示作者核对                                   |
+| description、excerpt  | 选填；手写优先，空值按既有正文摘要回退，不修改正文                                   |
+| tags、categories      | 选填；支持既有字符串、数组及分类层级数组                                             |
+| draft、published      | 选填布尔值；旧文章缺省仍公开，避免迁移行为变化；新稿默认草稿                         |
+| noindex、search、feed | 选填布尔值；分别控制收录、站内搜索和 Feed，不提供访问保护                            |
+| cover                 | 选填图片 URL；本地文件必须存在                                                       |
+| series、series_order  | 选填系列名称与正整数顺序；当前保存元数据，不新增系列页面或导航                       |
+
+Frontmatter 示例（编号仅作说明，实际保留新稿命令生成的 `id` 与 `permalink`）：
+
+```yaml
+---
+title: '使用 Astro 写作'
+date: '2026-11-04T10:00:00+08:00'
+updated: '2026-11-04T15:00:00+08:00'
+id: 'a1b2c3'
+permalink: '/a1b2c3/'
+description: '文章的手写摘要。'
+author: '作者名'
+tags: [Astro, 写作]
+categories: [[技术, 前端]]
+draft: true
+noindex: false
+search: true
+feed: true
+series: 'Astro 实践'
+series_order: 1
+---
+```
+
+不使用的选填字段可删除；布尔值使用未加引号的 `true`/`false`。校验保留合法字段原值和未知自定义字段，错误会标出文件、字段与原因；不会重新分配编号、规范化写回日期或改写 permalink。
 
 原稿检查不写回文件。发布内容的无效元数据、重复 ID、缺图、站内坏链接/锚点会报错；未知自定义字段和缺失 alt 只提示。`--drafts` 可检查未完成草稿的资源，其资源问题仅警告，元数据与 ID 仍需有效。生产输出检查必须在本次构建后运行 `npm run check:content -- --output`；构建前暂缓检查尚未生成的归档等链接。外部 HTTP 链接只统计，不在常规验收中联网判断可用性（登录限制、限流和网络波动会误判）。
 
@@ -38,7 +64,7 @@ npm run check:content -- --drafts
 
 数学公式自动检测并在构建时由 KaTeX 渲染，支持 `$…$`、`$$…$$`、`\(…\)`、`\[…\]`；新稿不必添加启用标记。旧 `mathjax: true`、`katex: true`、`math: true` 仍可保留，均使用 KaTeX。`math: false` 明确关闭；没有 `math` 主开关时，旧引擎的显式 false 表示关闭，任一 true 可启用。含不支持命令时构建会报出文章标题和表达式，先核查语法与宏，再评估是否需要 MathJax，不自动切换。详见[扫描结果与配置](math-rendering.md)。
 
-preview 默认 noindex，分享、RSS/Atom 标识与评论身份始终使用正式 canonical。`comment_id` 可覆盖默认路径标识；预览不初始化真实评论，生产配置当前也保持关闭。密码字段只按原主题排除索引，不代表实现了内容加密。
+preview 默认 noindex，分享、RSS/Atom 标识与评论身份始终使用正式 canonical。`comment_id` 可覆盖默认路径标识；预览不初始化真实评论，生产配置当前也保持关闭。`password` 不提供加密或访问保护，非空值（包括纯空白）会阻断校验；仅兼容旧的空字符串。历史文章须先确认公开意图：仅禁止收录使用 `noindex: true`，保密内容应设为草稿或 `published: false`，再明确迁移非空 password，不能自动转为可索引内容。
 
 复制副本校验：`npm run verify`。一次性导入工具已归档在迁移前备份的 `import-tools`，不属于新工程的日常构建命令；恢复内容时先核对迁移清单哈希，不覆盖不同内容的目标文件。
 
@@ -68,6 +94,8 @@ npm run legacy:approve -- --id 55b0541c --from <旧SHA256> --to <新SHA256> --re
 ## 本地草稿预览
 
 `npm run dev:drafts` 显式开启本地写作预览；已有静态预览占用端口时可用 `npm run dev:drafts -- --port 4323`。只有 Astro dev 模式会读取 `ASTRO_PREVIEW_DRAFTS=1`。即使误将该环境变量带入静态构建，也仍然过滤草稿；草稿在本地不进入搜索与 Feed，并保持 noindex。普通 `npm run dev` 也不显示草稿。预览地址就是新稿 frontmatter 保存的 permalink。
+
+该命令固定监听 `127.0.0.1`，强制使用 `SITE_ENV=preview`，避免继承终端中的生产模式而启用真实评论、统计或收录。只接受 `--port <端口>` 或 `--port=<端口>`，范围为 1–65535，默认 4322；无效端口、`--host`、`--config`、`--root` 等其他参数均在启动前报错。它复用 Astro dev，不提供对外分享草稿的服务。
 
 ## 技术 Markdown
 

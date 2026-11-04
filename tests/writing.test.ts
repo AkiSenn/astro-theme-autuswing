@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { createPost } from '../scripts/new-post.mjs';
+import { startDraftPreview } from '../scripts/dev-drafts.mjs';
 import { frontmatter } from '../src/lib/frontmatter.mjs';
 import { contentSchema, isPublished } from '../src/lib/content-schema';
 import { parseDate } from '../src/lib/dates';
@@ -67,6 +68,29 @@ test('schema is strict about mistakes, permissive about optional writing metadat
   assert.equal(isPublished({ draft: true, published: true }), false);
 });
 
+test('schema validates public identifiers and permalinks without changing author data', () => {
+  const ordinary = { title: '地址校验', date: '2024-02-29' };
+  for (const [field, value] of [
+    ['id', 'bad/id'],
+    ['abbrlink', 'bad id'],
+    ['permalink', 'https://example.invalid/post/'],
+    ['permalink', '/%252e%252e/private/'],
+  ]) {
+    const result = contentSchema.safeParse({ ...ordinary, [field]: value });
+    assert.equal(result.success, false, `${field}: ${value}`);
+    if (!result.success)
+      assert.ok(result.error.issues.some((issue) => issue.path.join('.') === field));
+  }
+  for (const extra of [
+    { id: '000123', abbrlink: 42, permalink: '/custom.html' },
+    { id: '', abbrlink: '000abc', permalink: '' },
+    { id: 42, permalink: 'notes/custom' },
+  ]) {
+    const input = { ...ordinary, ...extra, custom: { untouched: ['value', 42] } };
+    assert.deepEqual(contentSchema.parse(input), input);
+  }
+});
+
 test('all templates persist unique root IDs and default to draft without overwriting', () => {
   const { root, close } = workspace();
   try {
@@ -94,6 +118,66 @@ test('all templates persist unique root IDs and default to draft without overwri
   } finally {
     close();
   }
+});
+
+test('draft preview uses Astro on loopback and overrides inherited production settings', () => {
+  for (const [args, port] of [
+    [[], '4322'],
+    [['--port', '4323'], '4323'],
+    [['--port=4324'], '4324'],
+  ] as const) {
+    const child = {},
+      calls: any[] = [];
+    const result = startDraftPreview(
+      [...args],
+      {
+        SITE_ENV: 'production',
+        ASTRO_PREVIEW_DRAFTS: '0',
+        WRITING_TEST_VALUE: 'retained',
+      },
+      (...values: any[]) => {
+        calls.push(values);
+        return child;
+      },
+    );
+    assert.equal(result, child);
+    assert.equal(calls.length, 1);
+    const [command, argv, options] = calls[0];
+    assert.equal(command, process.execPath);
+    assert.ok(argv[0].replaceAll('\\', '/').endsWith('/node_modules/astro/bin/astro.mjs'));
+    assert.deepEqual(argv.slice(1), ['dev', '--host', '127.0.0.1', '--port', port]);
+    assert.equal(options.env.SITE_ENV, 'preview');
+    assert.equal(options.env.ASTRO_PREVIEW_DRAFTS, '1');
+    assert.equal(options.env.WRITING_TEST_VALUE, 'retained');
+  }
+});
+
+test('draft preview rejects network/configuration overrides and invalid ports before launching', () => {
+  let launches = 0;
+  const launch = () => {
+    launches++;
+  };
+  for (const args of [
+    ['--host'],
+    ['--host', '0.0.0.0'],
+    ['--host=::'],
+    ['--no-host'],
+    ['--config', 'other.mjs'],
+    ['--root', '..'],
+    ['--allowed-hosts'],
+    ['build'],
+    ['--port'],
+    ['--port', '0'],
+    ['--port', '65536'],
+    ['--port', '4322.5'],
+    ['--port=NaN'],
+    ['--port=-1'],
+  ])
+    assert.throws(
+      () => startDraftPreview(args, {}, launch),
+      /Unknown option|Unexpected argument|--port/,
+    );
+  assert.equal(launches, 0);
 });
 
 test('publication checks detect missing resources, anchors, IDs and warn about alt without rewriting', async () => {
@@ -160,6 +244,64 @@ test('external HTTP audit is opt-in and treats restrictions differently from mis
     assert.ok(calls.some((call) => call.startsWith('GET ') && call.endsWith('/fallback')));
   } finally {
     globalThis.fetch = originalFetch;
+    close();
+  }
+});
+
+test('publication checks return file and field context for invalid metadata and unsafe links', async () => {
+  const { root, close } = workspace();
+  try {
+    const file = createPost({ root, title: '不安全链接' });
+    const raw =
+      fs.readFileSync(file, 'utf8').replace('draft: true', 'draft: false') +
+      '\n[unsafe](/%252e%252e/private/)\n';
+    fs.writeFileSync(file, raw);
+    const draft = createPost({ root, title: '草稿资源' });
+    const draftRaw = fs.readFileSync(draft, 'utf8') + '\n[unsafe](/%252e%252e/draft/)\n';
+    fs.writeFileSync(draft, draftRaw);
+    const missingId = path.join(root, 'content/posts/missing-id.md');
+    fs.writeFileSync(missingId, '---\ntitle: 缺少编号\ndate: 2024-02-29\n---\n正文');
+    const invalid = path.join(root, 'content/posts/invalid.md');
+    fs.writeFileSync(
+      invalid,
+      '---\ntitle: 无效字段\ndate: 2024-02-29\nid: bad/id\npermalink: https://example.invalid/post/\n---\n正文',
+    );
+
+    const report = await checkContent({ root, output: true });
+    assert.ok(
+      report.issues.some(
+        (issue) =>
+          issue.file === 'content/posts/missing-id.md' &&
+          /id\/abbrlink:.*Missing persistent/.test(issue.message),
+      ),
+    );
+    for (const field of ['id', 'permalink'])
+      assert.ok(
+        report.issues.some(
+          (issue) =>
+            issue.file === 'content/posts/invalid.md' && issue.message.startsWith(`${field}: `),
+        ),
+      );
+    assert.ok(
+      report.issues.some(
+        (issue) =>
+          issue.file.endsWith(path.basename(file)) &&
+          /link:.*Unsafe local path/.test(issue.message),
+      ),
+    );
+    assert.ok(!report.issues.some((issue) => issue.file.endsWith(path.basename(draft))));
+    const draftReport = await checkContent({ root, output: true, includeDrafts: true });
+    assert.ok(
+      draftReport.issues.some(
+        (issue) =>
+          issue.file.endsWith(path.basename(draft)) &&
+          issue.level === 'warning' &&
+          /link:.*Unsafe local path/.test(issue.message),
+      ),
+    );
+    assert.equal(fs.readFileSync(file, 'utf8'), raw);
+    assert.equal(fs.readFileSync(draft, 'utf8'), draftRaw);
+  } finally {
     close();
   }
 });

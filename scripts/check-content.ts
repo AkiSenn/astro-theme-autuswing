@@ -10,6 +10,7 @@ import {
   persistentId,
   publicPath,
   newPostPath,
+  normalizePath,
   outputFile,
   assertUniquePaths,
 } from '../src/lib/urls';
@@ -69,8 +70,15 @@ export async function checkContent({
       const source = path.relative(path.join(root, 'content'), file).replaceAll('\\', '/');
       const post = source.startsWith('posts/') || source.startsWith('legacy/posts/');
       if (post) {
-        const id = persistentId(data).toLowerCase();
-        if (ids.has(id)) issue(file, `Duplicate persistent post ID: ${id} (${ids.get(id)})`);
+        let id: string;
+        try {
+          id = persistentId(data).toLowerCase();
+        } catch (error) {
+          issue(file, `id/abbrlink: ${(error as Error).message}`);
+          continue;
+        }
+        if (ids.has(id))
+          issue(file, `id/abbrlink: Duplicate persistent post ID: ${id} (${ids.get(id)})`);
         ids.set(id, file);
       }
       const url = post
@@ -174,10 +182,11 @@ export async function checkContent({
       }
       let pathname: string, fragment: string;
       try {
+        normalizePath(url.pathname);
         pathname = decodeURIComponent(url.pathname);
         fragment = decodeURIComponent(url.hash.slice(1));
-      } catch {
-        issue(file, `Invalid URL encoding: ${value}`, warn);
+      } catch (error) {
+        issue(file, `${image ? 'image' : 'link'}: ${(error as Error).message}`, warn);
         continue;
       }
       // Relative imported images are handled by Astro's native assets pipeline.
@@ -206,7 +215,13 @@ export async function checkContent({
         report.deferredLinks++;
         continue;
       }
-      const built = safeFile(outDir, '/' + outputFile(target));
+      let built: string | undefined;
+      try {
+        built = safeFile(outDir, '/' + outputFile(target));
+      } catch (error) {
+        issue(file, `link: ${(error as Error).message}`, warn);
+        continue;
+      }
       if (!image && output && built && fs.existsSync(built) && fs.statSync(built).isFile()) {
         if (
           fragment &&
