@@ -121,4 +121,4 @@ Remove-Item Env:SITE_ENV
 
 ## 致谢与许可证
 
-以 [MIT License](LICENSE) 开源。灵感致谢 **Yelee / MOxFIVE** 与 **Yilia / Litten**；内置第三方资源授权见 [THIRD-PARTY.md](THIRD-PARTY.md) 与 [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md)。
+以 [MIT License](LICENSE) 开源。灵感致谢 **Yelee / MOxFIVE** 与 **Yilia / Litten**；本项目由站主主导设计与维护，开发、迁移与开源整理过程中得益于 **Codex** 与 **Gemini 4 Neon** 的协作。内置第三方资源授权见 [THIRD-PARTY.md](THIRD-PARTY.md) 与 [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md)。

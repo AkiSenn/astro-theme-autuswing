@@ -101,4 +101,4 @@ Deploy `dist/` to **Cloudflare Pages**, **Vercel**, **Netlify**, **GitHub Pages*
 
 ## License & Credits
 
-Released under the [MIT License](LICENSE). Inspired by **Yelee / MOxFIVE** and **Yilia / Litten**. See [THIRD-PARTY.md](THIRD-PARTY.md) and [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md) for bundled third-party notices.
+Released under the [MIT License](LICENSE). Inspired by **Yelee / MOxFIVE** and **Yilia / Litten**. Designed and maintained by the author with engineering and release assistance from **Codex** and **Gemini 4 Neon**. See [THIRD-PARTY.md](THIRD-PARTY.md) and [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md) for bundled third-party notices.
