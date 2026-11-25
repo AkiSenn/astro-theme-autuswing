@@ -101,4 +101,10 @@ Deploy `dist/` to **Cloudflare Pages**, **Vercel**, **Netlify**, **GitHub Pages*
 
 ## License & Credits
 
-Released under the [MIT License](LICENSE). Inspired by **Yelee / MOxFIVE** and **Yilia / Litten**. Designed and maintained by the author with engineering and release assistance from **Codex** and **Gemini 4 Neon**. See [THIRD-PARTY.md](THIRD-PARTY.md) and [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md) for bundled third-party notices.
+Released under the [MIT License](LICENSE). Inspired by **Yelee / MOxFIVE** and **Yilia / Litten**. Designed and maintained by the author with collaborative development, migration, and open-source packaging powered by **Gemini 4 Neon**, **GPT 6.1 Sol**, and **DeepSeek V4.1 Flash 1017**. See [THIRD-PARTY.md](THIRD-PARTY.md) and [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md) for bundled third-party notices.
+
+<p align="center">
+  <img src="docs/assets/ai-collab-chibi.jpg" width="760" alt="AI collaboration chibi illustration: GPT directing while Gemini and DeepSeek code together">
+  <br>
+  <sub>AI collaboration commemorative illustration (chibi character inspiration from <a href="https://selinlee.github.io/ai-moe-atlas/zh/">AI Moe Atlas</a>, generated with Nano Banana)</sub>
+</p>

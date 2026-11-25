@@ -121,4 +121,10 @@ Remove-Item Env:SITE_ENV
 
 ## 致谢与许可证
 
-以 [MIT License](LICENSE) 开源。灵感致谢 **Yelee / MOxFIVE** 与 **Yilia / Litten**；本项目由站主主导设计与维护，开发、迁移与开源整理过程中得益于 **Codex** 与 **Gemini 4 Neon** 的协作。内置第三方资源授权见 [THIRD-PARTY.md](THIRD-PARTY.md) 与 [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md)。
+以 [MIT License](LICENSE) 开源。灵感致谢 **Yelee / MOxFIVE** 与 **Yilia / Litten**；本项目由站主主导设计与维护，基于 **Gemini 4 Neon**、**GPT 6.1 Sol** 与 **DeepSeek V4.1 Flash 1017** 协作完成开发、迁移与开源整理。内置第三方资源授权见 [THIRD-PARTY.md](THIRD-PARTY.md) 与 [public/assets/vendor/THIRD-PARTY.md](public/assets/vendor/THIRD-PARTY.md)。
+
+<p align="center">
+  <img src="docs/assets/ai-collab-chibi.jpg" width="760" alt="AI 协作纪念插画：GPT 娘指挥，Gemini 娘与 DeepSeek 娘协作开发">
+  <br>
+  <sub>AI 协作开发纪念插画（Q 版造型灵感参考 <a href="https://selinlee.github.io/ai-moe-atlas/zh/">AI 萌化百科</a>，由 Nano Banana 生成）</sub>
+</p>
