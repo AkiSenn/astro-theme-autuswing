@@ -1,0 +1,40 @@
+# 完整中性站点身份示例 / Complete Neutral Site Identity Example
+title: "Nova Lab"
+subtitle: "Field notes on software"
+description: "A fictional technology blog."
+author: "Alex"
+language: "en"
+timezone: "Asia/Shanghai"
+per_page: 10
+
+profile:
+  tagline: "Build, test, write."
+  bio: "I write about small, reliable tools."
+  homepage: "https://alex.example"
+
+menu:
+  Home: "/"
+  Archives: "/archives/"
+  Tags: "/tags/"
+  Lab notes:
+    path: "https://lab.example"
+    icon: "book"
+    new_tab: true
+
+social:
+  - name: "GitHub"
+    url: "https://github.com/example"
+    icon: "github"
+    label: "Code on GitHub"
+  - name: "Homepage"
+    url: "https://alex.example"
+    icon: "globe"
+
+footer:
+  copyright:
+    holder: "Alex"
+    since: 2020
+  statement: "Examples on this site are fictional."
+
+pwa:
+  short_name: "Nova"

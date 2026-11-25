@@ -1,0 +1,91 @@
+---
+import { mountPath, mountReference } from '../lib/deployment.mjs';
+import { site, theme, preview } from '../site.config';
+import { seo, json } from '../lib/seo';
+import type { Post } from '../lib/content';
+import vendor from '../../public/assets/vendor/manifest.json';
+interface Props {
+  path: string;
+  title?: string;
+  post?: Post;
+  noindex?: boolean;
+  math?: boolean;
+}
+const { path, title, post, noindex } = Astro.props,
+  meta = seo(path, title, post);
+const mathStyles = '/assets/vendor/' + vendor.packages.katex.directory + '/dist/katex.min.css';
+const assetCdn = (theme.assets.cdn || '').replace(/\/$/, '');
+const verification = [
+  ['google_verification', 'google-site-verification'],
+  ['bing_verification', 'msvalidate.01'],
+  ['baidu_verification', 'baidu-site-verification'],
+  ['sogou_verification', 'sogou_site_verification'],
+  ['so360_verification', '360-site-verification'],
+  ['shenma_verification', 'shenma-site-verification'],
+  ['yandex_verification', 'yandex-verification'],
+] as const;
+---
+
+<meta charset="utf-8" />
+{Astro.props.math && (
+  <link
+    rel="stylesheet"
+    data-math-styles="katex"
+    href={assetCdn ? assetCdn + mathStyles : mountPath(mathStyles)}
+  />
+)}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<meta name="author" content={meta.author} />
+<meta name="generator" content={Astro.generator} />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#151d18" media="(prefers-color-scheme: dark)" />
+<link rel="canonical" href={meta.url} />
+{(preview || noindex || post?.data.noindex || post?.data.password) && (
+  <meta name="robots" content={preview ? 'noindex,nofollow' : 'noindex,follow'} />
+)}
+<meta property="og:type" content={meta.article ? 'article' : 'website'} />
+<meta property="og:title" content={meta.title} />
+<meta property="og:description" content={meta.description} />
+<meta property="og:url" content={meta.url} />
+<meta property="og:site_name" content={site.title} />
+{meta.image && <meta property="og:image" content={meta.image} />}
+<meta name="twitter:card" content="summary_large_image" />
+{site.seo.twitter && <meta name="twitter:site" content={site.seo.twitter} />}
+{meta.article && post && (
+  <>
+    {meta.authorUrl && <meta property="article:author" content={meta.authorUrl} />}
+    <meta property="article:published_time" content={post.date} />
+    <meta property="article:modified_time" content={post.updated} />
+  </>
+)}
+{verification.map(([key, name]) => theme.seo[key] && <meta name={name} content={theme.seo[key]} />)}
+{site.favicon.map((icon) => (
+  <link rel="icon" href={icon && mountReference(icon)} />
+))}
+{site.apple_touch_icon && <link rel="apple-touch-icon" href={mountReference(site.apple_touch_icon)} />}
+{theme.feed.enable && (
+  <>
+    <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS`} href={mountReference('/rss.xml')} />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title={`${site.title} Atom`}
+      href={mountReference('/atom.xml')}
+    />
+  </>
+)}
+{theme.pwa.enable && (
+  <>
+    <link rel="manifest" href={mountPath('/manifest.webmanifest')} />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={site.pwa.short_name} />
+  </>
+)}
+{theme.assets.preconnect.map((origin) => (
+  <link rel="preconnect" href={origin} crossorigin="anonymous" />
+))}
+{theme.seo.json_ld && <script type="application/ld+json" set:html={json(meta.schema)} />}

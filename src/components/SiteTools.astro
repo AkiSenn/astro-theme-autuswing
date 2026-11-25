@@ -1,0 +1,24 @@
+---
+import { theme } from '../site.config';
+import { translate } from '../lib/i18n';
+import AppearanceToggle from './AppearanceToggle.astro';
+import Glyph from './Glyph.astro';
+const t = translate();
+---
+
+<div class="site-tools js-control">
+  {theme.search.enable && (
+    <button
+      class="search-open icon-button"
+      data-focus-key="search"
+      type="button"
+      aria-label={t('search')}
+      title={t('search')}
+      aria-haspopup="dialog"
+      aria-controls="site-search"
+    >
+      <Glyph name="search" />
+    </button>
+  )}
+  {theme.appearance.theme_switch && <AppearanceToggle />}
+</div>

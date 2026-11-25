@@ -1,0 +1,174 @@
+---
+import { mountReference } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+const t = translate();
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/surfaces.css';
+import '../styles/navigation.css';
+import '../styles/cards.css';
+import '../styles/content.css';
+import '../styles/reading.css';
+import '../styles/pages.css';
+import '../styles/footer.css';
+import '../styles/overlays.css';
+import '../styles/motion.css';
+import { theme, preview, site } from '../site.config';
+import { layoutVariables } from '../lib/layout-options';
+import type { Post } from '../lib/content';
+import { clientConfig } from '../lib/client';
+import { json } from '../lib/seo';
+import Icons from '../components/Icons.astro';
+import SeoHead from '../components/SeoHead.astro';
+import DesktopSidebar from '../components/DesktopSidebar.astro';
+import MobileHeader from '../components/MobileHeader.astro';
+import TabletSidebar from '../components/TabletSidebar.astro';
+import ArticleContents from '../components/ArticleContents.astro';
+import ReadingSidebar from '../components/ReadingSidebar.astro';
+import Footer from '../components/Footer.astro';
+import Search from '../components/Search.astro';
+import Glyph from '../components/Glyph.astro';
+import appearance from '../scripts/appearance-init.js?raw';
+import pageEntry from '../scripts/page-entry-init.js?raw';
+interface Props {
+  path: string;
+  title?: string;
+  post?: Post;
+  noindex?: boolean;
+  math?: boolean;
+}
+const { path, title, post, noindex, math = post?.math || false } = Astro.props;
+const isArticle = post?.entry.collection === 'posts';
+const headings =
+  post &&
+  theme.reading.toc &&
+  post.data.toc !== false &&
+  (post.entry.collection === 'posts' || post.data.toc === true)
+    ? post.rendered.headings.filter(
+        (h) => h.depth >= theme.article.toc.min_depth && h.depth <= theme.article.toc.max_depth,
+      )
+    : [];
+const variables = `--autuswing-base-font:${theme.appearance.base_font_size}px;--autuswing-sidebar:${theme.appearance.sidebar_width}px;--autuswing-width:${theme.appearance.width}px;--autuswing-radius:${theme.appearance.radius}px;--mica-blur:${theme.cards.blur}px;--wallpaper-opacity:${1 - theme.cards.wallpaper_overlay};${theme.appearance.accent ? '--accent:' + theme.appearance.accent + ';' : ''}${theme.appearance.accent_dark ? '--accent-dark:' + theme.appearance.accent_dark + ';' : ''}${theme.appearance.font_family ? '--autuswing-font:' + theme.appearance.font_family + ';' : ''}${theme.appearance.code_font ? '--autuswing-code-font:' + theme.appearance.code_font + ';' : ''}`;
+const background = theme.backgrounds.length
+  ? theme.backgrounds[[...path].reduce((n, c) => n + c.charCodeAt(0), 0) % theme.backgrounds.length]
+  : '';
+---
+
+<!doctype html>
+<html
+  lang={post?.lang || site.language}
+  data-mode={theme.color_mode}
+  data-motion={String(theme.motion.enable)}
+  style={variables + layoutVariables(theme.layout)}
+>
+  <head>
+    <SeoHead path={path} title={title} post={post} noindex={noindex} math={math} />
+    <script is:inline set:html={appearance} />
+    {theme.motion.enable && theme.motion.page && <style id="autuswing-page-motion" is:inline>
+      @media (prefers-reduced-motion: no-preference) {
+        @view-transition {
+          navigation: auto;
+        }
+      }
+    </style>}
+    {theme.motion.enable && theme.motion.page && (
+      <script id="autuswing-page-entry" is:inline set:html={pageEntry} />
+    )}
+    <noscript>
+      <style is:inline>
+        .js-control {
+          display: none !important;
+        }
+        @media screen {
+          @media not all and (min-width: 1280px) {
+            body .contents-access {
+              display: block;
+            }
+            .main-shell:has(.contents-access) #main {
+              padding-top: 0;
+            }
+          }
+        }
+        @media screen {
+          @media (min-width: 1280px) {
+            @media not all and (min-width: 1440px) {
+              .article-page .reading-sidebar {
+                display: flex !important;
+              }
+            }
+          }
+        }
+      </style>
+    </noscript>
+  </head>
+  <body
+    class:list={[
+      {
+        'article-page': isArticle,
+        'home-page': path === '/',
+        'has-reading-contents': isArticle && headings.length > 0,
+      },
+    ]}
+    data-preview={String(preview)}
+  >
+    <Icons />
+    {background && (
+      <div class="site-background" aria-hidden="true">
+        <img src={mountReference(background)} alt="" decoding="async" />
+        <span style={`opacity:${theme.appearance.background_overlay}`}></span>
+      </div>
+    )}
+    <a class="skip-link" href="#main">
+      {t('skip')}
+    </a>
+    {!isArticle && <DesktopSidebar path={path} title={post?.title} headings={headings} />}
+    <TabletSidebar path={path} hasContents={headings.length > 0} reading={isArticle} />
+    {isArticle && headings.length > 0 && <ReadingSidebar title={post!.title} headings={headings} />}
+    <MobileHeader path={path} />
+    <div class="main-shell">
+      {headings.length > 0 && <ArticleContents title={post!.title} headings={headings} />}
+      <main id="main" tabindex="-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <div class="floating-tools" hidden>
+      {headings.length > 0 && (
+        <button
+          class="goto-toc icon-button js-control"
+          data-focus-key="contents"
+          type="button"
+          aria-label={t('toc')}
+          title={t('toc')}
+          aria-haspopup="dialog"
+          aria-controls="reading-contents"
+          aria-expanded="false"
+          hidden
+        >
+          <Glyph name="book" />
+        </button>
+      )}
+      {post && (
+        <button class="copy-link icon-button" type="button" aria-label={t('copy_post_link')}>
+          <Glyph name="link" />
+        </button>
+      )}
+      <button class="back-top icon-button" type="button" aria-label={t('top')} hidden>
+        ↑
+      </button>
+    </div>
+    {theme.search.enable && <Search />}
+    <dialog class="image-dialog" aria-label={t('image')}>
+      <button class="image-close icon-button" type="button" aria-label={t('close')}>
+        ×
+      </button>
+      <img alt="" />
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script id="autuswing-config" type="application/json" set:html={json(clientConfig(post))} />
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>

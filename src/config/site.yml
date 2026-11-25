@@ -1,0 +1,87 @@
+# ==============================================================================
+# Autuswing 站点身份配置 / Site Identity Configuration
+# ------------------------------------------------------------------------------
+# 管理博客的品牌信息、作者、导航菜单、社交链接、友链与页脚资料。
+# Manages blog branding, author profile, navigation menu, social links,
+# friend links, and footer identity.
+#
+# 相关文件 / Related files:
+#   - src/config/theme.yml        主题外观与功能开关 / Theme appearance & features
+#   - src/config/environments.yml 各环境域名与路径 / Origins & base paths per env
+# 文档参考 / Docs: docs/site-identity.md
+# ==============================================================================
+
+# 站点标题（必填）/ Site title (required)
+title: "Example Blog"
+
+# 站点副标题（可选）/ Site subtitle (optional)
+# subtitle: "Notes & ideas"
+
+# 站点默认简介，用于 SEO 与 RSS（必填）/ Default site description (required)
+description: "An example blog powered by Autuswing."
+
+# 站点默认作者名（必填）/ Default site author name (required)
+author: "Example Author"
+
+# 界面语言 / Interface language: "zh-CN" | "en"
+language: "en"
+
+# 站点时区（IANA 时区名称）/ Site timezone (IANA timezone identifier)
+timezone: "Asia/Shanghai"
+
+# 每页显示的文章数量，设为 0 表示不分页 / Posts per page (0 = all on one page)
+per_page: 10
+
+# 导航菜单 / Navigation menu
+# 内置键名 Home / Archives / Tags / Categories / Links / About 会自动匹配图标与多语言文案。
+# Built-in keys automatically receive localized labels and icons.
+menu:
+  Home: "/"
+  Archives: "/archives/"
+  Tags: "/tags/"
+  About: "/about/"
+
+# 浏览器标签页图标（位于 public/ 下）/ Browser favicon (under public/)
+favicon: "/img/placeholder.svg"
+
+# PWA 图标源图（位于 public/ 下，建议 >= 512x512）/ PWA source icon (under public/)
+pwa:
+  icon: "/img/placeholder.svg"
+
+# ------------------------------------------------------------------------------
+# 以下为可选扩展示例，按需取消注释并填写：
+# Optional sections below — uncomment and customize as needed:
+# ------------------------------------------------------------------------------
+#
+# profile:
+#   avatar: "/img/avatar.webp"         # 头像路径 / Avatar image under public/
+#   tagline: "Writing & building."     # 侧边栏标语 / Sidebar tagline
+#   bio: "Welcome to my blog."         # 关于页简介 / Short bio on About page
+#   homepage: "https://example.com"    # 作者主页 / Author homepage URL
+#
+# apple_touch_icon: "/img/apple-touch-icon.png"
+#
+# social:
+#   - name: "Email"
+#     url: "mailto:you@example.com"
+#   - name: "GitHub"
+#     url: "https://github.com/yourname"
+#
+# friends:
+#   - name: "Astro"
+#     url: "https://astro.build/"
+#     description: "The web framework for content-driven websites."
+#
+# footer:
+#   copyright:
+#     since: 2025
+#     # holder: "Example Author"
+#   registrations: []
+#
+# runtime:
+#   since: "2025-01-01T00:00:00+08:00"
+#   text: "Site running for"
+#
+# seo:
+#   social_image: "/img/social-card.png"
+#   # twitter: "@yourhandle"

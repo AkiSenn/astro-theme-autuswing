@@ -1,0 +1,18 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+---
+
+<button
+  class="mode-toggle icon-button"
+  data-focus-key="appearance"
+  type="button"
+  aria-label={t('mode')}
+  title={t('mode')}
+>
+  <svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <use class="appearance-sun" href="#i-sun"></use>
+    <use class="appearance-moon" href="#i-moon"></use>
+  </svg>
+  <span class="mode-label">{t('mode')}</span>
+</button>

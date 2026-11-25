@@ -1,0 +1,23 @@
+---
+import { translate } from '../lib/i18n';
+import { navigation, isCurrentPath } from '../site.config';
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+const t = translate();
+---
+
+<nav class="mobile-navigation" aria-label={t('navigation')}>
+  {navigation.map((item) => (
+    <a
+      href={item.href}
+      data-focus-key={`nav:${item.name}`}
+      aria-current={isCurrentPath(path, item.matchPath) ? 'page' : undefined}
+      target={item.new_tab ? '_blank' : undefined}
+      rel={item.new_tab ? 'noopener noreferrer' : undefined}
+    >
+      {item.label}
+    </a>
+  ))}
+</nav>

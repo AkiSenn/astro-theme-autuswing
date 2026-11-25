@@ -1,0 +1,28 @@
+---
+import { mountReference } from '../lib/deployment.mjs';
+import { site } from '../site.config';
+import MobileNavigation from './MobileNavigation.astro';
+import SiteTools from './SiteTools.astro';
+import { avatarSource } from '../lib/avatar';
+const avatar = await avatarSource();
+interface Props {
+  path: string;
+}
+---
+
+<header class="mobile-header">
+  <div class="mobile-brand-row">
+    <a
+      class="mobile-brand avatar-home"
+      data-focus-key="brand"
+      href={mountReference('/')}
+      aria-label={site.title}
+      title={site.title}
+    >
+      {avatar && <img src={avatar} alt="" width="30" height="30" />}
+      <span>{site.title}</span>
+    </a>
+    <SiteTools />
+  </div>
+  <MobileNavigation path={Astro.props.path} />
+</header>

@@ -1,0 +1,99 @@
+/* Shared shell sizing, scroll offsets and reading gutters; breakpoint ownership stays here. */
+html {
+  scroll-padding-top: 90px;
+}
+#main {
+  min-height: 70vh;
+  outline: none;
+}
+@media (max-width: 760px) {
+  .main-shell {
+    margin: 0;
+  }
+}
+@media print {
+  #main {
+    padding: 0;
+  }
+}
+html {
+  scrollbar-gutter: stable;
+}
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+.main-shell {
+  margin-left: var(--layout-sidebar);
+  max-width: none;
+  /* 以 24px 为基准移动原流体曲线，默认值不改变各宽度下的留白。 */
+  padding: 0 calc(clamp(var(--space-6), 3vw, 64px) + var(--aw-desktop-gutter) - 24px);
+}
+#main {
+  max-width: min(var(--autuswing-width, 1680px), 1120px);
+  margin-inline: auto;
+  padding-top: 36px;
+}
+.article-page #main {
+  padding-top: 36px;
+}
+@media screen and (min-width: 1000px) {
+  .article-page {
+    --reading-width: var(--aw-content-max-width);
+    --reading-contents-width: var(--aw-toc-width);
+  }
+}
+@media screen and (min-width: 720px) {
+  .article-page {
+    --layout-sidebar: var(--aw-article-sidebar-width);
+  }
+}
+@media (min-width: 720px) {
+  @media not all and (min-width: 1000px) {
+    :root {
+      --layout-sidebar: 72px;
+    }
+    .main-shell {
+      padding-left: var(--aw-desktop-gutter);
+      padding-right: var(--aw-desktop-gutter);
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article-page.has-reading-contents .main-shell {
+    margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
+  }
+}
+@media not all and (min-width: 720px) {
+  :root {
+    --layout-sidebar: 0px;
+  }
+  html {
+    scroll-padding-top: calc(var(--mobile-header-height) + 16px);
+  }
+  .main-shell {
+    margin-left: 0;
+    padding-left: var(--aw-mobile-gutter);
+    padding-right: var(--aw-mobile-gutter);
+  }
+  #main,
+  .article-page #main {
+    padding-top: var(--space-6);
+  }
+  .article-page #main {
+    padding-top: var(--space-4);
+  }
+  .article-page .main-shell {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media print {
+  .main-shell {
+    margin: 0;
+    padding: 0;
+  }
+  #main,
+  .article-page #main {
+    padding-top: 0;
+  }
+}

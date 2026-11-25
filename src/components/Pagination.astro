@@ -1,0 +1,32 @@
+---
+import { mountPath } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+const t = translate();
+interface Props {
+  current?: number;
+  total?: number;
+  base?: string;
+}
+const { current = 1, total = 1, base = '/' } = Astro.props;
+const path = (p: number) => mountPath(p === 1 ? base : `${base}page/${p}/`);
+---
+
+{total > 1 && (
+  <nav class="pagination" aria-label={t('pagination')}>
+    {current > 1 && (
+      <a href={path(current - 1)} rel="prev">
+        ← {t('previous_page')}
+      </a>
+    )}
+    {Array.from({ length: total }, (_, i) => i + 1).map((p) => (
+      <a href={path(p)} aria-current={p === current ? 'page' : undefined}>
+        {p}
+      </a>
+    ))}
+    {current < total && (
+      <a href={path(current + 1)} rel="next">
+        {t('next_page')} →
+      </a>
+    )}
+  </nav>
+)}

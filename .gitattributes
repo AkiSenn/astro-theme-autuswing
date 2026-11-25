@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.md -text
+public/** -text
+src/styles/legacy.css -text
+*.png binary
+*.webp binary
+*.woff2 binary

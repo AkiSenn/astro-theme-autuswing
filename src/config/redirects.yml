@@ -1,0 +1,16 @@
+# ==============================================================================
+# Autuswing URL 重定向规则 / URL Redirect Rules
+# ------------------------------------------------------------------------------
+# 可选配置：用于保留历史上迁移或改名后的旧链接，构建时会输出到 dist/_redirects
+# 与 dist/redirects.json。无需重定向时保持空数组 `[]` 即可。
+#
+# Optional: preserve old or renamed URLs. Emitted to dist/_redirects and
+# dist/redirects.json at build time. Keep `[]` if no redirects are needed.
+#
+# 示例 / Example:
+# - from: "/old-post/"
+#   to: "/new-post/"
+#   status: 301
+# ==============================================================================
+
+[]

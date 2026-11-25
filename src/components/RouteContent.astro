@@ -1,0 +1,130 @@
+---
+import { mountPath, mountReference } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+const t = translate();
+import type { Route } from '../lib/routes';
+import { posts, taxonomy } from '../lib/content';
+import { site, theme, safeLink } from '../site.config';
+import PostCard from './PostCard.astro';
+import Pagination from './Pagination.astro';
+import Comments from './Comments.astro';
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props,
+  all = await posts();
+const groups =
+  route.kind === 'taxonomy'
+    ? route.taxonomyKind === 'tags'
+      ? (['categories', 'tags'] as const)
+      : (['categories'] as const)
+    : [];
+const Content = route.post?.rendered.Content;
+let year = '';
+---
+
+{route.kind === 'home' ? (
+  <section id="journal" class="journal journal-home">
+    <div class="section-heading">
+      <h1>
+        {t('latest')}
+        {(route.page || 1) > 1 && ` · ${route.page}`}
+        <span class="count">{all.length}</span>
+      </h1>
+    </div>
+    <div
+      class="post-list"
+      data-mica-list={theme.cards.enable && route.posts?.length ? '' : undefined}
+    >
+      {route.posts?.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+    <Pagination current={route.page} total={route.totalPages} base={route.base} />
+  </section>
+) : route.kind === 'archive' ? (
+  <section class="archive-page">
+    <div class="page-heading">
+      <span class="eyebrow">{t('archive_eyebrow')}</span>
+      <h1>
+        {route.title}
+        <span class="count">{route.totalItems}</span>
+      </h1>
+      <p>{t('archive_description')}</p>
+    </div>
+    <div class="timeline">
+      {route.posts?.map((post) => {
+        const y = post.dateLabel.slice(0, 4),
+          show = year !== y;
+        year = y;
+        return (
+          <>
+            {show && <h2>{y}</h2>}
+            <article>
+              <time datetime={post.date}>{post.dateLabel.slice(5)}</time>
+              <a href={mountPath(post.path)}>{post.title}</a>
+              <span>
+                {post.minutes} {t('minutes')}
+              </span>
+            </article>
+          </>
+        );
+      })}
+    </div>
+    <Pagination current={route.page} total={route.totalPages} base={route.base} />
+  </section>
+) : (
+  <article class="standalone-page">
+    <div class="page-heading">
+      <h1>{route.title}</h1>
+      {route.kind === 'taxonomy' && <p>{t('taxonomy_description')}</p>}
+    </div>
+    {groups.map((kind) => (
+      <section class="taxonomy-section">
+        <h2>
+          {t(kind)}
+          <span class="count">{taxonomy(all, kind).length}</span>
+        </h2>
+        <div class={`taxonomy taxonomy-${kind}`}>
+          {taxonomy(all, kind).map((group) => (
+            <a href={mountPath(group.path)}>
+              <span>{group.name}</span>
+              <small>
+                {group.posts.length} {t('posts')}
+              </small>{' '}
+              ↗
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+    {route.kind === 'links' && (
+      <div class="friend-grid">
+        {site.friends.map((friend) => (
+          <a href={mountReference(safeLink(friend.url))} rel="noopener noreferrer">
+            <h2>{friend.name} ↗</h2>
+            {friend.description && <p>{friend.description}</p>}
+          </a>
+        ))}
+      </div>
+    )}
+    {(Content || (route.path === '/about/' && site.profile.bio)) && (
+      <div class="prose">
+        {route.path === '/about/' && site.profile.bio && (
+          <p class="about-intro">{site.profile.bio}</p>
+        )}
+        {Content && <Content />}
+      </div>
+    )}
+    {route.path === '/about/' && theme.footer.runtime.enable && site.runtime && (
+      <div class="about-runtime">
+        <span
+          class="site-runtime"
+          data-since={site.runtime.since}
+          data-prefix={site.runtime.text}
+        ></span>
+      </div>
+    )}
+    {route.post && <Comments post={route.post} />}
+  </article>
+)}

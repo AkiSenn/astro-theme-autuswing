@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Autuswing simplified icon study</title>
+  <rect width="512" height="512" rx="112" fill="#f6f5f1"/>
+  <g transform="translate(48 48) scale(.8125)">
+    <defs>
+      <linearGradient id="wing" x1="0" y1="1" x2="1" y2="0">
+        <stop stop-color="#20372e"/>
+        <stop offset="1" stop-color="#536f53"/>
+      </linearGradient>
+      <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#536f53"/>
+        <stop offset="1" stop-color="#becbb0"/>
+      </linearGradient>
+    </defs>
+    <path fill="#20372e" fill-rule="evenodd" d="M211 43h64c11 0 18 5 23 18l148 355c10 25 18 34 40 39v9H352v-9c28-3 32-11 22-36l-38-94H171l-38 92c-10 25-5 35 25 38v9H38v-9c26-5 37-18 49-46L225 90c10-25 8-34-14-38z M254 132l-72 172h145z"/>
+    <g fill="none" stroke="#20372e" stroke-linecap="round">
+      <path d="M231 287l-17 117M330 312l-24 108" stroke-width="9"/>
+      <path d="M192 402q49 61 122 20" stroke-width="19"/>
+    </g>
+    <path fill="url(#wing)" d="M44 453c38-12 52-46 71-93 31-78 91-142 171-150 71-7 146 13 192-77-4 71-40 122-102 131-54 8-90-21-145-11-62 10-99 70-113 123-12 43-12 67 9 79z"/>
+    <path fill="url(#page)" d="M182 282c60-43 104-33 158-17 48 14 93 7 129-43-19 67-65 107-117 100-58-7-92-54-170-40z"/>
+    <path fill="#536f53" d="M393 65c5 26 14 35 39 40-25 5-34 14-39 40-5-26-14-35-39-40 25-5 34-14 39-40z"/>
+  </g>
+</svg>

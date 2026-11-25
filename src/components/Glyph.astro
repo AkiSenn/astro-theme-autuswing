@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string;
+}
+const aliases: Record<string, string> = {
+  archive: 'list',
+  archives: 'list',
+  email: 'mail',
+  x: 'twitter',
+  contents: 'book',
+};
+const raw = Astro.props.name.toLowerCase();
+const name = aliases[raw] || raw;
+const known =
+  'home list tag folder user file book search menu close sun moon auto chevron-up chevron-down chevron-left chevron-right arrow-up comment link copy check share rss mail github twitter telegram globe calendar clock pencil fire external license palette weibo bilibili zhihu douban netease qq wechat jianshu csdn v2ex youtube codepen wordpress hexo heart shield alert'
+    .split(' ')
+    .includes(name);
+---
+
+{known ? (
+  <svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+    <use href={`#i-${name}`} />
+  </svg>
+) : (
+  <span class="social-badge" aria-hidden="true">
+    {Astro.props.name.slice(0, 1).toUpperCase()}
+  </span>
+)}

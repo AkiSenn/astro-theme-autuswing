@@ -1,0 +1,25 @@
+---
+import { mountReference } from '../lib/deployment.mjs';
+import { site, theme } from '../site.config';
+import Glyph from './Glyph.astro';
+---
+
+{(site.social.length > 0 || theme.feed.enable) && <div class="social-links">
+  {site.social.map((item) => (
+    <a
+      href={mountReference(item.url)}
+      aria-label={item.label}
+      title={item.label}
+      tabindex="0"
+      target={/^https?:/i.test(item.url) ? '_blank' : undefined}
+      rel="noopener noreferrer"
+    >
+      <Glyph name={item.icon} />
+    </a>
+  ))}
+  {theme.feed.enable && (
+    <a href={mountReference('/rss.xml')} title="RSS" aria-label="RSS" tabindex="0">
+      <Glyph name="rss" />
+    </a>
+  )}
+</div>}

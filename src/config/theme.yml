@@ -1,0 +1,225 @@
+# ==============================================================================
+# Autuswing 主题功能与外观配置 / Theme Appearance & Feature Configuration
+# ------------------------------------------------------------------------------
+# 管理主题配色、布局预设、动效、搜索、订阅、SEO、阅读体验、评论、公式、统计与性能。
+# Manages color mode, layout presets, motion, search, feeds, SEO, reading UX,
+# comments, math rendering, analytics, and performance options.
+#
+# 相关文件 / Related files:
+#   - src/config/site.yml         站点品牌、作者、菜单与友链 / Site identity & links
+#   - src/config/environments.yml 各环境域名与路径 / Origins & base paths per env
+# ==============================================================================
+
+# 默认色彩模式 / Default color scheme: "auto" | "light" | "dark"
+color_mode: "auto"
+
+# 卡片样式 / Card styling
+cards:
+  enable: true              # 启用列表与模块卡片外观 / Enable card styling
+  article: true             # 文章正文容器启用卡片外观 / Card styling on articles
+  hover: true               # 启用卡片悬停视觉反馈 / Card hover feedback
+  blur: 24                  # 壁纸毛玻璃模糊半径 (px) / Backdrop blur radius (px)
+  wallpaper: ""             # 默认卡片壁纸路径（留空为纯色）/ Default card wallpaper
+  wallpaper_overlay: 0.88   # 卡片壁纸遮罩不透明度 (0–1) / Wallpaper overlay opacity
+
+# 基础外观 / Appearance
+appearance:
+  base_font_size: 16        # 移动端正文基准字号 (px) / Mobile base font size (px)
+  sidebar_width: 272        # 旧版侧栏宽度回退 (px, 240–300) / Legacy sidebar width
+  width: 1680               # 页面最大外框宽度参考 (px) / Outer container width hint
+  radius: 18                # 卡片圆角半径 (px, 0–32) / Border radius (px)
+  accent: ""                # 浅色主题强调色 (#RGB/#RRGGBB) / Light accent color
+  accent_dark: ""           # 深色主题强调色 (#RGB/#RRGGBB) / Dark accent color
+  font_family: ""           # 自定义正文字体栈 / Custom body font stack
+  code_font: ""             # 自定义代码字体栈 / Custom monospace font stack
+  background_image: false   # 全站背景图: false | path | path[] | 1–6
+  background_overlay: 0.72  # 全站背景遮罩不透明度 (0–1) / Background overlay opacity
+  theme_switch: true        # 显示浅色/深色切换按钮 / Show theme toggle button
+
+# 响应式布局与阅读密度 / Responsive layout & reading density
+layout:
+  # 预设 / Preset: "classic" | "editorial" | "compact" | "custom"
+  preset: "classic"
+  # 可选微调项 / Optional overrides:
+  # home_sidebar_width: 272     # 240–320 px
+  # article_sidebar_width: 72   # 68–104 px
+  # toc_width: 260              # 180–320 px
+  # content_max_width: 860      # 640–1120 px
+  # desktop_gutter: 24          # 16–40 px
+  # mobile_gutter: 16           # 8–32 px
+  # density: "comfortable"      # "compact" | "comfortable" | "spacious"
+
+# 动效设置 / Motion (always respects prefers-reduced-motion)
+motion:
+  enable: true              # 动效总开关 / Master motion switch
+  page: true                # 原生跨页转场 / Native page transitions
+
+# 站内搜索 / Client-side search (/search.json)
+search:
+  enable: true              # 启用搜索 / Enable search
+  content: true             # 索引完整正文 / Index full article body
+  max_content_length: 12000 # 兼容保留字段 / Retained compatibility field
+  limit: 30                 # 最多展示结果条数 / Max search results
+  preload: false            # 是否预加载索引 / Preload index on page load
+  shortcut: true            # 启用搜索快捷键 / Enable keyboard shortcut
+  excerpt_length: 140       # 命中摘要片段长度 / Match snippet length
+
+# 订阅源 / RSS & Atom feeds
+feed:
+  enable: true              # 生成 /rss.xml 与 /atom.xml / Emit RSS & Atom feeds
+  limit: 30                 # 包含文章篇数 (0 = 全部) / Max entries (0 = all)
+  full_content: false       # 是否输出完整正文 / Include full HTML content
+
+# 新文章短编号 / Post short IDs (npm run new-post)
+urls:
+  length: 6                 # 默认短编号长度 (4–20) / Short ID length (4–20)
+
+# 搜索引擎优化 / SEO
+seo:
+  sitemap: true             # 生成站点地图 / Generate sitemap files
+  robots: true              # 生成 robots.txt / Generate robots.txt
+  json_ld: true             # 输出 JSON-LD 结构化数据 / Emit JSON-LD
+  google_verification: ""   # Google 站长验证码 / Google verification token
+  bing_verification: ""     # Bing 站长验证码 / Bing verification token
+  baidu_verification: ""    # 百度站长验证码 / Baidu verification token
+  sogou_verification: ""    # 搜狗站长验证码 / Sogou verification token
+  so360_verification: ""    # 360 站长验证码 / 360 verification token
+  shenma_verification: ""   # 神马站长验证码 / Shenma verification token
+  yandex_verification: ""   # Yandex 站长验证码 / Yandex verification token
+
+# 阅读辅助 / Reading experience
+reading:
+  toc: true                 # 启用文章目录 / Enable Table of Contents
+  words_per_minute: 250     # 阅读时长估算字速 / Reading speed (WPM)
+  related: false            # 文末相关文章推荐 / Related posts section
+
+# 文章页与摘要选项 / Article options
+article:
+  excerpt: "auto"           # 摘要模式: "auto" | false (列表展示全文)
+  excerpt_length: 200       # 自动摘要最大字数 / Max auto-excerpt length
+  excerpt_paragraphs: 2     # 自动摘要最大段数 / Max auto-excerpt paragraphs
+  autospace: true           # 中英文/数字自动细间距 / Auto CJK-Latin spacing
+  more_link: ""             # 自定义“阅读全文”文案 / Custom "Read more" text
+  lightbox: true            # 正文图片点击灯箱放大 / Image click-to-zoom lightbox
+  lazyload: true            # 非首图懒加载 / Lazy-load non-lead images
+  updated: true             # 显示最后更新时间 / Show updated date
+  word_count: true          # 显示字数统计 / Show word count
+  reading_time: true        # 显示预计阅读时间 / Show reading time
+  post_nav: true            # 显示上一篇/下一篇导航 / Show prev/next navigation
+  share:                    # 文末分享按钮 / Share actions ([] to hide)
+    - "native"
+    - "copy"
+    - "weibo"
+    - "twitter"
+    - "telegram"
+    - "qq"
+  toc:
+    min_depth: 2            # 目录最小标题层级 / Min heading depth
+    max_depth: 4            # 目录最大标题层级 / Max heading depth
+    list_number: false      # 目录项自动编号 / Numbered TOC items
+    nowrap: false           # 目录长标题单行省略 / Single-line TOC titles
+
+# 文章版权声明 / Article copyright notice
+copyright:
+  enable: true              # 显示版权声明卡片 / Show copyright box
+  license: "CC BY-NC-SA 4.0"
+  url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
+# 评论系统 / Comments
+comments:
+  enable: false             # 启用评论区 / Enable comments
+  provider: "giscus"        # giscus | utterances | disqus | waline | twikoo | valine
+  lazyload: true            # 滚动到附近再加载 / Lazy-load near viewport
+  preload: false            # 预加载评论脚本 / Preload comment script
+  collapsible: true         # 允许折叠评论区 / Collapsible comments panel
+  hint: ""                  # 评论区自定义提示语 / Optional custom hint
+  timeout: 20000            # 脚本加载超时 (ms) / Load timeout (ms)
+  pages: false              # 独立页面默认开启评论 / Enable on standalone pages
+  giscus:
+    repo: ""
+    repo_id: ""
+    category: "General"
+    category_id: ""
+    mapping: "pathname"
+    strict: false
+    reactions_enabled: 1
+    input_position: "top"
+    theme: "auto"
+    lang: "auto"
+    src: "https://giscus.app/client.js"
+  utterances:
+    repo: ""
+    issue_term: "pathname"
+    label: ""
+    theme: "auto"
+    src: "https://utteranc.es/client.js"
+  disqus:
+    shortname: ""
+  waline:
+    serverURL: ""
+    lang: "zh-CN"
+    cdn: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.0/dist/waline.js"
+    css: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.0/dist/waline.css"
+  twikoo:
+    envId: ""
+    region: ""
+    cdn: "https://cdn.jsdelivr.net/npm/twikoo@1.6.45/dist/twikoo.min.js"
+  valine:
+    appid: ""
+    appkey: ""
+    serverURLs: ""
+    cdn: "https://cdn.jsdelivr.net/npm/valine@1.5.3/dist/Valine.min.js"
+
+# 页脚显示开关 / Footer display switches
+footer:
+  copyright: true           # 显示版权行 / Show copyright line
+  powered_by: true          # 显示框架与主题署名 / Show Astro & theme credit
+  theme_name: "AutuSwing"
+  theme_url: "https://github.com/AkiSenn/astro-theme-autuswing"
+  runtime:
+    enable: true            # 启用运行时长（起算时间在 site.yml）/ Enable site runtime
+  visit_counter:
+    enable: false           # 启用访问计数 / Enable visit counter
+    provider: "vercount"
+    today_pv: false
+    site_pv: true
+    today_uv: false
+    site_uv: true
+    page_pv: true
+    page_uv: false
+    src: "https://cn.vercount.one/js"
+    allow_local: false
+
+# 数学公式渲染 / Build-time KaTeX math rendering
+math:
+  enable: true              # 启用公式渲染 / Enable KaTeX rendering
+  katex:
+    config: {}              # 附加 KaTeX 配置 / Extra KaTeX options
+
+# 网站统计分析（预览构建下自动禁用）/ Analytics (disabled in preview builds)
+analytics:
+  google_analytics: ""      # GA4 ID (e.g. "G-XXXXXXXXXX")
+  baidu_tongji: ""          # 百度统计 ID / Baidu Tongji ID
+
+# 静态资源与 CDN / Assets & CDN
+assets:
+  cdn: ""                   # 静态资源 CDN 前缀 / Asset CDN prefix
+  image_fingerprint: true   # 本地图片附带内容哈希 / Content-hash local images
+  preconnect: []            # 预连接外部域名列表 / Preconnect origins
+
+# 站外链接行为 / External links in articles
+open_in_new: true           # 站外链接新标签页打开 / Open external links in new tab
+open_in_new_exclude: []     # 例外域名列表 / Excluded hostnames
+
+# 构建与性能 / Build & performance
+performance:
+  generate_headers: true    # 生成 dist/_headers / Emit _headers file
+  minify: true              # 压缩 HTML/CSS/JS / Minify HTML/CSS/JS
+  precompress: false        # 预生成 .gz 与 .br 文件 / Precompress .gz & .br
+  compression_min_bytes: 1024
+  precompress_quality: 11   # Brotli 压缩等级 (0–11) / Brotli quality (0–11)
+  instant_nav: true         # 启用链接渐进预取 / Enable hover/intent prefetch
+
+# 渐进式网页应用 / PWA
+pwa:
+  enable: true              # 启用 Manifest、SW 与离线页 / Enable PWA support

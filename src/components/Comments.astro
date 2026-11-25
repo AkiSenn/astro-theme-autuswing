@@ -1,0 +1,53 @@
+---
+import { translate } from '../lib/i18n';
+const t = translate();
+import { theme } from '../site.config';
+import { commentSettings } from '../lib/comments';
+import type { Post } from '../lib/content';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props,
+  settings = commentSettings(post, post.entry.collection === 'posts');
+---
+
+{settings && (
+  <section
+    class="comments"
+    id="comments"
+    data-state="idle"
+    data-comments-config={JSON.stringify(settings)}
+  >
+    <button
+      class="comment-bar load-comments"
+      type="button"
+      aria-expanded="false"
+      aria-controls="comments-panel"
+    >
+      <span>{t('comments')}</span>
+      <span>{t('comments_expand')}</span>
+    </button>
+    <div class="comment-panel" id="comments-panel" hidden>
+      <div class="comment-heading">
+        <h2>{t('comments')}</h2>
+        {theme.comments.collapsible && (
+          <button class="comment-collapse" type="button">
+            {t('comments_collapse')}
+          </button>
+        )}
+      </div>
+      {theme.comments.hint && <p class="comment-hint">{theme.comments.hint}</p>}
+      <p class="comment-status" role="status" aria-live="polite"></p>
+      <button class="comment-retry" type="button" hidden>
+        {t('comments_retry')}
+      </button>
+      <div
+        class="comments-container"
+        id={settings.provider === 'disqus' ? 'disqus_thread' : 'comments-mount'}
+      ></div>
+    </div>
+    <noscript>
+      <p>{t('comments_noscript')}</p>
+    </noscript>
+  </section>
+)}

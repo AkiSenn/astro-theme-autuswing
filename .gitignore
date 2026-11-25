@@ -1,0 +1,11 @@
+node_modules/
+/.local-tools/
+/.agent/
+.astro/
+/dist/
+.wrangler/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example

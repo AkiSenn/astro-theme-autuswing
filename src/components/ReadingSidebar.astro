@@ -1,0 +1,37 @@
+---
+import { translate } from '../lib/i18n';
+import TableOfContents from './TableOfContents.astro';
+import Glyph from './Glyph.astro';
+interface Props {
+  title: string;
+  headings: { depth: number; slug: string; text: string }[];
+}
+const { title, headings } = Astro.props;
+const t = translate();
+---
+
+<aside
+  class="reading-sidebar"
+  id="desktop-reading-contents"
+  aria-labelledby="reading-sidebar-title"
+>
+  <header class="reading-sidebar-header">
+    <h2 id="reading-sidebar-title" tabindex="-1">
+      {t('toc')} <span class="contents-count">{headings.length}</span>
+    </h2>
+    <button
+      class="reading-contents-close icon-button js-control"
+      type="button"
+      title={t('collapse_toc')}
+      aria-label={t('collapse_toc')}
+      aria-controls="desktop-reading-contents"
+      hidden
+    >
+      <Glyph name="chevron-left" />
+    </button>
+  </header>
+  <p class="reading-sidebar-post">{title}</p>
+  <nav class="reading-sidebar-scroll" aria-label={t('toc')}>
+    <TableOfContents headings={headings} />
+  </nav>
+</aside>

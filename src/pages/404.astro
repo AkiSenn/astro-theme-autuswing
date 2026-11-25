@@ -1,0 +1,21 @@
+---
+import { mountReference } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const t = translate();
+---
+
+<BaseLayout path="/404.html" title={t('not_found_title')} noindex>
+  <article class="standalone-page">
+    <div class="page-heading">
+      <h1>404</h1>
+    </div>
+    <div class="not-found">
+      <span>☀</span>
+      <p>{t('not_found_body')}</p>
+      <a href={mountReference('/')} class="hero-link">
+        {t('back_home')} →
+      </a>
+    </div>
+  </article>
+</BaseLayout>

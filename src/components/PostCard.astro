@@ -1,0 +1,74 @@
+---
+import { mountPath } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+const t = translate();
+import type { Post } from '../lib/content';
+import { cardUpdated } from '../lib/card-updated';
+import { theme } from '../site.config';
+import SurfaceWallpaper from './SurfaceWallpaper.astro';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const Content = post.rendered.Content;
+const updated = theme.article.updated ? cardUpdated(post.data) : undefined;
+---
+
+<article
+  class:list={[
+    'post-card',
+    { 'mica-card': theme.cards.enable, 'card-interactive': theme.cards.hover },
+  ]}
+>
+  <SurfaceWallpaper wallpaper={post.data.wallpaper} />
+  <div class="card-date">
+    <time datetime={post.date}>
+      <span>{post.dateLabel.slice(8, 10)}</span>
+      <small>{post.dateLabel.slice(0, 7)}</small>
+    </time>
+  </div>
+  <div class="card-body">
+    <div class="post-meta">
+      {post.categoryItems[0] && (
+        <>
+          <a class="category-label" href={mountPath(post.categoryItems[0].path)}>
+            {post.categoryItems[0].name}
+          </a>
+        </>
+      )}
+      {theme.article.reading_time && (
+        <span>
+          {post.minutes} {t('minutes')}
+        </span>
+      )}
+      {updated && (
+        <time datetime={updated.datetime}>
+          {t('updated')} {updated.label}
+        </time>
+      )}
+    </div>
+    <h2 class="post-card-title">
+      <a href={mountPath(post.path)}>{post.title}</a>
+    </h2>
+    {theme.article.excerpt === false ? (
+      <div class="prose">
+        <Content />
+      </div>
+    ) : (
+      <p>{post.excerpt}</p>
+    )}
+    {theme.article.more_link && (
+      <a class="more-link" href={mountPath(post.path)}>
+        {theme.article.more_link} →
+      </a>
+    )}
+    <div class="card-tags">
+      {post.tags.slice(0, 3).map((tag) => (
+        <a href={mountPath(`/tags/${tag}/`)}>#{tag}</a>
+      ))}
+    </div>
+  </div>
+  <a class="card-arrow" href={mountPath(post.path)} aria-label={`${t('read')}: ${post.title}`}>
+    ↗
+  </a>
+</article>

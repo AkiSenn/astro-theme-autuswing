@@ -1,0 +1,22 @@
+---
+import { theme } from '../site.config';
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+const headings = Astro.props.headings.filter(
+  (h) => h.depth >= theme.article.toc.min_depth && h.depth <= theme.article.toc.max_depth,
+);
+---
+
+<ol class:list={['toc', { 'toc-numbered': theme.article.toc.list_number }]}>
+  {headings.map((h) => (
+    <li
+      class={`toc-item toc-level-${h.depth}`}
+      style={`--depth:${h.depth - theme.article.toc.min_depth}`}
+    >
+      <a class="toc-link" href={`#${h.slug}`}>
+        <span class="toc-text">{h.text}</span>
+      </a>
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,8 @@
+content/
+public/assets/vendor/
+src/scripts/appearance-init.js
+migration/
+docs/evidence/
+dist/
+node_modules/
+.astro/

@@ -1,0 +1,22 @@
+# ==============================================================================
+# Autuswing 部署环境配置 / Deployment Environments Configuration
+# ------------------------------------------------------------------------------
+# 管理不同构建模式（SITE_ENV）的规范域名 (origin) 与挂载子路径 (basePath)。
+# Manages canonical origin and mount basePath for each build mode (SITE_ENV).
+#
+# 上线正式站前请取消下方 production 的注释并填写你自己的 HTTPS 域名。
+# Before running a production build (`SITE_ENV=production npm run build`),
+# uncomment `production` below and set your own HTTPS origin.
+# ==============================================================================
+
+development:
+  origin: "http://127.0.0.1:4322"
+  basePath: "/"
+
+preview:
+  origin: "https://preview.example"
+  basePath: "/"
+
+# production:
+#   origin: "https://your-blog.example.com"
+#   basePath: "/"

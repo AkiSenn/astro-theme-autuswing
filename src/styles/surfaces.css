@@ -1,0 +1,118 @@
+/* Optional card/article surfaces, wallpaper and transparency fallbacks. */
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.site-background img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.site-background span {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+}
+body:has(.site-background) {
+  background: transparent;
+}
+@media print {
+  .site-background {
+    display: none !important;
+  }
+}
+.mica-card {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.surface-wallpaper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  filter: blur(var(--mica-blur, 24px));
+  opacity: var(--wallpaper-opacity, 0.12);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+.mica-article {
+  padding: 30px;
+  align-self: start;
+}
+@media (max-width: 1200px) {
+  .mica-article {
+    padding: var(--space-6);
+  }
+}
+@media (max-width: 760px) {
+  .mica-article {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+@media (max-width: 450px) {
+  .mica-article {
+    padding: 22px var(--space-4);
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mica-card {
+    background: var(--surface);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .surface-wallpaper {
+    display: none;
+  }
+}
+@media print {
+  .mica-card {
+    border: 0;
+    padding: 0;
+  }
+  .surface-wallpaper {
+    display: none;
+  }
+}
+.mica-card {
+  background: var(--surface);
+  box-shadow: var(--mica-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+body:has(.site-background) .mica-card {
+  background: var(--mica-base);
+  backdrop-filter: blur(var(--mica-blur, 24px));
+  -webkit-backdrop-filter: blur(var(--mica-blur, 24px));
+}
+.mica-article > .surface-wallpaper {
+  position: absolute;
+  max-height: none;
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:has(.site-background) .mica-card {
+    background: var(--surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+@media (forced-colors: active) {
+  .mica-card {
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+}
+@media print {
+  .mica-card {
+    background: white;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}

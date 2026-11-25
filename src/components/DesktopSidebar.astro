@@ -1,0 +1,72 @@
+---
+import { mountReference } from '../lib/deployment.mjs';
+import { translate } from '../lib/i18n';
+import { site, theme, navigation, isCurrentPath } from '../site.config';
+import Glyph from './Glyph.astro';
+import TableOfContents from './TableOfContents.astro';
+import SiteTools from './SiteTools.astro';
+import SocialLinks from './SocialLinks.astro';
+import { avatarSource } from '../lib/avatar';
+const avatar = await avatarSource();
+interface Props {
+  path: string;
+  title?: string;
+  headings: { depth: number; slug: string; text: string }[];
+}
+const { path, title, headings } = Astro.props;
+const t = translate();
+---
+
+<aside class="sidebar desktop-sidebar" aria-label={t('navigation')}>
+  <section class="profile">
+    <a href={mountReference('/')} class="avatar-link avatar-home" data-focus-key="brand" aria-label={t('home')}>
+      {avatar ? (
+      <img
+        class="avatar"
+        src={avatar}
+        alt={site.author}
+        width="62"
+        height="62"
+        fetchpriority="high"
+      />
+      ) : <Glyph name="user" />}
+    </a>
+    <h2>{site.author}</h2>
+    {site.profile.tagline && <p>{site.profile.tagline}</p>}
+  </section>
+  <nav class="site-nav" aria-label={t('navigation')}>
+    {navigation.map((item) => (
+      <a
+        href={item.href}
+        data-focus-key={`nav:${item.name}`}
+        aria-current={isCurrentPath(path, item.matchPath) ? 'page' : undefined}
+        target={item.new_tab ? '_blank' : undefined}
+        rel={item.new_tab ? 'noopener noreferrer' : undefined}
+      >
+        <span class="nav-icon">
+          <Glyph name={item.icon} />
+        </span>
+        <span>{item.label}</span>
+        <span class="nav-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    ))}
+  </nav>
+  {headings.length > 0 && (
+    <section
+      class:list={['desktop-contents', { 'toc-nowrap': theme.article.toc.nowrap }]}
+      aria-labelledby="desktop-contents-title"
+    >
+      <h2 id="desktop-contents-title" tabindex="-1">
+        {t('toc')}
+      </h2>
+      <p class="sidebar-article-title">{title}</p>
+      <TableOfContents headings={headings} />
+    </section>
+  )}
+  <div class="sidebar-bottom">
+    <SiteTools />
+    <SocialLinks />
+  </div>
+</aside>
