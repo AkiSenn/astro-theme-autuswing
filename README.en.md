@@ -20,6 +20,12 @@
   <a href="README.md">简体中文</a> | <strong>English</strong>
 </p>
 
+<p align="center">
+  <a href="https://demo.akisenn.com/">Live Demo</a> ·
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#configuration">Configuration</a>
+</p>
+
 ---
 
 **Autuswing** is a responsive static blog theme for Astro 7 inspired by the classic Yelee theme. Built for fast, distraction-free reading with warm forest greens, build-time KaTeX math, static full-text search, PWA offline support, and bilingual-commented YAML configuration.

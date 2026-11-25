@@ -20,6 +20,12 @@
   <strong>简体中文</strong> | <a href="README.en.md">English</a>
 </p>
 
+<p align="center">
+  <a href="https://demo.akisenn.com/">在线演示站</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#配置文件一览">配置文件</a>
+</p>
+
 ---
 
 **Autuswing · 秋漾** 是一款基于 Astro 7 的响应式静态博客主题，灵感源自经典 Hexo 主题 Yelee。名字取自 **Autu**mn 与 **Swing**：秋日的风、轻轻摇荡的秋千，以及属于自己的书写节奏。
