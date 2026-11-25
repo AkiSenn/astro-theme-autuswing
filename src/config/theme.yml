@@ -32,7 +32,7 @@ appearance:
   accent_dark: ""           # 深色主题强调色 (#RGB/#RRGGBB) / Dark accent color
   font_family: ""           # 自定义正文字体栈 / Custom body font stack
   code_font: ""             # 自定义代码字体栈 / Custom monospace font stack
-  background_image: false   # 全站背景图: false | path | path[] | 1–6
+  background_image: false   # 全站背景图（开源版不内置壁纸，请自备图片）: false | "/img/bg.webp" | ["/img/bg1.webp"]
   background_overlay: 0.72  # 全站背景遮罩不透明度 (0–1) / Background overlay opacity
   theme_switch: true        # 显示浅色/深色切换按钮 / Show theme toggle button
 

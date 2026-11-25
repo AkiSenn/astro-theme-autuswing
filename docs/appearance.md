@@ -1,8 +1,8 @@
-← [项目首页](../README.md) · [文档首页](index.md)
+← [项目首页](../README.md)
 
 # 外观与阅读布局
 
-本页说明 R3 的 Astro 外观配置。正式站截图的时间和来源见[截图与来源](preview.md)。
+本页说明 Autuswing 的外观、背景与响应式阅读布局配置。
 
 ## 深浅色和个人信息
 
@@ -21,7 +21,7 @@ profile:
 
 `color_mode` 可选 `auto`、`light` 或 `dark`，访客通过外观按钮切换。作者和标语属于站主内容，不应写入界面翻译文件。本地静态图片放在 `public/img/`，URL 写 `/img/文件名`，不包含 `public/` 或本机盘符。
 
-头像、`favicon`、`apple_touch_icon`、`seo.social_image` 和 `pwa.icon` 是独立设置。文档的新项目 Logo 没有替换运行目录或正式站图标；素材入口见[品牌说明](branding.md)。
+头像、`favicon`、`apple_touch_icon`、`seo.social_image` 和 `pwa.icon` 均为独立设置，请按需放置在 `public/img/` 并在 `src/config/site.yml` 中配置。
 
 ## 排版和背景
 
@@ -31,7 +31,7 @@ profile:
 | `layout.home_sidebar_width` | 桌面完整侧栏宽度，显式值优先。部分预设在省略时回退至 `appearance.sidebar_width` |
 | `appearance.width`、`radius`、`accent`、`accent_dark` | 外框宽度输入、圆角、浅色及深色主色 |
 | `appearance.font_family`、`code_font` | 正文和代码字体；字体文件及许可另行准备 |
-| `appearance.background_image` | `false` 关闭；可使用地址、地址列表或现有内置背景数量选择 |
+| `appearance.background_image` | `false` 关闭；可设为单张图片路径或路径列表（开源版不内置壁纸，请将自备图片放在 `public/img/` 或 `public/background/`） |
 | `appearance.background_overlay` | 全站背景遮罩 |
 | `cards.wallpaper`、`wallpaper_overlay` | 默认卡片壁纸及其遮罩 |
 
@@ -50,4 +50,4 @@ profile:
 
 目录设置使用 `reading.toc`、`article.toc`，文章可用 `toc: false` 关闭。动效由 `motion.enable` / `motion.page` 控制，尊重减少动态效果；main 的动效规则已移除旧头像摇晃和卡片位移，不承诺所有浏览器拥有相同的原生转场。
 
-样式按令牌、布局、导航、卡片、正文、阅读工具和弹层等职责组织。入口见[源码指南](source-guide.md)和[样式架构](styles-architecture.md)。
+样式按令牌、布局、导航、卡片、正文、阅读工具和弹层等职责拆分在 `src/styles/` 下。
