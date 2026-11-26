@@ -6,6 +6,7 @@ import { initMedia } from './media';
 import { initPwa } from './pwa';
 import { initDialogs } from './dialogs';
 import { initBrand } from './brand';
+import { initPageExit } from './page-exit';
 import { isLiveSite } from './helpers';
 for (const init of [
   initAppearance,
@@ -15,6 +16,7 @@ for (const init of [
   initReading,
   initMedia,
   initBrand,
+  initPageExit,
   initPwa,
 ]) {
   try {

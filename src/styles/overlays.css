@@ -293,3 +293,24 @@ dialog::backdrop {
   font-size: 13px;
   text-align: center;
 }
+.rail-tooltip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  border-radius: var(--radius-control);
+  background: var(--text);
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--mica-hover-shadow);
+  z-index: calc(var(--z-navigation) + 10);
+  opacity: 0;
+}
+.rail-tooltip.visible {
+  opacity: 1;
+}

@@ -469,10 +469,10 @@ html[data-theme='dark'] .mode-toggle .appearance-moon {
   }
 }
 @media screen and (min-width: 1000px) {
-  body:not(.article-page) > .tablet-sidebar {
+  body:not(.has-reading-contents) > .tablet-sidebar {
     display: none;
   }
-  .article-page .compact-social {
+  .has-reading-contents .compact-social {
     display: block;
   }
 }

@@ -12,4 +12,8 @@
   const mode = allowed.includes(stored) ? stored : (allowed.includes(root.dataset.mode) ? root.dataset.mode : 'auto');
   root.dataset.mode = mode;
   root.dataset.theme = mode === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : mode;
+  try {
+    const toc = localStorage.getItem('autuswing-reading-contents');
+    if (toc === 'open' || toc === 'closed') root.dataset.readingContents = toc;
+  } catch {}
 })();

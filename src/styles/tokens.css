@@ -75,9 +75,12 @@
   /* 页面节奏单独配置，不改变主题切换、目录及弹层的 normal 时长。 */
   --motion-page: 360ms;
   --motion-exit: 160ms;
-  --motion-page-fallback: 280ms;
+  --motion-page-fallback: 420ms;
+  --motion-exit-fallback: 120ms;
   --motion-rise: 14px;
+  --motion-rise-fallback: 20px;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-fallback: cubic-bezier(0.16, 1, 0.3, 1);
 }
 :root[data-theme='dark'] {
   /* Palette and surfaces */

@@ -488,6 +488,7 @@
     z-index: var(--z-tools);
     overflow: hidden;
   }
+  html[data-reading-contents='closed'] .article-page:not([data-reading-contents='open']) .reading-sidebar,
   .article-page[data-reading-contents='closed'] .reading-sidebar {
     display: none;
   }
@@ -495,7 +496,7 @@
 @media screen {
   @media (min-width: 1280px) {
     @media not all and (min-width: 1440px) {
-      .article-page:not([data-reading-contents='open']) .reading-sidebar {
+      html:not([data-reading-contents='open']) .article-page:not([data-reading-contents='open']) .reading-sidebar {
         display: none;
       }
     }

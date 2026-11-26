@@ -7,6 +7,23 @@ type LegacyMediaQuery = {
   removeListener?: (cb: () => void) => void;
 };
 
+const TOC_STORAGE_KEY = 'autuswing-reading-contents';
+
+function readStoredContents(): boolean | null {
+  try {
+    const value = localStorage.getItem(TOC_STORAGE_KEY);
+    if (value === 'open') return true;
+    if (value === 'closed') return false;
+  } catch {}
+  return null;
+}
+
+function writeStoredContents(value: boolean) {
+  try {
+    localStorage.setItem(TOC_STORAGE_KEY, value ? 'open' : 'closed');
+  } catch {}
+}
+
 let disposeResponsive: (() => void) | undefined;
 
 export function initResponsive() {
@@ -27,11 +44,13 @@ export function initResponsive() {
   const subscriptions: (() => void)[] = [];
   let disposed = false;
   let trigger: HTMLElement | null = null;
-  let panelPreference: boolean | null = null;
+  let panelPreference: boolean | null = readStoredContents();
   let destination: HTMLElement | null = null;
   let tocNavigating = false;
   let lastHeaderHeight = -1;
   let headerObserver: ResizeObserver | undefined;
+  let tooltip: HTMLDivElement | null = null;
+  let tooltipAnchor: HTMLElement | null = null;
   const listen = (
     target: EventTarget,
     name: string,
@@ -66,8 +85,14 @@ export function initResponsive() {
   function syncContents(animate = false) {
     if (disposed) return;
     animatePanel?.(panelOpen(), animate && docked.matches);
-    if (panelPreference === null) delete document.body.dataset.readingContents;
-    else document.body.dataset.readingContents = panelPreference ? 'open' : 'closed';
+    if (panelPreference === null) {
+      delete document.body.dataset.readingContents;
+      delete document.documentElement.dataset.readingContents;
+    } else {
+      const state = panelPreference ? 'open' : 'closed';
+      document.body.dataset.readingContents = state;
+      document.documentElement.dataset.readingContents = state;
+    }
     buttons.forEach((button) => {
       const inDock = !!panel && docked.matches;
       button.setAttribute('aria-controls', inDock ? panel.id : 'reading-contents');
@@ -92,10 +117,24 @@ export function initResponsive() {
   if (panelClose) {
     listen(panelClose, 'click', () => {
       panelPreference = false;
+      writeStoredContents(false);
       syncContents(true);
       visibleButton()?.focus({ preventScroll: true });
     });
   }
+  listen(window, 'storage', (event) => {
+    const storageEvent = event as StorageEvent;
+    if (storageEvent.key !== TOC_STORAGE_KEY) return;
+    const next =
+      storageEvent.newValue === 'open'
+        ? true
+        : storageEvent.newValue === 'closed'
+          ? false
+          : null;
+    if (next === panelPreference) return;
+    panelPreference = next;
+    syncContents();
+  });
   if (panel) {
     listen(panel, 'keydown', (event) => {
       if ((event as KeyboardEvent).key === 'Escape') {
@@ -125,6 +164,7 @@ export function initResponsive() {
       listen(button, 'click', () => {
         if (panel && docked.matches) {
           panelPreference = !panelOpen();
+          writeStoredContents(panelPreference);
           syncContents(true);
           if (panelOpen()) desktopHeading?.focus({ preventScroll: true });
           return;
@@ -224,6 +264,7 @@ export function initResponsive() {
 
   function settleLayout() {
     if (disposed) return;
+    hideTooltip();
     const active = document.activeElement as HTMLElement | null;
     clearDestination();
     if (dialog?.open) closeDialog(dialog, true);
@@ -249,9 +290,68 @@ export function initResponsive() {
   onMedia(docked, settleLayout);
   onMedia(expandedDefault, settleLayout);
 
+  function hideTooltip() {
+    tooltipAnchor = null;
+    if (!tooltip) return;
+    tooltip.classList.remove('visible');
+    tooltip.hidden = true;
+  }
+
+  function showTooltip(target: HTMLElement) {
+    if (disposed || !rail?.getClientRects().length) return;
+    const label = (target.getAttribute('aria-label') || target.getAttribute('title') || '').trim();
+    if (!label) return;
+    if (!tooltip) {
+      tooltip = document.createElement('div');
+      tooltip.className = 'rail-tooltip';
+      tooltip.setAttribute('role', 'tooltip');
+      tooltip.hidden = true;
+      document.body.append(tooltip);
+    }
+    const rect = target.getBoundingClientRect();
+    if (!rect.width && !rect.height) return;
+    const railRect = rail.getBoundingClientRect();
+    tooltipAnchor = target;
+    tooltip.textContent = label;
+    tooltip.style.left = `${Math.round(Math.max(railRect.right, rect.right) + 10)}px`;
+    tooltip.style.top = `${Math.round(rect.top + rect.height / 2)}px`;
+    tooltip.hidden = false;
+    tooltip.classList.add('visible');
+  }
+
+  if (rail) {
+    const railControls = rail.querySelectorAll<HTMLElement>('a[href],button');
+    railControls.forEach((control) => {
+      listen(control, 'pointerenter', (event) => {
+        if ((event as PointerEvent).pointerType === 'touch') return;
+        showTooltip(control);
+      });
+      listen(control, 'pointerleave', () => {
+        if (tooltipAnchor === control) hideTooltip();
+      });
+      listen(control, 'focus', () => {
+        try {
+          if (!control.matches(':focus-visible')) return;
+        } catch {}
+        showTooltip(control);
+      });
+      listen(control, 'blur', () => {
+        if (tooltipAnchor === control) hideTooltip();
+      });
+      listen(control, 'click', hideTooltip);
+    });
+    listen(rail, 'scroll', hideTooltip, { passive: true });
+    listen(document, 'keydown', (event) => {
+      if ((event as KeyboardEvent).key === 'Escape') hideTooltip();
+    });
+  }
+
   function cleanup() {
     if (disposed) return;
     disposed = true;
+    hideTooltip();
+    tooltip?.remove();
+    tooltip = null;
     clearDestination();
     subscriptions.splice(0).forEach((remove) => remove());
     headerObserver?.disconnect();

@@ -41,9 +41,7 @@ html:has(dialog[open]) {
     --reading-width: var(--aw-content-max-width);
     --reading-contents-width: var(--aw-toc-width);
   }
-}
-@media screen and (min-width: 720px) {
-  .article-page {
+  .article-page.has-reading-contents {
     --layout-sidebar: var(--aw-article-sidebar-width);
   }
 }
@@ -58,8 +56,14 @@ html:has(dialog[open]) {
     }
   }
 }
+@media screen and (min-width: 1440px) {
+  html:not([data-reading-contents='closed']) .article-page.has-reading-contents:not([data-reading-contents='closed']) .main-shell {
+    margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
+  }
+}
 @media screen and (min-width: 1280px) {
-  .article-page.has-reading-contents .main-shell {
+  html[data-reading-contents='open'] .article-page.has-reading-contents:not([data-reading-contents='closed']) .main-shell,
+  .article-page.has-reading-contents[data-reading-contents='open'] .main-shell {
     margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
   }
 }

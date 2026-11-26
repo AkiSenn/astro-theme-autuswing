@@ -49,6 +49,8 @@ const headings =
         (h) => h.depth >= theme.article.toc.min_depth && h.depth <= theme.article.toc.max_depth,
       )
     : [];
+const useReadingRail = isArticle && headings.length >= 2;
+const showContents = isArticle ? useReadingRail : headings.length > 0;
 const variables = `--autuswing-base-font:${theme.appearance.base_font_size}px;--autuswing-sidebar:${theme.appearance.sidebar_width}px;--autuswing-width:${theme.appearance.width}px;--autuswing-radius:${theme.appearance.radius}px;--mica-blur:${theme.cards.blur}px;--wallpaper-opacity:${1 - theme.cards.wallpaper_overlay};${theme.appearance.accent ? '--accent:' + theme.appearance.accent + ';' : ''}${theme.appearance.accent_dark ? '--accent-dark:' + theme.appearance.accent_dark + ';' : ''}${theme.appearance.font_family ? '--autuswing-font:' + theme.appearance.font_family + ';' : ''}${theme.appearance.code_font ? '--autuswing-code-font:' + theme.appearance.code_font + ';' : ''}`;
 const background = theme.backgrounds.length
   ? theme.backgrounds[[...path].reduce((n, c) => n + c.charCodeAt(0), 0) % theme.backgrounds.length]
@@ -96,6 +98,9 @@ const background = theme.backgrounds.length
               .article-page .reading-sidebar {
                 display: flex !important;
               }
+              .article-page.has-reading-contents .main-shell {
+                margin-left: calc(var(--layout-sidebar) + var(--reading-contents-width));
+              }
             }
           }
         }
@@ -107,7 +112,7 @@ const background = theme.backgrounds.length
       {
         'article-page': isArticle,
         'home-page': path === '/',
-        'has-reading-contents': isArticle && headings.length > 0,
+        'has-reading-contents': useReadingRail,
       },
     ]}
     data-preview={String(preview)}
@@ -122,19 +127,21 @@ const background = theme.backgrounds.length
     <a class="skip-link" href="#main">
       {t('skip')}
     </a>
-    {!isArticle && <DesktopSidebar path={path} title={post?.title} headings={headings} />}
-    <TabletSidebar path={path} hasContents={headings.length > 0} reading={isArticle} />
-    {isArticle && headings.length > 0 && <ReadingSidebar title={post!.title} headings={headings} />}
+    {!useReadingRail && (
+      <DesktopSidebar path={path} title={post?.title} headings={showContents ? headings : []} />
+    )}
+    <TabletSidebar path={path} hasContents={showContents} reading={useReadingRail} />
+    {useReadingRail && <ReadingSidebar title={post!.title} headings={headings} />}
     <MobileHeader path={path} />
     <div class="main-shell">
-      {headings.length > 0 && <ArticleContents title={post!.title} headings={headings} />}
+      {showContents && <ArticleContents title={post!.title} headings={headings} />}
       <main id="main" tabindex="-1">
         <slot />
       </main>
       <Footer />
     </div>
     <div class="floating-tools" hidden>
-      {headings.length > 0 && (
+      {showContents && (
         <button
           class="goto-toc icon-button js-control"
           data-focus-key="contents"
